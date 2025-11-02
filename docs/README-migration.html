@@ -138,7 +138,7 @@ vimユーザは<a href="https://github.com/editorconfig/editorconfig-vim">editor
 以下の構造体の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_atomic_t.html">SDL_atomic_t</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_AtomicInt">SDL_AtomicInt</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_atomic_t.html">SDL_atomic_t</a> → <a href="SDL_AtomicInt.html">SDL_AtomicInt</a>
 </ul>
 <p>
 以下の関数の名前は次の様に変更された:
@@ -170,12 +170,12 @@ SDL3の音声サブシステムはSDL2とは大きく異なる.
 </p>
 <p>
 SDL2は録音デバイスを"capture"デバイス, スピーカーへの再生を"output"デバイスと呼んでいた.
-SDLでは, 明確にするため用語を"recording(録音)"デバイスと"playback(再生)"デバイスに改めた.
+SDL3では, 明確にするため用語を"recording(録音)"デバイスと"playback(再生)"デバイスに改めた.
 </p>
 <p>
 SDL3音声サブシステムはSDL2よりも強化されている.
 しかし, 既存のコードを単に移行させたいならば大半は使わなくてもよい.
-最も単純なSDLからの移行は次のようになる:
+最も単純なSDL2からの移行は次のようになる:
 </p>
 <p>
 SDL2では音声再生はこのように記述していたが...
@@ -1060,7 +1060,7 @@ SDL3の代わりの計画もない.
 環境変数SDL_VIDEODRIVERとSDL_AUDIODRIVERの名前はSDL_VIDEO_DRIVERとSDL_AUDIO_DRIVERに変更された. しかし, フォールバックとして古い名前にも対応している.
 </p>
 <p>
-環境変数SDL_VIDEO_X11_WMCLASSとSDL_VIDEO_WAYLAND_WMCLASSは削除され, <a href="SDL_SetAppMetadata.html">SDL_SetAppMetadata()</a>のappindentifier引数, または<a href="https://wiki.libsdl.org/SDL3/SDL_SetAppMetadataProperty">SDL_SetAppMetadataProperty()</a>のSDL_PROP_APP_METADATA_IDENTIFIER_STRINGの設定に置き換えられた.
+環境変数SDL_VIDEO_X11_WMCLASSとSDL_VIDEO_WAYLAND_WMCLASSは削除され, <a href="SDL_SetAppMetadata.html">SDL_SetAppMetadata()</a>のappindentifier引数, または<a href="SDL_SetAppMetadataProperty.html">SDL_SetAppMetadataProperty()</a>のSDL_PROP_APP_METADATA_IDENTIFIER_STRINGの設定に置き換えられた.
 </p>
 <p>
 環境変数AUDIODEVはOSSとNetBSDのオーディオドライバのオーディオデバイスの場合のみ使用されるようになった.
@@ -1445,7 +1445,7 @@ SDL_Keycodeの取りうる値であることを明確にするため, SDLK_*は�
 これは型安全性のためで, 機能は変わらない.
 </p>
 <p>
-<a href="SDL_LoadFunction.html">SDL_LoadFunction()</a>の戻り値はvoid *から<a href="SDL_FunctionPointer.html">SDL_FunctionPointer</a>となり, 関数の本来の型へのキャストが必要になった.
+<a href="SDL_LoadFunction.html">SDL_LoadFunction()</a>の戻り値はvoid *から<a href="https://wiki.libsdl.org/SDL3/SDL_FunctionPointer">SDL_FunctionPointer</a>となり, 関数の本来の型へのキャストが必要になった.
 SDL_FUNCTION_POINTER_IS_VOID_POINTERを定義して旧来の動作と同じ動作にすることもできる.
 </p>
 <h2><a name="#sdl_logh">SDL_log.h (ログ処理)</a></h2>
@@ -2709,7 +2709,7 @@ WindowsとX11のイベントは<a href="https://wiki.libsdl.org/SDL3/SDL_SetWind
 これは SDL 2.0では常に0を戻していた.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/">SDL_GetVersion()</a>はバージョンを表す値を戻す. この値はSDL_VERSIONNUM()を通して別のバージョンと比較できる.
+<a href="SDL_GetVersion.html">SDL_GetVersion()</a>はバージョンを表す値を戻す. この値はSDL_VERSIONNUM()を通して別のバージョンと比較できる.
 </p>
 <p>
 以下の構造体は削除された:
@@ -2727,13 +2727,13 @@ WindowsとX11のイベントは<a href="https://wiki.libsdl.org/SDL3/SDL_SetWind
 <h2><a name="#sdl_videoh">SDL_video.h (ディスプレイとウィンドウ)</a></h2>
 <p>
 一部のビデオバックエンドは名前が小文字になっている ("kmsdrm", "rpi", "android", "psp", "ps2", "vita").
-SDLは既にSDL_HINT_VIDEO_DRIVERはでは大文字小文字を無視する.
-しかし, アプリケーションで<a href="https://wiki.libsdl.org/SDL3/SDL_GetVideoDriver">SDL_GetVideoDriver()</a>または<a href="https://wiki.libsdl.org/SDL3/SDL_GetCurrentVideoDriver">SDL_GetCurrentVideoDriver()</a>を呼び, 大文字小文字を無視せず比較している場合は, プログラムを変更する必要がある.
+SDLは既に<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_DRIVER">SDL_HINT_VIDEO_DRIVER</a>はでは大文字小文字を無視する.
+しかし, アプリケーションで<a href="SDL_GetVideoDriver.html">SDL_GetVideoDriver()</a>または<a href="SDL_GetCurrentVideoDriver.html">SDL_GetCurrentVideoDriver()</a>を呼び, 大文字小文字を無視せず比較している場合は, プログラムを変更する必要がある.
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_VideoInit.html">SDL_VideoInit()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_VideoQuit.html">SDL_VideoQuit()</a>は削除された.
 代わりに<a href="SDL_InitSubSystem.html">SDL_InitSubSystem()</a>と<a href="SDL_QuitSubSystem.html">SDL_QuitSubSystem()</a>をSDL_INIT_VIDEOで呼ぶこと. これで参照カウンタを正常にカウントできる.
-SDL_HINT_VIDEO_DRIVERで特定のビデオドライバを選択できる.
+<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_DRIVER">SDL_HINT_VIDEO_DRIVER</a>で特定のビデオドライバを選択できる.
 </p>
 <p>
 ディスプレイのインデックス番号を反復処理するのではなく, 新しい関数<a href="SDL_GetDisplays.html">SDL_GetDisplays()</a>でディスプレイの一覧を得ることもできる.
@@ -2781,7 +2781,7 @@ SDL_HINT_VIDEO_DRIVERで特定のビデオドライバを選択できる.
 </code>
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_WINDOWPOS_UNDEFINED_DISPLAY">SDL_WINDOWPOS_UNDEFINED_DISPLAY()</a>マクロと<a href="https://wiki.libsdl.org/SDL3/SDL_WINDOWPOS_CENTERED_DISPLAY">SDL_WINDOWPOS_CENTERED_DISPLAY()</a>マクロはディスプレイインデックス番号の代わりにディスプレイIDを取るようになった.
+<a href="SDL_WINDOWPOS_UNDEFINED_DISPLAY.html">SDL_WINDOWPOS_UNDEFINED_DISPLAY()</a>マクロと<a href="SDL_WINDOWPOS_CENTERED_DISPLAY.html">SDL_WINDOWPOS_CENTERED_DISPLAY()</a>マクロはディスプレイインデックス番号の代わりにディスプレイIDを取るようになった.
 この場合, ディスプレイID 0はプライマリティスプレイを表す特別な値である.
 </p>
 <p>
@@ -2792,14 +2792,14 @@ SDL_HINT_VIDEO_DRIVERで特定のビデオドライバを選択できる.
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WindowFlags.html">SDL_WINDOW_SKIP_TASKBAR</a>フラグは<a href="SDL_WindowFlags.html">SDL_WINDOW_UTILITY</a>フラグに置き換えられた. 機能は変わらない.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_DisplayMode">SDL_DisplayMode</a>にピクセル密度が追加された. この値はディスプレイモードのサイズよりもピクセルサイズが大きいとき1.0を超える値を取りうる.
-ウィンドウの背後のバッファの実際のピクセルサイズは<a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowSizeInPixels">SDL_GetWindowSizeInPixels()</a>で得る必要がある.
+<a href="SDL_DisplayMode.html">SDL_DisplayMode</a>にピクセル密度が追加された. この値はディスプレイモードのサイズよりもピクセルサイズが大きいとき1.0を超える値を取りうる.
+ウィンドウの背後のバッファの実際のピクセルサイズは<a href="SDL_GetWindowSizeInPixels.html">SDL_GetWindowSizeInPixels()</a>で得る必要がある.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_DisplayMode">SDL_DisplayMode</a>のリフレッシュレートはfloat型になり, 正確な値のため分母と分子も追加された.
+<a href="SDL_DisplayMode.html">SDL_DisplayMode</a>のリフレッシュレートはfloat型になり, 正確な値のため分母と分子も追加された.
 </p>
 <p>
-ディスプレイモードのインデックス番号を反復処理するのではなく, ディスプレイの可能なフルスクリーンモードの一覧を得る新しい関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetFullscreenDisplayModes">SDL_GetFullscreenDisplayModes()</a>が追加された.
+ディスプレイモードのインデックス番号を反復処理するのではなく, ディスプレイの可能なフルスクリーンモードの一覧を得る新しい関数<a href="SDL_GetFullscreenDisplayModes.html">SDL_GetFullscreenDisplayModes()</a>が追加された.
 <code>
 <pre>
     {
@@ -2819,18 +2819,18 @@ SDL_HINT_VIDEO_DRIVERで特定のビデオドライバを選択できる.
 </code>
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetDesktopDisplayMode">SDL_GetDesktopDisplayMode()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_GetCurrentDisplayMode">SDL_GetCurrentDisplayMode()</a>はアプリケーションのメモリに書き込むのではなくディスプレイモードへのポインタを戻すようになった.
+<a href="SDL_GetDesktopDisplayMode.html">SDL_GetDesktopDisplayMode()</a>と<a href="SDL_GetCurrentDisplayMode.html">SDL_GetCurrentDisplayMode()</a>はアプリケーションのメモリに書き込むのではなくディスプレイモードへのポインタを戻すようになった.
 </p>
 <p>
-ウィンドウを明確にフルスクリーンモードにする場合は, <a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowFullscreenMode">SDL_SetWindowFullscreenMode()</a>を使用すること.
-ウィンドウのフルスクリーンモードは<a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowFullscreenMode">SDL_GetWindowFullscreenMode()</a>で得られる. これはモードへのポインタを, またはデスクトップフルスクリーンのときNULLを戻す.
-<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowFullscreen">SDL_SetWindowFullscreen()</a>はbool値を取るだけで, フルスクリーン状態は選択したモードによる.
+ウィンドウを明確にフルスクリーンモードにする場合は, <a href="SDL_SetWindowFullscreenMode.html">SDL_SetWindowFullscreenMode()</a>を使用すること.
+ウィンドウのフルスクリーンモードは<a href="SDL_GetWindowFullscreenMode.html">SDL_GetWindowFullscreenMode()</a>で得られる. これはモードへのポインタを, またはデスクトップフルスクリーンのときNULLを戻す.
+<a href="SDL_SetWindowFullscreen.html">SDL_SetWindowFullscreen()</a>はbool値を取るだけで, フルスクリーン状態は選択したモードによる.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_WindowFlags">SDL_WINDOW_FULLSCREEN_DESKTOP</a>は削除され, ウィンドウがフルスクリーンのとき, 排他的フルスクリーンか仮想フルスクリーンかは<a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowFullscreenMode">SDL_GetWindowFullscreenMode()</a>で得られるようになった.
+<a href="SDL_WindowFlags.html">SDL_WINDOW_FULLSCREEN_DESKTOP</a>は削除され, ウィンドウがフルスクリーンのとき, 排他的フルスクリーンか仮想フルスクリーンかは<a href="SDL_GetWindowFullscreenMode.html">SDL_GetWindowFullscreenMode()</a>で得られるようになった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowBrightness">SDL_SetWindowBrightness()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowBrightness">SDL_GetWindowBrightness()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowGammaRamp">SDL_SetWindowGammaRamp()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowGammaRamp">SDL_GetWindowGammaRamp()</a>はAPIから削除された.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowBrightness.html">SDL_SetWindowBrightness()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowBrightness.html">SDL_GetWindowBrightness()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowGammaRamp.html">SDL_SetWindowGammaRamp()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowGammaRamp.html">SDL_GetWindowGammaRamp()</a>はAPIから削除された.
 現在のOSでは扱いが難しく, 効果をSDLウィンドウに限定することができないためである.
 </p>
 <p>
@@ -2838,70 +2838,70 @@ SDL_HINT_VIDEO_DRIVERで特定のビデオドライバを選択できる.
 </p>
 <p>
 OpenGL設定から<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GLattr.html">SDL_GL_CONTEXT_EGL</a>が削除された.
-代わりに<code>SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);</code>を使用すること.
+代わりに<a href="SDL_GL_SetAttribute.html">SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);</a>を使用すること.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GL_GetProcAddress">SDL_GL_GetProcAddress()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_EGL_GetProcAddress">SDL_EGL_GetProcAddress()</a>はvoid *の代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_FunctionPointer">SDL_FunctionPointer</a>を戻すようになり, 正しい関数の型でキャストしなければならなくなった.
-SDL_FUNCTION_POINTER_IS_VOID_POINTERを定義すると以前と同じ動作になる.
+<a href="SDL_GL_GetProcAddress.html">SDL_GL_GetProcAddress()</a>, <a href="SDL_EGL_GetProcAddress.html">SDL_EGL_GetProcAddress()</a>はvoid *の代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_FunctionPointer">SDL_FunctionPointer</a>を戻すようになり, 正しい関数の型でキャストしなければならなくなった.
+<a href="https://wiki.libsdl.org/SDL3/SDL_FUNCTION_POINTER_IS_VOID_POINTER">SDL_FUNCTION_POINTER_IS_VOID_POINTER</a>を定義すると以前と同じ動作になる.
 </p>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GL_DeleteContext.html">SDL_GL_DeleteContext()</a>の名前はSDL(とglX/EGL)の命名規則に合わせるため<a href="https://wiki.libsdl.org/SDL3/SDL_GL_DestroyContext">SDL_GL_DestroyContext</a>に変更された.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GL_DeleteContext.html">SDL_GL_DeleteContext()</a>の名前はSDL(とglX/EGL)の命名規則に合わせるため<a href="SDL_GL_DestroyContext.html">SDL_GL_DestroyContext</a>に変更された.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GL_GetSwapInterval">SDL_GL_GetSwapInterval()</a>は間隔を出力先引数として取り, 関数が成功したとき真, エラーのとき偽を戻すようになった.
+<a href="SDL_GL_GetSwapInterval.html">SDL_GL_GetSwapInterval()</a>は間隔を出力先引数として取り, 関数が成功したとき真, エラーのとき偽を戻すようになった.
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GL_GetDrawableSize.html">SDL_GL_GetDrawableSize()</a>は削除された.
-代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowSizeInPixels">SDL_GetWindowSizeInPixels()</a>が使用できる.
+代わりに<a href="SDL_GetWindowSizeInPixels.html">SDL_GetWindowSizeInPixels()</a>が使用できる.
 </p>
 <p>
-ウィンドウフラグ<a href="https://wiki.libsdl.org/SDL3/SDL_WindowFlags">SDL_WINDOW_TOOLTIP</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_WindowFlags">SDL_WINDOW_POPUP_MENU</a>はWindows, Mac (Cocoa), X11, Waylandに対応するようになった.
-これらのフラグを持つウィンドウは, <a href="https://wiki.libsdl.org/SDL3/">SDL_CreatePopupWindow()</a>関数で生成する必要がある.
+ウィンドウフラグ<a href="SDL_WindowFlags.html">SDL_WINDOW_TOOLTIP</a>と<a href="SDL_WindowFlags.html">SDL_WINDOW_POPUP_MENU</a>はWindows, Mac (Cocoa), X11, Waylandに対応するようになった.
+これらのフラグを持つウィンドウは, <a href="SDL_CreatePopupWindow.html">SDL_CreatePopupWindow()</a>関数で生成する必要がある.
 この関数にはポップアップさせる親ウィンドウを渡す必要があり, ポップアップウィンドウの位置は親との相対位置である.
 </p>
 <p>
-API関数が参照するウィンドウフラグである<a href="https://wiki.libsdl.org/SDL3/SDL_WindowFlags">SDL_WindowFlags</a>はUint32だったが, 64ビットに拡張された.
+API関数が参照するウィンドウフラグである<a href="SDL_WindowFlags.html">SDL_WindowFlags</a>はUint32だったが, 64ビットに拡張された.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowOpacity">SDL_GetWindowOpacity()</a>は不透明度を出力先引数を使用せず直接戻すようになった.
+<a href="SDL_GetWindowOpacity.html">SDL_GetWindowOpacity()</a>は不透明度を出力先引数を使用せず直接戻すようになった.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GL_DeleteContext.html">SDL_GL_DeleteContext()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GL_DestroyContext">SDL_GL_DestroyContext()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetClosestDisplayMode.html">SDL_GetClosestDisplayMode()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetClosestFullscreenDisplayMode">SDL_GetClosestFullscreenDisplayMode()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetDisplayOrientation.html">SDL_GetDisplayOrientation()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetCurrentDisplayOrientation">SDL_GetCurrentDisplayOrientation()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetPointDisplayIndex.html">SDL_GetPointDisplayIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetDisplayForPoint">SDL_GetDisplayForPoint()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetRectDisplayIndex.html">SDL_GetRectDisplayIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetDisplayForRect">SDL_GetDisplayForRect()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowDisplayIndex.html">SDL_GetWindowDisplayIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetDisplayForWindow">SDL_GetDisplayForWindow()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowDisplayMode.html">SDL_GetWindowDisplayMode()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowFullscreenMode">SDL_GetWindowFullscreenMode()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HasWindowSurface.html">SDL_HasWindowSurface()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WindowHasSurface">SDL_WindowHasSurface()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsScreenSaverEnabled.html">SDL_IsScreenSaverEnabled()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ScreenSaverEnabled">SDL_ScreenSaverEnabled()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowDisplayMode.html">SDL_SetWindowDisplayMode()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowFullscreenMode">SDL_SetWindowFullscreenMode()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GL_DeleteContext.html">SDL_GL_DeleteContext()</a> → <a href="SDL_GL_DestroyContext.html">SDL_GL_DestroyContext()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetClosestDisplayMode.html">SDL_GetClosestDisplayMode()</a> → <a href="SDL_GetClosestFullscreenDisplayMode.html">SDL_GetClosestFullscreenDisplayMode()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetDisplayOrientation.html">SDL_GetDisplayOrientation()</a> → <a href="SDL_GetCurrentDisplayOrientation.html">SDL_GetCurrentDisplayOrientation()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetPointDisplayIndex.html">SDL_GetPointDisplayIndex()</a> → <a href="SDL_GetDisplayForPoint.html">SDL_GetDisplayForPoint()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetRectDisplayIndex.html">SDL_GetRectDisplayIndex()</a> → <a href="SDL_GetDisplayForRect.html">SDL_GetDisplayForRect()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowDisplayIndex.html">SDL_GetWindowDisplayIndex()</a> → <a href="SDL_GetDisplayForWindow.html">SDL_GetDisplayForWindow()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowDisplayMode.html">SDL_GetWindowDisplayMode()</a> → <a href="SDL_GetWindowFullscreenMode.html">SDL_GetWindowFullscreenMode()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HasWindowSurface.html">SDL_HasWindowSurface()</a> → <a href="SDL_WindowHasSurface.html">SDL_WindowHasSurface()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsScreenSaverEnabled.html">SDL_IsScreenSaverEnabled()</a> → <a href="SDL_ScreenSaverEnabled.html">SDL_ScreenSaverEnabled()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowDisplayMode.html">SDL_SetWindowDisplayMode()</a> → <a href="SDL_SetWindowFullscreenMode.html">SDL_SetWindowFullscreenMode()</a>, bool値を戻す
 </ul>
 <p>
 以下の関数は削除された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetDisplayDPI">SDL_GetDisplayDPI()</a> - 異なる環境での信頼性がない. 置き換えるならば, <a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowDisplayScale">SDL_GetWindowDisplayScale()</a>の値を, iPhoneとAndroidならば160倍, 他の環境ならば96倍するとおよその値となる
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetDisplayMode">SDL_GetDisplayMode()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetNumDisplayModes">SDL_GetNumDisplayModes()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetFullscreenDisplayModes">SDL_GetFullscreenDisplayModes()</a>に置き換えること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetNumVideoDisplays">SDL_GetNumVideoDisplays()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetDisplays">SDL_GetDisplays()</a>に置き換えること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowGrab">SDL_SetWindowGrab()</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowMouseGrab">SDL_SetWindowMouseGrab()</a>を使用すること. <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GRAB_KEYBOARD.html">SDL_HINT_GRAB_KEYBOARD</a>を設定していた場合は<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowKeyboardGrab">SDL_SetWindowKeyboardGrab()</a>も使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowGrab">SDL_GetWindowGrab()</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowMouseGrab">SDL_SetWindowMouseGrab()</a>を使用すること. <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GRAB_KEYBOARD.html">SDL_HINT_GRAB_KEYBOARD</a>を設定していた場合は<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowKeyboardGrab">SDL_SetWindowKeyboardGrab()</a>も使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowData">SDL_GetWindowData()</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_GetPointerProperty">SDL_GetPointerProperty()</a>を<a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowProperties">SDL_GetWindowProperties()</a>と共に使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowData">SDL_SetWindowData()</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_GetPointerProperty">SDL_GetPointerProperty()</a>を<a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowProperties">SDL_GetWindowProperties()</a>と共に使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateWindowFrom">SDL_CreateWindowFrom()</a> - プロパティで既存のウィンドウのラッパーを生成できる<a href="https://wiki.libsdl.org/SDL3/SDL_CreateWindowWithProperties">SDL_CreateWindowWithProperties()</a>を使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowInputFocus">SDL_SetWindowInputFocus()</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_RaiseWindow">SDL_RaiseWindow()</a>を使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowModalFor">SDL_SetWindowModalFor()</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowParent">SDL_SetWindowParent()</a>を<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowModal">SDL_SetWindowModal()</a>と共に使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowBrightness">SDL_SetWindowBrightness()</a> - シェーダーや他の効果を使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowBrightness">SDL_GetWindowBrightness()</a> - シェーダーや他の効果を使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowGammaRamp">SDL_SetWindowGammaRamp()</a> - シェーダーや他の効果を使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowGammaRamp">SDL_GetWindowGammaRamp()</a> - シェーダーや他の効果を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetDisplayDPI.html">SDL_GetDisplayDPI()</a> - 異なる環境での信頼性がない. 置き換えるならば, <a href="SDL_GetWindowDisplayScale.html">SDL_GetWindowDisplayScale()</a>の値を, iPhoneとAndroidならば160倍, 他の環境ならば96倍するとおよその値となる
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetDisplayMode.html">SDL_GetDisplayMode()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetNumDisplayModes.html">SDL_GetNumDisplayModes()</a> - <a href="SDL_GetFullscreenDisplayModes.html">SDL_GetFullscreenDisplayModes()</a>に置き換えること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetNumVideoDisplays.html">SDL_GetNumVideoDisplays()</a> - <a href="SDL_GetDisplays.html">SDL_GetDisplays()</a>に置き換えること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowGrab.html">SDL_SetWindowGrab()</a> - 代わりに<a href="SDL_SetWindowMouseGrab.html">SDL_SetWindowMouseGrab()</a>を使用すること. <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GRAB_KEYBOARD.html">SDL_HINT_GRAB_KEYBOARD</a>を設定していた場合は<a href="SDL_SetWindowKeyboardGrab.html">SDL_SetWindowKeyboardGrab()</a>も使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowGrab.html">SDL_GetWindowGrab()</a> - 代わりに<a href="SDL_SetWindowMouseGrab.html">SDL_SetWindowMouseGrab()</a>を使用すること. <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GRAB_KEYBOARD.html">SDL_HINT_GRAB_KEYBOARD</a>を設定していた場合は<a href="SDL_SetWindowKeyboardGrab.html">SDL_SetWindowKeyboardGrab()</a>も使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowData.html">SDL_GetWindowData()</a> - 代わりに<a href="SDL_GetPointerProperty.html">SDL_GetPointerProperty()</a>を<a href="SDL_GetWindowProperties.html">SDL_GetWindowProperties()</a>と共に使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowData.html">SDL_SetWindowData()</a> - 代わりに<a href="SDL_GetPointerProperty.html">SDL_GetPointerProperty()</a>を<a href="SDL_GetWindowProperties.html">SDL_GetWindowProperties()</a>と共に使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateWindowFrom.html">SDL_CreateWindowFrom()</a> - プロパティで既存のウィンドウのラッパーを生成できる<a href="SDL_CreateWindowWithProperties.html">SDL_CreateWindowWithProperties()</a>を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowInputFocus.html">SDL_SetWindowInputFocus()</a> - 代わりに<a href="SDL_RaiseWindow.html">SDL_RaiseWindow()</a>を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowModalFor.html">SDL_SetWindowModalFor()</a> - 代わりに<a href="SDL_SetWindowParent.html">SDL_SetWindowParent()</a>を<a href="SDL_SetWindowModal.html">SDL_SetWindowModal()</a>と共に使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowBrightness.html">SDL_SetWindowBrightness()</a> - シェーダーや他の効果を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowBrightness.html">SDL_GetWindowBrightness()</a> - シェーダーや他の効果を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetWindowGammaRamp.html">SDL_SetWindowGammaRamp()</a> - シェーダーや他の効果を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowGammaRamp.html">SDL_GetWindowGammaRamp()</a> - シェーダーや他の効果を使用すること
 </ul>
 <p>
-IDの型<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Window.html">SDL_Window</a>の名前は<a href="https://wiki.libsdl.org/SDL3/SDL_WindowID">SDL_WindowID</a>に変更された.
+IDの型<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Window.html">SDL_Window</a>の名前は<a href="SDL_WindowID.html">SDL_WindowID</a>に変更された.
 </p>
 <p>
 以下の環境変数は削除された:
@@ -2914,52 +2914,52 @@ IDの型<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Window.html">
 以下のシンボルの名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_DISPLAYEVENT_DISCONNECTED.html">SDL_DISPLAYEVENT_DISCONNECTED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_DISPLAY_REMOVED">SDL_EVENT_DISPLAY_REMOVED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_DISPLAYEVENT_MOVED.html">SDL_DISPLAYEVENT_MOVED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_DISPLAY_MOVED">SDL_EVENT_DISPLAY_MOVED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_DISPLAYEVENT_ORIENTATION.html">SDL_DISPLAYEVENT_ORIENTATION</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_DISPLAY_ORIENTATION">SDL_EVENT_DISPLAY_ORIENTATION</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GLattr.html">SDL_GLattr</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GLAttr">SDL_GLAttr</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GLcontextFlag.html">SDL_GLcontextFlag</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GLContextFlag">SDL_GLContextFlag</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GLcontextReleaseFlag.html">SDL_GLcontextReleaseFlag</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GLContextReleaseFlag">SDL_GLContextReleaseFlag</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GLprofile.html">SDL_GLprofile</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GLProfile">SDL_GLProfile</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_CLOSE.html">SDL_WINDOWEVENT_CLOSE</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_CLOSE_REQUESTED">SDL_EVENT_WINDOW_CLOSE_REQUESTED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_DISPLAY_CHANGED.html">SDL_WINDOWEVENT_DISPLAY_CHANGED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_DISPLAY_CHANGED">SDL_EVENT_WINDOW_DISPLAY_CHANGED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_ENTER.html">SDL_WINDOWEVENT_ENTER</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_MOUSE_ENTER">SDL_EVENT_WINDOW_MOUSE_ENTER</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_EXPOSED.html">SDL_WINDOWEVENT_EXPOSED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_EXPOSED">SDL_EVENT_WINDOW_EXPOSED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_FOCUS_GAINED.html">SDL_WINDOWEVENT_FOCUS_GAINED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_FOCUS_GAINED">SDL_EVENT_WINDOW_FOCUS_GAINED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_FOCUS_LOST.html">SDL_WINDOWEVENT_FOCUS_LOST</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_FOCUS_LOST">SDL_EVENT_WINDOW_FOCUS_LOST</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_HIDDEN.html">SDL_WINDOWEVENT_HIDDEN</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_HIDDEN">SDL_EVENT_WINDOW_HIDDEN</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_HIT_TEST.html">SDL_WINDOWEVENT_HIT_TEST</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_HIT_TEST">SDL_EVENT_WINDOW_HIT_TEST</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_ICCPROF_CHANGED.html">SDL_WINDOWEVENT_ICCPROF_CHANGED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_ICCPROF_CHANGED">SDL_EVENT_WINDOW_ICCPROF_CHANGED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_LEAVE.html">SDL_WINDOWEVENT_LEAVE</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_MOUSE_LEAVE">SDL_EVENT_WINDOW_MOUSE_LEAVE</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_MAXIMIZED.html">SDL_WINDOWEVENT_MAXIMIZED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_MAXIMIZED">SDL_EVENT_WINDOW_MAXIMIZED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_MINIMIZED.html">SDL_WINDOWEVENT_MINIMIZED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_MINIMIZED">SDL_EVENT_WINDOW_MINIMIZED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_MOVED.html">SDL_WINDOWEVENT_MOVED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_MOVED">SDL_EVENT_WINDOW_MOVED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_RESIZED.html">SDL_WINDOWEVENT_RESIZED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_RESIZED">SDL_EVENT_WINDOW_RESIZED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_RESTORED.html">SDL_WINDOWEVENT_RESTORED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_RESTORED">SDL_EVENT_WINDOW_RESTORED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOWEVENT_SHOWN.html">SDL_WINDOWEVENT_SHOWN</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_EVENT_WINDOW_SHOWN">SDL_EVENT_WINDOW_SHOWN</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOW_ALLOW_HIGHDPI.html">SDL_WINDOW_ALLOW_HIGHDPI</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WINDOW_HIGH_PIXEL_DENSITY">SDL_WINDOW_HIGH_PIXEL_DENSITY</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WINDOW_INPUT_GRABBED.html">SDL_WINDOW_INPUT_GRABBED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WINDOW_MOUSE_GRABBED">SDL_WINDOW_MOUSE_GRABBED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_DISPLAYEVENT_DISCONNECTED</a> → <a href="SDL_EventType.html">SDL_EVENT_DISPLAY_REMOVED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_DISPLAYEVENT_MOVED</a> → <a href="SDL_EventType.html">SDL_EVENT_DISPLAY_MOVED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_DISPLAYEVENT_ORIENTATION</a> → <a href="SDL_EventType.html">SDL_EVENT_DISPLAY_ORIENTATION</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GLattr.html">SDL_GLattr</a> → <a href="SDL_GLAttr.html">SDL_GLAttr</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GLcontextFlag.html">SDL_GLcontextFlag</a> → <a href="SDL_GLContextFlag.html">SDL_GLContextFlag</a>
+<li>SDL_GLcontextReleaseFlag → <a href="SDL_GLContextReleaseFlag.html">SDL_GLContextReleaseFlag</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GLprofile.html">SDL_GLprofile</a> → <a href="SDL_GLProfile.html">SDL_GLProfile</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_CLOSE</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_CLOSE_REQUESTED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_DISPLAY_CHANGED</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_DISPLAY_CHANGED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_ENTER</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_MOUSE_ENTER</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_EXPOSED</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_EXPOSED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_FOCUS_GAINED</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_FOCUS_GAINED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_FOCUS_LOST</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_FOCUS_LOST</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_HIDDEN</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_HIDDEN</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_HIT_TEST</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_HIT_TEST</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_ICCPROF_CHANGED</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_ICCPROF_CHANGED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_LEAVE</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_MOUSE_LEAVE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_MAXIMIZED</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_MAXIMIZED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_MINIMIZED</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_MINIMIZED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_MOVED</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_MOVED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_RESIZED</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_RESIZED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_RESTORED</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_RESTORED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_EventType.html">SDL_WINDOWEVENT_SHOWN</a> → <a href="SDL_EventType.html">SDL_EVENT_WINDOW_SHOWN</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WindowFlags.html">SDL_WINDOW_ALLOW_HIGHDPI</a> → <a href="SDL_WindowFlags.html">SDL_WINDOW_HIGH_PIXEL_DENSITY</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WindowFlags.html">SDL_WINDOW_INPUT_GRABBED</a> → <a href="SDL_WindowFlags.html">SDL_WINDOW_MOUSE_GRABBED</a>
 </ul>
 <p>
 以下のシンボルは削除された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WindowEvent.html">SDL_WINDOWEVENT_SIZE_CHANGED</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_EventType">SDL_EVENT_WINDOW_RESIZED</a>イベントと<a href="https://wiki.libsdl.org/SDL3/SDL_EventType">SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED</a>イベントを使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WindowEvent.html">SDL_WINDOWEVENT_SIZE_CHANGED</a> - 代わりに<a href="SDL_EventType.html">SDL_EVENT_WINDOW_RESIZED</a>イベントと<a href="SDL_EventType.html">SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED</a>イベントを使用すること
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WindowEvent.html">SDL_WINDOWEVENT_TAKE_FOCUS</a>
 </ul>
 <p>
 次のウィンドウ操作は非同期リクエストとして扱われるようになり, 対応するイベントを受信するまで成功したとみなされなくなった:
 </p>
 <ul>
-<li><a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowSize">SDL_SetWindowSize()</a> (<a href="https://wiki.libsdl.org/SDL3/SDL_EventType">SDL_EVENT_WINDOW_RESIZED</a>)
-<li><a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowPosition">SDL_SetWindowPosition()</a> (<a href="https://wiki.libsdl.org/SDL3/SDL_EventType">SDL_EVENT_WINDOW_MOVED</a>)
-<li><a href="https://wiki.libsdl.org/SDL3/SDL_MinimizeWindow">SDL_MinimizeWindow()</a> (<a href="https://wiki.libsdl.org/SDL3/SDL_EventType">SDL_EVENT_WINDOW_MINIMIZED</a>)
-<li><a href="https://wiki.libsdl.org/SDL3/SDL_MaximizeWindow">SDL_MaximizeWindow()</a> (<a href="https://wiki.libsdl.org/SDL3/SDL_EventType">SDL_EVENT_WINDOW_MAXIMIZED</a>)
-<li><a href="https://wiki.libsdl.org/SDL3/SDL_RestoreWindow">SDL_RestoreWindow()</a> (<a href="https://wiki.libsdl.org/SDL3/SDL_EventType">SDL_EVENT_WINDOW_RESTORED</a>)
-<li><a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowFullscreen">SDL_SetWindowFullscreen()</a> (<a href="https://wiki.libsdl.org/SDL3/SDL_EventType">SDL_EVENT_WINDOW_ENTER_FULLSCREEN</a> / <a href="https://wiki.libsdl.org/SDL3/SDL_EventType">SDL_EVENT_WINDOW_LEAVE_FULLSCREEN</a>)
+<li><a href="SDL_SetWindowSize.html">SDL_SetWindowSize()</a> (<a href="SDL_EventType.html">SDL_EVENT_WINDOW_RESIZED</a>)
+<li><a href="SDL_SetWindowPosition.html">SDL_SetWindowPosition()</a> (<a href="SDL_EventType.html">SDL_EVENT_WINDOW_MOVED</a>)
+<li><a href="SDL_MinimizeWindow.html">SDL_MinimizeWindow()</a> (<a href="SDL_EventType.html">SDL_EVENT_WINDOW_MINIMIZED</a>)
+<li><a href="SDL_MaximizeWindow.html">SDL_MaximizeWindow()</a> (<a href="SDL_EventType.html">SDL_EVENT_WINDOW_MAXIMIZED</a>)
+<li><a href="SDL_RestoreWindow.html">SDL_RestoreWindow()</a> (<a href="SDL_EventType.html">SDL_EVENT_WINDOW_RESTORED</a>)
+<li><a href="SDL_SetWindowFullscreen.html">SDL_SetWindowFullscreen()</a> (<a href="SDL_EventType.html">SDL_EVENT_WINDOW_ENTER_FULLSCREEN</a> / <a href="SDL_EventType.html">SDL_EVENT_WINDOW_LEAVE_FULLSCREEN</a>)
 </ul>
 <p>
-これらの関数の呼び出しの後, 即時に操作を適用したい場合は, <a href="https://wiki.libsdl.org/SDL3/SDL_SyncWindow">SDL_SyncWindow()</a>関数で待機中の全てのウィンドウ操作が完了するまで待つこと.
+これらの関数の呼び出しの後, 即時に操作を適用したい場合は, <a href="SDL_SyncWindow.html">SDL_SyncWindow()</a>関数で待機中の全てのウィンドウ操作が完了するまで待つこと.
 <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS">SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS</a>ヒントで, SDL2の動作に似せて全ての非同期ウィンドウ操作関数の呼び出しを自動的に同期処理にすることもできる.
 ウィンドウのアニメーションが完了するまで待つため, 同期させると長時間ブロックされる可能性があるので注意すること.
 さらに, ウィンドウシステムは要求を拒否したり, 正確に従わないこともある(例えばウィンドウはデスクトップの利用可能な領域やスクリーンの外に移動できない)ため, 対応するイベントが送られないことや, 期待する値が含まれない場合がある.
