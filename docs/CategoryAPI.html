@@ -622,7 +622,7 @@
 <li><a href="SDL_GetWindowSize.html">SDL_GetWindowSize</a> - ウィンドウのクライアント領域のサイズを得る
 <li><a href="SDL_GetWindowSizeInPixels.html">SDL_GetWindowSizeInPixels</a> - ウィンドウのクライアント領域のサイズをピクセル数で得る
 <li><a href="SDL_GetWindowSurface.html">SDL_GetWindowSurface</a> - ウィンドウに関連付けられたサーフェイスを得る
-<li><a href="SDL_GetWindowSurfaceVSync.html">SDL_GetWindowSurfaceVSync</a> - ウィンドウのサーフェイスの垂直更新周期を得る
+<li><a href="SDL_GetWindowSurfaceVSync.html">SDL_GetWindowSurfaceVSync</a> - ウィンドウのサーフェイスの垂直同期を得る
 <li><a href="SDL_GetWindowTitle.html">SDL_GetWindowTitle</a> - ウィンドウのタイトルを得る
 <li><a href="SDL_GL_CreateContext.html">SDL_GL_CreateContext</a> - OpenGLウィンドウで使うためにOpenGLコンテキストを生成し, カレントコンテキストにする
 <li><a href="SDL_GL_DestroyContext.html">SDL_GL_DestroyContext</a> - OpenGLコンテキストを削除する
@@ -1098,25 +1098,25 @@
 <li><a href="SDL_SetWindowFullscreen.html"> - ウィンドウのフルスクリーン状態の設定を要求する
 <li><a href="SDL_SetWindowFullscreenMode.html">SDL_SetWindowFullscreenMode</a> - ウィンドウが可視状態かつフルスクリーンのときに使用するディスプレイモードを設定する
 <li><a href="SDL_SetWindowHitTest.html">SDL_SetWindowHitTest</a> - ウィンドウの領域が特別な機能を持っているかを決めるコールバック関数を設定する
-<li>SDL_SetWindowIcon
-<li>SDL_SetWindowKeyboardGrab
-<li>SDL_SetWindowMaximumSize
-<li>SDL_SetWindowMinimumSize
-<li>SDL_SetWindowModal
-<li>SDL_SetWindowMouseGrab
-<li>SDL_SetWindowMouseRect
-<li>SDL_SetWindowOpacity
-<li>SDL_SetWindowParent
-<li>SDL_SetWindowPosition
-<li>SDL_SetWindowProgressState
-<li>SDL_SetWindowProgressValue
+<li><a href="SDL_SetWindowIcon.html">SDL_SetWindowIcon</a> - ウィンドウのアイコンを設定する
+<li><a href="SDL_SetWindowKeyboardGrab.html">SDL_SetWindowKeyboardGrab</a> - ウィンドウのキーボードグラブモードを設定する
+<li><a href="SDL_SetWindowMaximumSize.html">SDL_SetWindowMaximumSize</a> - ウィンドウのクライアント領域の最大サイズを設定する
+<li><a href="SDL_SetWindowMinimumSize.html">SDL_SetWindowMinimumSize</a> - ウィンドウのクライアント領域の最小サイズを設定する
+<li><a href="SDL_SetWindowModal.html">SDL_SetWindowModal</a> - ウィンドウのモーダルを設定する
+<li><a href="SDL_SetWindowMouseGrab.html">SDL_SetWindowMouseGrab</a> - ウィンドウのマウスグラブモードを設定する
+<li><a href="SDL_SetWindowMouseRect.html">SDL_SetWindowMouseRect</a> - ウィンドウのマウスの移動範囲を設定する
+<li><a href="SDL_SetWindowOpacity.html">SDL_SetWindowOpacity</a> - ウィンドウの不透明度を設定する
+<li><a href="SDL_SetWindowParent.html">SDL_SetWindowParent</a> - ウィンドウを子ウィンドウにする
+<li><a href="SDL_SetWindowPosition.html">SDL_SetWindowPosition</a> - ウィンドウの位置の設定を要求する
+<li><a href="SDL_SetWindowProgressState.html">SDL_SetWindowProgressState</a> - タスクバーアイコンのプログレスバーの状態を設定する
+<li><a href="SDL_SetWindowProgressValue.html">SDL_SetWindowProgressValue</a> - タスクバーアイコンのプログレスバーの値を設定する
 <li>SDL_SetWindowRelativeMouseMode
-<li>SDL_SetWindowResizable
-<li>SDL_SetWindowShape
-<li>SDL_SetWindowSize
+<li><a href="SDL_SetWindowResizable.html">SDL_SetWindowResizable</a> - ウィンドウのサイズ変更許可状態を設定する
+<li><a href="SDL_SetWindowShape.html">SDL_SetWindowShape</a> - 透過ウィンドウの形状を設定する
+<li><a href="SDL_SetWindowSize.html">SDL_SetWindowSize</a> - ウィンドウのクライアント領域のサイズの設定を要求する
 <li>SDL_SetWindowsMessageHook
-<li>SDL_SetWindowSurfaceVSync
-<li>SDL_SetWindowTitle
+<li><a href="SDL_SetWindowSurfaceVSync.html">SDL_SetWindowSurfaceVSync</a> - ウィンドウのサーフェイスの垂直同期を設定する
+<li><a href="SDL_SetWindowTitle.html">SDL_SetWindowTitle</a> - ウィンドウのタイトルを設定する
 <li>SDL_SetX11EventHook
 <li>SDL_ShouldInit
 <li>SDL_ShouldQuit
@@ -1128,8 +1128,8 @@
 <li>SDL_ShowOpenFolderDialog
 <li>SDL_ShowSaveFileDialog
 <li>SDL_ShowSimpleMessageBox
-<li>SDL_ShowWindow
-<li>SDL_ShowWindowSystemMenu
+<li><a href="SDL_ShowWindow.html">SDL_ShowWindow</a> - ウィンドウを表示する
+<li><a href="SDL_ShowWindowSystemMenu.html">SDL_ShowWindowSystemMenu</a> - システムのウィンドウメニューを表示する
 <li>SDL_SignalAsyncIOQueue
 <li>SDL_SignalCondition
 <li>SDL_SignalSemaphore
@@ -1188,7 +1188,7 @@
 <li>SDL_Swap64
 <li>SDL_SwapFloat
 <li>SDL_swprintf
-<li>SDL_SyncWindow
+<li><a href="SDL_SyncWindow.html">SDL_SyncWindow</a> - 保留中のウィンドウ状態の変更が完了するまでブロックする
 <li>SDL_tan
 <li>SDL_tanf
 <li>SDL_TellIO
@@ -1231,8 +1231,8 @@
 <li>SDL_UpdateSensors
 <li>SDL_UpdateTexture
 <li>SDL_UpdateTrays
-<li>SDL_UpdateWindowSurface
-<li>SDL_UpdateWindowSurfaceRects
+<li><a href="SDL_UpdateWindowSurface.html">SDL_UpdateWindowSurface</a> - ウィンドウサーフェイスを画面にコピーする
+<li><a href="SDL_UpdateWindowSurfaceRects.html">SDL_UpdateWindowSurfaceRects</a> - ウィンドウサーフェイスの領域を画面にコピーする
 <li>SDL_UpdateYUVTexture
 <li>SDL_UploadToGPUBuffer
 <li>SDL_UploadToGPUTexture
@@ -1278,7 +1278,7 @@
 <li>SDL_wcsnstr
 <li>SDL_wcsstr
 <li>SDL_wcstol
-<li>SDL_WindowHasSurface
+<li><a href="SDL_WindowHasSurface.html">SDL_WindowHasSurface</a> - ウィンドウに関連付けられたサーフェイスがあるかを得る
 <li>SDL_WindowSupportsGPUPresentMode
 <li>SDL_WindowSupportsGPUSwapchainComposition
 <li>SDL_WriteAsyncIO
@@ -1329,7 +1329,7 @@
 <li>SDL_Cursor
 <li>SDL_DialogFileCallback
 <li><a href="SDL_DisplayID.html">SDL_DisplayID</a> - 現在システムに接続されているディスプレイのユニークIDの型
-<li><a href="SDL_WindowID.html">SDL_WindowID</a> - ウィンドウユニークID
+<li><a href="SDL_WindowID.html">SDL_WindowID</a> - ウィンドウユニークIDの型
 <li><a href="SDL_DisplayModeData.html">SDL_DisplayModeData</a> - ディスプレイモードの内部データ型
 <li><a href="SDL_EGLAttrib.html">SDL_EGLAttrib</a> - EGLコンテキストを生成するとき使われるEGL attributeの型
 <li><a href="SDL_EGLAttribArrayCallback.html">SDL_EGLAttribArrayCallback</a> - EGL環境初期化時の追加のattributeを得るコールバックの型
@@ -1377,7 +1377,7 @@
 <li>SDL_HapticID
 <li>SDL_hid_device
 <li><a href="SDL_HintCallback.html">SDL_HintCallback</a> - ヒントの値の変化の通知するために使用されるコールバックの型
-<li>SDL_HitTest
+<li><a href="SDL_HitTest.html">SDL_HitTest</a> - 領域判定コールバックの型
 <li>SDL_iconv_t
 <li><a href="SDL_InitFlags.html">SDL_InitFlags</a> - SDL_InitとSDL_InitSubSystemの初期化フラグの型 
 <li>SDL_iOSAnimationCallback
@@ -1458,7 +1458,7 @@
 <li>SDL_DateTime
 <li>SDL_DialogFileFilter
 <li><a href="SDL_DisplayEvent.html">SDL_DisplayEvent</a> - ディスプレイイベントの構造体(event.display.*)
-<li>SDL_DisplayMode
+<li><a href="SDL_DisplayMode.html">SDL_DisplayMode</a> - ディスプレイモードの構造体
 <li><a href="SDL_DropEvent.html">SDL_DropEvent</a> - ドロップイベントの構造体(event.drop.*)
 <li><a href="SDL_Event.html">SDL_Event</a> - 異なる種類のイベントの情報を持つ共用体
 <li>SDL_FColor
@@ -1625,7 +1625,7 @@
 <li>SDL_GPUVertexInputRate
 <li>SDL_hid_bus_type
 <li><a href="SDL_HintPriority.html">SDL_HintPriority</a> - ヒントの優先度の列挙体
-<li>SDL_HitTestResult
+<li><a href="SDL_HitTestResult.html">SDL_HitTestResult</a> - SDL_SetWindowHitTest()コールバック関数が戻す値の列挙体
 <li>SDL_InitStatus
 <li>SDL_IOStatus
 <li>SDL_IOWhence
@@ -1644,7 +1644,7 @@
 <li>SDL_PixelType
 <li><a href="SDL_PowerState.html">SDL_PowerState</a> - システムの電源の基本的な状態の列挙体
 <li>SDL_ProcessIO
-<li>SDL_ProgressState
+<li><a href="SDL_ProgressState.html">SDL_ProgressState</a> - プログレスバーの状態の列挙体
 <li><a href="SDL_PropertyType.html">SDL_PropertyType</a> - SDLプロパティ型の列挙体
 <li>SDL_RendererLogicalPresentation
 <li>SDL_Sandbox
@@ -1652,7 +1652,7 @@
 <li>SDL_Scancode
 <li>SDL_SensorType
 <li>SDL_SystemCursor
-<li>SDL_SystemTheme
+<li><a href="SDL_SystemTheme.html">SDL_SystemTheme</a> - システムのテーマの列挙体
 <li>SDL_TextInputType
 <li>SDL_TextureAccess
 <li>SDL_TextureAddressMode
@@ -2301,7 +2301,7 @@
 <li>SDL_PROP_GAMEPAD_CAP_RGB_LED_BOOLEAN
 <li>SDL_PROP_GAMEPAD_CAP_RUMBLE_BOOLEAN
 <li>SDL_PROP_GAMEPAD_CAP_TRIGGER_RUMBLE_BOOLEAN
-<li>SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER
+<li><a href="SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER.html">SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER</a> - Waylandビデオバックグラウンドで使用されるグローバルwl_displayオブジェクトへのポインタのマクロ
 <li>SDL_PROP_GPU_BUFFER_CREATE_NAME_STRING
 <li>SDL_PROP_GPU_COMPUTEPIPELINE_CREATE_NAME_STRING
 <li>SDL_PROP_GPU_DEVICE_CREATE_D3D12_ALLOW_FEWER_RESOURCE_SLOTS_BOOLEAN
@@ -2655,14 +2655,14 @@
 <li>SDL_WINDOW_TRANSPARENT
 <li>SDL_WINDOW_UTILITY
 <li>SDL_WINDOW_VULKAN
-<li>SDL_WINDOWPOS_CENTERED
-<li>SDL_WINDOWPOS_CENTERED_DISPLAY
-<li>SDL_WINDOWPOS_CENTERED_MASK
-<li>SDL_WINDOWPOS_ISCENTERED
-<li>SDL_WINDOWPOS_ISUNDEFINED
-<li>SDL_WINDOWPOS_UNDEFINED
-<li>SDL_WINDOWPOS_UNDEFINED_DISPLAY
-<li>SDL_WINDOWPOS_UNDEFINED_MASK
+<li><a href="SDL_WINDOWPOS_CENTERED.html">SDL_WINDOWPOS_CENTERED</a> - ウィンドウの位置を中央にすることを示す値のマクロ
+<li><a href="SDL_WINDOWPOS_CENTERED_DISPLAY.html">SDL_WINDOWPOS_CENTERED_DISPLAY</a> - ウィンドウの位置を指定のディスプレイの中央にすることを示す値のマクロ
+<li><a href="SDL_WINDOWPOS_CENTERED_MASK.html">SDL_WINDOWPOS_CENTERED_MASK</a> - SDL_WINDOWPOS_CENTEREDで使用するマジックナンバーのマクロ
+<li><a href="SDL_WINDOWPOS_ISCENTERED.html">SDL_WINDOWPOS_ISCENTERED</a> - ウィンドウの位置に「中央」のマスクがあるかをテストするマクロ
+<li><a href="SDL_WINDOWPOS_ISUNDEFINED.html">SDL_WINDOWPOS_ISUNDEFINED</a> - ウィンドウの位置に「不特定」のマスクがあるかをテストするマクロ
+<li><a href="SDL_WINDOWPOS_UNDEFINED.html">SDL_WINDOWPOS_UNDEFINED</a> - ウィンドウの位置を指定しないことを示す値のマクロ
+<li><a href="SDL_WINDOWPOS_UNDEFINED_DISPLAY.html">SDL_WINDOWPOS_UNDEFINED_DISPLAY</a> - ウィンドウの位置を指定のディスプレイの不定の位置とすることを示す値のマクロ
+<li><a href="SDL_WINDOWPOS_UNDEFINED_MASK.html">SDL_WINDOWPOS_UNDEFINED_MASK</a> - SDL_WINDOWPOS_UNDEFINEDで使用するマジックナンバーのマクロ
 <li>SDL_WPRINTF_VARARG_FUNC
 <li>SDL_WPRINTF_VARARG_FUNCV
 <li>SDL_zero

@@ -11,7 +11,7 @@
 <a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryVideo.html">ディスプレイとウィンドウ</a> - SDL_GetWindowSurfaceVSync
 <hr>
 <h1>SDL_GetWindowSurfaceVSync</h1>
-ウィンドウのサーフェイスの垂直更新周期を得る
+ウィンドウのサーフェイスの垂直同期を得る
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_video.h">SDL3/SDL_video.h</a>
 <h2>構文</h2>
@@ -19,7 +19,7 @@
 <h2>引数</h2>
 <table border="1">
 <tr><td><a href="SDL_Window.html">SDL_Window</a> *</td><td>window</td><td>問い合わせるウィンドウ</td></tr>
-<tr><td>int *</td><td>vsync</td><td>現在の垂直更新周期の代入先へのポインタ. この値の詳細は<a href="SDL_SetWindowSurfaceVSync.html">SDL_SetWindowSurfaceVSync()</a>を参照すること</td></tr>
+<tr><td>int *</td><td>vsync</td><td>現在の垂直同期の代入先へのポインタ. この値の詳細は<a href="SDL_SetWindowSurfaceVSync.html">SDL_SetWindowSurfaceVSync()</a>を参照すること</td></tr>
 </table>
 <h2>戻り値</h2>
 (bool) 成功のとき真, 失敗のとき偽を戻す.

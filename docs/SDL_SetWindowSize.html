@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryVideo.html" title="1つ上">
+<title>SDL_SetWindowSize</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryVideo.html">ディスプレイとウィンドウ</a> - SDL_SetWindowSize
+<hr>
+<h1>SDL_SetWindowSize</h1>
+ウィンドウのクライアント領域のサイズの設定を要求する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_video.h">SDL3/SDL_video.h</a>
+<h2>構文</h2>
+<code>bool SDL_SetWindowSize(SDL_Window *window, int w, int h);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Window.html">SDL_Window</a> *</td><td>window</td><td>変更するウィンドウ</td></tr>
+<tr><td>int</td><td>w</td><td>ウィンドウの幅. &gt;0の必要がある</td></tr>
+<tr><td>int</td><td>h</td><td>ウィンドウの高さ. &gt;0の必要がある</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+ウィンドウがフルスクリーンまたは最大化の場合は, この要求は効果がない.
+</p>
+<p>
+ウィンドウの排他的フルスクリーンモードの変更は<a href="SDL_SetWindowFullscreenMode.html">SDL_SetWindowFullscreenMode()</a>で行える.
+</p>
+<p>
+一部のウィンドウシステムでは, この要求は非同期で, この関数から戻っても新しいウィンドウの状態は即座には適応されない. 即座に変更したい場合は, <a href="SDL_SyncWindow.html">SDL_SyncWindow()</a>を呼んで変更されるまでブロックすること. 
+</p>
+<p>
+ウィンドウのサイズが変わると, 新しいサイズでSDL_EVENT_WINDOW_RESIZEDイベントが発生する.
+一部のウィンドウシステムは様々な条件でウィンドウの位置を制限する(例えば表示領域をデスクトップの利用可能範囲に収まるようにする)場合があるため, ウィンドウのサイズは要求したサイズと正確には一致しない場合があるので注意すること.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼べるのはメインスレッドのみである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_SetWindowSize.html">SDL_SetWindowSize</a>
+<li><a href="SDL_SetWindowFullscreenMode.html">SDL_SetWindowFullscreenMode</a>
+<li><a href="SDL_SyncWindow.html">SDL_SyncWindow</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowSize">SDL_SetWindowSize - SDL Wiki</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryVideo.html" title="1つ上">
+<title>SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryVideo.html">ディスプレイとウィンドウ</a> - SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER
+<hr>
+<h1>SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER</h1>
+Waylandビデオバックグラウンドで使用されるグローバルwl_displayオブジェクトへのポインタのマクロ
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_video.h">SDL3/SDL_video.h</a>
+<h2>構文</h2>
+<code>#define SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER "SDL.video.wayland.wl_display"</code>
+<h2>明細</h2>
+<p>
+SDLで使用するアプリケーションまたはツールキットのwl_displayオブジェクトを取り込むためにビデオサブシステムを初期化する前に設定する,
+またはWaylandビデオバックグラウンドが使用するwl_displayを外部に出すために初期化の後で読み込むことができる.
+ビデオサブシステムを初期化した後でこのプロパティを設定しても効果はなく, ビデオサブシステムの初期化の前に読み込んだ場合は, ユーザが設定した値があればその値が戻り, ない場合はNULLが戻る.
+詳細はdocs/README-wayland.mdを参照すること.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER">SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
