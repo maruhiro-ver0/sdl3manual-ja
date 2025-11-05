@@ -19,7 +19,7 @@ SDLサーフェイスはシステムRAM上にあるピクセルのバッファ�
 <a href="SDL_Surface.html">SDL_Surface</a>は様々な形式の画像の操作に対応している. そして, サーフェイス間のコピー, 画像データの長方形領域の塗りつぶし等のデータ操作に便利な道具が提供されている.
 </p>
 <p>
-単純な.bmpローダーのSDL_LoadBMP()も存在する.
+単純な.bmpローダーの<a href="SDL_LoadBMP.html">SDL_LoadBMP()</a>も存在する.
 SDL自身は他の様々なファイル形式の読み込みは提供されていないが, 補助ライブラリのSDL_imageを含むいくつかの優れた外部ライブラリが存在する:
 </p>
 <p>
@@ -41,7 +41,7 @@ SDL自身は他の様々なファイル形式の読み込みは提供されて�
 <li>SDL_ConvertSurface
 <li>SDL_ConvertSurfaceAndColorspace
 <li><a href="SDL_CreateSurface.html">SDL_CreateSurface</a> - 指定したピクセル形式で新しいサーフェイスを生成する
-<li>SDL_CreateSurfaceFrom
+<li><a href="SDL_CreateSurfaceFrom.html">SDL_CreateSurfaceFrom</a> - 既存のピクセルデータから指定のピクセル形式の新しいサーフェイスを生成する
 <li>SDL_CreateSurfacePalette
 <li><a href="SDL_DestroySurface.html">SDL_DestroySurface</a> - サーフェイスを破棄する 
 <li>SDL_DuplicateSurface
@@ -57,9 +57,9 @@ SDL自身は他の様々なファイル形式の読み込みは提供されて�
 <li><a href="SDL_GetSurfaceImages.html">SDL_GetSurfaceImages</a> - サーフェイスの全てのバージョンの配列を得る
 <li>SDL_GetSurfacePalette
 <li>SDL_GetSurfaceProperties
-<li>SDL_LoadBMP
-<li>SDL_LoadBMP_IO
-<li>SDL_LockSurface
+<li><a href="SDL_LoadBMP.html">SDL_LoadBMP</a> - BMPファイルをサーフェイスに読み込む
+<li><a href="SDL_LoadBMP_IO.html">SDL_LoadBMP_IO</a> - シーク可能なSDLデータストリームからBMP形式をサーフェイスに読み込む
+<li><a href="SDL_LockSurface.html">SDL_LockSurface</a> - ピクセル領域に直接アクセスできるように設定する
 <li>SDL_MapSurfaceRGB
 <li>SDL_MapSurfaceRGBA
 <li>SDL_PremultiplyAlpha
@@ -67,8 +67,8 @@ SDL自身は他の様々なファイル形式の読み込みは提供されて�
 <li>SDL_ReadSurfacePixel
 <li>SDL_ReadSurfacePixelFloat
 <li><a href="SDL_RemoveSurfaceAlternateImages.html">SDL_RemoveSurfaceAlternateImages</a> - サーフェイスの全ての別バージョンを取り除く
-<li>SDL_SaveBMP
-<li>SDL_SaveBMP_IO
+<li><a href="SDL_SaveBMP.html">SDL_SaveBMP</a> - サーフェイスをBMPファイルとして保存する
+<li><a href="SDL_SaveBMP_IO.html">SDL_SaveBMP_IO</a> - サーフェイスをシーク可能なSDLストリームにBMP形式で書き込む
 <li>SDL_ScaleSurface
 <li>SDL_SetSurfaceAlphaMod
 <li>SDL_SetSurfaceBlendMode
@@ -82,7 +82,7 @@ SDL自身は他の様々なファイル形式の読み込みは提供されて�
 <li><a href="SDL_SurfaceHasAlternateImages.html">SDL_SurfaceHasAlternateImages</a> - サーフェイスに利用可能な別のバージョンがあるかを得る
 <li>SDL_SurfaceHasColorKey
 <li>SDL_SurfaceHasRLE
-<li>SDL_UnlockSurface
+<li><a href="SDL_UnlockSurface.html">SDL_UnlockSurface</a> - ピクセル領域に直接アクセスした後にロックを解放する
 <li>SDL_WriteSurfacePixel
 <li>SDL_WriteSurfacePixelFloat
 </ol>

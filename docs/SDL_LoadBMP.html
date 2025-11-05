@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySurface.html" title="1つ上">
+<title>SDL_LoadBMP</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategorySurface.html">サーフェイスの生成と単純な描画</a> - SDL_LoadBMP
+<hr>
+<h1>SDL_LoadBMP</h1>
+BMPファイルをサーフェイスに読み込む
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_surface.h">SDL3/SDL_surface.h</a>
+<h2>構文</h2>
+<code>SDL_Surface * SDL_LoadBMP(const char *file);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const char *</td><td>file</td><td>BMPイメージファイル</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Surface.html">SDL_Surface</a> *) 成功のとき生成された<a href="SDL_Surface.html">SDL_Surface</a>, 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+生成されたサーフェイスは<a href="SDL_DestroySurface.html">SDL_DestroySurface()</a>で解放する必要がある.
+そうしないとメモリリークを引き起こすだろう.
+</p>
+<h2>スレッドセーフ</h2>
+この関数はどのスレッドからも安全に呼べる.
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_DestroySurface.html">SDL_DestroySurface</a>
+<li><a href="SDL_LoadBMP_IO.html">SDL_LoadBMP_IO</a>
+<li><a href="SDL_SaveBMP.html">SDL_SaveBMP</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_LoadBMP">SDL_LoadBMP - SDL Wiki</a>
+<hr>
+</body>
+</html>
