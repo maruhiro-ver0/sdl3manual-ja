@@ -11,7 +11,7 @@
 <a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategorySurface.html">サーフェイスの生成と単純な描画</a> - SDL_BlitSurface9Grid
 <hr>
 <h1>SDL_BlitSurface9Grid</h1>
-9-grid algorithmを使用して拡大縮小して高速にビットブロック転送する. 形式が異なってもよい
+サーフェイスに9-grid algorithmを使用して拡大縮小して転送する. 形式が異なってもよい
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_surface.h">SDL3/SDL_surface.h</a>
 <h2>構文</h2>
@@ -27,7 +27,7 @@
 <tr><td>float</td><td>scale</td><td><code>srcrect</code>の隅の<code>dstrect</code>の隅への転送時の拡大率. 0.0fのとき拡大縮小せずに転送する</td></tr>
 <tr><td><a href="SDL_ScaleMode.html">SDL_ScaleMode</a></td><td>scaleMode</td><td>使用する拡大縮小アルゴリズム</td></tr>
 <tr><td><a href="SDL_Surface.html">SDL_Surface</a> *</td><td>dst</td><td>コピー先の<a href="SDL_Surface.html">SDL_Surface</a></td></tr>
-<tr><td>const <a href="SDL_Rect.html">SDL_Rect</a> *</td><td>dstrect</td><td>サーフェイスのコピー先の領域を表すSDL_Rect. NULLのときサーフェイス全体</td></tr>
+<tr><td>const <a href="SDL_Rect.html">SDL_Rect</a> *</td><td>dstrect</td><td>サーフェイスのコピー先の領域を表す<a href="SDL_Rect.html">SDL_Rect</a>. NULLのときサーフェイス全体</td></tr>
 </table>
 <h2>戻り値</h2>
 (bool) 成功のとき真, 失敗のとき偽を戻す.
