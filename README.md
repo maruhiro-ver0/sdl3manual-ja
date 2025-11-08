@@ -1,6 +1,6 @@
 Simple Directmedia Layer (SDL) 3.0 の日本語リファレンスマニュアルです。
 
-進捗率 12%
+進捗率 13%
 
 公式ページ
 * https://www.libsdl.org/
