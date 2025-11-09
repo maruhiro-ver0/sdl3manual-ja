@@ -554,7 +554,7 @@
 <li><a href="SDL_GetSurfaceBlendMode.html">SDL_GetSurfaceBlendMode</a> - 転送で使用するブレンドモードを得る
 <li><a href="SDL_GetSurfaceClipRect.html">SDL_GetSurfaceClipRect</a> - サーフェイスのクリップ枠を得る
 <li><a href="SDL_GetSurfaceColorKey.html">SDL_GetSurfaceColorKey</a> - サーフェイスのカラーキー(透過ピクセル)を得る
-<li><a href="SDL_GetSurfaceColorMod.html">SDL_GetSurfaceColorMod</a> - 転送時に積算される色を得る
+<li><a href="SDL_GetSurfaceColorMod.html">SDL_GetSurfaceColorMod</a> - 転送時に積算される色要素を得る
 <li><a href="SDL_GetSurfaceColorspace.html">SDL_GetSurfaceColorspace</a> - サーフェイスの色空間を得る
 <li><a href="SDL_GetSurfaceImages.html">SDL_GetSurfaceImages</a> - サーフェイスの全てのバージョンの配列を得る
 <li><a href="SDL_GetSurfacePalette.html">SDL_GetSurfacePalette</a> - サーフェイスのパレットを得る
@@ -793,8 +793,8 @@
 <li>SDL_MapGPUTransferBuffer
 <li>SDL_MapRGB
 <li>SDL_MapRGBA
-<li>SDL_MapSurfaceRGB
-<li>SDL_MapSurfaceRGBA
+<li><a href="SDL_MapSurfaceRGB.html">SDL_MapSurfaceRGB</a> - RGBの値からサーフェイスの不透明なピクセルの値を求める
+<li><a href="SDL_MapSurfaceRGBA.html">SDL_MapSurfaceRGBA</a> - RGBAの値からサーフェイスの透過ピクセルの値を求める
 <li><a href="SDL_MaximizeWindow.html">SDL_MaximizeWindow</a> - ウィンドウの最大化を要求する
 <li>SDL_memcmp
 <li>SDL_memcpy
@@ -846,8 +846,8 @@
 <li>SDL_PopGPUDebugGroup
 <li>SDL_pow
 <li>SDL_powf
-<li>SDL_PremultiplyAlpha
-<li>SDL_PremultiplySurfaceAlpha
+<li><a href="SDL_PremultiplyAlpha.html">SDL_PremultiplyAlpha</a> - ピクセル群のα要素を事前に積算する
+<li><a href="SDL_PremultiplySurfaceAlpha.html">SDL_PremultiplySurfaceAlpha</a> - サーフェイスのα要素を事前に積算する
 <li><a href="SDL_PumpEvents.html">SDL_PumpEvents</a> - 入力デバイスから吸い出したイベントをイベントループに加える
 <li><a href="SDL_PushEvent.html">SDL_PushEvent</a> - イベントをキューに加える
 <li>SDL_PushGPUComputeUniformData
@@ -880,8 +880,8 @@
 <li>SDL_ReadS64LE
 <li>SDL_ReadS8
 <li>SDL_ReadStorageFile
-<li>SDL_ReadSurfacePixel
-<li>SDL_ReadSurfacePixelFloat
+<li><a href="SDL_ReadSurfacePixel.html">SDL_ReadSurfacePixel</a> - サーフェイスからピクセルを読み取る
+<li><a href="SDL_ReadSurfacePixelFloat.html">SDL_ReadSurfacePixelFloat</a> - サーフェイスからピクセルを読み取る
 <li>SDL_ReadU16BE
 <li>SDL_ReadU16LE
 <li>SDL_ReadU32BE
@@ -971,7 +971,7 @@
 <li>SDL_SavePNG_IO
 <li>SDL_scalbn
 <li>SDL_scalbnf
-<li>SDL_ScaleSurface
+<li><a href="SDL_ScaleSurface.html">SDL_ScaleSurface</a> - 既存のサーフェイスのサイズを変更して新しいサーフェイスを生成する
 <li>SDL_ScreenKeyboardShown
 <li><a href="SDL_ScreenSaverEnabled.html">SDL_ScreenSaverEnabled</a> - スクリーンセーバーを有効にする
 <li>SDL_SeekIO
@@ -1068,14 +1068,14 @@
 <li>SDL_SetRenderVSync
 <li>SDL_SetScancodeName
 <li><a href="SDL_SetStringProperty.html">SDL_SetStringProperty</a> - プロパティグループの文字列型プロパティを設定する
-<li>SDL_SetSurfaceAlphaMod
-<li>SDL_SetSurfaceBlendMode
-<li>SDL_SetSurfaceClipRect
-<li>SDL_SetSurfaceColorKey
-<li>SDL_SetSurfaceColorMod
-<li>SDL_SetSurfaceColorspace
-<li>SDL_SetSurfacePalette
-<li>SDL_SetSurfaceRLE
+<li><a href="SDL_SetSurfaceAlphaMod.html">SDL_SetSurfaceAlphaMod</a> - 転送で使用するα値を設定する
+<li><a href="SDL_SetSurfaceBlendMode.html">SDL_SetSurfaceBlendMode</a> - 転送で使用するブレンドモードを設定する
+<li><a href="SDL_SetSurfaceClipRect.html">SDL_SetSurfaceClipRect</a> - サーフェイスのクリップ枠を設定する
+<li><a href="SDL_SetSurfaceColorKey.html">SDL_SetSurfaceColorKey</a> - サーフェイスのカラーキー(透過ピクセル)を設定する
+<li><a href="SDL_SetSurfaceColorMod.html">SDL_SetSurfaceColorMod</a> - 転送時に積算される色要素を設定する
+<li><a href="SDL_SetSurfaceColorspace.html">SDL_SetSurfaceColorspace</a> - サーフェイスの色空間を設定する
+<li><a href="SDL_SetSurfacePalette.html">SDL_SetSurfacePalette</a> - サーフェイスのパレットを設定する
+<li><a href="SDL_SetSurfaceRLE.html">SDL_SetSurfaceRLE</a> - サーフェイスにRLEアクセラレーションのヒントを設定する
 <li>SDL_SetTextInputArea
 <li>SDL_SetTextureAlphaMod
 <li>SDL_SetTextureAlphaModFloat
@@ -1156,7 +1156,7 @@
 <li>SDL_strchr
 <li>SDL_strcmp
 <li>SDL_strdup
-<li>SDL_StretchSurface
+<li><a href="SDL_StretchSurface.html">SDL_StretchSurface</a> - サーフェイスにピクセルを引き延ばして転送する
 <li><a href="SDL_StringToGUID.html">SDL_StringToGUID</a> - GUID文字列をSDL_GUID構造体に変換する
 <li>SDL_strlcat
 <li>SDL_strlcpy
@@ -1181,8 +1181,8 @@
 <li>SDL_SubmitGPUCommandBuffer
 <li>SDL_SubmitGPUCommandBufferAndAcquireFence
 <li><a href="SDL_SurfaceHasAlternateImages.html">SDL_SurfaceHasAlternateImages</a> - サーフェイスに利用可能な別のバージョンがあるかを得る
-<li>SDL_SurfaceHasColorKey
-<li>SDL_SurfaceHasRLE
+<li><a href="SDL_SurfaceHasColorKey.html">SDL_SurfaceHasColorKey</a> - サーフェイスのカラーキーの有無を得る
+<li><a href="SDL_SurfaceHasRLE.html">SDL_SurfaceHasRLE</a> - サーフェイスのRLEが有効かを得る
 <li>SDL_Swap16
 <li>SDL_Swap32
 <li>SDL_Swap64
@@ -1291,8 +1291,8 @@
 <li>SDL_WriteS64LE
 <li>SDL_WriteS8
 <li>SDL_WriteStorageFile
-<li>SDL_WriteSurfacePixel
-<li>SDL_WriteSurfacePixelFloat
+<li><a href="SDL_WriteSurfacePixel.html">SDL_WriteSurfacePixel</a> - サーフェイスにピクセルを書き込む
+<li><a href="SDL_WriteSurfacePixelFloat.html">SDL_WriteSurfacePixelFloat</a> - サーフェイスにピクセルを書き込む
 <li>SDL_WriteU16BE
 <li>SDL_WriteU16LE
 <li>SDL_WriteU32BE
@@ -1433,14 +1433,14 @@
 <li><a href="SDL_WindowID.html">SDL_WindowID</a> - ウィンドウユニークID
 <li>SDL_WindowsMessageHook
 <li>SDL_X11EventHook
-<li>Sint16
-<li>Sint32
-<li>Sint64
-<li>Sint8
-<li>Uint16
-<li>Uint32
-<li>Uint64
-<li>Uint8
+<li><a href="Sint16.html">Sint16</a> - 符号あり16ビット整数型
+<li><a href="Sint32.html">Sint32</a> - 符号あり32ビット整数型
+<li><a href="Sint64.html">Sint64</a> - 符号あり64ビット整数型
+<li><a href="Sint8.html">Sint8</a> - 符号あり8ビット整数型
+<li><a href="Uint16.html">Uint16</a> - 符号なし16ビット整数型
+<li><a href="Uint32.html">Uint32</a> - 符号なし32ビット整数型
+<li><a href="Uint64.html">Uint64</a> - 符号なし64ビット整数型
+<li><a href="Uint8.html">Uint8</a> - 符号なし8ビット整数型
 </ol>
 <h2>構造体</h2>
 <ol>
