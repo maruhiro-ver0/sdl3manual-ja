@@ -32,7 +32,7 @@ SDLはピクセル操作の機能を提供している.
 SDLは2つの表色系, RGBとYCbCr(SDLではYUVとも呼ばれる)を認識する.
 </p>
 <p>
-RGB系には赤, 緑, 青の成分があり, これらを合わせて画面上の色とする.
+RGB系には赤, 緑, 青の要素があり, これらを合わせて画面上の色とする.
 </p>
 <p>
 <a href="https://ja.wikipedia.org/wiki/RGB">https://ja.wikipedia.org/wiki/RGB</a>
@@ -77,18 +77,18 @@ YCbCr系は色を輝度と赤・青彩度のオフセット値として表す.
 <li>SDL_GetPixelFormatDetails
 <li>SDL_GetPixelFormatForMasks
 <li>SDL_GetPixelFormatName
-<li>SDL_GetRGB
-<li>SDL_GetRGBA
-<li>SDL_MapRGB
-<li>SDL_MapRGBA
+<li><a href="SDL_GetRGB.html">SDL_GetRGB</a> - 指定のピクセルのRGB値を得る
+<li><a href="SDL_GetRGBA.html">SDL_GetRGBA</a> - 指定のピクセルのRGBA値を得る
+<li><a href="SDL_MapRGB.html">SDL_MapRGB</a> - RGBの3つの値から指定のピクセル形式の不透明なピクセル値を求める
+<li><a href="SDL_MapRGBA.html">SDL_MapRGBA</a> - RGBAの4つの値から指定のピクセル形式のピクセル値を求める
 <li>SDL_MapSurfaceRGB
 <li>SDL_MapSurfaceRGBA
 <li>SDL_SetPaletteColors
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>SDL_Color
-<li>SDL_FColor
+<li><a href="SDL_Color.html">SDL_Color</a> - 色をRGBA要素で表す構造体
+<li><a href="SDL_FColor.html">SDL_FColor</a> - SDL_PIXELFORMAT_RGBA128_FLOAT形式の浮動小数点の値を並べた色として解釈させることができる構造体
 <li>SDL_Palette
 <li>SDL_PixelFormatDetails
 </ol>
