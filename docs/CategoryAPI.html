@@ -143,7 +143,7 @@
 <li>SDL_CreateGPUTransferBuffer
 <li>SDL_CreateHapticEffect
 <li>SDL_CreateMutex
-<li>SDL_CreatePalette
+<li><a href="SDL_CreatePalette.html">SDL_CreatePalette</a> - 色の数を指定してパレットを生成する
 <li><a href="SDL_CreatePopupWindow.html">SDL_CreatePopupWindow</a> - 指定した親ウィンドウの子ポップアップウィンドウを生成する
 <li>SDL_CreateProcess
 <li>SDL_CreateProcessWithProperties
@@ -183,7 +183,7 @@
 <li>SDL_DestroyGPURenderState
 <li>SDL_DestroyHapticEffect
 <li>SDL_DestroyMutex
-<li>SDL_DestroyPalette
+<li><a href="SDL_DestroyPalette.html">SDL_DestroyPalette</a> - SDL_CreatePalette()で生成したパレットを解放する
 <li>SDL_DestroyProcess
 <li><a href="SDL_DestroyProperties.html">SDL_DestroyProperties</a> - プロパティグループを破棄する
 <li>SDL_DestroyRenderer
@@ -448,7 +448,7 @@
 <li>SDL_GetKeyName
 <li><a href="SDL_GetLogOutputFunction.html">SDL_GetLogOutputFunction</a> - 現在のログ出力関数を得る
 <li><a href="SDL_GetLogPriority.html">SDL_GetLogPriority</a> - ログの分類の重要度を得る
-<li>SDL_GetMasksForPixelFormat
+<li><a href="SDL_GetMasksForPixelFormat.html">SDL_GetMasksForPixelFormat</a> - ピクセル形式からビット深度とRGBAマスクを得る
 <li>SDL_GetMaxHapticEffects
 <li>SDL_GetMaxHapticEffectsPlaying
 <li>SDL_GetMemoryFunctions
@@ -477,10 +477,10 @@
 <li>SDL_GetPathInfo
 <li>SDL_GetPerformanceCounter
 <li>SDL_GetPerformanceFrequency
-<li>SDL_GetPixelFormatDetails
-<li>SDL_GetPixelFormatForMasks
+<li><a href="SDL_GetPixelFormatDetails.html">SDL_GetPixelFormatDetails</a> - ピクセル形式と一致するSDL_PixelFormatDetailsを生成する
+<li><a href="SDL_GetPixelFormatForMasks.html">SDL_GetPixelFormatForMasks</a> - ビット深度とRGBAマスクからピクセル形式を得る
 <li>SDL_GetPixelFormatFromGPUTextureFormat
-<li>SDL_GetPixelFormatName
+<li><a href="SDL_GetPixelFormatName.html">SDL_GetPixelFormatName</a> - ピクセル形式の人間が読める名前を得る
 <li><a href="SDL_GetPlatform.html">SDL_GetPlatform</a> - 環境の名前を得る
 <li><a href="SDL_GetPointerProperty.html">SDL_GetPointerProperty</a> - プロパティグループからポインタ型プロパティを得る
 <li><a href="SDL_GetPowerInfo.html">SDL_GetPowerInfo</a> - 現在の電源の詳細を得る
@@ -1049,7 +1049,7 @@
 <li>SDL_SetMemoryFunctions
 <li>SDL_SetModState
 <li><a href="SDL_SetNumberProperty.html">SDL_SetNumberProperty</a> - プロパティグループの整数型プロパティを設定する
-<li>SDL_SetPaletteColors
+<li><a href="SDL_SetPaletteColors.html">SDL_SetPaletteColors</a> - 範囲を指定してパレットの色を設定する
 <li><a href="SDL_SetPointerProperty.html">SDL_SetPointerProperty</a> - プロパティグループのポインタ型プロパティを設定する
 <li>SDL_SetPointerPropertyWithCleanup
 <li>SDL_SetPrimarySelectionText
@@ -1537,7 +1537,7 @@
 <li><a href="SDL_MouseDeviceEvent.html">SDL_MouseDeviceEvent</a> - マウスデバイスイベントの構造体(event.mdevice.*)
 <li><a href="SDL_MouseMotionEvent.html">SDL_MouseMotionEvent</a> - マウス移動イベントの構造体(event.motion.*)
 <li><a href="SDL_MouseWheelEvent.html">SDL_MouseWheelEvent</a> - マウスホイールイベントの構造体(event.wheel.*)
-<li>SDL_Palette
+<li><a href="SDL_Palette.html">SDL_Palette</a> - パレットを表す一組のインデックス付きの色の構造体
 <li>SDL_PathInfo
 <li><a href="SDL_PenAxisEvent.html">SDL_PenAxisEvent</a> - 感圧式ペン筆圧/角度イベントの構造体(event.paxis.*)
 <li><a href="SDL_PenButtonEvent.html">SDL_PenButtonEvent</a> - 感圧式ペンボタンイベントの構造体(event.pbutton.*)
@@ -1545,7 +1545,7 @@
 <li><a href="SDL_PenProximityEvent.html">SDL_PenProximityEvent</a> - 感圧式ペン接近イベントの構造体(event.pproximity.*)
 <li><a href="SDL_PenTouchEvent.html">SDL_PenTouchEvent</a> - 感圧式ペンタッチイベントの構造体(event.ptouch.*)
 <li><a href="SDL_PinchFingerEvent.html">SDL_PinchFingerEvent</a> - ピンチイベントの構造体(event.pinch.*)
-<li>SDL_PixelFormatDetails
+<li><a href="SDL_PixelFormatDetails.html">SDL_PixelFormatDetails</a> - ピクセル形式の詳細を表す構造体
 <li>SDL_Point
 <li><a href="SDL_QuitEvent.html">SDL_QuitEvent</a> - 終了要求イベントの構造体(event.quit.*)
 <li><a href="SDL_Rect.html">SDL_Rect</a> - 整数で表した左上を基点とした長方形を定義する構造体
@@ -1568,22 +1568,22 @@
 <h2>列挙体</h2>
 <ol>
 <li>SDL_AppResult
-<li>SDL_ArrayOrder
+<li><a href="SDL_ArrayOrder.html">SDL_ArrayOrder</a> - 要素配列の順序の列挙体
 <li>SDL_AssertState
 <li>SDL_AsyncIOResult
 <li>SDL_AsyncIOTaskType
 <li><a href="SDL_AudioFormat.html">SDL_AudioFormat</a> - オーディオ形式の列挙体
-<li>SDL_BitmapOrder
+<li><a href="SDL_BitmapOrder.html">SDL_BitmapOrder</a> - ビットマップのピクセル順の列挙体
 <li><a href="SDL_BlendFactor.html">SDL_BlendFactor</a> - ピクセルの要素に積算される係数の列挙体
 <li>SDL_BlendOperation
 <li>SDL_CameraPermissionState
 <li>SDL_CameraPosition
 <li>SDL_Capitalization
-<li>SDL_ChromaLocation
-<li>SDL_ColorPrimaries
-<li>SDL_ColorRange
-<li>SDL_Colorspace
-<li>SDL_ColorType
+<li><a href="SDL_ChromaLocation.html">SDL_ChromaLocation</a> - 色空間情報のクロマサンプリングの位置の列挙体
+<li><a href="SDL_ColorPrimaries.html">SDL_ColorPrimaries</a> - 色空間情報のcolor primaries(原色)の列挙体
+<li><a href="SDL_ColorRange.html">SDL_ColorRange</a> - 色空間情報の色の範囲の列挙体
+<li><a href="SDL_Colorspace.html">SDL_Colorspace</a> - 色空間情報の列挙体
+<li><a href="SDL_ColorType.html">SDL_ColorType</a> - 色空間情報の種類の列挙体
 <li>SDL_DateFormat
 <li><a href="SDL_DisplayOrientation.html">SDL_DisplayOrientation</a> - ディスプレイの向きを表す列挙体
 <li>SDL_EnumerationResult
@@ -1633,15 +1633,15 @@
 <li>SDL_JoystickType
 <li><a href="SDL_LogCategory.html">SDL_LogCategory</a> - 設定済みのログの分類の列挙体
 <li><a href="SDL_LogPriority.html">SDL_LogPriority</a> - 定義済みのログの重要度の列挙体
-<li>SDL_MatrixCoefficients
+<li><a href="SDL_MatrixCoefficients.html">SDL_MatrixCoefficients</a> - 色空間情報のmatrix coefficients(行列の係数)の列挙体
 <li>SDL_MessageBoxColorType
 <li>SDL_MouseWheelDirection
-<li>SDL_PackedLayout
-<li>SDL_PackedOrder
+<li><a href="SDL_PackedLayout.html">SDL_PackedLayout</a> - パックされた(整数に詰め込まれた)色要素の配置の列挙体
+<li><a href="SDL_PackedOrder.html">SDL_PackedOrder</a> - パックされた(整数に詰め込まれた)色要素の順序の列挙体
 <li>SDL_PathType
 <li>SDL_PenAxis
 <li><a href="SDL_PixelFormat.html">SDL_PixelFormat</a> - ピクセル形式の列挙体
-<li>SDL_PixelType
+<li><a href="SDL_PixelType.html">SDL_PixelType</a> - ピクセルの種類の列挙体
 <li><a href="SDL_PowerState.html">SDL_PowerState</a> - システムの電源の基本的な状態の列挙体
 <li>SDL_ProcessIO
 <li><a href="SDL_ProgressState.html">SDL_ProgressState</a> - プログレスバーの状態の列挙体
@@ -1660,7 +1660,7 @@
 <li>SDL_ThreadState
 <li>SDL_TimeFormat
 <li>SDL_TouchDeviceType
-<li>SDL_TransferCharacteristics
+<li><a href="SDL_TransferCharacteristics.html">SDL_TransferCharacteristics</a> - 色空間情報のtransfer characteristics(伝達特性)の列挙体
 </ol>
 <h2>マクロ</h2>
 <ol>
@@ -1670,10 +1670,10 @@
 <li>SDL_ACQUIRED_BEFORE
 <li>SDL_ALIGNED
 <li>SDL_ALLOC_SIZE
-<li>SDL_ALPHA_OPAQUE
-<li>SDL_ALPHA_OPAQUE_FLOAT
-<li>SDL_ALPHA_TRANSPARENT
-<li>SDL_ALPHA_TRANSPARENT_FLOAT
+<li><a href="SDL_ALPHA_OPAQUE.html">SDL_ALPHA_OPAQUE</a> - 完全に不透明なα値の8ビット整数のマクロ
+<li><a href="SDL_ALPHA_OPAQUE_FLOAT.html">SDL_ALPHA_OPAQUE_FLOAT</a> - 完全に不透明なα値の浮動小数点数値のマクロ
+<li><a href="SDL_ALPHA_TRANSPARENT.html">SDL_ALPHA_TRANSPARENT</a> - 完全に透明なα値の8ビット整数のマクロ
+<li><a href="SDL_ALPHA_TRANSPARENT_FLOAT.html">SDL_ALPHA_TRANSPARENT_FLOAT</a> - 完全に透明なα値の浮動小数点数値のマクロ
 <li>SDL_ALTIVEC_INTRINSICS
 <li>SDL_ANALYZER_NORETURN
 <li>SDL_ANDROID_EXTERNAL_STORAGE_READ
@@ -1708,7 +1708,7 @@
 <li>SDL_AVX512F_INTRINSICS
 <li>SDL_AVX_INTRINSICS
 <li>SDL_BIG_ENDIAN
-<li>SDL_BITSPERPIXEL
+<li><a href="SDL_BITSPERPIXEL.html">SDL_BITSPERPIXEL</a> - ピクセル形式のピクセル当たりのビット数を求めるマクロ
 <li>SDL_BLENDMODE_ADD
 <li>SDL_BLENDMODE_ADD_PREMULTIPLIED
 <li>SDL_BLENDMODE_BLEND
@@ -1729,16 +1729,16 @@
 <li>SDL_BUTTON_X2
 <li>SDL_BUTTON_X2MASK
 <li>SDL_BYTEORDER
-<li>SDL_BYTESPERPIXEL
+<li><a href="SDL_BYTESPERPIXEL.html">SDL_BYTESPERPIXEL</a> - ピクセル形式のピクセル当たりのバイト数を求めるマクロ
 <li>SDL_CACHELINE_SIZE
 <li>SDL_CAPABILITY
 <li>SDL_clamp
-<li>SDL_COLORSPACECHROMA
-<li>SDL_COLORSPACEMATRIX
-<li>SDL_COLORSPACEPRIMARIES
-<li>SDL_COLORSPACERANGE
-<li>SDL_COLORSPACETRANSFER
-<li>SDL_COLORSPACETYPE
+<li><a href="SDL_COLORSPACECHROMA.html">SDL_COLORSPACECHROMA</a> - 色空間情報からクロマサンプリングの位置を得るマクロ
+<li><a href="SDL_COLORSPACEMATRIX.html">SDL_COLORSPACEMATRIX</a> - 色空間情報からmatrix coefficients(行列の係数)を得る
+<li><a href="SDL_COLORSPACEPRIMARIES.html">SDL_COLORSPACEPRIMARIES</a> - 色空間情報からcolor primaries(原色)を得るマクロ
+<li><a href="SDL_COLORSPACERANGE.html">SDL_COLORSPACERANGE</a> - 色空間情報から色の範囲を得るマクロ
+<li><a href="SDL_COLORSPACETRANSFER.html">SDL_COLORSPACETRANSFER</a> - 色空間情報からtransfer characteristics(伝達特性)を得るマクロ
+<li><a href="SDL_COLORSPACETYPE.html">SDL_COLORSPACETYPE</a> - 色空間情報から色空間の種類を得るマクロ
 <li>SDL_COMPILE_TIME_ASSERT
 <li>SDL_CompilerBarrier
 <li>SDL_const_cast
@@ -1747,9 +1747,9 @@
 <li>SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE
 <li>SDL_DECLSPEC
 <li>SDL_DEFINE_AUDIO_FORMAT
-<li>SDL_DEFINE_COLORSPACE
-<li>SDL_DEFINE_PIXELFORMAT
-<li>SDL_DEFINE_PIXELFOURCC
+<li><a href="SDL_DEFINE_COLORSPACE.html">SDL_DEFINE_COLORSPACE</a> - カスタムされた色空間情報を定義するマクロ
+<li><a href="SDL_DEFINE_PIXELFORMAT.html">SDL_DEFINE_PIXELFORMAT</a> - カスタムされたFourCC以外のピクセル形式を定義するマクロ
+<li><a href="SDL_DEFINE_PIXELFOURCC.html">SDL_DEFINE_PIXELFOURCC</a> - カスタムされたFourCCピクセル形式を定義するマクロ
 <li>SDL_DEPRECATED
 <li>SDL_disabled_assert
 <li>SDL_ELF_NOTE_DLOPEN
@@ -2118,18 +2118,18 @@
 <li>SDL_INOUT_Z_CAP
 <li>SDL_INVALID_UNICODE_CODEPOINT
 <li><a href="SDL_InvalidParamError.html">SDL_InvalidParamError</a> - 不正な操作をしたとき一般的なエラーを報告するためのマクロ
-<li>SDL_ISCOLORSPACE_FULL_RANGE
-<li>SDL_ISCOLORSPACE_LIMITED_RANGE
-<li>SDL_ISCOLORSPACE_MATRIX_BT2020_NCL
-<li>SDL_ISCOLORSPACE_MATRIX_BT601
-<li>SDL_ISCOLORSPACE_MATRIX_BT709
-<li>SDL_ISPIXELFORMAT_10BIT
-<li>SDL_ISPIXELFORMAT_ALPHA
-<li>SDL_ISPIXELFORMAT_ARRAY
-<li>SDL_ISPIXELFORMAT_FLOAT
-<li>SDL_ISPIXELFORMAT_FOURCC
-<li>SDL_ISPIXELFORMAT_INDEXED
-<li>SDL_ISPIXELFORMAT_PACKED
+<li><a href="SDL_ISCOLORSPACE_FULL_RANGE.html">SDL_ISCOLORSPACE_FULL_RANGE</a> - 色空間情報の色範囲が全ての範囲かをチェックするマクロ
+<li><a href="SDL_ISCOLORSPACE_LIMITED_RANGE.html">SDL_ISCOLORSPACE_LIMITED_RANGE</a> - 色空間情報の色範囲が制限された範囲かをチェックするマクロ
+<li><a href="SDL_ISCOLORSPACE_MATRIX_BT2020_NCL.html">SDL_ISCOLORSPACE_MATRIX_BT2020_NCL</a> - 色空間情報の行列の係数がBT2020_NCLかをチェックするマクロ
+<li><a href="SDL_ISCOLORSPACE_MATRIX_BT601.html">SDL_ISCOLORSPACE_MATRIX_BT601</a> - 色空間情報の行列の係数がBT601(またはBT470BG)かをチェックするマクロ
+<li><a href="SDL_ISCOLORSPACE_MATRIX_BT709.html">SDL_ISCOLORSPACE_MATRIX_BT709</a> - 色空間情報の行列の係数がBT709かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_10BIT.html">SDL_ISPIXELFORMAT_10BIT</a> - ピクセル形式が10ビット形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_ALPHA.html">SDL_ISPIXELFORMAT_ALPHA</a> - ピクセル形式にαチャネルがあるかをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_ARRAY.html">SDL_ISPIXELFORMAT_ARRAY</a> - ピクセル形式が配列形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_FLOAT.html">SDL_ISPIXELFORMAT_FLOAT</a> - ピクセル形式が浮動小数点形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_FOURCC.html">SDL_ISPIXELFORMAT_FOURCC</a> - ピクセル形式がFourCC形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_INDEXED.html">SDL_ISPIXELFORMAT_INDEXED</a> - ピクセル形式がインデックス形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_PACKED.html">SDL_ISPIXELFORMAT_PACKED</a> - ピクセル形式がパックされた(数値に詰め込まれた)形式かをチェックするマクロ
 <li>SDL_JOYSTICK_AXIS_MAX
 <li>SDL_JOYSTICK_AXIS_MIN
 <li>SDL_KMOD_ALT
@@ -2221,10 +2221,10 @@
 <li>SDL_PEN_TOUCHID
 <li>SDL_PI_D
 <li>SDL_PI_F
-<li>SDL_PIXELFLAG
-<li>SDL_PIXELLAYOUT
-<li>SDL_PIXELORDER
-<li>SDL_PIXELTYPE
+<li><a href="SDL_PIXELFLAG.html">SDL_PIXELFLAG</a> - ピクセル形式からフラグを得るマクロ
+<li><a href="SDL_PIXELLAYOUT.html">SDL_PIXELLAYOUT</a> - ピクセル形式からパックされた(整数に詰め込まれた)色要素の配置を得るマクロ
+<li><a href="SDL_PIXELORDER.html">SDL_PIXELORDER</a> - ピクセル形式から色要素の順序を得るマクロ
+<li><a href="SDL_PIXELTYPE_macro.html">SDL_PIXELTYPE</a> - ピクセル形式からピクセルの種類を得るマクロ
 <li>SDL_PLATFORM_3DS
 <li>SDL_PLATFORM_AIX
 <li>SDL_PLATFORM_ANDROID

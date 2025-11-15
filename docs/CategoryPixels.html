@@ -71,76 +71,76 @@ YCbCr系は色を輝度と赤・青彩度のオフセット値として表す.
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_CreatePalette
-<li>SDL_DestroyPalette
-<li>SDL_GetMasksForPixelFormat
-<li>SDL_GetPixelFormatDetails
-<li>SDL_GetPixelFormatForMasks
-<li>SDL_GetPixelFormatName
+<li><a href="SDL_CreatePalette.html">SDL_CreatePalette</a> - 色の数を指定してパレットを生成する
+<li><a href="SDL_DestroyPalette.html">SDL_DestroyPalette</a> - SDL_CreatePalette()で生成したパレットを解放する
+<li><a href="SDL_GetMasksForPixelFormat.html">SDL_GetMasksForPixelFormat</a> - ピクセル形式からビット深度とRGBAマスクを得る
+<li><a href="SDL_GetPixelFormatDetails.html">SDL_GetPixelFormatDetails</a> - ピクセル形式と一致するSDL_PixelFormatDetailsを生成する
+<li><a href="SDL_GetPixelFormatForMasks.html">SDL_GetPixelFormatForMasks</a> - ビット深度とRGBAマスクからピクセル形式を得る
+<li><a href="SDL_GetPixelFormatName.html">SDL_GetPixelFormatName</a> - ピクセル形式の人間が読める名前を得る
 <li><a href="SDL_GetRGB.html">SDL_GetRGB</a> - 指定のピクセルのRGB値を得る
 <li><a href="SDL_GetRGBA.html">SDL_GetRGBA</a> - 指定のピクセルのRGBA値を得る
 <li><a href="SDL_MapRGB.html">SDL_MapRGB</a> - RGBの3つの値から指定のピクセル形式の不透明なピクセル値を求める
 <li><a href="SDL_MapRGBA.html">SDL_MapRGBA</a> - RGBAの4つの値から指定のピクセル形式のピクセル値を求める
-<li>SDL_MapSurfaceRGB
-<li>SDL_MapSurfaceRGBA
-<li>SDL_SetPaletteColors
+<li><a href="SDL_MapSurfaceRGB.html">SDL_MapSurfaceRGB</a> - RGBの値からサーフェイスの不透明なピクセルの値を求める
+<li><a href="SDL_MapSurfaceRGBA.html">SDL_MapSurfaceRGBA</a> - RGBAの値からサーフェイスの透過ピクセルの値を求める
+<li><a href="SDL_SetPaletteColors.html">SDL_SetPaletteColors</a> - 範囲を指定してパレットの色を設定する
 </ol>
 <h2>構造体</h2>
 <ol>
 <li><a href="SDL_Color.html">SDL_Color</a> - 色をRGBA要素で表す構造体
 <li><a href="SDL_FColor.html">SDL_FColor</a> - SDL_PIXELFORMAT_RGBA128_FLOAT形式の浮動小数点の値を並べた色として解釈させることができる構造体
-<li>SDL_Palette
-<li>SDL_PixelFormatDetails
+<li><a href="SDL_Palette.html">SDL_Palette</a> - パレットを表す一組のインデックス付きの色の構造体
+<li><a href="SDL_PixelFormatDetails.html">SDL_PixelFormatDetails</a> - ピクセル形式の詳細を表す構造体
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_ArrayOrder
-<li>SDL_BitmapOrder
-<li>SDL_ChromaLocation
-<li>SDL_ColorPrimaries
-<li>SDL_ColorRange
-<li>SDL_Colorspace
-<li>SDL_ColorType
-<li>SDL_MatrixCoefficients
-<li>SDL_PackedLayout
-<li>SDL_PackedOrder
+<li><a href="SDL_ArrayOrder.html">SDL_ArrayOrder</a> - 要素配列の順序の列挙体
+<li><a href="SDL_BitmapOrder.html">SDL_BitmapOrder</a> - ビットマップのピクセル順の列挙体
+<li><a href="SDL_ChromaLocation.html">SDL_ChromaLocation</a> - 色空間情報のクロマサンプリングの位置の列挙体
+<li><a href="SDL_ColorPrimaries.html">SDL_ColorPrimaries</a> - 色空間情報のcolor primaries(原色)の列挙体
+<li><a href="SDL_ColorRange.html">SDL_ColorRange</a> - 色空間情報の色の範囲の列挙体
+<li><a href="SDL_Colorspace.html">SDL_Colorspace</a> - 色空間情報の列挙体
+<li><a href="SDL_ColorType.html">SDL_ColorType</a> - 色空間情報の種類の列挙体
+<li><a href="SDL_MatrixCoefficients.html">SDL_MatrixCoefficients</a> - 色空間情報のmatrix coefficients(行列の係数)の列挙体
+<li><a href="SDL_PackedLayout.html">SDL_PackedLayout</a> - パックされた(整数に詰め込まれた)色要素の配置の列挙体
+<li><a href="SDL_PackedOrder.html">SDL_PackedOrder</a> - パックされた(整数に詰め込まれた)色要素の順序の列挙体
 <li><a href="SDL_PixelFormat.html">SDL_PixelFormat</a> - ピクセル形式の列挙体
-<li>SDL_PixelType
-<li>SDL_TransferCharacteristics
+<li><a href="SDL_PixelType.html">SDL_PixelType</a> - ピクセルの種類の列挙体
+<li><a href="SDL_TransferCharacteristics.html">SDL_TransferCharacteristics</a> - 色空間情報のtransfer characteristics(伝達特性)の列挙体
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_ALPHA_OPAQUE
-<li>SDL_ALPHA_OPAQUE_FLOAT
-<li>SDL_ALPHA_TRANSPARENT
-<li>SDL_ALPHA_TRANSPARENT_FLOAT
-<li>SDL_BITSPERPIXEL
-<li>SDL_BYTESPERPIXEL
-<li>SDL_COLORSPACECHROMA
-<li>SDL_COLORSPACEMATRIX
-<li>SDL_COLORSPACEPRIMARIES
-<li>SDL_COLORSPACERANGE
-<li>SDL_COLORSPACETRANSFER
-<li>SDL_COLORSPACETYPE
-<li>SDL_DEFINE_COLORSPACE
-<li>SDL_DEFINE_PIXELFORMAT
-<li>SDL_DEFINE_PIXELFOURCC
-<li>SDL_ISCOLORSPACE_FULL_RANGE
-<li>SDL_ISCOLORSPACE_LIMITED_RANGE
-<li>SDL_ISCOLORSPACE_MATRIX_BT2020_NCL
-<li>SDL_ISCOLORSPACE_MATRIX_BT601
-<li>SDL_ISCOLORSPACE_MATRIX_BT709
-<li>SDL_ISPIXELFORMAT_10BIT
-<li>SDL_ISPIXELFORMAT_ALPHA
-<li>SDL_ISPIXELFORMAT_ARRAY
-<li>SDL_ISPIXELFORMAT_FLOAT
-<li>SDL_ISPIXELFORMAT_FOURCC
-<li>SDL_ISPIXELFORMAT_INDEXED
-<li>SDL_ISPIXELFORMAT_PACKED
-<li>SDL_PIXELFLAG
-<li>SDL_PIXELLAYOUT
-<li>SDL_PIXELORDER
-<li>SDL_PIXELTYPE
+<li><a href="SDL_ALPHA_OPAQUE.html">SDL_ALPHA_OPAQUE</a> - 完全に不透明なα値の8ビット整数のマクロ
+<li><a href="SDL_ALPHA_OPAQUE_FLOAT.html">SDL_ALPHA_OPAQUE_FLOAT</a> - 完全に不透明なα値の浮動小数点数値のマクロ
+<li><a href="SDL_ALPHA_TRANSPARENT.html">SDL_ALPHA_TRANSPARENT</a> - 完全に透明なα値の8ビット整数のマクロ
+<li><a href="SDL_ALPHA_TRANSPARENT_FLOAT.html">SDL_ALPHA_TRANSPARENT_FLOAT</a> - 完全に透明なα値の浮動小数点数値のマクロ
+<li><a href="SDL_BITSPERPIXEL.html">SDL_BITSPERPIXEL</a> - ピクセル形式のピクセル当たりのビット数を求めるマクロ
+<li><a href="SDL_BYTESPERPIXEL.html">SDL_BYTESPERPIXEL</a> - ピクセル形式のピクセル当たりのバイト数を求めるマクロ
+<li><a href="SDL_COLORSPACECHROMA.html">SDL_COLORSPACECHROMA</a> - 色空間情報からクロマサンプリングの位置を得るマクロ
+<li><a href="SDL_COLORSPACEMATRIX.html">SDL_COLORSPACEMATRIX</a> - 色空間情報からmatrix coefficients(行列の係数)を得る
+<li><a href="SDL_COLORSPACEPRIMARIES.html">SDL_COLORSPACEPRIMARIES</a> - 色空間情報からcolor primaries(原色)を得るマクロ
+<li><a href="SDL_COLORSPACERANGE.html">SDL_COLORSPACERANGE</a> - 色空間情報から色の範囲を得るマクロ
+<li><a href="SDL_COLORSPACETRANSFER.html">SDL_COLORSPACETRANSFER</a> - 色空間情報からtransfer characteristics(伝達特性)を得るマクロ
+<li><a href="SDL_COLORSPACETYPE.html">SDL_COLORSPACETYPE</a> - 色空間情報から色空間の種類を得るマクロ
+<li><a href="SDL_DEFINE_COLORSPACE.html">SDL_DEFINE_COLORSPACE</a> - カスタムされた色空間情報を定義するマクロ
+<li><a href="SDL_DEFINE_PIXELFORMAT.html">SDL_DEFINE_PIXELFORMAT</a> - カスタムされたFourCC以外のピクセル形式を定義するマクロ
+<li><a href="SDL_DEFINE_PIXELFOURCC.html">SDL_DEFINE_PIXELFOURCC</a> - カスタムされたFourCCピクセル形式を定義するマクロ
+<li><a href="SDL_ISCOLORSPACE_FULL_RANGE.html">SDL_ISCOLORSPACE_FULL_RANGE</a> - 色空間情報の色範囲が全ての範囲かをチェックするマクロ
+<li><a href="SDL_ISCOLORSPACE_LIMITED_RANGE.html">SDL_ISCOLORSPACE_LIMITED_RANGE</a> - 色空間情報の色範囲が制限された範囲かをチェックするマクロ
+<li><a href="SDL_ISCOLORSPACE_MATRIX_BT2020_NCL.html">SDL_ISCOLORSPACE_MATRIX_BT2020_NCL</a> - 色空間情報の行列の係数がBT2020_NCLかをチェックするマクロ
+<li><a href="SDL_ISCOLORSPACE_MATRIX_BT601.html">SDL_ISCOLORSPACE_MATRIX_BT601</a> - 色空間情報の行列の係数がBT601(またはBT470BG)かをチェックするマクロ
+<li><a href="SDL_ISCOLORSPACE_MATRIX_BT709.html">SDL_ISCOLORSPACE_MATRIX_BT709</a> - 色空間情報の行列の係数がBT709かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_10BIT.html">SDL_ISPIXELFORMAT_10BIT</a> - ピクセル形式が10ビット形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_ALPHA.html">SDL_ISPIXELFORMAT_ALPHA</a> - ピクセル形式にαチャネルがあるかをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_ARRAY.html">SDL_ISPIXELFORMAT_ARRAY</a> - ピクセル形式が配列形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_FLOAT.html">SDL_ISPIXELFORMAT_FLOAT</a> - ピクセル形式が浮動小数点形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_FOURCC.html">SDL_ISPIXELFORMAT_FOURCC</a> - ピクセル形式がFourCC形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_INDEXED.html">SDL_ISPIXELFORMAT_INDEXED</a> - ピクセル形式がインデックス形式かをチェックするマクロ
+<li><a href="SDL_ISPIXELFORMAT_PACKED.html">SDL_ISPIXELFORMAT_PACKED</a> - ピクセル形式がパックされた(数値に詰め込まれた)形式かをチェックするマクロ
+<li><a href="SDL_PIXELFLAG.html">SDL_PIXELFLAG</a> - ピクセル形式からフラグを得るマクロ
+<li><a href="SDL_PIXELLAYOUT.html">SDL_PIXELLAYOUT</a> - ピクセル形式からパックされた(整数に詰め込まれた)色要素の配置を得るマクロ
+<li><a href="SDL_PIXELORDER.html">SDL_PIXELORDER</a> - ピクセル形式から色要素の順序を得るマクロ
+<li><a href="SDL_PIXELTYPE_macro.html">SDL_PIXELTYPE</a> - ピクセル形式からピクセルの種類を得るマクロ
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryPixels">SDL3/CategoryPixels - SDL Wiki</a>

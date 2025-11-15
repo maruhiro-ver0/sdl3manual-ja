@@ -17,12 +17,12 @@
 <h2>値</h2>
 <table border="1">
 <tr><td>SDL_PIXELFORMAT_UNKNOWN</td><td>0</td><td>不明</td></tr>
-<tr><td>SDL_PIXELFORMAT_INDEX1LSB</td><td>0x11100100u</td><td>下位から詰められた1ビットインデックス付きピクセル</td></tr>
-<tr><td>SDL_PIXELFORMAT_INDEX1MSB</td><td>0x11200100u</td><td>上位から詰められた1ビットインデックス付きピクセル</td></tr>
-<tr><td>SDL_PIXELFORMAT_INDEX2LSB</td><td>0x1c100200u</td><td>下位から詰められた2ビットインデックス付きピクセル</td></tr>
-<tr><td>SDL_PIXELFORMAT_INDEX2MSB</td><td>0x1c200200u</td><td>上位から詰められた2ビットインデックス付きピクセル</td></tr>
-<tr><td>SDL_PIXELFORMAT_INDEX4LSB</td><td>0x12100400u</td><td>下位から詰められた4ビットインデックス付きピクセル</td></tr>
-<tr><td>SDL_PIXELFORMAT_INDEX4MSB</td><td>0x12200400u</td><td>上位から詰められた4ビットインデックス付きピクセル</td></tr>
+<tr><td>SDL_PIXELFORMAT_INDEX1LSB</td><td>0x11100100u</td><td>下位からパックされた1ビットインデックス付きピクセル</td></tr>
+<tr><td>SDL_PIXELFORMAT_INDEX1MSB</td><td>0x11200100u</td><td>上位からパックされた1ビットインデックス付きピクセル</td></tr>
+<tr><td>SDL_PIXELFORMAT_INDEX2LSB</td><td>0x1c100200u</td><td>下位からパックされた2ビットインデックス付きピクセル</td></tr>
+<tr><td>SDL_PIXELFORMAT_INDEX2MSB</td><td>0x1c200200u</td><td>上位からパックされた2ビットインデックス付きピクセル</td></tr>
+<tr><td>SDL_PIXELFORMAT_INDEX4LSB</td><td>0x12100400u</td><td>下位からパックされた4ビットインデックス付きピクセル</td></tr>
+<tr><td>SDL_PIXELFORMAT_INDEX4MSB</td><td>0x12200400u</td><td>上位からパックされた4ビットインデックス付きピクセル</td></tr>
 <tr><td>SDL_PIXELFORMAT_INDEX8</td><td>0x13000801u</td><td>8ビットインデックス付きピクセル</td></tr>
 <tr><td>SDL_PIXELFORMAT_RGB332</td><td>0x14110801u</td><td>赤3ビット, 緑3ビット, 青2ビットの順の8ビット整数</td></tr>
 <tr><td>SDL_PIXELFORMAT_XRGB4444</td><td>0x15120c02u</td><td>パッディング4ビット, 赤4ビット, 緑4ビット, 青4ビットの順の16ビット整数</td></tr>
@@ -98,11 +98,11 @@ SDLのピクセル形式の名前は, 次のような規則に従っている:
 <li>RGB24やABGR32のような要素の順序と1つのビット数による名前は, 名前の通りのバイト順でエンコードされエンディアン非依存である.
 例えばRGB24ならば, ピクセルは赤, 緑, 青の順序の3バイトでエンコードされている. ABGR32ならば, ピクセルはα, 青, 緑, 赤の順序の4バイトでエンコードされている.
 メモリやディスク上でバイトの順序が重要な場合は, これらの名前のものを使用する.
-<li>ARGB8888やXRGB1555のような要素ごとのビット数がある名前は, 各要素がその環境のエンディアンの整数の中に「詰め込まれて」いる.
+<li>ARGB8888やXRGB1555のような要素ごとのビット数がある名前は, 各要素がその環境のエンディアンの整数の中に「パックされて」いる.
 例えばARGB8888ならば, 32ビットの整数で, その中のそれぞれの値は上位ビット側がαで, 下位ビット側が青である.
 x86のようなリトルエンディアンのCPUならば, 下位側のビットがメモリ上では先頭に配置されるが, s390xのようなビッグエンディアンのCPUならば, 上位側のビットが先頭に配置される.
 その環境のエンディアンの整数の各要素のビットの位置が重要な場合は, これらの名前のものを使用する.
-<li>INDEX4LSBのようなインデックスの形式の場合, ピクセルは, パレットの指定されたビット数のインデックスで, 可能ならば各バイトに複数のピクセルが詰め込まれている.
+<li>INDEX4LSBのようなインデックスの形式の場合, ピクセルは, パレットの指定されたビット数のインデックスで, 可能ならば各バイトに複数のピクセルがパックされている.
 LSB形式では, 最初(最も左)のピクセルはバイトの下位から格納される. MSB形式では, 上位から格納される.
 INDEX8は, ピクセルはバイトを全て満たすのでLSB/MSBは存在しない.
 </ul>

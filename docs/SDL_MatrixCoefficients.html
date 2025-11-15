@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryPixels.html" title="1つ上">
+<title>SDL_MatrixCoefficients</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryPixels.html">ピクセル形式と変換</a> - SDL_MatrixCoefficients
+<hr>
+<h1>SDL_MatrixCoefficients</h1>
+色空間情報のmatrix coefficients(行列の係数)の列挙体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_pixels.h">SDL3/SDL_pixels.h</a>
+<h2>値</h2>
+<table border="1">
+<tr><td>SDL_MATRIX_COEFFICIENTS_IDENTITY</td><td>0</td><td></td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_BT709</td><td>1</td><td>ITU-R BT.709-6</td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_UNSPECIFIED</td><td>2</td><td></td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_FCC</td><td>4</td><td>US FCC Title 47</td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_BT470BG</td><td>5</td><td>ITU-R BT.470-6 System B, G / ITU-R BT.601-7 625, SDL_MATRIX_COEFFICIENTS_BT601と同じ</td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_BT601</td><td>6</td><td>ITU-R BT.601-7 525</td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_SMPTE240</td><td>7</td><td>SMPTE 240M</td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_YCGCO</td><td>8</td><td></td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_BT2020_NCL</td><td>9</td><td>ITU-R BT.2020-2 輝度なし</td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_BT2020_CL</td><td>10</td><td>ITU-R BT.2020-2 輝度あり</td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_SMPTE2085</td><td>11</td><td>SMPTE ST 2085</td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_CHROMA_DERIVED_NCL</td><td>12</td><td></td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_CHROMA_DERIVED_CL</td><td>13</td><td></td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_ICTCP</td><td>14</td><td>ITU-R BT.2100-0 ICTCP</td></tr>
+<tr><td>SDL_MATRIX_COEFFICIENTS_CUSTOM</td><td>31</td><td></td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+詳細は<a href="https://www.itu.int/rec/T-REC-H.273-201612-S/en">https://www.itu.int/rec/T-REC-H.273-201612-S/en</a>にある.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_MatrixCoefficients">SDL_MatrixCoefficients - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryPixels.html" title="1つ上">
+<title>SDL_DestroyPalette</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryPixels.html">ピクセル形式と変換</a> - SDL_DestroyPalette
+<hr>
+<h1>SDL_DestroyPalette</h1>
+SDL_CreatePalette()で生成したパレットを解放する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_pixels.h">SDL3/SDL_pixels.h</a>
+<h2>構文</h2>
+<code>void SDL_DestroyPalette(SDL_Palette *palette);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Palette.html">SDL_Palette</a> *</td><td>palette</td><td>解放するパレット</td></tr>
+</table>
+<h2>スレッドセーフ</h2>
+<p>
+この関数は別のスレッドでパレットの変更や破棄を行っていない限りどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_CreatePalette.html">SDL_CreatePalette</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_DestroyPalette">SDL_DestroyPalette - SDL Wiki</a>
+<hr>
+</body>
+</html>
