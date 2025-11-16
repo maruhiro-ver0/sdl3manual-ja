@@ -1598,10 +1598,10 @@ SDL3には静的リンクするlibSDLmainはなくなった.
 </ul>
 <h2><a name="#sdl_pixelsh">SDL_pixels.h (ピクセル形式と変換)</a></h2>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_PixelFormat.html">SDL_PixelFormat</a>の名称は<a href="https://wiki.libsdl.org/SDL3/SDL_PixelFormatDetails">SDL_PixelFormatDetails</a>に変更され, ピクセルの形式を記述するのみで, パレットは含まれなくなった.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_PixelFormat.html">SDL_PixelFormat</a>の名称は<a href="SDL_PixelFormatDetails.html">SDL_PixelFormatDetails</a>に変更され, ピクセルの形式を記述するのみで, パレットは含まれなくなった.
 </p>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_PixelFormatEnum.html">SDL_PixelFormatEnum</a>の名称は<a href="https://wiki.libsdl.org/SDL3/SDL_PixelFormat">SDL_PixelFormat</a>に変更され, Uint32の代わりに列挙体の値でピクセル形式を参照するAPI関数で使用されるようになった.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_PixelFormatEnum.html">SDL_PixelFormatEnum</a>の名称は<a href="SDL_PixelFormat.html">SDL_PixelFormat</a>に変更され, Uint32の代わりに列挙体の値でピクセル形式を参照するAPI関数で使用されるようになった.
 </p>
 <p>
 <a href="https://wiki.libsdl.org/SDL3/SDL_MapRGB">SDL_MapRGB()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_MapRGBA">SDL_MapRGBA()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetRGB">SDL_GetRGB()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetRGBA">SDL_GetRGBA()</a>は, オプションとしてパレットを取るようになった.
@@ -1646,11 +1646,11 @@ SDL3には静的リンクするlibSDLmainはなくなった.
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AllocFormat.html">SDL_AllocFormat()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetPixelFormatDetails">SDL_GetPixelFormatDetails()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AllocPalette.html">SDL_AllocPalette()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_CreatePalette">SDL_CreatePalette()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FreePalette.html">SDL_FreePalette()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_DestroyPalette">SDL_DestroyPalette()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_MasksToPixelFormatEnum.html">SDL_MasksToPixelFormatEnum()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetPixelFormatForMasks">SDL_GetPixelFormatForMasks()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_PixelFormatEnumToMasks.html">SDL_PixelFormatEnumToMasks()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetMasksForPixelFormat">SDL_GetMasksForPixelFormat()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AllocFormat.html">SDL_AllocFormat()</a> → <a href="SDL_GetPixelFormatDetails.html">SDL_GetPixelFormatDetails()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AllocPalette.html">SDL_AllocPalette()</a> → <a href="SDL_CreatePalette.html">SDL_CreatePalette()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FreePalette.html">SDL_FreePalette()</a> → <a href="SDL_DestroyPalette.html">SDL_DestroyPalette()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_MasksToPixelFormatEnum.html">SDL_MasksToPixelFormatEnum()</a> → <a href="SDL_GetPixelFormatForMasks.html">SDL_GetPixelFormatForMasks()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_PixelFormatEnumToMasks.html">SDL_PixelFormatEnumToMasks()</a> → <a href="SDL_GetMasksForPixelFormat.html">SDL_GetMasksForPixelFormat()</a>, bool値を戻す
 </ul>
 <p>
 以下のシンボルの名前は次の様に変更された:
@@ -1675,13 +1675,13 @@ SDL3には静的リンクするlibSDLmainはなくなった.
 以下のマクロは削除された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Colour.html">SDL_Colour</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_Color">SDL_Color</a>を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Colour.html">SDL_Colour</a> - 代わりに<a href="SDL_Color.html">SDL_Color</a>を使用すること
 </ul>
 <p>
 以下の構造体の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_PixelFormat.html">SDL_PixelFormat</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_PixelFormatDetails">SDL_PixelFormatDetails</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_PixelFormat.html">SDL_PixelFormat</a> → <a href="SDL_PixelFormatDetails.html">SDL_PixelFormatDetails</a>
 </ul>
 <h2><a name="#sdl_platformh">SDL_platform.h (環境検知)</a></h2>
 <p>

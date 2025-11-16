@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAudio.html" title="1つ上">
+<title>SDL_ConvertAudioSamples</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAudio.html">再生と録音</a> - SDL_ConvertAudioSamples
+<hr>
+<h1>SDL_ConvertAudioSamples</h1>
+オーディオデータを別の形式に変換する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_audio.h">SDL3/SDL_audio.h</a>
+<h2>構文</h2>
+<code>bool SDL_ConvertAudioSamples(const SDL_AudioSpec *src_spec, const Uint8 *src_data, int src_len, const SDL_AudioSpec *dst_spec, Uint8 **dst_data, int *dst_len);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>src_spec</td><td>変換前のオーディオデータの詳細な形式</td></tr>
+<tr><td>const <a href="Uint8.html">Uint8</a> *</td><td>src_data</td><td>変換前のオーディオデータ</td></tr>
+<tr><td>int</td><td>src_len</td><td><code>src_data</code>の長さ</td></tr>
+<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>dst_spec</td><td>変換後のオーディオデータの詳細な形式</td></tr>
+<tr><td><a href="Uint8.html">Uint8</a> **</td><td>dst_data</td><td>変換後のデータの書き込み先へのポインタ. SDL_free()で解放する必要がある. エラーの場合はNULL</td></tr>
+<tr><td>int *</td><td>dst_len</td><td><code>dst_data</code>の長さの代入先へのポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+この関数は便利のための関数だが, 境界でノイズが発生するため, ブロック化したオーディオの再サンプリングには使用すべきでない.
+この関数は, オーディオデータを変換するとき, 一度だけ, データ全体に対して使用するべきである.
+より小さなチャンクのオーディオを変換したい場合は, このような状況のために設計された<a href="SDL_AudioStream.html">SDL_AudioStream</a>を使うこと.
+</p>
+<p>
+この関数は使用するたびに内部で<a href="SDL_AudioStream.html">SDL_AudioStream</a>の生成と解放を行っている. そのため, 複数回に分けて変換することは, 一度に直接変換するよりも非効率である.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_ConvertAudioSamples">SDL_ConvertAudioSamples - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAudio.html" title="1つ上">
+<title>SDL_SetAudioStreamOutputChannelMap</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAudio.html">再生と録音</a> - SDL_SetAudioStreamOutputChannelMap
+<hr>
+<h1>SDL_SetAudioStreamOutputChannelMap</h1>
+オーディオストリームの出力チャネルマップを設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_audio.h">SDL3/SDL_audio.h</a>
+<h2>構文</h2>
+<code>bool SDL_SetAudioStreamOutputChannelMap(SDL_AudioStream *stream, const int *chmap, int count);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_AudioStream.html">SDL_AudioStream</a> *</td><td>stream</td><td>変更するオーディオストリーム</td></tr>
+<tr><td>const int *</td><td>chmap</td><td>新しいチャネルマップ. NULLのときデフォルトに戻す</td></tr>
+<tr><td>int</td><td>count</td><td>チャネルの数</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+チャネルマップは任意で, ほとんどの場合は必要なく, SDLが求める順序でデータを渡せばよい.
+</p>
+<p>
+出力チャネルマップは, <a href="SDL_GetAudioStreamData.html">SDL_GetAudioStreamData</a>でストリームから取り出されるデータのチャネルの順序を入れ替える.
+</p>
+<p>
+配列の各項目は出力チャネルを表していて, チャネルはその値に再マップされる.
+ステレオの左右を入れ替えるには, 配列を <code>{ 1, 0 }</code> のようにする.
+複数のチャネルを同一のチャネルに再マップすることも可能で, その場合は <code>{ 1, 1 }</code> のようにすると, ステレオの両チャネルが右チャネルにマップされる.
+チャネルマップに有効なチャネルではなく-1を設定すると, そのチャネルはミュートされ無音になる.
+</p>
+<p>
+チャネルマップでチャネルの数を変更することはできない. 録音またはミュートを設定するのみである.
+</p>
+<p>
+SDL_GetAudioStreamDataの出力中でも再マップが適応されるため, 出力チャネルマップはいつでも変更できる.
+</p>
+<p>
+オーディオストリームはデフォルトでは再マップが適用されていない.
+チャネルマップにNULLを渡すことができ, 再マップを無効にすることができる.
+</p>
+<p>
+SDLはチャネルマップをコピーする. 呼び出し側は, この関数の呼び出し後に配列を保存する必要はない.
+</p>
+<p>
+<code>count</code>が現在のオーディオストリームの形式のチャネル数と等しくない場合, 失敗する.
+これは, チャネルマップを設定とオーディオストリームの形式の変更で競合が発生しないようにするための対策である.
+<p>
+ストリームの形式の変更とは異なり, 再生デバイスにバインドされたストリームの出力チャネルマップはいつでも変更できる.
+この関数の呼び出しの後にデバイスからストリームに加えられたデータは新しくマップされているが, 既に加えられたデータは前のマップのままである.
+チャネルマップがハードウェアのチャネル配置と一致しない場合, SDLは再生デバイスにデータを渡す前に変換する.
+
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はストリーム固有のミューテックスが行われている限りどのスレッドからも安全に呼べる.
+しかし, 異なるスレッドから同時に形式を異なるチャネル数に変更してはならない.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_SetAudioStreamInputChannelMap.html">SDL_SetAudioStreamInputChannelMap</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SetAudioStreamOutputChannelMap">SDL_SetAudioStreamOutputChannelMap - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

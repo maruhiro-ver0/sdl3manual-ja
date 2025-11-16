@@ -99,17 +99,17 @@ MP3なども自身でデコードすれば渡せるが, 直接渡すことはで
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_AudioDevicePaused
-<li>SDL_AudioStreamDevicePaused
-<li>SDL_BindAudioStream
-<li>SDL_BindAudioStreams
-<li>SDL_ClearAudioStream
+<li><a href="SDL_AudioDevicePaused.html">SDL_AudioDevicePaused</a> - オーディオデバイスが一時停止中かチェックする
+<li><a href="SDL_AudioStreamDevicePaused.html">SDL_AudioStreamDevicePaused</a> - オーディオデバイスに関連付けられたオーディオストリームが一時停止中かチェックする
+<li><a href="SDL_BindAudioStream.html">SDL_BindAudioStream</a> - 1つのオーディオストリームをオーディオデバイスにバインドする
+<li><a href="SDL_BindAudioStreams.html">SDL_BindAudioStreams</a> - オーディオストリームの一覧をオーディオデバイスにバインドする
+<li><a href="SDL_ClearAudioStream.html">SDL_ClearAudioStream</a> - オーディオストリームの保留中のデータを消去する
 <li><a href="SDL_CloseAudioDevice.html">SDL_CloseAudioDevice</a> - オーディオデバイスをクローズする 
-<li>SDL_ConvertAudioSamples
+<li><a href="SDL_ConvertAudioSamples.html">SDL_ConvertAudioSamples</a> - オーディオデータを別の形式に変換する
 <li><a href="SDL_CreateAudioStream.html">SDL_CreateAudioStream</a> - オーディオストリームを生成する 
 <li><a href="SDL_DestroyAudioStream.html">SDL_DestroyAudioStream</a> - オーディオストリームを破棄する
-<li>SDL_FlushAudioStream
-<li>SDL_GetAudioDeviceChannelMap
+<li><a href="SDL_FlushAudioStream.html">SDL_FlushAudioStream</a> - オーディオストリームにデータ送信の完了を伝える
+<li><a href="SDL_GetAudioDeviceChannelMap.html">SDL_GetAudioDeviceChannelMap</a> - オーディオデバイスの現在のチャネルマップを得る
 <li>SDL_GetAudioDeviceFormat
 <li>SDL_GetAudioDeviceGain
 <li>SDL_GetAudioDeviceName
@@ -152,8 +152,8 @@ MP3なども自身でデコードすれば渡せるが, 直接渡すことはで
 <li>SDL_SetAudioStreamFrequencyRatio
 <li>SDL_SetAudioStreamGain
 <li>SDL_SetAudioStreamGetCallback
-<li>SDL_SetAudioStreamInputChannelMap
-<li>SDL_SetAudioStreamOutputChannelMap
+<li><a href="SDL_SetAudioStreamInputChannelMap.html">SDL_SetAudioStreamInputChannelMap</a> - オーディオストリームの入力チャネルマップを設定する
+<li><a href="SDL_SetAudioStreamOutputChannelMap.html">SDL_SetAudioStreamOutputChannelMap</a> - オーディオストリームの出力チャネルマップを設定する
 <li>SDL_SetAudioStreamPutCallback
 <li>SDL_UnbindAudioStream
 <li>SDL_UnbindAudioStreams
@@ -178,21 +178,21 @@ MP3なども自身でデコードすれば渡せるが, 直接渡すことはで
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_AUDIO_BITSIZE
-<li>SDL_AUDIO_BYTESIZE
+<li><a href="SDL_AUDIO_BITSIZE.html">SDL_AUDIO_BITSIZE</a> - オーディオ形式から量子化ビット数を得るマクロ
+<li><a href="SDL_AUDIO_BYTESIZE.html">SDL_AUDIO_BYTESIZE</a> - オーディオ形式から量子化バイト数を得るマクロ
 <li>SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK
 <li>SDL_AUDIO_DEVICE_DEFAULT_RECORDING
 <li>SDL_AUDIO_FRAMESIZE
-<li>SDL_AUDIO_ISBIGENDIAN
-<li>SDL_AUDIO_ISFLOAT
-<li>SDL_AUDIO_ISINT
-<li>SDL_AUDIO_ISLITTLEENDIAN
-<li>SDL_AUDIO_ISSIGNED
-<li>SDL_AUDIO_ISUNSIGNED
-<li>SDL_AUDIO_MASK_BIG_ENDIAN
-<li>SDL_AUDIO_MASK_BITSIZE
-<li>SDL_AUDIO_MASK_FLOAT
-<li>SDL_AUDIO_MASK_SIGNED
+<li><a href="SDL_AUDIO_ISBIGENDIAN.html">SDL_AUDIO_ISBIGENDIAN</a> - オーディオ形式がビッグエンディアンのデータを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISFLOAT.html">SDL_AUDIO_ISFLOAT</a> - オーディオ形式が浮動小数点データを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISINT.html">SDL_AUDIO_ISINT</a> - オーディオ形式が整数データを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISLITTLEENDIAN.html">SDL_AUDIO_ISLITTLEENDIAN</a> - オーディオ形式がリトルエンディアンのデータを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISSIGNED.html">SDL_AUDIO_ISSIGNED</a> - オーディオ形式が符号ありのデータを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISUNSIGNED.html">SDL_AUDIO_ISUNSIGNED</a> - オーディオ形式が符号なしのデータを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_MASK_BIG_ENDIAN.html">SDL_AUDIO_MASK_BIG_ENDIAN</a> - SDL_AudioFormatのビッグエンディアンフラグのマスクのマクロ
+<li><a href="SDL_AUDIO_MASK_BITSIZE.html">SDL_AUDIO_MASK_BITSIZE</a> - SDL_AudioFormatの量子化ビットサイズのマスクのマクロ
+<li><a href="SDL_AUDIO_MASK_FLOAT.html">SDL_AUDIO_MASK_FLOAT</a> - SDL_AudioFormatの浮動小数点のマスクのマクロ
+<li><a href="SDL_AUDIO_MASK_SIGNED.html">SDL_AUDIO_MASK_SIGNED</a> - SDL_AudioFormatの符号ありのマスクのマクロ
 <li>SDL_DEFINE_AUDIO_FORMAT
 </ol>
 <h2>SDL Wikiへのリンク</h2>

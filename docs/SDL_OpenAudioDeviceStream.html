@@ -62,7 +62,7 @@
 コールバック関数の指定は任意である. NULLならば, アプリケーションは再生データをキューに入れる(または録音データをキューから出す). NULLでなければ, デバイスの一時停止が解除されればコールバックの呼び出しが始まる.
 </p>
 <p>
-戻されたストリームを<a href="SDL_DestroyAudioStream.html">SDL_DestroyAudioStream</a>で破棄すると, ストリームに関連付けられたオーディオデバイスもクローズされる.
+戻されたストリームを<a href="SDL_DestroyAudioStream.html">SDL_DestroyAudioStream</a>で破棄すると, ストリームにバインドされたオーディオデバイスもクローズされる.
 </p>
 <h2>スレッドセーフ</h2>
 <p>

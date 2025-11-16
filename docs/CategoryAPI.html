@@ -47,13 +47,13 @@
 <li>SDL_atof
 <li>SDL_atoi
 <li>SDL_AttachVirtualJoystick
-<li>SDL_AudioDevicePaused
-<li>SDL_AudioStreamDevicePaused
+<li><a href="SDL_AudioDevicePaused.html">SDL_AudioDevicePaused</a> - オーディオデバイスが一時停止中かチェックする
+<li><a href="SDL_AudioStreamDevicePaused.html">SDL_AudioStreamDevicePaused</a> - オーディオデバイスに関連付けられたオーディオストリームが一時停止中かチェックする
 <li>SDL_BeginGPUComputePass
 <li>SDL_BeginGPUCopyPass
 <li>SDL_BeginGPURenderPass
-<li>SDL_BindAudioStream
-<li>SDL_BindAudioStreams
+<li><a href="SDL_BindAudioStream.html">SDL_BindAudioStream</a> - 1つのオーディオストリームをオーディオデバイスにバインドする
+<li><a href="SDL_BindAudioStreams.html">SDL_BindAudioStreams</a> - オーディオストリームの一覧をオーディオデバイスにバインドする
 <li>SDL_BindGPUComputePipeline
 <li>SDL_BindGPUComputeSamplers
 <li>SDL_BindGPUComputeStorageBuffers
@@ -86,7 +86,7 @@
 <li>SDL_ceilf
 <li>SDL_ClaimWindowForGPUDevice
 <li>SDL_CleanupTLS
-<li>SDL_ClearAudioStream
+<li><a href="SDL_ClearAudioStream.html">SDL_ClearAudioStream</a> - オーディオストリームの保留中のデータを消去する
 <li>SDL_ClearClipboardData
 <li>SDL_ClearComposition
 <li><a href="SDL_ClearError.html">SDL_ClearError</a> - エラーメッセージを消去する
@@ -106,7 +106,7 @@
 <li><a href="SDL_CompareAndSwapAtomicPointer.html">SDL_CompareAndSwapAtomicPointer</a> - もしポインタが「古い値」ならば「新しい値」にする
 <li><A HREF="SDL_CompareAndSwapAtomicU32.html">SDL_CompareAndSwapAtomicU32</a> - もしアトミック変数が「古い値」ならば「新しい値」にする
 <li><a href="SDL_ComposeCustomBlendMode.html">SDL_ComposeCustomBlendMode</a> - レンダラ用のカスタムブレンドモードを構成する
-<li>SDL_ConvertAudioSamples
+<li><a href="SDL_ConvertAudioSamples.html">SDL_ConvertAudioSamples</a> - オーディオデータを別の形式に変換する
 <li>SDL_ConvertEventToRenderCoordinates
 <li><a href="SDL_ConvertPixels.html">SDL_ConvertPixels</a> - ある形式のピクセル群を別の形式に変換してコピーする
 <li><a href="SDL_ConvertPixelsAndColorspace.html">SDL_ConvertPixelsAndColorspace</a> - ある形式のピクセル群を別の形式と色空間に変換してコピーする
@@ -231,7 +231,7 @@
 <li><a href="SDL_FlipSurface.html">SDL_FlipSurface</a> - サーフェイスを垂直または水平方向に反転する
 <li>SDL_floor
 <li>SDL_floorf
-<li>SDL_FlushAudioStream
+<li><a href="SDL_FlushAudioStream.html">SDL_FlushAudioStream</a> - オーディオストリームにデータ送信の完了を伝える
 <li><a href="SDL_FlushEvent.html">SDL_FlushEvent</a> - イベントキューからイベントを消去する
 <li><a href="SDL_FlushEvents.html">SDL_FlushEvents</a> - イベントキューから複数のイベントを消去する
 <li>SDL_FlushIO
@@ -264,7 +264,7 @@
 <li><a href="SDL_GetAtomicInt.html">SDL_GetAtomicInt</a> - アトミック変数の値を得る
 <li><a href="SDL_GetAtomicPointer.html">SDL_GetAtomicPointer</a> - アトミックにポインタを得る
 <li><a href="SDL_GetAtomicU32.html">SDL_GetAtomicU32</a> - アトミック変数の値を得る
-<li>SDL_GetAudioDeviceChannelMap
+<li><a href="SDL_GetAudioDeviceChannelMap.html">SDL_GetAudioDeviceChannelMap</a> - オーディオデバイスの現在のチャネルマップを得る
 <li>SDL_GetAudioDeviceFormat
 <li>SDL_GetAudioDeviceGain
 <li>SDL_GetAudioDeviceName
@@ -491,7 +491,7 @@
 <li>SDL_GetProcessInput
 <li>SDL_GetProcessOutput
 <li>SDL_GetProcessProperties
-<li>SDL_GetPropertyType
+<li><a href="SDL_GetPropertyType.html">SDL_GetPropertyType</a> - プロパティグループのプロパティの型を得る
 <li>SDL_GetRealGamepadType
 <li>SDL_GetRealGamepadTypeForID
 <li>SDL_GetRectAndLineIntersection
@@ -993,8 +993,8 @@
 <li>SDL_SetAudioStreamFrequencyRatio
 <li>SDL_SetAudioStreamGain
 <li>SDL_SetAudioStreamGetCallback
-<li>SDL_SetAudioStreamInputChannelMap
-<li>SDL_SetAudioStreamOutputChannelMap
+<li><a href="SDL_SetAudioStreamInputChannelMap.html">SDL_SetAudioStreamInputChannelMap</a> - オーディオストリームの入力チャネルマップを設定する
+<li><a href="SDL_SetAudioStreamOutputChannelMap.html">SDL_SetAudioStreamOutputChannelMap</a> - オーディオストリームの出力チャネルマップを設定する
 <li>SDL_SetAudioStreamPutCallback
 <li><a href="SDL_SetBooleanProperty.html">SDL_SetBooleanProperty</a> - プロパティグループのブール型プロパティを設定する
 <li>SDL_SetClipboardData
@@ -1689,21 +1689,21 @@
 <li>SDL_AssertBreakpoint
 <li>SDL_AtomicDecRef
 <li>SDL_AtomicIncRef
-<li>SDL_AUDIO_BITSIZE
-<li>SDL_AUDIO_BYTESIZE
+<li><a href="SDL_AUDIO_BITSIZE.html">SDL_AUDIO_BITSIZE</a> - オーディオ形式から量子化ビット数を得るマクロ
+<li><a href="SDL_AUDIO_BYTESIZE.html">SDL_AUDIO_BYTESIZE</a> - オーディオ形式から量子化バイト数を得るマクロ
 <li>SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK
 <li>SDL_AUDIO_DEVICE_DEFAULT_RECORDING
 <li>SDL_AUDIO_FRAMESIZE
-<li>SDL_AUDIO_ISBIGENDIAN
-<li>SDL_AUDIO_ISFLOAT
-<li>SDL_AUDIO_ISINT
-<li>SDL_AUDIO_ISLITTLEENDIAN
-<li>SDL_AUDIO_ISSIGNED
-<li>SDL_AUDIO_ISUNSIGNED
-<li>SDL_AUDIO_MASK_BIG_ENDIAN
-<li>SDL_AUDIO_MASK_BITSIZE
-<li>SDL_AUDIO_MASK_FLOAT
-<li>SDL_AUDIO_MASK_SIGNED
+<li><a href="SDL_AUDIO_ISBIGENDIAN.html">SDL_AUDIO_ISBIGENDIAN</a> - オーディオ形式がビッグエンディアンのデータを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISFLOAT.html">SDL_AUDIO_ISFLOAT</a> - オーディオ形式が浮動小数点データを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISINT.html">SDL_AUDIO_ISINT</a> - オーディオ形式が整数データを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISLITTLEENDIAN.html">SDL_AUDIO_ISLITTLEENDIAN</a> - オーディオ形式がリトルエンディアンのデータを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISSIGNED.html">SDL_AUDIO_ISSIGNED</a> - オーディオ形式が符号ありのデータを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_ISUNSIGNED.html">SDL_AUDIO_ISUNSIGNED</a> - オーディオ形式が符号なしのデータを扱うものかをチェックするマクロ
+<li><a href="SDL_AUDIO_MASK_BIG_ENDIAN.html">SDL_AUDIO_MASK_BIG_ENDIAN</a> - SDL_AudioFormatのビッグエンディアンフラグのマスクのマクロ
+<li><a href="SDL_AUDIO_MASK_BITSIZE.html">SDL_AUDIO_MASK_BITSIZE</a> - SDL_AudioFormatの量子化ビットサイズのマスクのマクロ
+<li><a href="SDL_AUDIO_MASK_FLOAT.html">SDL_AUDIO_MASK_FLOAT</a> - SDL_AudioFormatの浮動小数点のマスクのマクロ
+<li><a href="SDL_AUDIO_MASK_SIGNED.html">SDL_AUDIO_MASK_SIGNED</a> - SDL_AudioFormatの符号ありのマスクのマクロ
 <li>SDL_AVX2_INTRINSICS
 <li>SDL_AVX512F_INTRINSICS
 <li>SDL_AVX_INTRINSICS
@@ -1843,11 +1843,11 @@
 <li>SDL_HINT_ANDROID_ALLOW_RECREATE_ACTIVITY
 <li><a href="SDL_HINT_ANDROID_BLOCK_ON_PAUSE.html">SDL_HINT_ANDROID_BLOCK_ON_PAUSE</a> - アプリの停止中にイベントループをブロックするか否かを設定するヒント
 <li>SDL_HINT_ANDROID_LOW_LATENCY_AUDIO
-<li>SDL_HINT_ANDROID_TRAP_BACK_BUTTON
+<li><a href="SDL_HINT_ANDROID_TRAP_BACK_BUTTON.html">SDL_HINT_ANDROID_TRAP_BACK_BUTTON</a> - Androidの戻るボタンをトラップしてアプリで扱えるようにするか否かを設定するヒント
 <li>SDL_HINT_APP_ID
-<li>SDL_HINT_APP_NAME
-<li>SDL_HINT_APPLE_TV_CONTROLLER_UI_EVENTS
-<li>SDL_HINT_APPLE_TV_REMOTE_ALLOW_ROTATION
+<li><a href="SDL_HINT_APP_NAME.html">SDL_HINT_APP_NAME</a> - アプリケーションの名前を指定するヒント
+<li><a href="SDL_HINT_APPLE_TV_CONTROLLER_UI_EVENTS.html">SDL_HINT_APPLE_TV_CONTROLLER_UI_EVENTS</a> - Apple TVで使われるコントローラーがUIイベントを発生させるか否かを指定するヒント
+<li><a href="SDL_HINT_APPLE_TV_REMOTE_ALLOW_ROTATION.html">SDL_HINT_APPLE_TV_REMOTE_ALLOW_ROTATION</a> - Apple TV remoteのジョイスティックの軸を回転させた方向に自動的に合わせるか否かを指定するヒント
 <li>SDL_HINT_ASSERT
 <li>SDL_HINT_AUDIO_ALSA_DEFAULT_DEVICE
 <li>SDL_HINT_AUDIO_ALSA_DEFAULT_PLAYBACK_DEVICE
