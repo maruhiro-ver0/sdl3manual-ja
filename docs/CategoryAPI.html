@@ -87,7 +87,7 @@
 <li>SDL_ClaimWindowForGPUDevice
 <li>SDL_CleanupTLS
 <li><a href="SDL_ClearAudioStream.html">SDL_ClearAudioStream</a> - オーディオストリームの保留中のデータを消去する
-<li>SDL_ClearClipboardData
+<li><a href="SDL_ClearClipboardData.html">SDL_ClearClipboardData</a> - クリップボードのデータを消去する
 <li>SDL_ClearComposition
 <li><a href="SDL_ClearError.html">SDL_ClearError</a> - エラーメッセージを消去する
 <li><a href="SDL_ClearProperty.html">SDL_ClearProperty</a> - プロパティグループのプロパティを消去する
@@ -293,9 +293,9 @@
 <li>SDL_GetCameraProperties
 <li>SDL_GetCameras
 <li>SDL_GetCameraSupportedFormats
-<li>SDL_GetClipboardData
-<li>SDL_GetClipboardMimeTypes
-<li>SDL_GetClipboardText
+<li><a href="SDL_GetClipboardData.html">SDL_GetClipboardData</a> - クリップボードの指定のMIMEタイプのデータを得る
+<li><a href="SDL_GetClipboardMimeTypes.html">SDL_GetClipboardMimeTypes</a> - クリップボードの利用可能なMIMEタイプの一覧を得る
+<li><a href="SDL_GetClipboardText.html">SDL_GetClipboardText</a> - クリップボードからUTF-8のテキストを得る
 <li><a href="SDL_GetClosestFullscreenDisplayMode.html">SDL_GetClosestFullscreenDisplayMode</a> - 要求に最も近いディスプレイモードを得る
 <li>SDL_GetCPUCacheLineSize
 <li>SDL_GetCurrentAudioDriver
@@ -654,8 +654,8 @@
 <li>SDL_HasAVX
 <li>SDL_HasAVX2
 <li>SDL_HasAVX512F
-<li>SDL_HasClipboardData
-<li>SDL_HasClipboardText
+<li><a href="SDL_HasClipboardData.html">SDL_HasClipboardData</a> - クリップボードに指定のMIMEタイプのデータがあるかチェックする
+<li><a href="SDL_HasClipboardText.html">SDL_HasClipboardText</a> - クリップボードにテキストが存在し, かつ空でないかチェックする
 <li><a href="SDL_HasEvent.html">SDL_HasEvent</a> - キューに指定のイベントが存在するか調査する
 <li><a href="SDL_HasEvents.html">SDL_HasEvents</a> - キューに指定の範囲のイベントが存在するか調査する
 <li><a href="SDL_HasExactlyOneBitSet32.html">SDL_HasExactlyOneBitSet32</a> - 符号なし32ビット値に1ビットだけがセットされているかを調べる
@@ -998,7 +998,7 @@
 <li>SDL_SetAudioStreamPutCallback
 <li><a href="SDL_SetBooleanProperty.html">SDL_SetBooleanProperty</a> - プロパティグループのブール型プロパティを設定する
 <li>SDL_SetClipboardData
-<li>SDL_SetClipboardText
+<li><a href="SDL_SetClipboardText.html">SDL_SetClipboardText</a> - クリップボードにUTF-8テキストを設定する
 <li>SDL_SetCurrentThreadPriority
 <li>SDL_SetCursor
 <li>SDL_SetDefaultTextureScaleMode
@@ -2156,7 +2156,7 @@
 <li>SDL_LSX_INTRINSICS
 <li><a href="SDL_MAIN_HANDLED.html">SDL_MAIN_HANDLED</a> - SDLの代わりにアプリケーションがエントリーポイントを提供することをSDLに知らせるマクロ
 <li><a href="SDL_MAIN_USE_CALLBACKS.html">SDL_MAIN_USE_CALLBACKS</a> - mainの代わりにmainコールバックを使用することをSDLに知らせるマクロ
-<li>SDL_MAJOR_VERSION
+<li><a href="SDL_MAJOR_VERSION.html">SDL_MAJOR_VERSION</a> - SDLヘッダのメジャーバージョンのマクロ
 <li>SDL_MALLOC
 <li>SDL_max
 <li>SDL_MAX_SINT16
@@ -2177,7 +2177,7 @@
 <li>SDL_MESSAGEBOX_ERROR
 <li>SDL_MESSAGEBOX_INFORMATION
 <li>SDL_MESSAGEBOX_WARNING
-<li>SDL_MICRO_VERSION
+<li><a href="SDL_MICRO_VERSION.html">SDL_MICRO_VERSION</a> - SDLヘッダのマイクロ(またはパッチレベル)バージョンのマクロ
 <li>SDL_min
 <li>SDL_MIN_SINT16
 <li>SDL_MIN_SINT32
@@ -2188,7 +2188,7 @@
 <li>SDL_MIN_UINT32
 <li>SDL_MIN_UINT64
 <li>SDL_MIN_UINT8
-<li>SDL_MINOR_VERSION
+<li><a href="SDL_MINOR_VERSION.html">SDL_MINOR_VERSION</a> - SDLヘッダのマイナーバージョンのマクロ
 <li>SDL_MMX_INTRINSICS
 <li>SDL_MOUSE_TOUCHID
 <li>SDL_MS_PER_SECOND
@@ -2621,12 +2621,12 @@
 <li><a href="SDL_Unsupported.html">SDL_Unsupported</a> - 対応外の操作をしたとき一般的なエラーを報告するためのマクロ
 <li>SDL_US_PER_SECOND
 <li>SDL_US_TO_NS
-<li>SDL_VERSION
+<li><a href="SDL_VERSION.html">SDL_VERSION</a> - SDLバージョンのマクロ
 <li>SDL_VERSION_ATLEAST
-<li>SDL_VERSIONNUM
-<li>SDL_VERSIONNUM_MAJOR
-<li>SDL_VERSIONNUM_MICRO
-<li>SDL_VERSIONNUM_MINOR
+<li><a href="SDL_VERSIONNUM.html">SDL_VERSIONNUM</a> - バージョン番号を数値に変換するマクロ
+<li><a href="SDL_VERSIONNUM_MAJOR.html">SDL_VERSIONNUM_MAJOR</a> - バージョンを表す数値からメジャーバージョンを得るマクロ
+<li><a href="SDL_VERSIONNUM_MICRO.html">SDL_VERSIONNUM_MICRO</a> - バージョンを表す数値からマイクロバージョンを得るマクロ
+<li><a href="SDL_VERSIONNUM_MINOR.html">SDL_VERSIONNUM_MINOR</a> - バージョンを表す数値からマイナーバージョンを得るマクロ
 <li>SDL_WINAPI_FAMILY_PHONE
 <li>SDL_WINDOW_ALWAYS_ON_TOP
 <li>SDL_WINDOW_BORDERLESS
