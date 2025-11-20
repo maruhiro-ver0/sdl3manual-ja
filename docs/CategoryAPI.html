@@ -297,7 +297,7 @@
 <li><a href="SDL_GetClipboardMimeTypes.html">SDL_GetClipboardMimeTypes</a> - クリップボードの利用可能なMIMEタイプの一覧を得る
 <li><a href="SDL_GetClipboardText.html">SDL_GetClipboardText</a> - クリップボードからUTF-8のテキストを得る
 <li><a href="SDL_GetClosestFullscreenDisplayMode.html">SDL_GetClosestFullscreenDisplayMode</a> - 要求に最も近いディスプレイモードを得る
-<li>SDL_GetCPUCacheLineSize
+<li><a href="SDL_GetCPUCacheLineSize.html">SDL_GetCPUCacheLineSize</a> - CPUのL1キャッシュラインのサイズを得る
 <li>SDL_GetCurrentAudioDriver
 <li>SDL_GetCurrentCameraDriver
 <li>SDL_GetCurrentDirectory
@@ -560,7 +560,7 @@
 <li><a href="SDL_GetSurfacePalette.html">SDL_GetSurfacePalette</a> - サーフェイスのパレットを得る
 <li><a href="SDL_GetSurfaceProperties.html">SDL_GetSurfaceProperties</a> - サーフェイスのプロパティを得る
 <li>SDL_GetSystemPageSize
-<li>SDL_GetSystemRAM
+<li><a href="SDL_GetSystemRAM.html">SDL_GetSystemRAM</a> - システムに設定されたのRAMのサイズを得る
 <li><a href="SDL_GetSystemTheme.html">SDL_GetSystemTheme</a> - 現在のシステムテーマを得る
 <li>SDL_GetTextInputArea
 <li>SDL_GetTextureAlphaMod
@@ -649,7 +649,7 @@
 <li><a href="SDL_GUIDToString.html">SDL_GUIDToString</a> - SDL_GUIDからASCII文字列を得る
 <li>SDL_HapticEffectSupported
 <li>SDL_HapticRumbleSupported
-<li>SDL_HasAltiVec
+<li><a href="SDL_HasAltiVec.html">SDL_HasAltiVec</a> - CPUにAltiVec仕様があるかチェックする
 <li>SDL_HasARMSIMD
 <li>SDL_HasAVX
 <li>SDL_HasAVX2
@@ -1123,11 +1123,11 @@
 <li>SDL_ShowAndroidToast
 <li>SDL_ShowCursor
 <li>SDL_ShowFileDialogWithProperties
-<li>SDL_ShowMessageBox
+<li><a href="SDL_ShowMessageBox.html">SDL_ShowMessageBox</a> - モーダルなメッセージボックスを生成する
 <li>SDL_ShowOpenFileDialog
 <li>SDL_ShowOpenFolderDialog
 <li>SDL_ShowSaveFileDialog
-<li>SDL_ShowSimpleMessageBox
+<li><a href="SDL_ShowSimpleMessageBox.html">SDL_ShowSimpleMessageBox</a> - 単純なモーダルメッセージボックスを表示する
 <li><a href="SDL_ShowWindow.html">SDL_ShowWindow</a> - ウィンドウを表示する
 <li><a href="SDL_ShowWindowSystemMenu.html">SDL_ShowWindowSystemMenu</a> - システムのウィンドウメニューを表示する
 <li>SDL_SignalAsyncIOQueue
@@ -1391,8 +1391,8 @@
 <li><a href="SDL_main_func.html">SDL_main_func</a> - アプリケーションのmain()関数のプロトタイプ型
 <li>SDL_MainThreadCallback
 <li>SDL_malloc_func
-<li>SDL_MessageBoxButtonFlags
-<li>SDL_MessageBoxFlags
+<li><a href="SDL_MessageBoxButtonFlags.html">SDL_MessageBoxButtonFlags</a> - SDL_MessageBoxButtonDataで使われるフラグの型
+<li><a href="SDL_MessageBoxFlags.html">SDL_MessageBoxFlags</a> - メッセージボックスフラグの型
 <li>SDL_MetalView
 <li>SDL_MouseButtonFlags
 <li>SDL_MouseID
@@ -1529,10 +1529,10 @@
 <li><a href="SDL_KeyboardDeviceEvent.html">SDL_KeyboardDeviceEvent</a> - キーボードデバイスイベントの構造体(event.kdevice.*)
 <li><a href="SDL_KeyboardEvent.html">SDL_KeyboardEvent</a> - キーボードイベントの構造体(event.key.*) 
 <li><a href="SDL_Locale.html">SDL_Locale</a> - ユーザの設定したロケールの構造体
-<li>SDL_MessageBoxButtonData
-<li>SDL_MessageBoxColor
-<li>SDL_MessageBoxColorScheme
-<li>SDL_MessageBoxData
+<li><a href="SDL_MessageBoxButtonData.html">SDL_MessageBoxButtonData</a> - メッセージボックスの個々のボタンのデータを持つ構造体
+<li><a href="SDL_MessageBoxColor.html">SDL_MessageBoxColor</a> - SDL_MessageBoxColorSchemeで使われるRGB値の構造体
+<li><a href="SDL_MessageBoxColorScheme.html">SDL_MessageBoxColorScheme</a> - メッセージボックスダイアログの色の設定を持つ構造体
+<li><a href="SDL_MessageBoxData.html">SDL_MessageBoxData</a> - メッセージボックスのタイトル, テキスト, ウィンドウその他の情報を持つ構造体
 <li><a href="SDL_MouseButtonEvent.html">SDL_MouseButtonEvent</a> - マウスボタンイベントの構造体(event.button.*)
 <li><a href="SDL_MouseDeviceEvent.html">SDL_MouseDeviceEvent</a> - マウスデバイスイベントの構造体(event.mdevice.*)
 <li><a href="SDL_MouseMotionEvent.html">SDL_MouseMotionEvent</a> - マウス移動イベントの構造体(event.motion.*)
@@ -1634,7 +1634,7 @@
 <li><a href="SDL_LogCategory.html">SDL_LogCategory</a> - 設定済みのログの分類の列挙体
 <li><a href="SDL_LogPriority.html">SDL_LogPriority</a> - 定義済みのログの重要度の列挙体
 <li><a href="SDL_MatrixCoefficients.html">SDL_MatrixCoefficients</a> - 色空間情報のmatrix coefficients(行列の係数)の列挙体
-<li>SDL_MessageBoxColorType
+<li><a href="SDL_MessageBoxColorType.html">SDL_MessageBoxColorType</a> - SDL_MessageBoxColorScheme内のcolors配列で使われる列挙対
 <li>SDL_MouseWheelDirection
 <li><a href="SDL_PackedLayout.html">SDL_PackedLayout</a> - パックされた(整数に詰め込まれた)色要素の配置の列挙体
 <li><a href="SDL_PackedOrder.html">SDL_PackedOrder</a> - パックされた(整数に詰め込まれた)色要素の順序の列挙体
