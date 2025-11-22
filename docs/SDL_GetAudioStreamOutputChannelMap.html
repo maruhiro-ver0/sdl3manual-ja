@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAudio.html" title="1つ上">
+<title>SDL_GetAudioStreamOutputChannelMap</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAudio.html">再生と録音</a> - SDL_GetAudioStreamOutputChannelMap
+<hr>
+<h1>SDL_GetAudioStreamOutputChannelMap</h1>
+オーディオストリームの出力チャネルマップを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_audio.h">SDL3/SDL_audio.h</a>
+<h2>構文</h2>
+<code>int * SDL_GetAudioStreamOutputChannelMap(SDL_AudioStream *stream, int *count);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_AudioStream.html">SDL_AudioStream</a> *</td><td>stream</td><td>問い合わせるオーディオストリーム</td></tr>
+<tr><td>const int *</td><td>chmap</td><td>新しいチャネルマップ. NULLのときデフォルトに戻す</td></tr>
+<tr><td>int *</td><td>count</td><td>チャネルの数の代入先へのポインタ. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(int *) 現在の出力チャネルと同じ要素数の現在のチャネルマップの配列を戻す. デフォルトのときNULLを戻す. 
+不要になったとき<a href="SDL_free.html">SDL_free()</a>で解放する必要がある.
+</p>
+<h2>詳細</h2>
+<p>
+チャネルマップは任意で, ほとんどの場合は必要なく, SDLが求める順序でデータを渡せばよい.
+</p>
+<p>
+オーディオストリームはデフォルトでは再マップが適用されていない.
+NULLはこの状態を表すもので, エラーではない
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はストリーム固有のミューテックスが行われている限りどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_SetAudioStreamOutputChannelMap.html">SDL_SetAudioStreamOutputChannelMap</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GetAudioStreamOutputChannelMap">SDL_GetAudioStreamOutputChannelMap - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

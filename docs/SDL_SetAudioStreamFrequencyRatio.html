@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAudio.html" title="1つ上">
+<title>SDL_SetAudioStreamFrequencyRatio</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAudio.html">再生と録音</a> - SDL_SetAudioStreamFrequencyRatio
+<hr>
+<h1>SDL_SetAudioStreamFrequencyRatio</h1>
+オーディオストリームの周波数の倍率を設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_audio.h">SDL3/SDL_audio.h</a>
+<h2>構文</h2>
+<code>float SDL_SetAudioStreamFrequencyRatio(SDL_AudioStream *stream);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_AudioStream.html">SDL_AudioStream</a> *</td><td>stream</td><td>周波数比を設定するオーディオストリーム</td></tr>
+<tr><td>float</td><td>ratio</td><td>周波数の倍率. 1.0が通常速度. 0.01から100の間の必要がある</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+周波数の倍率は入力データが消費されるとき周波数の調整に使用される.
+これを変更すると音声の速度と高さを効果的に変更できる.
+値が1.0fより大きいとき, 再生が速く高くなる.
+値が1.0fより小さいとき, 音声は遅く低くなる.
+1.0fは通常の速さである.
+</p>
+<p>
+これは<a href="SDL_GetAudioStreamData.html">SDL_GetAudioStreamData</a>の最中に適用され, 様々な効果を作り出すために継続的に変更することができる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetAudioStreamFrequencyRatio.html">SDL_SetAudioStreamFrequencyRatio</a>
+<li><a href="SDL_SetAudioStreamFormat.html">SDL_SetAudioStreamFormat</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SetAudioStreamFrequencyRatio">SDL_SetAudioStreamFrequencyRatio - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
