@@ -117,8 +117,8 @@ MP3なども自身でデコードすれば渡せるが, 直接渡すことはで
 <li><a href="SDL_GetAudioFormatName.html">SDL_GetAudioFormatName</a> - 人間が読めるオーディオ形式の名前を得る
 <li><a href="SDL_GetAudioPlaybackDevices.html">SDL_GetAudioPlaybackDevices</a> - 現在接続されているオーディオ再生デバイスの一覧を得る
 <li><a href="SDL_GetAudioRecordingDevices.html">SDL_GetAudioRecordingDevices</a> - 現在接続されているオーディオ録音デバイスの一覧を得る
-<li><a href="SDL_GetAudioStreamAvailable.html">SDL_GetAudioStreamAvailable</a> - 利用可能な変換/再サンプリングされたバイト数を得る
-<li><a href="SDL_GetAudioStreamData.html">SDL_GetAudioStreamData</a>- ストリームから変換/再サンプリングされたデータを得る
+<li><a href="SDL_GetAudioStreamAvailable.html">SDL_GetAudioStreamAvailable</a> - オーディオストリームの利用可能な変換/再サンプリングされたバイト数を得る
+<li><a href="SDL_GetAudioStreamData.html">SDL_GetAudioStreamData</a>- オーディオストリームから変換/再サンプリングされたデータを得る
 <li><a href="SDL_GetAudioStreamDevice.html">SDL_GetAudioStreamDevice</a> - オーディオストリームにバインドされたデバイスを得る
 <li><a href="SDL_GetAudioStreamFormat.html">SDL_GetAudioStreamFormat</a> - オーディオストリームの形式を得る
 <li><a href="SDL_GetAudioStreamFrequencyRatio.html">SDL_GetAudioStreamFrequencyRatio</a> - オーディオストリームの周波数の倍率を得る
@@ -126,24 +126,24 @@ MP3なども自身でデコードすれば渡せるが, 直接渡すことはで
 <li><a href="SDL_GetAudioStreamInputChannelMap.html">SDL_GetAudioStreamInputChannelMap</a> - オーディオストリームの入力チャネルマップを得る
 <li><a href="SDL_GetAudioStreamOutputChannelMap.html">SDL_GetAudioStreamOutputChannelMap</a> - オーディオストリームの出力チャネルマップを得る
 <li><a href="SDL_GetAudioStreamProperties.html">SDL_GetAudioStreamProperties</a> - オーディオストリームに関連付けられたプロパティを得る
-<li>SDL_GetAudioStreamQueued
-<li>SDL_GetCurrentAudioDriver
-<li>SDL_GetNumAudioDrivers
-<li>SDL_GetSilenceValueForFormat
-<li>SDL_IsAudioDevicePhysical
-<li>SDL_IsAudioDevicePlayback
-<li>SDL_LoadWAV
-<li>SDL_LoadWAV_IO
-<li>SDL_LockAudioStream
-<li>SDL_MixAudio
+<li><a href="SDL_GetAudioStreamQueued.html">SDL_GetAudioStreamQueued</a> - オーディオストリームのキューに入力されたデータのバイト数を得る
+<li><a href="SDL_GetCurrentAudioDriver.html">SDL_GetCurrentAudioDriver</a> - 現在のオーディオドライバの名前を得る
+<li><a href="SDL_GetNumAudioDrivers.html">SDL_GetNumAudioDrivers</a> - 組み込まれたオーディオドライバの数を得る
+<li><a href="SDL_GetSilenceValueForFormat.html">SDL_GetSilenceValueForFormat</a> - オーディオ形式に合ったmemsetで設定できる無音の値を得る
+<li><a href="SDL_IsAudioDevicePhysical.html">SDL_IsAudioDevicePhysical</a> - オーディオデバイスが(論理デバイスではなく)物理デバイスかチェックする
+<li><a href="SDL_IsAudioDevicePlayback.html">SDL_IsAudioDevicePlayback</a> - オーディオデバイスが(録音デバイスではなく)再生デバイスかチェックする
+<li><a href="SDL_LoadWAV.html">SDL_LoadWAV</a> - WAVファイルを読み込む
+<li><a href="SDL_LoadWAV_IO.html">SDL_LoadWAV_IO</a> - WAVファイルをメモリに読み込む
+<li><a href="SDL_LockAudioStream.html">SDL_LockAudioStream</a> - オーディオストリームをアクセスの直列化のためロックする
+<li><a href="SDL_MixAudio.html">SDL_MixAudio</a> - オーディオデータをミックスする
 <li><a href="SDL_OpenAudioDevice.html">SDL_OpenAudioDevice</a> - オーディオデバイスをオープンする 
 <li><a href="SDL_OpenAudioDeviceStream.html">SDL_OpenAudioDeviceStream</a> - 簡単のため典型的なオーディオの初期化を一度に行う関数
-<li>SDL_PauseAudioDevice
+<li><a href="SDL_PauseAudioDevice.html">SDL_PauseAudioDevice</a> - オーディオデバイスの再生を一時停止する
 <li><a href="SDL_PauseAudioStreamDevice.html">SDL_PauseAudioStreamDevice</a> - オーディオデバイスに関連付けられたオーディオストリームの再生を一時停止する
 <li><a href="SDL_PutAudioStreamData.html">SDL_PutAudioStreamData</a> - ストリームにデータを追加する
-<li>SDL_PutAudioStreamDataNoCopy
-<li>SDL_PutAudioStreamPlanarData
-<li>SDL_ResumeAudioDevice
+<li><a href="SDL_PutAudioStreamDataNoCopy.html">SDL_PutAudioStreamDataNoCopy</a> - ストリームにデータをコピーせずに追加する
+<li><a href="SDL_PutAudioStreamPlanarData.html">SDL_PutAudioStreamPlanarData</a> - オーディオストリームにチャネルごとの配列に分けられたデータを追加する
+<li><a href="SDL_ResumeAudioDevice.html">SDL_ResumeAudioDevice</a> - オーディオデバイスの再生の一時停止を解除する
 <li><a href="SDL_ResumeAudioStreamDevice.html">SDL_ResumeAudioStreamDevice</a> - オーディオデバイスに関連付けられたオーディオストリームの一時停止を解除する
 <li>SDL_SetAudioDeviceGain
 <li>SDL_SetAudioIterationCallbacks

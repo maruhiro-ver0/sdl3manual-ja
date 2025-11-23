@@ -272,8 +272,8 @@
 <li><a href="SDL_GetAudioFormatName.html">SDL_GetAudioFormatName</a> - 人間が読めるオーディオ形式の名前を得る
 <li><a href="SDL_GetAudioPlaybackDevices.html">SDL_GetAudioPlaybackDevices</a> - 現在接続されているオーディオ再生デバイスの一覧を得る
 <li><a href="SDL_GetAudioRecordingDevices.html">SDL_GetAudioRecordingDevices</a> - 現在接続されているオーディオ録音デバイスの一覧を得る
-<li><a href="SDL_GetAudioStreamAvailable.html">SDL_GetAudioStreamAvailable</a> - 利用可能な変換/再サンプリングされたバイト数を得る
-<li><a href="SDL_GetAudioStreamData.html">SDL_GetAudioStreamData</a>- ストリームから変換/再サンプリングされたデータを得る
+<li><a href="SDL_GetAudioStreamAvailable.html">SDL_GetAudioStreamAvailable</a> - オーディオストリームの利用可能な変換/再サンプリングされたバイト数を得る
+<li><a href="SDL_GetAudioStreamData.html">SDL_GetAudioStreamData</a>- オーディオストリームから変換/再サンプリングされたデータを得る
 <li><a href="SDL_GetAudioStreamDevice.html">SDL_GetAudioStreamDevice</a> - オーディオストリームにバインドされたデバイスを得る
 <li><a href="SDL_GetAudioStreamFormat.html">SDL_GetAudioStreamFormat</a> - オーディオストリームの形式を得る
 <li><a href="SDL_GetAudioStreamFrequencyRatio.html">SDL_GetAudioStreamFrequencyRatio</a> - オーディオストリームの周波数の倍率を得る
@@ -281,7 +281,7 @@
 <li><a href="SDL_GetAudioStreamInputChannelMap.html">SDL_GetAudioStreamInputChannelMap</a> - オーディオストリームの入力チャネルマップを得る
 <li><a href="SDL_GetAudioStreamOutputChannelMap.html">SDL_GetAudioStreamOutputChannelMap</a> - オーディオストリームの出力チャネルマップを得る
 <li><a href="SDL_GetAudioStreamProperties.html">SDL_GetAudioStreamProperties</a> - オーディオストリームに関連付けられたプロパティを得る
-<li>SDL_GetAudioStreamQueued
+<li><a href="SDL_GetAudioStreamQueued.html">SDL_GetAudioStreamQueued</a> - オーディオストリームのキューに入力されたデータのバイト数を得る
 <li>SDL_GetBasePath
 <li><a href="SDL_GetBooleanProperty.html">SDL_GetBooleanProperty</a> - プロパティグループからブール型プロパティを得る
 <li>SDL_GetCameraDriver
@@ -298,7 +298,7 @@
 <li><a href="SDL_GetClipboardText.html">SDL_GetClipboardText</a> - クリップボードからUTF-8のテキストを得る
 <li><a href="SDL_GetClosestFullscreenDisplayMode.html">SDL_GetClosestFullscreenDisplayMode</a> - 要求に最も近いディスプレイモードを得る
 <li><a href="SDL_GetCPUCacheLineSize.html">SDL_GetCPUCacheLineSize</a> - CPUのL1キャッシュラインのサイズを得る
-<li>SDL_GetCurrentAudioDriver
+<li><a href="SDL_GetCurrentAudioDriver.html">SDL_GetCurrentAudioDriver</a> - 現在のオーディオドライバの名前を得る
 <li>SDL_GetCurrentCameraDriver
 <li>SDL_GetCurrentDirectory
 <li><a href="SDL_GetCurrentDisplayMode.html">SDL_GetCurrentDisplayMode</a> - 現在のディスプレイモードを得る
@@ -459,7 +459,7 @@
 <li>SDL_GetMouseState
 <li><a href="SDL_GetNaturalDisplayOrientation.html">SDL_GetNaturalDisplayOrientation</a> - 回転していないディスプレイの向きを得る
 <li>SDL_GetNumAllocations
-<li>SDL_GetNumAudioDrivers
+<li><a href="SDL_GetNumAudioDrivers.html">SDL_GetNumAudioDrivers</a> - 組み込まれたオーディオドライバの数を得る
 <li><a href="SDL_GetNumberProperty.html">SDL_GetNumberProperty</a> - プロパティグループから整数型プロパティを得る
 <li>SDL_GetNumCameraDrivers
 <li>SDL_GetNumGamepadTouchpadFingers
@@ -544,7 +544,7 @@
 <li>SDL_GetSensors
 <li>SDL_GetSensorType
 <li>SDL_GetSensorTypeForID
-<li>SDL_GetSilenceValueForFormat
+<li><a href="SDL_GetSilenceValueForFormat.html">SDL_GetSilenceValueForFormat</a> - オーディオ形式に合ったmemsetで設定できる無音の値を得る
 <li>SDL_GetSIMDAlignment
 <li>SDL_GetStorageFileSize
 <li>SDL_GetStoragePathInfo
@@ -719,8 +719,8 @@
 <li>SDL_IOvprintf
 <li>SDL_isalnum
 <li>SDL_isalpha
-<li>SDL_IsAudioDevicePhysical
-<li>SDL_IsAudioDevicePlayback
+<li><a href="SDL_IsAudioDevicePhysical.html">SDL_IsAudioDevicePhysical</a> - オーディオデバイスが(論理デバイスではなく)物理デバイスかチェックする
+<li><a href="SDL_IsAudioDevicePlayback.html">SDL_IsAudioDevicePlayback</a> - オーディオデバイスが(録音デバイスではなく)再生デバイスかチェックする
 <li>SDL_isblank
 <li>SDL_IsChromebook
 <li>SDL_iscntrl
@@ -759,9 +759,9 @@
 <li><a href="SDL_LoadObject.html">SDL_LoadObject</a> - 共有オブジェクトを動的に読み込む
 <li>SDL_LoadPNG
 <li>SDL_LoadPNG_IO
-<li>SDL_LoadWAV
-<li>SDL_LoadWAV_IO
-<li>SDL_LockAudioStream
+<li><a href="SDL_LoadWAV.html">SDL_LoadWAV</a> - WAVファイルを読み込む
+<li><a href="SDL_LoadWAV_IO.html">SDL_LoadWAV_IO</a> - WAVファイルをメモリに読み込む
+<li><a href="SDL_LockAudioStream.html">SDL_LockAudioStream</a> - オーディオストリームをアクセスの直列化のためロックする
 <li>SDL_LockJoysticks
 <li>SDL_LockMutex
 <li>SDL_LockProperties
@@ -807,7 +807,7 @@
 <li>SDL_Metal_DestroyView
 <li>SDL_Metal_GetLayer
 <li><a href="SDL_MinimizeWindow.html">SDL_MinimizeWindow</a> - ウィンドウを最小化してアイコン化する
-<li>SDL_MixAudio
+<li><a href="SDL_MixAudio.html">SDL_MixAudio</a> - オーディオデータをミックスする
 <li>SDL_modf
 <li>SDL_modff
 <li><a href="SDL_MostSignificantBitIndex32.html">SDL_MostSignificantBitIndex32</a> - 32ビットの値で設定されている最上位のビットが何ビット目かを得る
@@ -835,7 +835,7 @@
 <li><a href="SDL_OpenURL.html">SDL_OpenURL</a> - ブラウザ等の外部アプリケーションでURL/URIを開く
 <li>SDL_OpenUserStorage
 <li><a href="SDL_OutOfMemory.html">SDL_OutOfMemory</a> - メモリの確保に失敗したことを表すエラーを設定する
-<li>SDL_PauseAudioDevice
+<li><a href="SDL_PauseAudioDevice.html">SDL_PauseAudioDevice</a> - オーディオデバイスの再生を一時停止する
 <li><a href="SDL_PauseAudioStreamDevice.html">SDL_PauseAudioStreamDevice</a> - オーディオデバイスに関連付けられたオーディオストリームの再生を一時停止する
 <li>SDL_PauseHaptic
 <li><a href="SDL_PeepEvents.html">SDL_PeepEvents</a> - イベントキューのメッセージをチェックし, それらを戻す
@@ -855,8 +855,8 @@
 <li>SDL_PushGPUFragmentUniformData
 <li>SDL_PushGPUVertexUniformData
 <li><a href="SDL_PutAudioStreamData.html">SDL_PutAudioStreamData</a> - ストリームにデータを追加する
-<li>SDL_PutAudioStreamDataNoCopy
-<li>SDL_PutAudioStreamPlanarData
+<li><a href="SDL_PutAudioStreamDataNoCopy.html">SDL_PutAudioStreamDataNoCopy</a> - ストリームにデータをコピーせずに追加する
+<li><a href="SDL_PutAudioStreamPlanarData.html">SDL_PutAudioStreamPlanarData</a> - オーディオストリームにチャネルごとの配列に分けられたデータを追加する
 <li>SDL_qsort
 <li>SDL_qsort_r
 <li>SDL_QueryGPUFence
@@ -951,7 +951,7 @@
 <li>SDL_ResetKeyboard
 <li><a href="SDL_ResetLogPriorities.html">SDL_ResetLogPriorities</a> - 全ての重要度をデフォルトに戻す
 <li><a href="SDL_RestoreWindow.html">SDL_RestoreWindow</a> - 最小化または最大化されたウィンドウの位置とサイズを戻すように要求する
-<li>SDL_ResumeAudioDevice
+<li><a href="SDL_ResumeAudioDevice.html">SDL_ResumeAudioDevice</a> - オーディオデバイスの再生の一時停止を解除する
 <li><a href="SDL_ResumeAudioStreamDevice.html">SDL_ResumeAudioStreamDevice</a> - オーディオデバイスに関連付けられたオーディオストリームの一時停止を解除する
 <li>SDL_ResumeHaptic
 <li>SDL_round

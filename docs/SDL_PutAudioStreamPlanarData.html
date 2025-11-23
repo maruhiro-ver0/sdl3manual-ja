@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAudio.html" title="1つ上">
+<title>SDL_PutAudioStreamPlanarData</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAudio.html">再生と録音</a> - SDL_PutAudioStreamPlanarData
+<hr>
+<h1>SDL_PutAudioStreamPlanarData</h1>
+オーディオストリームにチャネルごとの配列に分けられたデータを追加する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_audio.h">SDL3/SDL_audio.h</a>
+<h2>構文</h2>
+<code>bool SDL_PutAudioStreamPlanarData(SDL_AudioStream *stream, const void * const *channel_buffers, int num_channels, int num_samples);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_AudioStream.html">SDL_AudioStream</a> *</td><td>stream</td><td>オーディオデータを追加するストリーム</td></tr>
+<tr><td>const void * const *</td><td>channel_buffers</td><td>配列へのポインタの配列. 1つの配列が1チャネルを表す</td></tr>
+<tr><td>int</td><td>num_channels</td><td><code>channel_buffers</code>配列の数または-1</td></tr>
+<tr><td>int</td><td>num_samples</td><td>ストリームに書き込む各配列のサンプル数</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+データは, 形式/チャネル数/サンプルレートが, 最後に呼んだ<a href="SDL_SetAudioStreamFormat.html">SDL_SetAudioStreamFormat</a>または変更していないならばストリームを生成したとき指定した形式と一致している必要がある.
+</p>
+<p>
+データは交互に配置され, キューに入れられる.
+<a href="SDL_AudioStream.html">SDL_AudioStream</a>は交互に配置されたデータのみ処理する. そのため, これは単に配列ごとに分けられたデータを簡単にキューに入れることができる便利のための関数なので注意すること.
+チャネルごとに分けられたデータを回収する関数は存在しない.
+</p>
+<p>
+<code>channel_buffers</code>内の配列は, 交互に並べられたデータと同じ順序にすること. 先頭の配列が, 交互に並べられた先頭のデータである.
+それぞれの配列はNULLにもできる. その場合, そのチャネルは無音が配置される.
+</p>
+<p>
+<code>num_channels</code>は<code>channel_buffers</code>の配列の数を指定する.
+これはストリームの形式がどこかで変わってもオーバーフローを防ぐために使用できる.
+現在のチャネルよりも多いチャネル数を指定しても無視される.
+少ないチャネルを指定すると, 存在しない配列の分はNULLとして扱われる(そのチャネルには無音が書き込まれる).
+チャネル数を-1にすると, SDLは現在のチャネル数と一致する配列があるとみなす.
+</p>
+<p>
+<code>num_samples</code>は配列ごとのサンプル数なので注意すること.
+これはキューに入力されるサンプルフレームの数とも言える.
+ステレオ配列でこの値が1ならば, ストリームのキューには2サンプルが入力される.
+これは1つの配列のバイト数を指定する<a href="SDL_PutAudioStreamData.html">SDL_PutAudioStreamData</a>とは異なる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べるが, ストリームにコールバックが設定されている場合は, 呼び出し側のロックが必要になる.
+</p>
+<h2>バージョン</h2>
+SDL 3.4.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_ClearAudioStream.html">SDL_ClearAudioStream</a>
+<li><a href="SDL_FlushAudioStream.html">SDL_FlushAudioStream</a>
+<li><a href="SDL_GetAudioStreamData.html">SDL_GetAudioStreamData</a>
+<li><a href="SDL_GetAudioStreamQueued.html">SDL_GetAudioStreamQueued</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_PutAudioStreamPlanarData">SDL_PutAudioStreamPlanarData - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
