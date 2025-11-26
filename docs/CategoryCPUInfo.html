@@ -19,13 +19,13 @@ SDLのCPU機能検知.
 これらの関数は, 主にシステムが様々なSIMD命令セットにアクセスできるかの報告に関連するが,  システムRAMサイズや論理CPUコア数などの重要な関連する情報も扱う.
 </p>
 <p>
-仮に無意味な場合でも, SDL_HasSSE()やSDL_HasNEON()のようなCPU命令セットのチェックは全ての環境で可能である(例えば, ARMプロセッサにSSEや, x86にNEONは絶対に存在しない. しかし, これらの関数は存在し, 単に偽を戻す).
+仮に無意味な場合でも, <a href="SDL_HasSSE.html">SDL_HasSSE()</a>や<a href="SDL_HasNEON.html">SDL_HasNEON()</a>のようなCPU命令セットのチェックは全ての環境で可能である(例えば, ARMプロセッサにSSEや, x86にNEONは絶対に存在しない. しかし, これらの関数は存在し, 単に偽を戻す).
 </p>
 <h2>関数</h2>
 <ol>
 <li><a href="SDL_GetCPUCacheLineSize.html">SDL_GetCPUCacheLineSize</a> - CPUのL1キャッシュラインのサイズを得る
 <li><a href="SDL_GetNumLogicalCPUCores.html">SDL_GetNumLogicalCPUCores</a> - CPUの使用可能な論理コア数を得る
-<li>SDL_GetSIMDAlignment
+<li><a href="SDL_GetSIMDAlignment.html">SDL_GetSIMDAlignment</a> - システムがSIMDアロケーションで必要とするアライメントを得る
 <li><a href="SDL_GetSystemRAM.html">SDL_GetSystemRAM</a> - システムに設定されたのRAMのサイズを得る
 <li><a href="SDL_HasAltiVec.html">SDL_HasAltiVec</a> - CPUにAltiVec仕様があるかチェックする
 <li><a href="SDL_HasARMSIMD.html">SDL_HasARMSIMD</a> - CPUにARM SIMD (ARMv6)仕様があるかチェックする
