@@ -17,31 +17,32 @@ CPU固有のコンパイラの組み込み関数の有無のプリプロセッ�
 </p>
 <p>
 SDLヘッダをインクルードしたアプリケーションは, 特定のCPUアーキテクチャの組み込み関数を安全に使用できるか判断するために, プリプロセッサの定義をチェックできる.
-これはコンパイラが組み込み命令を使えるかをチェックするだけで, 実行時には, SDL_HasSSE()やSDL_HasNEON()のようなシステムのCPU情報関数でチェックする必要がある.
+これはコンパイラが組み込み命令を使えるかをチェックするだけで, 実行時には, <a href="SDL_HasSSE.html">SDL_HasSSE()</a>や<a href="SDL_HasNEON.html">SDL_HasNEON()</a>のようなシステムのCPU情報関数でチェックする必要がある.
 そうしないと, 対応していないCPU命令を使用したときクラッシュする.
 </p>
 <p>
-SDLは, CPU組み込み関数が対応しているときプリプロセッサの定義を設定するだけなので, アプリケーションは#ifではなく#ifdefでチェックする必要がある.
+SDLは, CPU組み込み関数が対応しているときプリプロセッサの定義を設定するだけなので, アプリケーションは<code>#if</code>ではなく<code>#ifdef</code>でチェックする必要がある.
 </p>
 <p>
 SDLは適切な命令セット固有のヘッダもインクルードする.
-例えば, もしSDLがSDL_SSE2_INTRINSICSが定義されていれば, #include <emmintrin.h>も同様に定義されている.
+例えば, もしSDLがSDL_SSE2_INTRINSICSが定義されていれば, <code>#include &lt;emmintrin.h&gt;</code>も同様に定義されている.
 </p>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_ALTIVEC_INTRINSICS
-<li>SDL_AVX2_INTRINSICS
-<li>SDL_AVX512F_INTRINSICS
-<li>SDL_AVX_INTRINSICS
-<li>SDL_LASX_INTRINSICS
-<li>SDL_LSX_INTRINSICS
-<li>SDL_MMX_INTRINSICS
-<li>SDL_NEON_INTRINSICS
-<li>SDL_SSE2_INTRINSICS
-<li>SDL_SSE3_INTRINSICS
-<li>SDL_SSE4_1_INTRINSICS
-<li>SDL_SSE4_2_INTRINSICS
-<li>SDL_SSE_INTRINSICS
+<li><a href="SDL_ALTIVEC_INTRINSICS.html">SDL_ALTIVEC_INTRINSICS</a> - コンパイラがPowerPC Altivec組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_AVX2_INTRINSICS.html">SDL_AVX2_INTRINSICS</a> - コンパイラがIntel AVX2 intrinsics組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_AVX512F_INTRINSICS.html">SDL_AVX512F_INTRINSICS</a> - コンパイラがIntel AVX-512F組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_AVX_INTRINSICS.html">SDL_AVX_INTRINSICS</a> - コンパイラがIntel AVX組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_HAS_TARGET_ATTRIBS.html">SDL_HAS_TARGET_ATTRIBS</a> - コンパイラが__attribute__((target))に対応しているとき定義されているマクロ
+<li><a href="SDL_LASX_INTRINSICS.html">SDL_LASX_INTRINSICS</a> - コンパイラがLoongarch LASX組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_LSX_INTRINSICS.html">SDL_LSX_INTRINSICS</a> - コンパイラがLoongarch LSX組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_MMX_INTRINSICS.html">SDL_MMX_INTRINSICS</a> - コンパイラがIntel MMX組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_NEON_INTRINSICS.html">SDL_NEON_INTRINSICS</a> - コンパイラがARM NEON組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_SSE2_INTRINSICS.html">SDL_SSE2_INTRINSICS</a> - コンパイラがIntel SSE2組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_SSE3_INTRINSICS.html">SDL_SSE3_INTRINSICS</a> - コンパイラがIntel SSE3組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_SSE4_1_INTRINSICS.html">SDL_SSE4_1_INTRINSICS</a> - コンパイラがIntel SSE4.1組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_SSE4_2_INTRINSICS.html">SDL_SSE4_2_INTRINSICS</a> - コンパイラがIntel SSE4.2組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
+<li><a href="SDL_SSE_INTRINSICS.html">SDL_SSE_INTRINSICS</a> - コンパイラがIntel SSE組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
 <li>SDL_TARGETING
 </ol>
 <h2>SDL Wikiへのリンク</h2>
