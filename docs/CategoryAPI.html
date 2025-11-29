@@ -115,7 +115,7 @@
 <li>SDL_CopyFile
 <li>SDL_CopyGPUBufferToBuffer
 <li>SDL_CopyGPUTextureToTexture
-<li>SDL_CopyProperties
+<li><a href="SDL_CopyProperties.html">SDL_CopyProperties</a> - プロパティグループをコピーする
 <li>SDL_copysign
 <li>SDL_copysignf
 <li>SDL_CopyStorageFile
@@ -217,7 +217,7 @@
 <li>SDL_EndGPURenderPass
 <li>SDL_EnterAppMainCallbacks
 <li>SDL_EnumerateDirectory
-<li>SDL_EnumerateProperties
+<li><a href="SDL_EnumerateProperties.html">SDL_EnumerateProperties</a> - プロパティグループのプロパティを列挙する
 <li>SDL_EnumerateStorageDirectory
 <li><a href="SDL_EventEnabled.html">SDL_EventEnabled</a> - イベントの種類ごとの処理の有無を設定する
 <li>SDL_exp
@@ -387,7 +387,7 @@
 <li>SDL_GetGDKDefaultUser
 <li>SDL_GetGDKTaskQueue
 <li>SDL_GetGlobalMouseState
-<li>SDL_GetGlobalProperties
+<li><a href="SDL_GetGlobalProperties.html">SDL_GetGlobalProperties</a> - グローバルSDLプロパティを得る
 <li>SDL_GetGPUDeviceDriver
 <li>SDL_GetGPUDeviceProperties
 <li>SDL_GetGPUDriver
@@ -987,15 +987,15 @@
 <li><a href="SDL_SetAtomicPointer.html">SDL_SetAtomicPointer</a> - アトミックにポインタを設定する
 <li><a href="SDL_SetAtomicU32.html">SDL_SetAtomicU32</a> - アトミック変数に値を設定する
 <li><a href="SDL_SetAudioDeviceGain.html">SDL_SetAudioDeviceGain</a> - オーディオデバイスのゲインを設定する
-<li>SDL_SetAudioIterationCallbacks
-<li>SDL_SetAudioPostmixCallback
+<li><a href="SDL_SetAudioIterationCallbacks.html">SDL_SetAudioIterationCallbacks</a> - オーディオデバイスの処理の繰り返し時に呼ばれるコールバックを設定する
+<li><a href="SDL_SetAudioPostmixCallback.html">SDL_SetAudioPostmixCallback</a> - オーディオデバイスにデータが送信される直前に呼ばれるコールバックを設定する
 <li><a href="SDL_SetAudioStreamFormat.html">SDL_SetAudioStreamFormat</a> - オーディオストリームの形式を設定する
 <li><a href="SDL_SetAudioStreamFrequencyRatio.html">SDL_SetAudioStreamFrequencyRatio</a> - オーディオストリームの周波数の倍率を設定する
 <li><a href="SDL_SetAudioStreamGain.html">SDL_SetAudioStreamGain</a> - オーディオストリームのゲインを設定する
-<li>SDL_SetAudioStreamGetCallback
+<li><a href="SDL_SetAudioStreamGetCallback.html">SDL_SetAudioStreamGetCallback</a> - オーディオストリームがデータを要求したとき呼ばれるコールバックを設定する
 <li><a href="SDL_SetAudioStreamInputChannelMap.html">SDL_SetAudioStreamInputChannelMap</a> - オーディオストリームの入力チャネルマップを設定する
 <li><a href="SDL_SetAudioStreamOutputChannelMap.html">SDL_SetAudioStreamOutputChannelMap</a> - オーディオストリームの出力チャネルマップを設定する
-<li>SDL_SetAudioStreamPutCallback
+<li><a href="SDL_SetAudioStreamPutCallback.html">SDL_SetAudioStreamPutCallback</a> - オーディオストリームにデータが追加されたとき呼ばれるコールバックを設定する
 <li><a href="SDL_SetBooleanProperty.html">SDL_SetBooleanProperty</a> - プロパティグループのブール型プロパティを設定する
 <li>SDL_SetClipboardData
 <li><a href="SDL_SetClipboardText.html">SDL_SetClipboardText</a> - クリップボードにUTF-8テキストを設定する
@@ -1311,11 +1311,11 @@
 <li>SDL_AsyncIO
 <li>SDL_AsyncIOQueue
 <li><a href="SDL_AudioDeviceID.html">SDL_AudioDeviceID</a> - オーディオデバイスインスタンスIDの型
-<li>SDL_AudioIterationCallback
-<li>SDL_AudioPostmixCallback
+<li><a href="SDL_AudioIterationCallback.html">SDL_AudioIterationCallback</a> - オーディオデバイスの繰り返し処理で呼ばれるコールバックの型
+<li><a href="SDL_AudioPostmixCallback.html">SDL_AudioPostmixCallback</a> - オーディオデバイスにデータを送信する直前に呼ばれるコールバックの型
 <li><a href="SDL_AudioStream.html">SDL_AudioStream</a> - オーディオストリームを表す不透明型
 <li><a href="SDL_AudioStreamCallback.html">SDL_AudioStreamCallback</a> - SDL_AudioStreamからデータを受け取ったとき呼ばれるコールバック関数の型 
-<li>SDL_AudioStreamDataCompleteCallback
+<li><a href="SDL_AudioStreamDataCompleteCallback.html">SDL_AudioStreamDataCompleteCallback</a> - SDL_PutAudioStreamDataNoCopy()のデータが完了したとき呼ばれるコールバックの型
 <li><a href="SDL_BlendMode.html">SDL_BlendMode</a> - 描画操作で使われるブレンドモードの型
 <li>SDL_calloc_func
 <li>SDL_Camera
@@ -1709,14 +1709,14 @@
 <li><a href="SDL_AVX_INTRINSICS.html">SDL_AVX_INTRINSICS</a> - コンパイラがIntel AVX組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
 <li>SDL_BIG_ENDIAN
 <li><a href="SDL_BITSPERPIXEL.html">SDL_BITSPERPIXEL</a> - ピクセル形式のピクセル当たりのビット数を求めるマクロ
-<li>SDL_BLENDMODE_ADD
-<li>SDL_BLENDMODE_ADD_PREMULTIPLIED
-<li>SDL_BLENDMODE_BLEND
-<li>SDL_BLENDMODE_BLEND_PREMULTIPLIED
-<li>SDL_BLENDMODE_INVALID
-<li>SDL_BLENDMODE_MOD
-<li>SDL_BLENDMODE_MUL
-<li>SDL_BLENDMODE_NONE
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_ADD</a> - SDL_BlendModeの値のマクロ 加算ブレンドを行う
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_ADD_PREMULTIPLIED</a> - SDL_BlendModeの値のマクロ 事前加算ブレンドを行う
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_BLEND</a> - SDL_BlendModeの値のマクロ αブレンドを行う
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_BLEND_PREMULTIPLIED</a> - SDL_BlendModeの値のマクロ 事前αブレンドを行う
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_INVALID</a> - SDL_BlendModeの値のマクロ 無効を表す
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_MOD</a> - SDL_BlendModeの値のマクロ 乗算ブレンドを行う
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_MUL</a> - SDL_BlendModeの値のマクロ 乗算αブレンドを行う
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_NONE</a> - SDL_BlendModeの値のマクロ ブレンドしない
 <li>SDL_BUTTON_LEFT
 <li>SDL_BUTTON_LMASK
 <li>SDL_BUTTON_MASK
@@ -2106,15 +2106,15 @@
 <li>SDL_iconv_utf8_ucs4
 <li>SDL_iconv_wchar_utf8
 <li>SDL_IN_BYTECAP
-<li>SDL_INIT_AUDIO
-<li>SDL_INIT_CAMERA
-<li>SDL_INIT_EVENTS
-<li>SDL_INIT_GAMEPAD
-<li>SDL_INIT_HAPTIC
+<li><a href="SDL_InitFlags.html">SDL_INIT_AUDIO</a> - SDL_InitFlagsの値のマクロ オーディオサブシステムを初期化する
+<li><a href="SDL_InitFlags.html">SDL_INIT_CAMERA</a> - SDL_InitFlagsの値のマクロ カメラサブシステムを初期化する
+<li><a href="SDL_InitFlags.html">SDL_INIT_EVENTS</a> - SDL_InitFlagsの値のマクロ イベントサブシステムを初期化する
+<li><a href="SDL_InitFlags.html">SDL_INIT_GAMEPAD</a> - SDL_InitFlagsの値のマクロ ゲームパッドサブシステムを初期化する
+<li><a href="SDL_InitFlags.html">SDL_INIT_HAPTIC</a> - SDL_InitFlagsの値のマクロ ハプティクス(感覚フィードバック)サブシステムを初期化する
 <li>SDL_INIT_INTERFACE
-<li>SDL_INIT_JOYSTICK
-<li>SDL_INIT_SENSOR
-<li>SDL_INIT_VIDEO
+<li><a href="SDL_InitFlags.html">SDL_INIT_JOYSTICK</a> - SDL_InitFlagsの値のマクロ ジョイスティックサブシステムを初期化する
+<li><a href="SDL_InitFlags.html">SDL_INIT_SENSOR</a> - SDL_InitFlagsの値のマクロ センサーサブシステムを初期化する
+<li><a href="SDL_InitFlags.html">SDL_INIT_VIDEO</a> - SDL_InitFlagsの値のマクロ ビデオサブシステムを初期化する
 <li>SDL_INLINE
 <li>SDL_INOUT_Z_CAP
 <li>SDL_INVALID_UNICODE_CODEPOINT
@@ -2607,7 +2607,7 @@
 <li>SDL_Swap64LE
 <li>SDL_SwapFloatBE
 <li>SDL_SwapFloatLE
-<li>SDL_TARGETING
+<li><a href="SDL_TARGETING.html">SDL_TARGETING</a> - 特定のCPUアーキテクチャを対象とした関数のタグ付けのマクロ
 <li>SDL_THREAD_ANNOTATION_ATTRIBUTE__
 <li>SDL_TOUCH_MOUSEID
 <li>SDL_TRAYENTRY_BUTTON

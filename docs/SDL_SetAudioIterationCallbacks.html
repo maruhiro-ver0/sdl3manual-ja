@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAudio.html" title="1つ上">
+<title>SDL_SetAudioIterationCallbacks</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAudio.html">再生と録音</a> - SDL_SetAudioIterationCallbacks
+<hr>
+<h1>SDL_SetAudioIterationCallbacks</h1>
+オーディオデバイスの処理の繰り返し時に呼ばれるコールバックを設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_audio.h">SDL3/SDL_audio.h</a>
+<h2>構文</h2>
+<code>bool SDL_SetAudioIterationCallbacks(SDL_AudioDeviceID devid, SDL_AudioIterationCallback start, SDL_AudioIterationCallback end, void *userdata);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_AudioDeviceID.html">SDL_AudioDeviceID</a></td><td>devid</td><td>オープンしたオーディオデバイス</td></tr>
+<tr><td>SDL_AudioIterationCallback</td><td>start</td><td>iterationの開始で呼ばれるコールバック. NULLも可</td></tr>
+<tr><td>SDL_AudioIterationCallback</td><td>end</td><td>iterationの終了で呼ばれるコールバック. NULLも可</td></tr>
+<tr><td>void *</td><td>userdata</td><td>アプリケーションがコールバックに渡すポインタ. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+ここでは2つのコールバックを設定できる. 1つはデバイスがバインドしたオーディオストリームの処理を開始しようとしたとき, もう1つはデバイスがその処理を終えたとき呼ばれる.
+</p>
+<p>
+これらのコールバックは, いつでも, どのスレッドからも実行されうる. アプリケーションのデータへのアクセスを直列化する必要がある場合は, ミューテックスやその他のデバイスの直列化を使用する必要がある.
+</p>
+<p>
+一般的に, これらのコールバックはオーディオデバイスのスレッドの処理が途中でないことを保証してバインドされた複数のオーディオストリームに適用するために使用する.
+通常は<a href="SDL_LockAudioStream.html">SDL_LockAudioStream()</a>によるfiner-grained lockの方がより適している.
+</p>
+<p>
+これらのコールバックには強い時間の制約があり, 可能な限り処理を少なくしてすぐに戻らなければならない.
+コールバックの実行が長くなるほど音声の欠落や他の問題を引き起こす危険性が高くなる.
+</p>
+<p>
+この関数はオーディオデバイスの繰り返し処理の間はブロックする.
+そのため, 既にある実行しようとしているコールバックは, この関数で新しいコールバックを設定して戻る前に実行される.
+</p>
+<p>
+物理デバイスにはこれらのコールバックは設定できない. <a href="SDL_OpenAudioDevice.html">SDL_OpenAudioDevice()</a>で生成した論理デバイスに対してのみ設定できる.
+</p>
+<p>
+コールバック関数としてNULLを設定すると, 以前のコールバックが無効になる.
+どちらのコールバックも, NULLにすることも, 同じコールバックにすることもできる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.4.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SetAudioIterationCallbacks">SDL_SetAudioIterationCallbacks - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

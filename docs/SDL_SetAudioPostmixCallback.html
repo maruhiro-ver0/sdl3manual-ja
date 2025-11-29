@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAudio.html" title="1つ上">
+<title>SDL_SetAudioPostmixCallback</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAudio.html">再生と録音</a> - SDL_SetAudioPostmixCallback
+<hr>
+<h1>SDL_SetAudioPostmixCallback</h1>
+オーディオデバイスにデータが送信される直前に呼ばれるコールバックを設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_audio.h">SDL3/SDL_audio.h</a>
+<h2>構文</h2>
+<code>bool SDL_SetAudioPostmixCallback(SDL_AudioDeviceID devid, SDL_AudioPostmixCallback callback, void *userdata);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_AudioDeviceID.html">SDL_AudioDeviceID</a></td><td>devid</td><td>オープンしたオーディオデバイス</td></tr>
+<tr><td><a href="SDL_AudioIterationCallback.html">SDL_AudioIterationCallback</a></td><td>callback</td><td>呼ばれるコールバック関数. NULLも可</td></tr>
+<tr><td>void *</td><td>userdata</td><td>アプリケーションがコールバックに渡すポインタ. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+これは, 例えばビジュアライザーの書き込みや, 再生前のオーディオデータに最後のエフェクトを適用させるような, 最後のミックスにアクセスしたい場合に有用である.
+</p>
+<p>
+このバッファはオープンされたデバイスにバインドされた全てのオーディオストリームを最終的にミックスしたものである.
+このコールバックは, 通常はオープンされ一時停止中でない各オーディオデバイスで呼ばれる.
+デバイスにストリームがバインドされていない, または全てのストリームが空のどちらの理由でも, ミックスすべき新しいデータがない場合でもコールバックはバッファ全体に無音が設定された状態で呼ばれる.
+</p>
+<p>
+このコールバックでデータを変更できる. この呼び出しの後のバッファの内容がハードウェアに送られる最終的なデータである.
+</p>
+<p>
+このコールバックには常に浮動小数点形式のデータ(-1.0fから1.0fの値)が渡されるが,
+デバイスをオープンしたときアプリケーションが要求したチャネル数やサンプルレートとは異なる場合がある.
+SDLが背後で変換している, システムのデフォルトが変わったとき再生が新しい物理ハードウェアに切り替わっているなどためである.
+この変更は呼び出しと呼び出しの間に行われる.
+そのため, バッファのサイズも呼び出しのたびに変わる可能性がある.
+</p>
+<p>
+これらのコールバックは, いつでも, どのスレッドからも実行されうる. アプリケーションのデータへのアクセスを直列化する必要がある場合は, ミューテックスやその他のデバイスの直列化を使用する必要がある.
+</p>
+<p>
+結論として, このコールバックは多くの要望を満たせるが, 簡単な方法ではない.
+アプリケーションは<a href="SDL_AudioStream.html">SDL_AudioStream</a>に好ましい形式でオーディオデータを渡し, 差異はSDLに扱わせるべきである.
+</p>
+<p>
+こののコールバックには強い時間の制約があり, 可能な限り処理を少なくしてすぐに戻らなければならない.
+コールバックの実行が長くなるほど音声の欠落や他の問題を引き起こす危険性が高くなる.
+</p>
+<p>
+この関数はオーディオデバイスの繰り返し処理の間はブロックする.
+そのため, 既にある実行しようとしているコールバックは, この関数で新しいコールバックを設定して戻る前に実行される.
+</p>
+<p>
+コールバック関数としてNULLを設定すると, 以前のコールバックが無効になる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SetAudioPostmixCallback">SDL_SetAudioPostmixCallback - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
