@@ -18,7 +18,7 @@
 <code>bool SDL_EnumerateProperties(SDL_PropertiesID props, SDL_EnumeratePropertiesCallback callback, void *userdata);</code>
 <h2>引数</h2>
 <table border="1">
-<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>src</td><td>コピー元のプロパティグループ</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>問い合わせるプロパティグループ</td></tr>
 <tr><td><a href="SDL_EnumeratePropertiesCallback.html">SDL_EnumeratePropertiesCallback</a></td><td>callback</td><td>それぞれのプロパティに対して呼ばれる関数</td></tr>
 <tr><td>void *</td><td>userdata</td><td><code>callback</code>に渡すポインタ</td></tr>
 </table>
@@ -40,6 +40,7 @@
 <p>
 SDL 3.2.0以降
 </p>
+<h2>サンプルコード</h2>
 <p>
 <code>
 <pre>

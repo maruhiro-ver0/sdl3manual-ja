@@ -1193,7 +1193,7 @@ Haiku OSで, SDLは<a href="SDL_Init.html">SDL_Init()</a>でカレントワー�
 </ul>
 <h2><a name="#sdl_joystickh">SDL_joystick.h (ジョイスティック)</a></h2>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_JoystickID">SDL_JoystickID</a>はSint32からUint32に変更され, 不正なIDは0になった.
+<a href="https://wiki.libsdl.org/SDL3/SDL_JoystickID">SDL_JoystickID</a>はSint32からUint32に変更され, 無効なIDは0になった.
 </p>
 <p>
 デバイスのインデックス番号を用いてジョイスティックを反復処理するのではなく, 新しい関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetJoysticks">SDL_GetJoysticks()</a>で現在のジョイスティック一覧を得て, そのインスタンスIDから新しい関数を使ってジョイスティックの情報を得ることもできる:
@@ -2177,7 +2177,7 @@ Appleの環境では, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL
 </ul>
 <h2><a name="#sdl_sensorh">SDL_sensor.h (センサー)</a></h2>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_SensorID">SDL_SensorID</a>はSint32からUint32に変更され, 不正なIDは0になった.
+<a href="https://wiki.libsdl.org/SDL3/SDL_SensorID">SDL_SensorID</a>はSint32からUint32に変更され, 無効なIDは0になった.
 </p>
 <p>
 デバイスのインデックス番号を用いてセンサーを反復処理するのではなく, 新たに現在のセンサーの一覧を得る関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetSensors">SDL_GetSensors()</a>と, そのインスタンスIDからセンサーの情報を得る関数が追加された.
@@ -2686,7 +2686,7 @@ WindowsとX11のイベントは<a href="https://wiki.libsdl.org/SDL3/SDL_SetWind
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetTouchName.html">SDL_GetTouchName</a>は<a href="https://wiki.libsdl.org/SDL3/SDL_GetTouchDeviceName">SDL_GetTouchDeviceName()</a>になり, インデックス番号の代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_TouchID">SDL_TouchID</a>を取るようになった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_TouchID">SDL_TouchID</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_FingerID">SDL_FingerID</a>はUint32に変更され, 不正な値は0になった.
+<a href="https://wiki.libsdl.org/SDL3/SDL_TouchID">SDL_TouchID</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_FingerID">SDL_FingerID</a>はUint32に変更され, 無効な値は0になった.
 </p>
 <p>
 インデックス番号を用いてタッチデバイスを反復処理するのではなく, 利用可能なデバイスを得る新しい関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetTouchDevices">SDL_GetTouchDevices()</a>も存在する.
@@ -2737,7 +2737,7 @@ SDLは既に<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_DRIVER">SDL_HIN
 </p>
 <p>
 ディスプレイのインデックス番号を反復処理するのではなく, 新しい関数<a href="SDL_GetDisplays.html">SDL_GetDisplays()</a>でディスプレイの一覧を得ることもできる.
-ディスプレイのインデックス番号を渡していたディスプレイ関数は<a href="SDL_DisplayID.html">SDL_DisplayID</a>を取るようになった. 不正なディスプレイIDは0である.
+ディスプレイのインデックス番号を渡していたディスプレイ関数は<a href="SDL_DisplayID.html">SDL_DisplayID</a>を取るようになった. 無効なディスプレイIDは0である.
 <code>
 <pre>
     {

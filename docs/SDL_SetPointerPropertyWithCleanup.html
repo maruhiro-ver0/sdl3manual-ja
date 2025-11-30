@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryProperties.html" title="1つ上">
+<title>SDL_SetPointerPropertyWithCleanup</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryProperties.html">プロパティ</a> - SDL_SetPointerPropertyWithCleanup
+<hr>
+<h1>SDL_SetPointerPropertyWithCleanup</h1>
+プロパティグループのポインタ型プロパティをプロパティが削除されたとき呼ばれる終了処理関数付きで設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_properties.h">SDL3/SDL_properties.h</a>
+<h2>構文</h2>
+<code>bool SDL_SetPointerPropertyWithCleanup(SDL_PropertiesID props, const char *name, void *value, SDL_CleanupPropertyCallback cleanup, void *userdata);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>設定するプロパティグループ</td></tr>
+<tr><td>const char *</td><td>name</td><td>設定するプロパティの名前</td></tr>
+<tr><td>void *</td><td>value</td><td>プロパティの新しい値. NULLのときプロパティを削除する</td></tr>
+<tr><td><a href="SDL_CleanupPropertyCallback.html">SDL_CleanupPropertyCallback</a></td><td>cleanup</td><td>プロパティが削除されたとき呼ばれる関数. 終了処理関数が不要のときNULL</td></tr>
+<tr><td>void *</td><td>userdata</td><td>終了処理関数に渡すポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+終了処理関数は, どのような理由でもプロパティの設定に失敗したときも呼ばれる.
+</p>
+<p>
+整数型, ブール型, 文字列型などの基本的なデータ型を単に設定したい場合は, 代わりにSDL_SetNumberProperty, SDL_SetBooleanProperty, SDL_SetStringPropertyを使うこと.
+これらの関数はアプリケーションに代わって終了処理を行う.
+この関数は, より複雑なカスタムデータのためにのみ存在する.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+<p>
+SDL 3.2.0以降
+</p>
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetPointerProperty.html">SDL_GetPointerProperty</a>
+<li><a href="SDL_SetPointerProperty.html">SDL_SetPointerProperty</a>
+<li><a href="SDL_CleanupPropertyCallback.html">SDL_CleanupPropertyCallback</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SetPointerPropertyWithCleanup">SDL_SetPointerPropertyWithCleanup - SDL Wiki</a>
+<hr>
+</body>
+</html>
