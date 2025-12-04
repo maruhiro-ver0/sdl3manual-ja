@@ -51,7 +51,7 @@
 <li>SDL_PROP_WINDOW_CREATE_MODAL_BOOLEAN: ウィンドウが親に対してモーダルのとき真
 <li>SDL_PROP_WINDOW_CREATE_MOUSE_GRABBED_BOOLEAN: ウィンドウがマウスをグラブした状態で始まるとき真
 <li>SDL_PROP_WINDOW_CREATE_OPENGL_BOOLEAN: ウィンドウがOpenGLレンダリングを使用するとき真
-<li>SDL_PROP_WINDOW_CREATE_PARENT_POINTER: このウィンドウの親の<a href="SDL_Window.html">SDL_Window</a>, ウィンドウは"tooltip", "menu", "modal"プロパティを持つウィンドウである必要がある
+<li>SDL_PROP_WINDOW_CREATE_PARENT_POINTER: このウィンドウの<a href="SDL_Window.html">親ウィンドウ</a>. "tooltip", "menu", "modal"プロパティを持つウィンドウである必要がある
 <li>SDL_PROP_WINDOW_CREATE_RESIZABLE_BOOLEAN: ウィンドウのサイズを変えられるとき真
 <li>SDL_PROP_WINDOW_CREATE_TITLE_STRING: UTF-8でエンコードされたウィンドウのタイトル
 <li>SDL_PROP_WINDOW_CREATE_TRANSPARENT_BOOLEAN: α値が0の部分が透明のウィンドウのとき真
@@ -73,10 +73,18 @@ macOSの場合, これらの追加のプロパティに対応している:
 Waylandの場合, これらの追加のプロパティに対応している:
 </p>
 <ul>
-<li>SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN: アプリケーションがカスタムロールのためにWaylandサーフェイスを使用し, そしてそれをXDGトップレベルウィンドウに加えたくない場合は真
-カスタムサーフェイスの使用の詳細は<a href="https://wiki.libsdl.org/SDL3/README-wayland">README-wayland</a>を参照すること
-<li>SDL_PROP_WINDOW_CREATE_WAYLAND_CREATE_EGL_WINDOW_BOOLEAN: ウィンドウにOpenGLプロパティがない, またはSDL_WINDOW_OPENGLフラグが設定されていなくても, アプリケーションがwl_egl_windowオブジェクトを生成し, それを生成したウィンドウのものとする場合は真
-<li>SDL_PROP_WINDOW_CREATE_WAYLAND_WL_SURFACE_POINTER: 既存のウィンドウのwl_surface. 既存のウィンドウをラップしたい場合に使用する. 詳細はREADME-waylandを参照すること
+<li>SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN
+<ul>
+<li>アプリケーションがカスタムロールのためにWaylandサーフェイスを使用し, そしてそれをXDGトップレベルウィンドウに加えたくない場合は真. カスタムサーフェイスの使用の詳細は<a href="https://wiki.libsdl.org/SDL3/README-wayland">README-wayland</a>を参照すること
+</ul>
+<li>SDL_PROP_WINDOW_CREATE_WAYLAND_CREATE_EGL_WINDOW_BOOLEAN
+<ul>
+<li>ウィンドウにOpenGLプロパティがない, またはSDL_WINDOW_OPENGLフラグが設定されていなくても, アプリケーションがwl_egl_windowオブジェクトを生成し, それを生成したウィンドウのものとする場合は真
+</ul>
+<li>SDL_PROP_WINDOW_CREATE_WAYLAND_WL_SURFACE_POINTER
+<ul>
+<li>既存のウィンドウのwl_surface. 既存のウィンドウをラップしたい場合に使用する. 詳細は<a href="https://wiki.libsdl.org/SDL3/README-wayland">README-wayland</a>を参照すること
+</ul>
 </ul>
 <p>
 Windowsの場合, これらの追加のプロパティに対応している:

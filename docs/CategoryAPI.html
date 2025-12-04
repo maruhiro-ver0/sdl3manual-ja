@@ -531,7 +531,7 @@
 <li>SDL_GetSandbox
 <li><a href="SDL_GetScancodeFromKey.html">SDL_GetScancodeFromKey</a> - キーコードから現在のキーボードレイアウトに割り当てられたキースキャンコードを得る
 <li><a href="SDL_GetScancodeFromName.html">SDL_GetScancodeFromName</a> - 人が読めるキー名からスキャンコードを得る
-<li>SDL_GetScancodeName
+<li><a href="SDL_GetScancodeName.html">SDL_GetScancodeName</a> - スキャンコードの人が読める名前を得る
 <li>SDL_GetSemaphoreValue
 <li>SDL_GetSensorData
 <li>SDL_GetSensorFromID
@@ -661,7 +661,7 @@
 <li><a href="SDL_HasExactlyOneBitSet32.html">SDL_HasExactlyOneBitSet32</a> - 符号なし32ビット値に1ビットだけがセットされているかを調べる
 <li>SDL_HasGamepad
 <li>SDL_HasJoystick
-<li>SDL_HasKeyboard
+<li><a href="SDL_HasKeyboard.html">SDL_HasKeyboard</a> - キーボードが接続されているかチェックする
 <li><a href="SDL_HasLASX.html">SDL_HasLASX</a> - CPUにLASX (LOONGARCH SIMD)仕様があるかチェックする
 <li><a href="SDL_HasLSX.html">SDL_HasLSX</a> - CPUにLSX (LOONGARCH SIMD)仕様があるかチェックする
 <li><a href="SDL_HasMMX.html">SDL_HasMMX</a> - CPUにMMX仕様があるかチェックする
@@ -671,7 +671,7 @@
 <li><a href="SDL_HasProperty.html">SDL_HasProperty</a> - プロパティグループにプロパティが存在するを得る
 <li>SDL_HasRectIntersection
 <li>SDL_HasRectIntersectionFloat
-<li>SDL_HasScreenKeyboardSupport
+<li><a href="SDL_HasScreenKeyboardSupport.html">SDL_HasScreenKeyboardSupport</a> - スクリーンキーボードに対応しているかチェックする
 <li><a href="SDL_HasSSE.html">SDL_HasSSE</a> - CPUにSSE仕様があるかチェックする
 <li><a href="SDL_HasSSE2.html">SDL_HasSSE2</a> - CPUにSSE2仕様があるかチェックする
 <li><a href="SDL_HasSSE3.html">SDL_HasSSE3</a> - CPUにSSE3仕様があるかチェックする
@@ -948,7 +948,7 @@
 <li>SDL_ResetAssertionReport
 <li><a href="SDL_ResetHint.html">SDL_ResetHint</a> - ヒントをデフォルト値に戻す
 <li><a href="SDL_ResetHints.html">SDL_ResetHints</a> - 全てのヒントをデフォルトの値にリセットする
-<li>SDL_ResetKeyboard
+<li><a href="SDL_ResetKeyboard.html">SDL_ResetKeyboard</a> - キーボードの状態をクリアする
 <li><a href="SDL_ResetLogPriorities.html">SDL_ResetLogPriorities</a> - 全ての重要度をデフォルトに戻す
 <li><a href="SDL_RestoreWindow.html">SDL_RestoreWindow</a> - 最小化または最大化されたウィンドウの位置とサイズを戻すように要求する
 <li><a href="SDL_ResumeAudioDevice.html">SDL_ResumeAudioDevice</a> - オーディオデバイスの再生の一時停止を解除する
@@ -972,7 +972,7 @@
 <li>SDL_scalbn
 <li>SDL_scalbnf
 <li><a href="SDL_ScaleSurface.html">SDL_ScaleSurface</a> - 既存のサーフェイスのサイズを変更して新しいサーフェイスを生成する
-<li>SDL_ScreenKeyboardShown
+<li><a href="SDL_ScreenKeyboardShown.html">SDL_ScreenKeyboardShown</a> - ウィンドウにスクリーンキーボードが表示されているかチェックする
 <li><a href="SDL_ScreenSaverEnabled.html">SDL_ScreenSaverEnabled</a> - スクリーンセーバーを有効にする
 <li>SDL_SeekIO
 <li>SDL_SendAndroidBackButton
@@ -1709,14 +1709,14 @@
 <li><a href="SDL_AVX_INTRINSICS.html">SDL_AVX_INTRINSICS</a> - コンパイラがIntel AVX組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
 <li>SDL_BIG_ENDIAN
 <li><a href="SDL_BITSPERPIXEL.html">SDL_BITSPERPIXEL</a> - ピクセル形式のピクセル当たりのビット数を求めるマクロ
-<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_ADD</a> - SDL_BlendModeの値のマクロ 加算ブレンドを行う
-<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_ADD_PREMULTIPLIED</a> - SDL_BlendModeの値のマクロ 事前加算ブレンドを行う
-<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_BLEND</a> - SDL_BlendModeの値のマクロ αブレンドを行う
-<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_BLEND_PREMULTIPLIED</a> - SDL_BlendModeの値のマクロ 事前αブレンドを行う
-<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_INVALID</a> - SDL_BlendModeの値のマクロ 無効を表す
-<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_MOD</a> - SDL_BlendModeの値のマクロ 乗算ブレンドを行う
-<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_MUL</a> - SDL_BlendModeの値のマクロ 乗算αブレンドを行う
-<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_NONE</a> - SDL_BlendModeの値のマクロ ブレンドしない
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_ADD</a> - SDL_BlendModeの加算ブレンドの値のマクロ
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_ADD_PREMULTIPLIED</a> - SDL_BlendModeの事前加算ブレンドの値のマクロ
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_BLEND</a> - SDL_BlendModeのαブレンドの値のマクロ 
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_BLEND_PREMULTIPLIED</a> - SDL_BlendModeの事前αブレンドの値のマクロ
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_INVALID</a> - SDL_BlendModeの無効を表す値のマクロ 
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_MOD</a> - SDL_BlendModeの乗算ブレンドの値のマクロ
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_MUL</a> - SDL_BlendModeの乗算αブレンドの値のマクロ
+<li><a href="SDL_BlendMode.html">SDL_BLENDMODE_NONE</a> - SDL_BlendModeのブレンドことを表す値のマクロ
 <li>SDL_BUTTON_LEFT
 <li>SDL_BUTTON_LMASK
 <li>SDL_BUTTON_MASK
@@ -2106,15 +2106,15 @@
 <li>SDL_iconv_utf8_ucs4
 <li>SDL_iconv_wchar_utf8
 <li>SDL_IN_BYTECAP
-<li><a href="SDL_InitFlags.html">SDL_INIT_AUDIO</a> - SDL_InitFlagsの値のマクロ オーディオサブシステムを初期化する
-<li><a href="SDL_InitFlags.html">SDL_INIT_CAMERA</a> - SDL_InitFlagsの値のマクロ カメラサブシステムを初期化する
-<li><a href="SDL_InitFlags.html">SDL_INIT_EVENTS</a> - SDL_InitFlagsの値のマクロ イベントサブシステムを初期化する
-<li><a href="SDL_InitFlags.html">SDL_INIT_GAMEPAD</a> - SDL_InitFlagsの値のマクロ ゲームパッドサブシステムを初期化する
-<li><a href="SDL_InitFlags.html">SDL_INIT_HAPTIC</a> - SDL_InitFlagsの値のマクロ ハプティクス(感覚フィードバック)サブシステムを初期化する
+<li><a href="SDL_InitFlags.html">SDL_INIT_AUDIO</a> - SDL_InitFlagsのオーディオサブシステムを初期化する値のマクロ
+<li><a href="SDL_InitFlags.html">SDL_INIT_CAMERA</a> - SDL_InitFlagsのカメラサブシステムを初期化する値のマクロ
+<li><a href="SDL_InitFlags.html">SDL_INIT_EVENTS</a> - SDL_InitFlagsのイベントサブシステムを初期化する値のマクロ
+<li><a href="SDL_InitFlags.html">SDL_INIT_GAMEPAD</a> - SDL_InitFlagsのゲームパッドサブシステムを初期化する値のマクロ
+<li><a href="SDL_InitFlags.html">SDL_INIT_HAPTIC</a> - SDL_InitFlagsのハプティクス(感覚フィードバック)サブシステムを初期化する値のマクロ
 <li>SDL_INIT_INTERFACE
-<li><a href="SDL_InitFlags.html">SDL_INIT_JOYSTICK</a> - SDL_InitFlagsの値のマクロ ジョイスティックサブシステムを初期化する
-<li><a href="SDL_InitFlags.html">SDL_INIT_SENSOR</a> - SDL_InitFlagsの値のマクロ センサーサブシステムを初期化する
-<li><a href="SDL_InitFlags.html">SDL_INIT_VIDEO</a> - SDL_InitFlagsの値のマクロ ビデオサブシステムを初期化する
+<li><a href="SDL_InitFlags.html">SDL_INIT_JOYSTICK</a> - SDL_InitFlagsのジョイスティックサブシステムを初期化する値のマクロ
+<li><a href="SDL_InitFlags.html">SDL_INIT_SENSOR</a> - SDL_InitFlagsのセンサーサブシステムを初期化する値のマクロ
+<li><a href="SDL_InitFlags.html">SDL_INIT_VIDEO</a> - SDL_InitFlagsのビデオサブシステムを初期化する値のマクロ
 <li>SDL_INLINE
 <li>SDL_INOUT_Z_CAP
 <li>SDL_INVALID_UNICODE_CODEPOINT
@@ -2277,13 +2277,13 @@
 <li>SDL_PRIx32
 <li>SDL_PRIx64
 <li>SDL_PRIX64
-<li>SDL_PROP_APP_METADATA_COPYRIGHT_STRING
-<li>SDL_PROP_APP_METADATA_CREATOR_STRING
-<li>SDL_PROP_APP_METADATA_IDENTIFIER_STRING
-<li>SDL_PROP_APP_METADATA_NAME_STRING
-<li>SDL_PROP_APP_METADATA_TYPE_STRING
-<li>SDL_PROP_APP_METADATA_URL_STRING
-<li>SDL_PROP_APP_METADATA_VERSION_STRING
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_COPYRIGHT_STRING</a> - SDL_SetAppMetadataPropertyで設定できる人が読むことができる著作権表記のプロパティ
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_CREATOR_STRING</a> - SDL_SetAppMetadataPropertyで設定できる人が読むことができるアプリケーションのクリエイター/開発者/メーカーの名前のプロパティ
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_IDENTIFIER_STRING</a> - SDL_SetAppMetadataPropertyで設定できるアプリケーションのユニークな文字列のプロパティ
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_NAME_STRING</a> - SDL_SetAppMetadataPropertyで設定できる人が読むことのできるアプリケーションの名前のプロパティ
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_TYPE_STRING</a> - SDL_SetAppMetadataPropertyで設定できるアプリケーションの種類のプロパティ
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_URL_STRING</a> - SDL_SetAppMetadataPropertyで設定できるアプリケーションのwebサイトのURLのプロパティ
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_VERSION_STRING</a> - SDL_SetAppMetadataPropertyで設定できるアプリケーションのバージョンのプロパティ
 <li>SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN
 <li>SDL_PROP_AUDIOSTREAM_KEEP_ON_SHUTDOWN_BOOLEAN
 <li>SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN
@@ -2489,46 +2489,46 @@
 <li>SDL_PROP_WINDOW_ANDROID_WINDOW_POINTER
 <li>SDL_PROP_WINDOW_COCOA_METAL_VIEW_TAG_NUMBER
 <li>SDL_PROP_WINDOW_COCOA_WINDOW_POINTER
-<li>SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_BORDERLESS_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_COCOA_VIEW_POINTER
-<li>SDL_PROP_WINDOW_CREATE_COCOA_WINDOW_POINTER
-<li>SDL_PROP_WINDOW_CREATE_CONSTRAIN_POPUP_BOOLEAN
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウを常に前面にするか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_BORDERLESS_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウの枠をなくすか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_COCOA_VIEW_POINTER</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウの (__unsafe_unretained) NSViewのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_COCOA_WINDOW_POINTER</a> - SDL_CreateWindowWithPropertiesで設定できる既存のウィンドウの (__unsafe_unretained) NSWindowのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_CONSTRAIN_POPUP_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できる"tooltip"と"menu"ウィンドウならば自動的にディスプレイに全体が収まるようにするか否かのプロパティ
 <li>SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID
-<li>SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING
-<li>SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_FILL_DOCUMENT_BOOLEAN
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING</a> - SDL_CreateWindowWithPropertiesで設定できるcanvas要素のIDのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_FILL_DOCUMENT_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるcanvas要素をドキュメント全体とするか否かのプロパティ
 <li>SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT
-<li>SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING
-<li>SDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEAN
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING</a> - SDL_CreateWindowWithPropertiesで設定できるcanvasのキーボード入力にバインドされた要素のプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できる外部で管理するグラフィックコンテキストを使用するウィンドウか否かのプロパティ
 <li>SDL_PROP_WINDOW_CREATE_FLAGS_NUMBER
-<li>SDL_PROP_WINDOW_CREATE_FOCUSABLE_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_FULLSCREEN_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_HEIGHT_NUMBER
-<li>SDL_PROP_WINDOW_CREATE_HIDDEN_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_HIGH_PIXEL_DENSITY_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_MAXIMIZED_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_MENU_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_METAL_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_MINIMIZED_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_MODAL_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_MOUSE_GRABBED_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_OPENGL_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_PARENT_POINTER
-<li>SDL_PROP_WINDOW_CREATE_RESIZABLE_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_TITLE_STRING
-<li>SDL_PROP_WINDOW_CREATE_TOOLTIP_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_TRANSPARENT_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_UTILITY_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_VULKAN_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_WAYLAND_CREATE_EGL_WINDOW_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN
-<li>SDL_PROP_WINDOW_CREATE_WAYLAND_WL_SURFACE_POINTER
-<li>SDL_PROP_WINDOW_CREATE_WIDTH_NUMBER
-<li>SDL_PROP_WINDOW_CREATE_WIN32_HWND_POINTER
-<li>SDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTER
-<li>SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER
-<li>SDL_PROP_WINDOW_CREATE_X_NUMBER
-<li>SDL_PROP_WINDOW_CREATE_Y_NUMBER
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_FOCUSABLE_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウがキー入力を受け入れるか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_FULLSCREEN_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウがデスクトップの解像度のフルスクリーンで始まるか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_HEIGHT_NUMBER</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウの高さのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_HIDDEN_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウが見えない状態で始まるか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_HIGH_PIXEL_DENSITY_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウが可能ならば高ピクセル密度バッファを使用するか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_MAXIMIZED_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウが最大化された状態で始まるか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_MENU_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウがポップアップメニューか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_METAL_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウがMetalレンダリングを使用するか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_MINIMIZED_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウが最小化された状態で始まるか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_MODAL_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウが親に対してモーダルか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_MOUSE_GRABBED_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウがマウスをグラブした状態で始まるか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_OPENGL_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウがOpenGLレンダリングを使用するか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_PARENT_POINTER</a> - SDL_CreateWindowWithPropertiesで設定できる親ウィンドウのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_RESIZABLE_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウのサイズを変えられるか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_TITLE_STRING</a> - SDL_CreateWindowWithPropertiesで設定できるUTF-8でエンコードされたウィンドウのタイトルのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_TOOLTIP_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウがツールチップか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_TRANSPARENT_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるα値が0の部分が透明のウィンドウか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_UTILITY_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウがユーティリティウィンドウか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_VULKAN_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウがVulkanレンダリングを使用するか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_WAYLAND_CREATE_EGL_WINDOW_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるwl_egl_windowオブジェクトを生成してウィンドウのものとするか否かのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN</a> - SDL_CreateWindowWithPropertiesで設定できるWaylandカスタムサーフェイスのためのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_WAYLAND_WL_SURFACE_POINTER</a> - SDL_CreateWindowWithPropertiesで設定できる既存のウィンドウのwl_surfaceのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_WIDTH_NUMBER</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウの幅のプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_WIN32_HWND_POINTER</a> - SDL_CreateWindowWithPropertiesで設定できる既存のウィンドウのHWNDのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTER</a> - SDL_CreateWindowWithPropertiesで設定できるピクセル形式を共有する別のウィンドウのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER</a> - SDL_CreateWindowWithPropertiesで設定できる既存のウィンドウのX11ウィンドウのプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_X_NUMBER</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウのX座標のプロパティ
+<li><a href="SDL_CreateWindowWithProperties.html">SDL_PROP_WINDOW_CREATE_Y_NUMBER</a> - SDL_CreateWindowWithPropertiesで設定できるウィンドウのY座標のプロパティ
 <li>SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID
 <li>SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID_STRING
 <li>SDL_PROP_WINDOW_EMSCRIPTEN_FILL_DOCUMENT_BOOLEAN
