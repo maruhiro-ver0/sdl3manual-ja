@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryDialog.html" title="1つ上">
+<title>SDL_ShowFileDialogWithProperties</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryDialog.html">ファイルダイアログ</a> - SDL_ShowFileDialogWithProperties
+<hr>
+<h1>SDL_ShowFileDialogWithProperties</h1>
+プロパティを指定してファイルダイアログを生成し表示する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_dialog.h">SDL3/SDL_dialog.h</a>
+<h2>構文</h2>
+<code>void SDL_ShowFileDialogWithProperties(SDL_FileDialogType type, SDL_DialogFileCallback callback, void *userdata, SDL_PropertiesID props);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_FileDialogType.html">SDL_FileDialogType</a></td><td>type</td><td>ダイアログの種類</td></tr>
+<tr><td><a href="SDL_DialogFileCallback.html">SDL_DialogFileCallback</a></td><td>callback</td><td>ユーザがファイルを選択して決定した, またはダイアログをキャンセルした, またはエラーが発生したとき呼ばれる関数へのポインタ</td></tr>
+<tr><td>void *</td><td>userdata</td><td>コールバック関数が呼ばれたとき渡せるポインタ</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>使用するプロパティグループ</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+次のプロパティに対応している:
+</p>
+<ul>
+<li>SDL_PROP_FILE_DIALOG_FILTERS_POINTER: ファイル選択で使用されるフィルタを表す<a href="SDL_DialogFileFilter.html">SDL_DialogFileFilter</a>構造体へのポインタ.
+「フォルダを開く」ダイアログの場合は無視される.
+NULLでないとき, 少なくともコールバック関数が呼ばれるまで有効でなければならない
+<li>SDL_PROP_FILE_DIALOG_NFILTERS_NUMBER: もし存在するならば, フィルタの配列の数
+<li>SDL_PROP_FILE_DIALOG_WINDOW_POINTER: このウィンドウに対してモーダルにする
+<li>SDL_PROP_FILE_DIALOG_LOCATION_STRING: ダイアログが開いたときのデフォルトのフォルダまたはファイル
+<li>SDL_PROP_FILE_DIALOG_MANY_BOOLEAN: 真のときユーザは複数の項目を選択できる
+<li>SDL_PROP_FILE_DIALOG_TITLE_STRING: ダイアログのタイトル
+<li>SDL_PROP_FILE_DIALOG_ACCEPT_STRING: 選択ボタンのラベル
+<li>SDL_PROP_FILE_DIALOG_CANCEL_STRING: キャンセルボタンのラベル
+</ul>
+<p>
+プロパティは環境によって対応している場合としていない場合があるので注意すること.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼べるのはメインスレッドのみである.
+コールバックはOSの制約により同じスレッドと別のスレッドの両方から呼ばれることがある.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_FileDialogType.html">SDL_FileDialogType</a>
+<li><a href="SDL_DialogFileCallback.html">SDL_DialogFileCallback</a>
+<li><a href="SDL_DialogFileFilter.html">SDL_DialogFileFilter</a>
+<li><a href="SDL_ShowOpenFileDialog.html">SDL_ShowOpenFileDialog</a>
+<li><a href="SDL_ShowSaveFileDialog.html">SDL_ShowSaveFileDialog</a>
+<li><a href="SDL_ShowOpenFolderDialog.html">SDL_ShowOpenFolderDialog</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_ShowFileDialogWithProperties">SDL_ShowFileDialogWithProperties - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

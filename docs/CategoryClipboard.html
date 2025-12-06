@@ -20,7 +20,7 @@
 </p>
 <h3>基本的な使用(テキスト)</h3>
 <p>
-単純なテキストのクリップボードからの獲得と公開は, それぞれSDL_GetClipboardText()とSDL_SetClipboardText()を呼べば簡単に行える.
+単純なテキストのクリップボードからの獲得と公開は, それぞれ<a href="SDL_GetClipboardText.html">SDL_GetClipboardText()</a>と<a href="SDL_SetClipboardText.html">SDL_SetClipboardText()</a>を呼べば簡単に行える.
 この場合はUTF-8でエンコードされたCスタイルの文字列を扱う.
 データの変換とコードの変換はSDLが完全に管理している.
 </p>
@@ -31,26 +31,26 @@
 例えば, 画像編集アプリケーションはユーザがグラフィックをクリップボードにコピーし, それを他のアプリケーションが使用するために.BMPや.JPG, .PNG形式で提供することができる.
 </p>
 <p>
-クリップボードデータの獲得(「貼り付け」)は, 要求するデータのMIMEタイプを伝えてSDL_GetClipboardData()を呼ぶだけである.
+クリップボードデータの獲得(「貼り付け」)は, 要求するデータのMIMEタイプを伝えて<a href="SDL_GetClipboardData.html">SDL_GetClipboardData()</a>を呼ぶだけである.
 しかし, 可能な形式はどうすればわかるか?
-特定のMIMEタイプのデータがクリップボードにあるかはSDL_HasClipboardData()でわかる. そしてSDL_GetClipboardMimeTypes()でMIMEタイプの一覧が得られる.
+特定のMIMEタイプのデータがクリップボードにあるかは<a href="SDL_HasClipboardData.html">SDL_HasClipboardData()</a>でわかる. そして<a href="SDL_GetClipboardMimeTypes.html">SDL_GetClipboardMimeTypes()</a>でMIMEタイプの一覧が得られる.
 これでアプリケーションはデータの扱い方や, どの形式に対応できるかを決めることができる.
 </p>
 <p>
-あらゆるデータのクリップボードへの設定(「コピー」)はSDL_SetClipboardDataで行える.
+あらゆるデータのクリップボードへの設定(「コピー」)は<a href="SDL_SetClipboardData.html">SDL_SetClipboardData()</a>で行える.
 アプリケーションは, この関数の呼び出しではデータではなくMIMEタイプとコールバック関数を指定する.
 アプリケーションはコールバックでデータを生成する.
 この方法により, データが実際に要求される前にデータをコピーすることなくクリップボードに巨大なデータを設定することができる.
 さらに, アプリケーションは複数の形式のコピーを事前に提供しないで複数の形式のデータを提供することができる.
 もしアプリケーションにPNGまたはJPG形式で提供したい画像があるとき, 貼り付けられない限りは, そして貼り付けられるまではどちらにもエンコードする必要はない.
 </p>
-<h3>プライマリセレクション</h3>
+<h3>プライマリ選択</h3>
 <p>
-X11とWaylandには, 通常のクリップボードに加えて「プライマリセレクション」という概念がある.
+X11とWaylandには, 通常のクリップボードに加えて「プライマリ選択」という概念がある.
 これは通常様々なアプリケーションで選択された(しかし実際にはコピーしなかった)テキストである.
-SDLはこれに関するAPI SDL_GetPrimarySelectionText()とSDL_SetPrimarySelectionText()を提供している.
+SDLはこれに関するAPI <a href="SDL_GetPrimarySelectionText.html">SDL_GetPrimarySelectionText()</a>と<a href="SDL_SetPrimarySelectionText.html">SDL_SetPrimarySelectionText()</a>を提供している.
 SDLはこの概念のない環境でもこれらのAPIを提供しているが, アプリケーションが後で復帰させるためにセットした文字列のコピーを保持するだけである.
-プライマリセレクションに対応していない場合, オペレーティングシステムが外部からこの文字列を変更することはない.
+プライマリ選択に対応していない場合, オペレーティングシステムが外部からこの文字列を変更することはない.
 </p>
 <h2>関数</h2>
 <ol>
@@ -58,18 +58,18 @@ SDLはこの概念のない環境でもこれらのAPIを提供しているが, 
 <li><a href="SDL_GetClipboardData.html">SDL_GetClipboardData</a> - クリップボードの指定のMIMEタイプのデータを得る
 <li><a href="SDL_GetClipboardMimeTypes.html">SDL_GetClipboardMimeTypes</a> - クリップボードの利用可能なMIMEタイプの一覧を得る
 <li><a href="SDL_GetClipboardText.html">SDL_GetClipboardText</a> - クリップボードからUTF-8のテキストを得る
-<li>SDL_GetPrimarySelectionText
+<li><a href="SDL_GetPrimarySelectionText.html">SDL_GetPrimarySelectionText</a> - プライマリ選択されたUTF-8のテキストを得る
 <li><a href="SDL_HasClipboardData.html">SDL_HasClipboardData</a> - クリップボードに指定のMIMEタイプのデータがあるかチェックする
 <li><a href="SDL_HasClipboardText.html">SDL_HasClipboardText</a> - クリップボードにテキストが存在し, かつ空でないかチェックする
-<li>SDL_HasPrimarySelectionText
-<li>SDL_SetClipboardData
+<li><a href="SDL_HasPrimarySelectionText.html">SDL_HasPrimarySelectionText</a> - プライマリ選択されたテキストが存在し, かつ空でないかチェックする
+<li><a href="SDL_SetClipboardData.html">SDL_SetClipboardData</a> - OSにクリップボードデータを提供する
 <li><a href="SDL_SetClipboardText.html">SDL_SetClipboardText</a> - クリップボードにUTF-8テキストを設定する
-<li>SDL_SetPrimarySelectionText
+<li><a href="SDL_SetPrimarySelectionText.html">SDL_SetPrimarySelectionText</a> - プライマリ選択にUTF-8テキストを設定する
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_ClipboardCleanupCallback
-<li>SDL_ClipboardDataCallback
+<li><a href="SDL_ClipboardCleanupCallback.html">SDL_ClipboardCleanupCallback</a> - クリップボードを消去する, または新しいデータを設定するとき呼ばれるコールバック関数の型
+<li><a href="SDL_ClipboardDataCallback.html">SDL_ClipboardDataCallback</a> - OSからMIMEタイプを指定したデータの要求があったとき呼ばれる関数の型
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryClipboard">SDL3/CategoryClipboard - SDL Wiki</a>

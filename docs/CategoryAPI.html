@@ -88,7 +88,7 @@
 <li>SDL_CleanupTLS
 <li><a href="SDL_ClearAudioStream.html">SDL_ClearAudioStream</a> - オーディオストリームの保留中のデータを消去する
 <li><a href="SDL_ClearClipboardData.html">SDL_ClearClipboardData</a> - クリップボードのデータを消去する
-<li>SDL_ClearComposition
+<li><a href="SDL_ClearComposition.html">SDL_ClearComposition</a> - 変換ウィンドウ/IMEを無効化せずに閉じる
 <li><a href="SDL_ClearError.html">SDL_ClearError</a> - エラーメッセージを消去する
 <li><a href="SDL_ClearProperty.html">SDL_ClearProperty</a> - プロパティグループのプロパティを消去する
 <li><a href="SDL_ClearSurface.html">SDL_ClearSurface</a> - サーフェイスを浮動小数点で指定した色で消去する
@@ -487,7 +487,7 @@
 <li><a href="SDL_GetPreferredLocales.html">SDL_GetPreferredLocales</a> - ユーザのロケールを得る
 <li>SDL_GetPrefPath
 <li><a href="SDL_GetPrimaryDisplay.html">SDL_GetPrimaryDisplay</a> - メインディスプレイを得る
-<li>SDL_GetPrimarySelectionText
+<li><a href="SDL_GetPrimarySelectionText.html">SDL_GetPrimarySelectionText</a> - プライマリ選択されたUTF-8のテキストを得る
 <li>SDL_GetProcessInput
 <li>SDL_GetProcessOutput
 <li>SDL_GetProcessProperties
@@ -562,7 +562,7 @@
 <li>SDL_GetSystemPageSize
 <li><a href="SDL_GetSystemRAM.html">SDL_GetSystemRAM</a> - システムに設定されたのRAMのサイズを得る
 <li><a href="SDL_GetSystemTheme.html">SDL_GetSystemTheme</a> - 現在のシステムテーマを得る
-<li>SDL_GetTextInputArea
+<li><a href="SDL_GetTextInputArea.html">SDL_GetTextInputArea</a> - Unicodeテキストの入力で使用される領域を得る
 <li>SDL_GetTextureAlphaMod
 <li>SDL_GetTextureAlphaModFloat
 <li>SDL_GetTextureBlendMode
@@ -667,7 +667,7 @@
 <li><a href="SDL_HasMMX.html">SDL_HasMMX</a> - CPUにMMX仕様があるかチェックする
 <li>SDL_HasMouse
 <li><a href="SDL_HasNEON.html">SDL_HasNEON</a> - CPUにNEON (ARM SIMD)仕様があるかチェックする
-<li>SDL_HasPrimarySelectionText
+<li><a href="SDL_HasPrimarySelectionText.html">SDL_HasPrimarySelectionText</a> - プライマリ選択されたテキストが存在し, かつ空でないかチェックする
 <li><a href="SDL_HasProperty.html">SDL_HasProperty</a> - プロパティグループにプロパティが存在するを得る
 <li>SDL_HasRectIntersection
 <li>SDL_HasRectIntersectionFloat
@@ -683,14 +683,14 @@
 <li><a href="SDL_hid_enumerate.html">SDL_hid_enumerate</a> - HIDデバイスを列挙する
 <li><a href="SDL_hid_exit.html">SDL_hid_exit</a> - HIDAPIライブラリを終了する
 <li><a href="SDL_hid_free_enumeration.html">SDL_hid_free_enumeration</a> - HIDデバイス情報連結リストを解放する
-<li>SDL_hid_get_device_info
+<li><a href="SDL_hid_get_device_info.html">SDL_hid_get_device_info</a> - HIDデバイスからデバイス情報を得る
 <li><a href="SDL_hid_get_feature_report.html">SDL_hid_get_feature_report</a> - HIDデバイスから機能レポートを得る
 <li><a href="SDL_hid_get_indexed_string.html">SDL_hid_get_indexed_string</a> - HIDデバイスから文字列インデックス番号を指定して文字列を得る
-<li>SDL_hid_get_input_report
+<li><a href="SDL_hid_get_input_report.html">SDL_hid_get_input_report</a> - HIDデバイスから入力レポートを得る
 <li><a href="SDL_hid_get_manufacturer_string.html">SDL_hid_get_manufacturer_string</a> - HIDデバイスの製造者文字列を得る
 <li><a href="SDL_hid_get_product_string.html">SDL_hid_get_product_string</a> - HIDデバイスのプロダクト文字列を得る
-<li>SDL_hid_get_properties
-<li>SDL_hid_get_report_descriptor
+<li><a href="SDL_hid_get_properties.html">SDL_hid_get_properties</a> - SDL_hid_deviceに関連付けられたプロパティを得る
+<li><a href="SDL_hid_get_report_descriptor.html">SDL_hid_get_report_descriptor</a> - HIDデバイスからレポートディスクリプタを得る
 <li><a href="SDL_hid_get_serial_number_string.html">SDL_hid_get_serial_number_string</a> - HIDデバイスのシリアルナンバーを得る
 <li><a href="SDL_hid_init.html">SDL_hid_init</a> - HIDAPIライブラリを初期化する
 <li><a href="SDL_hid_open.html">SDL_hid_open</a> - ベンダーID(VID), プロダクトID(PID), シリアルナンバー(任意)を指定してHIDデバイスを開く
@@ -997,7 +997,7 @@
 <li><a href="SDL_SetAudioStreamOutputChannelMap.html">SDL_SetAudioStreamOutputChannelMap</a> - オーディオストリームの出力チャネルマップを設定する
 <li><a href="SDL_SetAudioStreamPutCallback.html">SDL_SetAudioStreamPutCallback</a> - オーディオストリームにデータが追加されたとき呼ばれるコールバックを設定する
 <li><a href="SDL_SetBooleanProperty.html">SDL_SetBooleanProperty</a> - プロパティグループのブール型プロパティを設定する
-<li>SDL_SetClipboardData
+<li><a href="SDL_SetClipboardData.html">SDL_SetClipboardData</a> - OSにクリップボードデータを提供する
 <li><a href="SDL_SetClipboardText.html">SDL_SetClipboardText</a> - クリップボードにUTF-8テキストを設定する
 <li>SDL_SetCurrentThreadPriority
 <li>SDL_SetCursor
@@ -1052,7 +1052,7 @@
 <li><a href="SDL_SetPaletteColors.html">SDL_SetPaletteColors</a> - 範囲を指定してパレットの色を設定する
 <li><a href="SDL_SetPointerProperty.html">SDL_SetPointerProperty</a> - プロパティグループのポインタ型プロパティを設定する
 <li><a href="SDL_SetPointerPropertyWithCleanup.html">SDL_SetPointerPropertyWithCleanup</a> - プロパティグループのポインタ型プロパティをプロパティが削除されたとき呼ばれる終了処理関数付きで設定する
-<li>SDL_SetPrimarySelectionText
+<li><a href="SDL_SetPrimarySelectionText.html">SDL_SetPrimarySelectionText</a> - プライマリ選択にUTF-8テキストを設定する
 <li>SDL_SetRelativeMouseTransform
 <li>SDL_SetRenderClipRect
 <li>SDL_SetRenderColorScale
@@ -1076,7 +1076,7 @@
 <li><a href="SDL_SetSurfaceColorspace.html">SDL_SetSurfaceColorspace</a> - サーフェイスの色空間を設定する
 <li><a href="SDL_SetSurfacePalette.html">SDL_SetSurfacePalette</a> - サーフェイスのパレットを設定する
 <li><a href="SDL_SetSurfaceRLE.html">SDL_SetSurfaceRLE</a> - サーフェイスにRLEアクセラレーションのヒントを設定する
-<li>SDL_SetTextInputArea
+<li><a href="SDL_SetTextInputArea.html">SDL_SetTextInputArea</a> - Unicodeテキストの入力で使用される領域を設定する
 <li>SDL_SetTextureAlphaMod
 <li>SDL_SetTextureAlphaModFloat
 <li>SDL_SetTextureBlendMode
@@ -1122,11 +1122,11 @@
 <li>SDL_ShouldQuit
 <li>SDL_ShowAndroidToast
 <li>SDL_ShowCursor
-<li>SDL_ShowFileDialogWithProperties
+<li><a href="SDL_ShowFileDialogWithProperties.html">SDL_ShowFileDialogWithProperties</a> - プロパティを指定してファイルダイアログを生成し表示する
 <li><a href="SDL_ShowMessageBox.html">SDL_ShowMessageBox</a> - モーダルなメッセージボックスを生成する
-<li>SDL_ShowOpenFileDialog
-<li>SDL_ShowOpenFolderDialog
-<li>SDL_ShowSaveFileDialog
+<li><a href="SDL_ShowOpenFileDialog.html">SDL_ShowOpenFileDialog</a> - ユーザにファイルシステムのファイルを選択させるダイアログを表示する
+<li><a href="SDL_ShowOpenFolderDialog.html">SDL_ShowOpenFolderDialog</a> - ユーザにファイルシステムのフォルダを選択させるダイアログを表示する
+<li><a href="SDL_ShowSaveFileDialog.html">SDL_ShowSaveFileDialog</a> - ユーザにファイルシステムの新規または既存のファイルを選択させるダイアログを表示する
 <li><a href="SDL_ShowSimpleMessageBox.html">SDL_ShowSimpleMessageBox</a> - 単純なモーダルメッセージボックスを表示する
 <li><a href="SDL_ShowWindow.html">SDL_ShowWindow</a> - ウィンドウを表示する
 <li><a href="SDL_ShowWindowSystemMenu.html">SDL_ShowWindowSystemMenu</a> - システムのウィンドウメニューを表示する
@@ -1142,14 +1142,14 @@
 <li>SDL_sqrtf
 <li>SDL_srand
 <li>SDL_sscanf
-<li>SDL_StartTextInput
-<li>SDL_StartTextInputWithProperties
+<li><a href="SDL_StartTextInput.html">SDL_StartTextInput</a> - ウィンドウのUnicodeテキスト入力イベントの受け入れを開始する
+<li><a href="SDL_StartTextInputWithProperties.html">SDL_StartTextInputWithProperties</a> - プロパティを設定してウィンドウのUnicodeテキスト入力イベントの受け入れを開始する
 <li>SDL_StepBackUTF8
 <li>SDL_StepUTF8
 <li>SDL_StopHapticEffect
 <li>SDL_StopHapticEffects
 <li>SDL_StopHapticRumble
-<li>SDL_StopTextInput
+<li><a href="SDL_StopTextInput.html">SDL_StopTextInput</a> - ウィンドウのUnicodeテキスト入力イベントの受け入れを停止する
 <li>SDL_StorageReady
 <li>SDL_strcasecmp
 <li>SDL_strcasestr
@@ -1192,7 +1192,7 @@
 <li>SDL_tan
 <li>SDL_tanf
 <li>SDL_TellIO
-<li>SDL_TextInputActive
+<li><a href="SDL_TextInputActive.html">SDL_TextInputActive</a> - ウィンドウのUnicodeテキスト入力が有効であるかをチェックする
 <li>SDL_TimeFromWindows
 <li>SDL_TimeToDateTime
 <li>SDL_TimeToWindows
@@ -1321,13 +1321,13 @@
 <li>SDL_Camera
 <li>SDL_CameraID
 <li><a href="SDL_CleanupPropertyCallback.html">SDL_CleanupPropertyCallback</a> - プロパティグループのポインタ型プロパティをプロパティが削除されたとき呼ばれる終了処理関数付きで設定する
-<li>SDL_ClipboardCleanupCallback
-<li>SDL_ClipboardDataCallback
+<li><a href="SDL_ClipboardCleanupCallback.html">SDL_ClipboardCleanupCallback</a> - クリップボードを消去する, または新しいデータを設定するとき呼ばれるコールバック関数の型
+<li><a href="SDL_ClipboardDataCallback.html">SDL_ClipboardDataCallback</a> - OSからMIMEタイプを指定したデータの要求があったとき呼ばれる関数の型
 <li>SDL_CompareCallback
 <li>SDL_CompareCallback_r
 <li>SDL_Condition
 <li>SDL_Cursor
-<li>SDL_DialogFileCallback
+<li><a href="SDL_DialogFileCallback.html">SDL_DialogFileCallback</a> - ファイルダイアログ関数で使用するコールバックの型
 <li><a href="SDL_DisplayID.html">SDL_DisplayID</a> - 現在システムに接続されているディスプレイのユニークIDの型
 <li><a href="SDL_WindowID.html">SDL_WindowID</a> - ウィンドウユニークIDの型
 <li><a href="SDL_DisplayModeData.html">SDL_DisplayModeData</a> - ディスプレイモードの内部データ型
@@ -1456,7 +1456,7 @@
 <li><a href="SDL_Color.html">SDL_Color</a> - 色をRGBA要素で表す構造体
 <li><a href="SDL_CommonEvent.html">SDL_CommonEvent</a> - 全イベントの共通フィールドの構造体
 <li>SDL_DateTime
-<li>SDL_DialogFileFilter
+<li><a href="SDL_DialogFileFilter.html">SDL_DialogFileFilter</a> - ファイルダイアログのフィルタの構造体
 <li><a href="SDL_DisplayEvent.html">SDL_DisplayEvent</a> - ディスプレイイベントの構造体(event.display.*)
 <li><a href="SDL_DisplayMode.html">SDL_DisplayMode</a> - ディスプレイモードの構造体
 <li><a href="SDL_DropEvent.html">SDL_DropEvent</a> - ドロップイベントの構造体(event.drop.*)
@@ -1578,7 +1578,7 @@
 <li>SDL_BlendOperation
 <li>SDL_CameraPermissionState
 <li>SDL_CameraPosition
-<li>SDL_Capitalization
+<li><a href="SDL_Capitalization.html">SDL_Capitalization</a> - 自動大文字化の種類
 <li><a href="SDL_ChromaLocation.html">SDL_ChromaLocation</a> - 色空間情報のクロマサンプリングの位置の列挙体
 <li><a href="SDL_ColorPrimaries.html">SDL_ColorPrimaries</a> - 色空間情報のcolor primaries(原色)の列挙体
 <li><a href="SDL_ColorRange.html">SDL_ColorRange</a> - 色空間情報の色の範囲の列挙体
@@ -1589,7 +1589,7 @@
 <li>SDL_EnumerationResult
 <li>SDL_EventAction
 <li><a href="SDL_EventType.html">SDL_EventType</a> - イベントの種類の列挙体
-<li>SDL_FileDialogType
+<li><a href="SDL_FileDialogType.html">SDL_FileDialogType</a> - ファイルダイアログの種類の列挙体
 <li><a href="SDL_FlashOperation.html">SDL_FlashOperation</a> - ウィンドウのフラッシュ方法の列挙体
 <li><a href="SDL_FlipMode.html">SDL_FlipMode</a> - 反転モードの列挙体
 <li>SDL_Folder
@@ -1623,7 +1623,7 @@
 <li>SDL_GPUTransferBufferUsage
 <li>SDL_GPUVertexElementFormat
 <li>SDL_GPUVertexInputRate
-<li>SDL_hid_bus_type
+<li><a href="SDL_hid_bus_type.html">SDL_hid_bus_type</a> - HIDのバスの列挙体
 <li><a href="SDL_HintPriority.html">SDL_HintPriority</a> - ヒントの優先度の列挙体
 <li><a href="SDL_HitTestResult.html">SDL_HitTestResult</a> - SDL_SetWindowHitTest()コールバック関数が戻す値の列挙体
 <li>SDL_InitStatus
@@ -1653,7 +1653,7 @@
 <li>SDL_SensorType
 <li>SDL_SystemCursor
 <li><a href="SDL_SystemTheme.html">SDL_SystemTheme</a> - システムのテーマの列挙体
-<li>SDL_TextInputType
+<li><a href="SDL_TextInputType.html">SDL_TextInputType</a> - テキスト入力の種類
 <li>SDL_TextureAccess
 <li>SDL_TextureAddressMode
 <li>SDL_ThreadPriority
@@ -2576,7 +2576,7 @@
 <li>SDL_REQUIRES_SHARED
 <li>SDL_RESTRICT
 <li>SDL_RETURN_CAPABILITY
-<li>SDL_REVISION
+<li><a href="SDL_REVISION.html">SDL_REVISION</a> - 開発の特定の時点のソースを表す文字列のマクロ
 <li>SDL_SCANCODE_TO_KEYCODE
 <li>SDL_SCANF_FORMAT_STRING
 <li>SDL_SCANF_VARARG_FUNC
@@ -2623,7 +2623,7 @@
 <li>SDL_US_PER_SECOND
 <li>SDL_US_TO_NS
 <li><a href="SDL_VERSION.html">SDL_VERSION</a> - SDLバージョンのマクロ
-<li>SDL_VERSION_ATLEAST
+<li><a href="SDL_VERSION_ATLEAST.html">SDL_VERSION_ATLEAST</a> - 少なくともX.Y.ZのバージョンのSDLでコンパイルされたとき真と評価するマクロ
 <li><a href="SDL_VERSIONNUM.html">SDL_VERSIONNUM</a> - バージョン番号を数値に変換するマクロ
 <li><a href="SDL_VERSIONNUM_MAJOR.html">SDL_VERSIONNUM_MAJOR</a> - バージョンを表す数値からメジャーバージョンを得るマクロ
 <li><a href="SDL_VERSIONNUM_MICRO.html">SDL_VERSIONNUM_MICRO</a> - バージョンを表す数値からマイクロバージョンを得るマクロ

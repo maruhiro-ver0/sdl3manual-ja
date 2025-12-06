@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryKeyboard.html" title="1つ上">
+<title>SDL_StartTextInputWithProperties </title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryKeyboard.html">キーボード</a> - SDL_StartTextInputWithProperties 
+<hr>
+<h1>SDL_StartTextInputWithProperties </h1>
+プロパティを設定してウィンドウのUnicodeテキスト入力イベントの受け入れを開始する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_keyboard.h">SDL3/SDL_keyboard.h</a>
+<h2>構文</h2>
+<code>bool SDL_StartTextInputWithProperties(SDL_Window *window, SDL_PropertiesID props);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Window.html">SDL_Window</a> *</td><td>window</td><td>テキスト入力を有効化するウィンドウ</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>the properties to use</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+この関数は指定したウィンドウのテキスト入力(<td><a href="SDL_TextInputEvent.html">SDL_EVENT_TEXT_INPUT</a>と<a href="SDL_TextEditingCandidatesEvent.html">SDL_EVENT_TEXT_EDITING</a>イベント)を有効にする.
+この関数は<a href="SDL_StopTextInput.html">SDL_StopTextInput()</a>と対になっている.
+</p>
+<p>
+テキスト入力イベントはデフォルトでは有効でない.
+</p>
+<p>
+一部の環境では, この関数でスクリーンキーボードやIMEが表示され, ここでキーが押されることでキー押下イベントが阻害されることがある.
+</p>
+<p>
+次のプロパティに対応している:
+</p>
+<ul>
+<li>SDL_PROP_TEXTINPUT_TYPE_NUMBER - テキスト入力の種類を表す<a href="SDL_TextInputType.html">SDL_TextInputType</a>の値. デフォルトはSDL_TEXTINPUT_TYPE_TEXT
+<li>SDL_PROP_TEXTINPUT_CAPITALIZATION_NUMBER
+<ul>
+<li>入力テキストの大文字化の指定を表す<a href="SDL_Capitalization.html">SDL_Capitalization</a>の値. デフォルトは通常のテキスト入力の場合はSDL_CAPITALIZE_SENTENCES, SDL_TEXTINPUT_TYPE_TEXT_NAMEの場合はSDL_CAPITALIZE_WORDS, e-mailアドレス, ユーザ名, パスワードの場合はSDL_CAPITALIZE_NONE
+</ul>
+<li>SDL_PROP_TEXTINPUT_AUTOCORRECT_BOOLEAN
+<ul>
+<li>真のとき自動補完と自動修正が有効, デフォルトは真
+</ul>
+<li>SDL_PROP_TEXTINPUT_MULTILINE_BOOLEAN
+<ul>
+<li>真のとき複数行の入力を認める. デフォルトは, <a href="SDL_HINT_RETURN_KEY_HIDES_IME.html">SDL_HINT_RETURN_KEY_HIDES_IME</a>が"0"または設定されていないならば真, "1"ならば偽
+</ul>
+</ul>
+<p>
+Androidの場合, 入力の種類を直接指定できる:
+</p>
+<ul>
+<li>SDL_PROP_TEXTINPUT_ANDROID_INPUTTYPE_NUMBER
+<ul>
+<li>使用するテキスト入力の種類. 他のプロパティを上書きする. 詳細は<a href="https://developer.android.com/reference/android/text/InputType">https://developer.android.com/reference/android/text/InputType</a>を参照すること
+</ul>
+</ul>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼べるのはメインスレッドのみである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_SetTextInputArea.html">SDL_SetTextInputArea</a>
+<li><a href="SDL_StartTextInput.html">SDL_StartTextInput</a>
+<li><a href="SDL_StopTextInput.html">SDL_StopTextInput</a>
+<li><a href="SDL_TextInputActive.html">SDL_TextInputActive</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_StartTextInputWithProperties ">SDL_StartTextInputWithProperties  - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

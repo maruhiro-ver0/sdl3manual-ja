@@ -1319,32 +1319,32 @@ SDL_EVENT_JOYSTICK_ADDEDイベントは, <a href="SDL_Event.html">イベント�
 </ul>
 <h2><a name="#sdl_keyboardh">SDL_keyboard.h (キーボード)</a></h2>
 <p>
-テキスト入力はビデオを初期化しても自動的には有効にならなくなった. テキスト入力を受信したい場合は<a href="https://wiki.libsdl.org/SDL3/SDL_StartTextInput">SDL_StartTextInput()</a>を, 終えるときは<a href="https://wiki.libsdl.org/SDL3/SDL_StopTextInput">SDL_StopTextInput()</a>を呼ぶ必要がある.
+テキスト入力はビデオを初期化しても自動的には有効にならなくなった. テキスト入力を受信したい場合は<a href="SDL_StartTextInput.html">SDL_StartTextInput()</a>を, 終えるときは<a href="SDL_StopTextInput.html">SDL_StopTextInput()</a>を呼ぶ必要がある.
 テキスト入力を開始するとインプットメソッドエディタ(IME)が表示され, キー押下/キー離しイベントがスキップされる. よって, アプリケーションがテキスト入力を必要とする場合のみ有効にすること.
 </p>
 <p>
 テキスト入力状態はウィンドウごとに変更された.
-<a href="https://wiki.libsdl.org/SDL3/SDL_StartTextInput">SDL_StartTextInput()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_StopTextInput">SDL_StopTextInput()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_TextInputActive">SDL_TextInputActive()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_ClearComposition">SDL_ClearComposition()</a>には全てウィンドウが引数に追加された.
+<a href="SDL_StartTextInput.html">SDL_StartTextInput()</a>, <a href="SDL_StopTextInput.html">SDL_StopTextInput()</a>, <a href="SDL_TextInputActive.html">SDL_TextInputActive()</a>, <a href="SDL_ClearComposition.html">SDL_ClearComposition()</a>には全てウィンドウが引数に追加された.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetDefaultKeyFromScancode">SDL_GetDefaultKeyFromScancode()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetKeyFromScancode">SDL_GetKeyFromScancode()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetScancodeFromKey">SDL_GetScancodeFromKey()</a>にはSDL_Keymod引数が追加され, 修飾キーの状態に基づいて結果を修正するようになった.
+<a href="SDL_GetDefaultKeyFromScancode.html">SDL_GetDefaultKeyFromScancode()</a>, <a href="SDL_GetKeyFromScancode.html">SDL_GetKeyFromScancode()</a>, <a href="SDL_GetScancodeFromKey.html">SDL_GetScancodeFromKey()</a>にはSDL_Keymod引数が追加され, キー修飾の状態に基づいて結果を修正するようになった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetKeyboardState">SDL_GetKeyboardState()</a>の戻り値は, Uint8型ポインタからbool型ポインタに変更された.
+<a href="SDL_GetKeyboardState.html">SDL_GetKeyboardState()</a>の戻り値は, Uint8型ポインタからbool型ポインタに変更された.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsScreenKeyboardShown.html">SDL_IsScreenKeyboardShown()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ScreenKeyboardShown">SDL_ScreenKeyboardShown()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsTextInputActive.html">SDL_IsTextInputActive()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_TextInputActive">SDL_TextInputActive()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsScreenKeyboardShown.html">SDL_IsScreenKeyboardShown()</a> → <a href="SDL_ScreenKeyboardShown.html">SDL_ScreenKeyboardShown()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsTextInputActive.html">SDL_IsTextInputActive()</a> → <a href="SDL_TextInputActive.html">SDL_TextInputActive()</a>
 </ul>
 <p>
 以下の関数は削除された
 </p>
 <ul>
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsTextInputShown.html">SDL_IsTextInputShown()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetTextInputRect.html">SDL_SetTextInputRect()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_SetTextInputArea">SDL_SetTextInputArea()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetTextInputRect.html">SDL_SetTextInputRect()</a> - <a href="SDL_SetTextInputArea.html">SDL_SetTextInputArea()</a>に置き換えられた
 </ul>
 <p>
 以下の構造体は削除された
