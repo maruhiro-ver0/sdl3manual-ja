@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryScancode.html" title="1つ上">
+<title>SDL_Keymod</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryKeycode.html">キーコード</a> - SDL_Keymod
+<hr>
+<h1>SDL_Keymod</h1>
+修飾キーの状態(論理和で同時のも可)の型
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_keycode.h">SDL3/SDL_keycode.h</a>
+<h2>構文</h2>
+<code>typedef Uint16 SDL_Keymod;</code>
+<h2>値</h2>
+<table border="1">
+<tr><td>SDL_KMOD_NONE</td><td>0x0000u</td><td>修飾キーが適用されない</td></tr>
+<tr><td>SDL_KMOD_LSHIFT</td><td>0x0001u</td><td>左シフトキーが押されている</td></tr>
+<tr><td>SDL_KMOD_RSHIFT</td><td>0x0002u</td><td>右シフトキーが押されている</td></tr>
+<tr><td>SDL_KMOD_LEVEL5</td><td>0x0004u</td><td>第5シフトキー(Level 5 Shift key)が押されている</td></tr>
+<tr><td>SDL_KMOD_LCTRL</td><td>0x0040u</td><td>左Ctrlキーが押されている</td></tr>
+<tr><td>SDL_KMOD_RCTRL</td><td>0x0080u</td><td>右Ctrlキーが押されている</td></tr>
+<tr><td>SDL_KMOD_LALT</td><td>0x0100u</td><td>左Altキーが押されている</td></tr>
+<tr><td>SDL_KMOD_RALT</td><td>0x0200u</td><td>右Altキーが押されている</td></tr>
+<tr><td>SDL_KMOD_LGUI</td><td>0x0400u</td><td>左GUIキー(多くの場合はWindowsキー)が押されている</td></tr>
+<tr><td>SDL_KMOD_RGUI</td><td>0x0800u</td><td>右GUIキー(多くの場合はWindowsキー)が押されている</td></tr>
+<tr><td>SDL_KMOD_NUM</td><td>0x1000u</td><td>Num Lockキー(テンキーの上にあることが多い)が押されている</td></tr>
+<tr><td>SDL_KMOD_CAPS</td><td>0x2000u</td><td>Caps Lockキーが押されている</td></tr>
+<tr><td>SDL_KMOD_MODE</td><td>0x4000u</td><td>AltGrキーが押されている</td></tr>
+<tr><td>SDL_KMOD_SCROLL</td><td>0x8000u</td><td>Scroll Lockキーが押されている</td></tr>
+<tr><td>SDL_KMOD_CTRL</td><td>(SDL_KMOD_LCTRL | SDL_KMOD_RCTRL)</td><td>いずれかのCtrlキーが押されている</td></tr>
+<tr><td>SDL_KMOD_SHIFT</td><td>(SDL_KMOD_LSHIFT | SDL_KMOD_RSHIFT)</td><td>いずれかのシフトキーが押されている</td></tr>
+<tr><td>SDL_KMOD_ALT</td><td>(SDL_KMOD_LALT | SDL_KMOD_RALT)</td><td>いずれかのAltキーが押されている</td></tr>
+<tr><td>SDL_KMOD_GUI</td><td>(SDL_KMOD_LGUI | SDL_KMOD_RGUI)</td><td>いずれかのGUIキーが押されている</td></tr>
+</table>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_Keymod">SDL_Keymod - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
