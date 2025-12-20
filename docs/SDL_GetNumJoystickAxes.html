@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryJoystick.html" title="1つ上">
+<title>SDL_GetNumJoystickAxes</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryJoystick.html">ジョイスティック</a> - SDL_GetNumJoystickAxes
+<hr>
+<h1>SDL_GetNumJoystickAxes</h1>
+ジョイスティックの方向コントローラーの数を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_joystick.h">SDL3/SDL_joystick.h</a>
+<h2>構文</h2>
+<code>int SDL_GetNumJoystickAxes(SDL_Joystick *joystick);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Joystick.html">SDL_Joystick</a> *</td><td>joystick</td><td>ジョイスティックの情報を持つSDL_Joystick</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(int) 成功のとき方向コントローラーの数を戻す. 失敗のとき-1を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+ゲームコントローラーの方向パッド(十字キー)は, 方向コントローラーではなく, 4つのボタンまたはPOVハットと見なされることがある.
+これはデバイスと環境による.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetJoystickAxis.html">SDL_GetJoystickAxis</a>
+<li><a href="SDL_GetNumJoystickBalls.html">SDL_GetNumJoystickBalls</a>
+<li><a href="SDL_GetNumJoystickButtons.html">SDL_GetNumJoystickButtons</a>
+<li><a href="SDL_GetNumJoystickHats.html">SDL_GetNumJoystickHats</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GetNumJoystickAxes">SDL_GetNumJoystickAxes - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

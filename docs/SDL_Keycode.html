@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryScancode.html" title="1つ上">
+<title>SDL_Keycode</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryKeycode.html">キーコード</a> - SDL_Keycode
+<hr>
+<h1>SDL_Keycode</h1>
+SDL仮想キーコードの型 
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_keycode.h">SDL3/SDL_keycode.h</a>
+<h2>構文</h2>
+<code>typedef Uint32 SDL_Keycode;</code>
+<h2>値</h2>
+<table border="1">
+<tr><td>SDLK_EXTENDED_MASK</td><td>(1u << 29)</td><td></td></tr>
+<tr><td>SDLK_SCANCODE_MASK</td><td>(1u << 30)</td><td></td></tr>
+<tr><td>SDL_SCANCODE_TO_KEYCODE(X)</td><td>(X | SDLK_SCANCODE_MASK)</td><td></td></tr>
+<tr><td>SDLK_UNKNOWN</td><td>0x00000000u</td><td></td></tr>
+<tr><td>SDLK_RETURN</td><td>0x0000000du</td><td>Return (Enter)</td></tr>
+<tr><td>SDLK_ESCAPE</td><td>0x0000001bu</td><td>Escape</td></tr>
+<tr><td>SDLK_BACKSPACE</td><td>0x00000008u</td><td>Backspace</td></tr>
+<tr><td>SDLK_TAB</td><td>0x00000009u</td><td>Tab</td></tr>
+<tr><td>SDLK_SPACE</td><td>0x00000020u</td><td>Spacebar</td></tr>
+<tr><td>SDLK_EXCLAIM</td><td>0x00000021u</td><td>!</td></tr>
+<tr><td>SDLK_DBLAPOSTROPHE</td><td>0x00000022u</td><td>"</td></tr>
+<tr><td>SDLK_HASH</td><td>0x00000023u</td><td>#</td></tr>
+<tr><td>SDLK_DOLLAR</td><td>0x00000024u</td><td>$</td></tr>
+<tr><td>SDLK_PERCENT</td><td>0x00000025u</td><td>%</td></tr>
+<tr><td>SDLK_AMPERSAND</td><td>0x00000026u</td><td>&</td></tr>
+<tr><td>SDLK_APOSTROPHE</td><td>0x00000027u</td><td>'</td></tr>
+<tr><td>SDLK_LEFTPAREN</td><td>0x00000028u</td><td>(</td></tr>
+<tr><td>SDLK_RIGHTPAREN</td><td>0x00000029u</td><td>)</td></tr>
+<tr><td>SDLK_ASTERISK</td><td>0x0000002au</td><td>*</td></tr>
+<tr><td>SDLK_PLUS</td><td>0x0000002bu</td><td>+</td></tr>
+<tr><td>SDLK_COMMA</td><td>0x0000002cu</td><td>,</td></tr>
+<tr><td>SDLK_MINUS</td><td>0x0000002du</td><td>-</td></tr>
+<tr><td>SDLK_PERIOD</td><td>0x0000002eu</td><td>.</td></tr>
+<tr><td>SDLK_SLASH</td><td>0x0000002fu</td><td>/</td></tr>
+<tr><td>SDLK_0</td><td>0x00000030u</td><td>0</td></tr>
+<tr><td>SDLK_1</td><td>0x00000031u</td><td>1</td></tr>
+<tr><td>SDLK_2</td><td>0x00000032u</td><td>2</td></tr>
+<tr><td>SDLK_3</td><td>0x00000033u</td><td>3</td></tr>
+<tr><td>SDLK_4</td><td>0x00000034u</td><td>4</td></tr>
+<tr><td>SDLK_5</td><td>0x00000035u</td><td>5</td></tr>
+<tr><td>SDLK_6</td><td>0x00000036u</td><td>6</td></tr>
+<tr><td>SDLK_7</td><td>0x00000037u</td><td>7</td></tr>
+<tr><td>SDLK_8</td><td>0x00000038u</td><td>8</td></tr>
+<tr><td>SDLK_9</td><td>0x00000039u</td><td>9</td></tr>
+<tr><td>SDLK_COLON</td><td>0x0000003au</td><td>:</td></tr>
+<tr><td>SDLK_SEMICOLON</td><td>0x0000003bu</td><td>;</td></tr>
+<tr><td>SDLK_LESS</td><td>0x0000003cu</td><td><</td></tr>
+<tr><td>SDLK_EQUALS</td><td>0x0000003du</td><td>=</td></tr>
+<tr><td>SDLK_GREATER</td><td>0x0000003eu</td><td>></td></tr>
+<tr><td>SDLK_QUESTION</td><td>0x0000003fu</td><td>?</td></tr>
+<tr><td>SDLK_AT</td><td>0x00000040u</td><td>@</td></tr>
+<tr><td>SDLK_LEFTBRACKET</td><td>0x0000005bu</td><td>[</td></tr>
+<tr><td>SDLK_BACKSLASH</td><td>0x0000005cu</td><td>\</td></tr>
+<tr><td>SDLK_RIGHTBRACKET</td><td>0x0000005du</td><td>]</td></tr>
+<tr><td>SDLK_CARET</td><td>0x0000005eu</td><td>^</td></tr>
+<tr><td>SDLK_UNDERSCORE</td><td>0x0000005fu</td><td>_</td></tr>
+<tr><td>SDLK_GRAVE</td><td>0x00000060u</td><td>`</td></tr>
+<tr><td>SDLK_A</td><td>0x00000061u</td><td>a</td></tr>
+<tr><td>SDLK_B</td><td>0x00000062u</td><td>b</td></tr>
+<tr><td>SDLK_C</td><td>0x00000063u</td><td>c</td></tr>
+<tr><td>SDLK_D</td><td>0x00000064u</td><td>d</td></tr>
+<tr><td>SDLK_E</td><td>0x00000065u</td><td>e</td></tr>
+<tr><td>SDLK_F</td><td>0x00000066u</td><td>f</td></tr>
+<tr><td>SDLK_G</td><td>0x00000067u</td><td>g</td></tr>
+<tr><td>SDLK_H</td><td>0x00000068u</td><td>h</td></tr>
+<tr><td>SDLK_I</td><td>0x00000069u</td><td>i</td></tr>
+<tr><td>SDLK_J</td><td>0x0000006au</td><td>j</td></tr>
+<tr><td>SDLK_K</td><td>0x0000006bu</td><td>k</td></tr>
+<tr><td>SDLK_L</td><td>0x0000006cu</td><td>l</td></tr>
+<tr><td>SDLK_M</td><td>0x0000006du</td><td>m</td></tr>
+<tr><td>SDLK_N</td><td>0x0000006eu</td><td>n</td></tr>
+<tr><td>SDLK_O</td><td>0x0000006fu</td><td>o</td></tr>
+<tr><td>SDLK_P</td><td>0x00000070u</td><td>p</td></tr>
+<tr><td>SDLK_Q</td><td>0x00000071u</td><td>q</td></tr>
+<tr><td>SDLK_R</td><td>0x00000072u</td><td>r</td></tr>
+<tr><td>SDLK_S</td><td>0x00000073u</td><td>s</td></tr>
+<tr><td>SDLK_T</td><td>0x00000074u</td><td>t</td></tr>
+<tr><td>SDLK_U</td><td>0x00000075u</td><td>u</td></tr>
+<tr><td>SDLK_V</td><td>0x00000076u</td><td>v</td></tr>
+<tr><td>SDLK_W</td><td>0x00000077u</td><td>w</td></tr>
+<tr><td>SDLK_X</td><td>0x00000078u</td><td>x</td></tr>
+<tr><td>SDLK_Y</td><td>0x00000079u</td><td>y</td></tr>
+<tr><td>SDLK_Z</td><td>0x0000007au</td><td>z</td></tr>
+<tr><td>SDLK_LEFTBRACE</td><td>0x0000007bu</td><td>{</td></tr>
+<tr><td>SDLK_PIPE</td><td>0x0000007cu</td><td>|</td></tr>
+<tr><td>SDLK_RIGHTBRACE</td><td>0x0000007du</td><td>}</td></tr>
+<tr><td>SDLK_TILDE</td><td>0x0000007eu</td><td>~</td></tr>
+<tr><td>SDLK_DELETE</td><td>0x0000007fu</td><td>Delete</td></tr>
+<tr><td>SDLK_PLUSMINUS</td><td>0x000000b1u</td><td>±</td></tr>
+<tr><td>SDLK_CAPSLOCK</td><td>0x40000039u</td><td>CapsLock</td></tr>
+<tr><td>SDLK_F1</td><td>0x4000003au</td><td>F1</td></tr>
+<tr><td>SDLK_F2</td><td>0x4000003bu</td><td>F2</td></tr>
+<tr><td>SDLK_F3</td><td>0x4000003cu</td><td>F3</td></tr>
+<tr><td>SDLK_F4</td><td>0x4000003du</td><td>F4</td></tr>
+<tr><td>SDLK_F5</td><td>0x4000003eu</td><td>F5</td></tr>
+<tr><td>SDLK_F6</td><td>0x4000003fu</td><td>F6</td></tr>
+<tr><td>SDLK_F7</td><td>0x40000040u</td><td>F7</td></tr>
+<tr><td>SDLK_F8</td><td>0x40000041u</td><td>F8</td></tr>
+<tr><td>SDLK_F9</td><td>0x40000042u</td><td>F9</td></tr>
+<tr><td>SDLK_F10</td><td>0x40000043u</td><td>F10</td></tr>
+<tr><td>SDLK_F11</td><td>0x40000044u</td><td>F11</td></tr>
+<tr><td>SDLK_F12</td><td>0x40000045u</td><td>F12</td></tr>
+<tr><td>SDLK_PRINTSCREEN</td><td>0x40000046u</td><td>PrintScreen</td></tr>
+<tr><td>SDLK_SCROLLLOCK</td><td>0x40000047u</td><td>ScrollLock</td></tr>
+<tr><td>SDLK_PAUSE</td><td>0x40000048u</td><td>Pause</td></tr>
+<tr><td>SDLK_INSERT</td><td>0x40000049u</td><td>Insert</td></tr>
+<tr><td>SDLK_HOME</td><td>0x4000004au</td><td>Home</td></tr>
+<tr><td>SDLK_PAGEUP</td><td>0x4000004bu</td><td>PageUp</td></tr>
+<tr><td>SDLK_END</td><td>0x4000004du</td><td>End</td></tr>
+<tr><td>SDLK_PAGEDOWN</td><td>0x4000004eu</td><td>PageDown</td></tr>
+<tr><td>SDLK_RIGHT</td><td>0x4000004fu</td><td>右カーソルキー</td></tr>
+<tr><td>SDLK_LEFT</td><td>0x40000050u</td><td>左カーソルキー</td></tr>
+<tr><td>SDLK_DOWN</td><td>0x40000051u</td><td>下カーソルキー</td></tr>
+<tr><td>SDLK_UP</td><td>0x40000052u</td><td>上カーソルキー</td></tr>
+<tr><td>SDLK_NUMLOCKCLEAR</td><td>0x40000053u</td><td>Numlock (PCのNumLockキー, MacのClearキー)</td></tr>
+<tr><td>SDLK_KP_DIVIDE</td><td>0x40000054u</td><td>テンキーの/</td></tr>
+<tr><td>SDLK_KP_MULTIPLY</td><td>0x40000055u</td><td>テンキーの*</td></tr>
+<tr><td>SDLK_KP_MINUS</td><td>0x40000056u</td><td>テンキーの-</td></tr>
+<tr><td>SDLK_KP_PLUS</td><td>0x40000057u</td><td>テンキーの+</td></tr>
+<tr><td>SDLK_KP_ENTER</td><td>0x40000058u</td><td>テンキーのEnter</td></tr>
+<tr><td>SDLK_KP_1</td><td>0x40000059u</td><td>テンキーの1</td></tr>
+<tr><td>SDLK_KP_2</td><td>0x4000005au</td><td>テンキーの2</td></tr>
+<tr><td>SDLK_KP_3</td><td>0x4000005bu</td><td>テンキーの3</td></tr>
+<tr><td>SDLK_KP_4</td><td>0x4000005cu</td><td>テンキーの4</td></tr>
+<tr><td>SDLK_KP_5</td><td>0x4000005du</td><td>テンキーの5</td></tr>
+<tr><td>SDLK_KP_6</td><td>0x4000005eu</td><td>テンキーの6</td></tr>
+<tr><td>SDLK_KP_7</td><td>0x4000005fu</td><td>テンキーの7</td></tr>
+<tr><td>SDLK_KP_8</td><td>0x40000060u</td><td>テンキーの8</td></tr>
+<tr><td>SDLK_KP_9</td><td>0x40000061u</td><td>テンキーの9</td></tr>
+<tr><td>SDLK_KP_0</td><td>0x40000062u</td><td>テンキーの0</td></tr>
+<tr><td>SDLK_KP_PERIOD</td><td>0x40000063u</td><td>テンキーの.</td></tr>
+<tr><td>SDLK_APPLICATION</td><td>0x40000065u</td><td>アプリケーションキー/コンポーズキー/コンテキストメニューキー(Windows)</td></tr>
+<tr><td>SDLK_POWER</td><td>0x40000066u</td><td>Power</td></tr>
+<tr><td>SDLK_KP_EQUALS</td><td>0x40000067u</td><td>テンキーの=</td></tr>
+<tr><td>SDLK_F13</td><td>0x40000068u</td><td>F13</td></tr>
+<tr><td>SDLK_F14</td><td>0x40000069u</td><td>F14</td></tr>
+<tr><td>SDLK_F15</td><td>0x4000006au</td><td>F15</td></tr>
+<tr><td>SDLK_F16</td><td>0x4000006bu</td><td>F16</td></tr>
+<tr><td>SDLK_F17</td><td>0x4000006cu</td><td>F17</td></tr>
+<tr><td>SDLK_F18</td><td>0x4000006du</td><td>F18</td></tr>
+<tr><td>SDLK_F19</td><td>0x4000006eu</td><td>F19</td></tr>
+<tr><td>SDLK_F20</td><td>0x4000006fu</td><td>F20</td></tr>
+<tr><td>SDLK_F21</td><td>0x40000070u</td><td>F21</td></tr>
+<tr><td>SDLK_F22</td><td>0x40000071u</td><td>F22</td></tr>
+<tr><td>SDLK_F23</td><td>0x40000072u</td><td>F23</td></tr>
+<tr><td>SDLK_F24</td><td>0x40000073u</td><td>F24</td></tr>
+<tr><td>SDLK_EXECUTE</td><td>0x40000074u</td><td>Execute</td></tr>
+<tr><td>SDLK_HELP</td><td>0x40000075u</td><td>Help</td></tr>
+<tr><td>SDLK_MENU</td><td>0x40000076u</td><td>Menu</td></tr>
+<tr><td>SDLK_SELECT</td><td>0x40000077u</td><td>Search</td></tr>
+<tr><td>SDLK_STOP</td><td>0x40000078u</td><td>Stop</td></tr>
+<tr><td>SDLK_AGAIN</td><td>0x40000079u</td><td>Again</td></tr>
+<tr><td>SDLK_UNDO</td><td>0x4000007au</td><td>Undo</td></tr>
+<tr><td>SDLK_CUT</td><td>0x4000007bu</td><td>Cut</td></tr>
+<tr><td>SDLK_COPY</td><td>0x4000007cu</td><td>Copy</td></tr>
+<tr><td>SDLK_PASTE</td><td>0x4000007du</td><td>Paste</td></tr>
+<tr><td>SDLK_FIND</td><td>0x4000007eu</td><td>Find</td></tr>
+<tr><td>SDLK_MUTE</td><td>0x4000007fu</td><td>消音</td></tr>
+<tr><td>SDLK_VOLUMEUP</td><td>0x40000080u</td><td>ボリューム小</td></tr>
+<tr><td>SDLK_VOLUMEDOWN</td><td>0x40000081u</td><td>ボリューム大</td></tr>
+<tr><td>SDLK_KP_COMMA</td><td>0x40000085u</td><td>テンキーの,</td></tr>
+<tr><td>SDLK_KP_EQUALSAS400</td><td>0x40000086u</td><td>テンキーの=AS400</td></tr>
+<tr><td>SDLK_ALTERASE</td><td>0x40000099u</td><td>AltErase (Erase-Eaze配列)</td></tr>
+<tr><td>SDLK_SYSREQ</td><td>0x4000009au</td><td>SysReq</td></tr>
+<tr><td>SDLK_CANCEL</td><td>0x4000009bu</td><td>Cancel</td></tr>
+<tr><td>SDLK_CLEAR</td><td>0x4000009cu</td><td>Clear</td></tr>
+<tr><td>SDLK_PRIOR</td><td>0x4000009du</td><td>Prior</td></tr>
+<tr><td>SDLK_RETURN2</td><td>0x4000009eu</td><td>Return</td></tr>
+<tr><td>SDLK_SEPARATOR</td><td>0x4000009fu</td><td>区切り記号</td></tr>
+<tr><td>SDLK_OUT</td><td>0x400000a0u</td><td>Out</td></tr>
+<tr><td>SDLK_OPER</td><td>0x400000a1u</td><td>Oper</td></tr>
+<tr><td>SDLK_CLEARAGAIN</td><td>0x400000a2u</td><td>Clear/Again</td></tr>
+<tr><td>SDLK_CRSEL</td><td>0x400000a3u</td><td>CrSel</td></tr>
+<tr><td>SDLK_EXSEL</td><td>0x400000a4u</td><td>ExSel</td></tr>
+<tr><td>SDLK_KP_00</td><td>0x400000b0u</td><td>テンキーの00</td></tr>
+<tr><td>SDLK_KP_000</td><td>0x400000b1u</td><td>テンキーの000</td></tr>
+<tr><td>SDLK_THOUSANDSSEPARATOR</td><td>0x400000b2u</td><td>3桁ごとの区切り記号</td></tr>
+<tr><td>SDLK_DECIMALSEPARATOR</td><td>0x400000b3u</td><td>小数点</td></tr>
+<tr><td>SDLK_CURRENCYUNIT</td><td>0x400000b4u</td><td>通貨単位</td></tr>
+<tr><td>SDLK_CURRENCYSUBUNIT</td><td>0x400000b5u</td><td>通貨補助単位</td></tr>
+<tr><td>SDLK_KP_LEFTPAREN</td><td>0x400000b6u</td><td>テンキーの(</td></tr>
+<tr><td>SDLK_KP_RIGHTPAREN</td><td>0x400000b7u</td><td>テンキーの)</td></tr>
+<tr><td>SDLK_KP_LEFTBRACE</td><td>0x400000b8u</td><td>テンキーの{</td></tr>
+<tr><td>SDLK_KP_RIGHTBRACE</td><td>0x400000b9u</td><td>テンキーの}</td></tr>
+<tr><td>SDLK_KP_TAB</td><td>0x400000bau</td><td>テンキーのTab</td></tr>
+<tr><td>SDLK_KP_BACKSPACE</td><td>0x400000bbu</td><td>テンキーのBackspace</td></tr>
+<tr><td>SDLK_KP_A</td><td>0x400000bcu</td><td>テンキーのA</td></tr>
+<tr><td>SDLK_KP_B</td><td>0x400000bdu</td><td>テンキーのB</td></tr>
+<tr><td>SDLK_KP_C</td><td>0x400000beu</td><td>テンキーのC</td></tr>
+<tr><td>SDLK_KP_D</td><td>0x400000bfu</td><td>テンキーのD</td></tr>
+<tr><td>SDLK_KP_E</td><td>0x400000c0u</td><td>テンキーのE</td></tr>
+<tr><td>SDLK_KP_F</td><td>0x400000c1u</td><td>テンキーのF</td></tr>
+<tr><td>SDLK_KP_XOR</td><td>0x400000c2u</td><td>テンキーのXOR</td></tr>
+<tr><td>SDLK_KP_POWER</td><td>0x400000c3u</td><td>テンキーの^</td></tr>
+<tr><td>SDLK_KP_PERCENT</td><td>0x400000c4u</td><td>テンキーの%</td></tr>
+<tr><td>SDLK_KP_LESS</td><td>0x400000c5u</td><td>テンキーの&lt;</td></tr>
+<tr><td>SDLK_KP_GREATER</td><td>0x400000c6u</td><td>テンキーの&gt;</td></tr>
+<tr><td>SDLK_KP_AMPERSAND</td><td>0x400000c7u</td><td>テンキーの&amp;</td></tr>
+<tr><td>SDLK_KP_DBLAMPERSAND</td><td>0x400000c8u</td><td>テンキーの&amp;&amp;</td></tr>
+<tr><td>SDLK_KP_VERTICALBAR</td><td>0x400000c9u</td><td>テンキーの|</td></tr>
+<tr><td>SDLK_KP_DBLVERTICALBAR</td><td>0x400000cau</td><td>テンキーの||</td></tr>
+<tr><td>SDLK_KP_COLON</td><td>0x400000cbu</td><td>テンキーの:</td></tr>
+<tr><td>SDLK_KP_HASH</td><td>0x400000ccu</td><td>テンキーの#</td></tr>
+<tr><td>SDLK_KP_SPACE</td><td>0x400000cdu</td><td>テンキーのSpace</td></tr>
+<tr><td>SDLK_KP_AT</td><td>0x400000ceu</td><td>テンキーの@</td></tr>
+<tr><td>SDLK_KP_EXCLAM</td><td>0x400000cfu</td><td>テンキーの!</td></tr>
+<tr><td>SDLK_KP_MEMSTORE</td><td>0x400000d0u</td><td>テンキーのメモリストア</td></tr>
+<tr><td>SDLK_KP_MEMRECALL</td><td>0x400000d1u</td><td>テンキーのメモリリコール</td></tr>
+<tr><td>SDLK_KP_MEMCLEAR</td><td>0x400000d2u</td><td>テンキーのメモリクリア</td></tr>
+<tr><td>SDLK_KP_MEMADD</td><td>0x400000d3u</td><td>テンキーのメモリ加算</td></tr>
+<tr><td>SDLK_KP_MEMSUBTRACT</td><td>0x400000d4u</td><td>テンキーのメモリ減算</td></tr>
+<tr><td>SDLK_KP_MEMMULTIPLY</td><td>0x400000d5u</td><td>テンキーのメモリ乗算</td></tr>
+<tr><td>SDLK_KP_MEMDIVIDE</td><td>0x400000d6u</td><td>テンキーのメモリ除算</td></tr>
+<tr><td>SDLK_KP_PLUSMINUS</td><td>0x400000d7u</td><td>テンキーの+/-</td></tr>
+<tr><td>SDLK_KP_CLEAR</td><td>0x400000d8u</td><td>テンキーのクリア</td></tr>
+<tr><td>SDLK_KP_CLEARENTRY</td><td>0x400000d9u</td><td>テンキーのクリアエントリー</td></tr>
+<tr><td>SDLK_KP_BINARY</td><td>0x400000dau</td><td>テンキーの2進数</td></tr>
+<tr><td>SDLK_KP_OCTAL</td><td>0x400000dbu</td><td>テンキーの8進数</td></tr>
+<tr><td>SDLK_KP_DECIMAL</td><td>0x400000dcu</td><td>テンキーの10進数</td></tr>
+<tr><td>SDLK_KP_HEXADECIMAL</td><td>0x400000ddu</td><td>テンキーの16進数</td></tr>
+<tr><td>SDLK_LCTRL</td><td>0x400000e0u</td><td>左Ctrl</td></tr>
+<tr><td>SDLK_LSHIFT</td><td>0x400000e1u</td><td>左Shift</td></tr>
+<tr><td>SDLK_LALT</td><td>0x400000e2u</td><td>左Alt</td></tr>
+<tr><td>SDLK_LGUI</td><td>0x400000e3u</td><td>左GUI</td></tr>
+<tr><td>SDLK_RCTRL</td><td>0x400000e4u</td><td>右Ctrl</td></tr>
+<tr><td>SDLK_RSHIFT</td><td>0x400000e5u</td><td>右Shift</td></tr>
+<tr><td>SDLK_RALT</td><td>0x400000e6u</td><td>右Alt</td></tr>
+<tr><td>SDLK_RGUI</td><td>0x400000e7u</td><td>右GUI</td></tr>
+<tr><td>SDLK_MODE</td><td>0x40000101u</td><td>Mode</td></tr>
+<tr><td>SDLK_SLEEP</td><td>0x40000102u</td><td>Sleep</td></tr>
+<tr><td>SDLK_WAKE</td><td>0x40000103u</td><td>Wake</td></tr>
+<tr><td>SDLK_CHANNEL_INCREMENT</td><td>0x40000104u</td><td>次チャネル</td></tr>
+<tr><td>SDLK_CHANNEL_DECREMENT</td><td>0x40000105u</td><td>前チャネル</td></tr>
+<tr><td>SDLK_MEDIA_PLAY</td><td>0x40000106u</td><td>メディア再生</td></tr>
+<tr><td>SDLK_MEDIA_PAUSE</td><td>0x40000107u</td><td>メディアポーズ</td></tr>
+<tr><td>SDLK_MEDIA_RECORD</td><td>0x40000108u</td><td>メディア記録</td></tr>
+<tr><td>SDLK_MEDIA_FAST_FORWARD</td><td>0x40000109u</td><td>メディア早送り</td></tr>
+<tr><td>SDLK_MEDIA_REWIND</td><td>0x4000010au</td><td>メディア巻き戻し</td></tr>
+<tr><td>SDLK_MEDIA_NEXT_TRACK</td><td>0x4000010bu</td><td>メディア次トラック</td></tr>
+<tr><td>SDLK_MEDIA_PREVIOUS_TRACK</td><td>0x4000010cu</td><td>メディア前トラック</td></tr>
+<tr><td>SDLK_MEDIA_STOP</td><td>0x4000010du</td><td>メディア停止</td></tr>
+<tr><td>SDLK_MEDIA_EJECT</td><td>0x4000010eu</td><td>メディア取り出し</td></tr>
+<tr><td>SDLK_MEDIA_PLAY_PAUSE</td><td>0x4000010fu</td><td>メディア再生/一時停止</td></tr>
+<tr><td>SDLK_MEDIA_SELECT</td><td>0x40000110u</td><td>メディアメディア選択</td></tr>
+<tr><td>SDLK_AC_NEW</td><td>0x40000111u</td><td>アプリケーションキー 新規</td></tr>
+<tr><td>SDLK_AC_OPEN</td><td>0x40000112u</td><td>アプリケーションキー 開く</td></tr>
+<tr><td>SDLK_AC_CLOSE</td><td>0x40000113u</td><td>アプリケーションキー 閉じる</td></tr>
+<tr><td>SDLK_AC_EXIT</td><td>0x40000114u</td><td>アプリケーションキー 終了</td></tr>
+<tr><td>SDLK_AC_SAVE</td><td>0x40000115u</td><td>アプリケーションキー 保存</td></tr>
+<tr><td>SDLK_AC_PRINT</td><td>0x40000116u</td><td>アプリケーションキー 印字</td></tr>
+<tr><td>SDLK_AC_PROPERTIES</td><td>0x40000117u</td><td>アプリケーションキー プロパティ</td></tr>
+<tr><td>SDLK_AC_SEARCH</td><td>0x40000118u</td><td>アプリケーションキー 検索</td></tr>
+<tr><td>SDLK_AC_HOME</td><td>0x40000119u</td><td>アプリケーションキー ホーム</td></tr>
+<tr><td>SDLK_AC_BACK</td><td>0x4000011au</td><td>アプリケーションキー 戻る</td></tr>
+<tr><td>SDLK_AC_FORWARD</td><td>0x4000011bu</td><td>アプリケーションキー 進む</td></tr>
+<tr><td>SDLK_AC_STOP</td><td>0x4000011cu</td><td>アプリケーションキー 停止</td></tr>
+<tr><td>SDLK_AC_REFRESH</td><td>0x4000011du</td><td>アプリケーションキー 更新</td></tr>
+<tr><td>SDLK_AC_BOOKMARKS</td><td>0x4000011eu</td><td>アプリケーションキー ブックマーク</td></tr>
+<tr><td>SDLK_SOFTLEFT</td><td>0x4000011fu</td><td>ソフトキーの左</td></tr>
+<tr><td>SDLK_SOFTRIGHT</td><td>0x40000120u</td><td>ソフトキーの右</td></tr>
+<tr><td>SDLK_CALL</td><td>0x40000121u</td><td>受電</td></tr>
+<tr><td>SDLK_ENDCALL</td><td>0x40000122u</td><td>受電拒否</td></tr>
+<tr><td>SDLK_LEFT_TAB</td><td>0x20000001u</td><td>拡張キー 左Tab</td></tr>
+<tr><td>SDLK_LEVEL5_SHIFT</td><td>0x20000002u</td><td>拡張キー 第5シフト</td></tr>
+<tr><td>SDLK_MULTI_KEY_COMPOSE</td><td>0x20000003u</td><td>拡張キー マルチキーコンポーズ</td></tr>
+<tr><td>SDLK_LMETA</td><td>0x20000004u</td><td>拡張キー 左メタ</td></tr>
+<tr><td>SDLK_RMETA</td><td>0x20000005u</td><td>拡張キー 右メタ</td></tr>
+<tr><td>SDLK_LHYPER</td><td>0x20000006u</td><td>拡張キー 左ハイパー</td></tr>
+<tr><td>SDLK_RHYPER</td><td>0x20000007u</td><td>拡張キー 右ハイパー</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+この型の値は, 現在のキーボードレイアウトののキーを表すために使われる.
+その値は, そのキーを押したとき生成される修飾されていない文字のUnicode, 文字が生成されない場合はSDLK_*定数を表している.
+</p>
+<p>
+特別な例外はAZERTYレイアウトの場合のキーボード上部の数字キーで, デフォルトではSDLK_0...SDLK_9に対応付けられている.
+</p>
+<p>
+SDLK_EXTENDED_MASKビットが設定されたキーはスキャンコードにもUnicodeコードポイントにも対応付けられていない.
+</p>
+<p>
+上の値は多くの一般的なキーコードの一覧だが, 全てを網羅しているわけではない.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_HINT_KEYCODE_OPTIONS.html">SDL_HINT_KEYCODE_OPTIONS</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_Keycode">SDL_Keycode - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
