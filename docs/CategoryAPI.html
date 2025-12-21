@@ -746,8 +746,8 @@
 <li>SDL_isupper
 <li>SDL_isxdigit
 <li>SDL_itoa
-<li><a href="SDL_JoystickConnected.html">SDL_JoystickConnected</a> - ジョイスティックの接続状態を得る
-<li><a href="SDL_JoystickEventsEnabled.html">SDL_JoystickEventsEnabled</a> - ジョイスティックイベント処理の状態を得る
+<li><a href="SDL_JoystickConnected.html">SDL_JoystickConnected</a> - ジョイスティックが接続されているかチェックする
+<li><a href="SDL_JoystickEventsEnabled.html">SDL_JoystickEventsEnabled</a> - ジョイスティックイベント処理の有無を得る
 <li>SDL_KillProcess
 <li>SDL_lltoa
 <li><a href="SDL_LoadBMP.html">SDL_LoadBMP</a> - BMPファイルをサーフェイスに読み込む
@@ -958,8 +958,8 @@
 <li>SDL_roundf
 <li>SDL_RumbleGamepad
 <li>SDL_RumbleGamepadTriggers
-<li>SDL_RumbleJoystick
-<li>SDL_RumbleJoystickTriggers
+<li><a href="SDL_RumbleJoystick.html">SDL_RumbleJoystick</a> - ジョイスティックの振動を開始する
+<li><a href="SDL_RumbleJoystickTriggers.html">SDL_RumbleJoystickTriggers</a> - ジョイスティックのトリガーの振動を開始する
 <li><a href="SDL_RunApp.html">SDL_RunApp</a> - SDLアプリケーションの初期化と起動を行う
 <li>SDL_RunHapticEffect
 <li>SDL_RunOnMainThread
@@ -978,7 +978,7 @@
 <li>SDL_SendAndroidBackButton
 <li>SDL_SendAndroidMessage
 <li>SDL_SendGamepadEffect
-<li>SDL_SendJoystickEffect
+<li><a href="SDL_SendJoystickEffect.html">SDL_SendJoystickEffect</a> - ジョイスティックにエフェクトパケットを送信する
 <li>SDL_SendJoystickVirtualSensorData
 <li><a href="SDL_SetAppMetadata.html">SDL_SetAppMetadata</a> - アプリケーションの基本的なメタデータを指定する 
 <li><a href="SDL_SetAppMetadataProperty.html">SDL_SetAppMetadataProperty</a> - アプリケーションのメタデータをプロパティで指定する
@@ -1031,9 +1031,9 @@
 <li>SDL_SetInitialized
 <li>SDL_SetiOSAnimationCallback
 <li>SDL_SetiOSEventPump
-<li>SDL_SetJoystickEventsEnabled
-<li>SDL_SetJoystickLED
-<li>SDL_SetJoystickPlayerIndex
+<li><a href="SDL_SetJoystickEventsEnabled.html">SDL_SetJoystickEventsEnabled</a> - ジョイスティックイベント処理の有無を設定する
+<li><a href="SDL_SetJoystickLED.html">SDL_SetJoystickLED</a> - ジョイスティックのLEDの色を設定する
+<li><a href="SDL_SetJoystickPlayerIndex.html">SDL_SetJoystickPlayerIndex</a> - オープンされたジョイスティックにプレイヤーインデックス番号を設定する
 <li>SDL_SetJoystickVirtualAxis
 <li>SDL_SetJoystickVirtualBall
 <li>SDL_SetJoystickVirtualButton
@@ -1213,7 +1213,7 @@
 <li><a href="SDL_UnbindAudioStreams.html">SDL_UnbindAudioStreams</a> - 一覧のオーディオストリームのオーディオデバイスへのバインドを解除する
 <li>SDL_UnloadObject
 <li><a href="SDL_UnlockAudioStream.html">SDL_UnlockAudioStream</a> - オーディオストリームのアクセスの直列化のためのロックを解除する
-<li>SDL_UnlockJoysticks
+<li><a href="SDL_UnlockJoysticks.html">SDL_UnlockJoysticks</a> - ジョイスティックAPIへのアトミックなアクセスのためのロックを解除する
 <li>SDL_UnlockMutex
 <li><a href="SDL_UnlockProperties.html">SDL_UnlockProperties</a> - プロパティグループをアンロックする
 <li>SDL_UnlockRWLock
@@ -1226,7 +1226,7 @@
 <li>SDL_UnsetEnvironmentVariable
 <li>SDL_UpdateGamepads
 <li>SDL_UpdateHapticEffect
-<li>SDL_UpdateJoysticks
+<li><a href="SDL_UpdateJoysticks.html">SDL_UpdateJoysticks</a> - オープンされているジョイスティックの状態を更新する
 <li>SDL_UpdateNVTexture
 <li>SDL_UpdateSensors
 <li>SDL_UpdateTexture
@@ -1629,8 +1629,8 @@
 <li>SDL_InitStatus
 <li>SDL_IOStatus
 <li>SDL_IOWhence
-<li>SDL_JoystickConnectionState
-<li>SDL_JoystickType
+<li><a href="SDL_JoystickConnectionState.html">SDL_JoystickConnectionState</a> - ジョイスティックデバイスの接続方法の列挙体
+<li><a href="SDL_JoystickType.html">SDL_JoystickType</a> - ジョイスティックの種類の列挙体
 <li><a href="SDL_LogCategory.html">SDL_LogCategory</a> - 設定済みのログの分類の列挙体
 <li><a href="SDL_LogPriority.html">SDL_LogPriority</a> - 定義済みのログの重要度の列挙体
 <li><a href="SDL_MatrixCoefficients.html">SDL_MatrixCoefficients</a> - 色空間情報のmatrix coefficients(行列の係数)の列挙体
@@ -2131,8 +2131,8 @@
 <li><a href="SDL_ISPIXELFORMAT_FOURCC.html">SDL_ISPIXELFORMAT_FOURCC</a> - ピクセル形式がFourCC形式かをチェックするマクロ
 <li><a href="SDL_ISPIXELFORMAT_INDEXED.html">SDL_ISPIXELFORMAT_INDEXED</a> - ピクセル形式がインデックス形式かをチェックするマクロ
 <li><a href="SDL_ISPIXELFORMAT_PACKED.html">SDL_ISPIXELFORMAT_PACKED</a> - ピクセル形式がパックされた(数値に詰め込まれた)形式かをチェックするマクロ
-<li>SDL_JOYSTICK_AXIS_MAX
-<li>SDL_JOYSTICK_AXIS_MIN
+<li><a href="SDL_JOYSTICK_AXIS_MAX.html">SDL_JOYSTICK_AXIS_MAX</a> - SDL_Joystickが報告する方向の最大値のマクロ
+<li><a href="SDL_JOYSTICK_AXIS_MIN.html">SDL_JOYSTICK_AXIS_MIN</a> - SDL_Joystickが報告する方向の最小値のマクロ
 <li>SDL_KMOD_ALT
 <li>SDL_KMOD_CAPS
 <li>SDL_KMOD_CTRL
