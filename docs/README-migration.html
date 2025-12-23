@@ -1193,10 +1193,10 @@ Haiku OSで, SDLは<a href="SDL_Init.html">SDL_Init()</a>でカレントワー�
 </ul>
 <h2><a name="#sdl_joystickh">SDL_joystick.h (ジョイスティック)</a></h2>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_JoystickID">SDL_JoystickID</a>はSint32からUint32に変更され, 無効なIDは0になった.
+<a href="SDL_JoystickID.html">SDL_JoystickID</a>はSint32からUint32に変更され, 無効なIDは0になった.
 </p>
 <p>
-デバイスのインデックス番号を用いてジョイスティックを反復処理するのではなく, 新しい関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetJoysticks">SDL_GetJoysticks()</a>で現在のジョイスティック一覧を得て, そのインスタンスIDから新しい関数を使ってジョイスティックの情報を得ることもできる:
+デバイスのインデックス番号を用いてジョイスティックを反復処理するのではなく, 新しい関数<a href="SDL_GetJoysticks.html">SDL_GetJoysticks()</a>で現在のジョイスティック一覧を得て, そのインスタンスIDから新しい関数を使ってジョイスティックの情報を得ることもできる:
 <code>
 <pre>
 {
@@ -1221,59 +1221,59 @@ Haiku OSで, SDLは<a href="SDL_Init.html">SDL_Init()</a>でカレントワー�
 </code>
 </p>
 <p>
-SDL_EVENT_JOYSTICK_ADDEDイベントは, <a href="SDL_Event.html">イベント構造体</a>の<a href="https://wiki.libsdl.org/SDL3/SDL_JoyDeviceEvent">jdeviceのwhichメンバ</a>にジョイスティックインスタンスIDをセットするようになった.
+SDL_EVENT_JOYSTICK_ADDEDイベントは, <a href="SDL_Event.html">イベント構造体</a>の<a href="SDL_JoyDeviceEvent.html">jdeviceのwhichメンバ</a>にジョイスティックインスタンスIDをセットするようになった.
 </p>
 <p>
-利用可能なジョイスティック一覧から直接参照できる関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetJoysticks">SDL_GetJoysticks()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickNameForID">SDL_GetJoystickNameForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickPathForID">SDL_GetJoystickPathForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickPlayerIndexForID">SDL_GetJoystickPlayerIndexForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickGUIDForID">SDL_GetJoystickGUIDForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickVendorForID">SDL_GetJoystickVendorForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProductForID">SDL_GetJoystickProductForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProductVersionForID">SDL_GetJoystickProductVersionForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickTypeForID">SDL_GetJoystickTypeForID()</a>が追加された.
+利用可能なジョイスティック一覧から直接参照できる関数<a href="SDL_GetJoysticks.html">SDL_GetJoysticks()</a>, <a href="SDL_GetJoystickNameForID.html">SDL_GetJoystickNameForID()</a>, <a href="SDL_GetJoystickPathForID.html">SDL_GetJoystickPathForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickPlayerIndexForID">SDL_GetJoystickPlayerIndexForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickGUIDForID">SDL_GetJoystickGUIDForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickVendorForID">SDL_GetJoystickVendorForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProductForID">SDL_GetJoystickProductForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProductVersionForID">SDL_GetJoystickProductVersionForID()</a>, <a href="SDL_GetJoystickTypeForID.html">SDL_GetJoystickTypeForID()</a>が追加された.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_AttachVirtualJoystick">SDL_AttachVirtualJoystick()</a>はインデックス番号ではなくジョイスティックインスタンスIDを戻すようになり, エラーのとき0を戻すようになった.
+<a href="SDL_AttachVirtualJoystick.html">SDL_AttachVirtualJoystick()</a>はインデックス番号ではなくジョイスティックインスタンスIDを戻すようになり, エラーのとき0を戻すようになった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_VirtualJoystickDesc">SDL_VirtualJoystickDesc</a>構造体はversionに<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_VIRTUAL_JOYSTICK_DESC_VERSION.html">SDL_VIRTUAL_JOYSTICK_DESC_VERSION</a>を設定するのではなく, <a href="https://wiki.libsdl.org/SDL3/SDL_INIT_INTERFACE">SDL_INIT_INTERFACE()</a>で構造体を初期化するようになった.
+<a href="SDL_VirtualJoystickDesc.html">SDL_VirtualJoystickDesc</a>構造体はversionに<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_VIRTUAL_JOYSTICK_DESC_VERSION.html">SDL_VIRTUAL_JOYSTICK_DESC_VERSION</a>を設定するのではなく, <a href="SDL_INIT_INTERFACE.html">SDL_INIT_INTERFACE()</a>で構造体を初期化するようになった.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickAttachVirtualEx.html">SDL_JoystickAttachVirtualEx()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_AttachVirtualJoystick">SDL_AttachVirtualJoystick()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickClose.html">SDL_JoystickClose()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_CloseJoystick">SDL_CloseJoystick()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickDetachVirtual.html">SDL_JoystickDetachVirtual()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_DetachVirtualJoystick">SDL_DetachVirtualJoystick()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickFromInstanceID.html">SDL_JoystickFromInstanceID()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickFromID">SDL_GetJoystickFromID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickFromPlayerIndex.html">SDL_JoystickFromPlayerIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickFromPlayerIndex">SDL_GetJoystickFromPlayerIndex()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetAttached.html">SDL_JoystickGetAttached()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_JoystickConnected">SDL_JoystickConnected()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetAxis.html">SDL_JoystickGetAxis()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickAxis">SDL_GetJoystickAxis()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetAxisInitialState.html">SDL_JoystickGetAxisInitialState()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickAxisInitialState">SDL_GetJoystickAxisInitialState()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetBall.html">SDL_JoystickGetBall()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickBall">SDL_GetJoystickBall()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetButton.html">SDL_JoystickGetButton()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickButton">SDL_GetJoystickButton()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetFirmwareVersion.html">SDL_JoystickGetFirmwareVersion()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickFirmwareVersion">SDL_GetJoystickFirmwareVersion()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetGUID.html">SDL_JoystickGetGUID()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickGUID">SDL_GetJoystickGUID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetGUIDFromString.html">SDL_JoystickGetGUIDFromString()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_StringToGUID">SDL_StringToGUID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetHat.html">SDL_JoystickGetHat()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickHat">SDL_GetJoystickHat()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetPlayerIndex.html">SDL_JoystickGetPlayerIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickPlayerIndex">SDL_GetJoystickPlayerIndex()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetProduct.html">SDL_JoystickGetProduct()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProduct">SDL_GetJoystickProduct()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetProductVersion.html">SDL_JoystickGetProductVersion()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProductVersion">SDL_GetJoystickProductVersion()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetSerial.html">SDL_JoystickGetSerial()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickSerial">SDL_GetJoystickSerial()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetType.html">SDL_JoystickGetType()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickType">SDL_GetJoystickType()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetVendor.html">SDL_JoystickGetVendor()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickVendor">SDL_GetJoystickVendor()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickInstanceID.html">SDL_JoystickInstanceID()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickID">SDL_GetJoystickID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickIsVirtual.html">SDL_JoystickIsVirtual()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_IsJoystickVirtual">SDL_IsJoystickVirtual()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickName.html">SDL_JoystickName()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickName">SDL_GetJoystickName()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNumAxes.html">SDL_JoystickNumAxes()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetNumJoystickAxes">SDL_GetNumJoystickAxes()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNumBalls.html">SDL_JoystickNumBalls()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetNumJoystickBalls">SDL_GetNumJoystickBalls()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNumButtons.html">SDL_JoystickNumButtons()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetNumJoystickButtons">SDL_GetNumJoystickButtons()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNumHats.html">SDL_JoystickNumHats()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetNumJoystickHats">SDL_GetNumJoystickHats()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickOpen.html">SDL_JoystickOpen()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_OpenJoystick">SDL_OpenJoystick()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickPath.html">SDL_JoystickPath()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickPath">SDL_GetJoystickPath()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickRumble.html">SDL_JoystickRumble()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_RumbleJoystick">SDL_RumbleJoystick()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickRumbleTriggers.html">SDL_JoystickRumbleTriggers()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_RumbleJoystickTriggers">SDL_RumbleJoystickTriggers()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSendEffect.html">SDL_JoystickSendEffect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SendJoystickEffect">SDL_SendJoystickEffect()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetLED.html">SDL_JoystickSetLED()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetJoystickLED">SDL_SetJoystickLED()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetPlayerIndex.html">SDL_JoystickSetPlayerIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetJoystickPlayerIndex">SDL_SetJoystickPlayerIndex()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetVirtualAxis.html">SDL_JoystickSetVirtualAxis()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetJoystickVirtualAxis">SDL_SetJoystickVirtualAxis()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetVirtualButton.html">SDL_JoystickSetVirtualButton()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetJoystickVirtualButton">SDL_SetJoystickVirtualButton()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetVirtualHat.html">SDL_JoystickSetVirtualHat()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetJoystickVirtualHat">SDL_SetJoystickVirtualHat()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickUpdate.html">SDL_JoystickUpdate()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_UpdateJoysticks">SDL_UpdateJoysticks()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickAttachVirtualEx.html">SDL_JoystickAttachVirtualEx()</a> → <a href="SDL_AttachVirtualJoystick.html">SDL_AttachVirtualJoystick()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickClose.html">SDL_JoystickClose()</a> → <a href="SDL_CloseJoystick.html">SDL_CloseJoystick()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickDetachVirtual.html">SDL_JoystickDetachVirtual()</a> → <a href="SDL_DetachVirtualJoystick.html">SDL_DetachVirtualJoystick()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickFromInstanceID.html">SDL_JoystickFromInstanceID()</a> → <a href="SDL_GetJoystickFromID.html">SDL_GetJoystickFromID()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickFromPlayerIndex.html">SDL_JoystickFromPlayerIndex()</a> → <a href="SDL_GetJoystickFromPlayerIndex.html">SDL_GetJoystickFromPlayerIndex()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetAttached.html">SDL_JoystickGetAttached()</a> → <a href="SDL_JoystickConnected.html">SDL_JoystickConnected()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetAxis.html">SDL_JoystickGetAxis()</a> → <a href="SDL_GetJoystickAxis.html">SDL_GetJoystickAxis()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetAxisInitialState.html">SDL_JoystickGetAxisInitialState()</a> → <a href="SDL_GetJoystickAxisInitialState.html">SDL_GetJoystickAxisInitialState()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetBall.html">SDL_JoystickGetBall()</a> → <a href="SDL_GetJoystickBall.html">SDL_GetJoystickBall()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetButton.html">SDL_JoystickGetButton()</a> → <a href="SDL_GetJoystickButton.html">SDL_GetJoystickButton()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetFirmwareVersion.html">SDL_JoystickGetFirmwareVersion()</a> → <a href="SDL_GetJoystickFirmwareVersion.html">SDL_GetJoystickFirmwareVersion()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetGUID.html">SDL_JoystickGetGUID()</a> → <a href="SDL_GetJoystickGUID.html">SDL_GetJoystickGUID()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetGUIDFromString.html">SDL_JoystickGetGUIDFromString()</a> → <a href="SDL_StringToGUID.html">SDL_StringToGUID()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetHat.html">SDL_JoystickGetHat()</a> → <a href="SDL_GetJoystickHat.html">SDL_GetJoystickHat()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetPlayerIndex.html">SDL_JoystickGetPlayerIndex()</a> → <a href="SDL_GetJoystickPlayerIndex.html">SDL_GetJoystickPlayerIndex()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetProduct.html">SDL_JoystickGetProduct()</a> → <a href="SDL_GetJoystickProduct.html">SDL_GetJoystickProduct()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetProductVersion.html">SDL_JoystickGetProductVersion()</a> → <a href="SDL_GetJoystickProductVersion.html">SDL_GetJoystickProductVersion()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetSerial.html">SDL_JoystickGetSerial()</a> → <a href="SDL_GetJoystickSerial.html">SDL_GetJoystickSerial()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetType.html">SDL_JoystickGetType()</a> → <a href="SDL_GetJoystickType.html">SDL_GetJoystickType()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetVendor.html">SDL_JoystickGetVendor()</a> → <a href="SDL_GetJoystickVendor.html">SDL_GetJoystickVendor()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickInstanceID.html">SDL_JoystickInstanceID()</a> → <a href="SDL_GetJoystickID.html">SDL_GetJoystickID()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickIsVirtual.html">SDL_JoystickIsVirtual()</a> → <a href="SDL_IsJoystickVirtual.html">SDL_IsJoystickVirtual()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickName.html">SDL_JoystickName()</a> → <a href="SDL_GetJoystickName.html">SDL_GetJoystickName()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNumAxes.html">SDL_JoystickNumAxes()</a> → <a href="SDL_GetNumJoystickAxes.html">SDL_GetNumJoystickAxes()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNumBalls.html">SDL_JoystickNumBalls()</a> → <a href="SDL_GetNumJoystickBalls.html">SDL_GetNumJoystickBalls()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNumButtons.html">SDL_JoystickNumButtons()</a> → <a href="SDL_GetNumJoystickButtons.html">SDL_GetNumJoystickButtons()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNumHats.html">SDL_JoystickNumHats()</a> → <a href="SDL_GetNumJoystickHats.html">SDL_GetNumJoystickHats()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickOpen.html">SDL_JoystickOpen()</a> → <a href="SDL_OpenJoystick.html">SDL_OpenJoystick()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickPath.html">SDL_JoystickPath()</a> → <a href="SDL_GetJoystickPath.html">SDL_GetJoystickPath()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickRumble.html">SDL_JoystickRumble()</a> → <a href="SDL_RumbleJoystick.html">SDL_RumbleJoystick()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickRumbleTriggers.html">SDL_JoystickRumbleTriggers()</a> → <a href="SDL_RumbleJoystickTriggers.html">SDL_RumbleJoystickTriggers()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSendEffect.html">SDL_JoystickSendEffect()</a> → <a href="SDL_SendJoystickEffect.html">SDL_SendJoystickEffect()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetLED.html">SDL_JoystickSetLED()</a> → <a href="SDL_SetJoystickLED.html">SDL_SetJoystickLED()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetPlayerIndex.html">SDL_JoystickSetPlayerIndex()</a> → <a href="SDL_SetJoystickPlayerIndex.html">SDL_SetJoystickPlayerIndex()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetVirtualAxis.html">SDL_JoystickSetVirtualAxis()</a> → <a href="SDL_SetJoystickVirtualAxis.html">SDL_SetJoystickVirtualAxis()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetVirtualButton.html">SDL_JoystickSetVirtualButton()</a> → <a href="SDL_SetJoystickVirtualButton.html">SDL_SetJoystickVirtualButton()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickSetVirtualHat.html">SDL_JoystickSetVirtualHat()</a> → <a href="SDL_SetJoystickVirtualHat.html">SDL_SetJoystickVirtualHat()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickUpdate.html">SDL_JoystickUpdate()</a> → <a href="SDL_UpdateJoysticks.html">SDL_UpdateJoysticks()</a>
 </ul>
 <p>
 以下のシンボルの名前は次の様に変更された:
@@ -1285,23 +1285,23 @@ SDL_EVENT_JOYSTICK_ADDEDイベントは, <a href="SDL_Event.html">イベント�
 以下の関数は削除された
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickAttachVirtual.html">SDL_JoystickAttachVirtual()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_AttachVirtualJoystick">SDL_AttachVirtualJoystick()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickCurrentPowerLevel.html">SDL_JoystickCurrentPowerLevel()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickConnectionState">SDL_GetJoystickConnectionState()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickPowerInfo">SDL_GetJoystickPowerInfo()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickEventState.html">SDL_JoystickEventState()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_SetJoystickEventsEnabled">SDL_SetJoystickEventsEnabled()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_JoystickEventsEnabled">()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceGUID.html">SDL_JoystickGetDeviceGUID()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickGUIDForID">SDL_GetJoystickGUIDForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickAttachVirtual.html">SDL_JoystickAttachVirtual()</a> - <a href="SDL_AttachVirtualJoystick.html">SDL_AttachVirtualJoystick()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickCurrentPowerLevel.html">SDL_JoystickCurrentPowerLevel()</a> - <a href="SDL_GetJoystickConnectionState.html">SDL_GetJoystickConnectionState()</a>と<a href="SDL_GetJoystickPowerInfo.html">SDL_GetJoystickPowerInfo()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickEventState.html">SDL_JoystickEventState()</a> - <a href="SDL_SetJoystickEventsEnabled.html">SDL_SetJoystickEventsEnabled()</a>と<a href="SDL_JoystickEventsEnabled.html">SDL_JoystickEventsEnabled()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceGUID.html">SDL_JoystickGetDeviceGUID()</a> - <a href="SDL_GetJoystickGUIDForID.html">SDL_GetJoystickGUIDForID()</a>に置き換えられた
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceInstanceID.html">SDL_JoystickGetDeviceInstanceID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDevicePlayerIndex.html">SDL_JoystickGetDevicePlayerIndex()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickPlayerIndexForID">SDL_GetJoystickPlayerIndexForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceProduct.html">SDL_JoystickGetDeviceProduct()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProductForID">SDL_GetJoystickProductForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceProductVersion.html">SDL_JoystickGetDeviceProductVersion()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProductVersionForID">SDL_GetJoystickProductVersionForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceType.html">SDL_JoystickGetDeviceType()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickTypeForID">SDL_GetJoystickTypeForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceVendor.html">SDL_JoystickGetDeviceVendor()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickVendorForID">SDL_GetJoystickVendorForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetGUIDString.html">SDL_JoystickGetGUIDString()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GUIDToString">SDL_GUIDToString()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickHasLED.html">SDL_JoystickHasLED()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProperties">SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickHasRumble.html">SDL_JoystickHasRumble()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProperties">SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickHasRumbleTriggers.html">SDL_JoystickHasRumbleTriggers()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickProperties">SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNameForIndex.html">SDL_JoystickNameForIndex()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickNameForID">SDL_GetJoystickNameForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickPathForIndex.html">SDL_JoystickPathForIndex()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoystickPathForID">SDL_GetJoystickPathForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_NumJoysticks.html">SDL_NumJoysticks()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetJoysticks">SDL_GetJoysticks()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDevicePlayerIndex.html">SDL_JoystickGetDevicePlayerIndex()</a> - <a href="SDL_GetJoystickPlayerIndexForID.html">SDL_GetJoystickPlayerIndexForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceProduct.html">SDL_JoystickGetDeviceProduct()</a> - <a href="SDL_GetJoystickProductForID.html">SDL_GetJoystickProductForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceProductVersion.html">SDL_JoystickGetDeviceProductVersion()</a> - <a href="SDL_GetJoystickProductVersionForID.html">SDL_GetJoystickProductVersionForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceType.html">SDL_JoystickGetDeviceType()</a> - <a href="SDL_GetJoystickTypeForID.html">SDL_GetJoystickTypeForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetDeviceVendor.html">SDL_JoystickGetDeviceVendor()</a> - <a href="SDL_GetJoystickVendorForID.html">SDL_GetJoystickVendorForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGetGUIDString.html">SDL_JoystickGetGUIDString()</a> - <a href="SDL_GUIDToString.html">SDL_GUIDToString()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickHasLED.html">SDL_JoystickHasLED()</a> - <a href="SDL_GetJoystickProperties.html">SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickHasRumble.html">SDL_JoystickHasRumble()</a> - <a href="SDL_GetJoystickProperties.html">SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickHasRumbleTriggers.html">SDL_JoystickHasRumbleTriggers()</a> - <a href="SDL_GetJoystickProperties.html">SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickNameForIndex.html">SDL_JoystickNameForIndex()</a> - <a href="SDL_GetJoystickNameForID.html">SDL_GetJoystickNameForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickPathForIndex.html">SDL_JoystickPathForIndex()</a> - <a href="SDL_GetJoystickPathForID.html">SDL_GetJoystickPathForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_NumJoysticks.html">SDL_NumJoysticks()</a> - <a href="SDL_GetJoysticks.html">SDL_GetJoysticks()</a>に置き換えられた
 </ul>
 <p>
 以下のシンボルは削除された:
@@ -1315,7 +1315,7 @@ SDL_EVENT_JOYSTICK_ADDEDイベントは, <a href="SDL_Event.html">イベント�
 以下の構造体の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGUID.html">SDL_JoystickGUID</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GUID">SDL_GUID</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickGUID.html">SDL_JoystickGUID</a> → <a href="SDL_GUID.html">SDL_GUID</a>
 </ul>
 <h2><a name="#sdl_keyboardh">SDL_keyboard.h (キーボード)</a></h2>
 <p>

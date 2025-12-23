@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGamepad.html" title="1つ上">
+<title>SDL_GamepadEventsEnabled</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGamepad.html">ゲームパッド</a> - SDL_GamepadEventsEnabled
+<hr>
+<h1>SDL_GamepadEventsEnabled</h1>
+ゲームパッドイベント処理の有無を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gamepad.h">SDL3/SDL_gamepad.h</a>
+<h2>構文</h2>
+<code>bool SDL_GamepadEventsEnabled(void);</code>
+<h2>戻り値</h2>
+<p>
+(bool) ゲームパッドイベントが処理されるとき真, そうでないとき偽を戻す.
+</p>
+<h2>詳細</h2>
+<p>
+ゲームパッドイベントが無効化されている場合, ゲームパッドの状態が必要な場合は, 自分自身で<a href="SDL_UpdateGamepads.html">SDL_UpdateGamepads()</a>を呼び, ゲームパッドの状態をチェックする必要がある.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_SetGamepadEventsEnabled.html">SDL_SetGamepadEventsEnabled</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GamepadEventsEnabled">SDL_GamepadEventsEnabled - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

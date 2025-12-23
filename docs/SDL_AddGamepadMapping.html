@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGamepad.html" title="1つ上">
+<title>SDL_AddGamepadMapping</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGamepad.html">ゲームパッド</a> - SDL_AddGamepadMapping
+<hr>
+<h1>SDL_AddGamepadMapping</h1>
+SDLが認識していないゲームパッドを追加する. または既存のゲームパッドのバインドを変更する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gamepad.h">SDL3/SDL_gamepad.h</a>
+<h2>構文</h2>
+<code>int SDL_AddGamepadMapping(const char *mapping);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const char *</td><td>mapping</td><td>マッピング文字列</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(int) 新しいマッピングが追加されたとき1, 既にあるマッピングが更新されたとき0, 失敗のとき-1を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+マッピング文字列は"GUID,name,mapping"の形式で, GUIDは<a href="SDL_GUIDToString.html">SDL_GUIDToString()</a>が戻す文字列, nameはデバイスの人が読める文字列, mappingはゲームパッドとジョイスティックのマッピングである.
+Windowsでは, "xinput"というGUIDは全てXInputデバイスのために予約されている. ジョイスティックとのマッピングは次の形式である.:
+</p>
+<ul>
+<li>bX: ジョイスティックのX番目のボタン
+<li>hX.Y: ハットXの値Y
+<li>aX: ジョイスティックの方向X
+</ul>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<p>
+ボタンをゲームパッドの方向にすることや, その逆も可能である.
+</p>
+<p>
+このGUIDのデバイスが既に接続されているとき, SDLは<a href="SDL_GamepadDeviceEvent.html">SDL_EVENT_GAMEPAD_ADDEDイベント</a>を発生させる.
+</p>
+<p>
+ゲームパッドとの対応付けの文字列の例:
+</p>
+<p>
+<pre>
+"341a3608000000000000504944564944,Afterglow PS3 Controller,a:b1,b:b2,y:b3,x:b0,start:b9,guide:b12,back:b8,dpup:h0.1,dpleft:h0.8,dpdown:h0.4,dpright:h0.2,leftshoulder:b4,rightshoulder:b5,leftstick:b10,rightstick:b11,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:b6,righttrigger:b7"
+</pre>
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_AddGamepadMappingsFromFile.html">SDL_AddGamepadMappingsFromFile</a>
+<li><a href="SDL_AddGamepadMappingsFromIO.html">SDL_AddGamepadMappingsFromIO</a>
+<li><a href="SDL_GetGamepadMapping.html">SDL_GetGamepadMapping</a>
+<li><a href="SDL_GetGamepadMappingForGUID.html">SDL_GetGamepadMappingForGUID</a>
+<li><a href="SDL_HINT_GAMECONTROLLERCONFIG.html">SDL_HINT_GAMECONTROLLERCONFIG</a>
+<li><a href="SDL_HINT_GAMECONTROLLERCONFIG_FILE.html">SDL_HINT_GAMECONTROLLERCONFIG_FILE</a>
+<li><a href="SDL_GamepadDeviceEvent.html">SDL_EVENT_GAMEPAD_ADDED</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_AddGamepadMapping">SDL_AddGamepadMapping - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

@@ -22,9 +22,9 @@
 <li><a href="SDL_AddAtomicInt.html">SDL_AddAtomicInt</a> - アトミック変数に加算する
 <li><a href="SDL_AddAtomicU32.html">SDL_AddAtomicU32</a> - アトミック変数に加算する
 <li><a href="SDL_AddEventWatch.html">SDL_AddEventWatch</a> - イベントがキューに入った場合のコールバックを追加する
-<li>SDL_AddGamepadMapping
-<li>SDL_AddGamepadMappingsFromFile
-<li>SDL_AddGamepadMappingsFromIO
+<li><a href="SDL_AddGamepadMapping.html">SDL_AddGamepadMapping</a> - SDLが認識していないゲームパッドを追加する. または既存のゲームパッドのバインドを変更する
+<li><a href="SDL_AddGamepadMappingsFromFile.html">SDL_AddGamepadMappingsFromFile</a> - ファイルからゲームパッドマッピングを読み込む
+<li><a href="SDL_AddGamepadMappingsFromIO.html">SDL_AddGamepadMappingsFromIO</a> - SDL_IOStreamからゲームパッドマッピングを読み込む
 <li><a href="SDL_AddHintCallback.html">SDL_AddHintCallback</a> - 指定のヒントを監視する関数を追加する
 <li><a href="SDL_AddSurfaceAlternateImage.html">SDL_AddSurfaceAlternateImage</a> - サーフェイスに別のバージョンを追加する
 <li>SDL_AddTimer
@@ -46,7 +46,7 @@
 <li>SDL_atanf
 <li>SDL_atof
 <li>SDL_atoi
-<li>SDL_AttachVirtualJoystick
+<li><a href="SDL_AttachVirtualJoystick.html">SDL_AttachVirtualJoystick</a> - 仮想ジョイスティックを新しく接続する
 <li><a href="SDL_AudioDevicePaused.html">SDL_AudioDevicePaused</a> - オーディオデバイスが一時停止中かチェックする
 <li><a href="SDL_AudioStreamDevicePaused.html">SDL_AudioStreamDevicePaused</a> - オーディオデバイスに関連付けられたオーディオストリームが一時停止中かチェックする
 <li>SDL_BeginGPUComputePass
@@ -96,7 +96,7 @@
 <li>SDL_CloseAsyncIO
 <li><a href="SDL_CloseAudioDevice.html">SDL_CloseAudioDevice</a> - オーディオデバイスをクローズする 
 <li>SDL_CloseCamera
-<li>SDL_CloseGamepad
+<li><a href="SDL_CloseGamepad.html">SDL_CloseGamepad</a> - SDL_OpenGamepad()でオープンしたゲームパッドをクローズする
 <li>SDL_CloseHaptic
 <li>SDL_CloseIO
 <li><a href="SDL_CloseJoystick.html">SDL_CloseJoystick</a> - SDL_OpenJoystick()でオープンしたジョイスティックをクローズする
@@ -195,7 +195,7 @@
 <li><a href="SDL_DestroyWindow.html">SDL_DestroyWindow</a> - ウィンドウを破棄する
 <li><a href="SDL_DestroyWindowSurface.html">SDL_DestroyWindowSurface</a> - ウィンドウに関連付けられたサーフェイスを破棄する
 <li>SDL_DetachThread
-<li>SDL_DetachVirtualJoystick
+<li><a href="SDL_DetachVirtualJoystick.html">SDL_DetachVirtualJoystick</a> - 仮想ジョイスティックを切断する
 <li><a href="SDL_DisableScreenSaver.html">SDL_DisableScreenSaver</a> - スクリーンセーバーを無効にする
 <li>SDL_DispatchGPUCompute
 <li>SDL_DispatchGPUComputeIndirect
@@ -239,12 +239,12 @@
 <li>SDL_fmod
 <li>SDL_fmodf
 <li>SDL_free
-<li>SDL_GamepadConnected
-<li>SDL_GamepadEventsEnabled
-<li>SDL_GamepadHasAxis
-<li>SDL_GamepadHasButton
-<li>SDL_GamepadHasSensor
-<li>SDL_GamepadSensorEnabled
+<li><a href="SDL_GamepadConnected.html">SDL_GamepadConnected</a> - ゲームパッドが既にオープンされ接続されているかチェックする
+<li><a href="SDL_GamepadEventsEnabled.html">SDL_GamepadEventsEnabled</a> - ゲームパッドイベント処理の有無を得る
+<li><a href="SDL_GamepadHasAxis.html">SDL_GamepadHasAxis</a> - ゲームパッドに指定の方向が存在するかチェックする
+<li><a href="SDL_GamepadHasButton.html">SDL_GamepadHasButton</a> - ゲームパッドに指定のボタンが存在するかチェックする
+<li><a href="SDL_GamepadHasSensor.html">SDL_GamepadHasSensor</a> - ゲームパッドに指定のセンサーが存在するかチェックする
+<li><a href="SDL_GamepadSensorEnabled.html">SDL_GamepadSensorEnabled</a> - ゲームパッドのセンサーデータ報告が有効かチェックする
 <li>SDL_GDKResumeGPU
 <li>SDL_GDKSuspendComplete
 <li>SDL_GDKSuspendGPU
@@ -338,25 +338,25 @@
 <li><a href="SDL_GetEventFilter.html">SDL_GetEventFilter</a> - 現在のイベントフィルタを得る
 <li><a href="SDL_GetFloatProperty.html">SDL_GetFloatProperty</a> - プロパティグループから浮動小数点型プロパティを得る
 <li><a href="SDL_GetFullscreenDisplayModes.html">SDL_GetFullscreenDisplayModes</a> - 利用可能なフルスクリーンディスプレイモードの一覧を得る
-<li>SDL_GetGamepadAppleSFSymbolsNameForAxis
-<li>SDL_GetGamepadAppleSFSymbolsNameForButton
-<li>SDL_GetGamepadAxis
-<li>SDL_GetGamepadAxisFromString
-<li>SDL_GetGamepadBindings
-<li>SDL_GetGamepadButton
-<li>SDL_GetGamepadButtonFromString
-<li>SDL_GetGamepadButtonLabel
-<li>SDL_GetGamepadButtonLabelForType
-<li>SDL_GetGamepadConnectionState
-<li>SDL_GetGamepadFirmwareVersion
-<li>SDL_GetGamepadFromID
-<li>SDL_GetGamepadFromPlayerIndex
-<li>SDL_GetGamepadGUIDForID
-<li>SDL_GetGamepadID
-<li>SDL_GetGamepadJoystick
-<li>SDL_GetGamepadMapping
-<li>SDL_GetGamepadMappingForGUID
-<li>SDL_GetGamepadMappingForID
+<li><a href="SDL_GetGamepadAppleSFSymbolsNameForAxis.html">SDL_GetGamepadAppleSFSymbolsNameForAxis</a> - Apple環境のゲームパッドの指定の方向のsfSymbolsNameを得る
+<li><a href="SDL_GetGamepadAppleSFSymbolsNameForButton.html">SDL_GetGamepadAppleSFSymbolsNameForButton</a> - Apple環境のゲームパッドの指定のボタンのsfSymbolsNameを得る
+<li><a href="SDL_GetGamepadAxis.html">SDL_GetGamepadAxis</a> - ゲームパッドの方向コントローラーの状態を得る
+<li><a href="SDL_GetGamepadAxisFromString.html">SDL_GetGamepadAxisFromString</a> - 文字列からSDL_GamepadAxis列挙体の値を得る
+<li><a href="SDL_GetGamepadBindings.html">SDL_GetGamepadBindings</a> - ゲームパッドにバインドされたSDLジョイスティックレイヤを得る
+<li><a href="SDL_GetGamepadButton.html">SDL_GetGamepadButton</a> - ゲームパッドのボタンの状態を得る
+<li><a href="SDL_GetGamepadButtonFromString.html">SDL_GetGamepadButtonFromString</a> - 文字列からSDL_GamepadButton列挙体の値を得る
+<li><a href="SDL_GetGamepadButtonLabel.html">SDL_GetGamepadButtonLabel</a> - ゲームパッドのボタンのラベルを得る
+<li><a href="SDL_GetGamepadButtonLabelForType.html">SDL_GetGamepadButtonLabelForType</a> - ゲームパッドの種類別のボタンのラベルを得る
+<li><a href="SDL_GetGamepadConnectionState.html">SDL_GetGamepadConnectionState</a> - ゲームパッドの接続状態を得る
+<li><a href="SDL_GetGamepadFirmwareVersion.html">SDL_GetGamepadFirmwareVersion</a> - 可能ならばオープンしたゲームパッドのファームウェアのバージョンを得る
+<li><a href="SDL_GetGamepadFromID.html">SDL_GetGamepadFromID</a> - オープンされている場合, インスタンスIDに関連付けられたSDL_Gamepadを得る
+<li><a href="SDL_GetGamepadFromPlayerIndex.html">SDL_GetGamepadFromPlayerIndex</a> - プレイヤーインデックス番号に関連付けられたSDL_Gamepadを得る
+<li><a href="SDL_GetGamepadGUIDForID.html">SDL_GetGamepadGUIDForID</a> - ゲームパッドの実装に依存するGUIDを得る
+<li><a href="SDL_GetGamepadID.html">SDL_GetGamepadID</a> - オープンされたゲームパッドからインスタンスIDを得る
+<li><a href="SDL_GetGamepadJoystick.html">SDL_GetGamepadJoystick</a> - ゲームパッドの背後のジョイスティックを得る
+<li><a href="SDL_GetGamepadMapping.html">SDL_GetGamepadMapping</a> - ゲームパッドの現在のマッピングを得る
+<li><a href="SDL_GetGamepadMappingForGUID.html">SDL_GetGamepadMappingForGUID</a> - 指定のGUIDのゲームパッドのマッピング文字列を得る
+<li><a href="SDL_GetGamepadMappingForID.html">SDL_GetGamepadMappingForID</a> - ゲームパッドのマッピング文字列を得る
 <li>SDL_GetGamepadMappings
 <li>SDL_GetGamepadName
 <li>SDL_GetGamepadNameForID
@@ -979,7 +979,7 @@
 <li>SDL_SendAndroidMessage
 <li>SDL_SendGamepadEffect
 <li><a href="SDL_SendJoystickEffect.html">SDL_SendJoystickEffect</a> - ジョイスティックにエフェクトパケットを送信する
-<li>SDL_SendJoystickVirtualSensorData
+<li><a href="SDL_SendJoystickVirtualSensorData.html">SDL_SendJoystickVirtualSensorData</a> - オープンした仮想ジョイスティックのセンサーの状態を設定する
 <li><a href="SDL_SetAppMetadata.html">SDL_SetAppMetadata</a> - アプリケーションの基本的なメタデータを指定する 
 <li><a href="SDL_SetAppMetadataProperty.html">SDL_SetAppMetadataProperty</a> - アプリケーションのメタデータをプロパティで指定する
 <li>SDL_SetAssertionHandler
@@ -1034,11 +1034,11 @@
 <li><a href="SDL_SetJoystickEventsEnabled.html">SDL_SetJoystickEventsEnabled</a> - ジョイスティックイベント処理の有無を設定する
 <li><a href="SDL_SetJoystickLED.html">SDL_SetJoystickLED</a> - ジョイスティックのLEDの色を設定する
 <li><a href="SDL_SetJoystickPlayerIndex.html">SDL_SetJoystickPlayerIndex</a> - オープンされたジョイスティックにプレイヤーインデックス番号を設定する
-<li>SDL_SetJoystickVirtualAxis
-<li>SDL_SetJoystickVirtualBall
-<li>SDL_SetJoystickVirtualButton
-<li>SDL_SetJoystickVirtualHat
-<li>SDL_SetJoystickVirtualTouchpad
+<li><a href="SDL_SetJoystickVirtualAxis.html">SDL_SetJoystickVirtualAxis</a> - オープンした仮想ジョイスティックの方向の状態を設定する
+<li><a href="SDL_SetJoystickVirtualBall.html">SDL_SetJoystickVirtualBall</a> - オープンした仮想ジョイスティックのトラックボールの移動量を設定する
+<li><a href="SDL_SetJoystickVirtualButton.html">SDL_SetJoystickVirtualButton</a> - オープンした仮想ジョイスティックのボタンの状態を設定する
+<li><a href="SDL_SetJoystickVirtualHat.html">SDL_SetJoystickVirtualHat</a> - オープンした仮想ジョイスティックのハットの状態を設定する
+<li><a href="SDL_SetJoystickVirtualTouchpad.html">SDL_SetJoystickVirtualTouchpad</a> - オープンした仮想ジョイスティックのタッチパッドの指の状態を設定する
 <li>SDL_SetLinuxThreadPriority
 <li>SDL_SetLinuxThreadPriorityAndPolicy
 <li><a href="SDL_SetLogOutputFunction.html">SDL_SetLogOutputFunction</a> - ログ出力関数を置き換える
@@ -1561,8 +1561,8 @@
 <li><a href="SDL_UserEvent.html">SDL_UserEvent</a> - ユーザ定義イベントの構造体(event.user.*)
 <li>SDL_Vertex
 <li><a href="SDL_VirtualJoystickDesc.html">SDL_VirtualJoystickDesc</a> - 仮想ジョイスティックを定義する構造体
-<li>SDL_VirtualJoystickSensorDesc
-<li>SDL_VirtualJoystickTouchpadDesc
+<li><a href="SDL_VirtualJoystickSensorDesc.html">SDL_VirtualJoystickSensorDesc</a> - 仮想ジョイスティックのセンサーを定義する構造体
+<li><a href="SDL_VirtualJoystickTouchpadDesc.html">SDL_VirtualJoystickTouchpadDesc</a> - 仮想ジョイスティックのタッチパッドを定義する構造体
 <li><a href="SDL_WindowEvent.html">SDL_WindowEvent</a> - ウィンドウイベントの構造体(event.window.*)
 </ol>
 <h2>列挙体</h2>

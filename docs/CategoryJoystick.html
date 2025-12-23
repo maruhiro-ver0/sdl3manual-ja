@@ -19,31 +19,31 @@ SDLジョイスティック対応.
 これはジョイスティックの低レベル対応で, より簡単に行いたいならば, ボタンの位置などがよく定義されたゲームパッドAPIを使用すべきである.
 </p>
 <p>
-"instance_id"は, システムに現在インスタンス化されたジョイスティックデバイスを表す. もし, ジョイスティックを切断し, 再インスタンス化したならば, 新しいinstance_idになる. instance_idはジョイスティックが接続されるたびに単純に1ずつ加算される.
+"instance_id"(「インスタンスID」)は, システムに現在インスタンス化されたジョイスティックデバイスを表す. もし, ジョイスティックを切断し, 再インスタンス化したならば, 新しいinstance_idになる. instance_idはジョイスティックが接続されるたびに単純に1ずつ加算される.
 </p>
 <p>
-"player_index"は, コントローラに紐づけられたプレイヤーの番号を表す. XInputコントローラの場合は戻されたXInputユーザインデックスである. 多くのジョイスティックはこの情報に対応していない.
+"player_index"(「プレイヤーインデックス番号」)は, コントローラに紐づけられたプレイヤーの番号を表す. XInputコントローラの場合は戻されたXInputユーザインデックスである. 多くのジョイスティックはこの情報に対応していない.
 </p>
 <p>
-SDL_GUIDは, 時間がたっても変わらないジョイスティックデバイスの128ビットの固定IDとして使われる. これはデバイスのクラス(例えばX360有線コントローラなど)を識別する. IDは環境に依存する.
+<a href="SDL_GUID.html">SDL_GUID</a>は, 時間がたっても変わらないジョイスティックデバイスの128ビットの固定IDとして使われる. これはデバイスのクラス(例えばX360有線コントローラなど)を識別する. IDは環境に依存する.
 </p>
 <p>
-これらの関数を使うときは, SDL_INIT_JOYSTICKフラグを付けてSDL_Init()を呼ぶ必要がある. これでSDLはシステムのジョイスティックをスキャンし, 正しいドライバを読み込むようになる.
+これらの関数を使うときは, SDL_INIT_JOYSTICKフラグを付けて<a href="SDL_Init.html">SDL_Init()</a>を呼ぶ必要がある. これでSDLはシステムのジョイスティックをスキャンし, 正しいドライバを読み込むようになる.
 </p>
 <p>
-アプリケーションがバックグラウンドのときもジョイスティックのイベントを受信したい場合は, SDL_Init()を呼ぶ前にSDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTSヒントを設定する必要がある.
+アプリケーションがバックグラウンドのときもジョイスティックのイベントを受信したい場合は, <a href="SDL_Init.html">SDL_Init()</a>を呼ぶ前に<a href="SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS.html">SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTSヒント</a>を設定する必要がある.
 </p>
 <p>
 SDLは仮想ジョイスティックも提供している.
-アプリケーションはSDL_AttachVirtualJoystick()で仮想のコントローラを定義でき, 入力はSDL_SetJoystickVirtualAxis()やSDL_SetJoystickVirtualButton()などで得られる.
+アプリケーションは<a href="SDL_AttachVirtualJoystick.html">SDL_AttachVirtualJoystick()</a>で仮想のコントローラを定義でき, 入力は<a href="SDL_SetJoystickVirtualAxis.html">SDL_SetJoystickVirtualAxis()</a>や<a href="SDL_SetJoystickVirtualButton.html">SDL_SetJoystickVirtualButton()</a>などで得られる.
 このデータが生成されると, ハードウェアのドライバが背後にないだけで, SDLからは通常のコントローラのように見える.
 これはVRヘッドセットコントローラや, ゲーム入力の記録/再生のような, 一般的ではないデバイスを生成するために使用される.
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_AttachVirtualJoystick
+<li><a href="SDL_AttachVirtualJoystick.html">SDL_AttachVirtualJoystick</a> - 仮想ジョイスティックを新しく接続する
 <li><a href="SDL_CloseJoystick.html">SDL_CloseJoystick</a> - SDL_OpenJoystick()でオープンしたジョイスティックをクローズする
-<li>SDL_DetachVirtualJoystick
+<li><a href="SDL_DetachVirtualJoystick.html">SDL_DetachVirtualJoystick</a> - 仮想ジョイスティックを切断する
 <li><a href="SDL_GetJoystickAxis.html">SDL_GetJoystickAxis</a> - ジョイスティックの方向コントローラーの状態を得る
 <li><a href="SDL_GetJoystickAxisInitialState.html">SDL_GetJoystickAxisInitialState</a> - ジョイスティックの方向コントローラーの初期状態を得る
 <li><a href="SDL_GetJoystickBall.html">SDL_GetJoystickBall</a> - トラックボールの最後のポーリングからの方向の変化量を得る
@@ -88,15 +88,15 @@ SDLは仮想ジョイスティックも提供している.
 <li><a href="SDL_RumbleJoystick.html">SDL_RumbleJoystick</a> - ジョイスティックの振動を開始する
 <li><a href="SDL_RumbleJoystickTriggers.html">SDL_RumbleJoystickTriggers</a> - ジョイスティックのトリガーの振動を開始する
 <li><a href="SDL_SendJoystickEffect.html">SDL_SendJoystickEffect</a> - ジョイスティックにエフェクトパケットを送信する
-<li>SDL_SendJoystickVirtualSensorData
+<li><a href="SDL_SendJoystickVirtualSensorData.html">SDL_SendJoystickVirtualSensorData</a> - オープンした仮想ジョイスティックのセンサーの状態を設定する
 <li><a href="SDL_SetJoystickEventsEnabled.html">SDL_SetJoystickEventsEnabled</a> - ジョイスティックイベント処理の有無を設定する
 <li><a href="SDL_SetJoystickLED.html">SDL_SetJoystickLED</a> - ジョイスティックのLEDの色を設定する
 <li><a href="SDL_SetJoystickPlayerIndex.html">SDL_SetJoystickPlayerIndex</a> - オープンされたジョイスティックにプレイヤーインデックス番号を設定する
-<li>SDL_SetJoystickVirtualAxis
-<li>SDL_SetJoystickVirtualBall
-<li>SDL_SetJoystickVirtualButton
-<li>SDL_SetJoystickVirtualHat
-<li>SDL_SetJoystickVirtualTouchpad
+<li><a href="SDL_SetJoystickVirtualAxis.html">SDL_SetJoystickVirtualAxis</a> - オープンした仮想ジョイスティックの方向の状態を設定する
+<li><a href="SDL_SetJoystickVirtualBall.html">SDL_SetJoystickVirtualBall</a> - オープンした仮想ジョイスティックのトラックボールの移動量を設定する
+<li><a href="SDL_SetJoystickVirtualButton.html">SDL_SetJoystickVirtualButton</a> - オープンした仮想ジョイスティックのボタンの状態を設定する
+<li><a href="SDL_SetJoystickVirtualHat.html">SDL_SetJoystickVirtualHat</a> - オープンした仮想ジョイスティックのハットの状態を設定する
+<li><a href="SDL_SetJoystickVirtualTouchpad.html">SDL_SetJoystickVirtualTouchpad</a> - オープンした仮想ジョイスティックのタッチパッドの指の状態を設定する
 <li><a href="SDL_UnlockJoysticks.html">SDL_UnlockJoysticks</a> - ジョイスティックAPIへのアトミックなアクセスのためのロックを解除する
 <li><a href="SDL_UpdateJoysticks.html">SDL_UpdateJoysticks</a> - オープンされているジョイスティックの状態を更新する
 </ol>
@@ -108,8 +108,8 @@ SDLは仮想ジョイスティックも提供している.
 <h2>構造体</h2>
 <ol>
 <li><a href="SDL_VirtualJoystickDesc.html">SDL_VirtualJoystickDesc</a> - 仮想ジョイスティックを定義する構造体
-<li>SDL_VirtualJoystickSensorDesc
-<li>SDL_VirtualJoystickTouchpadDesc
+<li><a href="SDL_VirtualJoystickSensorDesc.html">SDL_VirtualJoystickSensorDesc</a> - 仮想ジョイスティックのセンサーを定義する構造体
+<li><a href="SDL_VirtualJoystickTouchpadDesc.html">SDL_VirtualJoystickTouchpadDesc</a> - 仮想ジョイスティックのタッチパッドを定義する構造体
 </ol>
 <h2>列挙体</h2>
 <ol>

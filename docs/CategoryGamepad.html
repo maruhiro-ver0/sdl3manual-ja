@@ -49,35 +49,35 @@ macOSやWindowsなどのその他の環境では, Windows.Gaming.Inputを使っ�
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_AddGamepadMapping
-<li>SDL_AddGamepadMappingsFromFile
-<li>SDL_AddGamepadMappingsFromIO
-<li>SDL_CloseGamepad
-<li>SDL_GamepadConnected
-<li>SDL_GamepadEventsEnabled
-<li>SDL_GamepadHasAxis
-<li>SDL_GamepadHasButton
-<li>SDL_GamepadHasSensor
-<li>SDL_GamepadSensorEnabled
-<li>SDL_GetGamepadAppleSFSymbolsNameForAxis
-<li>SDL_GetGamepadAppleSFSymbolsNameForButton
-<li>SDL_GetGamepadAxis
-<li>SDL_GetGamepadAxisFromString
-<li>SDL_GetGamepadBindings
-<li>SDL_GetGamepadButton
-<li>SDL_GetGamepadButtonFromString
-<li>SDL_GetGamepadButtonLabel
-<li>SDL_GetGamepadButtonLabelForType
-<li>SDL_GetGamepadConnectionState
-<li>SDL_GetGamepadFirmwareVersion
-<li>SDL_GetGamepadFromID
-<li>SDL_GetGamepadFromPlayerIndex
-<li>SDL_GetGamepadGUIDForID
-<li>SDL_GetGamepadID
-<li>SDL_GetGamepadJoystick
-<li>SDL_GetGamepadMapping
-<li>SDL_GetGamepadMappingForGUID
-<li>SDL_GetGamepadMappingForID
+<li><a href="SDL_AddGamepadMapping.html">SDL_AddGamepadMapping</a> - SDLが認識していないゲームパッドを追加する. または既存のゲームパッドのバインドを変更する
+<li><a href="SDL_AddGamepadMappingsFromFile.html">SDL_AddGamepadMappingsFromFile</a> - ファイルからゲームパッドマッピングを読み込む
+<li><a href="SDL_AddGamepadMappingsFromIO.html">SDL_AddGamepadMappingsFromIO</a> - SDL_IOStreamからゲームパッドマッピングを読み込む
+<li><a href="SDL_CloseGamepad.html">SDL_CloseGamepad</a> - SDL_OpenGamepad()でオープンしたゲームパッドをクローズする
+<li><a href="SDL_GamepadConnected.html">SDL_GamepadConnected</a> - ゲームパッドが既にオープンされ接続されているかチェックする
+<li><a href="SDL_GamepadEventsEnabled.html">SDL_GamepadEventsEnabled</a> - ゲームパッドイベント処理の有無を得る
+<li><a href="SDL_GamepadHasAxis.html">SDL_GamepadHasAxis</a> - ゲームコントローラーに指定の方向が存在するかチェックする
+<li><a href="SDL_GamepadHasButton.html">SDL_GamepadHasButton</a> - ゲームコントローラーに指定のボタンが存在するかチェックする
+<li><a href="SDL_GamepadHasSensor.html">SDL_GamepadHasSensor</a> - ゲームコントローラーに指定のセンサーが存在するかチェックする
+<li><a href="SDL_GamepadSensorEnabled.html">SDL_GamepadSensorEnabled</a> - ゲームパッドのセンサーデータ報告が有効かチェックする
+<li><a href="SDL_GetGamepadAppleSFSymbolsNameForAxis.html">SDL_GetGamepadAppleSFSymbolsNameForAxis</a> - Apple環境のゲームパッドの指定の方向のsfSymbolsNameを得る
+<li><a href="SDL_GetGamepadAppleSFSymbolsNameForButton.html">SDL_GetGamepadAppleSFSymbolsNameForButton</a> - Apple環境のゲームパッドの指定のボタンのsfSymbolsNameを得る
+<li><a href="SDL_GetGamepadAxis.html">SDL_GetGamepadAxis</a> - ゲームパッドの方向コントローラーの状態を得る
+<li><a href="SDL_GetGamepadAxisFromString.html">SDL_GetGamepadAxisFromString</a> - 文字列からSDL_GamepadAxis列挙体の値を得る
+<li><a href="SDL_GetGamepadBindings.html">SDL_GetGamepadBindings</a> - ゲームパッドにバインドされたSDLジョイスティックレイヤを得る
+<li><a href="SDL_GetGamepadButton.html">SDL_GetGamepadButton</a> - ゲームパッドのボタンの状態を得る
+<li><a href="SDL_GetGamepadButtonFromString.html">SDL_GetGamepadButtonFromString</a> - 文字列からSDL_GamepadButton列挙体の値を得る
+<li><a href="SDL_GetGamepadButtonLabel.html">SDL_GetGamepadButtonLabel</a> - ゲームパッドのボタンのラベルを得る
+<li><a href="SDL_GetGamepadButtonLabelForType.html">SDL_GetGamepadButtonLabelForType</a> - ゲームパッドの種類別のボタンのラベルを得る
+<li><a href="SDL_GetGamepadConnectionState.html">SDL_GetGamepadConnectionState</a> - ゲームパッドの接続状態を得る
+<li><a href="SDL_GetGamepadFirmwareVersion.html">SDL_GetGamepadFirmwareVersion</a> - 可能ならばオープンしたゲームパッドのファームウェアのバージョンを得る
+<li><a href="SDL_GetGamepadFromID.html">SDL_GetGamepadFromID</a> - オープンされている場合, インスタンスIDに関連付けられたSDL_Gamepadを得る
+<li><a href="SDL_GetGamepadFromPlayerIndex.html">SDL_GetGamepadFromPlayerIndex</a> - プレイヤーインデックス番号に関連付けられたSDL_Gamepadを得る
+<li><a href="SDL_GetGamepadGUIDForID.html">SDL_GetGamepadGUIDForID</a> - ゲームパッドの実装に依存するGUIDを得る
+<li><a href="SDL_GetGamepadID.html">SDL_GetGamepadID</a> - オープンされたゲームパッドからインスタンスIDを得る
+<li><a href="SDL_GetGamepadJoystick.html">SDL_GetGamepadJoystick</a> - ゲームパッドの背後のジョイスティックを得る
+<li><a href="SDL_GetGamepadMapping.html">SDL_GetGamepadMapping</a> - ゲームパッドの現在のマッピングを得る
+<li><a href="SDL_GetGamepadMappingForGUID.html">SDL_GetGamepadMappingForGUID</a> - 指定のGUIDのゲームパッドのマッピング文字列を得る
+<li><a href="SDL_GetGamepadMappingForID.html">SDL_GetGamepadMappingForID</a> - ゲームパッドのマッピング文字列を得る
 <li>SDL_GetGamepadMappings
 <li>SDL_GetGamepadName
 <li>SDL_GetGamepadNameForID
@@ -111,7 +111,7 @@ macOSやWindowsなどのその他の環境では, Windows.Gaming.Inputを使っ�
 <li>SDL_GetRealGamepadTypeForID
 <li>SDL_HasGamepad
 <li>SDL_IsGamepad
-<li>SDL_OpenGamepad
+<li><a href="SDL_OpenGamepad.html">SDL_OpenGamepad</a> - ゲームパッドを使用するためにオープンする
 <li>SDL_ReloadGamepadMappings
 <li>SDL_RumbleGamepad
 <li>SDL_RumbleGamepadTriggers
@@ -125,7 +125,7 @@ macOSやWindowsなどのその他の環境では, Windows.Gaming.Inputを使っ�
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_Gamepad
+<li><a href="SDL_Gamepad.html">SDL_Gamepad</a> - SDLゲームパッドの識別のために使用される型
 </ol>
 <h2>構造体</h2>
 <ol>
