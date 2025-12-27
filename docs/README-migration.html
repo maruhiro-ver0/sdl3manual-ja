@@ -710,15 +710,15 @@ SDL_QUERY, SDL_IGNORE, SDL_ENABLE, SDL_DISABLEは削除された.
 SDL_gamecontroller.hの名前はSDL_gamepad.hになり, 全てのAPIはそれと合った名前に変更された.
 </p>
 <p>
-SDL_EVENT_GAMEPAD_ADDEDイベントは, <a href="SDL_Event.html">イベント構造体</a>の<a href="https://wiki.libsdl.org/SDL3/SDL_GamepadDeviceEvent">gdeviceのwhich</a>メンバにジョイスティックインスタンスIDをセットするようになった.
+SDL_EVENT_GAMEPAD_ADDEDイベントは, <a href="SDL_Event.html">イベント構造体</a>の<a href="SDL_GamepadDeviceEvent.html">gdeviceのwhich</a>メンバにジョイスティックインスタンスIDをセットするようになった.
 </p>
 <p>
-利用可能なゲームパッドの一覧の内容を直接参照できる関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepads">SDL_GetGamepads()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadNameForID">SDL_GetGamepadNameForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadPathForID">SDL_GetGamepadPathForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadPlayerIndexForID">SDL_GetGamepadPlayerIndexForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadGUIDForID">SDL_GetGamepadGUIDForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadVendorForID">SDL_GetGamepadVendorForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadProductForID">SDL_GetGamepadProductForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadProductVersionForID">SDL_GetGamepadProductVersionForID()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadTypeForID">SDL_GetGamepadTypeForID()</a>が追加された.
+利用可能なゲームパッドの一覧の内容を直接参照できる関数<a href="SDL_GetGamepads.html">SDL_GetGamepads()</a>, <a href="SDL_GetGamepadNameForID.html">SDL_GetGamepadNameForID()</a>, <a href="SDL_GetGamepadPathForID.html">SDL_GetGamepadPathForID()</a>, <a href="SDL_GetGamepadPlayerIndexForID.html">SDL_GetGamepadPlayerIndexForID()</a>, <a href="SDL_GetGamepadGUIDForID.html">SDL_GetGamepadGUIDForID()</a>, <a href="SDL_GetGamepadVendorForID.html">SDL_GetGamepadVendorForID()</a>, <a href="SDL_GetGamepadProductForID.html">SDL_GetGamepadProductForID()</a>, <a href="SDL_GetGamepadProductVersionForID.html">SDL_GetGamepadProductVersionForID()</a>, <a href="SDL_GetGamepadTypeForID.html">SDL_GetGamepadTypeForID()</a>が追加された.
 </p>
 <p>
 ゲームパッドの前面ボタンの名称はA/B/X/YからNorth/South/East/Westに変更され, 特定のハードウェア(XBOXのボタン名)ではなく位置を示すようになった.
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadButtonLabel">SDL_GetGamepadButtonLabel()</a>を使えば前面ボタンのラベル名(A/B/X/YやCross/Circle/Square/Triangle)を得ることができる.
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS.html">SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELSヒント</a>は無視され, このヒントを使った変換はボタンの位置に訂正される.<br>
+<a href="SDL_GetGamepadButtonLabel.html">SDL_GetGamepadButtonLabel()</a>を使えば前面ボタンのラベル名(A/B/X/Yや×/〇/□/△)を得ることができる.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS">SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELSヒント</a>は無視され, このヒントを使った変換はボタンの位置に訂正される.<br>
 アプリケーションは, 地域や慣れによって異なるため, ユーザにOK/キャンセルボタンとしてのSouth/Eastボタンを入れ替える方法を提供すべきである.
 これは次のような方法で対応できる:
 <code>
@@ -789,11 +789,11 @@ void HandleGamepadEvent(SDL_Event *event)
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetSensorDataWithTimestamp.html">SDL_GameControllerGetSensorDataWithTimestamp()</a>は削除された.
-センサーデータのタイムスタンプが必要な場合は, <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadSensorEvent">SDL_EVENT_GAMEPAD_SENSOR_UPDATEイベントのsensor_timestampメンバ</a>を使うことができる.
+センサーデータのタイムスタンプが必要な場合は, <a href="SDL_GamepadSensorEvent.html">SDL_EVENT_GAMEPAD_SENSOR_UPDATEイベントのsensor_timestampメンバ</a>を使うことができる.
 </p>
 <p>
 SDL_CONTROLLER_TYPE_VIRTUALは削除され, 仮想コントローラーは他のゲームパッドをエミュレートできるようになった.
-コントローラーが仮想コントローラーであるか知る必要がある場合は, <a href="https://wiki.libsdl.org/SDL3/SDL_IsJoystickVirtual">SDL_IsJoystickVirtual()</a>を使うこと.
+コントローラーが仮想コントローラーであるか知る必要がある場合は, <a href="SDL_IsJoystickVirtual.html">SDL_IsJoystickVirtual()</a>を使うこと.
 </p>
 <p>
 SDL_CONTROLLER_TYPE_AMAZON_LUNAは削除された. コードはこのように置き換えることができる:
@@ -833,141 +833,141 @@ bool SDL_IsJoystickNVIDIASHIELDController(Uint16 vendor_id, Uint16 product_id)
 SDL_GamepadBindingのinputTypeメンバとoutputTypeメンバの名前はinput_typeとoutput_typeに変更された.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadTouchpadFinger">SDL_GetGamepadTouchpadFinger()</a>の指状態は, Uint8型ポインタからbool型ポインタに変更された.
+<a href="SDL_GetGamepadTouchpadFinger.html">SDL_GetGamepadTouchpadFinger()</a>の指状態は, Uint8型ポインタからbool型ポインタに変更された.
 </p>
 <p>
 以下の列挙体の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_GameControllerAxis</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadAxis">SDL_GamepadAxis</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_GameControllerBindType</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadBindingType">SDL_GamepadBindingType</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_GameControllerButton</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GamepadButton</a>
-<li>SDL_GameControllerType → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GamepadType</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_GameControllerAxis</a> → <a href="SDL_GamepadAxis.html">SDL_GamepadAxis</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_GameControllerBindType</a> → <a href="SDL_GamepadBindingType.html">SDL_GamepadBindingType</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_GameControllerButton</a> → <a href="SDL_GamepadButton.html">SDL_GamepadButton</a>
+<li>SDL_GameControllerType → <a href="SDL_GamepadType.html">SDL_GamepadType</a>
 </ul>
 <p>
 以下の構造体の名前は次の様に変更された:
 </p>
 <ul>
-<li>SDL_GameController → <a href="https://wiki.libsdl.org/SDL3/SDL_Gamepad">SDL_Gamepad</a>
+<li>SDL_GameController → <a href="SDL_Gamepad.html">SDL_Gamepad</a>
 </ul>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAddMapping.html">SDL_GameControllerAddMapping()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_AddGamepadMapping">SDL_AddGamepadMapping()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAddMappingsFromFile.html">SDL_GameControllerAddMappingsFromFile()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_AddGamepadMappingsFromFile">SDL_AddGamepadMappingsFromFile()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAddMappingsFromRW.html">SDL_GameControllerAddMappingsFromRW()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_AddGamepadMappingsFromIO">SDL_AddGamepadMappingsFromIO()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerClose.html">SDL_GameControllerClose()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_CloseGamepad">SDL_CloseGamepad()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerFromInstanceID.html">SDL_GameControllerFromInstanceID()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadFromID">SDL_GetGamepadFromID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerFromPlayerIndex.html">SDL_GameControllerFromPlayerIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadFromPlayerIndex">SDL_GetGamepadFromPlayerIndex()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAppleSFSymbolsNameForAxis.html">SDL_GameControllerGetAppleSFSymbolsNameForAxis()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadAppleSFSymbolsNameForAxis">SDL_GetGamepadAppleSFSymbolsNameForAxis()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAppleSFSymbolsNameForButton.html">SDL_GameControllerGetAppleSFSymbolsNameForButton()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadAppleSFSymbolsNameForButton">SDL_GetGamepadAppleSFSymbolsNameForButton()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAttached.html">SDL_GameControllerGetAttached()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadConnected">SDL_GamepadConnected()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAxis.html">SDL_GameControllerGetAxis()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadAxis">SDL_GetGamepadAxis()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAxisFromString.html">SDL_GameControllerGetAxisFromString()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadAxisFromString">SDL_GetGamepadAxisFromString()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetButton.html">SDL_GameControllerGetButton()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadButton">SDL_GetGamepadButton()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetButtonFromString.html">SDL_GameControllerGetButtonFromString()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadButtonFromString">SDL_GetGamepadButtonFromString()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetFirmwareVersion.html">SDL_GameControllerGetFirmwareVersion()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadFirmwareVersion">SDL_GetGamepadFirmwareVersion()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetJoystick.html">SDL_GameControllerGetJoystick()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadJoystick">SDL_GetGamepadJoystick()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetNumTouchpadFingers.html">SDL_GameControllerGetNumTouchpadFingers()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetNumGamepadTouchpadFingers">SDL_GetNumGamepadTouchpadFingers()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetNumTouchpads.html">SDL_GameControllerGetNumTouchpads()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetNumGamepadTouchpads">SDL_GetNumGamepadTouchpads()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetPlayerIndex.html">SDL_GameControllerGetPlayerIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadPlayerIndex">SDL_GetGamepadPlayerIndex()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetProduct.html">SDL_GameControllerGetProduct()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadProduct">SDL_GetGamepadProduct()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetProductVersion.html">SDL_GameControllerGetProductVersion()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadProductVersion">SDL_GetGamepadProductVersion()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetSensorData.html">SDL_GameControllerGetSensorData()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadSensorData">SDL_GetGamepadSensorData()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetSensorDataRate.html">SDL_GameControllerGetSensorDataRate()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadSensorDataRate">SDL_GetGamepadSensorDataRate()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetSerial.html">SDL_GameControllerGetSerial()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadSerial">SDL_GetGamepadSerial()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetSteamHandle.html">SDL_GameControllerGetSteamHandle()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadSteamHandle">SDL_GetGamepadSteamHandle()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetStringForAxis.html">SDL_GameControllerGetStringForAxis()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadStringForAxis">SDL_GetGamepadStringForAxis()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetStringForButton.html">SDL_GameControllerGetStringForButton()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadStringForButton">SDL_GetGamepadStringForButton()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetTouchpadFinger.html">SDL_GameControllerGetTouchpadFinger()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadTouchpadFinger">SDL_GetGamepadTouchpadFinger()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetType.html">SDL_GameControllerGetType()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadType">SDL_GetGamepadType()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetVendor.html">SDL_GameControllerGetVendor()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadVendor">SDL_GetGamepadVendor()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasAxis.html">SDL_GameControllerHasAxis()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadHasAxis">SDL_GamepadHasAxis()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasButton.html">SDL_GameControllerHasButton()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadHasButton">SDL_GamepadHasButton()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasSensor.html">SDL_GameControllerHasSensor()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadHasSensor">SDL_GamepadHasSensor()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerIsSensorEnabled.html">SDL_GameControllerIsSensorEnabled()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadSensorEnabled">SDL_GamepadSensorEnabled()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerMapping.html">SDL_GameControllerMapping()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadMapping">SDL_GetGamepadMapping()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerMappingForGUID.html">SDL_GameControllerMappingForGUID()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadMappingForGUID">SDL_GetGamepadMappingForGUID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerName.html">SDL_GameControllerName()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadName">SDL_GetGamepadName()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerOpen.html">SDL_GameControllerOpen()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_OpenGamepad">SDL_OpenGamepad()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerPath.html">SDL_GameControllerPath()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadPath">SDL_GetGamepadPath()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerRumble.html">SDL_GameControllerRumble()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_RumbleGamepad">SDL_RumbleGamepad()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerRumbleTriggers.html">SDL_GameControllerRumbleTriggers()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_RumbleGamepadTriggers">SDL_RumbleGamepadTriggers()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerSendEffect.html">SDL_GameControllerSendEffect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SendGamepadEffect">SDL_SendGamepadEffect()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerSetLED.html">SDL_GameControllerSetLED()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetGamepadLED">SDL_SetGamepadLED()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerSetPlayerIndex.html">SDL_GameControllerSetPlayerIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetGamepadPlayerIndex">SDL_SetGamepadPlayerIndex()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerSetSensorEnabled.html">SDL_GameControllerSetSensorEnabled()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetGamepadSensorEnabled">SDL_SetGamepadSensorEnabled()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerUpdate.html">SDL_GameControllerUpdate()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_UpdateGamepads">SDL_UpdateGamepads()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsGameController.html">SDL_IsGameController()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_IsGamepad">SDL_IsGamepad()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAddMapping.html">SDL_GameControllerAddMapping()</a> → <a href="SDL_AddGamepadMapping.html">SDL_AddGamepadMapping()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAddMappingsFromFile.html">SDL_GameControllerAddMappingsFromFile()</a> → <a href="SDL_AddGamepadMappingsFromFile.html">SDL_AddGamepadMappingsFromFile()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAddMappingsFromRW.html">SDL_GameControllerAddMappingsFromRW()</a> → <a href="SDL_AddGamepadMappingsFromIO.html">SDL_AddGamepadMappingsFromIO()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerClose.html">SDL_GameControllerClose()</a> → <a href="SDL_CloseGamepad.html">SDL_CloseGamepad()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerFromInstanceID.html">SDL_GameControllerFromInstanceID()</a> → <a href="SDL_GetGamepadFromID.html">SDL_GetGamepadFromID()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerFromPlayerIndex.html">SDL_GameControllerFromPlayerIndex()</a> → <a href="SDL_GetGamepadFromPlayerIndex.html">SDL_GetGamepadFromPlayerIndex()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAppleSFSymbolsNameForAxis.html">SDL_GameControllerGetAppleSFSymbolsNameForAxis()</a> → <a href="SDL_GetGamepadAppleSFSymbolsNameForAxis.html">SDL_GetGamepadAppleSFSymbolsNameForAxis()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAppleSFSymbolsNameForButton.html">SDL_GameControllerGetAppleSFSymbolsNameForButton()</a> → <a href="SDL_GetGamepadAppleSFSymbolsNameForButton.html">SDL_GetGamepadAppleSFSymbolsNameForButton()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAttached.html">SDL_GameControllerGetAttached()</a> → <a href="SDL_GamepadConnected.html">SDL_GamepadConnected()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAxis.html">SDL_GameControllerGetAxis()</a> → <a href="SDL_GetGamepadAxis.html">SDL_GetGamepadAxis()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetAxisFromString.html">SDL_GameControllerGetAxisFromString()</a> → <a href="SDL_GetGamepadAxisFromString.html">SDL_GetGamepadAxisFromString()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetButton.html">SDL_GameControllerGetButton()</a> → <a href="SDL_GetGamepadButton.html">SDL_GetGamepadButton()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetButtonFromString.html">SDL_GameControllerGetButtonFromString()</a> → <a href="SDL_GetGamepadButtonFromString.html">SDL_GetGamepadButtonFromString()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetFirmwareVersion.html">SDL_GameControllerGetFirmwareVersion()</a> → <a href="SDL_GetGamepadFirmwareVersion.html">SDL_GetGamepadFirmwareVersion()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetJoystick.html">SDL_GameControllerGetJoystick()</a> → <a href="SDL_GetGamepadJoystick.html">SDL_GetGamepadJoystick()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetNumTouchpadFingers.html">SDL_GameControllerGetNumTouchpadFingers()</a> → <a href="SDL_GetNumGamepadTouchpadFingers.html">SDL_GetNumGamepadTouchpadFingers()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetNumTouchpads.html">SDL_GameControllerGetNumTouchpads()</a> → <a href="SDL_GetNumGamepadTouchpads.html">SDL_GetNumGamepadTouchpads()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetPlayerIndex.html">SDL_GameControllerGetPlayerIndex()</a> → <a href="SDL_GetGamepadPlayerIndex.html">SDL_GetGamepadPlayerIndex()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetProduct.html">SDL_GameControllerGetProduct()</a> → <a href="SDL_GetGamepadProduct.html">SDL_GetGamepadProduct()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetProductVersion.html">SDL_GameControllerGetProductVersion()</a> → <a href="SDL_GetGamepadProductVersion.html">SDL_GetGamepadProductVersion()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetSensorData.html">SDL_GameControllerGetSensorData()</a> → <a href="SDL_GetGamepadSensorData.html">SDL_GetGamepadSensorData()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetSensorDataRate.html">SDL_GameControllerGetSensorDataRate()</a> → <a href="SDL_GetGamepadSensorDataRate.html">SDL_GetGamepadSensorDataRate()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetSerial.html">SDL_GameControllerGetSerial()</a> → <a href="SDL_GetGamepadSerial.html">SDL_GetGamepadSerial()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetSteamHandle.html">SDL_GameControllerGetSteamHandle()</a> → <a href="SDL_GetGamepadSteamHandle.html">SDL_GetGamepadSteamHandle()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetStringForAxis.html">SDL_GameControllerGetStringForAxis()</a> → <a href="SDL_GetGamepadStringForAxis.html">SDL_GetGamepadStringForAxis()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetStringForButton.html">SDL_GameControllerGetStringForButton()</a> → <a href="SDL_GetGamepadStringForButton.html">SDL_GetGamepadStringForButton()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetTouchpadFinger.html">SDL_GameControllerGetTouchpadFinger()</a> → <a href="SDL_GetGamepadTouchpadFinger.html">SDL_GetGamepadTouchpadFinger()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetType.html">SDL_GameControllerGetType()</a> → <a href="SDL_GetGamepadType.html">SDL_GetGamepadType()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetVendor.html">SDL_GameControllerGetVendor()</a> → <a href="SDL_GetGamepadVendor.html">SDL_GetGamepadVendor()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasAxis.html">SDL_GameControllerHasAxis()</a> → <a href="SDL_GamepadHasAxis.html">SDL_GamepadHasAxis()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasButton.html">SDL_GameControllerHasButton()</a> → <a href="SDL_GamepadHasButton.html">SDL_GamepadHasButton()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasSensor.html">SDL_GameControllerHasSensor()</a> → <a href="SDL_GamepadHasSensor.html">SDL_GamepadHasSensor()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerIsSensorEnabled.html">SDL_GameControllerIsSensorEnabled()</a> → <a href="SDL_GamepadSensorEnabled.html">SDL_GamepadSensorEnabled()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerMapping.html">SDL_GameControllerMapping()</a> → <a href="SDL_GetGamepadMapping.html">SDL_GetGamepadMapping()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerMappingForGUID.html">SDL_GameControllerMappingForGUID()</a> → <a href="SDL_GetGamepadMappingForGUID.html">SDL_GetGamepadMappingForGUID()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerName.html">SDL_GameControllerName()</a> → <a href="SDL_GetGamepadName.html">SDL_GetGamepadName()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerOpen.html">SDL_GameControllerOpen()</a> → <a href="SDL_OpenGamepad.html">SDL_OpenGamepad()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerPath.html">SDL_GameControllerPath()</a> → <a href="SDL_GetGamepadPath.html">SDL_GetGamepadPath()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerRumble.html">SDL_GameControllerRumble()</a> → <a href="SDL_RumbleGamepad.html">SDL_RumbleGamepad()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerRumbleTriggers.html">SDL_GameControllerRumbleTriggers()</a> → <a href="SDL_RumbleGamepadTriggers.html">SDL_RumbleGamepadTriggers()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerSendEffect.html">SDL_GameControllerSendEffect()</a> → <a href="SDL_SendGamepadEffect.html">SDL_SendGamepadEffect()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerSetLED.html">SDL_GameControllerSetLED()</a> → <a href="SDL_SetGamepadLED.html">SDL_SetGamepadLED()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerSetPlayerIndex.html">SDL_GameControllerSetPlayerIndex()</a> → <a href="SDL_SetGamepadPlayerIndex.html">SDL_SetGamepadPlayerIndex()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerSetSensorEnabled.html">SDL_GameControllerSetSensorEnabled()</a> → <a href="SDL_SetGamepadSensorEnabled.html">SDL_SetGamepadSensorEnabled()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerUpdate.html">SDL_GameControllerUpdate()</a> → <a href="SDL_UpdateGamepads.html">SDL_UpdateGamepads()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsGameController.html">SDL_IsGameController()</a> → <a href="SDL_IsGamepad.html">SDL_IsGamepad()</a>
 </ul>
 <p>
 以下の関数は削除された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerEventState.html">SDL_GameControllerEventState()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_SetGamepadEventsEnabled">SDL_SetGamepadEventsEnabled()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_GamepadEventsEnabled">SDL_GamepadEventsEnabled()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetBindForAxis.html">SDL_GameControllerGetBindForAxis()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadBindings">SDL_GetGamepadBindings()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetBindForButton.html">SDL_GameControllerGetBindForButton()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadBindings">SDL_GetGamepadBindings()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasLED.html">SDL_GameControllerHasLED()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadProperties">SDL_PROP_GAMEPAD_CAP_RGB_LED_BOOLEAN</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasRumble.html">SDL_GameControllerHasRumble()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadProperties">SDL_PROP_GAMEPAD_CAP_RUMBLE_BOOLEAN</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasRumbleTriggers.html">SDL_GameControllerHasRumbleTriggers()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadProperties">SDL_PROP_GAMEPAD_CAP_TRIGGER_RUMBLE_BOOLEAN</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerMappingForDeviceIndex.html">SDL_GameControllerMappingForDeviceIndex()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadMappingForID">SDL_GetGamepadMappingForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerMappingForIndex.html">SDL_GameControllerMappingForIndex()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadMappings">SDL_GetGamepadMappings()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerNameForIndex.html">SDL_GameControllerNameForIndex()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadNameForID">SDL_GetGamepadNameForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerNumMappings.html">SDL_GameControllerNumMappings()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadMappings">SDL_GetGamepadMappings()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerPathForIndex.html">SDL_GameControllerPathForIndex()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadPathForID">SDL_GetGamepadPathForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerTypeForIndex.html">SDL_GameControllerTypeForIndex()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadTypeForID">SDL_GetGamepadTypeForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerEventState.html">SDL_GameControllerEventState()</a> - <a href="SDL_SetGamepadEventsEnabled.html">SDL_SetGamepadEventsEnabled()</a>と<a href="SDL_GamepadEventsEnabled.html">SDL_GamepadEventsEnabled()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetBindForAxis.html">SDL_GameControllerGetBindForAxis()</a> - <a href="SDL_GetGamepadBindings.html">SDL_GetGamepadBindings()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerGetBindForButton.html">SDL_GameControllerGetBindForButton()</a> - <a href="SDL_GetGamepadBindings.html">SDL_GetGamepadBindings()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasLED.html">SDL_GameControllerHasLED()</a> - <a href="SDL_GetGamepadProperties.html">SDL_PROP_GAMEPAD_CAP_RGB_LED_BOOLEAN</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasRumble.html">SDL_GameControllerHasRumble()</a> - <a href="SDL_GetGamepadProperties.html">SDL_PROP_GAMEPAD_CAP_RUMBLE_BOOLEAN</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerHasRumbleTriggers.html">SDL_GameControllerHasRumbleTriggers()</a> - <a href="SDL_GetGamepadProperties.html">SDL_PROP_GAMEPAD_CAP_TRIGGER_RUMBLE_BOOLEAN</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerMappingForDeviceIndex.html">SDL_GameControllerMappingForDeviceIndex()</a> - <a href="SDL_GetGamepadMappingForID.html">SDL_GetGamepadMappingForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerMappingForIndex.html">SDL_GameControllerMappingForIndex()</a> - <a href="SDL_GetGamepadMappings.html">SDL_GetGamepadMappings()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerNameForIndex.html">SDL_GameControllerNameForIndex()</a> - <a href="SDL_GetGamepadNameForID.html">SDL_GetGamepadNameForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerNumMappings.html">SDL_GameControllerNumMappings()</a> - <a href="SDL_GetGamepadMappings.html">SDL_GetGamepadMappings()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerPathForIndex.html">SDL_GameControllerPathForIndex()</a> - <a href="SDL_GetGamepadPathForID.html">SDL_GetGamepadPathForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerTypeForIndex.html">SDL_GameControllerTypeForIndex()</a> - <a href="SDL_GetGamepadTypeForID.html">SDL_GetGamepadTypeForID()</a>に置き換えられた
 </ul>
 <p>
 以下のシンボルの名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_INVALID</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadAxis">SDL_GAMEPAD_AXIS_INVALID</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_LEFTX</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadAxis">SDL_GAMEPAD_AXIS_LEFTX</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_LEFTY</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadAxis">SDL_GAMEPAD_AXIS_LEFTY</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_MAX</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadAxis">SDL_GAMEPAD_AXIS_COUNT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_RIGHTX</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadAxis">SDL_GAMEPAD_AXIS_RIGHTX</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_RIGHTY</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadAxis">SDL_GAMEPAD_AXIS_RIGHTY</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_TRIGGERLEFT</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadAxis">SDL_GAMEPAD_AXIS_LEFT_TRIGGER</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_TRIGGERRIGHT</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadAxis">SDL_GAMEPAD_AXIS_RIGHT_TRIGGER</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_CONTROLLER_BINDTYPE_AXIS</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadBindingType">SDL_GAMEPAD_BINDTYPE_AXIS</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_CONTROLLER_BINDTYPE_BUTTON</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadBindingType">SDL_GAMEPAD_BINDTYPE_BUTTON</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_CONTROLLER_BINDTYPE_HAT</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadBindingType">SDL_GAMEPAD_BINDTYPE_HAT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_CONTROLLER_BINDTYPE_NONE</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadBindingType">SDL_GAMEPAD_BINDTYPE_NONE</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_A</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_SOUTH</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_B</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_EAST</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_BACK</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_BACK</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_DPAD_DOWN</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_DPAD_DOWN</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_DPAD_LEFT</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_DPAD_LEFT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_DPAD_RIGHT</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_DPAD_RIGHT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_DPAD_UP</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_DPAD_UP</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_GUIDE</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_GUIDE</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_INVALID</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_INVALID</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_LEFTSHOULDER</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_LEFT_SHOULDER</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_LEFTSTICK</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_LEFT_STICK</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_MAX</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_COUNT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_MISC1</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_MISC1</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_PADDLE1</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_RIGHT_PADDLE1</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_PADDLE2</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_LEFT_PADDLE1</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_PADDLE3</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_RIGHT_PADDLE2</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_PADDLE4</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_LEFT_PADDLE2</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_RIGHTSHOULDER</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_RIGHTSTICK</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_RIGHT_STICK</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_START</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_START</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_TOUCHPAD</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_TOUCHPAD</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_X</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_WEST</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_Y</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadButton">SDL_GAMEPAD_BUTTON_NORTH</a>
-<li>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_LEFT → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_LEFT</a>
-<li>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_PAIR → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_PAIR</a>
-<li>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_RIGHT → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_RIGHT</a>
-<li>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_PRO → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_PRO</a>
-<li>SDL_CONTROLLER_TYPE_PS3 → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_PS3</a>
-<li>SDL_CONTROLLER_TYPE_PS4 → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_PS4</a>
-<li>SDL_CONTROLLER_TYPE_PS5 → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_PS5</a>
-<li>SDL_CONTROLLER_TYPE_UNKNOWN → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_STANDARD</a>
-<li>SDL_CONTROLLER_TYPE_VIRTUAL → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_VIRTUAL</a>
-<li>SDL_CONTROLLER_TYPE_XBOX360 → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_XBOX360</a>
-<li>SDL_CONTROLLER_TYPE_XBOXONE → <a href="https://wiki.libsdl.org/SDL3/SDL_GamepadType">SDL_GAMEPAD_TYPE_XBOXONE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_INVALID</a> → <a href="SDL_GamepadAxis.html">SDL_GAMEPAD_AXIS_INVALID</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_LEFTX</a> → <a href="SDL_GamepadAxis.html">SDL_GAMEPAD_AXIS_LEFTX</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_LEFTY</a> → <a href="SDL_GamepadAxis.html">SDL_GAMEPAD_AXIS_LEFTY</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_MAX</a> → <a href="SDL_GamepadAxis.html">SDL_GAMEPAD_AXIS_COUNT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_RIGHTX</a> → <a href="SDL_GamepadAxis.html">SDL_GAMEPAD_AXIS_RIGHTX</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_RIGHTY</a> → <a href="SDL_GamepadAxis.html">SDL_GAMEPAD_AXIS_RIGHTY</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_TRIGGERLEFT</a> → <a href="SDL_GamepadAxis.html">SDL_GAMEPAD_AXIS_LEFT_TRIGGER</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerAxis.html">SDL_CONTROLLER_AXIS_TRIGGERRIGHT</a> → <a href="SDL_GamepadAxis.html">SDL_GAMEPAD_AXIS_RIGHT_TRIGGER</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_CONTROLLER_BINDTYPE_AXIS</a> → <a href="SDL_GamepadBindingType.html">SDL_GAMEPAD_BINDTYPE_AXIS</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_CONTROLLER_BINDTYPE_BUTTON</a> → <a href="SDL_GamepadBindingType.html">SDL_GAMEPAD_BINDTYPE_BUTTON</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_CONTROLLER_BINDTYPE_HAT</a> → <a href="SDL_GamepadBindingType.html">SDL_GAMEPAD_BINDTYPE_HAT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerBindType.html">SDL_CONTROLLER_BINDTYPE_NONE</a> → <a href="SDL_GamepadBindingType.html">SDL_GAMEPAD_BINDTYPE_NONE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_A</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_SOUTH</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_B</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_EAST</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_BACK</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_BACK</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_DPAD_DOWN</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_DPAD_DOWN</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_DPAD_LEFT</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_DPAD_LEFT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_DPAD_RIGHT</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_DPAD_RIGHT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_DPAD_UP</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_DPAD_UP</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_GUIDE</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_GUIDE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_INVALID</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_INVALID</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_LEFTSHOULDER</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_LEFT_SHOULDER</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_LEFTSTICK</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_LEFT_STICK</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_MAX</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_COUNT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_MISC1</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_MISC1</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_PADDLE1</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_RIGHT_PADDLE1</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_PADDLE2</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_LEFT_PADDLE1</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_PADDLE3</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_RIGHT_PADDLE2</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_PADDLE4</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_LEFT_PADDLE2</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_RIGHTSHOULDER</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_RIGHTSTICK</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_RIGHT_STICK</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_START</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_START</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_TOUCHPAD</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_TOUCHPAD</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_X</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_WEST</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GameControllerButton.html">SDL_CONTROLLER_BUTTON_Y</a> → <a href="SDL_GamepadButton.html">SDL_GAMEPAD_BUTTON_NORTH</a>
+<li>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_LEFT → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_LEFT</a>
+<li>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_PAIR → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_PAIR</a>
+<li>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_RIGHT → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_RIGHT</a>
+<li>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_PRO → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_PRO</a>
+<li>SDL_CONTROLLER_TYPE_PS3 → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_PS3</a>
+<li>SDL_CONTROLLER_TYPE_PS4 → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_PS4</a>
+<li>SDL_CONTROLLER_TYPE_PS5 → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_PS5</a>
+<li>SDL_CONTROLLER_TYPE_UNKNOWN → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_STANDARD</a>
+<li>SDL_CONTROLLER_TYPE_VIRTUAL → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_VIRTUAL</a>
+<li>SDL_CONTROLLER_TYPE_XBOX360 → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_XBOX360</a>
+<li>SDL_CONTROLLER_TYPE_XBOXONE → <a href="SDL_GamepadType.html">SDL_GAMEPAD_TYPE_XBOXONE</a>
 </ul>
 <h2><a name="#sdl_gestureh">SDL_gesture.h (ジェスチャ)</a></h2>
 ジェスチャAPIは削除された.

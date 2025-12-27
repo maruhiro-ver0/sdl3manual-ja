@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGamepad.html" title="1つ上">
+<title>SDL_GetGamepads</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGamepad.html">ゲームパッド</a> - SDL_GetGamepads
+<hr>
+<h1>SDL_GetGamepads</h1>
+接続されているゲームパッドの一覧を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gamepad.h">SDL3/SDL_gamepad.h</a>
+<h2>構文</h2>
+<code>SDL_JoystickID * SDL_GetGamepads(int *count);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>int *</td><td>count</td><td>戻されたゲームパッドの数の代入先へのポインタ. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(<a href="SDL_JoystickID.html">SDL_JoystickID</a> *) 0終端のジョイスティックインスタンスIDの配列を戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+これは不要になったとき<a href="SDL_free.html">SDL_free()</a>で解放する必要がある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_HasGamepad.html">SDL_HasGamepad</a>
+<li><a href="SDL_OpenGamepad.html">SDL_OpenGamepad</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepads">SDL_GetGamepads - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

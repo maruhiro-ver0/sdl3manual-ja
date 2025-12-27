@@ -19,7 +19,7 @@ SDLは, ジョイスティックを単にボタン, 方向, ハットスイッ�
 </p>
 <p>
 ジョイスティックとゲームパッドの違いは, ゲームパッドはボタンと方向がデバイス上のどこにあるかがわかることである.
-ゲームパッドでは「ボタン3」や「方向2」のような番号ではなく, デバイス上の標準的な位置で扱われる. (十字キー, ショルダーボタン, トリガー, A/B/X/Y(またはX/O/Square/Triangle)のような)
+ゲームパッドでは「ボタン3」や「方向2」のような番号ではなく, デバイス上の標準的な位置で扱われる. (十字キー, ショルダーボタン, トリガー, A/B/X/Y(または×/〇/□/△)のような)
 </p>
 <p>
 ジョイスティックは, SDLにデバイスの使用の詳細を伝える呪文のような文字列(これはあるハードウェアでは, ボタン2が押されると, 実際には十字キーの上などの情報である)でゲームパッドに変わる.
@@ -28,19 +28,19 @@ SDLは, ジョイスティックを単にボタン, 方向, ハットスイッ�
 SDLには多くの主要なコントローラの設定が組み込まれている. そしてSDLに組み込まれていない場合は, ユーザは環境変数を通して自分のコントローラの情報を追加できる.
 </p>
 <p>
-これらの関数を使うときは, SDL_INIT_GAMEPADフラグを付けてSDL_Init()を呼ぶ必要がある. これでSDLはシステムのゲームパッドをスキャンし, 正しいドライバを読み込むようになる.
+これらの関数を使うときは, SDL_INIT_GAMEPADフラグを付けて<a href="SDL_Init.html">SDL_Init()</a>を呼ぶ必要がある. これでSDLはシステムのゲームパッドをスキャンし, 正しいドライバを読み込むようになる.
 </p>
 <p>
-アプリケーションがバックグラウンドのときもゲームパッドのイベントを受信したい場合は, SDL_Init()を呼ぶ前にSDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTSヒントを設定する必要がある.
+アプリケーションがバックグラウンドのときもゲームパッドのイベントを受信したい場合は, <a href="SDL_Init.html">SDL_Init()</a>を呼ぶ前にSDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTSヒントを設定する必要がある.
 </p>
 <p>
 ゲームパッドには, 振動, カラーLED, タッチパッド, ジャイロなどの様々な追加機能がある.
 これらの機能に対応しているかは, コントローラとOSが対応しているかによる.
-実行中にLEDと振動が利用可能かは, SDL_GetGamepadProperties()を呼び, 可不可のプロパティをチェックするとわかる.
-タッチパッドはSDL_GetNumGamepadTouchpads()を呼ぶと, ジャイロと加速度センサーはSDL_GamepadHasSensor()を呼ぶとわかる.
+実行中にLEDと振動が利用可能かは, <a href="SDL_GetGamepadProperties.html">SDL_GetGamepadProperties()</a>を呼び, 可不可のプロパティをチェックするとわかる.
+タッチパッドは<a href="SDL_GetNumGamepadTouchpads.html">SDL_GetNumGamepadTouchpads()</a>を呼ぶと, ジャイロと加速度センサーは<a href="SDL_GamepadHasSensor.html">SDL_GamepadHasSensor()</a>を呼ぶとわかる.
 </p>
 <p>
-デフォルトではSDLは最も受け入れ可能なドライバを使用しようとする. しかし, OSのドライバはSDL_hints.hにある様々なジョイスティックのヒントで調整できる.
+デフォルトではSDLは最も受け入れ可能なドライバを使用しようとする. しかし, OSのドライバは<a href="CategoryHints.html">SDL_hints.h</a>にある様々なジョイスティックのヒントで調整できる.
 </p>
 <p>
 アプリケーションはゲームパッドのホットプラグインを行えるべきである.
@@ -72,56 +72,56 @@ macOSやWindowsなどのその他の環境では, Windows.Gaming.Inputを使っ�
 <li><a href="SDL_GetGamepadFirmwareVersion.html">SDL_GetGamepadFirmwareVersion</a> - 可能ならばオープンしたゲームパッドのファームウェアのバージョンを得る
 <li><a href="SDL_GetGamepadFromID.html">SDL_GetGamepadFromID</a> - オープンされている場合, インスタンスIDに関連付けられたSDL_Gamepadを得る
 <li><a href="SDL_GetGamepadFromPlayerIndex.html">SDL_GetGamepadFromPlayerIndex</a> - プレイヤーインデックス番号に関連付けられたSDL_Gamepadを得る
-<li><a href="SDL_GetGamepadGUIDForID.html">SDL_GetGamepadGUIDForID</a> - ゲームパッドの実装に依存するGUIDを得る
+<li><a href="SDL_GetGamepadGUIDForID.html">SDL_GetGamepadGUIDForID</a> - インスタンスIDからゲームパッドの実装に依存するGUIDを得る
 <li><a href="SDL_GetGamepadID.html">SDL_GetGamepadID</a> - オープンされたゲームパッドからインスタンスIDを得る
 <li><a href="SDL_GetGamepadJoystick.html">SDL_GetGamepadJoystick</a> - ゲームパッドの背後のジョイスティックを得る
-<li><a href="SDL_GetGamepadMapping.html">SDL_GetGamepadMapping</a> - ゲームパッドの現在のマッピングを得る
+<li><a href="SDL_GetGamepadMapping.html">SDL_GetGamepadMapping</a> - オープンしたゲームパッドの現在のマッピングを得る
 <li><a href="SDL_GetGamepadMappingForGUID.html">SDL_GetGamepadMappingForGUID</a> - 指定のGUIDのゲームパッドのマッピング文字列を得る
-<li><a href="SDL_GetGamepadMappingForID.html">SDL_GetGamepadMappingForID</a> - ゲームパッドのマッピング文字列を得る
+<li><a href="SDL_GetGamepadMappingForID.html">SDL_GetGamepadMappingForID</a> - インスタンスIDからゲームパッドのマッピング文字列を得る
 <li><a href="SDL_GetGamepadMappings.html">SDL_GetGamepadMappings</a> - ゲームパッドマッピングの一覧を得る
 <li><a href="SDL_GetGamepadName.html">SDL_GetGamepadName</a> - オープンしたゲームパッドから実装に依存する名前を得る
-<li><a href="SDL_GetGamepadNameForID.html">SDL_GetGamepadNameForID</a> - ゲームパッドの実装に依存する名前を得る
+<li><a href="SDL_GetGamepadNameForID.html">SDL_GetGamepadNameForID</a> - インスタンスIDからゲームパッドの実装に依存する名前を得る
 <li><a href="SDL_GetGamepadPath.html">SDL_GetGamepadPath</a> - オープンしたゲームパッドの実装に依存するパスを得る
-<li><a href="SDL_GetGamepadPathForID.html">SDL_GetGamepadPathForID</a> - ゲームパッドの実装に依存するパスを得る
+<li><a href="SDL_GetGamepadPathForID.html">SDL_GetGamepadPathForID</a> - インスタンスIDからゲームパッドの実装に依存するパスを得る
 <li><a href="SDL_GetGamepadPlayerIndex.html">SDL_GetGamepadPlayerIndex</a> - オープンしたゲームパッドのプレイヤーインデックス番号を得る
-<li><a href="SDL_GetGamepadPlayerIndexForID.html">SDL_GetGamepadPlayerIndexForID</a> - ゲームパッドのプレイヤーインデックス番号を得る
-<li>SDL_GetGamepadPowerInfo
-<li>SDL_GetGamepadProduct
-<li>SDL_GetGamepadProductForID
-<li>SDL_GetGamepadProductVersion
-<li>SDL_GetGamepadProductVersionForID
-<li>SDL_GetGamepadProperties
-<li>SDL_GetGamepads
-<li>SDL_GetGamepadSensorData
-<li>SDL_GetGamepadSensorDataRate
-<li>SDL_GetGamepadSerial
-<li>SDL_GetGamepadSteamHandle
-<li>SDL_GetGamepadStringForAxis
-<li>SDL_GetGamepadStringForButton
-<li>SDL_GetGamepadStringForType
-<li>SDL_GetGamepadTouchpadFinger
-<li>SDL_GetGamepadType
-<li>SDL_GetGamepadTypeForID
-<li>SDL_GetGamepadTypeFromString
-<li>SDL_GetGamepadVendor
-<li>SDL_GetGamepadVendorForID
-<li>SDL_GetNumGamepadTouchpadFingers
-<li>SDL_GetNumGamepadTouchpads
-<li>SDL_GetRealGamepadType
-<li>SDL_GetRealGamepadTypeForID
-<li>SDL_HasGamepad
-<li>SDL_IsGamepad
+<li><a href="SDL_GetGamepadPlayerIndexForID.html">SDL_GetGamepadPlayerIndexForID</a> - インスタンスIDからゲームパッドのプレイヤーインデックス番号を得る
+<li><a href="SDL_GetGamepadPowerInfo.html">SDL_GetGamepadPowerInfo</a> - ゲームパッドのバッテリー状態を得る
+<li><a href="SDL_GetGamepadProduct.html">SDL_GetGamepadProduct</a> - オープンしたゲームパッドからUSBプロダクトIDを得る
+<li><a href="SDL_GetGamepadProductForID.html">SDL_GetGamepadProductForID</a> - インスタンスIDからゲームパッドのUSBプロダクトIDを得る
+<li><a href="SDL_GetGamepadProductVersion.html">SDL_GetGamepadProductVersion</a> - オープンしたゲームパッドのプロダクトバージョンを得る
+<li><a href="SDL_GetGamepadProductVersionForID.html">SDL_GetGamepadProductVersionForID</a> - インスタンスIDからゲームパッドのプロダクトバージョンを得る
+<li><a href="SDL_GetGamepadProperties.html">SDL_GetGamepadProperties</a> - ゲームパッドに関連付けられたプロパティを得る
+<li><a href="SDL_GetGamepads.html">SDL_GetGamepads</a> - 接続されているゲームパッドの一覧を得る
+<li><a href="SDL_GetGamepadSensorData.html">SDL_GetGamepadSensorData</a> - ゲームパッドのセンサー状態を得る
+<li><a href="SDL_GetGamepadSensorDataRate.html">SDL_GetGamepadSensorDataRate</a> - ゲームパッドのセンサーのデータレート(1秒当たりのイベント数)を得る
+<li><a href="SDL_GetGamepadSerial.html">SDL_GetGamepadSerial</a> - オープンしたゲームパッドのシリアル番号を得る
+<li><a href="SDL_GetGamepadSteamHandle.html">SDL_GetGamepadSteamHandle</a> - オープンしたゲームパッドのSteam入力ハンドルを得る
+<li><a href="SDL_GetGamepadStringForAxis.html">SDL_GetGamepadStringForAxis</a> - SDL_GamepadAxis列挙体の値から文字列を得る
+<li><a href="SDL_GetGamepadStringForButton.html">SDL_GetGamepadStringForButton</a> - SDL_GamepadButton列挙体の値から文字列を得る
+<li><a href="SDL_GetGamepadStringForType.html">SDL_GetGamepadStringForType</a> - SDL_GamepadType列挙体の値から文字列を得る
+<li><a href="SDL_GetGamepadTouchpadFinger.html">SDL_GetGamepadTouchpadFinger</a> - ゲームパッドのタッチパッド上の指の状態を得る
+<li><a href="SDL_GetGamepadType.html">SDL_GetGamepadType</a> - オープンしたゲームパッドの種類を得る
+<li><a href="SDL_GetGamepadTypeForID.html">SDL_GetGamepadTypeForID</a> - インスタンスIDからゲームパッドの種類を得る
+<li><a href="SDL_GetGamepadTypeFromString.html">SDL_GetGamepadTypeFromString</a> - 文字列からSDL_GamepadType列挙体の値を得る
+<li><a href="SDL_GetGamepadVendor.html">SDL_GetGamepadVendor</a> - オープンしたゲームパッドのUSBベンダーIDを得る
+<li><a href="SDL_GetGamepadVendorForID.html">SDL_GetGamepadVendorForID</a> - インスタンスIDからゲームパッドのUSBベンダーIDを得る
+<li><a href="SDL_GetNumGamepadTouchpadFingers.html">SDL_GetNumGamepadTouchpadFingers</a> - ゲームパッドのタッチパッドで同時に認識できる指の数を得る
+<li><a href="SDL_GetNumGamepadTouchpads.html">SDL_GetNumGamepadTouchpads</a> - ゲームパッドのタッチパッド数を得る
+<li><a href="SDL_GetRealGamepadType.html">SDL_GetRealGamepadType</a> - オープンしたマッピングの上書きを無視したゲームパッドの種類を得る
+<li><a href="SDL_GetRealGamepadTypeForID.html">SDL_GetRealGamepadTypeForID</a> - インスタンスIDからマッピングの上書きを無視したゲームパッドの種類を得る
+<li><a href="SDL_HasGamepad.html">SDL_HasGamepad</a> - ゲームパッドが接続されているかチェックする
+<li><a href="SDL_IsGamepad.html">SDL_IsGamepad</a> - ジョイスティックがゲームパッドインターフェースに対応しているかチェックする
 <li><a href="SDL_OpenGamepad.html">SDL_OpenGamepad</a> - ゲームパッドを使用するためにオープンする
-<li>SDL_ReloadGamepadMappings
-<li>SDL_RumbleGamepad
-<li>SDL_RumbleGamepadTriggers
-<li>SDL_SendGamepadEffect
-<li>SDL_SetGamepadEventsEnabled
-<li>SDL_SetGamepadLED
-<li>SDL_SetGamepadMapping
-<li>SDL_SetGamepadPlayerIndex
-<li>SDL_SetGamepadSensorEnabled
-<li>SDL_UpdateGamepads
+<li><a href="SDL_ReloadGamepadMappings.html">SDL_ReloadGamepadMappings</a> - ゲームパッドのマッピングデータベースを初期状態に戻す
+<li><a href="SDL_RumbleGamepad.html">SDL_RumbleGamepad</a> - ジョイスティックの振動を開始する
+<li><a href="SDL_RumbleGamepadTriggers.html">SDL_RumbleGamepadTriggers</a> - ゲームパッドのトリガーの振動を開始する
+<li><a href="SDL_SendGamepadEffect.html">SDL_SendGamepadEffect</a> - ゲームパッドにエフェクトパケットを送信する
+<li><a href="SDL_SetGamepadEventsEnabled.html">SDL_SetGamepadEventsEnabled</a> - ゲームパッドイベント処理の状態を設定する
+<li><a href="SDL_SetGamepadLED.html">SDL_SetGamepadLED</a> - ジョイスティックのLEDの色を設定する
+<li><a href="SDL_SetGamepadMapping.html">SDL_SetGamepadMapping</a> - ジョイスティックまたはゲームパッドのマッピングを設定する
+<li><a href="SDL_SetGamepadPlayerIndex.html">SDL_SetGamepadPlayerIndex</a> - オープンされたゲームパッドにプレイヤーインデックス番号を設定する
+<li><a href="SDL_SetGamepadSensorEnabled.html">SDL_SetGamepadSensorEnabled</a> - ゲームパッドのセンサーのデータ報告の有効状態を設定する
+<li><a href="SDL_UpdateGamepads.html">SDL_UpdateGamepads</a> - イベントループを使用せずに手動でゲームパッドを更新する
 </ol>
 <h2>型</h2>
 <ol>
@@ -129,15 +129,15 @@ macOSやWindowsなどのその他の環境では, Windows.Gaming.Inputを使っ�
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>SDL_GamepadBinding
+<li><a href="SDL_GamepadBinding.html">SDL_GamepadBinding</a> - ジョイスティックとゲームパッドの間のマッピングの構造体
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_GamepadAxis
-<li>SDL_GamepadBindingType
-<li>SDL_GamepadButton
-<li>SDL_GamepadButtonLabel
-<li>SDL_GamepadType
+<li><a href="SDL_GamepadAxis.html">SDL_GamepadAxis</a> - ゲームパッドの方向の列挙体
+<li><a href="SDL_GamepadBindingType.html">SDL_GamepadBindingType</a> - ゲームパッドのバインドの種類の列挙体
+<li><a href="SDL_GamepadButton.html">SDL_GamepadButton</a> - ゲームパッドのボタンの列挙体
+<li><a href="SDL_GamepadButtonLabel.html">SDL_GamepadButtonLabel</a> - ゲームパッドのボタンのラベルの列挙体
+<li><a href="SDL_GamepadType.html">SDL_GamepadType</a> - 一般的なゲームパッドの種類の列挙体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryGamepad">SDL3/CategoryGamepad - SDL Wiki</a>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGamepad.html" title="1つ上">
+<title>SDL_GetGamepadTypeFromString</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGamepad.html">ゲームパッド</a> - SDL_GetGamepadTypeFromString
+<hr>
+<h1>SDL_GetGamepadTypeFromString</h1>
+文字列から<a href="SDL_GamepadType.html">SDL_GamepadType</a>列挙体の値を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gamepad.h">SDL3/SDL_gamepad.h</a>
+<h2>構文</h2>
+<code>SDL_GamepadType SDL_GetGamepadTypeFromString(const char *str);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const char *</td><td>str</td><td><a href="SDL_GamepadType.html">SDL_GamepadType</a>のゲームパッドの種類を表す文字列</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(<a href="SDL_GamepadType.html">SDL_GamepadType</a>) 渡した文字列に対応する<a href="SDL_GamepadType.html">SDL_GamepadType</a>列挙体の値を戻す. 一致しない場合, SDL_GAMEPAD_TYPE_INVALIDを戻す.
+</p>
+<h2>詳細</h2>
+<p>
+この関数は, 下層のジョイスティックデバイスのSDL_Gamepadマッピング文字列を一致するSDL_Gamepadに変換するために内部で使用する.
+通常は, SDL_Gamepadマッピングの構文解析を自分自身で作成しない限り, この関数を使用することはない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetGamepadStringForType.html">SDL_GetGamepadStringForType</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadTypeFromString">SDL_GetGamepadTypeFromString - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

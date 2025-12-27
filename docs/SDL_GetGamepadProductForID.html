@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGamepad.html" title="1つ上">
+<title>SDL_GetGamepadProductForID</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGamepad.html">ゲームパッド</a> - SDL_GetGamepadProductForID
+<hr>
+<h1>SDL_GetGamepadProductForID</h1>
+インスタンスIDからゲームパッドのUSBプロダクトIDを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gamepad.h">SDL3/SDL_gamepad.h</a>
+<h2>構文</h2>
+<code>Uint16 SDL_GetGamepadProductForID(SDL_JoystickID instance_id);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_JoystickID.html">SDL_JoystickID</a></td><td>instance_id</td><td>ジョイスティックインスタンスID</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(Uint16) ゲームパッドのUSBプロダクトIDを戻す. インスタンスIDが無効のとき, この関数はNULLを戻す.
+</p>
+<h2>詳細</h2>
+<p>
+この関数はゲームパッドをオープンする前でも呼べる.
+プロダクトIDを得られない場合, この関数は0を戻す.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetGamepadProduct.html">SDL_GetGamepadProduct</a>
+<li><a href="SDL_GetGamepads.html">SDL_GetGamepads</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GetGamepadProductForID">SDL_GetGamepadProductForID - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

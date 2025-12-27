@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGamepad.html" title="1つ上">
+<title>SDL_GamepadBinding</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGamepad.html">ゲームパッド</a> - SDL_GamepadBinding
+<hr>
+<h1>SDL_GamepadBinding</h1>
+ジョイスティックとゲームパッドの間のマッピングの構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gamepad.h">SDL3/SDL_gamepad.h</a>
+<h2>構文</h2>
+<table border="1">
+<tr><td><a href="SDL_GamepadBindingType.html">SDL_GamepadBindingType</a></td><td>input_type</td><td>ジョイスティック(入力)のバインドの種類</td></tr>
+<tr><td rowspan="6">(共用体)</td><td rowspan="6">input</td><td rowspan="6">入力</td><td>int</td><td>button</td><td>ボタン</td></tr>
+<tr><td rowspan="3">(構造体)</td><td rowspan="3">axis</td><td rowspan="3">方向</td><td rowspan="3">int</td><td>axis</td><td>方向</td></tr>
+<tr><td>axis_min</td><td></td></tr>
+<tr><td>axis_max</td><td></td></tr>
+<tr><td rowspan="2">(構造体)</td><td rowspan="2">hat</td><td rowspan="2">ハット</td><td>int</td><td>hat</td><td></td></tr>
+<tr><td>int</td><td>hat_mask</td><td></td></tr>
+<tr><td><a href="SDL_GamepadBindingType.html">SDL_GamepadBindingType</a></td><td>output_type</td><td>ゲームパッド(出力)のバインドの種類</td></tr>
+<tr><td rowspan="4">(共用体)</td><td rowspan="4">output</td><td rowspan="4">出力</td><td><a href="SDL_GamepadButton.html">SDL_GamepadButton</a></td><td>button</td><td>ボタン</td></tr>
+<tr><td rowspan="3">(構造体)</td><td rowspan="3">axis</td><td rowspan="3">方向</td><td><a href="SDL_GamepadAxis.html">SDL_GamepadAxis</a></td><td>axis</td><td>方向</td></tr>
+<tr><td>int</td><td>axis_min</td><td></td></tr>
+<tr><td>int</td><td>axis_max</td><td></td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+ゲームパッドは複数のバインド(例えばジョイスティックの5番ボタンが押されたとき, それをゲームパッドの「スタート」ボタンとして扱う)の集まりである.
+</p>
+<p>
+SDLには多くのメジャーなコントローラーのバインドが組み込まれていて, さらにシンプルなテキスト文字列で追加することもできる.
+この文字列はデータの操作を簡単にするためにこの構造体の集まりに構文解析される.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetGamepadBindings.html">SDL_GetGamepadBindings</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GamepadBinding">SDL_GamepadBinding - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
