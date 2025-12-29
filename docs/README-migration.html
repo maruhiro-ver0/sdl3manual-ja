@@ -1514,47 +1514,47 @@ SDL3には静的リンクするlibSDLmainはなくなった.
 <h2><a name="#sdl_metalh">SDL_metal.h (Metalグラフィック)</a></h2>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Metal_GetDrawableSize.html">SDL_Metal_GetDrawableSize()</a>は削除された.
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowSizeInPixels">SDL_GetWindowSizeInPixels()</a>が代わりとなる.
+<a href="SDL_GetWindowSizeInPixels.html">SDL_GetWindowSizeInPixels()</a>が代わりとなる.
 </p>
 <h2><a name="#sdl_mouseh">SDL_mouse.h (マウス)</a></h2>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ShowCursor.html">SDL_ShowCursor()</a>は3つの関数<a href="https://wiki.libsdl.org/SDL3/SDL_ShowCursor">SDL_ShowCursor()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_HideCursor">SDL_HideCursor()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_CursorVisible">SDL_CursorVisible()</a>に分けられた.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ShowCursor.html">SDL_ShowCursor()</a>は3つの関数<a href="SDL_ShowCursor.html">SDL_ShowCursor()</a>, <a href="SDL_HideCursor.html">SDL_HideCursor()</a>, <a href="SDL_CursorVisible.html">SDL_CursorVisible()</a>に分けられた.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetMouseState">SDL_GetMouseState()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetGlobalMouseState">SDL_GetGlobalMouseState()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_GetRelativeMouseState">SDL_GetRelativeMouseState()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_WarpMouseInWindow">SDL_WarpMouseInWindow()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_WarpMouseGlobal">SDL_WarpMouseGlobal()</a>は, 環境が対応していればサブピクセルを表すために浮動小数点のマウス位置を使用するようになった.
+<a href="SDL_GetMouseState.html">SDL_GetMouseState()</a>, <a href="SDL_GetGlobalMouseState.html">SDL_GetGlobalMouseState()</a>, <a href="SDL_GetRelativeMouseState.html">SDL_GetRelativeMouseState()</a>, <a href="SDL_WarpMouseInWindow.html">SDL_WarpMouseInWindow()</a>, <a href="SDL_WarpMouseGlobal.html">SDL_WarpMouseGlobal()</a>は, 環境が対応していればサブピクセルを表すために浮動小数点のマウス位置を使用するようになった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SystemCursor</a>の項目名はCSSのマウスカーソル名と合うように変更された.
+<a href="SDL_SystemCursor.html">SDL_SystemCursor</a>の項目名はCSSのマウスカーソル名と合うように変更された.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FreeCursor.html">SDL_FreeCursor()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_DestroyCursor">SDL_DestroyCursor()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FreeCursor.html">SDL_FreeCursor()</a> → <a href="SDL_DestroyCursor.html">SDL_DestroyCursor()</a>
 </ul>
 <p>
 以下の関数は削除された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetRelativeMouseMode.html">SDL_SetRelativeMouseMode()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowRelativeMouseMode">SDL_SetWindowRelativeMouseMode()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetRelativeMouseMode.html">SDL_GetRelativeMouseMode()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowRelativeMouseMode">SDL_GetWindowRelativeMouseMode()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetRelativeMouseMode.html">SDL_SetRelativeMouseMode()</a> - <a href="SDL_SetWindowRelativeMouseMode.html">SDL_SetWindowRelativeMouseMode()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetRelativeMouseMode.html">SDL_GetRelativeMouseMode()</a> - <a href="SDL_GetWindowRelativeMouseMode.html">SDL_GetWindowRelativeMouseMode()</a>に置き換えられた
 </ul>
 <p>
 以下のシンボルの名前は次の様に変更された:
 </p>
 <ul>
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_BUTTON.html">SDL_BUTTON</a> → SDL_BUTTON_MASK
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_NUM_SYSTEM_CURSORS</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_COUNT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_ARROW</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_DEFAULT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_HAND</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_POINTER</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_IBEAM</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_TEXT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_NO</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_NOT_ALLOWED</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZEALL</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_MOVE</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZENESW</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_NESW_RESIZE</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZENS</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_NS_RESIZE</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZENWSE</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_NWSE_RESIZE</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZEWE</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_EW_RESIZE</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_WAITARROW</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SystemCursor">SDL_SYSTEM_CURSOR_PROGRESS</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_NUM_SYSTEM_CURSORS</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_COUNT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_ARROW</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_DEFAULT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_HAND</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_POINTER</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_IBEAM</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_TEXT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_NO</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_NOT_ALLOWED</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZEALL</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_MOVE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZENESW</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_NESW_RESIZE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZENS</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_NS_RESIZE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZENWSE</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_NWSE_RESIZE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_SIZEWE</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_EW_RESIZE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_WAITARROW</a> → <a href="SDL_SystemCursor.html">SDL_SYSTEM_CURSOR_PROGRESS</a>
 </ul>
 <h2><a name="#sdl_mutexh">SDL_mutex.h (同期プリミティブ)</a></h2>
 <p>
@@ -2683,25 +2683,25 @@ WindowsとX11のイベントは<a href="https://wiki.libsdl.org/SDL3/SDL_SetWind
 </p>
 <h2><a name="#sdl_touchh">SDL_touch.h (タッチデバイス)</a></h2>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetTouchName.html">SDL_GetTouchName</a>は<a href="https://wiki.libsdl.org/SDL3/SDL_GetTouchDeviceName">SDL_GetTouchDeviceName()</a>になり, インデックス番号の代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_TouchID">SDL_TouchID</a>を取るようになった.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetTouchName.html">SDL_GetTouchName</a>は<a href="SDL_GetTouchDeviceName.html">SDL_GetTouchDeviceName()</a>になり, インデックス番号の代わりに<a href="SDL_TouchID.html">SDL_TouchID</a>を取るようになった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_TouchID">SDL_TouchID</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_FingerID">SDL_FingerID</a>はUint32に変更され, 無効な値は0になった.
+<a href="SDL_TouchID.html">SDL_TouchID</a>と<a href="SDL_FingerID.html">SDL_FingerID</a>はUint32に変更され, 無効な値は0になった.
 </p>
 <p>
-インデックス番号を用いてタッチデバイスを反復処理するのではなく, 利用可能なデバイスを得る新しい関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetTouchDevices">SDL_GetTouchDevices()</a>も存在する.
+インデックス番号を用いてタッチデバイスを反復処理するのではなく, 利用可能なデバイスを得る新しい関数<a href="SDL_GetTouchDevices.html">SDL_GetTouchDevices()</a>も存在する.
 </p>
 <p>
-インデックス番号を用いてタッチした指を反復処理するのではなく, 現在のアクティブな指を得る新しい関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetTouchFingers">SDL_GetTouchFingers()</a>も存在する.
+インデックス番号を用いてタッチした指を反復処理するのではなく, 現在のアクティブな指を得る新しい関数<a href="SDL_GetTouchFingers.html">SDL_GetTouchFingers()</a>も存在する.
 </p>
 <p>
 以下の関数は削除された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetNumTouchDevices.html">SDL_GetNumTouchDevices()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetTouchDevices">SDL_GetTouchDevices()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetNumTouchFingers.html">SDL_GetNumTouchFingers()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetTouchFingers">SDL_GetTouchFingers()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetTouchDevice.html">SDL_GetTouchDevice()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetTouchDevices">SDL_GetTouchDevices()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetTouchFinger.html">SDL_GetTouchFinger()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetTouchFingers">SDL_GetTouchFingers()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetNumTouchDevices.html">SDL_GetNumTouchDevices()</a> - <a href="SDL_GetTouchDevices.html">SDL_GetTouchDevices()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetNumTouchFingers.html">SDL_GetNumTouchFingers()</a> - <a href="SDL_GetTouchFingers.html">SDL_GetTouchFingers()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetTouchDevice.html">SDL_GetTouchDevice()</a> - <a href="SDL_GetTouchDevices.html">SDL_GetTouchDevices()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetTouchFinger.html">SDL_GetTouchFinger()</a> - <a href="SDL_GetTouchFingers.html">SDL_GetTouchFingers()</a>に置き換えられた
 </ul>
 <h2><a name="#sdl_versionh">SDL_version.h (バージョン)</a></h2>
 <p>

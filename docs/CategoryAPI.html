@@ -169,7 +169,7 @@
 <li><a href="SDL_CreateWindow.html">SDL_CreateWindow</a> - 大きさとフラグを指定してウィンドウを生成する
 <li>SDL_CreateWindowAndRenderer
 <li><a href="SDL_CreateWindowWithProperties.html">SDL_CreateWindowWithProperties</a> - プロパティを指定してウィンドウを生成する
-<li>SDL_CursorVisible
+<li><a href="SDL_CursorVisible.html">SDL_CursorVisible</a> - マウスカーソルが表示されているかを得る
 <li>SDL_DateTimeToTime
 <li>SDL_Delay
 <li>SDL_DelayNS
@@ -452,10 +452,10 @@
 <li>SDL_GetMaxHapticEffects
 <li>SDL_GetMaxHapticEffectsPlaying
 <li>SDL_GetMemoryFunctions
-<li>SDL_GetMice
+<li><a href="SDL_GetMice.html">SDL_GetMice</a> - 接続されたマウスの一覧を得る
 <li><a href="SDL_GetModState.html">SDL_GetModState</a> - 現在の修飾キーの状態を得る
 <li><a href="SDL_GetMouseFocus.html">SDL_GetMouseFocus</a> - 現在マウスフォーカスのあるウィンドウを得る
-<li>SDL_GetMouseNameForID
+<li><a href="SDL_GetMouseNameForID.html">SDL_GetMouseNameForID</a> - マウスの名前を得る
 <li><a href="SDL_GetMouseState.html">SDL_GetMouseState</a> - SDLがキャッシュした同期したマウスボタンの状態とウィンドウ上のマウスカーソルの位置を得る
 <li><a href="SDL_GetNaturalDisplayOrientation.html">SDL_GetNaturalDisplayOrientation</a> - 回転していないディスプレイの向きを得る
 <li>SDL_GetNumAllocations
@@ -502,7 +502,7 @@
 <li>SDL_GetRectIntersectionFloat
 <li>SDL_GetRectUnion
 <li>SDL_GetRectUnionFloat
-<li>SDL_GetRelativeMouseState
+<li><a href="SDL_GetRelativeMouseState.html">SDL_GetRelativeMouseState</a> - SDLがキャッシュした同期したマウスボタンの状態と最後に呼び出したときからのマウスの移動量を得る
 <li>SDL_GetRenderClipRect
 <li>SDL_GetRenderColorScale
 <li>SDL_GetRenderDrawBlendMode
@@ -578,10 +578,10 @@
 <li>SDL_GetTicks
 <li>SDL_GetTicksNS
 <li>SDL_GetTLS
-<li>SDL_GetTouchDeviceName
-<li>SDL_GetTouchDevices
-<li>SDL_GetTouchDeviceType
-<li>SDL_GetTouchFingers
+<li><a href="SDL_GetTouchDeviceName.html">SDL_GetTouchDeviceName</a> - ドライバが報告したタッチデバイスの名前を得る
+<li><a href="SDL_GetTouchDevices.html">SDL_GetTouchDevices</a> - 接続されたタッチデバイスの一覧を得る
+<li><a href="SDL_GetTouchDeviceType.html">SDL_GetTouchDeviceType</a> - タッチデバイスの種類を得る
+<li><a href="SDL_GetTouchFingers.html">SDL_GetTouchFingers</a> - タッチデバイス上の指の一覧を得る
 <li>SDL_GetTrayEntries
 <li>SDL_GetTrayEntryChecked
 <li>SDL_GetTrayEntryEnabled
@@ -616,7 +616,7 @@
 <li><a href="SDL_GetWindowProgressState.html">SDL_GetWindowProgressState</a> - タスクバーアイコンのプログレスバーの状態を得る
 <li><a href="SDL_GetWindowProgressValue.html">SDL_GetWindowProgressValue</a> - タスクバーアイコンのプログレスバーの値を得る
 <li><a href="SDL_GetWindowProperties.html">SDL_GetWindowProperties</a> - ウィンドウのプロパティを得る
-<li>SDL_GetWindowRelativeMouseMode
+<li><a href="SDL_GetWindowRelativeMouseMode.html">SDL_GetWindowRelativeMouseMode</a> - ウィンドウの相対マウスモードが有効かチェックする
 <li><a href="SDL_GetWindows.html">SDL_GetWindows</a> - 有効なウィンドウの一覧を得る
 <li><a href="SDL_GetWindowSafeArea.html">SDL_GetWindowSafeArea</a> - ウィンドウのセーフエリアを得る
 <li><a href="SDL_GetWindowSize.html">SDL_GetWindowSize</a> - ウィンドウのクライアント領域のサイズを得る
@@ -665,7 +665,7 @@
 <li><a href="SDL_HasLASX.html">SDL_HasLASX</a> - CPUにLASX (LOONGARCH SIMD)仕様があるかチェックする
 <li><a href="SDL_HasLSX.html">SDL_HasLSX</a> - CPUにLSX (LOONGARCH SIMD)仕様があるかチェックする
 <li><a href="SDL_HasMMX.html">SDL_HasMMX</a> - CPUにMMX仕様があるかチェックする
-<li>SDL_HasMouse
+<li><a href="SDL_HasMouse.html">SDL_HasMouse</a> - マウスが接続されているかチェックする
 <li><a href="SDL_HasNEON.html">SDL_HasNEON</a> - CPUにNEON (ARM SIMD)仕様があるかチェックする
 <li><a href="SDL_HasPrimarySelectionText.html">SDL_HasPrimarySelectionText</a> - プライマリ選択されたテキストが存在し, かつ空でないかチェックする
 <li><a href="SDL_HasProperty.html">SDL_HasProperty</a> - プロパティグループにプロパティが存在するを得る
@@ -700,7 +700,7 @@
 <li><a href="SDL_hid_send_feature_report.html">SDL_hid_send_feature_report</a> - HIDデバイスに機能レポートを送信する
 <li><a href="SDL_hid_set_nonblocking.html">SDL_hid_set_nonblocking</a> - デバイスハンドルのノンブロッキングモードを設定する
 <li><a href="SDL_hid_write.html">SDL_hid_write</a> - HIDデバイスに出力レポートを書き込む
-<li>SDL_HideCursor
+<li><a href="SDL_HideCursor.html">SDL_HideCursor</a> - マウスカーソルを非表示にする
 <li><a href="SDL_HideWindow.html">SDL_HideWindow</a> - ウィンドウを隠す
 <li>SDL_iconv
 <li>SDL_iconv_close
@@ -1000,7 +1000,7 @@
 <li><a href="SDL_SetClipboardData.html">SDL_SetClipboardData</a> - OSにクリップボードデータを提供する
 <li><a href="SDL_SetClipboardText.html">SDL_SetClipboardText</a> - クリップボードにUTF-8テキストを設定する
 <li>SDL_SetCurrentThreadPriority
-<li>SDL_SetCursor
+<li><a href="SDL_SetCursor.html">SDL_SetCursor</a> - マウスカーソルを設定する
 <li>SDL_SetDefaultTextureScaleMode
 <li>SDL_setenv_unsafe
 <li>SDL_SetEnvironmentVariable
@@ -1053,7 +1053,7 @@
 <li><a href="SDL_SetPointerProperty.html">SDL_SetPointerProperty</a> - プロパティグループのポインタ型プロパティを設定する
 <li><a href="SDL_SetPointerPropertyWithCleanup.html">SDL_SetPointerPropertyWithCleanup</a> - プロパティグループのポインタ型プロパティをプロパティが削除されたとき呼ばれる終了処理関数付きで設定する
 <li><a href="SDL_SetPrimarySelectionText.html">SDL_SetPrimarySelectionText</a> - プライマリ選択にUTF-8テキストを設定する
-<li>SDL_SetRelativeMouseTransform
+<li><a href="SDL_SetRelativeMouseTransform.html">SDL_SetRelativeMouseTransform</a> - 相対マウスの入力を変換するユーザ定義の関数を設定する
 <li>SDL_SetRenderClipRect
 <li>SDL_SetRenderColorScale
 <li>SDL_SetRenderDrawBlendMode
@@ -1110,7 +1110,7 @@
 <li><a href="SDL_SetWindowPosition.html">SDL_SetWindowPosition</a> - ウィンドウの位置の設定を要求する
 <li><a href="SDL_SetWindowProgressState.html">SDL_SetWindowProgressState</a> - タスクバーアイコンのプログレスバーの状態を設定する
 <li><a href="SDL_SetWindowProgressValue.html">SDL_SetWindowProgressValue</a> - タスクバーアイコンのプログレスバーの値を設定する
-<li>SDL_SetWindowRelativeMouseMode
+<li><a href="SDL_SetWindowRelativeMouseMode.html">SDL_SetWindowRelativeMouseMode</a> - ウィンドウの相対マウスモードを設定する
 <li><a href="SDL_SetWindowResizable.html">SDL_SetWindowResizable</a> - ウィンドウのサイズ変更許可状態を設定する
 <li><a href="SDL_SetWindowShape.html">SDL_SetWindowShape</a> - 透過ウィンドウの形状を設定する
 <li><a href="SDL_SetWindowSize.html">SDL_SetWindowSize</a> - ウィンドウのクライアント領域のサイズの設定を要求する
@@ -1121,7 +1121,7 @@
 <li>SDL_ShouldInit
 <li>SDL_ShouldQuit
 <li>SDL_ShowAndroidToast
-<li>SDL_ShowCursor
+<li><a href="SDL_ShowCursor.html">SDL_ShowCursor</a> - マウスカーソルを表示する
 <li><a href="SDL_ShowFileDialogWithProperties.html">SDL_ShowFileDialogWithProperties</a> - プロパティを指定してファイルダイアログを生成し表示する
 <li><a href="SDL_ShowMessageBox.html">SDL_ShowMessageBox</a> - モーダルなメッセージボックスを生成する
 <li><a href="SDL_ShowOpenFileDialog.html">SDL_ShowOpenFileDialog</a> - ユーザにファイルシステムのファイルを選択させるダイアログを表示する
@@ -1263,8 +1263,8 @@
 <li>SDL_WaitSemaphore
 <li>SDL_WaitSemaphoreTimeout
 <li>SDL_WaitThread
-<li>SDL_WarpMouseGlobal
-<li>SDL_WarpMouseInWindow
+<li><a href="SDL_WarpMouseGlobal.html">SDL_WarpMouseGlobal</a> - マウスカーソルを画面上の指定の座標に移動させる
+<li><a href="SDL_WarpMouseInWindow.html">SDL_WarpMouseInWindow</a> - マウスカーソルをウィンドウ内の指定の位置へ移動する
 <li><a href="SDL_WasInit.html">SDL_WasInit</a> - 初期化された個別のサブシステムのマスクを得る
 <li>SDL_wcscasecmp
 <li>SDL_wcscmp
@@ -1326,7 +1326,7 @@
 <li>SDL_CompareCallback
 <li>SDL_CompareCallback_r
 <li>SDL_Condition
-<li>SDL_Cursor
+<li><a href="SDL_Cursor.html">SDL_Cursor</a> - SDLマウスカーソルの型
 <li><a href="SDL_DialogFileCallback.html">SDL_DialogFileCallback</a> - ファイルダイアログ関数で使用するコールバックの型
 <li><a href="SDL_DisplayID.html">SDL_DisplayID</a> - 現在システムに接続されているディスプレイのユニークIDの型
 <li><a href="SDL_WindowID.html">SDL_WindowID</a> - ウィンドウユニークIDの型
@@ -1342,10 +1342,10 @@
 <li><a href="SDL_EnumeratePropertiesCallback.html">SDL_EnumeratePropertiesCallback</a> - プロパティグループのプロパティの列挙で使用されるコールバックの型
 <li>SDL_Environment
 <li><a href="SDL_EventFilter.html">SDL_EventFilter</a> - イベントキューを監視するためのコールバック関数の型
-<li>SDL_FingerID
+<li><a href="SDL_FingerID.html">SDL_FingerID</a> - タッチデバイス上の1本の指のユニークIDの型
 <li>SDL_free_func
 <li>SDL_FunctionPointer
-<li>SDL_Gamepad
+<li><a href="SDL_Gamepad.html">SDL_Gamepad</a> - SDLゲームパッドの識別のために使用される型
 <li><a href="SDL_GLContext.html">SDL_GLContext</a> - OpenGLコンテキストの不透明ハンドル型
 <li><a href="SDL_GLContextFlag.html">SDL_GLContextFlag</a> - SDL_GL_CONTEXT_FLAGSで設定可能なフラグの型
 <li><a href="SDL_GLContextReleaseFlag.html">SDL_GLContextReleaseFlag</a> - SDL_GL_CONTEXT_RELEASE_BEHAVIORで設定可能なフラグの型
@@ -1394,13 +1394,13 @@
 <li><a href="SDL_MessageBoxButtonFlags.html">SDL_MessageBoxButtonFlags</a> - SDL_MessageBoxButtonDataで使われるフラグの型
 <li><a href="SDL_MessageBoxFlags.html">SDL_MessageBoxFlags</a> - メッセージボックスフラグの型
 <li>SDL_MetalView
-<li>SDL_MouseButtonFlags
-<li>SDL_MouseID
-<li>SDL_MouseMotionTransformCallback
+<li><a href="SDL_MouseButtonFlags.html">SDL_MouseButtonFlags</a> - SDL_GetMouseState等が報告するマウスボタンのビットマスクの型
+<li><a href="SDL_MouseID.html">SDL_MouseID</a> - システムに接続されたマウスのユニークIDの型
+<li><a href="SDL_MouseMotionTransformCallback.html">SDL_MouseMotionTransformCallback</a> - マウスの移動量を変換するコールバックの型
 <li>SDL_Mutex
 <li>SDL_NSTimerCallback
-<li>SDL_PenID
-<li>SDL_PenInputFlags
+<li><a href="SDL_PenID.html">SDL_PenID</a> - SDLペンインスタンスIDの型
+<li><a href="SDL_PenInputFlags.html">SDL_PenInputFlags</a> - 様々なペンイベントのpen_stateフィールドで使用されるペン入力フラグの型
 <li>SDL_Process
 <li><a href="SDL_PropertiesID.html">SDL_PropertiesID</a> - SDLプロパティグループID
 <li>SDL_realloc_func
@@ -1422,7 +1422,7 @@
 <li>SDL_TimerID
 <li>SDL_TLSDestructorCallback
 <li>SDL_TLSID
-<li>SDL_TouchID
+<li><a href="SDL_Finger.html">SDL_Finger</a> - マルチタッチイベントの1本の指のデータの構造体
 <li>SDL_Tray
 <li>SDL_TrayCallback
 <li>SDL_TrayEntry
@@ -1635,11 +1635,11 @@
 <li><a href="SDL_LogPriority.html">SDL_LogPriority</a> - 定義済みのログの重要度の列挙体
 <li><a href="SDL_MatrixCoefficients.html">SDL_MatrixCoefficients</a> - 色空間情報のmatrix coefficients(行列の係数)の列挙体
 <li><a href="SDL_MessageBoxColorType.html">SDL_MessageBoxColorType</a> - SDL_MessageBoxColorScheme内のcolors配列で使われる列挙対
-<li>SDL_MouseWheelDirection
+<li><a href="SDL_MouseWheelDirection.html">SDL_MouseWheelDirection</a> - スクロールイベントのスクロール方向の列挙体
 <li><a href="SDL_PackedLayout.html">SDL_PackedLayout</a> - パックされた(整数に詰め込まれた)色要素の配置の列挙体
 <li><a href="SDL_PackedOrder.html">SDL_PackedOrder</a> - パックされた(整数に詰め込まれた)色要素の順序の列挙体
 <li>SDL_PathType
-<li>SDL_PenAxis
+<li><a href="SDL_PenAxis.html">SDL_PenAxis</a> - ペンのaxisの列挙体
 <li><a href="SDL_PixelFormat.html">SDL_PixelFormat</a> - ピクセル形式の列挙体
 <li><a href="SDL_PixelType.html">SDL_PixelType</a> - ピクセルの種類の列挙体
 <li><a href="SDL_PowerState.html">SDL_PowerState</a> - システムの電源の基本的な状態の列挙体
@@ -1651,7 +1651,7 @@
 <li><a href="SDL_ScaleMode.html">SDL_ScaleMode</a> - 拡大縮小モードの列挙体
 <li><a href="SDL_Scancode.html">SDL_Scancode</a> - SDLキーボードスキャンコードの列挙体 
 <li>SDL_SensorType
-<li>SDL_SystemCursor
+<li><a href="SDL_SystemCursor.html">SDL_SystemCursor</a> - SDL_CreateSystemCursor()のマウスカーソルの種類の列挙体
 <li><a href="SDL_SystemTheme.html">SDL_SystemTheme</a> - システムのテーマの列挙体
 <li><a href="SDL_TextInputType.html">SDL_TextInputType</a> - テキスト入力の種類の列挙体
 <li>SDL_TextureAccess
@@ -1659,7 +1659,7 @@
 <li>SDL_ThreadPriority
 <li>SDL_ThreadState
 <li>SDL_TimeFormat
-<li>SDL_TouchDeviceType
+<li><a href="SDL_TouchDeviceType.html">SDL_TouchDeviceType</a> - タッチデバイスの種類の列挙体
 <li><a href="SDL_TransferCharacteristics.html">SDL_TransferCharacteristics</a> - 色空間情報のtransfer characteristics(伝達特性)の列挙体
 </ol>
 <h2>マクロ</h2>
@@ -2191,7 +2191,7 @@
 <li>SDL_MIN_UINT8
 <li><a href="SDL_MINOR_VERSION.html">SDL_MINOR_VERSION</a> - SDLヘッダのマイナーバージョンのマクロ
 <li><a href="SDL_MMX_INTRINSICS.html">SDL_MMX_INTRINSICS</a> - コンパイラがIntel MMX組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
-<li>SDL_MOUSE_TOUCHID
+<li><a href="SDL_MOUSE_TOUCHID.html">SDL_MOUSE_TOUCHID</a> - タッチイベントでのマウス入力のSDL_TouchID
 <li>SDL_MS_PER_SECOND
 <li>SDL_MS_TO_NS
 <li><a href="SDL_MUSTLOCK.html">SDL_MUSTLOCK</a> - アクセスのためにサーフェイスをロックする必要があるかを調べるマクロ
@@ -2218,8 +2218,8 @@
 <li>SDL_PEN_INPUT_BUTTON_5
 <li>SDL_PEN_INPUT_DOWN
 <li>SDL_PEN_INPUT_ERASER_TIP
-<li>SDL_PEN_MOUSEID
-<li>SDL_PEN_TOUCHID
+<li><a href="SDL_PEN_MOUSEID.html">SDL_PEN_MOUSEID</a> - マウスイベントでのペン入力のSDL_MouseID
+<li><a href="SDL_PEN_TOUCHID.html">SDL_PEN_TOUCHID</a> - タッチイベントでのペン入力のSDL_TouchID
 <li>SDL_PI_D
 <li>SDL_PI_F
 <li><a href="SDL_PIXELFLAG.html">SDL_PIXELFLAG</a> - ピクセル形式からフラグを得るマクロ
@@ -2609,7 +2609,7 @@
 <li>SDL_SwapFloatLE
 <li><a href="SDL_TARGETING.html">SDL_TARGETING</a> - 特定のCPUアーキテクチャを対象とした関数のタグ付けのマクロ
 <li>SDL_THREAD_ANNOTATION_ATTRIBUTE__
-<li>SDL_TOUCH_MOUSEID
+<li><a href="SDL_TOUCH_MOUSEID.html">SDL_TOUCH_MOUSEID</a> - マウスイベントでのタッチ入力のSDL_MouseID
 <li>SDL_TRAYENTRY_BUTTON
 <li>SDL_TRAYENTRY_CHECKBOX
 <li>SDL_TRAYENTRY_CHECKED

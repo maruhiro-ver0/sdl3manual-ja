@@ -17,36 +17,36 @@ SDLは環境が対応して入れたタッチデバイス入力を提供して�
 マルチタッチデバイスや, そのデバイスの複数の指の追跡も管理できる.
 </p>
 <p>
-タッチのほとんどはイベントサブシステムのSDL_EVENT_FINGER_DOWN, SDL_EVENT_FINGER_MOTION, SDL_EVENT_FINGER_UPで扱えるが, ハードウェアにより詳細な問い合わせを行う関数も存在する.
+タッチのほとんどはイベントサブシステムの<a href="SDL_TouchFingerEvent.html">SDL_EVENT_FINGER_DOWN</a>, <a href="SDL_TouchFingerEvent.html">SDL_EVENT_FINGER_MOTION</a>, <a href="SDL_TouchFingerEvent.html">SDL_EVENT_FINGER_UP</a>で扱えるが, ハードウェアにより詳細な問い合わせを行う関数も存在する.
 </p>
 <p>
 タッチシステムは, デフォルトでは仮想マウスイベントも送信する. そのため, デスクトップアプリケーションをコードの大きな変更なしでタッチスクリーンのスマートフォンで動作させられるかもしれない.
-アプリケーションがマウス入力とタッチ入力を分けて扱いたい場合は, イベントをSDL_TOUCH_MOUSEIDのwhichフィールドでフィルタして除外する必要がある. 
+アプリケーションがマウス入力とタッチ入力を分けて扱いたい場合は, イベントの<code>which</code>フィールドが<a href="SDL_TOUCH_MOUSEID.html">SDL_TOUCH_MOUSEID</a>の場合に無視する必要がある.
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_GetTouchDeviceName
-<li>SDL_GetTouchDevices
-<li>SDL_GetTouchDeviceType
-<li>SDL_GetTouchFingers
+<li><a href="SDL_GetTouchDeviceName.html">SDL_GetTouchDeviceName</a> - ドライバが報告したタッチデバイスの名前を得る
+<li><a href="SDL_GetTouchDevices.html">SDL_GetTouchDevices</a> - 接続されたタッチデバイスの一覧を得る
+<li><a href="SDL_GetTouchDeviceType.html">SDL_GetTouchDeviceType</a> - タッチデバイスの種類を得る
+<li><a href="SDL_GetTouchFingers.html">SDL_GetTouchFingers</a> - タッチデバイス上の指の一覧を得る
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_FingerID
-<li>SDL_TouchID
+<li><a href="SDL_FingerID.html">SDL_FingerID</a> - タッチデバイス上の1本の指のユニークIDの型
+<li><a href="SDL_TouchID.html">SDL_TouchID</a> - タッチデバイス上のユニークIDの型
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>SDL_Finger
+<li><a href="SDL_Finger.html">SDL_Finger</a> - マルチタッチイベントの1本の指のデータの構造体
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_TouchDeviceType
+<li><a href="SDL_TouchDeviceType.html">SDL_TouchDeviceType</a> - タッチデバイスの種類の列挙体
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_MOUSE_TOUCHID
-<li>SDL_TOUCH_MOUSEID
+<li><a href="SDL_MOUSE_TOUCHID.html">SDL_MOUSE_TOUCHID</a> - タッチイベントでのマウス入力のSDL_TouchID
+<li><a href="SDL_TOUCH_MOUSEID.html">SDL_TOUCH_MOUSEID</a> - マウスイベントでのタッチ入力のSDL_MouseID
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryTouch">SDL3/CategoryTouch - SDL Wiki</a>

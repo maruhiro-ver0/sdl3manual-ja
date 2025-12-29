@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryMouse.html" title="1つ上">
+<title>SDL_PenAxis</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryMouse.html">マウス</a> - SDL_PenAxis
+<hr>
+<h1>SDL_PenAxis</h1>
+ペンのaxisの列挙体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_pen.h">SDL3/SDL_pen.h</a>
+<h2>値</h2>
+<table border="1">
+<tr><td>SDL_PEN_AXIS_PRESSURE</td><td></td><td>ペンの圧力. 単一方向: 0.0から1.0</td></tr>
+<tr><td>SDL_PEN_AXIS_XTILT</td><td></td><td>ペンの水平方向の傾き角度. 2方向: -90.0から90.0 (左から右)</td></tr>
+<tr><td>SDL_PEN_AXIS_YTILT</td><td></td><td>ペンの垂直方向の傾き角度. 2方向: -90.0から90.0 (上から下)</td></tr>
+<tr><td>SDL_PEN_AXIS_DISTANCE</td><td></td><td>ペンの描画面からの距離. 単一方向: 0.0から1.0</td></tr>
+<tr><td>SDL_PEN_AXIS_ROTATION</td><td></td><td>ペンのバレル回転角度(barrel rotation). 2方向: -180から179.9 (時計回りで0が上向き, -180.0が下向き)</td></tr>
+<tr><td>SDL_PEN_AXIS_SLIDER</td><td></td><td>ペンのホイールまたはスライダー (例えばAirbrush Penの). 単一方向: 0から1.0</td></tr>
+<tr><td>SDL_PEN_AXIS_TANGENTIAL_PRESSURE</td><td></td><td>ペンを握る圧力(バレル圧(barrel pressure))</td></tr>
+<tr><td>SDL_PEN_AXIS_COUNT</td><td></td><td>このバージョンのSDLのペンのaxisの種類の数. 将来的には増える可能性がある</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+これらは<a href="SDL_PenAxisEvent.html">SDL_PenAxisEvent</a>の<code>axis</code>フィールドの有効な値である.
+全てのaxisの値は, 0.0から1.0で正規化されているか, 0.0を中心とした度数法の(正と負の)角度である.
+全てのペン/処理系が全てのaxisに対応しているわけではない. 対応していないaxisの値は常に0となる.
+</p>
+<p>
+傾きと回転をベクトルに変換するには, XTILT, YTILT, またはROTATIONからSDL_sinfで求めること. 例:
+</p>
+<p>
+SDL_sinf(xtilt * SDL_PI_F / 180.0)
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_PenAxis">SDL_PenAxis - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

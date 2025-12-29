@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryMouse.html" title="1つ上">
+<title>SDL_GetMice</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryMouse.html">マウス</a> - SDL_GetMice
+<hr>
+<h1>SDL_GetMice</h1>
+接続されたマウスの一覧を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_mouse.h">SDL3/SDL_mouse.h</a>
+<h2>構文</h2>
+<code>SDL_MouseID * SDL_GetMice(int *count);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>int *</td><td>count</td><td>マウスの数の代入先へのポインタ. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(<a href="SDL_MouseID.html">SDL_MouseID</a> *) 0終端のマウスインスタンスIDの配列を戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+不要になったときSDL_free()で解放する必要がある.
+</p>
+<h2>詳細</h2>
+<p>
+この一覧には, 一部のゲームコントローラーやKVMスイッチなどのマウスの機能のある全てのデバイスと仮想ドライバが含まれている.
+そのデバイスが積極的に使用中であると判断する前に, デバイスからの入力を待つべきである.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼べるのはメインスレッドのみである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetMouseNameForID.html">SDL_GetMouseNameForID</a>
+<li><a href="SDL_HasMouse.html">SDL_HasMouse</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GetMice">SDL_GetMice - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

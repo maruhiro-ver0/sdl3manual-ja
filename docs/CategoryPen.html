@@ -16,17 +16,17 @@
 SDLペンイベントを扱う.
 </p>
 <p>
-SDLは筆圧検知ペン(スタイラスペン, 消しゴム)を扱うAPIを提供していて, 入力や, ペンタブレットまたはモバイル/タブレットデバイスへの描画を扱える.
+SDLは感圧式ペン(スタイラスペン, 消しゴム)を扱うAPIを提供していて, 入力や, ペンタブレットまたはモバイル/タブレットデバイスへの描画を扱える.
 </p>
 <p>
 ペンを使うには, 単にペンイベントを扱えばよい:
 </p>
 <ul>
-<li>SDL_EVENT_PEN_PROXIMITY_IN, SDL_EVENT_PEN_PROXIMITY_OUT (SDL_PenProximityEvent)
-<li>SDL_EVENT_PEN_DOWN, SDL_EVENT_PEN_UP (SDL_PenTouchEvent)
-<li>SDL_EVENT_PEN_MOTION (SDL_PenMotionEvent)
-<li>SDL_EVENT_PEN_BUTTON_DOWN, SDL_EVENT_PEN_BUTTON_UP (SDL_PenButtonEvent)
-<li>SDL_EVENT_PEN_AXIS (SDL_PenAxisEvent)
+<li>SDL_EVENT_PEN_PROXIMITY_IN, SDL_EVENT_PEN_PROXIMITY_OUT (<a href="SDL_PenProximityEvent.html">SDL_PenProximityEvent</a>)
+<li>SDL_EVENT_PEN_DOWN, SDL_EVENT_PEN_UP (<a href="SDL_PenTouchEvent.html">SDL_PenTouchEvent</a>)
+<li>SDL_EVENT_PEN_MOTION (<a href="SDL_PenMotionEvent.html">SDL_PenMotionEvent</a>)
+<li>SDL_EVENT_PEN_BUTTON_DOWN, SDL_EVENT_PEN_BUTTON_UP (<a href="SDL_PenButtonEvent.html">SDL_PenButtonEvent</a>)
+<li>SDL_EVENT_PEN_AXIS (<a href="SDL_PenAxisEvent.html">SDL_PenAxisEvent</a>)
 </ul>
 <p>
 ペン入力が始まると, SDLはそれにユニークなSDL_PenIDを割り当て, ペンが接続されている間は値が維持される.
@@ -36,25 +36,25 @@ SDLは筆圧検知ペン(スタイラスペン, 消しゴム)を扱うAPIを提�
 </p>
 <h2>型</h2>
 <ol>
-<li>SDL_PenID
-<li>SDL_PenInputFlags
+<li><a href="SDL_PenID.html">SDL_PenID</a> - SDLペンインスタンスIDの型
+<li><a href="SDL_PenInputFlags.html">SDL_PenInputFlags</a> - 様々なペンイベントのpen_stateフィールドで使用されるペン入力フラグの型
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>SDL_PenAxisEvent
-<li>SDL_PenButtonEvent
-<li>SDL_PenMotionEvent
-<li>SDL_PenProximityEvent
-<li>SDL_PenTouchEvent
+<li><a href="SDL_PenAxisEvent.html">SDL_PenAxisEvent</a> - 感圧式ペン筆圧/角度イベントの構造体
+<li><a href="SDL_PenButtonEvent.html">SDL_PenButtonEvent</a> - 感圧式ペンボタンイベントの構造体
+<li><a href="SDL_PenMotionEvent.html">SDL_PenMotionEvent</a> - 感圧式ペン移動イベントの構造体
+<li><a href="SDL_PenProximityEvent.html">SDL_PenProximityEvent</a> - 感圧式ペン接近イベントの構造体
+<li><a href="SDL_PenTouchEvent.html">SDL_PenTouchEvent</a> - 感圧式ペンタッチイベントの構造体
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_PenAxis
+<li><a href="SDL_PenAxis.html">SDL_PenAxis</a> - ペンのaxisの列挙体
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_PEN_MOUSEID
-<li>SDL_PEN_TOUCHID
+<li><a href="SDL_PEN_MOUSEID.html">SDL_PEN_MOUSEID</a> - マウスイベントでのペン入力のSDL_MouseID
+<li><a href="SDL_PEN_TOUCHID.html">SDL_PEN_TOUCHID</a> - タッチイベントでのペン入力のSDL_TouchID
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryPen">SDL3/CategoryPen - SDL Wiki</a>
