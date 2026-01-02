@@ -20,7 +20,7 @@ SDLは異なる環境にまたがったスレッド管理関数を提供して�
 さらに, スレッド局所記憶(スレッドごとに異なるが, 単一のキーでアクセスできるデータ)にも対応している.
 </p>
 <p>
-スレッドに対応していない環境(pthreadsなしでビルドしたEmscriptenのような)でも, これらの関数は存在するが, SDL_CreateThread()のような関数は何もせず失敗を報告する.
+スレッドに対応していない環境(pthreadsなしでビルドしたEmscriptenのような)でも, これらの関数は存在するが, <a href="SDL_CreateThread.html">SDL_CreateThread()</a>のような関数は何もせず失敗を報告する.
 </p>
 <p>
 スレッドを使うつもりならば, <a href="CategoryMutex.html">同期プリミティブ</a>も同様によく理解する必要がある.
@@ -31,31 +31,31 @@ SDL APIのこの部分はスレッドの管理を行うが, アプリケーシ�
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_CleanupTLS
-<li>SDL_CreateThread
-<li>SDL_CreateThreadWithProperties
-<li>SDL_DetachThread
-<li>SDL_GetCurrentThreadID
-<li>SDL_GetThreadID
-<li>SDL_GetThreadName
-<li>SDL_GetThreadState
-<li>SDL_GetTLS
-<li>SDL_SetCurrentThreadPriority
-<li>SDL_SetTLS
-<li>SDL_WaitThread
+<li><a href="SDL_CleanupTLS.html">SDL_CleanupTLS</a> - 現在のスレッドのスレッド局所記憶を全て消去する
+<li><a href="SDL_CreateThread.html">SDL_CreateThread</a> - 新しいスレッドをデフォルトのスタックサイズで生成する
+<li><a href="SDL_CreateThreadWithProperties.html">SDL_CreateThreadWithProperties</a> - 新しいスレッドをプロパティを指定して生成する
+<li><a href="SDL_DetachThread.html">SDL_DetachThread</a> - スレッドが終了したとき自分で消滅するようにする
+<li><a href="SDL_GetCurrentThreadID.html">SDL_GetCurrentThreadID</a> - 現在のスレッドのスレッドIDを得る
+<li><a href="SDL_GetThreadID.html">SDL_GetThreadID</a> - 指定のスレッドのスレッドIDを得る
+<li><a href="SDL_GetThreadName.html">SDL_GetThreadName</a> - SDL_CreateThread()で指定したスレッドの名前を得る
+<li><a href="SDL_GetThreadState.html">SDL_GetThreadState</a> - スレッドの現在の状態を得る
+<li><a href="SDL_GetTLS.html">SDL_GetTLS</a> - 現在のスレッドのスレッド局所記憶IDが保持する値を得る
+<li><a href="SDL_SetCurrentThreadPriority.html">SDL_SetCurrentThreadPriority</a> - 現在のスレッドの優先度を設定する
+<li><a href="SDL_SetTLS.html">SDL_SetTLS</a> - 現在のスレッドのスレッド局所記憶IDが保持する値を設定する
+<li><a href="SDL_WaitThread.html">SDL_WaitThread</a> - スレッドが終了するまで待つ
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_Thread
-<li>SDL_ThreadFunction
-<li>SDL_ThreadID
-<li>SDL_TLSDestructorCallback
-<li>SDL_TLSID
+<li><a href="SDL_Thread.html">SDL_Thread</a> - SDLスレッドオブジェクトの型
+<li><a href="SDL_ThreadFunction.html">SDL_ThreadFunction</a> - 新しいスレッドのエントリーポイントとしてSDL_CreateThread()に渡す関数の型
+<li><a href="SDL_ThreadID.html">SDL_ThreadID</a> - ユニークな数値のスレッドIDの型
+<li><a href="SDL_TLSDestructorCallback.html">SDL_TLSDestructorCallback</a> - データの後処理としてSDL_SetTLSに渡すコールバックの型
+<li><a href="SDL_TLSID.html">SDL_TLSID</a> - スレッド局所記憶IDの型
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_ThreadPriority
-<li>SDL_ThreadState
+<li><a href="SDL_ThreadPriority.html">SDL_ThreadPriority</a> - スレッドの優先度の列挙体
+<li><a href="SDL_ThreadState.html">SDL_ThreadState</a> - SDLスレッドの状態の列挙体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryThread">SDL3/CategoryThread - SDL Wiki</a>

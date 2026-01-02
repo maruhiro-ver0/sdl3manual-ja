@@ -85,7 +85,7 @@
 <li>SDL_ceil
 <li>SDL_ceilf
 <li>SDL_ClaimWindowForGPUDevice
-<li>SDL_CleanupTLS
+<li><a href="SDL_CleanupTLS.html">SDL_CleanupTLS</a> - 現在のスレッドのスレッド局所記憶を全て消去する
 <li><a href="SDL_ClearAudioStream.html">SDL_ClearAudioStream</a> - オーディオストリームの保留中のデータを消去する
 <li><a href="SDL_ClearClipboardData.html">SDL_ClearClipboardData</a> - クリップボードのデータを消去する
 <li><a href="SDL_ClearComposition.html">SDL_ClearComposition</a> - 変換ウィンドウ/IMEを無効化せずに閉じる
@@ -161,8 +161,8 @@
 <li>SDL_CreateTexture
 <li>SDL_CreateTextureFromSurface
 <li>SDL_CreateTextureWithProperties
-<li>SDL_CreateThread
-<li>SDL_CreateThreadWithProperties
+<li><a href="SDL_CreateThread.html">SDL_CreateThread</a> - 新しいスレッドをデフォルトのスタックサイズで生成する
+<li><a href="SDL_CreateThreadWithProperties.html">SDL_CreateThreadWithProperties</a> - 新しいスレッドをプロパティを指定して生成する
 <li>SDL_CreateTray
 <li>SDL_CreateTrayMenu
 <li>SDL_CreateTraySubmenu
@@ -194,7 +194,7 @@
 <li>SDL_DestroyTray
 <li><a href="SDL_DestroyWindow.html">SDL_DestroyWindow</a> - ウィンドウを破棄する
 <li><a href="SDL_DestroyWindowSurface.html">SDL_DestroyWindowSurface</a> - ウィンドウに関連付けられたサーフェイスを破棄する
-<li>SDL_DetachThread
+<li><a href="SDL_DetachThread.html">SDL_DetachThread</a> - スレッドが終了したとき自分で消滅するようにする
 <li><a href="SDL_DetachVirtualJoystick.html">SDL_DetachVirtualJoystick</a> - 仮想ジョイスティックを切断する
 <li><a href="SDL_DisableScreenSaver.html">SDL_DisableScreenSaver</a> - スクリーンセーバーを無効にする
 <li>SDL_DispatchGPUCompute
@@ -304,7 +304,7 @@
 <li><a href="SDL_GetCurrentDisplayMode.html">SDL_GetCurrentDisplayMode</a> - 現在のディスプレイモードを得る
 <li><a href="SDL_GetCurrentDisplayOrientation.html">SDL_GetCurrentDisplayOrientation</a> - ディスプレイの方向を得る
 <li>SDL_GetCurrentRenderOutputSize
-<li>SDL_GetCurrentThreadID
+<li><a href="SDL_GetCurrentThreadID.html">SDL_GetCurrentThreadID</a> - 現在のスレッドのスレッドIDを得る
 <li>SDL_GetCurrentTime
 <li><a href="SDL_GetCurrentVideoDriver.html">SDL_GetCurrentVideoDriver</a> - 初期化された現在のビデオドライバの名前を得る
 <li><a href="SDL_GetCursor.html">SDL_GetCursor</a> - 現在のマウスカーソルを得る
@@ -572,12 +572,12 @@
 <li>SDL_GetTextureProperties
 <li>SDL_GetTextureScaleMode
 <li>SDL_GetTextureSize
-<li>SDL_GetThreadID
-<li>SDL_GetThreadName
-<li>SDL_GetThreadState
+<li><a href="SDL_GetThreadID.html">SDL_GetThreadID</a> - 指定のスレッドのスレッドIDを得る
+<li><a href="SDL_GetThreadName.html">SDL_GetThreadName</a> - SDL_CreateThread()で指定したスレッドの名前を得る
+<li><a href="SDL_GetThreadState.html">SDL_GetThreadState</a> - スレッドの現在の状態を得る
 <li>SDL_GetTicks
 <li>SDL_GetTicksNS
-<li>SDL_GetTLS
+<li><a href="SDL_GetTLS.html">SDL_GetTLS</a> - 現在のスレッドのスレッド局所記憶IDが保持する値を得る
 <li><a href="SDL_GetTouchDeviceName.html">SDL_GetTouchDeviceName</a> - ドライバが報告したタッチデバイスの名前を得る
 <li><a href="SDL_GetTouchDevices.html">SDL_GetTouchDevices</a> - 接続されたタッチデバイスの一覧を得る
 <li><a href="SDL_GetTouchDeviceType.html">SDL_GetTouchDeviceType</a> - タッチデバイスの種類を得る
@@ -999,7 +999,7 @@
 <li><a href="SDL_SetBooleanProperty.html">SDL_SetBooleanProperty</a> - プロパティグループのブール型プロパティを設定する
 <li><a href="SDL_SetClipboardData.html">SDL_SetClipboardData</a> - OSにクリップボードデータを提供する
 <li><a href="SDL_SetClipboardText.html">SDL_SetClipboardText</a> - クリップボードにUTF-8テキストを設定する
-<li>SDL_SetCurrentThreadPriority
+<li><a href="SDL_SetCurrentThreadPriority.html">SDL_SetCurrentThreadPriority</a> - 現在のスレッドの優先度を設定する
 <li><a href="SDL_SetCursor.html">SDL_SetCursor</a> - マウスカーソルを設定する
 <li>SDL_SetDefaultTextureScaleMode
 <li>SDL_setenv_unsafe
@@ -1084,7 +1084,7 @@
 <li>SDL_SetTextureColorModFloat
 <li>SDL_SetTexturePalette
 <li>SDL_SetTextureScaleMode
-<li>SDL_SetTLS
+<li><a href="SDL_SetTLS.html">SDL_SetTLS</a> - 現在のスレッドのスレッド局所記憶IDが保持する値を設定する
 <li>SDL_SetTrayEntryCallback
 <li>SDL_SetTrayEntryChecked
 <li>SDL_SetTrayEntryEnabled
@@ -1262,7 +1262,7 @@
 <li>SDL_WaitProcess
 <li>SDL_WaitSemaphore
 <li>SDL_WaitSemaphoreTimeout
-<li>SDL_WaitThread
+<li><a href="SDL_WaitThread.html">SDL_WaitThread</a> - スレッドが終了するまで待つ
 <li><a href="SDL_WarpMouseGlobal.html">SDL_WarpMouseGlobal</a> - マウスカーソルを画面上の指定の座標に移動させる
 <li><a href="SDL_WarpMouseInWindow.html">SDL_WarpMouseInWindow</a> - マウスカーソルをウィンドウ内の指定の位置へ移動する
 <li><a href="SDL_WasInit.html">SDL_WasInit</a> - 初期化された個別のサブシステムのマスクを得る
@@ -1414,14 +1414,14 @@
 <li>SDL_SpinLock
 <li>SDL_Storage
 <li><a href="SDL_SurfaceFlags.html">SDL_SurfaceFlags</a> - SDL_Surfaceのフラグの型
-<li>SDL_Thread
-<li>SDL_ThreadFunction
-<li>SDL_ThreadID
+<li><a href="SDL_Thread.html">SDL_Thread</a> - SDLスレッドオブジェクトの型
+<li><a href="SDL_ThreadFunction.html">SDL_ThreadFunction</a> - 新しいスレッドのエントリーポイントとしてSDL_CreateThread()に渡す関数の型
+<li><a href="SDL_ThreadID.html">SDL_ThreadID</a> - ユニークな数値のスレッドIDの型
 <li>SDL_Time
 <li>SDL_TimerCallback
 <li>SDL_TimerID
-<li>SDL_TLSDestructorCallback
-<li>SDL_TLSID
+<li><a href="SDL_TLSDestructorCallback.html">SDL_TLSDestructorCallback</a> - データの後処理としてSDL_SetTLSに渡すコールバックの型
+<li><a href="SDL_TLSID.html">SDL_TLSID</a> - スレッド局所記憶IDの型
 <li><a href="SDL_Finger.html">SDL_Finger</a> - マルチタッチイベントの1本の指のデータの構造体
 <li>SDL_Tray
 <li>SDL_TrayCallback
@@ -1656,8 +1656,8 @@
 <li><a href="SDL_TextInputType.html">SDL_TextInputType</a> - テキスト入力の種類の列挙体
 <li>SDL_TextureAccess
 <li>SDL_TextureAddressMode
-<li>SDL_ThreadPriority
-<li>SDL_ThreadState
+<li><a href="SDL_ThreadPriority.html">SDL_ThreadPriority</a> - スレッドの優先度の列挙体
+<li><a href="SDL_ThreadState.html">SDL_ThreadState</a> - SDLスレッドの状態の列挙体
 <li>SDL_TimeFormat
 <li><a href="SDL_TouchDeviceType.html">SDL_TouchDeviceType</a> - タッチデバイスの種類の列挙体
 <li><a href="SDL_TransferCharacteristics.html">SDL_TransferCharacteristics</a> - 色空間情報のtransfer characteristics(伝達特性)の列挙体

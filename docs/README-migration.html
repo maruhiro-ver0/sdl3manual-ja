@@ -2606,38 +2606,38 @@ WindowsとX11のイベントは<a href="https://wiki.libsdl.org/SDL3/SDL_SetWind
 </p>
 <h2><a name="#sdl_threadh">SDL_thread.h (スレッド)</a></h2>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateThreadWithStackSize.html">SDL_CreateThreadWithStackSize</a>は<a href="https://wiki.libsdl.org/SDL3/SDL_CreateThreadWithProperties">SDL_CreateThreadWithProperties</a>に置き換えられた.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateThreadWithStackSize.html">SDL_CreateThreadWithStackSize</a>は<a href="SDL_CreateThreadWithProperties.html">SDL_CreateThreadWithProperties</a>に置き換えられた.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_CreateThread">SDL_CreateThread</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_CreateThreadWithProperties">SDL_CreateThreadWithProperties</a>は全ての環境でbeginthread/endthread関数へのポインタを取るようになり(ほとんどの場合無視される), 全ての環境でこれを隠すためにマクロで置き換えるようになった.
+<a href="SDL_CreateThread.html">SDL_CreateThread</a>と<a href="SDL_CreateThreadWithProperties.html">SDL_CreateThreadWithProperties</a>は全ての環境でbeginthread/endthread関数へのポインタを取るようになり(ほとんどの場合無視される), 全ての環境でこれを隠すためにマクロで置き換えるようになった.
 これはソースコードレベルではこれまでと同じだが, 実際に呼ばれる関数のシグネチャ(関数宣言)は変更されている.
 実際のライブラリ上のシンボルはSDL_CreateThreadRuntimeである. "SDL_CreateThread"をDLL/共有ライブラリ/Dylibから検索しようとすると失敗する.
 これを直接呼んではならず, 常にマクロを使用すること!
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetTLS">SDL_GetTLS()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_SetTLS">SDL_SetTLS()</a>はTLS IDへのポインタを取るようになり, 必要ならば自動的にスレッドセーフな方法で初期化するようになった.
+<a href="SDL_GetTLS.html">SDL_GetTLS()</a>, <a href="SDL_SetTLS.html">SDL_SetTLS()</a>はスレッド局所記憶IDへのポインタを取るようになり, 必要ならば自動的にスレッドセーフな方法で初期化するようになった.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetThreadPriority.html">SDL_SetThreadPriority()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetCurrentThreadPriority">SDL_SetCurrentThreadPriority()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TLSCleanup.html">SDL_TLSCleanup()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_CleanupTLS">SDL_CleanupTLS()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TLSGet.html">SDL_TLSGet()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetTLS">SDL_GetTLS()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TLSSet.html">SDL_TLSSet()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetTLS">SDL_SetTLS()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ThreadID.html">SDL_ThreadID()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetCurrentThreadID">SDL_GetCurrentThreadID()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetThreadPriority.html">SDL_SetThreadPriority()</a> → <a href="SDL_SetCurrentThreadPriority.html">SDL_SetCurrentThreadPriority()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TLSCleanup.html">SDL_TLSCleanup()</a> → <a href="SDL_CleanupTLS.html">SDL_CleanupTLS()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TLSGet.html">SDL_TLSGet()</a> → <a href="SDL_GetTLS.html">SDL_GetTLS()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TLSSet.html">SDL_TLSSet()</a> → <a href="SDL_SetTLS.html">SDL_SetTLS()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ThreadID.html">SDL_ThreadID()</a> → <a href="SDL_GetCurrentThreadID.html">SDL_GetCurrentThreadID()</a>
 </ul>
 <p>
 以下の関数は削除された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TLSCreate.html">SDL_TLSCreate()</a> - TLS IDは必要なとき自動的に生成される
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TLSCreate.html">SDL_TLSCreate()</a> - スレッド局所記憶IDは必要なとき自動的に生成される
 </ul>
 <p>
 以下のシンボルの名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_threadID.html">SDL_threadID</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ThreadID">SDL_ThreadID</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_threadID.html">SDL_threadID</a> → <a href="SDL_ThreadID.html">SDL_ThreadID</a>
 </ul>
 <h2><a name="#sdl_timerh">SDL_timer.h (タイマ)</a></h2>
 <p>

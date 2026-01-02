@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryThread.html" title="1つ上">
+<title>SDL_CreateThread</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryThread.html">スレッド</a> - SDL_CreateThread
+<hr>
+<h1>SDL_CreateThread</h1>
+新しいスレッドをプロパティを指定して生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_thread.h">SDL3/SDL_thread.h</a>
+<h2>構文</h2>
+<code>SDL_Thread * SDL_CreateThreadWithProperties(SDL_PropertiesID props);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>SDL_PropertiesID</td><td>props</td><td>使用するプロパティグループ</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Thread.html">SDL_Thread</a> *) 成功のとき新しいスレッドオブジェクトへの不透明ポインタ(opaque pointer), 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>で詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+これらのプロパティに対応している:
+</p>
+<ul>
+<li>SDL_PROP_THREAD_CREATE_ENTRY_FUNCTION_POINTER: <a href="SDL_ThreadFunction.html">SDL_ThreadFunction</a>型の値. 新しいスレッドの開始時に呼ばれる関数. 必須
+<li>SDL_PROP_THREAD_CREATE_NAME_STRING: 新しいスレッドの名前. デバッガで利用される可能性がある. 任意. デフォルトはNULL
+<li>SDL_PROP_THREAD_CREATE_USERDATA_POINTER: アプリケーション定義の任意のポインタ. 新しいスレッドの関数に引数として渡される. 任意. デフォルトはNULL
+<li>SDL_PROP_THREAD_CREATE_STACKSIZE_NUMBER: 新しいスレッドのバイト単位のスタックサイズ. 任意. デフォルトは0(システムの定義したデフォルト)
+</ul>
+<p>
+SDLはSDL_PROP_THREAD_CREATE_NAME_STRINGをシステムに報告しようとするため, デバッガがこれを表示できる可能性がある.
+全ての環境が対応しているわけではない.
+</p>
+<p>
+スレッドの命名はやや複雑である:
+多くのシステムでは文字列の長さに制限があり(Haikuは32バイト, 現在のLinuxは16バイト, Visual C++ 6.0は9バイト), 他の強制的なルールがある場合もある.
+システムのデバッガがどうなっているか確認する必要がある.
+この名前はUTF-8の必要がある(しかしCの識別子の名前の方がよいだろう).
+スレッドの命名にはNUL終端のUTF-8文字列であること以外の規約はないが, 次のガイドラインが役立つ:
+</p>
+<p>
+<a href="https://stackoverflow.com/questions/149932/naming-conventions-for-threads">https://stackoverflow.com/questions/149932/naming-conventions-for-threads</a>
+</p>
+<p>
+システムの要求が強制される場合, SDLは文字列を変更する(後ろを切り捨てる等)が, 元の文字列は<a href="SDL_GetThreadName.html">SDL_GetThreadName()</a>で得られる.
+</p>
+<p>
+SDL_PROP_THREAD_CREATE_STACKSIZE_NUMBERでスタックのサイズ(バイト数)を指定できる.
+0は「システムのデフォルトを使用」を意味し, 環境によって大きく異なる.
+x86 Linuxの一般的なデフォルトは8メガバイトだが, 組み込みデバイスの場合は数キロバイトの場合もある.
+一般的にはシステムのページサイズ(多くの場合4キロバイトだがシステムのドキュメントをチェックすること)の倍数を指定する必要がある.
+</p>
+<p>
+この「関数」は実際にはマクロであり, ここに挙げられていない2つの引数を内部関数に渡している.
+そのプリプロセッサマクロで隠された引数は, この関数の呼び出しの時点で様々なCランタイムに対応するために必要なものである.
+Cヘッダを使用しない言語では, この引数を扱う必要がある.
+</p>
+<p>
+SDLでの実際のシンボルはSDL_CreateThreadWithPropertiesRuntimeのため, 衝突するシンボルはないが, SDL共有ライブラリから"SDL_CreateThreadWithProperties"を探すと失敗する.
+</p>
+<p>
+通常, アプリケーションはこの関数をどの環境でも同じように呼び, 詳細はマクロに隠させればよい.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_CreateThread.html">SDL_CreateThread</a>
+<li><a href="SDL_WaitThread.html">SDL_WaitThread</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_CreateThread">SDL_CreateThread - SDL Wiki</a>
+<hr>
+</body>
+</html>
