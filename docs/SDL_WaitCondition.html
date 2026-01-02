@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryMutex.html" title="1つ上">
+<title>SDL_WaitCondition</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryMutex.html">同期プリミティブ</a> - SDL_WaitCondition
+<hr>
+<h1>SDL_WaitCondition</h1>
+条件変数が通知されるまで待つ
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_mutex.h">SDL3/SDL_mutex.h</a>
+<h2>構文</h2>
+<code>void SDL_WaitCondition(SDL_Condition *cond, SDL_Mutex *mutex);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Condition.html">SDL_Condition</a> *</td><td>cond</td><td>待つ条件変数</td></tr>
+<tr><td><a href="SDL_Mutex.html">SDL_Mutex</a> *</td><td>mutex</td><td>スレッドアクセスを制御するためのミューテックス</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+この関数は<code>mutex</code>のロックを解除し, 別のスレッドが<a href="SDL_CondSignal.html">SDL_CondSignal()</a>か<a href="SDL_CondBroadcast.html">SDL_CondBroadcast()</a>を呼んで条件変数<code>cond</code>を通知するまで待つ.
+条件変数が通知されれば, <code>mutex</code>は再びロックされ, 関数から戻る.
+</p>
+<p>
+<code>mutex</code>はこの関数を呼ぶ前にロックされている必要がある.
+ミューテックスのロックの再帰(複数回のロック)には対応しておらず, その場合の動作は未定義である.
+</p>
+<p>
+この関数は, <a href="SDL_CondWaitTimeout.html">SDL_CondWaitTimeout()</a>の待ち時間を-1としたのと同じである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_BroadcastCondition.html">SDL_BroadcastCondition</a>
+<li><a href="SDL_SignalCondition.html">SDL_SignalCondition</a>
+<li><a href="SDL_WaitConditionTimeout.html">SDL_WaitConditionTimeout</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_WaitCondition">SDL_WaitCondition - SDL Wiki</a>
+<hr>
+</body>
+</html>

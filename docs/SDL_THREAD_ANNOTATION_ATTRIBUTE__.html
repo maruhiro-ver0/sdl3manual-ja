@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryMutex.html" title="1つ上">
+<title>SDL_THREAD_ANNOTATION_ATTRIBUTE__</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryMutex.html">同期プリミティブ</a> - SDL_THREAD_ANNOTATION_ATTRIBUTE__
+<hr>
+<h1>SDL_THREAD_ANNOTATION_ATTRIBUTE__</h1>
+スレッドセーフ属性を有効にする(Clangのみ)
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_mutex.h">SDL3/SDL_mutex.h</a>
+<h2>構文</h2>
+<code>#define SDL_THREAD_ANNOTATION_ATTRIBUTE__(x)   __attribute__((x))</code>
+<h2>詳細</h2>
+<p>
+この属性は別のコンパイラでコンパイルする場合は安全に除去される.
+</p>
+<p>
+スレッド分析を有効にするには, cmakeの前に以下の環境変数を設定すること:
+</p>
+<code>
+<pre>
+export CC=clang
+export CFLAGS="-DSDL_THREAD_SAFETY_ANALYSIS -Wthread-safety"
+</pre>
+</code>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_THREAD_ANNOTATION_ATTRIBUTE__">SDL_THREAD_ANNOTATION_ATTRIBUTE__ - SDL Wiki</a>
+<hr>
+</body>
+</html>

@@ -1565,36 +1565,36 @@ SDL3には静的リンクするlibSDLmainはなくなった.
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_MUTEX_TIMEDOUT.html">SDL_MUTEX_TIMEDOUT</a>は削除された. 待機する関数は操作が成功すれば真, タイムアウトすれば偽を戻すようになった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_LockMutex">SDL_LockMutex()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_UnlockMutex">SDL_UnlockMutex()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_WaitSemaphore">SDL_WaitSemaphore()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_SignalSemaphore">SDL_SignalSemaphore()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_WaitCondition">SDL_WaitCondition()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_SignalCondition">SDL_SignalCondition()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_BroadcastCondition">SDL_BroadcastCondition()</a>の戻り値はvoidとなった.
+<a href="SDL_LockMutex.html">SDL_LockMutex()</a>, <a href="SDL_UnlockMutex.html">SDL_UnlockMutex()</a>, <a href="SDL_WaitSemaphore.html">SDL_WaitSemaphore()</a>, <a href="SDL_SignalSemaphore.html">SDL_SignalSemaphore()</a>, <a href="SDL_WaitCondition.html">SDL_WaitCondition()</a>, <a href="SDL_SignalCondition.html">SDL_SignalCondition()</a>, <a href="SDL_BroadcastCondition.html">SDL_BroadcastCondition()</a>の戻り値はvoidとなった.
 オブジェクトが適切(NULLを含む. この場合はすぐに戻る)ならば, これらの関数は決して失敗しない.
 オブジェクトが不正か, 別のスレッドのmutexを解除するなど呼び出しが不正ならば, 予測不能な動作となる.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_TryWaitSemaphore">SDL_TryWaitSemaphore()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_WaitSemaphoreTimeout">SDL_WaitSemaphoreTimeout()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_WaitConditionTimeout">SDL_WaitConditionTimeout()</a>は操作が成功すれば真, タイムアウトならば偽を戻すようになった.
+<a href="SDL_TryWaitSemaphore.html">SDL_TryWaitSemaphore()</a>, <a href="SDL_WaitSemaphoreTimeout.html">SDL_WaitSemaphoreTimeout()</a>, <a href="SDL_WaitConditionTimeout.html">SDL_WaitConditionTimeout()</a>は操作が成功すれば真, タイムアウトならば偽を戻すようになった.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CondBroadcast.html">SDL_CondBroadcast()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_BroadcastCondition">SDL_BroadcastCondition()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CondSignal.html">SDL_CondSignal()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SignalCondition">SDL_SignalCondition()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CondWait.html">SDL_CondWait()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WaitCondition">SDL_WaitCondition()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CondWaitTimeout.html">SDL_CondWaitTimeout()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WaitConditionTimeout">SDL_WaitConditionTimeout()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateCond.html">SDL_CreateCond()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_CreateCondition">SDL_CreateCondition()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_DestroyCond.html">SDL_DestroyCond()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_DestroyCondition">SDL_DestroyCondition()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemPost.html">SDL_SemPost()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SignalSemaphore">SDL_SignalSemaphore()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemTryWait.html">SDL_SemTryWait()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_TryWaitSemaphore">SDL_TryWaitSemaphore()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemValue.html">SDL_SemValue()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetSemaphoreValue">SDL_GetSemaphoreValue()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemWait.html">SDL_SemWait()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WaitSemaphore">SDL_WaitSemaphore()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemWaitTimeout.html">SDL_SemWaitTimeout()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WaitSemaphoreTimeout">SDL_WaitSemaphoreTimeout()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CondBroadcast.html">SDL_CondBroadcast()</a> → <a href="SDL_BroadcastCondition.html">SDL_BroadcastCondition()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CondSignal.html">SDL_CondSignal()</a> → <a href="SDL_SignalCondition.html">SDL_SignalCondition()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CondWait.html">SDL_CondWait()</a> → <a href="SDL_WaitCondition.html">SDL_WaitCondition()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CondWaitTimeout.html">SDL_CondWaitTimeout()</a> → <a href="SDL_WaitConditionTimeout.html">SDL_WaitConditionTimeout()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateCond.html">SDL_CreateCond()</a> → <a href="SDL_CreateCondition.html">SDL_CreateCondition()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_DestroyCond.html">SDL_DestroyCond()</a> → <a href="SDL_DestroyCondition.html">SDL_DestroyCondition()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemPost.html">SDL_SemPost()</a> → <a href="SDL_SignalSemaphore.html">SDL_SignalSemaphore()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemTryWait.html">SDL_SemTryWait()</a> → <a href="SDL_TryWaitSemaphore.html">SDL_TryWaitSemaphore()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemValue.html">SDL_SemValue()</a> → <a href="SDL_GetSemaphoreValue.html">SDL_GetSemaphoreValue()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemWait.html">SDL_SemWait()</a> → <a href="SDL_WaitSemaphore.html">SDL_WaitSemaphore()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SemWaitTimeout.html">SDL_SemWaitTimeout()</a> → <a href="SDL_WaitSemaphoreTimeout.html">SDL_WaitSemaphoreTimeout()</a>, bool値を戻す
 </ul>
 <p>
 以下のシンボルの名前は次の様に変更された:
 </p>
 <ul>
-<li>SDL_cond → <a href="https://wiki.libsdl.org/SDL3/SDL_Condition">SDL_Condition</a>
-<li>SDL_mutex → <a href="https://wiki.libsdl.org/SDL3/SDL_Mutex">SDL_Mutex</a>
-<li>SDL_sem → <a href="https://wiki.libsdl.org/SDL3/SDL_Semaphore">SDL_Semaphore</a>
+<li>SDL_cond → <a href="SDL_Condition.html">SDL_Condition</a>
+<li>SDL_mutex → <a href="SDL_Mutex.html">SDL_Mutex</a>
+<li>SDL_sem → <a href="SDL_Semaphore.html">SDL_Semaphore</a>
 </ul>
 <h2><a name="#sdl_pixelsh">SDL_pixels.h (ピクセル形式と変換)</a></h2>
 <p>

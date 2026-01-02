@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryMutex.html" title="1つ上">
+<title>SDL_LockRWLockForWriting</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryMutex.html">同期プリミティブ</a> - SDL_LockRWLockForWriting
+<hr>
+<h1>SDL_LockRWLockForWriting</h1>
+読取/書込ロックを書込ロックする
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_mutex.h">SDL3/SDL_mutex.h</a>
+<h2>構文</h2>
+<code>void SDL_LockRWLockForWriting(SDL_RWLock *rwlock);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_RWLock.html">SDL_RWLock</a> *</td><td>rwlock</td><td>ロックする読取/書込ロック</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+この関数は読取/書込ロックが利用可能(別のスレッドから読取ロックも書込ロックもされていない状態)になるまでブロックする.
+書込ロックは一度に1つのスレッドのみが行える.
+他の全てのスレッドは, 書込ロックも読取ロックも, 書込ロックを行っているスレッドが解除するまで待つことになる.
+</p>
+<p>
+既に書込ロックされたロックをさらに書込ロックすることはできない(読取ロックは再帰ロックだが, 書込ロックはそうでない).
+これは未定義の動作を引き起こす.
+</p>
+<p>
+既に読取ロックされたロックを読取ロックすることはできない.
+これは未定義の動作を引き起こす.
+読取ロックの前に書込ロックを解除すること.
+</p>
+<p>
+この関数が失敗することはない. <code>rwlock</code>がNULLの場合, 何もロックせずに即座に戻る.
+<code>rwlock</code>が有効ならば, この関数は常にロック可能になるまでブロックし, ロックすると戻る.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_LockRWLockForReading.html">SDL_LockRWLockForReading</a>
+<li><a href="SDL_TryLockRWLockForWriting.html">SDL_TryLockRWLockForWriting</a>
+<li><a href="SDL_UnlockRWLock.html">SDL_UnlockRWLock</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_LockRWLockForWriting">SDL_LockRWLockForWriting - SDL Wiki</a>
+<hr>
+</body>
+</html>

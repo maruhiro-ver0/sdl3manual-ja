@@ -75,7 +75,7 @@
 <li><a href="SDL_BlitSurfaceTiledWithScale.html">SDL_BlitSurfaceTiledWithScale</a> - サーフェイスに拡大縮小してタイル状に敷き詰めるように転送する
 <li><a href="SDL_BlitSurfaceUnchecked.html">SDL_BlitSurfaceUnchecked</a> - 低レベルのサーフェイス転送のみを行う
 <li><a href="SDL_BlitSurfaceUncheckedScaled.html">SDL_BlitSurfaceUncheckedScaled</a> - 低レベルの拡大縮小サーフェイス転送のみを行う
-<li>SDL_BroadcastCondition
+<li><a href="SDL_BroadcastCondition.html">SDL_BroadcastCondition</a> - 条件変数を待つ全てのスレッドを再開する
 <li>SDL_bsearch
 <li>SDL_bsearch_r
 <li>SDL_CalculateGPUTextureFormatSize
@@ -126,7 +126,7 @@
 <li>SDL_CreateAsyncIOQueue
 <li><a href="SDL_CreateAudioStream.html">SDL_CreateAudioStream</a> - オーディオストリームを生成する 
 <li><a href="SDL_CreateColorCursor.html">SDL_CreateColorCursor</a> - 色つきのマウスカーソルを生成する
-<li>SDL_CreateCondition
+<li><a href="SDL_CreateCondition.html">SDL_CreateCondition</a> - 新しい条件変数を生成する
 <li><a href="SDL_CreateCursor.html">SDL_CreateCursor</a> - 指定のビットマップデータとマスク(MSB形式)からマウスカーソルを生成する
 <li>SDL_CreateDirectory
 <li>SDL_CreateEnvironment
@@ -142,7 +142,7 @@
 <li>SDL_CreateGPUTexture
 <li>SDL_CreateGPUTransferBuffer
 <li>SDL_CreateHapticEffect
-<li>SDL_CreateMutex
+<li><a href="SDL_CreateMutex.html">SDL_CreateMutex</a> - 新しいミューテックスを生成する
 <li><a href="SDL_CreatePalette.html">SDL_CreatePalette</a> - 色の数を指定してパレットを生成する
 <li><a href="SDL_CreatePopupWindow.html">SDL_CreatePopupWindow</a> - 指定した親ウィンドウの子ポップアップウィンドウを生成する
 <li>SDL_CreateProcess
@@ -150,8 +150,8 @@
 <li><a href="SDL_CreateProperties.html">SDL_CreateProperties</a> - プロパティグループを生成する
 <li>SDL_CreateRenderer
 <li>SDL_CreateRendererWithProperties
-<li>SDL_CreateRWLock
-<li>SDL_CreateSemaphore
+<li><a href="SDL_CreateRWLock.html">SDL_CreateRWLock</a> - 読取/書込ロックを生成する
+<li><a href="SDL_CreateSemaphore.html">SDL_CreateSemaphore</a> - 新しいセマフォを生成する
 <li>SDL_CreateSoftwareRenderer
 <li>SDL_CreateStorageDirectory
 <li><a href="SDL_CreateSurface.html">SDL_CreateSurface</a> - 指定したピクセル形式で新しいサーフェイスを生成する
@@ -176,19 +176,19 @@
 <li>SDL_DelayPrecise
 <li>SDL_DestroyAsyncIOQueue
 <li><a href="SDL_DestroyAudioStream.html">SDL_DestroyAudioStream</a> - オーディオストリームを破棄する
-<li>SDL_DestroyCondition
+<li><a href="SDL_DestroyCondition.html">SDL_DestroyCondition</a> - 条件変数を破棄する
 <li><a href="SDL_DestroyCursor.html">SDL_DestroyCursor</a> - カーソルを解放する
 <li>SDL_DestroyEnvironment
 <li>SDL_DestroyGPUDevice
 <li>SDL_DestroyGPURenderState
 <li>SDL_DestroyHapticEffect
-<li>SDL_DestroyMutex
+<li><a href="SDL_DestroyMutex.html">SDL_DestroyMutex</a> - SDL_CreateMutex()で生成したミューテックスを破棄する
 <li><a href="SDL_DestroyPalette.html">SDL_DestroyPalette</a> - SDL_CreatePalette()で生成したパレットを解放する
 <li>SDL_DestroyProcess
 <li><a href="SDL_DestroyProperties.html">SDL_DestroyProperties</a> - プロパティグループを破棄する
 <li>SDL_DestroyRenderer
-<li>SDL_DestroyRWLock
-<li>SDL_DestroySemaphore
+<li><a href="SDL_DestroyRWLock.html">SDL_DestroyRWLock</a> - SDL_CreateRWLock()で生成した読取/書込ロックを破棄する
+<li><a href="SDL_DestroySemaphore.html">SDL_DestroySemaphore</a> - セマフォを破棄する
 <li><a href="SDL_DestroySurface.html">SDL_DestroySurface</a> - サーフェイスを破棄する 
 <li>SDL_DestroyTexture
 <li>SDL_DestroyTray
@@ -532,7 +532,7 @@
 <li><a href="SDL_GetScancodeFromKey.html">SDL_GetScancodeFromKey</a> - キーコードから現在のキーボードレイアウトに割り当てられたキースキャンコードを得る
 <li><a href="SDL_GetScancodeFromName.html">SDL_GetScancodeFromName</a> - 人が読めるキー名からスキャンコードを得る
 <li><a href="SDL_GetScancodeName.html">SDL_GetScancodeName</a> - スキャンコードの人が読める名前を得る
-<li>SDL_GetSemaphoreValue
+<li><a href="SDL_GetSemaphoreValue.html">SDL_GetSemaphoreValue</a> - セマフォの現在の値を得る
 <li>SDL_GetSensorData
 <li>SDL_GetSensorFromID
 <li>SDL_GetSensorID
@@ -763,10 +763,10 @@
 <li><a href="SDL_LoadWAV_IO.html">SDL_LoadWAV_IO</a> - WAVファイルをメモリに読み込む
 <li><a href="SDL_LockAudioStream.html">SDL_LockAudioStream</a> - オーディオストリームをアクセスの直列化のためロックする
 <li><a href="SDL_LockJoysticks.html">SDL_LockJoysticks</a> - ジョイスティックAPIへのアトミックなアクセスのためにロックする
-<li>SDL_LockMutex
+<li><a href="SDL_LockMutex.html">SDL_LockMutex</a> - ミューテックスをロックする
 <li><a href="SDL_LockProperties.html">SDL_LockProperties</a> - プロパティグループをロックする
-<li>SDL_LockRWLockForReading
-<li>SDL_LockRWLockForWriting
+<li><a href="SDL_LockRWLockForReading.html">SDL_LockRWLockForReading</a> - ブロックせずに読取/書込ロックの読取専用ロックを試みる
+<li><a href="SDL_LockRWLockForWriting.html">SDL_LockRWLockForWriting</a> - ブロックせずに読取/書込ロックの書込ロックを試みる
 <li><a href="SDL_LockSpinlock.html">SDL_LockSpinlock</a> - 0でない値を設定することでスピンロックする
 <li><a href="SDL_LockSurface.html">SDL_LockSurface</a> - ピクセル領域に直接アクセスできるように設定する
 <li>SDL_LockTexture
@@ -1028,7 +1028,7 @@
 <li>SDL_SetHapticGain
 <li><a href="SDL_SetHint.html">SDL_SetHint</a> - ヒントを通常の優先度で設定する
 <li><a href="SDL_SetHintWithPriority.html">SDL_SetHintWithPriority</a> - ヒントを指定の優先度で設定する
-<li>SDL_SetInitialized
+<li><a href="SDL_SetInitialized.html">SDL_SetInitialized</a> - 初期化状態を完了にする
 <li>SDL_SetiOSAnimationCallback
 <li>SDL_SetiOSEventPump
 <li><a href="SDL_SetJoystickEventsEnabled.html">SDL_SetJoystickEventsEnabled</a> - ジョイスティックイベント処理の有無を設定する
@@ -1118,8 +1118,8 @@
 <li><a href="SDL_SetWindowSurfaceVSync.html">SDL_SetWindowSurfaceVSync</a> - ウィンドウのサーフェイスの垂直同期を設定する
 <li><a href="SDL_SetWindowTitle.html">SDL_SetWindowTitle</a> - ウィンドウのタイトルを設定する
 <li>SDL_SetX11EventHook
-<li>SDL_ShouldInit
-<li>SDL_ShouldQuit
+<li><a href="SDL_ShouldInit.html">SDL_ShouldInit</a> - 初期化が完了しているかをチェックする
+<li><a href="SDL_ShouldQuit.html">SDL_ShouldQuit</a> - 終了処理が完了しているかをチェックする
 <li>SDL_ShowAndroidToast
 <li><a href="SDL_ShowCursor.html">SDL_ShowCursor</a> - マウスカーソルを表示する
 <li><a href="SDL_ShowFileDialogWithProperties.html">SDL_ShowFileDialogWithProperties</a> - プロパティを指定してファイルダイアログを生成し表示する
@@ -1131,8 +1131,8 @@
 <li><a href="SDL_ShowWindow.html">SDL_ShowWindow</a> - ウィンドウを表示する
 <li><a href="SDL_ShowWindowSystemMenu.html">SDL_ShowWindowSystemMenu</a> - システムのウィンドウメニューを表示する
 <li>SDL_SignalAsyncIOQueue
-<li>SDL_SignalCondition
-<li>SDL_SignalSemaphore
+<li><a href="SDL_SignalCondition.html">SDL_SignalCondition</a> - 条件変数を待つ1つのスレッドを再開する
+<li><a href="SDL_SignalSemaphore.html">SDL_SignalSemaphore</a> - セマフォの値を1加算し, 待機中のスレッドを再開する
 <li>SDL_sin
 <li>SDL_sinf
 <li>SDL_size_add_check_overflow
@@ -1200,11 +1200,11 @@
 <li>SDL_toupper
 <li>SDL_trunc
 <li>SDL_truncf
-<li>SDL_TryLockMutex
-<li>SDL_TryLockRWLockForReading
-<li>SDL_TryLockRWLockForWriting
+<li><a href="SDL_TryLockMutex.html">SDL_TryLockMutex</a> - ブロックせずにミューテックスのロックを試みる
+<li><a href="SDL_TryLockRWLockForReading.html">SDL_TryLockRWLockForReading</a> - 読取/書込ロックを読取専用ロックする
+<li><a href="SDL_TryLockRWLockForWriting.html">SDL_TryLockRWLockForWriting</a> - 読取/書込ロックを書込ロックする
 <li><a href="SDL_TryLockSpinlock.html">SDL_TryLockSpinlock</a> - 0でない値を設定することでスピンロックを試みる
-<li>SDL_TryWaitSemaphore
+<li><a href="SDL_TryWaitSemaphore.html">SDL_TryWaitSemaphore</a> - セマフォの値が正であるか調査し, そうならば減算する
 <li>SDL_UCS4ToUTF8
 <li>SDL_uitoa
 <li>SDL_ulltoa
@@ -1214,9 +1214,9 @@
 <li>SDL_UnloadObject
 <li><a href="SDL_UnlockAudioStream.html">SDL_UnlockAudioStream</a> - オーディオストリームのアクセスの直列化のためのロックを解除する
 <li><a href="SDL_UnlockJoysticks.html">SDL_UnlockJoysticks</a> - ジョイスティックAPIへのアトミックなアクセスのためのロックを解除する
-<li>SDL_UnlockMutex
+<li><a href="SDL_UnlockMutex.html">SDL_UnlockMutex</a> - ミューテックスのロックを解除する
 <li><a href="SDL_UnlockProperties.html">SDL_UnlockProperties</a> - プロパティグループをアンロックする
-<li>SDL_UnlockRWLock
+<li><a href="SDL_UnlockRWLock.html">SDL_UnlockRWLock</a> - 読取/書込ロックをロック解除する
 <li><a href="SDL_UnlockSpinlock.html">SDL_UnlockSpinlock</a> - 0を設定することでスピンロックを解除する
 <li><a href="SDL_UnlockSurface.html">SDL_UnlockSurface</a> - ピクセル領域に直接アクセスした後にロックを解放する
 <li>SDL_UnlockTexture
@@ -1252,16 +1252,16 @@
 <li>SDL_Vulkan_UnloadLibrary
 <li>SDL_WaitAndAcquireGPUSwapchainTexture
 <li>SDL_WaitAsyncIOResult
-<li>SDL_WaitCondition
-<li>SDL_WaitConditionTimeout
+<li><a href="SDL_WaitCondition.html">SDL_WaitCondition</a> - 条件変数が通知されるまで待つ
+<li><a href="SDL_WaitConditionTimeout.html">SDL_WaitConditionTimeout</a> - 条件変数が通知されるか指定の時間が経過するまで待つ
 <li><a href="SDL_WaitEvent.html">SDL_WaitEvent</a> - 次のイベントが発生するまで無制限に待つ
 <li><a href="SDL_WaitEventTimeout.html">SDL_WaitEventTimeout</a> - 次のイベントが発生するまで指定の時間(ミリ秒)待つ
 <li>SDL_WaitForGPUFences
 <li>SDL_WaitForGPUIdle
 <li>SDL_WaitForGPUSwapchain
 <li>SDL_WaitProcess
-<li>SDL_WaitSemaphore
-<li>SDL_WaitSemaphoreTimeout
+<li><a href="SDL_WaitSemaphore.html">SDL_WaitSemaphore</a> - セマフォの値が正になるまで待機し, セマフォの値を減算する
+<li><a href="SDL_WaitSemaphoreTimeout.html">SDL_WaitSemaphoreTimeout</a> - セマフォの値が正になるまで待機し, セマフォの値を減算する(タイムアウト付き)
 <li><a href="SDL_WaitThread.html">SDL_WaitThread</a> - スレッドが終了するまで待つ
 <li><a href="SDL_WarpMouseGlobal.html">SDL_WarpMouseGlobal</a> - マウスカーソルを画面上の指定の座標に移動させる
 <li><a href="SDL_WarpMouseInWindow.html">SDL_WarpMouseInWindow</a> - マウスカーソルをウィンドウ内の指定の位置へ移動する
@@ -1325,7 +1325,7 @@
 <li><a href="SDL_ClipboardDataCallback.html">SDL_ClipboardDataCallback</a> - OSからMIMEタイプを指定したデータの要求があったとき呼ばれる関数の型
 <li>SDL_CompareCallback
 <li>SDL_CompareCallback_r
-<li>SDL_Condition
+<li><a href="SDL_Condition.html">SDL_Condition</a> - 条件変数(条件を満たすまで複数のスレッドをブロックする手段)の型
 <li><a href="SDL_Cursor.html">SDL_Cursor</a> - SDLマウスカーソルの型
 <li><a href="SDL_DialogFileCallback.html">SDL_DialogFileCallback</a> - ファイルダイアログ関数で使用するコールバックの型
 <li><a href="SDL_DisplayID.html">SDL_DisplayID</a> - 現在システムに接続されているディスプレイのユニークIDの型
@@ -1397,7 +1397,7 @@
 <li><a href="SDL_MouseButtonFlags.html">SDL_MouseButtonFlags</a> - SDL_GetMouseState等が報告するマウスボタンのビットマスクの型
 <li><a href="SDL_MouseID.html">SDL_MouseID</a> - システムに接続されたマウスのユニークIDの型
 <li><a href="SDL_MouseMotionTransformCallback.html">SDL_MouseMotionTransformCallback</a> - マウスの移動量を変換するコールバックの型
-<li>SDL_Mutex
+<li><a href="SDL_Mutex.html">SDL_Mutex</a> - ミューテックス(スレッド間のアクセスを直列化する手段)の型
 <li>SDL_NSTimerCallback
 <li><a href="SDL_PenID.html">SDL_PenID</a> - SDLペンインスタンスIDの型
 <li><a href="SDL_PenInputFlags.html">SDL_PenInputFlags</a> - 様々なペンイベントのpen_stateフィールドで使用されるペン入力フラグの型
@@ -1406,8 +1406,8 @@
 <li>SDL_realloc_func
 <li>SDL_Renderer
 <li>SDL_RequestAndroidPermissionCallback
-<li>SDL_RWLock
-<li>SDL_Semaphore
+<li><a href="SDL_RWLock.html">SDL_RWLock</a> - 読取専用スレッドは平行して実行できるミューテックスの型
+<li><a href="SDL_Semaphore.html">SDL_Semaphore</a> - セマフォ(スレッド間のアクセスをカウントして管理する手段)の型
 <li>SDL_Sensor
 <li>SDL_SensorID
 <li><a href="SDL_SharedObject.html">SDL_SharedObject</a> - 読み込まれた共通オブジェクトを表す不透明型
@@ -1518,7 +1518,7 @@
 <li>SDL_HapticPeriodic
 <li>SDL_HapticRamp
 <li><a href="SDL_hid_device_info.html">SDL_hid_device_info</a> - 接続されたHIDデバイスの情報の構造体
-<li>SDL_InitState
+<li><a href="SDL_InitState.html">SDL_InitState</a> - スレッドセーフな初期化と終了で使用する構造体
 <li>SDL_IOStreamInterface
 <li><a href="SDL_JoyAxisEvent.html">SDL_JoyAxisEvent</a> - ジョイスティック移動イベントの構造体(event.jaxis.*)
 <li><a href="SDL_JoyBallEvent.html">SDL_JoyBallEvent</a> - ジョイスティックボールイベントの構造体(event.jball.*)
@@ -1626,7 +1626,7 @@
 <li><a href="SDL_hid_bus_type.html">SDL_hid_bus_type</a> - HIDのバスの列挙体
 <li><a href="SDL_HintPriority.html">SDL_HintPriority</a> - ヒントの優先度の列挙体
 <li><a href="SDL_HitTestResult.html">SDL_HitTestResult</a> - SDL_SetWindowHitTest()コールバック関数が戻す値の列挙体
-<li>SDL_InitStatus
+<li><a href="SDL_InitStatus.html">SDL_InitStatus</a> - SDL_InitState構造体の状態の列挙体
 <li>SDL_IOStatus
 <li>SDL_IOWhence
 <li><a href="SDL_JoystickConnectionState.html">SDL_JoystickConnectionState</a> - ジョイスティックデバイスの接続方法の列挙体
@@ -1664,10 +1664,10 @@
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_ACQUIRE
-<li>SDL_ACQUIRE_SHARED
-<li>SDL_ACQUIRED_AFTER
-<li>SDL_ACQUIRED_BEFORE
+<li><a href="SDL_ACQUIRE.html">SDL_ACQUIRE</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
+<li><a href="SDL_ACQUIRE_SHARED.html">SDL_ACQUIRE_SHARED</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
+<li><a href="SDL_ACQUIRED_AFTER.html">SDL_ACQUIRED_AFTER</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
+<li><a href="SDL_ACQUIRED_BEFORE.html">SDL_ACQUIRED_BEFORE</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_ALIGNED
 <li>SDL_ALLOC_SIZE
 <li><a href="SDL_ALPHA_OPAQUE.html">SDL_ALPHA_OPAQUE</a> - 完全に不透明なα値の8ビット整数のマクロ
@@ -1681,11 +1681,11 @@
 <li>SDL_arraysize
 <li>SDL_assert
 <li>SDL_assert_always
-<li>SDL_ASSERT_CAPABILITY
+<li><a href="SDL_ASSERT_CAPABILITY.html">SDL_ASSERT_CAPABILITY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_ASSERT_LEVEL
 <li>SDL_assert_paranoid
 <li>SDL_assert_release
-<li>SDL_ASSERT_SHARED_CAPABILITY
+<li><a href="SDL_ASSERT_SHARED_CAPABILITY.html">SDL_ASSERT_SHARED_CAPABILITY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_AssertBreakpoint
 <li>SDL_AtomicDecRef
 <li>SDL_AtomicIncRef
@@ -1731,7 +1731,7 @@
 <li>SDL_BYTEORDER
 <li><a href="SDL_BYTESPERPIXEL.html">SDL_BYTESPERPIXEL</a> - ピクセル形式のピクセル当たりのバイト数を求めるマクロ
 <li><a href="SDL_CACHELINE_SIZE.html">SDL_CACHELINE_SIZE</a> - パッディングで使用するためのキャッシュサイズの推定値のマクロ
-<li>SDL_CAPABILITY
+<li><a href="SDL_CAPABILITY.html">SDL_CAPABILITY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_clamp
 <li><a href="SDL_COLORSPACECHROMA.html">SDL_COLORSPACECHROMA</a> - 色空間情報からクロマサンプリングの位置を得るマクロ
 <li><a href="SDL_COLORSPACEMATRIX.html">SDL_COLORSPACEMATRIX</a> - 色空間情報からmatrix coefficients(行列の係数)を得る
@@ -1757,7 +1757,7 @@
 <li>SDL_ELF_NOTE_DLOPEN_PRIORITY_REQUIRED
 <li>SDL_ELF_NOTE_DLOPEN_PRIORITY_SUGGESTED
 <li>SDL_enabled_assert
-<li>SDL_EXCLUDES
+<li><a href="SDL_EXCLUDES.html">SDL_EXCLUDES</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_FALLTHROUGH
 <li>SDL_FILE
 <li>SDL_FLOATWORDORDER
@@ -1803,7 +1803,7 @@
 <li>SDL_GPU_TEXTUREUSAGE_DEPTH_STENCIL_TARGET
 <li>SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ
 <li>SDL_GPU_TEXTUREUSAGE_SAMPLER
-<li>SDL_GUARDED_BY
+<li><a href="SDL_GUARDED_BY.html">SDL_GUARDED_BY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_HAPTIC_AUTOCENTER
 <li>SDL_HAPTIC_CARTESIAN
 <li>SDL_HAPTIC_CONSTANT
@@ -2196,7 +2196,7 @@
 <li>SDL_MS_TO_NS
 <li><a href="SDL_MUSTLOCK.html">SDL_MUSTLOCK</a> - アクセスのためにサーフェイスをロックする必要があるかを調べるマクロ
 <li><a href="SDL_NEON_INTRINSICS.html">SDL_NEON_INTRINSICS</a> - コンパイラがARM NEON組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
-<li>SDL_NO_THREAD_SAFETY_ANALYSIS
+<li><a href="SDL_NO_THREAD_SAFETY_ANALYSIS.html">SDL_NO_THREAD_SAFETY_ANALYSIS</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_NODISCARD
 <li>SDL_NOLONGLONG
 <li>SDL_NORETURN
@@ -2565,23 +2565,23 @@
 <li>SDL_PROP_WINDOW_X11_DISPLAY_POINTER
 <li>SDL_PROP_WINDOW_X11_SCREEN_NUMBER
 <li>SDL_PROP_WINDOW_X11_WINDOW_NUMBER
-<li>SDL_PT_GUARDED_BY
+<li><a href="SDL_PT_GUARDED_BY.html">SDL_PT_GUARDED_BY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_reinterpret_cast
-<li>SDL_RELEASE
-<li>SDL_RELEASE_GENERIC
-<li>SDL_RELEASE_SHARED
+<li><a href="SDL_RELEASE.html">SDL_RELEASE</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
+<li><a href="SDL_RELEASE_GENERIC.html">SDL_RELEASE_GENERIC</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
+<li><a href="SDL_RELEASE_SHARED.html">SDL_RELEASE_SHARED</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_RENDERER_VSYNC_ADAPTIVE
 <li>SDL_RENDERER_VSYNC_DISABLED
-<li>SDL_REQUIRES
-<li>SDL_REQUIRES_SHARED
+<li><a href="SDL_REQUIRES.html">SDL_REQUIRES</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
+<li><a href="SDL_REQUIRES_SHARED.html">SDL_REQUIRES_SHARED</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_RESTRICT
-<li>SDL_RETURN_CAPABILITY
+<li><a href="SDL_RETURN_CAPABILITY.html">SDL_RETURN_CAPABILITY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li><a href="SDL_REVISION.html">SDL_REVISION</a> - 開発の特定の時点のソースを表す文字列のマクロ
 <li>SDL_SCANCODE_TO_KEYCODE
 <li>SDL_SCANF_FORMAT_STRING
 <li>SDL_SCANF_VARARG_FUNC
 <li>SDL_SCANF_VARARG_FUNCV
-<li>SDL_SCOPED_CAPABILITY
+<li><a href="SDL_SCOPED_CAPABILITY.html">SDL_SCOPED_CAPABILITY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_SECONDS_TO_NS
 <li>SDL_SINT64_C
 <li>SDL_SIZE_MAX
@@ -2608,7 +2608,7 @@
 <li>SDL_SwapFloatBE
 <li>SDL_SwapFloatLE
 <li><a href="SDL_TARGETING.html">SDL_TARGETING</a> - 特定のCPUアーキテクチャを対象とした関数のタグ付けのマクロ
-<li>SDL_THREAD_ANNOTATION_ATTRIBUTE__
+<li><a href="SDL_THREAD_ANNOTATION_ATTRIBUTE__.html">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a> - スレッドセーフ属性を有効にする(Clangのみ)
 <li><a href="SDL_TOUCH_MOUSEID.html">SDL_TOUCH_MOUSEID</a> - マウスイベントでのタッチ入力のSDL_MouseID
 <li>SDL_TRAYENTRY_BUTTON
 <li>SDL_TRAYENTRY_CHECKBOX
@@ -2616,8 +2616,8 @@
 <li>SDL_TRAYENTRY_DISABLED
 <li>SDL_TRAYENTRY_SUBMENU
 <li>SDL_TriggerBreakpoint
-<li>SDL_TRY_ACQUIRE
-<li>SDL_TRY_ACQUIRE_SHARED
+<li><a href="SDL_TRY_ACQUIRE.html">SDL_TRY_ACQUIRE</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
+<li><a href="SDL_TRY_ACQUIRE_SHARED.html">SDL_TRY_ACQUIRE_SHARED</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_UINT64_C
 <li><a href="SDL_Unsupported.html">SDL_Unsupported</a> - 対応外の操作をしたとき一般的なエラーを報告するためのマクロ
 <li>SDL_US_PER_SECOND

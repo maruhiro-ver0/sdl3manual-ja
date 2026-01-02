@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryMutex.html" title="1つ上">
+<title>SDL_WaitConditionTimeout</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryMutex.html">同期プリミティブ</a> - SDL_WaitConditionTimeout
+<hr>
+<h1>SDL_WaitConditionTimeout</h1>
+条件変数が通知されるか指定の時間が経過するまで待つ
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_mutex.h">SDL3/SDL_mutex.h</a>
+<h2>構文</h2>
+<code>bool SDL_WaitConditionTimeout(SDL_Condition *cond, SDL_Mutex *mutex, Sint32 timeoutMS);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Condition.html">SDL_Condition</a> *</td><td>cond</td><td>待つ条件変数</td></tr>
+<tr><td><a href="SDL_Mutex.html">SDL_Mutex</a> *</td><td>mutex</td><td>スレッドアクセスを制御するためのミューテックス</td></tr>
+<tr><td>Sint32</td><td>timeoutMS</td><td>ミリ秒単位の最大待ち時間. -1のとき無制限に待つ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 条件変数が通知されたとき真, 通知されずに待ち時間が経過したとき偽を戻す.
+<h2>詳細</h2>
+<p>
+この関数は<code>mutex</code>のロックを解除し, 別のスレッドが<a href="SDL_CondSignal.html">SDL_CondSignal()</a>か<a href="SDL_CondBroadcast.html">SDL_CondBroadcast()</a>を呼んで条件変数<code>cond</code>を通知する, あるいは指定の時間が経過するまで待つ.
+条件変数が通知, または指定の時間が経過すれば, <code>mutex</code>は再びロックされ関数から戻る.
+</p>
+<p>
+<code>mutex</code>はこの関数を呼ぶ前にロックされている必要がある.
+ミューテックスの再帰ロック(複数回のロック)には対応しておらず, その場合の動作は未定義である.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>サンプルコード</h2>
+<p>
+<code>
+<pre>
+bool condition = false;
+SDL_Mutex *lock;
+SDL_Condition *cond;
+lock = SDL_CreateMutex();
+cond = SDL_CreateCondition();
+
+Thread_A:
+    const Uint32 timeout = 1000; /* 1秒ごとに動作する */
+    bool done = false;
+    while (!done) {
+        SDL_LockMutex(lock);
+        while (!condition && SDL_WaitConditionTimeout(cond, lock, timeout) == 0) {
+            continue;
+        }
+        SDL_UnlockMutex(lock);
+        if (condition) {
+            /* ... */
+        }
+        /* ... ここで周期的な処理を行う */
+    }
+Thread_B:
+    SDL_LockMutex(lock);
+    /* ... */
+    condition = true;
+    /* ... */
+    SDL_SignalCondition(cond);
+    SDL_UnlockMutex(lock);
+
+SDL_DestroyCondition(cond);
+SDL_DestroyMutex(lock);
+</pre>
+</code>
+</p>
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_BroadcastCondition.html">SDL_BroadcastCondition</a>
+<li><a href="SDL_SignalCondition.html">SDL_SignalCondition</a>
+<li><a href="SDL_WaitCondition.html">SDL_WaitCondition</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_WaitConditionTimeout">SDL_WaitConditionTimeout - SDL Wiki</a>
+<hr>
+</body>
+</html>
