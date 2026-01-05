@@ -170,7 +170,7 @@
 <li>SDL_CreateWindowAndRenderer
 <li><a href="SDL_CreateWindowWithProperties.html">SDL_CreateWindowWithProperties</a> - プロパティを指定してウィンドウを生成する
 <li><a href="SDL_CursorVisible.html">SDL_CursorVisible</a> - マウスカーソルが表示されているかを得る
-<li>SDL_DateTimeToTime
+<li><a href="SDL_DateTimeToTime.html">SDL_DateTimeToTime</a> - カレンダー日時をエポックナノ秒に変換する
 <li>SDL_Delay
 <li>SDL_DelayNS
 <li>SDL_DelayPrecise
@@ -305,10 +305,10 @@
 <li><a href="SDL_GetCurrentDisplayOrientation.html">SDL_GetCurrentDisplayOrientation</a> - ディスプレイの方向を得る
 <li>SDL_GetCurrentRenderOutputSize
 <li><a href="SDL_GetCurrentThreadID.html">SDL_GetCurrentThreadID</a> - 現在のスレッドのスレッドIDを得る
-<li>SDL_GetCurrentTime
+<li><a href="SDL_GetCurrentTime.html">SDL_GetCurrentTime</a> - システムの現在日時をエポックナノ秒で得る
 <li><a href="SDL_GetCurrentVideoDriver.html">SDL_GetCurrentVideoDriver</a> - 初期化された現在のビデオドライバの名前を得る
 <li><a href="SDL_GetCursor.html">SDL_GetCursor</a> - 現在のマウスカーソルを得る
-<li>SDL_GetDateTimeLocalePreferences
+<li><a href="SDL_GetDateTimeLocalePreferences.html">SDL_GetDateTimeLocalePreferences</a> - 現在のシステムロケールの日付と時刻の望ましい形式を得る
 <li>SDL_GetDayOfWeek
 <li>SDL_GetDayOfYear
 <li>SDL_GetDaysInMonth
@@ -1417,7 +1417,7 @@
 <li><a href="SDL_Thread.html">SDL_Thread</a> - SDLスレッドオブジェクトの型
 <li><a href="SDL_ThreadFunction.html">SDL_ThreadFunction</a> - 新しいスレッドのエントリーポイントとしてSDL_CreateThread()に渡す関数の型
 <li><a href="SDL_ThreadID.html">SDL_ThreadID</a> - ユニークな数値のスレッドIDの型
-<li>SDL_Time
+<li><a href="SDL_Time.html">SDL_Time</a> - UNIXエポック(1970年1月1日)からのナノ秒を表す符号あり64ビット整数の型
 <li>SDL_TimerCallback
 <li>SDL_TimerID
 <li><a href="SDL_TLSDestructorCallback.html">SDL_TLSDestructorCallback</a> - データの後処理としてSDL_SetTLSに渡すコールバックの型
@@ -1455,7 +1455,7 @@
 <li><a href="SDL_ClipboardEvent.html">SDL_ClipboardEvent</a> - クリップボードイベントの構造体(event.clipboard.*)
 <li><a href="SDL_Color.html">SDL_Color</a> - 色をRGBA要素で表す構造体
 <li><a href="SDL_CommonEvent.html">SDL_CommonEvent</a> - 全イベントの共通フィールドの構造体
-<li>SDL_DateTime
+<li><a href="SDL_DateTime.html">SDL_DateTime</a> - カレンダー日時のそれぞれの値を保持する構造体
 <li><a href="SDL_DialogFileFilter.html">SDL_DialogFileFilter</a> - ファイルダイアログのフィルタの構造体
 <li><a href="SDL_DisplayEvent.html">SDL_DisplayEvent</a> - ディスプレイイベントの構造体(event.display.*)
 <li><a href="SDL_DisplayMode.html">SDL_DisplayMode</a> - ディスプレイモードの構造体
@@ -1584,7 +1584,7 @@
 <li><a href="SDL_ColorRange.html">SDL_ColorRange</a> - 色空間情報の色の範囲の列挙体
 <li><a href="SDL_Colorspace.html">SDL_Colorspace</a> - 色空間情報の列挙体
 <li><a href="SDL_ColorType.html">SDL_ColorType</a> - 色空間情報の種類の列挙体
-<li>SDL_DateFormat
+<li><a href="SDL_DateFormat.html">SDL_DateFormat</a> - システムのロケールの日付の形式の列挙体
 <li><a href="SDL_DisplayOrientation.html">SDL_DisplayOrientation</a> - ディスプレイの向きを表す列挙体
 <li>SDL_EnumerationResult
 <li>SDL_EventAction
@@ -1658,7 +1658,7 @@
 <li>SDL_TextureAddressMode
 <li><a href="SDL_ThreadPriority.html">SDL_ThreadPriority</a> - スレッドの優先度の列挙体
 <li><a href="SDL_ThreadState.html">SDL_ThreadState</a> - SDLスレッドの状態の列挙体
-<li>SDL_TimeFormat
+<li><a href="SDL_TimeFormat.html">SDL_TimeFormat</a> - システムのロケールの時刻の形式の列挙体
 <li><a href="SDL_TouchDeviceType.html">SDL_TouchDeviceType</a> - タッチデバイスの種類の列挙体
 <li><a href="SDL_TransferCharacteristics.html">SDL_TransferCharacteristics</a> - 色空間情報のtransfer characteristics(伝達特性)の列挙体
 </ol>

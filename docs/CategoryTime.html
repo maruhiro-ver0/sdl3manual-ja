@@ -16,43 +16,31 @@
 SDLのリアルタイムクロックと日付・時刻ルーチン群.
 </p>
 <p>
-この分類のAPIでは, 2種類の型が使われる: SDL_Timeはある特定の時点(「紀元」"epoch")からのナノ秒間を表す. SDL_DateTimeは人間が読めるようにに分解されている(年, 月, 日, 時など).
+この分類のAPIでは, 2種類の型が使われる: <a href="SDL_Time.html">SDL_Time</a>はある特定の時点(「エポック」"epoch")からのナノ秒間を表す. <a href="SDL_DateTime.html">SDL_DateTime</a>は人間が読めるようにに分解されている(年, 月, 日, 時など).
 </p>
 <p>
 機能の大半は, この2つの形式の他の形式への変換に関連するものである.
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_AddTimer
-<li>SDL_AddTimerNS
-<li>SDL_Delay
-<li>SDL_DelayNS
-<li>SDL_DelayPrecise
-<li>SDL_GetPerformanceCounter
-<li>SDL_GetPerformanceFrequency
-<li>SDL_GetTicks
-<li>SDL_GetTicksNS
-<li>SDL_RemoveTimer
+<li><a href="SDL_DateTimeToTime.html">SDL_DateTimeToTime</a> - カレンダー日時をエポックナノ秒に変換する
+<li><a href="SDL_GetCurrentTime.html">SDL_GetCurrentTime</a> - システムの現在日時をエポックナノ秒で得る
+<li><a href="SDL_GetDateTimeLocalePreferences.html">SDL_GetDateTimeLocalePreferences</a> - 現在のシステムロケールの日付と時刻の望ましい形式を得る
+<li>SDL_GetDayOfWeek
+<li>SDL_GetDayOfYear
+<li>SDL_GetDaysInMonth
+<li>SDL_TimeFromWindows
+<li>SDL_TimeToDateTime
+<li>SDL_TimeToWindows
 </ol>
-<h2>型</h2>
+<h2>構造体</h2>
 <ol>
-<li>SDL_NSTimerCallback
-<li>SDL_TimerCallback
-<li>SDL_TimerID
+<li><a href="SDL_DateTime.html">SDL_DateTime</a> - カレンダー日時のそれぞれの値を保持する構造体
 </ol>
-<h2>マクロ</h2>
+<h2>列挙体</h2>
 <ol>
-<li>SDL_MS_PER_SECOND
-<li>SDL_MS_TO_NS
-<li>SDL_NS_PER_MS
-<li>SDL_NS_PER_SECOND
-<li>SDL_NS_PER_US
-<li>SDL_NS_TO_MS
-<li>SDL_NS_TO_SECONDS
-<li>SDL_NS_TO_US
-<li>SDL_SECONDS_TO_NS
-<li>SDL_US_PER_SECOND
-<li>SDL_US_TO_NS
+<li><a href="SDL_DateFormat.html">SDL_DateFormat</a> - システムのロケールの日付の形式の列挙体
+<li><a href="SDL_TimeFormat.html">SDL_TimeFormat</a> - システムのロケールの時刻の形式の列挙体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryTime">SDL3/CategoryTime - SDL Wiki</a>

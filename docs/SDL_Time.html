@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryStdinc.html" title="1つ上">
+<title>SDL_Time</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_Time
+<hr>
+<h1>SDL_Time</h1>
+UNIXエポック(1970年1月1日)からのナノ秒を表す符号あり64ビット整数の型
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
+<h2>構文</h2>
+<p>
+<code>typedef Sint64 SDL_Time;</code>
+</p>
+<table border="1">
+<tr><td>SDL_MAX_TIME</td><td>SDL_MAX_SINT64</td><td></td></tr>
+<tr><td>SDL_MIN_TIME</td><td>SDL_MIN_SINT64</td><td></td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+これはPOSIX time_tの値とは<a href="SDL_NS_TO_SECONDS.html">SDL_NS_TO_SECONDS()</a>と<a href="SDL_SECONDS_TO_NS.html">SDL_SECONDS_TO_NS()</a>で, WindowsのFILETIMEの値とは<a href="SDL_TimeToWindows.html">SDL_TimeToWindows()</a>と<a href="SDL_TimeFromWindows.html">SDL_TimeFromWindows()</a>で相互変換できる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_SINT64_C.html">SDL_SINT64_C</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_Time">SDL_Time - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
