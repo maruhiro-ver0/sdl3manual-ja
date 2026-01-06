@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryTime.html" title="1つ上">
+<title>SDL_TimeFromWindows</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryTime.html">日時</a> - SDL_TimeFromWindows
+<hr>
+<h1>SDL_TimeFromWindows</h1>
+Windows FILETIME(1601年1月1日からの100ナノ秒単位の数)をSDL時間に変換する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_time.h">SDL3/SDL_time.h</a>
+<h2>構文</h2>
+<code>SDL_Time SDL_TimeFromWindows(Uint32 dwLowDateTime, Uint32 dwHighDateTime);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>Uint32</td><td>dwLowDateTime</td><td>Windows FILETIMEの値の下位</td></tr>
+<tr><td>Uint32</td><td>dwHighDateTime</td><td>Windows FILETIMEの値の上位</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Time.html">SDL_Time</a>) 変換されたSDL時間を戻す.
+<h2>詳細</h2>
+<p>
+この関数はFILETIME構造体の2つの32ビットの値を引数とする.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_TimeFromWindows">SDL_TimeFromWindows - SDL Wiki</a>
+<hr>
+</body>
+</html>

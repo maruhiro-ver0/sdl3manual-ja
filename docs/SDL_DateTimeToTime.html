@@ -19,14 +19,14 @@
 <h2>引数</h2>
 <table border="1">
 <tr><td>const <a href="SDL_DateTime.html">SDL_DateTime</a> *</td><td>dt</td><td>変換元の<a href="SDL_DateTime.html">SDL_DateTime</a>へのポインタ</td></tr>
-<tr><td><a href="SDL_Time.html">SDL_Time</a> *</td><td>ticks</td><td>変換した<a href="SDL_Time.html">SDL_Time</a>の代入先へのポインタ</td></tr>
+<tr><td><a href="SDL_Time.html">SDL_Time</a> *</td><td>ticks</td><td>変換後の<a href="SDL_Time.html">SDL_Time</a>の代入先へのポインタ</td></tr>
 </table>
 <h2>戻り値</h2>
 (bool) 成功のとき真, 失敗のとき偽を戻す.
 <a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
 <h2>詳細</h2>
 <p>
-この関数は<a href="SDL_DateTime.html">SDL_DateTime</a>構造体の<code>day_of_week</code>メンバを無視するため, 何も設定しなくてもよい.
+この関数は<a href="SDL_DateTime.html">SDL_DateTime</a>構造体の<code>day_of_week</code>メンバを無視するため, このメンバには何も設定しなくてもよい.
 </p>
 <h2>バージョン</h2>
 SDL 3.2.0以降
