@@ -17,10 +17,10 @@ SDLは時間管理機能を提供している.
 これは(通常は)短い間隔の時間を扱うとき便利である.
 </p>
 <p>
-<a href="CategoryTime">日時</a>が提供する日付・時刻の管理と混同しないこと.
+<a href="CategoryTime.html">日時</a>が提供する日付・時刻の管理と混同しないこと.
 </p>
 <p>
-この分類のAPIが扱うのは, 経過時間(SDL_GetTicks(), SDL_GetPerformanceCounter()), スレッドを設定した時間スリープさせる(SDL_Delay(), SDL_DelayNS(), SDL_DelayPrecise()), 設定した時間が経過したときコールバックする(SDL_AddTimer()等)である.
+この分類のAPIが扱うのは, 経過時間(SDL_GetTicks(), SDL_GetPerformanceCounter()), スレッドを設定した時間スリープさせる(<a href="SDL_Delay.html">SDL_Delay()</a>, <a href="SDL_DelayNS.html">SDL_DelayNS()</a>, <a href="SDL_DelayPrecise.html">SDL_DelayPrecise()</a>), 設定した時間が経過したときコールバックする(SDL_AddTimer()等)である.
 </p>
 <p>
 SDL_SECONDS_TO_NS()のような, ある単位の時間に変換する便利なマクロも存在する.
@@ -29,9 +29,9 @@ SDL_SECONDS_TO_NS()のような, ある単位の時間に変換する便利な�
 <ol>
 <li>SDL_AddTimer
 <li>SDL_AddTimerNS
-<li>SDL_Delay
-<li>SDL_DelayNS
-<li>SDL_DelayPrecise
+<li><a href="SDL_Delay.html">SDL_Delay</a> - 指定のミリ秒の間待つ
+<li><a href="SDL_DelayNS.html">SDL_DelayNS</a> - 指定のナノ秒の間待つ
+<li><a href="SDL_DelayPrecise.html">SDL_DelayPrecise</a> - 可能な限り指定通りのナノ秒の間待つ
 <li>SDL_GetPerformanceCounter
 <li>SDL_GetPerformanceFrequency
 <li>SDL_GetTicks
@@ -42,7 +42,7 @@ SDL_SECONDS_TO_NS()のような, ある単位の時間に変換する便利な�
 <ol>
 <li>SDL_NSTimerCallback
 <li>SDL_TimerCallback
-<li>SDL_TimerID
+<li><a href="SDL_TimerID.html">SDL_TimerID</a> - タイマIDの型
 </ol>
 <h2>マクロ</h2>
 <ol>
