@@ -20,10 +20,10 @@ SDLは時間管理機能を提供している.
 <a href="CategoryTime.html">日時</a>が提供する日付・時刻の管理と混同しないこと.
 </p>
 <p>
-この分類のAPIが扱うのは, 経過時間(SDL_GetTicks(), SDL_GetPerformanceCounter()), スレッドを設定した時間スリープさせる(<a href="SDL_Delay.html">SDL_Delay()</a>, <a href="SDL_DelayNS.html">SDL_DelayNS()</a>, <a href="SDL_DelayPrecise.html">SDL_DelayPrecise()</a>), 設定した時間が経過したときコールバックする(SDL_AddTimer()等)である.
+この分類のAPIが扱うのは, 経過時間(<a href="SDL_GetTicks.html">SDL_GetTicks()</a>, <a href="SDL_GetPerformanceCounter.html">SDL_GetPerformanceCounter()</a>), スレッドを設定した時間スリープさせる(<a href="SDL_Delay.html">SDL_Delay()</a>, <a href="SDL_DelayNS.html">SDL_DelayNS()</a>, <a href="SDL_DelayPrecise.html">SDL_DelayPrecise()</a>), 設定した時間が経過したときコールバックする(<a href="SDL_AddTimer.html">SDL_AddTimer()</a>等)である.
 </p>
 <p>
-SDL_SECONDS_TO_NS()のような, ある単位の時間に変換する便利なマクロも存在する.
+<a href="SDL_SECONDS_TO_NS.html">SDL_SECONDS_TO_NS()</a>のような, ある単位の時間に変換する便利なマクロも存在する.
 </p>
 <h2>関数</h2>
 <ol>
@@ -40,23 +40,23 @@ SDL_SECONDS_TO_NS()のような, ある単位の時間に変換する便利な�
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_NSTimerCallback
-<li>SDL_TimerCallback
+<li><a href="SDL_NSTimerCallback.html">SDL_NSTimerCallback</a> - ナノ秒タイマコールバック関数の型
+<li><a href="SDL_TimerCallback.html">SDL_TimerCallback</a> - ミリ秒タイマコールバック関数の型
 <li><a href="SDL_TimerID.html">SDL_TimerID</a> - タイマIDの型
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_MS_PER_SECOND
-<li>SDL_MS_TO_NS
-<li>SDL_NS_PER_MS
-<li>SDL_NS_PER_SECOND
-<li>SDL_NS_PER_US
-<li>SDL_NS_TO_MS
-<li>SDL_NS_TO_SECONDS
-<li>SDL_NS_TO_US
-<li>SDL_SECONDS_TO_NS
-<li>SDL_US_PER_SECOND
-<li>SDL_US_TO_NS
+<li><a href="SDL_MS_PER_SECOND.html">SDL_MS_PER_SECOND</a> - ミリ秒単位の1秒のマクロ
+<li><a href="SDL_MS_TO_NS.html">SDL_MS_TO_NS</a> - ミリ秒単位の1秒のマクロ
+<li><a href="SDL_NS_PER_MS.html">SDL_NS_PER_MS</a> - ナノ秒単位の1秒のマクロ
+<li><a href="SDL_NS_PER_SECOND.html">SDL_NS_PER_SECOND</a> - マイクロ秒単位の1ナノ秒のマクロ
+<li><a href="SDL_NS_PER_US.html">SDL_NS_PER_US</a> - ナノ秒をミリ秒に変換するマクロ
+<li><a href="SDL_NS_TO_MS.html">SDL_NS_TO_MS</a> - ナノ秒をミリ秒に変換するマクロ
+<li><a href="SDL_NS_TO_SECONDS.html">SDL_NS_TO_SECONDS</a> - ナノ秒を秒に変換するマクロ
+<li><a href="SDL_NS_TO_US.html">SDL_NS_TO_US</a> - ナノ秒をマイクロ秒に変換するマクロ
+<li><a href="SDL_SECONDS_TO_NS.html">SDL_SECONDS_TO_NS</a> - 秒をナノ秒に変換するマクロ
+<li><a href="SDL_US_PER_SECOND.html">SDL_US_PER_SECOND</a> - マイクロ秒単位の1秒のマクロ
+<li><a href="SDL_US_TO_NS.html">SDL_US_TO_NS</a> - マイクロ秒をナノ秒に変換するマクロ
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryTimer">SDL3/CategoryTimer - SDL Wiki</a>

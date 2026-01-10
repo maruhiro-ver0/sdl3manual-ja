@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryTimer.html" title="1つ上">
+<title>SDL_MS_TO_NS</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryTimer.html">タイマ</a> - SDL_MS_TO_NS
+<hr>
+<h1>SDL_MS_TO_NS</h1>
+ミリ秒をナノ秒に変換するマクロ
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_timer.h">SDL3/SDL_timer.h</a>
+<h2>構文</h2>
+<code>#define SDL_MS_TO_NS(MS)        (((Uint64)(MS)) * SDL_NS_PER_MS)</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td></td><td>MS</td><td>変換するミリ秒</td></tr>
+</table>
+<h2>戻り値</h2>
+ナノ秒単位で表した<code>MS</code>を戻す.
+<h2>詳細</h2>
+<p>
+このマクロは整数部のみを変換し, 小数部は変換しない.
+</p>
+<h2>スレッドセーフ</h2>
+このマクロはどのスレッドからも安全に呼べる.
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_MS_TO_NS">SDL_MS_TO_NS - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

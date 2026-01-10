@@ -19,34 +19,34 @@
 これらの関数は, 環境をまたいだOSレベルのプロセスの生成と管理を提供する.
 </p>
 <p>
-SDL_CreateProcess()でサブプロセスを生成し, SDL_ReadProcess()やSDL_GetProcessInput()とSDL_GetProcessOutput()で読み込みと書き込みを行える.
-プロセス間の入力のチェイニングのような高度な機能が必要な場合は, SDL_CreateProcessWithProperties()を使うことができる.
+<a href="SDL_CreateProcess.html">SDL_CreateProcess()</a>でサブプロセスを生成し, <a href="SDL_ReadProcess.html">SDL_ReadProcess()</a>や<a href="SDL_GetProcessInput.html">SDL_GetProcessInput()</a>と<a href="SDL_GetProcessOutput.html">SDL_GetProcessOutput()</a>で読み込みと書き込みを行える.
+プロセス間の入力のチェイニングのような高度な機能が必要な場合は, <a href="SDL_CreateProcessWithProperties.html">SDL_CreateProcessWithProperties()</a>を使うことができる.
 </p>
 <p>
-生成したプロセスの状態はSDL_WaitProcess()で得ることができ, プロセスの終了はSDL_KillProcess()で行える.
+生成したプロセスの状態は<a href="SDL_WaitProcess.html">SDL_WaitProcess()</a>で得ることができ, プロセスの終了は<a href="SDL_KillProcess.html">SDL_KillProcess()</a>で行える.
 </p>
 <p>
-プロセスを終了させても, 自身で終了していても, あるいは実行中でも, 後処理のためにSDL_DestroyProcess()を呼ぶのを忘れないこと. 
+プロセスを終了させても, 自身で終了していても, あるいは実行中でも, 後処理のために<a href="SDL_DestroyProcess.html">SDL_DestroyProcess()</a>を呼ぶのを忘れないこと. 
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_CreateProcess
-<li>SDL_CreateProcessWithProperties
-<li>SDL_DestroyProcess
-<li>SDL_GetProcessInput
-<li>SDL_GetProcessOutput
-<li>SDL_GetProcessProperties
-<li>SDL_KillProcess
-<li>SDL_ReadProcess
-<li>SDL_WaitProcess
+<li><a href="SDL_CreateProcess.html">SDL_CreateProcess</a> - 新しいプロセスを生成する
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_CreateProcessWithProperties</a> - プロパティを指定して新しいプロセスを生成する
+<li><a href="SDL_DestroyProcess.html">SDL_DestroyProcess</a> - プロセスオブジェクトを破棄する
+<li><a href="SDL_GetProcessInput.html">SDL_GetProcessInput</a> - プロセスの標準入力に関連付けられたSDL_IOStreamを得る
+<li><a href="SDL_GetProcessOutput.html">SDL_GetProcessOutput</a> - プロセスの標準出力に関連付けられたSDL_IOStreamを得る
+<li><a href="SDL_GetProcessProperties.html">SDL_GetProcessProperties</a> - プロパティを指定して新しいプロセスを生成する
+<li><a href="SDL_KillProcess.html">SDL_KillProcess</a> - プロセスを停止させる
+<li><a href="SDL_ReadProcess.html">SDL_ReadProcess</a> - プロセスの標準出力を全て読み込む
+<li><a href="SDL_WaitProcess.html">SDL_WaitProcess</a> - プロセスの完了を待つ
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_Process
+<li><a href="SDL_Process.html">SDL_Process</a> - システムプロセスのハンドルの不透明型
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_ProcessIO
+<li><a href="SDL_ProcessIO.html">SDL_ProcessIO</a> - 生成するプロセスの入出力ストリームの接続の列挙体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryProcess">SDL3/CategoryProcess - SDL Wiki</a>

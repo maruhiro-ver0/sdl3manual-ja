@@ -145,8 +145,8 @@
 <li><a href="SDL_CreateMutex.html">SDL_CreateMutex</a> - 新しいミューテックスを生成する
 <li><a href="SDL_CreatePalette.html">SDL_CreatePalette</a> - 色の数を指定してパレットを生成する
 <li><a href="SDL_CreatePopupWindow.html">SDL_CreatePopupWindow</a> - 指定した親ウィンドウの子ポップアップウィンドウを生成する
-<li>SDL_CreateProcess
-<li>SDL_CreateProcessWithProperties
+<li><a href="SDL_CreateProcess.html">SDL_CreateProcess</a> - 新しいプロセスを生成する
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_CreateProcessWithProperties</a> - プロパティを指定して新しいプロセスを生成する
 <li><a href="SDL_CreateProperties.html">SDL_CreateProperties</a> - プロパティグループを生成する
 <li>SDL_CreateRenderer
 <li>SDL_CreateRendererWithProperties
@@ -184,7 +184,7 @@
 <li>SDL_DestroyHapticEffect
 <li><a href="SDL_DestroyMutex.html">SDL_DestroyMutex</a> - SDL_CreateMutex()で生成したミューテックスを破棄する
 <li><a href="SDL_DestroyPalette.html">SDL_DestroyPalette</a> - SDL_CreatePalette()で生成したパレットを解放する
-<li>SDL_DestroyProcess
+<li><a href="SDL_DestroyProcess.html">SDL_DestroyProcess</a> - プロセスオブジェクトを破棄する
 <li><a href="SDL_DestroyProperties.html">SDL_DestroyProperties</a> - プロパティグループを破棄する
 <li>SDL_DestroyRenderer
 <li><a href="SDL_DestroyRWLock.html">SDL_DestroyRWLock</a> - SDL_CreateRWLock()で生成した読取/書込ロックを破棄する
@@ -488,9 +488,9 @@
 <li>SDL_GetPrefPath
 <li><a href="SDL_GetPrimaryDisplay.html">SDL_GetPrimaryDisplay</a> - メインディスプレイを得る
 <li><a href="SDL_GetPrimarySelectionText.html">SDL_GetPrimarySelectionText</a> - プライマリ選択されたUTF-8のテキストを得る
-<li>SDL_GetProcessInput
-<li>SDL_GetProcessOutput
-<li>SDL_GetProcessProperties
+<li><a href="SDL_GetProcessInput.html">SDL_GetProcessInput</a> - プロセスの標準入力に関連付けられたSDL_IOStreamを得る
+<li><a href="SDL_GetProcessOutput.html">SDL_GetProcessOutput</a> - プロセスの標準出力に関連付けられたSDL_IOStreamを得る
+<li><a href="SDL_GetProcessProperties.html">SDL_GetProcessProperties</a> - プロパティを指定して新しいプロセスを生成する
 <li><a href="SDL_GetPropertyType.html">SDL_GetPropertyType</a> - プロパティグループのプロパティの型を得る
 <li><a href="SDL_GetRealGamepadType.html">SDL_GetRealGamepadType</a> - オープンしたマッピングの上書きを無視したゲームパッドの種類を得る
 <li><a href="SDL_GetRealGamepadTypeForID.html">SDL_GetRealGamepadTypeForID</a> - インスタンスIDからマッピングの上書きを無視したゲームパッドの種類を得る
@@ -748,7 +748,7 @@
 <li>SDL_itoa
 <li><a href="SDL_JoystickConnected.html">SDL_JoystickConnected</a> - ジョイスティックが接続されているかチェックする
 <li><a href="SDL_JoystickEventsEnabled.html">SDL_JoystickEventsEnabled</a> - ジョイスティックイベント処理の有無を得る
-<li>SDL_KillProcess
+<li><a href="SDL_KillProcess.html">SDL_KillProcess</a> - プロセスを停止させる
 <li>SDL_lltoa
 <li><a href="SDL_LoadBMP.html">SDL_LoadBMP</a> - BMPファイルをサーフェイスに読み込む
 <li><a href="SDL_LoadBMP_IO.html">SDL_LoadBMP_IO</a> - シーク可能なSDLデータストリームからBMP形式をサーフェイスに読み込む
@@ -871,7 +871,7 @@
 <li>SDL_randf_r
 <li>SDL_ReadAsyncIO
 <li>SDL_ReadIO
-<li>SDL_ReadProcess
+<li><a href="SDL_ReadProcess.html">SDL_ReadProcess</a> - プロセスの標準出力を全て読み込む
 <li>SDL_ReadS16BE
 <li>SDL_ReadS16LE
 <li>SDL_ReadS32BE
@@ -1259,7 +1259,7 @@
 <li>SDL_WaitForGPUFences
 <li>SDL_WaitForGPUIdle
 <li>SDL_WaitForGPUSwapchain
-<li>SDL_WaitProcess
+<li><a href="SDL_WaitProcess.html">SDL_WaitProcess</a> - プロセスの完了を待つ
 <li><a href="SDL_WaitSemaphore.html">SDL_WaitSemaphore</a> - セマフォの値が正になるまで待機し, セマフォの値を減算する
 <li><a href="SDL_WaitSemaphoreTimeout.html">SDL_WaitSemaphoreTimeout</a> - セマフォの値が正になるまで待機し, セマフォの値を減算する(タイムアウト付き)
 <li><a href="SDL_WaitThread.html">SDL_WaitThread</a> - スレッドが終了するまで待つ
@@ -1398,10 +1398,10 @@
 <li><a href="SDL_MouseID.html">SDL_MouseID</a> - システムに接続されたマウスのユニークIDの型
 <li><a href="SDL_MouseMotionTransformCallback.html">SDL_MouseMotionTransformCallback</a> - マウスの移動量を変換するコールバックの型
 <li><a href="SDL_Mutex.html">SDL_Mutex</a> - ミューテックス(スレッド間のアクセスを直列化する手段)の型
-<li>SDL_NSTimerCallback
+<li><a href="SDL_NSTimerCallback.html">SDL_NSTimerCallback</a> - ナノ秒タイマコールバック関数の型
 <li><a href="SDL_PenID.html">SDL_PenID</a> - SDLペンインスタンスIDの型
 <li><a href="SDL_PenInputFlags.html">SDL_PenInputFlags</a> - 様々なペンイベントのpen_stateフィールドで使用されるペン入力フラグの型
-<li>SDL_Process
+<li><a href="SDL_Process.html">SDL_Process</a> - システムプロセスのハンドルの不透明型
 <li><a href="SDL_PropertiesID.html">SDL_PropertiesID</a> - SDLプロパティグループID
 <li>SDL_realloc_func
 <li>SDL_Renderer
@@ -1418,7 +1418,7 @@
 <li><a href="SDL_ThreadFunction.html">SDL_ThreadFunction</a> - 新しいスレッドのエントリーポイントとしてSDL_CreateThread()に渡す関数の型
 <li><a href="SDL_ThreadID.html">SDL_ThreadID</a> - ユニークな数値のスレッドIDの型
 <li><a href="SDL_Time.html">SDL_Time</a> - UNIXエポック(1970年1月1日)からのナノ秒を表す符号あり64ビット整数の型
-<li>SDL_TimerCallback
+<li><a href="SDL_TimerCallback.html">SDL_TimerCallback</a> - ミリ秒タイマコールバック関数の型
 <li><a href="SDL_TimerID.html">SDL_TimerID</a> - タイマIDの型
 <li><a href="SDL_TLSDestructorCallback.html">SDL_TLSDestructorCallback</a> - データの後処理としてSDL_SetTLSに渡すコールバックの型
 <li><a href="SDL_TLSID.html">SDL_TLSID</a> - スレッド局所記憶IDの型
@@ -1643,7 +1643,7 @@
 <li><a href="SDL_PixelFormat.html">SDL_PixelFormat</a> - ピクセル形式の列挙体
 <li><a href="SDL_PixelType.html">SDL_PixelType</a> - ピクセルの種類の列挙体
 <li><a href="SDL_PowerState.html">SDL_PowerState</a> - システムの電源の基本的な状態の列挙体
-<li>SDL_ProcessIO
+<li><a href="SDL_ProcessIO.html">SDL_ProcessIO</a> - 生成するプロセスの入出力ストリームの接続の列挙体
 <li><a href="SDL_ProgressState.html">SDL_ProgressState</a> - プログレスバーの状態の列挙体
 <li><a href="SDL_PropertyType.html">SDL_PropertyType</a> - SDLプロパティ型の列挙体
 <li>SDL_RendererLogicalPresentation
@@ -2192,20 +2192,20 @@
 <li><a href="SDL_MINOR_VERSION.html">SDL_MINOR_VERSION</a> - SDLヘッダのマイナーバージョンのマクロ
 <li><a href="SDL_MMX_INTRINSICS.html">SDL_MMX_INTRINSICS</a> - コンパイラがIntel MMX組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
 <li><a href="SDL_MOUSE_TOUCHID.html">SDL_MOUSE_TOUCHID</a> - タッチイベントでのマウス入力のSDL_TouchID
-<li>SDL_MS_PER_SECOND
-<li>SDL_MS_TO_NS
+<li><a href="SDL_MS_PER_SECOND.html">SDL_MS_PER_SECOND</a> - ミリ秒単位の1秒のマクロ
+<li><a href="SDL_MS_TO_NS.html">SDL_MS_TO_NS</a> - ミリ秒単位の1秒のマクロ
 <li><a href="SDL_MUSTLOCK.html">SDL_MUSTLOCK</a> - アクセスのためにサーフェイスをロックする必要があるかを調べるマクロ
 <li><a href="SDL_NEON_INTRINSICS.html">SDL_NEON_INTRINSICS</a> - コンパイラがARM NEON組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
 <li><a href="SDL_NO_THREAD_SAFETY_ANALYSIS.html">SDL_NO_THREAD_SAFETY_ANALYSIS</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_NODISCARD
 <li>SDL_NOLONGLONG
 <li>SDL_NORETURN
-<li>SDL_NS_PER_MS
-<li>SDL_NS_PER_SECOND
-<li>SDL_NS_PER_US
-<li>SDL_NS_TO_MS
-<li>SDL_NS_TO_SECONDS
-<li>SDL_NS_TO_US
+<li><a href="SDL_NS_PER_MS.html">SDL_NS_PER_MS</a> - ナノ秒単位の1秒のマクロ
+<li><a href="SDL_NS_PER_SECOND.html">SDL_NS_PER_SECOND</a> - マイクロ秒単位の1ナノ秒のマクロ
+<li><a href="SDL_NS_PER_US.html">SDL_NS_PER_US</a> - ナノ秒をミリ秒に変換するマクロ
+<li><a href="SDL_NS_TO_MS.html">SDL_NS_TO_MS</a> - ナノ秒をミリ秒に変換するマクロ
+<li><a href="SDL_NS_TO_SECONDS.html">SDL_NS_TO_SECONDS</a> - ナノ秒を秒に変換するマクロ
+<li><a href="SDL_NS_TO_US.html">SDL_NS_TO_US</a> - ナノ秒をマイクロ秒に変換するマクロ
 <li>SDL_NULL_WHILE_LOOP_CONDITION
 <li>SDL_OUT_BYTECAP
 <li>SDL_OUT_CAP
@@ -2582,7 +2582,7 @@
 <li>SDL_SCANF_VARARG_FUNC
 <li>SDL_SCANF_VARARG_FUNCV
 <li><a href="SDL_SCOPED_CAPABILITY.html">SDL_SCOPED_CAPABILITY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
-<li>SDL_SECONDS_TO_NS
+<li><a href="SDL_SECONDS_TO_NS.html">SDL_SECONDS_TO_NS</a> - 秒をナノ秒に変換するマクロ
 <li>SDL_SINT64_C
 <li>SDL_SIZE_MAX
 <li>SDL_SOFTWARE_RENDERER
@@ -2620,8 +2620,8 @@
 <li><a href="SDL_TRY_ACQUIRE_SHARED.html">SDL_TRY_ACQUIRE_SHARED</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_UINT64_C
 <li><a href="SDL_Unsupported.html">SDL_Unsupported</a> - 対応外の操作をしたとき一般的なエラーを報告するためのマクロ
-<li>SDL_US_PER_SECOND
-<li>SDL_US_TO_NS
+<li><a href="SDL_US_PER_SECOND.html">SDL_US_PER_SECOND</a> - マイクロ秒単位の1秒のマクロ
+<li><a href="SDL_US_TO_NS.html">SDL_US_TO_NS</a> - マイクロ秒をナノ秒に変換するマクロ
 <li><a href="SDL_VERSION.html">SDL_VERSION</a> - SDLバージョンのマクロ
 <li><a href="SDL_VERSION_ATLEAST.html">SDL_VERSION_ATLEAST</a> - 少なくともX.Y.ZのバージョンのSDLでコンパイルされたとき真と評価するマクロ
 <li><a href="SDL_VERSIONNUM.html">SDL_VERSIONNUM</a> - バージョン番号を数値に変換するマクロ
