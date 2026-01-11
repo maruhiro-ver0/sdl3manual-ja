@@ -27,20 +27,20 @@
 これらのプロパティに対応している:
 </p>
 <ul>
-<li>SDL_PROP_PROCESS_CREATE_ARGS_POINTER: 実行するプログラム, 引数, NULLポインタの配列. 例: <code>const char *args[] = { "myprogram", "argument", NULL }</code>
+<li><code>SDL_PROP_PROCESS_CREATE_ARGS_POINTER</code>: 実行するプログラム, 引数, NULLポインタの配列. 例: <code>const char *args[] = { "myprogram", "argument", NULL }</code>
 このプロパティは必須である
-<li>SDL_PROP_PROCESS_CREATE_ENVIRONMENT_POINTER: <a href="SDL_Environment.html">SDL_Environment</a>ポインタ.
+<li><code>SDL_PROP_PROCESS_CREATE_ENVIRONMENT_POINTER</code>: <a href="SDL_Environment.html">SDL_Environment</a>ポインタ.
 このプロパティが設定されている場合, それがプロセスの環境変数になる. 設定されていない場合, 現在の環境変数が使用される
-<li>SDL_PROP_PROCESS_CREATE_WORKING_DIRECTORY_STRING: 作業ディレクトリのUTF-8文字列. デフォルトはカレントディレクトリ
-<li>SDL_PROP_PROCESS_CREATE_STDIN_NUMBER: プロセスの標準入力の入力元の<a href="SDL_ProcessIO.html">SDL_ProcessIO</a>の値. デフォルトはSDL_PROCESS_STDIO_NULL
-<li>SDL_PROP_PROCESS_CREATE_STDIN_POINTER: SDL_PROP_PROCESS_CREATE_STDIN_NUMBERにSDL_PROCESS_STDIO_REDIRECTが設定されている場合, 標準入力で使用される<a href="SDL_IOStream.html">SDL_IOStream</a>ポインタ
-<li>SDL_PROP_PROCESS_CREATE_STDOUT_NUMBER: プロセスの標準出力の出力先の<a href="SDL_ProcessIO.html">SDL_ProcessIO</a>の値. デフォルトはSDL_PROCESS_STDIO_INHERITED
-<li>SDL_PROP_PROCESS_CREATE_STDOUT_POINTER: SDL_PROP_PROCESS_CREATE_STDOUT_NUMBERにSDL_PROCESS_STDIO_REDIRECTが設定されている場合, 標準出力で使用される<a href="SDL_IOStream.html">SDL_IOStream</a>ポインタ
-<li>SDL_PROP_PROCESS_CREATE_STDERR_NUMBER: プロセスの標準エラーの出力先の<a href="SDL_ProcessIO.html">SDL_ProcessIO</a>の値. デフォルトはSDL_PROCESS_STDIO_INHERITED
-<li>SDL_PROP_PROCESS_CREATE_STDERR_POINTER: SDL_PROP_PROCESS_CREATE_STDERR_NUMBERにSDL_PROCESS_STDIO_REDIRECTが設定されている場合, 標準エラーで使用される<a href="SDL_IOStream.html">SDL_IOStream</a>ポインタ
-<li>SDL_PROP_PROCESS_CREATE_STDERR_TO_STDOUT_BOOLEAN: 真のときプロセスの標準エラーはプロセスの標準出力にリダイレクトされる. SDL_PROP_PROCESS_CREATE_STDERR_NUMBERが設定されているときは無効
-<li>SDL_PROP_PROCESS_CREATE_BACKGROUND_BOOLEAN: 真のときプロセスはバックグラウンドで実行される. この場合, 入出力のデフォルトはSDL_PROCESS_STDIO_NULLで, 終了コードは利用できず常に0になる
-<li>SDL_PROP_PROCESS_CREATE_CMDLINE_STRING: 実行するプログラムと引数の文字列.
+<li><code>SDL_PROP_PROCESS_CREATE_WORKING_DIRECTORY_STRING</code>: 作業ディレクトリのUTF-8文字列. デフォルトはカレントディレクトリ
+<li><code>SDL_PROP_PROCESS_CREATE_STDIN_NUMBER</code>: プロセスの標準入力の入力元の<a href="SDL_ProcessIO.html">SDL_ProcessIO</a>の値. デフォルトは<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_NULL</a>
+<li><code>SDL_PROP_PROCESS_CREATE_STDIN_POINTER</code>: SDL_PROP_PROCESS_CREATE_STDIN_NUMBERに<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_REDIRECT</a>が設定されている場合, 標準入力で使用される<a href="SDL_IOStream.html">SDL_IOStream</a>ポインタ
+<li><code>SDL_PROP_PROCESS_CREATE_STDOUT_NUMBER</code>: プロセスの標準出力の出力先の<a href="SDL_ProcessIO.html">SDL_ProcessIO</a>の値. デフォルトは<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_INHERITED</a>
+<li><code>SDL_PROP_PROCESS_CREATE_STDOUT_POINTER</code>: SDL_PROP_PROCESS_CREATE_STDOUT_NUMBERに<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_REDIRECT</a>が設定されている場合, 標準出力で使用される<a href="SDL_IOStream.html">SDL_IOStream</a>ポインタ
+<li><code>SDL_PROP_PROCESS_CREATE_STDERR_NUMBER</code>: プロセスの標準エラーの出力先の<a href="SDL_ProcessIO.html">SDL_ProcessIO</a>の値. デフォルトは<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_INHERITED</a>
+<li><code>SDL_PROP_PROCESS_CREATE_STDERR_POINTER</code>: SDL_PROP_PROCESS_CREATE_STDERR_NUMBERに<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_REDIRECT</a>が設定されている場合, 標準エラーで使用される<a href="SDL_IOStream.html">SDL_IOStream</a>ポインタ
+<li><code>SDL_PROP_PROCESS_CREATE_STDERR_TO_STDOUT_BOOLEAN</code>: 真のときプロセスの標準エラーはプロセスの標準出力にリダイレクトされる. SDL_PROP_PROCESS_CREATE_STDERR_NUMBERが設定されているときは無効
+<li><code>SDL_PROP_PROCESS_CREATE_BACKGROUND_BOOLEAN</code>: 真のときプロセスはバックグラウンドで実行される. この場合, 入出力のデフォルトは<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_NULL</a>で, 終了コードは利用できず常に0になる
+<li><code>SDL_PROP_PROCESS_CREATE_CMDLINE_STRING</code>: 実行するプログラムと引数の文字列.
 この文字列は, WindowsならばCreateProcessに渡される. 他の環境ならば何もしない.
 このプロパティは標準的でないコマンドライン処理を行うプログラムを実行したい場合のみ重要で, ほとんどの場合はSDL_PROP_PROCESS_CREATE_ARGS_POINTERを使えば十分である
 </ul>

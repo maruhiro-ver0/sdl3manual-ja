@@ -28,10 +28,10 @@
 これらのプロパティに対応している:
 </p>
 <ul>
-<li>SDL_PROP_THREAD_CREATE_ENTRY_FUNCTION_POINTER: <a href="SDL_ThreadFunction.html">SDL_ThreadFunction</a>型の値. 新しいスレッドの開始時に呼ばれる関数. 必須
-<li>SDL_PROP_THREAD_CREATE_NAME_STRING: 新しいスレッドの名前. デバッガで利用される可能性がある. 任意. デフォルトはNULL
-<li>SDL_PROP_THREAD_CREATE_USERDATA_POINTER: アプリケーション定義の任意のポインタ. 新しいスレッドの関数に引数として渡される. 任意. デフォルトはNULL
-<li>SDL_PROP_THREAD_CREATE_STACKSIZE_NUMBER: 新しいスレッドのバイト単位のスタックサイズ. 任意. デフォルトは0(システムの定義したデフォルト)
+<li><code>SDL_PROP_THREAD_CREATE_ENTRY_FUNCTION_POINTER</code>: <a href="SDL_ThreadFunction.html">SDL_ThreadFunction</a>型の値. 新しいスレッドの開始時に呼ばれる関数. 必須
+<li><code>SDL_PROP_THREAD_CREATE_NAME_STRING</code>: 新しいスレッドの名前. デバッガで利用される可能性がある. 任意. デフォルトはNULL
+<li><code>SDL_PROP_THREAD_CREATE_USERDATA_POINTER</code>: アプリケーション定義の任意のポインタ. 新しいスレッドの関数に引数として渡される. 任意. デフォルトはNULL
+<li><code>SDL_PROP_THREAD_CREATE_STACKSIZE_NUMBER</code>: 新しいスレッドのバイト単位のスタックサイズ. 任意. デフォルトは0(システムの定義したデフォルト)
 </ul>
 <p>
 SDLはSDL_PROP_THREAD_CREATE_NAME_STRINGをシステムに報告しようとするため, デバッガがこれを表示できる可能性がある.
