@@ -13,7 +13,7 @@
 <h1>SDL_IOStreamInterface</h1>
 <a href="SDL_IOStream.html">SDL_IOStream</a>の処理を行う関数へのポインタの構造体
 <h2>ヘッダ</h2>
-<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_timer.h">SDL3/SDL_timer.h</a>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_iostream.h">SDL3/SDL_iostream.h</a>
 <h2>フィールド</h2>
 <table border="1">
 <tr><td>Uint32</td><td>version</td><td>
@@ -52,15 +52,15 @@
 </td></tr>
 <tr><td>bool (SDLCALL *)(void *userdata);</td><td>close</td><td>
 クローズして資源を解放する関数<br>
-この関数は物理メディアへのファイルの書き込みの同期を保証しない. システムのファイルキャッシュ内にあり, ディスクへの書き込みを待っている可能性がある<br>
-この関数が失敗しても<a href="SDL_IOStream.html">SDL_IOStream</a>は破棄される. そのため, バッファの掃き出しなどが失敗しても後処理を全て行うこと.<br>
+この関数は物理メディアへのファイルの書き込みの同期を保証しない. システムのファイルキャッシュ内にあり, ディスクへの書き込みを待っている可能性がある.<br>
+この関数が失敗しても<a href="SDL_IOStream.html">SDL_IOStream</a>は破棄される. そのため, バッファの掃き出しなどが失敗しても後処理を全て行うこと<br>
 <br>
 成功のとき真, データの掃き出しで書き込みエラーが生じたとき偽を戻す.
 </td></tr>
 </table>
 <h2>詳細</h2>
 <p>
-アプリケーションは, この構造体を<a href="SDL_OpenIO.html">SDL_OpenIO()</a>に渡して自身で実装した<a href="SDL_IOStream.html">SDL_IOStream</a>を生成することができる.
+アプリケーションは, この構造体を<a href="SDL_OpenIO.html">SDL_OpenIO()</a>に渡して独自の<a href="SDL_IOStream.html">SDL_IOStream</a>を生成することができる.
 これは必須ではない. SDLには<a href="SDL_IOFromFile.html">SDL_IOFromFile()</a>や<a href="SDL_IOFromMem.html">SDL_IOFromMem()</a>のような一般的なI/Oストリームが既に用意されている.
 </p>
 <p>

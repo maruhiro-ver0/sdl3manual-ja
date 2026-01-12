@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryIOStream.html" title="1つ上">
+<title>SDL_CloseIO</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryIOStream.html">I/Oストリーム</a> - SDL_CloseIO
+<hr>
+<h1>SDL_CloseIO</h1>
+<a href="SDL_IOStream.html">SDL_IOStream</a>をクローズして解放する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_iostream.h">SDL3/SDL_iostream.h</a>
+<h2>構文</h2>
+<code>bool SDL_CloseIO(SDL_IOStream *context);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>SDL_IOStream *</td><td>context</td><td>閉じるSDL_IOStream</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+SDL_CloseIO()は<a href="SDL_IOStream.html">SDL_IOStream</a>をクローズし後処理を行う.
+ストリームが使用する資源と<a href="SDL_IOStream.html">SDL_IOStream</a>自身が解放される.
+この関数が成功すると真を戻す. 掃き出しの(例えばディスクへの)書き込みに失敗すると偽を戻す.
+</p>
+<p>
+どのような理由でも, ストリームの掃き出しに失敗するとこの関数はエラーを報告するが, その場合でも関数から戻ると<a href="SDL_IOStream.html">SDL_IOStream</a>は無効になる.
+</p>
+<p>
+この関数は掃き出しでオペレーティングシステムに対して書き込みを指示するが, 物理メディアに書き込まれる保証はない. データはOSのファイルキャッシュ内にあり, ディスクへの書き込みを待っている可能性がある.
+即座にディクスに書き込むことが絶対的に重要で, ファイルキャッシュに追いつく前に電源が失われたとしても確実に書き込むには, クローズの前に<a href="SDL_FlushIO.html">SDL_FlushIO()</a>を呼ぶ必要がある.
+掃き出しには時間がかかり, システムとアプリケーションにとって非効率なため, あまり頻繁に行うべきではない.
+</p>
+<h2>スレッドセーフ</h2>
+この関数はどのスレッドからも安全に呼べる.
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_OpenIO.html">SDL_OpenIO</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_CloseIO">SDL_CloseIO - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
