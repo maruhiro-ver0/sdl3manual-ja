@@ -98,7 +98,7 @@
 <li>SDL_CloseCamera
 <li><a href="SDL_CloseGamepad.html">SDL_CloseGamepad</a> - SDL_OpenGamepad()でオープンしたゲームパッドをクローズする
 <li>SDL_CloseHaptic
-<li><a href="SDL_CloseIO.html">SDL_CloseIO</a> - SDL_IOStreamをクローズして解放する
+<li><a href="SDL_CloseIO.html">SDL_CloseIO</a> - I/Oストリームをクローズして解放する
 <li><a href="SDL_CloseJoystick.html">SDL_CloseJoystick</a> - SDL_OpenJoystick()でオープンしたジョイスティックをクローズする
 <li>SDL_CloseSensor
 <li>SDL_CloseStorage
@@ -234,7 +234,7 @@
 <li><a href="SDL_FlushAudioStream.html">SDL_FlushAudioStream</a> - オーディオストリームにデータ送信の完了を伝える
 <li><a href="SDL_FlushEvent.html">SDL_FlushEvent</a> - イベントキューからイベントを消去する
 <li><a href="SDL_FlushEvents.html">SDL_FlushEvents</a> - イベントキューから複数のイベントを消去する
-<li>SDL_FlushIO
+<li><a href="SDL_FlushIO.html">SDL_FlushIO</a> - I/Oストリームのバッファを掃き出す
 <li>SDL_FlushRenderer
 <li>SDL_fmod
 <li>SDL_fmodf
@@ -1463,8 +1463,8 @@
 <li><a href="SDL_Event.html">SDL_Event</a> - 異なる種類のイベントの情報を持つ共用体
 <li><a href="SDL_FColor.html">SDL_FColor</a> - SDL_PIXELFORMAT_RGBA128_FLOAT形式の浮動小数点の値を並べた色として解釈させることができる構造体
 <li>SDL_Finger
-<li>SDL_FPoint
-<li>SDL_FRect
+<li><a href="SDL_FPoint.html">SDL_FPoint</a> - 浮動小数点で表した点を定義する構造体
+<li><a href="SDL_FRect.html">SDL_FRect</a> - 浮動小数点で表した左上を基点とした長方形を定義する構造体
 <li><a href="SDL_GamepadAxisEvent.html">SDL_GamepadAxisEvent</a> - ゲームパッド移動イベントの構造体(event.gaxis.*)
 <li><a href="SDL_GamepadBinding.html">SDL_GamepadBinding</a> - ジョイスティックとゲームパッドの間のマッピングの構造体
 <li><a href="SDL_GamepadButtonEvent.html">SDL_GamepadButtonEvent</a> - ゲームパッドボタンイベントの構造体(event.gbutton.*)
@@ -1546,7 +1546,7 @@
 <li><a href="SDL_PenTouchEvent.html">SDL_PenTouchEvent</a> - 感圧式ペンタッチイベントの構造体(event.ptouch.*)
 <li><a href="SDL_PinchFingerEvent.html">SDL_PinchFingerEvent</a> - ピンチイベントの構造体(event.pinch.*)
 <li><a href="SDL_PixelFormatDetails.html">SDL_PixelFormatDetails</a> - ピクセル形式の詳細を表す構造体
-<li>SDL_Point
+<li><a href="SDL_Point.html">SDL_Point</a> - 整数で表した点を定義する構造体
 <li><a href="SDL_QuitEvent.html">SDL_QuitEvent</a> - 終了要求イベントの構造体(event.quit.*)
 <li><a href="SDL_Rect.html">SDL_Rect</a> - 整数で表した左上を基点とした長方形を定義する構造体
 <li><a href="SDL_RenderEvent.html">SDL_RenderEvent</a> - レンダライベントの構造体(event.render.*)
@@ -1687,8 +1687,8 @@
 <li>SDL_assert_release
 <li><a href="SDL_ASSERT_SHARED_CAPABILITY.html">SDL_ASSERT_SHARED_CAPABILITY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_AssertBreakpoint
-<li>SDL_AtomicDecRef
-<li>SDL_AtomicIncRef
+<li><a href="SDL_AtomicDecRef.html">SDL_AtomicDecRef</a> - 参照カウントとして使用している変数を1減算する
+<li><a href="SDL_AtomicIncRef.html">SDL_AtomicIncRef</a> - 参照カウントとして使用している変数を1加算する
 <li><a href="SDL_AUDIO_BITSIZE.html">SDL_AUDIO_BITSIZE</a> - オーディオ形式から量子化ビット数を得るマクロ
 <li><a href="SDL_AUDIO_BYTESIZE.html">SDL_AUDIO_BYTESIZE</a> - オーディオ形式から量子化バイト数を得るマクロ
 <li><a href="SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK.html">SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK</a> - デフォルトの再生デバイスを要求する場合に使用する値のマクロ
