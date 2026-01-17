@@ -39,7 +39,7 @@
 <li>SDL_asin
 <li>SDL_asinf
 <li>SDL_asprintf
-<li>SDL_AsyncIOFromFile
+<li><a href="SDL_AsyncIOFromFile.html">SDL_AsyncIOFromFile</a> - ファイルの読み書きを行う非同期I/O操作を生成する
 <li>SDL_atan
 <li>SDL_atan2
 <li>SDL_atan2f
@@ -98,7 +98,7 @@
 <li>SDL_CloseCamera
 <li><a href="SDL_CloseGamepad.html">SDL_CloseGamepad</a> - SDL_OpenGamepad()でオープンしたゲームパッドをクローズする
 <li>SDL_CloseHaptic
-<li><a href="SDL_CloseIO.html">SDL_CloseIO</a> - I/Oストリームをクローズして解放する
+<li><a href="SDL_CloseIO.html">SDL_CloseIO</a> - データストリームをクローズして解放する
 <li><a href="SDL_CloseJoystick.html">SDL_CloseJoystick</a> - SDL_OpenJoystick()でオープンしたジョイスティックをクローズする
 <li>SDL_CloseSensor
 <li>SDL_CloseStorage
@@ -123,7 +123,7 @@
 <li>SDL_cosf
 <li>SDL_crc16
 <li>SDL_crc32
-<li>SDL_CreateAsyncIOQueue
+<li><a href="SDL_CreateAsyncIOQueue.html">SDL_CreateAsyncIOQueue</a> - 複数の非同期I/O操作を追跡するタスクキューを生成する
 <li><a href="SDL_CreateAudioStream.html">SDL_CreateAudioStream</a> - オーディオストリームを生成する 
 <li><a href="SDL_CreateColorCursor.html">SDL_CreateColorCursor</a> - 色つきのマウスカーソルを生成する
 <li><a href="SDL_CreateCondition.html">SDL_CreateCondition</a> - 新しい条件変数を生成する
@@ -234,7 +234,7 @@
 <li><a href="SDL_FlushAudioStream.html">SDL_FlushAudioStream</a> - オーディオストリームにデータ送信の完了を伝える
 <li><a href="SDL_FlushEvent.html">SDL_FlushEvent</a> - イベントキューからイベントを消去する
 <li><a href="SDL_FlushEvents.html">SDL_FlushEvents</a> - イベントキューから複数のイベントを消去する
-<li><a href="SDL_FlushIO.html">SDL_FlushIO</a> - I/Oストリームのバッファを掃き出す
+<li><a href="SDL_FlushIO.html">SDL_FlushIO</a> - データストリームのバッファを掃き出す
 <li>SDL_FlushRenderer
 <li>SDL_fmod
 <li>SDL_fmodf
@@ -405,9 +405,9 @@
 <li>SDL_GetHaptics
 <li><a href="SDL_GetHint.html">SDL_GetHint</a> - ヒントの値を得る
 <li><a href="SDL_GetHintBoolean.html">SDL_GetHintBoolean</a> - ヒントの真偽値を得る
-<li><a href="SDL_GetIOProperties.html">SDL_GetIOProperties</a> - I/Oストリームのプロパティを得る
-<li><a href="SDL_GetIOSize.html">SDL_GetIOSize</a> - I/Oストリームのサイズを得る
-<li><a href="SDL_GetIOStatus.html">SDL_GetIOStatus</a> - I/Oストリームの状態を得る
+<li><a href="SDL_GetIOProperties.html">SDL_GetIOProperties</a> - データストリームのプロパティを得る
+<li><a href="SDL_GetIOSize.html">SDL_GetIOSize</a> - データストリームのサイズを得る
+<li><a href="SDL_GetIOStatus.html">SDL_GetIOStatus</a> - データストリームの状態を得る
 <li><a href="SDL_GetJoystickAxis.html">SDL_GetJoystickAxis</a> - ジョイスティックの方向コントローラーの状態を得る
 <li><a href="SDL_GetJoystickAxisInitialState.html">SDL_GetJoystickAxisInitialState</a> - ジョイスティックの方向コントローラーの初期状態を得る
 <li><a href="SDL_GetJoystickBall.html">SDL_GetJoystickBall</a> - トラックボールの最後のポーリングからの方向の変化量を得る
@@ -711,13 +711,13 @@
 <li><a href="SDL_InitSubSystem.html">SDL_InitSubSystem</a> - SDLライブラリを初期化する互換関数
 <li>SDL_InsertGPUDebugLabel
 <li>SDL_InsertTrayEntryAt
-<li>SDL_IOFromConstMem
-<li>SDL_IOFromDynamicMem
-<li><a href="SDL_IOFromFile.html">SDL_IOFromFile</a> - ファイルの読み書きを行うI/Oストリームを生成する
-<li><a href="SDL_IOFromMem.html">SDL_IOFromMem</a> - メモリの読み書きを行うI/Oストリームを生成する
-<li>SDL_IOprintf
-<li>SDL_IOvprintf
-<li>SDL_isalnum
+<li><a href="SDL_IOFromConstMem.html">SDL_IOFromConstMem</a> - 読取専用メモリの読み取りを行うデータストリームを生成する
+<li><a href="SDL_IOFromDynamicMem.html">SDL_IOFromDynamicMem</a> - 動的に確保されるメモリの読み書きを行うデータストリームを生成する
+<li><a href="SDL_IOFromFile.html">SDL_IOFromFile</a> - ファイルの読み書きを行うデータストリームを生成する
+<li><a href="SDL_IOFromMem.html">SDL_IOFromMem</a> - メモリの読み書きを行うデータストリームを生成する
+<li><a href="SDL_IOprintf.html">SDL_IOprintf</a> - データストリームに文字列を書き込む
+<li><a href="SDL_IOvprintf.html">SDL_IOvprintf</a> - データストリームに文字列を書き込む
+<<li>SDL_isalnum
 <li>SDL_isalpha
 <li><a href="SDL_IsAudioDevicePhysical.html">SDL_IsAudioDevicePhysical</a> - オーディオデバイスが(論理デバイスではなく)物理デバイスかチェックする
 <li><a href="SDL_IsAudioDevicePlayback.html">SDL_IsAudioDevicePlayback</a> - オーディオデバイスが(録音デバイスではなく)再生デバイスかチェックする
@@ -752,8 +752,8 @@
 <li>SDL_lltoa
 <li><a href="SDL_LoadBMP.html">SDL_LoadBMP</a> - BMPファイルをサーフェイスに読み込む
 <li><a href="SDL_LoadBMP_IO.html">SDL_LoadBMP_IO</a> - シーク可能なSDLデータストリームからBMP形式をサーフェイスに読み込む
-<li>SDL_LoadFile
-<li>SDL_LoadFile_IO
+<li><a href="SDL_LoadFile.html">SDL_LoadFile</a> - ファイルからデータを全て読み込む
+<li><a href="SDL_LoadFile_IO.html">SDL_LoadFile_IO</a> - データストリームからデータを全て読み込む
 <li>SDL_LoadFileAsync
 <li><a href="SDL_LoadFunction.html">SDL_LoadFunction</a> - 共有オブジェクトから名前で関数のアドレスを検索しそれを戻す
 <li><a href="SDL_LoadObject.html">SDL_LoadObject</a> - 共有オブジェクトを動的に読み込む
@@ -827,7 +827,7 @@
 <li>SDL_OpenHaptic
 <li>SDL_OpenHapticFromJoystick
 <li>SDL_OpenHapticFromMouse
-<li><a href="SDL_OpenIO.html">SDL_OpenIO</a> - カスタムI/Oストリームを生成する
+<li><a href="SDL_OpenIO.html">SDL_OpenIO</a> - カスタムデータストリームを生成する
 <li>SDL_OpenJoystick
 <li>SDL_OpenSensor
 <li>SDL_OpenStorage
@@ -854,8 +854,8 @@
 <li>SDL_PushGPUDebugGroup
 <li>SDL_PushGPUFragmentUniformData
 <li>SDL_PushGPUVertexUniformData
-<li><a href="SDL_PutAudioStreamData.html">SDL_PutAudioStreamData</a> - ストリームにデータを追加する
-<li><a href="SDL_PutAudioStreamDataNoCopy.html">SDL_PutAudioStreamDataNoCopy</a> - ストリームにデータをコピーせずに追加する
+<li><a href="SDL_PutAudioStreamData.html">SDL_PutAudioStreamData</a> - データストリームにデータを追加する
+<li><a href="SDL_PutAudioStreamDataNoCopy.html">SDL_PutAudioStreamDataNoCopy</a> - データストリームにデータをコピーせずに追加する
 <li><a href="SDL_PutAudioStreamPlanarData.html">SDL_PutAudioStreamPlanarData</a> - オーディオストリームにチャネルごとの配列に分けられたデータを追加する
 <li>SDL_qsort
 <li>SDL_qsort_r
@@ -870,25 +870,25 @@
 <li>SDL_randf
 <li>SDL_randf_r
 <li>SDL_ReadAsyncIO
-<li>SDL_ReadIO
+<li><a href="SDL_ReadIO.html">SDL_ReadIO</a> - データストリームからデータを読み込む
 <li><a href="SDL_ReadProcess.html">SDL_ReadProcess</a> - プロセスの標準出力を全て読み込む
-<li>SDL_ReadS16BE
-<li>SDL_ReadS16LE
-<li>SDL_ReadS32BE
-<li>SDL_ReadS32LE
-<li>SDL_ReadS64BE
-<li>SDL_ReadS64LE
-<li>SDL_ReadS8
+<li><a href="SDL_ReadS16BE.html">SDL_ReadS16BE</a> - データストリームから符号ありビッグエンディアン2バイトを読み込む
+<li><a href="SDL_ReadS16LE.html">SDL_ReadS16LE</a> - データストリームから符号ありリトルエンディアン2バイトを読み込む
+<li><a href="SDL_ReadS32BE.html">SDL_ReadS32BE</a> - データストリームから符号ありビッグエンディアン4バイトを読み込む
+<li><a href="SDL_ReadS32LE.html">SDL_ReadS32LE</a> - データストリームから符号ありリトルエンディアン4バイトを読み込む
+<li><a href="SDL_ReadS64BE.html">SDL_ReadS64BE</a> - データストリームから符号ありビッグエンディアン8バイトを読み込む
+<li><a href="SDL_ReadS64LE.html">SDL_ReadS64LE</a> - データストリームから符号ありリトルエンディアン8バイトを読み込む
+<li><a href="SDL_ReadS8.html">SDL_ReadS8</a> - データストリームから符号あり1バイトを読み込む
 <li>SDL_ReadStorageFile
 <li><a href="SDL_ReadSurfacePixel.html">SDL_ReadSurfacePixel</a> - サーフェイスからピクセルを読み取る
 <li><a href="SDL_ReadSurfacePixelFloat.html">SDL_ReadSurfacePixelFloat</a> - サーフェイスからピクセルを読み取る
-<li>SDL_ReadU16BE
-<li>SDL_ReadU16LE
-<li>SDL_ReadU32BE
-<li>SDL_ReadU32LE
-<li>SDL_ReadU64BE
-<li>SDL_ReadU64LE
-<li>SDL_ReadU8
+<li><a href="SDL_ReadU16BE.html">SDL_ReadU16BE</a> - データストリームから符号なしビッグエンディアン2バイトを読み込む
+<li><a href="SDL_ReadU16LE.html">SDL_ReadU16LE</a> - データストリームから符号なしリトルエンディアン2バイトを読み込む
+<li><a href="SDL_ReadU32BE.html">SDL_ReadU32BE</a> - データストリームから符号なしビッグエンディアン4バイトを読み込む
+<li><a href="SDL_ReadU32LE.html">SDL_ReadU32LE</a> - データストリームから符号なしリトルエンディアン4バイトを読み込む
+<li><a href="SDL_ReadU64BE.html">SDL_ReadU64BE</a> - データストリームから符号なしビッグエンディアン8バイトを読み込む
+<li><a href="SDL_ReadU64LE.html">SDL_ReadU64LE</a> - データストリームから符号なしリトルエンディアン8バイトを読み込む
+<li><a href="SDL_ReadU8.html">SDL_ReadU8</a> - データストリームから1バイトを読み込む
 <li>SDL_realloc
 <li>SDL_RectEmpty
 <li>SDL_RectEmptyFloat
@@ -964,9 +964,9 @@
 <li>SDL_RunHapticEffect
 <li>SDL_RunOnMainThread
 <li><a href="SDL_SaveBMP.html">SDL_SaveBMP</a> - サーフェイスをBMPファイルとして保存する
-<li><a href="SDL_SaveBMP_IO.html">SDL_SaveBMP_IO</a> - サーフェイスをシーク可能なSDLストリームにBMP形式で書き込む
-<li>SDL_SaveFile
-<li>SDL_SaveFile_IO
+<li><a href="SDL_SaveBMP_IO.html">SDL_SaveBMP_IO</a> - サーフェイスをシーク可能なSDLデータストリームにBMP形式で書き込む
+<li><a href="SDL_SaveFile.html">SDL_SaveFile</a> - ファイルからデータを全て読み込む
+<li><a href="SDL_SaveFile_IO.html">SDL_SaveFile_IO</a> - データストリームにデータを書き込む
 <li>SDL_SavePNG
 <li>SDL_SavePNG_IO
 <li>SDL_scalbn
@@ -974,7 +974,7 @@
 <li><a href="SDL_ScaleSurface.html">SDL_ScaleSurface</a> - 既存のサーフェイスのサイズを変更して新しいサーフェイスを生成する
 <li><a href="SDL_ScreenKeyboardShown.html">SDL_ScreenKeyboardShown</a> - ウィンドウにスクリーンキーボードが表示されているかチェックする
 <li><a href="SDL_ScreenSaverEnabled.html">SDL_ScreenSaverEnabled</a> - スクリーンセーバーを有効にする
-<li><a href="SDL_SeekIO.html">SDL_SeekIO</a> - I/Oストリームをシークする
+<li><a href="SDL_SeekIO.html">SDL_SeekIO</a> - データストリームをシークする
 <li>SDL_SendAndroidBackButton
 <li>SDL_SendAndroidMessage
 <li><a href="SDL_SendGamepadEffect.html">SDL_SendGamepadEffect</a> - ゲームパッドにエフェクトパケットを送信する
@@ -1191,7 +1191,7 @@
 <li><a href="SDL_SyncWindow.html">SDL_SyncWindow</a> - 保留中のウィンドウ状態の変更が完了するまでブロックする
 <li>SDL_tan
 <li>SDL_tanf
-<li><a href="SDL_TellIO.html">SDL_TellIO</a> - I/Oストリームの現在の読込/書込オフセット位置を得る
+<li><a href="SDL_TellIO.html">SDL_TellIO</a> - データストリームの現在の読込/書込オフセット位置を得る
 <li><a href="SDL_TextInputActive.html">SDL_TextInputActive</a> - ウィンドウのUnicodeテキスト入力が有効であるかをチェックする
 <li><a href="SDL_TimeFromWindows.html">SDL_TimeFromWindows</a> - Windows FILETIME(1601年1月1日からの100ナノ秒単位の数)をSDL時間に変換する
 <li><a href="SDL_TimeToDateTime.html">SDL_TimeToDateTime</a> - エポックナノ秒のSDL_TimeをSDL_DateTime形式に変換する
@@ -1282,24 +1282,24 @@
 <li>SDL_WindowSupportsGPUPresentMode
 <li>SDL_WindowSupportsGPUSwapchainComposition
 <li>SDL_WriteAsyncIO
-<li>SDL_WriteIO
-<li>SDL_WriteS16BE
-<li>SDL_WriteS16LE
-<li>SDL_WriteS32BE
-<li>SDL_WriteS32LE
-<li>SDL_WriteS64BE
-<li>SDL_WriteS64LE
-<li>SDL_WriteS8
+<li><a href="SDL_WriteIO.html">SDL_WriteIO</a> - データストリームにデータを書き込む
+<li><a href="SDL_WriteS16BE.html">SDL_WriteS16BE</a> - データストリームに符号ありビッグエンディアン2バイトを書き込む
+<li><a href="SDL_WriteS16LE.html">SDL_WriteS16LE</a> - データストリームに符号ありリトルエンディアン2バイトを書き込む
+<li><a href="SDL_WriteS32BE.html">SDL_WriteS32BE</a> - データストリームに符号ありビッグエンディアン4バイトを書き込む
+<li><a href="SDL_WriteS32LE.html">SDL_WriteS32LE</a> - データストリームに符号ありリトルエンディアン4バイトを書き込む
+<li><a href="SDL_WriteS64BE.html">SDL_WriteS64BE</a> - データストリームに符号ありビッグエンディアン8バイトを書き込む
+<li><a href="SDL_WriteS64LE.html">SDL_WriteS64LE</a> - データストリームに符号ありリトルエンディアン8バイトを書き込む
+<li><a href="SDL_WriteS8.html">SDL_WriteS8</a> - データストリームに符号あり1バイトを書き込む
 <li>SDL_WriteStorageFile
 <li><a href="SDL_WriteSurfacePixel.html">SDL_WriteSurfacePixel</a> - サーフェイスにピクセルを書き込む
 <li><a href="SDL_WriteSurfacePixelFloat.html">SDL_WriteSurfacePixelFloat</a> - サーフェイスにピクセルを書き込む
-<li>SDL_WriteU16BE
-<li>SDL_WriteU16LE
-<li>SDL_WriteU32BE
-<li>SDL_WriteU32LE
-<li>SDL_WriteU64BE
-<li>SDL_WriteU64LE
-<li>SDL_WriteU8
+<li><a href="SDL_WriteU16BE.html">SDL_WriteU16BE</a> - データストリームに符号なしビッグエンディアン2バイトを書き込む
+<li><a href="SDL_WriteU16LE.html">SDL_WriteU16LE</a> - データストリームに符号なしリトルエンディアン2バイトを書き込む
+<li><a href="SDL_WriteU32BE.html">SDL_WriteU32BE</a> - データストリームに符号なしビッグエンディアン4バイトを書き込む
+<li><a href="SDL_WriteU32LE.html">SDL_WriteU32LE</a> - データストリームに符号なしリトルエンディアン4バイトを書き込む
+<li><a href="SDL_WriteU64BE.html">SDL_WriteU64BE</a> - データストリームに符号なしビッグエンディアン8バイトを書き込む
+<li><a href="SDL_WriteU64LE.html">SDL_WriteU64LE</a> - データストリームに符号なしリトルエンディアン8バイトを書き込む
+<li><a href="SDL_WriteU8.html">SDL_WriteU8</a> - データストリームに符号なし1バイトを書き込む
 </ol>
 <h2>型</h2>
 <ol>
@@ -1308,8 +1308,8 @@
 <li>SDL_AppIterate_func
 <li>SDL_AppQuit_func
 <li>SDL_AssertionHandler
-<li>SDL_AsyncIO
-<li>SDL_AsyncIOQueue
+<li><a href="SDL_AsyncIO.html">SDL_AsyncIO</a> - 非同期I/O操作の型
+<li><a href="SDL_AsyncIOQueue.html">SDL_AsyncIOQueue</a> - 完了した非同期I/Oタスクのキューの型
 <li><a href="SDL_AudioDeviceID.html">SDL_AudioDeviceID</a> - オーディオデバイスインスタンスIDの型
 <li><a href="SDL_AudioIterationCallback.html">SDL_AudioIterationCallback</a> - オーディオデバイスの繰り返し処理で呼ばれるコールバックの型
 <li><a href="SDL_AudioPostmixCallback.html">SDL_AudioPostmixCallback</a> - オーディオデバイスにデータを送信する直前に呼ばれるコールバックの型
@@ -1381,7 +1381,7 @@
 <li>SDL_iconv_t
 <li><a href="SDL_InitFlags.html">SDL_InitFlags</a> - SDL_InitとSDL_InitSubSystemの初期化フラグの型 
 <li>SDL_iOSAnimationCallback
-<li><a href="SDL_IOStream.html">SDL_IOStream</a> - SDL I/Oストリームの型
+<li><a href="SDL_IOStream.html">SDL_IOStream</a> - SDL データストリームの型
 <li>SDL_Joystick
 <li>SDL_JoystickID
 <li><a href="SDL_KeyboardID.html">SDL_KeyboardID</a> - 現在システムに接続されているキーボードのユニークID
@@ -1570,8 +1570,8 @@
 <li>SDL_AppResult
 <li><a href="SDL_ArrayOrder.html">SDL_ArrayOrder</a> - 要素配列の順序の列挙体
 <li>SDL_AssertState
-<li>SDL_AsyncIOResult
-<li>SDL_AsyncIOTaskType
+<li><a href="SDL_AsyncIOResult.html">SDL_AsyncIOResult</a> - 非同期I/Oタスクの結果の列挙体
+<li><a href="SDL_AsyncIOTaskType.html">SDL_AsyncIOTaskType</a> - 非同期I/Oの種類の列挙体
 <li><a href="SDL_AudioFormat.html">SDL_AudioFormat</a> - オーディオ形式の列挙体
 <li><a href="SDL_BitmapOrder.html">SDL_BitmapOrder</a> - ビットマップのピクセル順の列挙体
 <li><a href="SDL_BlendFactor.html">SDL_BlendFactor</a> - ピクセルの要素に積算される係数の列挙体
@@ -1627,8 +1627,8 @@
 <li><a href="SDL_HintPriority.html">SDL_HintPriority</a> - ヒントの優先度の列挙体
 <li><a href="SDL_HitTestResult.html">SDL_HitTestResult</a> - SDL_SetWindowHitTest()コールバック関数が戻す値の列挙体
 <li><a href="SDL_InitStatus.html">SDL_InitStatus</a> - SDL_InitState構造体の状態の列挙体
-<li><a href="SDL_IOStatus.html">SDL_IOStatus</a> - 読込または書込の操作で設定されるI/Oストリームの状態の列挙体
-<li><a href="SDL_IOWhence.html">SDL_IOWhence</a> - I/Oストリームの可能な基点の列挙体
+<li><a href="SDL_IOStatus.html">SDL_IOStatus</a> - 読込または書込の操作で設定されるデータストリームの状態の列挙体
+<li><a href="SDL_IOWhence.html">SDL_IOWhence</a> - データストリームの可能な基点の列挙体
 <li><a href="SDL_JoystickConnectionState.html">SDL_JoystickConnectionState</a> - ジョイスティックデバイスの接続方法の列挙体
 <li><a href="SDL_JoystickType.html">SDL_JoystickType</a> - ジョイスティックの種類の列挙体
 <li><a href="SDL_LogCategory.html">SDL_LogCategory</a> - 設定済みのログの分類の列挙体

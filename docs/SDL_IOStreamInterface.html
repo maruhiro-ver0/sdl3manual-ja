@@ -45,7 +45,7 @@
 書き込んだバイト数を戻す.
 </td></tr>
 <tr><td>bool (SDLCALL *)(void *userdata, SDL_IOStatus *status);</td><td>flush</td><td>
-ストリームがバッファしている場合, データを確実に書き込む関数<br>
+データストリームがバッファしている場合, データを確実に書き込む関数<br>
 失敗した場合, <code>*status</code>に<a href="SDL_IOStatus.html">SDL_IOStatus</a>列挙体の値を設定する必要がある. 成功した場合は設定する必要はない.<br>
 <br>
 成功のとき真, データの掃き出しに失敗したとき偽を戻す.
@@ -61,7 +61,7 @@
 <h2>詳細</h2>
 <p>
 アプリケーションは, この構造体を<a href="SDL_OpenIO.html">SDL_OpenIO()</a>に渡して独自の<a href="SDL_IOStream.html">SDL_IOStream</a>を生成することができる.
-これは必須ではない. SDLには<a href="SDL_IOFromFile.html">SDL_IOFromFile()</a>や<a href="SDL_IOFromMem.html">SDL_IOFromMem()</a>のような一般的なI/Oストリームが既に用意されている.
+これは必須ではない. SDLには<a href="SDL_IOFromFile.html">SDL_IOFromFile()</a>や<a href="SDL_IOFromMem.html">SDL_IOFromMem()</a>のような一般的なデータストリームが既に用意されている.
 </p>
 <p>
 この構造体は<a href="SDL_INIT_INTERFACE.html">SDL_INIT_INTERFACE()</a>で初期化する必要がある.

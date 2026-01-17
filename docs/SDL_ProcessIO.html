@@ -35,7 +35,7 @@ SDL_PROCESS_STDIO_APPを設定した場合, 新しく生成された<a href="SDL
 <p>
 SDL_PROCESS_STDIO_REDIRECTを設定した場合, アプリケーションの既存の<a href="SDL_IOStream.html">SDL_IOStream</a>に接続される.
 標準入力ならば<a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDIN_POINTER</a>に, 標準出力ならば<a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDOUT_POINTER</a>に, 標準エラーならば<a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDERR_POINTER</a>に渡してプロセスを作成する.
-プロセスが生成された後, 既存のストリームはアプリケーションでクローズする必要がある.
+プロセスが生成された後, 既存の<a href="SDL_IOStream.html">SDL_IOStream</a>はアプリケーションでクローズする必要がある.
 </p>
 <p>
 <a href="SDL_IOStream.html">SDL_IOStream</a>をSDL_PROCESS_STDIO_REDIRECTで使用するためには, <a href="SDL_GetProcessProperties.html">SDL_PROP_IOSTREAM_WINDOWS_HANDLE_POINTER</a>または<a href="SDL_GetProcessProperties.html">SDL_PROP_IOSTREAM_FILE_DESCRIPTOR_NUMBER</a>が設定されている必要がある.

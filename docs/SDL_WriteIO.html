@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryIOStream.html" title="1つ上">
+<title>SDL_WriteIO</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryIOStream.html">I/Oストリーム</a> - SDL_WriteIO
+<hr>
+<h1>SDL_WriteIO</h1>
+データストリームにデータを書き込む
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_iostream.h">SDL3/SDL_iostream.h</a>
+<h2>構文</h2>
+<code>size_t SDL_WriteIO(SDL_IOStream *context, const void *ptr, size_t size);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_IOStream.html">SDL_IOStream</a> *</td><td>context</td><td><a href="SDL_IOStream.html">SDL_IOStream</a>へのポインタ</td></tr>
+<tr><td>void *</td><td>ptr</td><td>書込データのバッファへのポインタ</td></tr>
+<tr><td>size_t</td><td>size</td><td>書き込むバイト数</td></tr>
+</table>
+<h2>戻り値</h2>
+(size_t) 書き込んだバイト数を戻す. 失敗したとき<code>size</code>より小さい場合がある.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数は<code>ptr</code>が指定するエリアから<code>size</code>バイトだけをデータストリームに書き込む.
+この関数がどのような理由でも失敗すると, <code>size</code>より少ない値が戻り, 書き込みがどこまで行われたかがわかる.
+成功すると<code>size</code>が戻る.
+</p>
+<p>
+エラーのとき, この関数は可能な限り書き込もうとするため, 要求した書き込みバイト数よりも少ない正の数を戻すことがある.
+</p>
+<p>
+呼び出し側は, <a href="SDL_GetIOStatus.html">SDL_GetIOStatus()</a>で問題が非ブロッキング書き込みのような単に再実行すればよい回復可能なものか, 致命的なエラーかを知ることができる.
+</p>
+<p>
+有効なデータストリームに対する0バイトの要求は, データストリームへのアクセスは行われず即座に0が戻り, データストリームの状態(EOFやエラーなど)は変わらない.
+</p>
+<h2>スレッドセーフ</h2>
+複数のスレッドから一度に同一の<a href="SDL_IOStream.html">SDL_IOStream</a>に対して使用してはならない.
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_IOprintf.html">SDL_IOprintf</a>
+<li><a href="SDL_ReadIO.html">SDL_ReadIO</a>
+<li><a href="SDL_SeekIO.html">SDL_SeekIO</a>
+<li><a href="SDL_FlushIO.html">SDL_FlushIO</a>
+<li><a href="SDL_GetIOStatus.html">SDL_GetIOStatus</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_WriteIO">SDL_WriteIO - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

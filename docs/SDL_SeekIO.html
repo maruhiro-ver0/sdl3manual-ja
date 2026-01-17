@@ -11,7 +11,7 @@
 <a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryIOStream.html">I/Oストリーム</a> - SDL_SeekIO
 <hr>
 <h1>SDL_SeekIO</h1>
-I/Oストリームをシークする
+データストリームをシークする
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_iostream.h">SDL3/SDL_iostream.h</a>
 <h2>構文</h2>
@@ -38,7 +38,7 @@ I/Oストリームをシークする
 <li><code>SDL_IO_SEEK_END</code>: データの末尾からシークする
 </ul>
 <p>
-シークできないストリームの場合, -1を戻す.
+シークできないデータストリームの場合, -1を戻す.
 </p>
 <h2>スレッドセーフ</h2>
 複数のスレッドから一度に同一の<a href="SDL_IOStream.html">SDL_IOStream</a>に対して使用してはならない.

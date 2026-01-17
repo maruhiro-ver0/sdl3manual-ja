@@ -21,58 +21,58 @@ C++の標準のiostreamクラスも抽象化されたデータの読み込み/�
 </p>
 <h2>関数</h2>
 <ol>
-<li><a href="SDL_CloseIO.html">SDL_CloseIO</a> - I/Oストリームをクローズして解放する
-<li><a href="SDL_FlushIO.html">SDL_FlushIO</a> - I/Oストリームのバッファを掃き出す
-<li><a href="SDL_GetIOProperties.html">SDL_GetIOProperties</a> - I/Oストリームのプロパティを得る
-<li><a href="SDL_GetIOSize.html">SDL_GetIOSize</a> - I/Oストリームのサイズを得る
-<li><a href="SDL_GetIOStatus.html">SDL_GetIOStatus</a> - I/Oストリームの状態を得る
-<li>SDL_IOFromConstMem
-<li>SDL_IOFromDynamicMem
-<li><a href="SDL_IOFromFile.html">SDL_IOFromFile</a> - ファイルの読み書きを行うI/Oストリームを生成する
-<li><a href="SDL_IOFromMem.html">SDL_IOFromMem</a> - メモリの読み書きを行うI/Oストリームを生成する
-<li>SDL_IOprintf
-<li>SDL_IOvprintf
-<li>SDL_LoadFile
-<li>SDL_LoadFile_IO
-<li><a href="SDL_OpenIO.html">SDL_OpenIO</a> - カスタムI/Oストリームを生成する
-<li>SDL_ReadIO
-<li>SDL_ReadS16BE
-<li>SDL_ReadS16LE
-<li>SDL_ReadS32BE
-<li>SDL_ReadS32LE
-<li>SDL_ReadS64BE
-<li>SDL_ReadS64LE
-<li>SDL_ReadS8
-<li>SDL_ReadU16BE
-<li>SDL_ReadU16LE
-<li>SDL_ReadU32BE
-<li>SDL_ReadU32LE
-<li>SDL_ReadU64BE
-<li>SDL_ReadU64LE
-<li>SDL_ReadU8
-<li>SDL_SaveFile
-<li>SDL_SaveFile_IO
-<li><a href="SDL_SeekIO.html">SDL_SeekIO</a> - I/Oストリームをシークする
-<li><a href="SDL_TellIO.html">SDL_TellIO</a> - I/Oストリームの現在の読込/書込オフセット位置を得る
-<li>SDL_WriteIO
-<li>SDL_WriteS16BE
-<li>SDL_WriteS16LE
-<li>SDL_WriteS32BE
-<li>SDL_WriteS32LE
-<li>SDL_WriteS64BE
-<li>SDL_WriteS64LE
-<li>SDL_WriteS8
-<li>SDL_WriteU16BE
-<li>SDL_WriteU16LE
-<li>SDL_WriteU32BE
-<li>SDL_WriteU32LE
-<li>SDL_WriteU64BE
-<li>SDL_WriteU64LE
-<li>SDL_WriteU8
+<li><a href="SDL_CloseIO.html">SDL_CloseIO</a> - データストリームをクローズして解放する
+<li><a href="SDL_FlushIO.html">SDL_FlushIO</a> - データストリームのバッファを掃き出す
+<li><a href="SDL_GetIOProperties.html">SDL_GetIOProperties</a> - データストリームのプロパティを得る
+<li><a href="SDL_GetIOSize.html">SDL_GetIOSize</a> - データストリームのサイズを得る
+<li><a href="SDL_GetIOStatus.html">SDL_GetIOStatus</a> - データストリームの状態を得る
+<li><a href="SDL_IOFromConstMem.html">SDL_IOFromConstMem</a> - 読取専用メモリの読み取りを行うデータストリームを生成する
+<li><a href="SDL_IOFromDynamicMem.html">SDL_IOFromDynamicMem</a> - 動的に確保されるメモリの読み書きを行うデータストリームを生成する
+<li><a href="SDL_IOFromFile.html">SDL_IOFromFile</a> - ファイルの読み書きを行うデータストリームを生成する
+<li><a href="SDL_IOFromMem.html">SDL_IOFromMem</a> - メモリの読み書きを行うデータストリームを生成する
+<li><a href="SDL_IOprintf.html">SDL_IOprintf</a> - データストリームに文字列を書き込む
+<li><a href="SDL_IOvprintf.html">SDL_IOvprintf</a> - データストリームに文字列を書き込む
+<li><a href="SDL_LoadFile.html">SDL_LoadFile</a> - ファイルからデータを全て読み込む
+<li><a href="SDL_LoadFile_IO.html">SDL_LoadFile_IO</a> - データストリームからデータを全て読み込む
+<li><a href="SDL_OpenIO.html">SDL_OpenIO</a> - カスタムデータストリームを生成する
+<li><a href="SDL_ReadIO.html">SDL_ReadIO</a> - データストリームからデータを読み込む
+<li><a href="SDL_ReadS16BE.html">SDL_ReadS16BE</a> - データストリームから符号ありビッグエンディアン2バイトを読み込む
+<li><a href="SDL_ReadS16LE.html">SDL_ReadS16LE</a> - データストリームから符号ありリトルエンディアン2バイトを読み込む
+<li><a href="SDL_ReadS32BE.html">SDL_ReadS32BE</a> - データストリームから符号ありビッグエンディアン4バイトを読み込む
+<li><a href="SDL_ReadS32LE.html">SDL_ReadS32LE</a> - データストリームから符号ありリトルエンディアン4バイトを読み込む
+<li><a href="SDL_ReadS64BE.html">SDL_ReadS64BE</a> - データストリームから符号ありビッグエンディアン8バイトを読み込む
+<li><a href="SDL_ReadS64LE.html">SDL_ReadS64LE</a> - データストリームから符号ありリトルエンディアン8バイトを読み込む
+<li><a href="SDL_ReadS8.html">SDL_ReadS8</a> - データストリームから符号あり1バイトを読み込む
+<li><a href="SDL_ReadU16BE.html">SDL_ReadU16BE</a> - データストリームから符号なしビッグエンディアン2バイトを読み込む
+<li><a href="SDL_ReadU16LE.html">SDL_ReadU16LE</a> - データストリームから符号なしリトルエンディアン2バイトを読み込む
+<li><a href="SDL_ReadU32BE.html">SDL_ReadU32BE</a> - データストリームから符号なしビッグエンディアン4バイトを読み込む
+<li><a href="SDL_ReadU32LE.html">SDL_ReadU32LE</a> - データストリームから符号なしリトルエンディアン4バイトを読み込む
+<li><a href="SDL_ReadU64BE.html">SDL_ReadU64BE</a> - データストリームから符号なしビッグエンディアン8バイトを読み込む
+<li><a href="SDL_ReadU64LE.html">SDL_ReadU64LE</a> - データストリームから符号なしリトルエンディアン8バイトを読み込む
+<li><a href="SDL_ReadU8.html">SDL_ReadU8</a> - データストリームから1バイトを読み込む
+<li><a href="SDL_SaveFile.html">SDL_SaveFile</a> - ファイルからデータを全て読み込む
+<li><a href="SDL_SaveFile_IO.html">SDL_SaveFile_IO</a> - データストリームにデータを書き込む
+<li><a href="SDL_SeekIO.html">SDL_SeekIO</a> - データストリームをシークする
+<li><a href="SDL_TellIO.html">SDL_TellIO</a> - データストリームの現在の読込/書込オフセット位置を得る
+<li><a href="SDL_WriteIO.html">SDL_WriteIO</a> - データストリームにデータを書き込む
+<li><a href="SDL_WriteS16BE.html">SDL_WriteS16BE</a> - データストリームに符号ありビッグエンディアン2バイトを書き込む
+<li><a href="SDL_WriteS16LE.html">SDL_WriteS16LE</a> - データストリームに符号ありリトルエンディアン2バイトを書き込む
+<li><a href="SDL_WriteS32BE.html">SDL_WriteS32BE</a> - データストリームに符号ありビッグエンディアン4バイトを書き込む
+<li><a href="SDL_WriteS32LE.html">SDL_WriteS32LE</a> - データストリームに符号ありリトルエンディアン4バイトを書き込む
+<li><a href="SDL_WriteS64BE.html">SDL_WriteS64BE</a> - データストリームに符号ありビッグエンディアン8バイトを書き込む
+<li><a href="SDL_WriteS64LE.html">SDL_WriteS64LE</a> - データストリームに符号ありリトルエンディアン8バイトを書き込む
+<li><a href="SDL_WriteS8.html">SDL_WriteS8</a> - データストリームに符号あり1バイトを書き込む
+<li><a href="SDL_WriteU16BE.html">SDL_WriteU16BE</a> - データストリームに符号なしビッグエンディアン2バイトを書き込む
+<li><a href="SDL_WriteU16LE.html">SDL_WriteU16LE</a> - データストリームに符号なしリトルエンディアン2バイトを書き込む
+<li><a href="SDL_WriteU32BE.html">SDL_WriteU32BE</a> - データストリームに符号なしビッグエンディアン4バイトを書き込む
+<li><a href="SDL_WriteU32LE.html">SDL_WriteU32LE</a> - データストリームに符号なしリトルエンディアン4バイトを書き込む
+<li><a href="SDL_WriteU64BE.html">SDL_WriteU64BE</a> - データストリームに符号なしビッグエンディアン8バイトを書き込む
+<li><a href="SDL_WriteU64LE.html">SDL_WriteU64LE</a> - データストリームに符号なしリトルエンディアン8バイトを書き込む
+<li><a href="SDL_WriteU8.html">SDL_WriteU8</a> - データストリームに符号なし1バイトを書き込む
 </ol>
 <h2>型</h2>
 <ol>
-<li><a href="SDL_IOStream.html">SDL_IOStream</a> - SDL I/Oストリームの型
+<li><a href="SDL_IOStream.html">SDL_IOStream</a> - SDLデータストリームの型
 </ol>
 <h2>構造体</h2>
 <ol>
@@ -80,8 +80,8 @@ C++の標準のiostreamクラスも抽象化されたデータの読み込み/�
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li><a href="SDL_IOStatus.html">SDL_IOStatus</a> - 読込または書込の操作で設定されるI/Oストリームの状態の列挙体
-<li><a href="SDL_IOWhence.html">SDL_IOWhence</a> - I/Oストリームの可能な基点の列挙体
+<li><a href="SDL_IOStatus.html">SDL_IOStatus</a> - 読込または書込の操作で設定されるデータストリームの状態の列挙体
+<li><a href="SDL_IOWhence.html">SDL_IOWhence</a> - データストリームの可能な基点の列挙体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryIOStream">SDL3/CategoryIOStream - SDL Wiki</a>

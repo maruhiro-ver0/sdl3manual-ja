@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAsyncIO.html" title="1つ上">
+<title>SDL_AsyncIOFromFile</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAsyncIO.html">非同期I/O</a> - SDL_AsyncIOFromFile
+<hr>
+<h1>SDL_AsyncIOFromFile</h1>
+ファイルの読み書きを行う非同期I/O操作を生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_asyncio.h">SDL3/SDL_asyncio.h</a>
+<h2>構文</h2>
+<code>SDL_AsyncIO * SDL_AsyncIOFromFile(const char *file, const char *mode);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const char *</td><td>file</td><td>オープンするファイルの名前のUTF-8文字列</td></tr>
+<tr><td>const char *</td><td>mode</td><td>オープンするモードのASCII文字列</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_AsyncIO.html">SDL_AsyncIO</a> *) 生成された非同期I/O操作を戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+<code>mode</code>には次の文字列が使える:
+</p>
+<ul>
+<li>"r": 読込オープンする. ファイルは存在している必要がある
+<li>"w": 空のファイルを生成して書込オープンする. 同じ名前のファイルが既に存在する場合, 内容は削除され, 新しいファイルとして扱われる
+<li>"r+": 読込・書込オープンする. ファイルは存在している必要がある
+<li>"w+": 空のファイルを生成して読込・書込オープンする. 同じ名前のファイルが既に存在する場合, 内容は削除され, 新しいファイルとして扱われる
+</ul>
+<p>
+「バイナリ」スタイルのみのため, "b"は存在しない. タスクの開始時に位置を指定するため, 追加を行う"a"も存在しない.
+</p>
+<p>
+この関数はUnicodeのファイル名に対応しているが, オペレーティングシステムに関わらずUTF-8形式の必要がある.
+</p>
+<p>
+この関数の呼び出しは非同期では<em>ない</em>. ファイルのオープンは一般的に高速な操作とみなし, オープンしてから戻る.
+しかし, その後のオープンしたファイルの読み込みと書き込みは非同期に行われる.
+</p>
+<h2>スレッドセーフ</h2>
+この関数はどのスレッドからも安全に呼べる.
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_CloseAsyncIO.html">SDL_CloseAsyncIO</a>
+<li><a href="SDL_ReadAsyncIO.html">SDL_ReadAsyncIO</a>
+<li><a href="SDL_WriteAsyncIO.html">SDL_WriteAsyncIO</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_AsyncIOFromFile">SDL_AsyncIOFromFile - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

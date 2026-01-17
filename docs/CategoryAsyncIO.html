@@ -14,7 +14,7 @@
 <h2>概要</h2>
 <p>
 SDLはI/Oを非同期に行う手段を提供している.
-これは, アプリケーションのファイルの読み込みや書き込みを, 実際にデータを転送するまで待たせずに行うことができる. 入力力を要求する関数は, 完了するまでブロックすることはしない.
+これは, アプリケーションのファイルの読み込みや書き込みを, 実際にデータを転送するまで待たせずに行うことができる. 入力を要求する関数は, 完了するまでブロックすることはしない.
 </p>
 <p>
 代わりに, データはバックグラウンドで転送され, アプリケーションは空いた時間に結果をチェックする.
@@ -26,8 +26,8 @@ SDLはI/Oを非同期に行う手段を提供している.
 一般的な非同期I/Oの使い方:
 </p>
 <ul>
-<li>1つ以上のSDL_AsyncIOQueueを生成する
-<li>SDL_AsyncIOFromFileでファイルを開く
+<li>1つ以上の<a href="SDL_CreateAsyncIOQueue.html">SDL_CreateAsyncIOQueue</a>を生成する
+<li><a href="SDL_AsyncIOFromFile.html">SDL_AsyncIOFromFile</a>でファイルを開く
 <li>そのファイルのI/Oタスクを, SDL_ReadAsyncIOまたはSDL_WriteAsyncIOで開始し, これらのタスクをキューに入れる
 <li>しばらくしてから, SDL_GetAsyncIOResultでブロックせずにキューを見てタスクの完了をチェックする. タスクは様々な順序で成功または失敗する
 <li>全てのタスクが完了したらSDL_CloseAsyncIOでファイルをクローズする. この場合もデータをディスクに掃き出すためにタスクが生成される
@@ -73,9 +73,9 @@ SDL_CloseAsyncIOのflush引数を真にして呼び出し成功しても, 掃き
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_AsyncIOFromFile
+<li><a href="SDL_AsyncIOFromFile.html">SDL_AsyncIOFromFile</a> - ファイルの読み書きを行う非同期I/O操作を生成する
 <li>SDL_CloseAsyncIO
-<li>SDL_CreateAsyncIOQueue
+<li><a href="SDL_CreateAsyncIOQueue.html">SDL_CreateAsyncIOQueue</a> - 複数の非同期I/O操作を追跡するタスクキューを生成する
 <li>SDL_DestroyAsyncIOQueue
 <li>SDL_GetAsyncIOResult
 <li>SDL_GetAsyncIOSize
@@ -87,8 +87,8 @@ SDL_CloseAsyncIOのflush引数を真にして呼び出し成功しても, 掃き
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_AsyncIO
-<li>SDL_AsyncIOQueue
+<li><a href="SDL_AsyncIO.html">SDL_AsyncIO</a> - 非同期I/O操作の型
+<li><a href="SDL_AsyncIOQueue.html">SDL_AsyncIOQueue</a> - 完了した非同期I/Oタスクのキューの型
 </ol>
 <h2>構造体</h2>
 <ol>
@@ -96,8 +96,8 @@ SDL_CloseAsyncIOのflush引数を真にして呼び出し成功しても, 掃き
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_AsyncIOResult
-<li>SDL_AsyncIOTaskType
+<li><a href="SDL_AsyncIOResult.html">SDL_AsyncIOResult</a> - 非同期I/Oタスクの結果の列挙体
+<li><a href="SDL_AsyncIOTaskType.html">SDL_AsyncIOTaskType</a> - 非同期I/Oの種類の列挙体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryAsyncIO">SDL3/CategoryAsyncIO - SDL Wiki</a>

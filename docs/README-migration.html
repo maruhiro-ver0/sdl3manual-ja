@@ -1920,17 +1920,17 @@ SDL3では, 論理サイズから物理サイズへの変換時の表示モー�
 SDL_rwops.hの名称はSDL_iostream.hとなった.
 </p>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWops.html">SDL_RWops</a>は不透明構造体となり, 名称が<a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>となった.
-<a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>を生成するSDL3 API(<a href="https://wiki.libsdl.org/SDL3/SDL_IOFromFile">SDL_IOFromFile</a>など)の名称は変更されたが, SDL2と同様の機能を持つ.
-しかし, アプリケーションが提供する関数へのポインタでカスタムされた<a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>を生成する場合は, 関数へのポインタを渡して<a href="https://wiki.libsdl.org/SDL3/SDL_OpenIO">SDL_OpenIO()</a>を呼ぶこと.
-<a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>の機能を呼ぶには, 関数へのポインタが内部にあるため, 標準のAPI(SDL_ReadIOなど)を使うこと.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWops.html">SDL_RWops</a>は不透明構造体となり, 名称が<a href="SDL_IOStream.html">SDL_IOStream</a>となった.
+<a href="SDL_IOStream.html">SDL_IOStream</a>を生成するSDL3 API(<a href="SDL_IOFromFile.html">SDL_IOFromFile</a>など)の名称は変更されたが, SDL2と同様の機能を持つ.
+しかし, アプリケーションが提供する関数へのポインタでカスタムされた<a href="SDL_IOStream.html">SDL_IOStream</a>を生成する場合は, 関数へのポインタを渡して<a href="SDL_OpenIO.html">SDL_OpenIO()</a>を呼ぶこと.
+<a href="SDL_IOStream.html">SDL_IOStream</a>の機能を呼ぶには, 関数へのポインタが内部にあるため, 標準のAPI(<a href="SDL_ReadIO.html">SDL_ReadIO</a>など)を使うこと.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>はC++の標準のiostreamクラスとは無関係であり混同しないこと!
+<a href="SDL_IOStream.html">SDL_IOStream</a>はC++の標準のiostreamクラスとは無関係であり混同しないこと!
 </p>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWops.html">SDL_RWops</a>の関数へのポインタは<a href="https://wiki.libsdl.org/SDL3/SDL_IOStreamInterface">SDL_IOStreamInterface</a>構造体に分けられた. これはカスタムされた<a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>の実装を生成するとき<a href="https://wiki.libsdl.org/SDL3/SDL_OpenIO">SDL_OpenIO</a>に提供される.
-全ての関数は, <a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>が不透明構造体となったため, 第1引数としてvoid *userdataを取るようになった.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWops.html">SDL_RWops</a>の関数へのポインタは<a href="SDL_IOStreamInterface.html">SDL_IOStreamInterface</a>構造体に分けられた. これはカスタムされた<a href="SDL_IOStream.html">SDL_IOStream</a>の実装を生成するとき<a href="SDL_OpenIO.html">SDL_OpenIO</a>に提供される.
+全ての関数は, <a href="SDL_IOStream.html">SDL_IOStream</a>が不透明構造体となったため, 第1引数としてvoid *userdataを取るようになった.
 </p>
 <p>
 SDL3では, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWread.html">SDL_RWread</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWwrite.html">SDL_RWwrite</a>(そして読み込み・書き込み関数へのポインタ)は, 名称だけでなく関数シグネチャ(関数定義)も変更された.
@@ -1939,7 +1939,7 @@ SDL3では, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWread.ht
 以前はstdioのようだったが...
 <code>
 <pre>
-    size_t SDL_RWread(SDL_RWops *context, void *ptr, size_t size, size_t maxnum);<br>
+    size_t SDL_RWread(SDL_RWops *context, void *ptr, size_t size, size_t maxnum);
     size_t SDL_RWwrite(SDL_RWops *context, const void *ptr, size_t size, size_t maxnum);
 </pre>
 </code>
@@ -1980,14 +1980,14 @@ size_t custom_read(void *ptr, size_t size, size_t nitems, SDL_IOStream *stream)
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWops.html">SDL_RWops::type</a>は削除された. これはアプリケーションにとってもSDL内部で使用するとしても全く訳に立たないためである.
-ストリームの種類を得るためには, 組み込まれた実行を検知するための<a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>のプロパティを調べること.
+ストリームの種類を得るためには, 組み込まれた実行を検知するための<a href="SDL_IOStream.html">SDL_IOStream</a>のプロパティを調べること.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_IOStreamInterface">SDL_IOStreamInterface::close</a>の実装は, 自身のuserdataの後処理をする必要があるが, 自身で<a href="https://wiki.libsdl.org/SDL3/SDL_CloseIO">SDL_CloseIO</a>を呼んではならない.
-不透明オブジェクトを解放する前に常に-&gt;closeされ, <a href="https://wiki.libsdl.org/SDL3/SDL_CloseIO">SDL_CloseIO</a>が呼ばれることになっている.
+<a href="SDL_IOStreamInterface.html">SDL_IOStreamInterface::close</a>の実装は, 自身のuserdataの後処理をする必要があるが, 自身で<a href="SDL_CloseIO.html">SDL_CloseIO</a>を呼んではならない.
+不透明オブジェクトを解放する前に常に-&gt;closeされ, <a href="SDL_CloseIO.html">SDL_CloseIO</a>が呼ばれることになっている.
 </p>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AllocRW.html">SDL_AllocRW()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FreeRW.html">SDL_FreeRW()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWclose.html">SDL_RWclose()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_IOStreamInterface">-&gt;close</a>関数の直接の呼び出しはAPIから削除された. それにより, RWopsのライフサイクルの管理は<a href="https://wiki.libsdl.org/SDL3/SDL_OpenIO">SDL_OpenIO()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_CloseIO">SDL_CloseIO()</a>のみで行われるようになった.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AllocRW.html">SDL_AllocRW()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FreeRW.html">SDL_FreeRW()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWclose.html">SDL_RWclose()</a>, <a href="SDL_IOStreamInterface.html">-&gt;close</a>関数の直接の呼び出しはAPIから削除された. それにより, RWopsのライフサイクルの管理は<a href="SDL_OpenIO.html">SDL_OpenIO()</a>と<a href="SDL_CloseIO.html">SDL_CloseIO()</a>のみで行われるようになった.
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromFP.html">SDL_RWFromFP</a>はAPIから削除された. SDLライブラリがアプリケーションとは別のCランタイムを使用する場合に問題が発生するためである.
@@ -2100,47 +2100,47 @@ SDL_IOStream *SDL_RWFromFP(FILE *fp, bool autoclose)
 </code>
 </p>
 <p>
-stdioを背後で使用するために<a href="https://wiki.libsdl.org/SDL3/SDL_IOFromFile">SDL_IOFromFile()</a>で生成したストリームは, 内部のFILE *を標準の<a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>を通して使用できる.
+stdioを背後で使用するために<a href="SDL_IOFromFile.html">SDL_IOFromFile()</a>で生成したストリームは, 内部のFILE *を標準の<a href="SDL_IOStream.html">SDL_IOStream</a>を通して使用できる.
 アプリケーションはこのポインタを自身の責任で使用することができ, SDLとアプリケーションが同じCランタイムを使用していることを確認する必要がある.
 </p>
 <p>
-Appleの環境では, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromFile.html">SDL_RWFromFile</a>(現在は<a href="https://wiki.libsdl.org/SDL3/SDL_IOFromFile">SDL_IOFromFile</a>)はアプリケーションにバンドルされたリソースディレクトリから読み込もうとせず, 指定されたパスを変更せずに使用するようになった.
+Appleの環境では, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromFile.html">SDL_RWFromFile</a>(現在は<a href="SDL_IOFromFile.html">SDL_IOFromFile</a>)はアプリケーションにバンドルされたリソースディレクトリから読み込もうとせず, 指定されたパスを変更せずに使用するようになった.
 これらの環境では, <a href="https://wiki.libsdl.org/SDL3/SDL_GetBasePath">SDL_GetBasePath()</a>でリソースディレクトリを見つけることができる.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_ReadU8">SDL_ReadU8()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU16LE">SDL_ReadU16LE()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU16BE">SDL_ReadU16BE()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU32LE">SDL_ReadU32LE()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU32BE">SDL_ReadU32BE()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU64LE">SDL_ReadU64LE()</a>, <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU64BE">SDL_ReadU64BE()</a>は成功のとき真, そうでないとき偽を戻し, 引数として渡したポインタのデータを保持するようになった.
+<a href="SDL_ReadU8.html">SDL_ReadU8()</a>, <a href="SDL_ReadU16LE.html">SDL_ReadU16LE()</a>, <a href="SDL_ReadU16BE.html">SDL_ReadU16BE()</a>, <a href="SDL_ReadU32LE.html">SDL_ReadU32LE()</a>, <a href="SDL_ReadU32BE.html">SDL_ReadU32BE()</a>, <a href="SDL_ReadU64LE.html">SDL_ReadU64LE()</a>, <a href="SDL_ReadU64BE.html">SDL_ReadU64BE()</a>は成功のとき真, そうでないとき偽を戻し, 引数として渡したポインタのデータを保持するようになった.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromConstMem.html">SDL_RWFromConstMem()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_IOFromConstMem">SDL_IOFromConstMem()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromFile.html">SDL_RWFromFile()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_IOFromFile">SDL_IOFromFile()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromMem.html">SDL_RWFromMem()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_IOFromMem">SDL_IOFromMem()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWclose.html">SDL_RWclose()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_CloseIO">SDL_CloseIO()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWread.html">SDL_RWread()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ReadIO">SDL_ReadIO()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWseek.html">SDL_RWseek()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SeekIO">SDL_SeekIO()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWsize.html">SDL_RWsize()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetIOSize">SDL_GetIOSize()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWtell.html">SDL_RWtell()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_TellIO">SDL_TellIO()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWwrite.html">SDL_RWwrite()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WriteIO">SDL_WriteIO()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadBE16.html">SDL_ReadBE16()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU16BE">SDL_ReadU16BE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadBE32.html">SDL_ReadBE32()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU32BE">SDL_ReadU32BE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadBE64.html">SDL_ReadBE64()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU64BE">SDL_ReadU64BE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadLE16.html">SDL_ReadLE16()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU16LE">SDL_ReadU16LE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadLE32.html">SDL_ReadLE32()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU32LE">SDL_ReadU32LE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadLE64.html">SDL_ReadLE64()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ReadU64LE">SDL_ReadU64LE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteBE16.html">SDL_WriteBE16()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WriteU16BE">SDL_WriteU16BE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteBE32.html">SDL_WriteBE32()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WriteU32BE">SDL_WriteU32BE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteBE64.html">SDL_WriteBE64()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WriteU64BE">SDL_WriteU64BE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteLE16.html">SDL_WriteLE16()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WriteU16LE">SDL_WriteU16LE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteLE32.html">SDL_WriteLE32()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WriteU32LE">SDL_WriteU32LE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteLE64.html">SDL_WriteLE64()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_WriteU64LE">SDL_WriteU64LE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromConstMem.html">SDL_RWFromConstMem()</a> → <a href="SDL_IOFromConstMem.html">SDL_IOFromConstMem()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromFile.html">SDL_RWFromFile()</a> → <a href="SDL_IOFromFile.html">SDL_IOFromFile()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromMem.html">SDL_RWFromMem()</a> → <a href="SDL_IOFromMem.html">SDL_IOFromMem()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWclose.html">SDL_RWclose()</a> → <a href="SDL_CloseIO.html">SDL_CloseIO()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWread.html">SDL_RWread()</a> → <a href="SDL_ReadIO.html">SDL_ReadIO()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWseek.html">SDL_RWseek()</a> → <a href="SDL_SeekIO.html">SDL_SeekIO()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWsize.html">SDL_RWsize()</a> → <a href="SDL_GetIOSize.html">SDL_GetIOSize()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWtell.html">SDL_RWtell()</a> → <a href="SDL_TellIO.html">SDL_TellIO()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWwrite.html">SDL_RWwrite()</a> → <a href="SDL_WriteIO.html">SDL_WriteIO()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadBE16.html">SDL_ReadBE16()</a> → <a href="SDL_ReadU16BE.html">SDL_ReadU16BE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadBE32.html">SDL_ReadBE32()</a> → <a href="SDL_ReadU32BE.html">SDL_ReadU32BE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadBE64.html">SDL_ReadBE64()</a> → <a href="SDL_ReadU64BE.html">SDL_ReadU64BE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadLE16.html">SDL_ReadLE16()</a> → <a href="SDL_ReadU16LE.html">SDL_ReadU16LE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadLE32.html">SDL_ReadLE32()</a> → <a href="SDL_ReadU32LE.html">SDL_ReadU32LE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ReadLE64.html">SDL_ReadLE64()</a> → <a href="SDL_ReadU64LE.html">SDL_ReadU64LE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteBE16.html">SDL_WriteBE16()</a> → <a href="SDL_WriteU16BE.html">SDL_WriteU16BE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteBE32.html">SDL_WriteBE32()</a> → <a href="SDL_WriteU32BE.html">SDL_WriteU32BE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteBE64.html">SDL_WriteBE64()</a> → <a href="SDL_WriteU64BE.html">SDL_WriteU64BE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteLE16.html">SDL_WriteLE16()</a> → <a href="SDL_WriteU16LE.html">SDL_WriteU16LE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteLE32.html">SDL_WriteLE32()</a> → <a href="SDL_WriteU32LE.html">SDL_WriteU32LE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_WriteLE64.html">SDL_WriteLE64()</a> → <a href="SDL_WriteU64LE.html">SDL_WriteU64LE()</a>
 </ul>
 <p>
 以下の構造体の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWops.html">SDL_RWops</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_IOStream">SDL_IOStream</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWops.html">SDL_RWops</a> → <a href="SDL_IOStream.html">SDL_IOStream</a>
 </ul>
 <h2><a name="#sdl_scancodeh">SDL_scancode.h (キースキャンコード)</a></h2>
 <p>

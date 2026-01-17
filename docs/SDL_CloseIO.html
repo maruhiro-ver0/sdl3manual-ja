@@ -11,7 +11,7 @@
 <a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryIOStream.html">I/Oストリーム</a> - SDL_CloseIO
 <hr>
 <h1>SDL_CloseIO</h1>
-I/Oストリームをクローズして解放する
+データストリームをクローズして解放する
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_iostream.h">SDL3/SDL_iostream.h</a>
 <h2>構文</h2>
@@ -26,11 +26,11 @@ I/Oストリームをクローズして解放する
 <h2>詳細</h2>
 <p>
 SDL_CloseIO()は<a href="SDL_IOStream.html">SDL_IOStream</a>をクローズし後処理を行う.
-ストリームが使用する資源と<a href="SDL_IOStream.html">SDL_IOStream</a>自身が解放される.
+データストリームが使用する資源と<a href="SDL_IOStream.html">SDL_IOStream</a>自身が解放される.
 この関数が成功すると真を戻す. 掃き出しの(例えばディスクへの)書き込みに失敗すると偽を戻す.
 </p>
 <p>
-どのような理由でも, ストリームの掃き出しに失敗するとこの関数はエラーを報告するが, その場合でも関数から戻ると<a href="SDL_IOStream.html">SDL_IOStream</a>は無効になる.
+どのような理由でも, データストリームの掃き出しに失敗するとこの関数はエラーを報告するが, その場合でも関数から戻ると<a href="SDL_IOStream.html">SDL_IOStream</a>は無効になる.
 </p>
 <p>
 この関数は掃き出しでオペレーティングシステムに対して書き込みを指示するが, 物理メディアに書き込まれる保証はない. データはOSのファイルキャッシュ内にあり, ディスクへの書き込みを待っている可能性がある.
