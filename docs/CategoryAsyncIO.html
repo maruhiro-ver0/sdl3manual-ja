@@ -28,19 +28,19 @@ SDLはI/Oを非同期に行う手段を提供している.
 <ul>
 <li>1つ以上の<a href="SDL_CreateAsyncIOQueue.html">SDL_CreateAsyncIOQueue</a>を生成する
 <li><a href="SDL_AsyncIOFromFile.html">SDL_AsyncIOFromFile</a>でファイルを開く
-<li>そのファイルのI/Oタスクを, SDL_ReadAsyncIOまたはSDL_WriteAsyncIOで開始し, これらのタスクをキューに入れる
-<li>しばらくしてから, SDL_GetAsyncIOResultでブロックせずにキューを見てタスクの完了をチェックする. タスクは様々な順序で成功または失敗する
-<li>全てのタスクが完了したらSDL_CloseAsyncIOでファイルをクローズする. この場合もデータをディスクに掃き出すためにタスクが生成される
+<li>そのファイルのI/Oタスクを, <a href="SDL_ReadAsyncIO.html">SDL_ReadAsyncIO</a>または<a href="SDL_WriteAsyncIO.html">SDL_WriteAsyncIO</a>で開始し, これらのタスクをキューに入れる
+<li>しばらくしてから, <a href="SDL_GetAsyncIOResult.html">SDL_GetAsyncIOResult</a>でブロックせずにキューを見てタスクの完了をチェックする. タスクは様々な順序で成功または失敗する
+<li>全てのタスクが完了したら<a href="SDL_CloseAsyncIO.html">SDL_CloseAsyncIO</a>でファイルをクローズする. この場合もデータをディスクに掃き出すためにタスクが生成される
 </ul>
 <p>
 全ての動作はシングルスレッドでブロックなしで行われるが, バックグラウンドスレッドでスリープして新しい結果が届くまでキューを待たせることもできる.
 </p>
 <ul>
-<li>タスクが完了するまで効率よくブロックするため, SDL_WaitAsyncIOResultを1つ以上のスレッドから呼ぶ
-<li>シャットダウンのときは, SDL_SignalAsyncIOQueueでスリープ中のスレッドをタスクが完了していなくてもブロック解除する
+<li>タスクが完了するまで効率よくブロックするため, <a href="SDL_WaitAsyncIOResult.html">SDL_WaitAsyncIOResult</a>を1つ以上のスレッドから呼ぶ
+<li>シャットダウンのときは, <a href="SDL_SignalAsyncIOQueue.html">SDL_SignalAsyncIOQueue</a>でスリープ中のスレッドをタスクが完了していなくてもブロック解除する
 </ul>
 <p>
-そして, 同期処理のSDL_LoadFileに対応したSDL_LoadFileAsyncが便利な関数として提供されている.
+そして, 同期処理の<a href="SDL_LoadFile.html">SDL_LoadFile</a>に対して<a href="SDL_LoadFileAsync.html">SDL_LoadFileAsync</a>が便利な関数として提供されている.
 これはバッファの確保し, 全ファイルデータを読み込み, 終端にNULを追加する. これも結果は後でチェックする.
 </p>
 <p>
@@ -50,8 +50,8 @@ SDLはI/Oを非同期に行う手段を提供している.
 <h3>効率のよい方法</h3>
 <p>
 単純な非ブロッキングI/O(ディスクの回転を待つことでフレームを失わせないように, 単に準備ができたらデータが欲しいようなアプリケーション)は, どのような場合でもうまく使うことができる.
-この場合, 単に必要なときSDL_ReadAsyncIOや, あるいはSDL_LoadFileAsyncを呼ぶ.
-1フレームごとに, SDL_GetAsyncIOResultを呼んでタスクの完了をチェックし, 届いたデータの処理を行えばよい.
+この場合, 単に必要なとき<a href="SDL_ReadAsyncIO.html">SDL_ReadAsyncIO</a>や, あるいは<a href="SDL_LoadFileAsync.html">SDL_LoadFileAsync</a>を呼ぶ.
+1フレームごとに, <a href="SDL_GetAsyncIOResult.html">SDL_GetAsyncIOResult</a>を呼んでタスクの完了をチェックし, 届いたデータの処理を行えばよい.
 </p>
 <p>
 1つのプログラムの2か所でI/Oが必要な場合, それぞれにキューを生成することは正しい.
@@ -68,22 +68,22 @@ SDLはI/Oを非同期に行う手段を提供している.
 </p>
 <p>
 書き込まれたデータは, クローズを行うタスクが完了するまで物理メディアに書き込まれる保証はない.
-SDL_CloseAsyncIOのflush引数を真にして呼び出し成功しても, 掃き出されていなければ不運なタイミングによる電源断などでデータが失われる可能性がある.
+<a href="SDL_CloseAsyncIO.html">SDL_CloseAsyncIO</a>の<code>flush</code>引数を真にして呼び出し成功しても, 掃き出されていなければ不運なタイミングによる電源断などでデータが失われる可能性がある.
 しかし, アプリケーションの必要に応じて, 掃き出しには時間がかかる場合や不要な場合もある.
 </p>
 <h2>関数</h2>
 <ol>
 <li><a href="SDL_AsyncIOFromFile.html">SDL_AsyncIOFromFile</a> - ファイルの読み書きを行う非同期I/O操作を生成する
-<li>SDL_CloseAsyncIO
+<li><a href="SDL_CloseAsyncIO.html">SDL_CloseAsyncIO</a> - 非同期I/O操作をクローズして資源を解放する
 <li><a href="SDL_CreateAsyncIOQueue.html">SDL_CreateAsyncIOQueue</a> - 複数の非同期I/O操作を追跡するタスクキューを生成する
-<li>SDL_DestroyAsyncIOQueue
-<li>SDL_GetAsyncIOResult
-<li>SDL_GetAsyncIOSize
-<li>SDL_LoadFileAsync
-<li>SDL_ReadAsyncIO
-<li>SDL_SignalAsyncIOQueue
-<li>SDL_WaitAsyncIOResult
-<li>SDL_WriteAsyncIO
+<li><a href="SDL_DestroyAsyncIOQueue.html">SDL_DestroyAsyncIOQueue</a> - 非同期I/Oタスクキューを破棄する
+<li><a href="SDL_GetAsyncIOResult.html">SDL_GetAsyncIOResult</a> - 非同期I/Oタスクキューの完了状態をチェックする
+<li><a href="SDL_GetAsyncIOSize.html">SDL_GetAsyncIOSize</a> - 非同期I/O操作のデータストリームのサイズを得る
+<li><a href="SDL_LoadFileAsync.html">SDL_LoadFileAsync</a> - 非同期にファイルからデータを全て読み込む
+<li><a href="SDL_ReadAsyncIO.html">SDL_ReadAsyncIO</a> - 非同期読込を開始する
+<li><a href="SDL_SignalAsyncIOQueue.html">SDL_SignalAsyncIOQueue</a> - SDL_WaitAsyncIOResult()によるスレッドのブロックを解除する
+<li><a href="SDL_WaitAsyncIOResult.html">SDL_WaitAsyncIOResult</a> - キューの非同期I/Oタスクが完了するまでブロックして待つ
+<li><a href="SDL_WriteAsyncIO.html">SDL_WriteAsyncIO</a> - 非同期書込を開始する
 </ol>
 <h2>型</h2>
 <ol>
@@ -92,7 +92,7 @@ SDL_CloseAsyncIOのflush引数を真にして呼び出し成功しても, 掃き
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>SDL_AsyncIOOutcome
+<li><a href="SDL_AsyncIOOutcome.html">SDL_AsyncIOOutcome</a> - 完了した非同期I/O操作の結果の情報の構造体
 </ol>
 <h2>列挙体</h2>
 <ol>

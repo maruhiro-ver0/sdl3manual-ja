@@ -23,7 +23,7 @@
 <tr><td>int</td><td>offset_y</td><td>ウィンドウの親ウィンドウからの相対Y座標</td></tr>
 <tr><td>int</td><td>w</td><td>ウィンドウの幅</td></tr>
 <tr><td>int</td><td>h</td><td>ウィンドウの高さ</td></tr>
-<tr><td><a href="SDL_WindowFlags.html">SDL_WindowFlags</a></td><td>flags</td><td>SDL_WINDOW_TOOLTIPまたはSDL_WINDOW_POPUP_MENU. 0または論理和(OR)でSDL_WindowFlagsすることもできる</td></tr>
+<tr><td><a href="SDL_WindowFlags.html">SDL_WindowFlags</a></td><td>flags</td><td>SDL_WINDOW_TOOLTIPまたはSDL_WINDOW_POPUP_MENU. 0または論理和(OR)で<a href="SDL_WindowFlags.html">SDL_WindowFlags</a>を追加することもできる</td></tr>
 </table>
 <h2>戻り値</h2>
 <p>
@@ -37,27 +37,27 @@
 アプリケーションはあらゆるサイズのウィンドウを扱えるように準備すべきである.
 </p>
 <p>
-<code>flags</code>には, 次のプロパティの少なくとも1つが<strong>必ず</strong>必要である:
+<code>flags</code>には, 次の値の少なくとも1つが<strong>必ず</strong>必要である:
 </p>
 <ul>
-<li>SDL_WINDOW_TOOLTIP: ポップアップウィンドウはトールチップで, あらゆる入力イベントを受け付けない
-<li>SDL_WINDOW_POPUP_MENU: ポップアップウィンドウはポップアップメニューである. 最前面のポップアップメニューは自動的にキーボードフォーカスを得る
+<li><code>SDL_WINDOW_TOOLTIP</code>: ポップアップウィンドウはツールチップで, あらゆる入力イベントを受け付けない
+<li><code>SDL_WINDOW_POPUP_MENU</code>: ポップアップウィンドウはポップアップメニューである. 最前面のポップアップメニューは自動的にキーボードフォーカスを得る
 </ul>
 <p>
 これらのフラグはポップアップウィンドウには無関係なもので無視される:
 </p>
 <ul>
-<li>SDL_WINDOW_MINIMIZED
-<li>SDL_WINDOW_MAXIMIZED
-<li>SDL_WINDOW_FULLSCREEN
-<li>SDL_WINDOW_BORDERLESS
+<li><code>SDL_WINDOW_MINIMIZED</code>
+<li><code>SDL_WINDOW_MAXIMIZED</code>
+<li><code>SDL_WINDOW_FULLSCREEN</code>
+<li><code>SDL_WINDOW_BORDERLESS</code>
 </ul>
 <p>
 これらのフラグはポップアップウィンドウには合わないもので, 生成は失敗する:
 </p>
 <ul>
-<li>SDL_WINDOW_UTILITY
-<li>SDL_WINDOW_MODAL
+<li><code>SDL_WINDOW_UTILITY</code>
+<li><code>SDL_WINDOW_MODAL</code>
 </ul>
 <p>
 <code>parent</code>はNULLではない正常なウィンドウの必要がある.

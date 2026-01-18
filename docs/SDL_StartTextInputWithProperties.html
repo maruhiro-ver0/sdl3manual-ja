@@ -19,7 +19,7 @@
 <h2>引数</h2>
 <table border="1">
 <tr><td><a href="SDL_Window.html">SDL_Window</a> *</td><td>window</td><td>テキスト入力を有効化するウィンドウ</td></tr>
-<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>the properties to use</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>使用するプロパティグループ</td></tr>
 </table>
 <h2>戻り値</h2>
 <p>
@@ -41,16 +41,18 @@
 次のプロパティに対応している:
 </p>
 <ul>
-<li>SDL_PROP_TEXTINPUT_TYPE_NUMBER - テキスト入力の種類を表す<a href="SDL_TextInputType.html">SDL_TextInputType</a>の値. デフォルトはSDL_TEXTINPUT_TYPE_TEXT
-<li>SDL_PROP_TEXTINPUT_CAPITALIZATION_NUMBER
+<li><code>SDL_PROP_TEXTINPUT_TYPE_NUMBER</code>: テキスト入力の種類を表す<a href="SDL_TextInputType.html">SDL_TextInputType</a>の値. デフォルトはSDL_TEXTINPUT_TYPE_TEXT
+<li><code>SDL_PROP_TEXTINPUT_CAPITALIZATION_NUMBER</code>
 <ul>
 <li>入力テキストの大文字化の指定を表す<a href="SDL_Capitalization.html">SDL_Capitalization</a>の値. デフォルトは通常のテキスト入力の場合はSDL_CAPITALIZE_SENTENCES, SDL_TEXTINPUT_TYPE_TEXT_NAMEの場合はSDL_CAPITALIZE_WORDS, e-mailアドレス, ユーザ名, パスワードの場合はSDL_CAPITALIZE_NONE
 </ul>
-<li>SDL_PROP_TEXTINPUT_AUTOCORRECT_BOOLEAN
+<li><code>SDL_PROP_TEXTINPUT_AUTOCORRECT_BOOLEAN</code>
+<li>
 <ul>
 <li>真のとき自動補完と自動修正が有効, デフォルトは真
 </ul>
-<li>SDL_PROP_TEXTINPUT_MULTILINE_BOOLEAN
+<li><code>SDL_PROP_TEXTINPUT_MULTILINE_BOOLEAN</code>
+<li>
 <ul>
 <li>真のとき複数行の入力を認める. デフォルトは, <a href="SDL_HINT_RETURN_KEY_HIDES_IME.html">SDL_HINT_RETURN_KEY_HIDES_IME</a>が"0"または設定されていないならば真, "1"ならば偽
 </ul>
@@ -59,7 +61,7 @@
 Androidの場合, 入力の種類を直接指定できる:
 </p>
 <ul>
-<li>SDL_PROP_TEXTINPUT_ANDROID_INPUTTYPE_NUMBER
+<li><code>SDL_PROP_TEXTINPUT_ANDROID_INPUTTYPE_NUMBER</code>
 <ul>
 <li>使用するテキスト入力の種類. 他のプロパティを上書きする. 詳細は<a href="https://developer.android.com/reference/android/text/InputType">https://developer.android.com/reference/android/text/InputType</a>を参照すること
 </ul>

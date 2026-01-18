@@ -74,16 +74,16 @@
 全てのレンダラは, <a href="SDL_BlendMode.html">SDL_BlendMode</a>列挙体のブレンドモードに対応している.
 </p>
 <ul>
-<li>direct3d: 全てのブレンド係数とブレンド操作に対応している. しかし, 一部の係数はSDL_BLENDOPERATION_MINIMUMとSDL_BLENDOPERATION_MAXIMUMで予期しない結果となる
-<li>direct3d11: Direct3D 9と同じ
-<li>opengl: ブレンド操作SDL_BLENDOPERATION_ADDと全てのブレンド係数に対応している. OpenGL バージョン1.1, 1.2, 1.3は, ここでは正しく動作しない
-<li>opengles2: ブレンド操作SDL_BLENDOPERATION_ADD, SDL_BLENDOPERATION_SUBTRACT, SDL_BLENDOPERATION_REV_SUBTRACTと全てのブレンド係数に対応している
-<li>psp: カスタムブレンドモードには対応していない
-<li>software: カスタムブレンドモードには対応していない
+<li><code>direct3d</code>: 全ての<a href="SDL_BlendFactor.html">ブレンド係数</a>と<a href="SDL_BlendOperation.html">ブレンド操作</a>に対応している. しかし, 一部の係数は<a href="SDL_BlendOperation.html">SDL_BLENDOPERATION_MINIMUM</a>と<a href="SDL_BlendOperation.html">SDL_BLENDOPERATION_MAXIMUM</a>で予期しない結果となる
+<li><code>direct3d11</code>: Direct3D 9と同じ
+<li><code>opengl</code>: ブレンド操作<a href="SDL_BlendOperation.html">SDL_BLENDOPERATION_ADD</a>と全ての<a href="SDL_BlendFactor.html">ブレンド係数</a>に対応している. OpenGL バージョン1.1, 1.2, 1.3は, ここでは正しく動作しない
+<li><code>opengles2</code>: ブレンド操作<a href="SDL_BlendOperation.html">SDL_BLENDOPERATION_ADD</a>, <a href="SDL_BlendOperation.html">SDL_BLENDOPERATION_SUBTRACT</a>, <a href="SDL_BlendOperation.html">SDL_BLENDOPERATION_REV_SUBTRACT</a>と全ての<a href="SDL_BlendFactor.html">ブレンド係数</a>に対応している
+<li><code>psp</code>: カスタムブレンドモードには対応していない
+<li><code>software</code>: カスタムブレンドモードには対応していない
 </ul>
 <p>
 一部のレンダラはデフォルトレンダーターゲットに対してα要素を提供しない.
-この場合, ブレンド係数SDL_BLENDFACTOR_DST_ALPHAとSDL_BLENDFACTOR_ONE_MINUS_DST_ALPHAは効果がない.
+この場合, ブレンド係数<a href="SDL_BlendFactor.html">SDL_BLENDFACTOR_DST_ALPHA</a>と<a href="SDL_BlendFactor.html">SDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA</a>は効果がない.
 </p>
 <h2>スレッドセーフ</h2>
 <p>

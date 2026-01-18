@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAsyncIO.html" title="1つ上">
+<title>SDL_WaitAsyncIOResult</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAsyncIO.html">非同期I/O</a> - SDL_WaitAsyncIOResult
+<hr>
+<h1>SDL_WaitAsyncIOResult</h1>
+キューの非同期I/Oタスクが完了するまでブロックして待つ
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_asyncio.h">SDL3/SDL_asyncio.h</a>
+<h2>構文</h2>
+<code>bool SDL_WaitAsyncIOResult(SDL_AsyncIOQueue *queue, SDL_AsyncIOOutcome *outcome, Sint32 timeoutMS);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_AsyncIOQueue.html">SDL_AsyncIOQueue</a> *</td><td>queue</td><td>チェックする<a href="SDL_AsyncIO.html">SDL_AsyncIO</a>キュー</td></tr>
+<tr><td><a href="SDL_AsyncIOOutcome.html">SDL_AsyncIOOutcome</a> *</td><td>outcome</td><td>タスクの完了結果の代入先へのポインタ. NULL不可</td></tr>
+<tr><td>Sint32</td><td>timeoutMS</td><td>ミリ秒単位の最大待ち時間. -1のとき無限に待つ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) タスクが完了したとき真, それ以外のとき偽を戻す.
+<h2>詳細</h2>
+<p>
+この関数はキューのタスクが完了するまでスレッドを停止させる.
+</p>
+<p>
+キューのタスクが完了すると, この関数は真を戻し, <code>outcome</code>にタスクの詳細が設定される.
+完了したタスクがない場合, この関数は偽を戻す.
+</p>
+<p>
+タスクが完了すると, この関数はタスクの資源を解放しタスクへのポインタは無効になり, タスクはキューから取り除かれる.
+</p>
+<p>
+同一のキューに対して複数のスレッドからこの関数を呼ぶことは安全である.
+完了したタスクは1つのスレッドのみに伝えられる.
+</p>
+<p>
+1つのタスクの完了を待つ複数のスレッドのブロックが解除されることがあるが, 実際にタスクを得たのは1つのスレッドだけのため, <code>timeoutMS</code>は最大待ち時間だが, この関数はそれよりも早く偽を戻すことがあるので注意すること.
+</p>
+<p>
+この関数は, システムのエラーが発生した, またはOSが意図せず複数のスレッドでブロックを解除した, または<a href="SDL_SignalAsyncIOQueue.html">SDL_SignalAsyncIOQueue()</a>が呼ばれて未完了のタスクのあるスレッドのブロックが解除されたとき偽を戻す.
+</p>
+<p>
+タイムアウトで最大待ち時間を指定できるが, ポーリングではなく, タイムアウトを-1とすることで無制限に待ち<a href="SDL_SignalAsyncIOQueue.html">SDL_SignalAsyncIOQueue()</a>で待機中のスレッドのブロックを解除することもできる.
+</p>
+<h2>スレッドセーフ</h2>
+この関数はどのスレッドからも安全に呼べる.
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_WaitAsyncIOResult.html">SDL_WaitAsyncIOResult</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_WaitAsyncIOResult">SDL_WaitAsyncIOResult - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

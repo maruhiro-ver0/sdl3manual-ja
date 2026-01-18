@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAsyncIO.html" title="1つ上">
+<title>SDL_WriteAsyncIO</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAsyncIO.html">非同期I/O</a> - SDL_WriteAsyncIO
+<hr>
+<h1>SDL_WriteAsyncIO</h1>
+非同期書込を開始する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_asyncio.h">SDL3/SDL_asyncio.h</a>
+<h2>構文</h2>
+<code>bool SDL_WriteAsyncIO(SDL_AsyncIO *asyncio, void *ptr, Uint64 offset, Uint64 size, SDL_AsyncIOQueue *queue, void *userdata);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_AsyncIO.html">SDL_AsyncIO</a> *</td><td>asyncio</td><td>非同期I/O操作</td></tr>
+<tr><td>void *</td><td>ptr</td><td>書込データのバッファへのポインタ</td></tr>
+<tr><td>Uint64</td><td>offset</td><td>書込開始位置</td></tr>
+<tr><td>Uint64</td><td>size</td><td>書込バイト数</td></tr>
+<tr><td><a href="SDL_AsyncIOQueue.html">SDL_AsyncIOQueue</a> *</td><td>queue</td><td>新しい<a href="SDL_AsyncIO.html">SDL_AsyncIO</a>の追加先キュー</td></tr>
+<tr><td>void *</td><td>userdata</td><td>処理結果に渡されるアプリケーション定義のポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数はデータ元から<code>size</code>バイトを読み込み, <code>ptr</code>が指定するエリアに書き込む.
+</p>
+<p>
+この関数は読み込みの完了を待たず, 可能な限り早く戻る.
+成功して戻ったとき, 処理は背後で行われている.
+処理が始まった後は失敗も非同期である. この関数が失敗の値を戻すのは処理を開始できなかった場合のみである.
+</p>
+<p>
+<code>ptr</code>は処理が完了するまで有効である必要があり, それまではシステムがいつでもアクセスする可能性がある.
+これをスタック上に確保してはならない. 呼び出した関数から戻った後も必要な可能性があるためである.
+</p>
+<p>
+<a href="SDL_AsyncIOQueue.html">SDL_AsyncIOQueue</a>は必ず渡す必要がある.
+タスクの処理が完了すると, 新たにここに追加される.
+</p>
+<h2>スレッドセーフ</h2>
+この関数はどのスレッドからも安全に呼べる.
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_ReadAsyncIO.html">SDL_ReadAsyncIO</a>
+<li><a href="SDL_CreateAsyncIOQueue.html">SDL_CreateAsyncIOQueue</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_WriteAsyncIO">SDL_WriteAsyncIO - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

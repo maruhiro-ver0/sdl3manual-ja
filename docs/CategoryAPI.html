@@ -93,7 +93,7 @@
 <li><a href="SDL_ClearProperty.html">SDL_ClearProperty</a> - プロパティグループのプロパティを消去する
 <li><a href="SDL_ClearSurface.html">SDL_ClearSurface</a> - サーフェイスを浮動小数点で指定した色で消去する
 <li>SDL_ClickTrayEntry
-<li>SDL_CloseAsyncIO
+<li><a href="SDL_CloseAsyncIO.html">SDL_CloseAsyncIO</a> - 非同期I/O操作をクローズして資源を解放する
 <li><a href="SDL_CloseAudioDevice.html">SDL_CloseAudioDevice</a> - オーディオデバイスをクローズする 
 <li>SDL_CloseCamera
 <li><a href="SDL_CloseGamepad.html">SDL_CloseGamepad</a> - SDL_OpenGamepad()でオープンしたゲームパッドをクローズする
@@ -174,7 +174,7 @@
 <li><a href="SDL_Delay.html">SDL_Delay</a> - 指定のミリ秒の間待つ
 <li><a href="SDL_DelayNS.html">SDL_DelayNS</a> - 指定のナノ秒の間待つ
 <li><a href="SDL_DelayPrecise.html">SDL_DelayPrecise</a> - 可能な限り指定通りのナノ秒の間待つ
-<li>SDL_DestroyAsyncIOQueue
+<li><a href="SDL_DestroyAsyncIOQueue.html">SDL_DestroyAsyncIOQueue</a> - 非同期I/Oタスクキューを破棄する
 <li><a href="SDL_DestroyAudioStream.html">SDL_DestroyAudioStream</a> - オーディオストリームを破棄する
 <li><a href="SDL_DestroyCondition.html">SDL_DestroyCondition</a> - 条件変数を破棄する
 <li><a href="SDL_DestroyCursor.html">SDL_DestroyCursor</a> - カーソルを解放する
@@ -259,8 +259,8 @@
 <li>SDL_GetAppMetadataProperty
 <li>SDL_GetAssertionHandler
 <li>SDL_GetAssertionReport
-<li>SDL_GetAsyncIOResult
-<li>SDL_GetAsyncIOSize
+<li><a href="SDL_GetAsyncIOResult.html">SDL_GetAsyncIOResult</a> - 非同期I/Oタスクキューの完了状態をチェックする
+<li><a href="SDL_GetAsyncIOSize.html">SDL_GetAsyncIOSize</a> - 非同期I/O操作のデータストリームのサイズを得る
 <li><a href="SDL_GetAtomicInt.html">SDL_GetAtomicInt</a> - アトミック変数の値を得る
 <li><a href="SDL_GetAtomicPointer.html">SDL_GetAtomicPointer</a> - アトミックにポインタを得る
 <li><a href="SDL_GetAtomicU32.html">SDL_GetAtomicU32</a> - アトミック変数の値を得る
@@ -754,7 +754,7 @@
 <li><a href="SDL_LoadBMP_IO.html">SDL_LoadBMP_IO</a> - シーク可能なSDLデータストリームからBMP形式をサーフェイスに読み込む
 <li><a href="SDL_LoadFile.html">SDL_LoadFile</a> - ファイルからデータを全て読み込む
 <li><a href="SDL_LoadFile_IO.html">SDL_LoadFile_IO</a> - データストリームからデータを全て読み込む
-<li>SDL_LoadFileAsync
+<li><a href="SDL_LoadFileAsync.html">SDL_LoadFileAsync</a> - 非同期にファイルからデータを全て読み込む
 <li><a href="SDL_LoadFunction.html">SDL_LoadFunction</a> - 共有オブジェクトから名前で関数のアドレスを検索しそれを戻す
 <li><a href="SDL_LoadObject.html">SDL_LoadObject</a> - 共有オブジェクトを動的に読み込む
 <li>SDL_LoadPNG
@@ -869,7 +869,7 @@
 <li>SDL_rand_r
 <li>SDL_randf
 <li>SDL_randf_r
-<li>SDL_ReadAsyncIO
+<li><a href="SDL_ReadAsyncIO.html">SDL_ReadAsyncIO</a> - 非同期読込を開始する
 <li><a href="SDL_ReadIO.html">SDL_ReadIO</a> - データストリームからデータを読み込む
 <li><a href="SDL_ReadProcess.html">SDL_ReadProcess</a> - プロセスの標準出力を全て読み込む
 <li><a href="SDL_ReadS16BE.html">SDL_ReadS16BE</a> - データストリームから符号ありビッグエンディアン2バイトを読み込む
@@ -1095,7 +1095,7 @@
 <li><a href="SDL_SetWindowAspectRatio.html">SDL_SetWindowAspectRatio</a> - ウィンドウのクライアント領域の縦横比の設定を要求する
 <li><a href="SDL_SetWindowBordered.html">SDL_SetWindowBordered</a> - ウィンドウの枠の状態を設定する
 <li><a href="SDL_SetWindowFocusable.html">SDL_SetWindowFocusable</a> - ウィンドウが入力フォーカスを得られるかを設定する
-<li><a href="SDL_SetWindowFullscreen.html"> - ウィンドウのフルスクリーン状態の設定を要求する
+<li><a href="SDL_SetWindowFullscreen.html">SDL_SetWindowFullscreen</a> - ウィンドウのフルスクリーン状態の設定を要求する
 <li><a href="SDL_SetWindowFullscreenMode.html">SDL_SetWindowFullscreenMode</a> - ウィンドウが可視状態かつフルスクリーンのときに使用するディスプレイモードを設定する
 <li><a href="SDL_SetWindowHitTest.html">SDL_SetWindowHitTest</a> - ウィンドウの領域が特別な機能を持っているかを決めるコールバック関数を設定する
 <li><a href="SDL_SetWindowIcon.html">SDL_SetWindowIcon</a> - ウィンドウのアイコンを設定する
@@ -1130,7 +1130,7 @@
 <li><a href="SDL_ShowSimpleMessageBox.html">SDL_ShowSimpleMessageBox</a> - 単純なモーダルメッセージボックスを表示する
 <li><a href="SDL_ShowWindow.html">SDL_ShowWindow</a> - ウィンドウを表示する
 <li><a href="SDL_ShowWindowSystemMenu.html">SDL_ShowWindowSystemMenu</a> - システムのウィンドウメニューを表示する
-<li>SDL_SignalAsyncIOQueue
+<li><a href="SDL_SignalAsyncIOQueue.html">SDL_SignalAsyncIOQueue</a> - SDL_WaitAsyncIOResult()によるスレッドのブロックを解除する
 <li><a href="SDL_SignalCondition.html">SDL_SignalCondition</a> - 条件変数を待つ1つのスレッドを再開する
 <li><a href="SDL_SignalSemaphore.html">SDL_SignalSemaphore</a> - セマフォの値を1加算し, 待機中のスレッドを再開する
 <li>SDL_sin
@@ -1251,7 +1251,7 @@
 <li>SDL_Vulkan_LoadLibrary
 <li>SDL_Vulkan_UnloadLibrary
 <li>SDL_WaitAndAcquireGPUSwapchainTexture
-<li>SDL_WaitAsyncIOResult
+<li><a href="SDL_WaitAsyncIOResult.html">SDL_WaitAsyncIOResult</a> - キューの非同期I/Oタスクが完了するまでブロックして待つ
 <li><a href="SDL_WaitCondition.html">SDL_WaitCondition</a> - 条件変数が通知されるまで待つ
 <li><a href="SDL_WaitConditionTimeout.html">SDL_WaitConditionTimeout</a> - 条件変数が通知されるか指定の時間が経過するまで待つ
 <li><a href="SDL_WaitEvent.html">SDL_WaitEvent</a> - 次のイベントが発生するまで無制限に待つ
@@ -1281,7 +1281,7 @@
 <li><a href="SDL_WindowHasSurface.html">SDL_WindowHasSurface</a> - ウィンドウに関連付けられたサーフェイスがあるかを得る
 <li>SDL_WindowSupportsGPUPresentMode
 <li>SDL_WindowSupportsGPUSwapchainComposition
-<li>SDL_WriteAsyncIO
+<li><a href="SDL_WriteAsyncIO.html">SDL_WriteAsyncIO</a> - 非同期書込を開始する
 <li><a href="SDL_WriteIO.html">SDL_WriteIO</a> - データストリームにデータを書き込む
 <li><a href="SDL_WriteS16BE.html">SDL_WriteS16BE</a> - データストリームに符号ありビッグエンディアン2バイトを書き込む
 <li><a href="SDL_WriteS16LE.html">SDL_WriteS16LE</a> - データストリームに符号ありリトルエンディアン2バイトを書き込む
@@ -1445,7 +1445,7 @@
 <h2>構造体</h2>
 <ol>
 <li>SDL_AssertData
-<li>SDL_AsyncIOOutcome
+<li><a href="SDL_AsyncIOOutcome.html">SDL_AsyncIOOutcome</a> - 完了した非同期I/O操作の結果の情報の構造体
 <li><a href="SDL_AtomicInt.html">SDL_AtomicInt</a> - アトミック整数値を表す構造体
 <li><a href="SDL_AtomicU32.html">SDL_AtomicU32</a> - アトミックな符号付き32ビット整数値を表す構造体
 <li><a href="SDL_AudioDeviceEvent.html">SDL_AudioDeviceEvent</a> - オーディオデバイスイベントの構造体(event.adevice.*)
