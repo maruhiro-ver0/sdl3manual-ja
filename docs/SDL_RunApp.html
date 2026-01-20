@@ -26,11 +26,11 @@ mainFunctionを呼ぶ前に環境固有の初期化を行い, mainFunctionから
 <tr><td>void *</td><td>reserved</td><td>必ずNULLにすること(将来のための予約. 環境固有の設定になるかもしれない)</td></tr>
 </table>
 <h2>戻り値</h2>
-(int) mainFunctionが戻した値を戻す: 成功のとき0, その他のとき異常.
+(int) <code>mainFunction</code>が戻した値を戻す: 成功のとき0, その他のとき異常.
 <a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
 <h2>詳細</h2>
 <p>
-この関数は, SDL_mainではなく自分自身のmain()を使いたい場合(<a href="SDL_MAIN_HANDLED.html">SDL_MAIN_HANDLED</a>を使用した場合など)に使用する. この関数を使う場合は, <a href="SDL_SetMainReady.html">SDL_SetMainReady()</a>は必要ない.
+この関数は, <a href="SDL_main.html">SDL_main</a>ではなく自分自身のmain()を使いたい場合(<a href="SDL_MAIN_HANDLED.html">SDL_MAIN_HANDLED</a>を使用した場合など)に使用する. この関数を使う場合は, <a href="SDL_SetMainReady.html">SDL_SetMainReady()</a>は必要ない.
 </p>
 <h2>スレッドセーフ</h2>
 <p>

@@ -44,24 +44,24 @@ SDLがメタデータを使用する箇所は複数ある(macOSの"About"ボッ�
 これらのプロパティに対応している:
 </p>
 <ul>
-<li>SDL_PROP_APP_METADATA_NAME_STRING: "My Game 2: Bad Guy's Revenge!"のような, 人が読むことのできるアプリケーションの名前.
+<li><code>SDL_PROP_APP_METADATA_NAME_STRING</code>: "My Game 2: Bad Guy's Revenge!"のような, 人が読むことのできるアプリケーションの名前.
 これはウィンドウのタイトルとは別にアプリケーションの名前としてOSによって音量設定アプレット等のあらゆる場所に表示される.
 デフォルトは"SDL Application"
-<li>SDL_PROP_APP_METADATA_VERSION_STRING: アプリケーションのバージョン.
+<li><code>SDL_PROP_APP_METADATA_VERSION_STRING</code>: アプリケーションのバージョン.
 形式にはルールはなく, "1.0.3beta2"や"April 22nd, 2024"やgitのハッシュ値などのいずれでもよい.
 デフォルトは存在しない
-<li>SDL_PROP_APP_METADATA_IDENTIFIER_STRING: アプリケーションのユニークな文字列. これは"com.example.mygame2"のようなドメイン名を逆から呼んだ形式である必要がある.
+<li><code>SDL_PROP_APP_METADATA_IDENTIFIER_STRING</code>: アプリケーションのユニークな文字列. これは"com.example.mygame2"のようなドメイン名を逆から呼んだ形式である必要がある.
 この文字列は, デスクトップコンポジッタ(デスクトップマネージャ)の識別や, ウィンドウをグループ化するだけでなく, アプリケーションとデスクトップ設定やアイコンを関連付けるために使用される.
 もしアプリケーションをFlatpakでコンテナ化するつもりならば, アプリケーションのIDはFlatpakコンテナの名前と一致する必要がある.
 デフォルトは存在しない
-<li>SDL_PROP_APP_METADATA_CREATOR_STRING: "MojoWorkshop, LLC"のような, 人が読むことができるアプリケーションのクリエイター/開発者/メーカーの名前.
-<li>SDL_PROP_APP_METADATA_COPYRIGHT_STRING: "Copyright (c) 2024 MojoWorkshop, LLC"やそれ以外のような, 人が読むことができる著作権表記.
+<li><code>SDL_PROP_APP_METADATA_CREATOR_STRING</code>: "MojoWorkshop, LLC"のような, 人が読むことができるアプリケーションのクリエイター/開発者/メーカーの名前.
+<li><code>SDL_PROP_APP_METADATA_COPYRIGHT_STRING</code>: "Copyright (c) 2024 MojoWorkshop, LLC"やそれ以外のような, 人が読むことができる著作権表記.
 これは1行に収めること. ここにコピーしたライセンスの全文を張り付けてはならない.
 デフォルトは存在しない
-<li>SDL_PROP_APP_METADATA_URL_STRING: アプリケーションのwebサイトのURL.
+<li><code>SDL_PROP_APP_METADATA_URL_STRING</code>: アプリケーションのwebサイトのURL.
 企業のページや, ストア, GitHubリポジトリなど, ユーザの追加の情報がありうる.
 デフォルトは存在しない
-<li>SDL_PROP_APP_METADATA_TYPE_STRING: アプリケーションの種類.
+<li><code>SDL_PROP_APP_METADATA_TYPE_STRING</code>: アプリケーションの種類.
 現在この文字列は, ビデオゲームならば"game", メディアプレイヤーならば"mediaplayer", 一致するものがなければ一般的な"application"である.
 SDLの将来のバージョンには新しい種類が追加される.
 デフォルトは"application"
