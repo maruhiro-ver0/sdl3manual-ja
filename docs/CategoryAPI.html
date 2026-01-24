@@ -546,7 +546,7 @@
 <li>SDL_GetSensorTypeForID
 <li><a href="SDL_GetSilenceValueForFormat.html">SDL_GetSilenceValueForFormat</a> - オーディオ形式に合ったmemsetで設定できる無音の値を得る
 <li><a href="SDL_GetSIMDAlignment.html">SDL_GetSIMDAlignment</a> - システムがSIMDアロケーションで必要とするアライメントを得る
-<li>SDL_GetStorageFileSize
+<li><a href="SDL_GetStorageFileSize.html">SDL_GetStorageFileSize</a> - ストレージのファイルのサイズを得る
 <li>SDL_GetStoragePathInfo
 <li>SDL_GetStorageSpaceRemaining
 <li><a href="SDL_GetStringProperty.html">SDL_GetStringProperty</a> - プロパティグループから文字列型プロパティを得る
@@ -591,7 +591,7 @@
 <li>SDL_GetTrayMenuParentEntry
 <li>SDL_GetTrayMenuParentTray
 <li>SDL_GetTraySubmenu
-<li>SDL_GetUserFolder
+<li><a href="SDL_GetUserFolder.html">SDL_GetUserFolder</a> - 指定した種類のユーザフォルダを得る
 <li><a href="SDL_GetVersion.html">SDL_GetVersion</a> - アプリケーションにリンクされたSDLのバージョンを得る
 <li><a href="SDL_GetVideoDriver.html">SDL_GetVideoDriver</a> - 組み込まれたビデオドライバの一覧から名前を得る
 <li><a href="SDL_GetWindowAspectRatio.html">SDL_GetWindowAspectRatio</a> - ウィンドウのクライアント領域の縦横比を得る
@@ -639,7 +639,7 @@
 <li><a href="SDL_GL_SetSwapInterval.html">SDL_GL_SetSwapInterval</a> - カレントコンテキストの交換インターバルを設定する
 <li><a href="SDL_GL_SwapWindow.html">SDL_GL_SwapWindow</a> - OpenGLレンダリングでウィンドウを更新する
 <li><a href="SDL_GL_UnloadLibrary.html">SDL_GL_UnloadLibrary</a> - SDL_GL_LoadLibrary()で読み込んだOpenGLライブラリを解放する
-<li>SDL_GlobDirectory
+<li><a href="SDL_GlobDirectory.html">SDL_GlobDirectory</a> - ディレクトリツリーをフィルタを適用して列挙する
 <li>SDL_GlobStorageDirectory
 <li>SDL_GPUSupportsProperties
 <li>SDL_GPUSupportsShaderFormats
@@ -831,7 +831,7 @@
 <li>SDL_OpenJoystick
 <li>SDL_OpenSensor
 <li>SDL_OpenStorage
-<li>SDL_OpenTitleStorage
+<li><a href="SDL_OpenTitleStorage.html">SDL_OpenTitleStorage</a> - アプリケーションのファイルシステムを読込専用ストレージとしてオープンする
 <li><a href="SDL_OpenURL.html">SDL_OpenURL</a> - ブラウザ等の外部アプリケーションでURL/URIを開く
 <li>SDL_OpenUserStorage
 <li><a href="SDL_OutOfMemory.html">SDL_OutOfMemory</a> - メモリの確保に失敗したことを表すエラーを設定する
@@ -879,7 +879,7 @@
 <li><a href="SDL_ReadS64BE.html">SDL_ReadS64BE</a> - データストリームから符号ありビッグエンディアン8バイトを読み込む
 <li><a href="SDL_ReadS64LE.html">SDL_ReadS64LE</a> - データストリームから符号ありリトルエンディアン8バイトを読み込む
 <li><a href="SDL_ReadS8.html">SDL_ReadS8</a> - データストリームから符号あり1バイトを読み込む
-<li>SDL_ReadStorageFile
+<li><a href="SDL_ReadStorageFile.html">SDL_ReadStorageFile</a> - ストレージのファイルをクライアントのバッファに同期的に読み込む
 <li><a href="SDL_ReadSurfacePixel.html">SDL_ReadSurfacePixel</a> - サーフェイスからピクセルを読み取る
 <li><a href="SDL_ReadSurfacePixelFloat.html">SDL_ReadSurfacePixelFloat</a> - サーフェイスからピクセルを読み取る
 <li><a href="SDL_ReadU16BE.html">SDL_ReadU16BE</a> - データストリームから符号なしビッグエンディアン2バイトを読み込む
@@ -911,12 +911,12 @@
 <li><a href="SDL_ReloadGamepadMappings.html">SDL_ReloadGamepadMappings</a> - ゲームパッドのマッピングデータベースを初期状態に戻す
 <li><a href="SDL_RemoveEventWatch.html">SDL_RemoveEventWatch</a> - SDL_AddEventWatch()で追加されたイベント監視コールバックを削除する
 <li><a href="SDL_RemoveHintCallback.html">SDL_RemoveHintCallback</a> - 指定のヒントを監視する関数を取り除く
-<li>SDL_RemovePath
+<li><a href="SDL_RemovePath.html">SDL_RemovePath</a> - ファイルまたは空のディレクトリを削除する
 <li>SDL_RemoveStoragePath
 <li><a href="SDL_RemoveSurfaceAlternateImages.html">SDL_RemoveSurfaceAlternateImages</a> - サーフェイスの全ての別バージョンを取り除く
 <li><a href="SDL_RemoveTimer.html">SDL_RemoveTimer</a> - SDL_AddTimer()で生成したタイマを破棄する
 <li>SDL_RemoveTrayEntry
-<li>SDL_RenamePath
+<li><a href="SDL_RenamePath.html">SDL_RenamePath</a> - ファイル名またはディレクトリ名を変更する
 <li>SDL_RenameStoragePath
 <li>SDL_RenderClear
 <li>SDL_RenderClipEnabled
@@ -1150,7 +1150,7 @@
 <li>SDL_StopHapticEffects
 <li>SDL_StopHapticRumble
 <li><a href="SDL_StopTextInput.html">SDL_StopTextInput</a> - ウィンドウのUnicodeテキスト入力イベントの受け入れを停止する
-<li>SDL_StorageReady
+<li><a href="SDL_StorageReady.html">SDL_StorageReady</a> - ストレージを使う準備ができているかチェックする
 <li>SDL_strcasecmp
 <li>SDL_strcasestr
 <li>SDL_strchr
@@ -1290,7 +1290,7 @@
 <li><a href="SDL_WriteS64BE.html">SDL_WriteS64BE</a> - データストリームに符号ありビッグエンディアン8バイトを書き込む
 <li><a href="SDL_WriteS64LE.html">SDL_WriteS64LE</a> - データストリームに符号ありリトルエンディアン8バイトを書き込む
 <li><a href="SDL_WriteS8.html">SDL_WriteS8</a> - データストリームに符号あり1バイトを書き込む
-<li>SDL_WriteStorageFile
+<li><a href="SDL_WriteStorageFile.html">SDL_WriteStorageFile</a> - クライアントのメモリからストレージのファイルに同期的に読み込む
 <li><a href="SDL_WriteSurfacePixel.html">SDL_WriteSurfacePixel</a> - サーフェイスにピクセルを書き込む
 <li><a href="SDL_WriteSurfacePixelFloat.html">SDL_WriteSurfacePixelFloat</a> - サーフェイスにピクセルを書き込む
 <li><a href="SDL_WriteU16BE.html">SDL_WriteU16BE</a> - データストリームに符号なしビッグエンディアン2バイトを書き込む
@@ -1350,7 +1350,7 @@
 <li><a href="SDL_GLContextFlag.html">SDL_GLContextFlag</a> - SDL_GL_CONTEXT_FLAGSで設定可能なフラグの型
 <li><a href="SDL_GLContextReleaseFlag.html">SDL_GLContextReleaseFlag</a> - SDL_GL_CONTEXT_RELEASE_BEHAVIORで設定可能なフラグの型
 <li><a href="SDL_GLContextResetNotification.html">SDL_GLContextResetNotification</a> - SDL_GL_CONTEXT_RESET_NOTIFICATIONで設定可能なフラグの型
-<li>SDL_GlobFlags
+<li><a href="SDL_GlobFlags.html">SDL_GlobFlags</a> - パスの一致フラグの型
 <li><a href="SDL_GLProfile.html">SDL_GLProfile</a> - SDL_GL_CONTEXT_PROFILE_MASKで設定可能なフラグの型
 <li>SDL_GPUBuffer
 <li>SDL_GPUBufferUsageFlags
@@ -1412,7 +1412,7 @@
 <li>SDL_SensorID
 <li><a href="SDL_SharedObject.html">SDL_SharedObject</a> - 読み込まれた共通オブジェクトを表す不透明型
 <li>SDL_SpinLock
-<li>SDL_Storage
+<li><a href="SDL_Storage.html">SDL_Storage</a> - ファイルシステムアクセスの抽象インターフェースの型
 <li><a href="SDL_SurfaceFlags.html">SDL_SurfaceFlags</a> - SDL_Surfaceのフラグの型
 <li><a href="SDL_Thread.html">SDL_Thread</a> - SDLスレッドオブジェクトの型
 <li><a href="SDL_ThreadFunction.html">SDL_ThreadFunction</a> - 新しいスレッドのエントリーポイントとしてSDL_CreateThread()に渡す関数の型
@@ -1592,7 +1592,7 @@
 <li><a href="SDL_FileDialogType.html">SDL_FileDialogType</a> - ファイルダイアログの種類の列挙体
 <li><a href="SDL_FlashOperation.html">SDL_FlashOperation</a> - ウィンドウのフラッシュ方法の列挙体
 <li><a href="SDL_FlipMode.html">SDL_FlipMode</a> - 反転モードの列挙体
-<li>SDL_Folder
+<li><a href="SDL_Folder.html">SDL_Folder</a> - 特定の目的のためにOSが提供するフォルダの種類の列挙体
 <li><a href="SDL_GamepadAxis.html">SDL_GamepadAxis</a> - ゲームパッドの方向の列挙体
 <li><a href="SDL_GamepadBindingType.html">SDL_GamepadBindingType</a> - ゲームパッドのバインドの種類の列挙体
 <li><a href="SDL_GamepadButton.html">SDL_GamepadButton</a> - ゲームパッドのボタンの列挙体

@@ -19,13 +19,13 @@ SDLはシステムのファイルシステムのテストと操作のためにAP
 <p>
 必要なパスを得る関数が存在する:
 <ul>
-<li>アプリケーションのデータはどこにあるか? SDL_GetBasePath()
-<li>安全にファイルを書き込める場所はどこか? SDL_GetPrefPath()
-<li>ダウンロード, デスクトップ, 音楽のようなパスはどこか? SDL_GetUserFolder()
-<li>このパスは何であるか? SDL_GetPathInfo()
+<li>アプリケーションのデータはどこにあるか? <a href="SDL_GetBasePath.html">SDL_GetBasePath()</a>
+<li>安全にファイルを書き込める場所はどこか? <a href="SDL_GetPrefPath.html">SDL_GetPrefPath()</a>
+<li>ダウンロード, デスクトップ, ミュージックのようなパスはどこか? <a href="SDL_GetUserFolder.html">SDL_GetUserFolder()</a>
+<li>このパスは何であるか? <a href="SDL_GetPathInfo.html">SDL_GetPathInfo()</a>
 <li>このフォルダには何があるか? <a href="SDL_EnumerateDirectory.html">SDL_EnumerateDirectory()</a>
-<li>このフォルダにはワイルドカードと一致する何があるか? SDL_GlobDirectory()
-<li>カレントディレクトリは何か? SDL_GetCurrentDirectory()
+<li>このフォルダにはワイルドカードと一致する何があるか? <a href="SDL_GlobDirectory.html">SDL_GlobDirectory()</a>
+<li>カレントディレクトリは何か? <a href="SDL_GetCurrentDirectory.html">SDL_GetCurrentDirectory()</a>
 </ul>
 </p>
 <p>
@@ -40,15 +40,15 @@ SDLはシステムのファイルシステムのテストと操作のためにAP
 <li><a href="SDL_GetCurrentDirectory.html">SDL_GetCurrentDirectory</a> - システムが「カレントディレクトリ」としているディレクトリを得る
 <li><a href="SDL_GetPathInfo.html">SDL_GetPathInfo</a> - ファイルシステムパスの情報を得る
 <li><a href="SDL_GetPrefPath.html">SDL_GetPrefPath</a> - ファイルが書込可能なユーザとアプリケーションで固有のパスを得る
-<li>SDL_GetUserFolder
-<li>SDL_GlobDirectory
-<li>SDL_RemovePath
-<li>SDL_RenamePath
+<li><a href="SDL_GetUserFolder.html">SDL_GetUserFolder</a> - 指定した種類のユーザフォルダを得る
+<li><a href="SDL_GlobDirectory.html">SDL_GlobDirectory</a> - ディレクトリツリーをフィルタを適用して列挙する
+<li><a href="SDL_RemovePath.html">SDL_RemovePath</a> - ファイルまたは空のディレクトリを削除する
+<li><a href="SDL_RenamePath.html">SDL_RenamePath</a> - ファイル名またはディレクトリ名を変更する
 </ol>
 <h2>型</h2>
 <ol>
 <li><a href="SDL_EnumerateDirectoryCallback.html">SDL_EnumerateDirectoryCallback</a> - ディレクトリ内の各項目に対して呼ばれるコールバックの型
-<li>SDL_GlobFlags
+<li><a href="SDL_GlobFlags.html">SDL_GlobFlags</a> - パスの一致フラグの型
 </ol>
 <h2>構造体</h2>
 <ol>
@@ -57,7 +57,7 @@ SDLはシステムのファイルシステムのテストと操作のためにAP
 <h2>列挙体</h2>
 <ol>
 <li><a href="SDL_EnumerationResult.html">SDL_EnumerationResult</a> - 列挙コールバックの戻り値の列挙体
-<li>SDL_Folder
+<li><a href="SDL_Folder.html">SDL_Folder</a> - 特定の目的のためにOSが提供するフォルダの種類の列挙体
 <li><a href="SDL_PathType.html">SDL_PathType</a> - ファイルシステムの項目の種類の列挙体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
