@@ -19,29 +19,29 @@ SDLのセンサー管理.
 これらのAPIは, 様々な環境のジャイロと加速度センサーへのアクセスを行う.
 </p>
 <p>
-これらの関数を使うときは, SDL_INIT_SENSORフラグを付けてSDL_Init()を呼ぶ必要がある. これでSDLはシステムのセンサーをスキャンし, 正しいドライバを読み込むようになる.
+これらの関数を使うときは, SDL_INIT_SENSORフラグを付けて<a href="SDL_Init.html">SDL_Init()</a>を呼ぶ必要がある. これでSDLはシステムのセンサーをスキャンし, 正しいドライバを読み込むようになる.
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_CloseSensor
+<li><a href="SDL_CloseSensor.html">SDL_CloseSensor</a> - SDL_OpenSensor()でオープンしたセンサーをクローズする
 <li>SDL_GetSensorData
 <li>SDL_GetSensorFromID
 <li>SDL_GetSensorID
 <li>SDL_GetSensorName
-<li>SDL_GetSensorNameForID
+<li><a href="SDL_GetSensorNameForID.html">SDL_GetSensorNameForID</a> - 実装に依存したセンサーの名前を得る
 <li>SDL_GetSensorNonPortableType
-<li>SDL_GetSensorNonPortableTypeForID
+<li><a href="SDL_GetSensorNonPortableTypeForID.html">SDL_GetSensorNonPortableTypeForID</a> - 環境に依存したセンサーの種類を得る
 <li>SDL_GetSensorProperties
 <li>SDL_GetSensors
 <li>SDL_GetSensorType
-<li>SDL_GetSensorTypeForID
-<li>SDL_OpenSensor
+<li><a href="SDL_GetSensorTypeForID.html">SDL_GetSensorTypeForID</a> - センサーの種類を得る
+<li><a href="SDL_OpenSensor.html">SDL_OpenSensor</a> - センサーを使用するためにオープンする
 <li>SDL_UpdateSensors
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_Sensor
-<li>SDL_SensorID
+<li><a href="SDL_Sensor.html">SDL_Sensor</a> - オープンしたSDLセンサーの識別のために使用する不透明型
+<li><a href="SDL_SensorID.html">SDL_SensorID</a> - システムに接続されたセンサーのユニークなIDの型
 </ol>
 <h2>列挙体</h2>
 <ol>

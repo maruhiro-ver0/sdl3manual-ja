@@ -86,7 +86,7 @@ void WriteSave(void)
 <li>I/Oが掃き出されない, または正常でない場合, セーブデータは安全ではない. そのため, プログラムの別の個所でセーブデータがない/壊れているためにエラーが発生しうる.
 </ul>
 <p>
-SDL_Storageを使うと, これらの問題につまづくことはなくなる:
+<a href="SDL_Storage.html">SDL_Storage</a>を使うと, これらの問題につまづくことはなくなる:
 </p>
 <p>
 <code>
@@ -172,7 +172,7 @@ void WriteSave(void)
 </code>
 </p>
 <p>
-SDL_Storageによる改善点は:
+<a href="SDL_Storage.html">SDL_Storage</a>による改善点は:
 </p>
 <ol>
 <li>アクセスの対象: このコードは明確に関数の結果に基づいたタイトルまたはユーザストレージデバイスから読み込んでいる.
@@ -183,7 +183,7 @@ SDL_Storageによる改善点は:
 その結果として, アプリケーションは環境とそのファイルシステムの増大する要求に対してより堅牢になった.
 </p>
 <p>
-パブリックにアクセス可能なSDL_Storageバックエンドの例はSteamクラウドバックエンドである――プログラムを開始するとSteamworksを初期化できる. その後, SDLはSteamworksが初期化されたと認識し, アプリケーションがユーザストレージをオープンするとき自動的にISteamRemoteStorageを使用する.
+パブリックにアクセス可能な<a href="SDL_Storage.html">SDL_Storage</a>バックエンドの例はSteamクラウドバックエンドである――プログラムを開始するとSteamworksを初期化できる. その後, SDLはSteamworksが初期化されたと認識し, アプリケーションがユーザストレージをオープンするとき自動的にISteamRemoteStorageを使用する.
 さらに重要なのは, ストレージをオープンするとファイルシステムの「バッチ」操作が始まったと認識され, ストレージをクローズすると終了したと認識されバッチが掃き出されることである.
 これはSteamでDynamic Cloud Syncに対応するために使用される. ユーザは自分のPCにデータを保存し, デバイスをスリープさせ, 全てのデバイスでセーブデータを完全に同期させて別のPCでゲームを続けることができるため, プログラムを再スタートさせずに途切れることなくプレーすることができる.
 </p>
@@ -201,23 +201,23 @@ SDL_Storageによる改善点は:
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_CloseStorage
-<li>SDL_CopyStorageFile
-<li>SDL_CreateStorageDirectory
-<li>SDL_EnumerateStorageDirectory
-<li><a href="SDL_GetStorageFileSize.html">SDL_GetStorageFileSize</a> - ストレージのファイルのサイズを得る
-<li>SDL_GetStoragePathInfo
-<li>SDL_GetStorageSpaceRemaining
-<li>SDL_GlobStorageDirectory
-<li>SDL_OpenFileStorage
-<li>SDL_OpenStorage
-<li><a href="SDL_OpenTitleStorage.html">SDL_OpenTitleStorage</a> - アプリケーションのファイルシステムを読込専用ストレージとしてオープンする
-<li>SDL_OpenUserStorage
-<li><a href="SDL_ReadStorageFile.html">SDL_ReadStorageFile</a> - ストレージのファイルをクライアントのバッファに同期的に読み込む
-<li>SDL_RemoveStoragePath
-<li>SDL_RenameStoragePath
-<li><a href="SDL_StorageReady.html">SDL_StorageReady</a> - ストレージを使う準備ができているかチェックする
-<li><a href="SDL_WriteStorageFile.html">SDL_WriteStorageFile</a> - クライアントのメモリからストレージのファイルに同期的に読み込む
+<li><a href="SDL_CloseStorage.html">SDL_CloseStorage</a> - ストレージコンテナをクローズし解放する
+<li><a href="SDL_CopyStorageFile.html">SDL_CopyStorageFile</a> - 書込可能ストレージコンテナにファイルをコピーする
+<li><a href="SDL_CreateStorageDirectory.html">SDL_CreateStorageDirectory</a> - 書込可能ストレージコンテナにディレクトリを作成する
+<li><a href="SDL_EnumerateStorageDirectory.html">SDL_EnumerateStorageDirectory</a> - コールバックを通してストレージコンテナのディレクトリの内容を列挙する
+<li><a href="SDL_GetStorageFileSize.html">SDL_GetStorageFileSize</a> - ストレージコンテナのファイルのサイズを得る
+<li><a href="SDL_GetStoragePathInfo.html">SDL_GetStoragePathInfo</a> - ストレージコンテナのファイルシステムパスの情報を得る
+<li><a href="SDL_GetStorageSpaceRemaining.html">SDL_GetStorageSpaceRemaining</a> - ストレージコンテナの残り容量を得る
+<li><a href="SDL_GlobStorageDirectory.html">SDL_GlobStorageDirectory</a> - ストレージコンテナのディレクトリツリーをフィルタを適用して列挙する
+<li><a href="SDL_OpenFileStorage.html">SDL_OpenFileStorage</a> - ローカルファイルシステムへのアクセスのためのストレージコンテナをオープンする
+<li><a href="SDL_OpenStorage.html">SDL_OpenStorage</a> - クライアントが提供したインターフェースを使用してストレージコンテナをオープンする
+<li><a href="SDL_OpenTitleStorage.html">SDL_OpenTitleStorage</a> - アプリケーションのためにファイルシステムを読込専用ストレージコンテナとしてオープンする
+<li><a href="SDL_OpenUserStorage.html">SDL_OpenUserStorage</a> - 各ユーザのためにファイルシステムを読書可能ストレージコンテナとしてオープンする
+<li><a href="SDL_ReadStorageFile.html">SDL_ReadStorageFile</a> - ストレージコンテナのファイルをクライアントのバッファに同期的に読み込む
+<li><a href="SDL_RemoveStoragePath.html">SDL_RemoveStoragePath</a> - 書込可能ストレージコンテナのファイルまたは空のディレクトリを削除する
+<li><a href="SDL_RenameStoragePath.html">SDL_RenameStoragePath</a> - 書込可能ストレージコンテナのファイル名またはディレクトリ名を変更する
+<li><a href="SDL_StorageReady.html">SDL_StorageReady</a> - ストレージコンテナを使う準備ができているかチェックする
+<li><a href="SDL_WriteStorageFile.html">SDL_WriteStorageFile</a> - クライアントのメモリからストレージコンテナのファイルに同期的に読み込む
 </ol>
 <h2>型</h2>
 <ol>
@@ -225,7 +225,7 @@ SDL_Storageによる改善点は:
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>SDL_StorageInterface
+<li><a href="SDL_StorageInterface.html">SDL_StorageInterface</a> - SDL_Storageの処理を行う関数へのポインタの構造体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryStorage">SDL3/CategoryStorage - SDL Wiki</a>

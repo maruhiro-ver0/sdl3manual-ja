@@ -37,20 +37,20 @@
 <br>
 読み込んだバイト数を戻す.
 </td></tr>
-<tr><td>size_t (SDLCALL *)(void *userdata, const void *ptr, size_t size, SDL_IOStatus *status);</td><td>write</td><td>
+<tr><td>size_t (SDLCALL *)(void *userdata, const void *ptr, size_t size, SDL_IOStatus *status)</td><td>write</td><td>
 データストリームへ<code>ptr</code>ポインタからちょうど<code>size</code>バイトを書き込む関数<br>
 <code>size</code>は常に &gt;0 である.<br>
 書き込みが完了しなかった場合, <code>*status</code>に<a href="SDL_IOStatus.html">SDL_IOStatus</a>列挙体の値を設定する必要がある. 書き込みに成功した場合は設定する必要はない.<br>
 <br>
 書き込んだバイト数を戻す.
 </td></tr>
-<tr><td>bool (SDLCALL *)(void *userdata, SDL_IOStatus *status);</td><td>flush</td><td>
+<tr><td>bool (SDLCALL *)(void *userdata, SDL_IOStatus *status)</td><td>flush</td><td>
 データストリームがバッファしている場合, データを確実に書き込む関数<br>
 失敗した場合, <code>*status</code>に<a href="SDL_IOStatus.html">SDL_IOStatus</a>列挙体の値を設定する必要がある. 成功した場合は設定する必要はない.<br>
 <br>
 成功のとき真, データの掃き出しに失敗したとき偽を戻す.
 </td></tr>
-<tr><td>bool (SDLCALL *)(void *userdata);</td><td>close</td><td>
+<tr><td>bool (SDLCALL *)(void *userdata)</td><td>close</td><td>
 クローズして資源を解放する関数<br>
 この関数は物理メディアへのファイルの書き込みの同期を保証しない. システムのファイルキャッシュ内にあり, ディスクへの書き込みを待っている可能性がある.<br>
 この関数が失敗しても<a href="SDL_IOStream.html">SDL_IOStream</a>は破棄される. そのため, バッファの掃き出しなどが失敗しても後処理を全て行うこと<br>
