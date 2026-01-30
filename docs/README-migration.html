@@ -2177,10 +2177,10 @@ Appleの環境では, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL
 </ul>
 <h2><a name="#sdl_sensorh">SDL_sensor.h (センサー)</a></h2>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_SensorID">SDL_SensorID</a>はSint32からUint32に変更され, 無効なIDは0になった.
+<a href="SDL_SensorID.html">SDL_SensorID</a>はSint32からUint32に変更され, 無効なIDは0になった.
 </p>
 <p>
-デバイスのインデックス番号を用いてセンサーを反復処理するのではなく, 新たに現在のセンサーの一覧を得る関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetSensors">SDL_GetSensors()</a>と, そのインスタンスIDからセンサーの情報を得る関数が追加された.
+デバイスのインデックス番号を用いてセンサーを反復処理するのではなく, 新たに現在のセンサーの一覧を得る関数<a href="SDL_GetSensors.html">SDL_GetSensors()</a>と, そのインスタンスIDからセンサーの情報を得る関数が追加された.
 <code>
 <pre>
 {
@@ -2204,37 +2204,37 @@ Appleの環境では, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL
 </code>
 </p>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetDataWithTimestamp.html">SDL_SensorGetDataWithTimestamp()</a>は削除された. センサーデータのタイムスタンプが必要ならば, <a href="https://wiki.libsdl.org/SDL3/SDL_SensorEvent">SDL_EVENT_SENSOR_UPDATEイベントのsensor_timestampメンバ</a>を使用すること.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetDataWithTimestamp.html">SDL_SensorGetDataWithTimestamp()</a>は削除された. センサーデータのタイムスタンプが必要ならば, <a href="SDL_SensorEvent.html">SDL_EVENT_SENSOR_UPDATEイベントのsensor_timestampメンバ</a>を使用すること.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorClose.html">SDL_SensorClose()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_CloseSensor">SDL_CloseSensor()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorFromInstanceID.html">SDL_SensorFromInstanceID()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensorFromID">SDL_GetSensorFromID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetData.html">SDL_SensorGetData()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensorData">SDL_GetSensorData()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetInstanceID.html">SDL_SensorGetInstanceID()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensorID">SDL_GetSensorID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetName.html">SDL_SensorGetName()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensorName">SDL_GetSensorName()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetNonPortableType.html">SDL_SensorGetNonPortableType()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensorNonPortableType">SDL_GetSensorNonPortableType()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetType.html">SDL_SensorGetType()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensorType">SDL_GetSensorType()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorOpen.html">SDL_SensorOpen()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_OpenSensor">SDL_OpenSensor()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorUpdate.html">SDL_SensorUpdate()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_UpdateSensors">SDL_UpdateSensors()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorClose.html">SDL_SensorClose()</a> → <a href="SDL_CloseSensor.html">SDL_CloseSensor()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorFromInstanceID.html">SDL_SensorFromInstanceID()</a> → <a href="SDL_GetSensorFromID.html">SDL_GetSensorFromID()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetData.html">SDL_SensorGetData()</a> → <a href="SDL_GetSensorData.html">SDL_GetSensorData()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetInstanceID.html">SDL_SensorGetInstanceID()</a> → <a href="SDL_GetSensorID.html">SDL_GetSensorID()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetName.html">SDL_SensorGetName()</a> → <a href="SDL_GetSensorName.html">SDL_GetSensorName()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetNonPortableType.html">SDL_SensorGetNonPortableType()</a> → <a href="SDL_GetSensorNonPortableType.html">SDL_GetSensorNonPortableType()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetType.html">SDL_SensorGetType()</a> → <a href="SDL_GetSensorType.html">SDL_GetSensorType()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorOpen.html">SDL_SensorOpen()</a> → <a href="SDL_OpenSensor.html">SDL_OpenSensor()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorUpdate.html">SDL_SensorUpdate()</a> → <a href="SDL_UpdateSensors.html">SDL_UpdateSensors()</a>
 </ul>
 <p>
 以下の関数は削除された:
 </p>
 <ul>
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LockSensors.html">SDL_LockSensors()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_NumSensors.html">SDL_NumSensors()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensors">SDL_GetSensors()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_NumSensors.html">SDL_NumSensors()</a> - <a href="SDL_GetSensors.html">SDL_GetSensors()</a>に置き換えられた
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetDeviceInstanceID.html">SDL_SensorGetDeviceInstanceID()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetDeviceName.html">SDL_SensorGetDeviceName()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensorNameForID">SDL_GetSensorNameForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetDeviceNonPortableType.html">SDL_SensorGetDeviceNonPortableType()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensorNonPortableTypeForID">SDL_GetSensorNonPortableTypeForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetDeviceType.html">SDL_SensorGetDeviceType()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetSensorTypeForID">SDL_GetSensorTypeForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetDeviceName.html">SDL_SensorGetDeviceName()</a> - <a href="SDL_GetSensorNameForID.html">SDL_GetSensorNameForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetDeviceNonPortableType.html">SDL_SensorGetDeviceNonPortableType()</a> - <a href="SDL_GetSensorNonPortableTypeForID.html">SDL_GetSensorNonPortableTypeForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SensorGetDeviceType.html">SDL_SensorGetDeviceType()</a> - <a href="SDL_GetSensorTypeForID.html">SDL_GetSensorTypeForID()</a>に置き換えられた
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_UnlockSensors.html">SDL_UnlockSensors()</a>
 </ul>
 <h2><a name="#sdl_shapeh">SDL_shape.h (非矩形ウィンドウ)</a></h2>
 <p>
-このヘッダは削除され, SDL_video.hに簡略化されたバージョンのAPIの<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowShape">SDL_SetWindowShape()</a>が追加された. test/testshape.cを参照すること.
+このヘッダは削除され, SDL_video.hに簡略化されたバージョンのAPIの<a href="SDL_SetWindowShape.html">SDL_SetWindowShape()</a>が追加された. test/testshape.cを参照すること.
 </p>
 <h2><a name="#sdl_stdinch">SDL_stdinc.h (標準ライブラリ)</a></h2>
 <p>
