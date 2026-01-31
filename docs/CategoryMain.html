@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 SDLはmain()の呼び出しに関する環境固有の処理を行う.
 </p>
 <p>
-アプリケーションがmainコールバックを使用するかを<a href="SDL_MAIN_USE_CALLBACKS.html">SDL_MAIN_USE_CALLBACKSマクロ</a>で設定することもできる.
+アプリケーションがメインコールバックを使用するかを<a href="SDL_MAIN_USE_CALLBACKS.html">SDL_MAIN_USE_CALLBACKSマクロ</a>で設定することもできる.
 </p>
 <p>
 SDL_main.hは「シングルヘッダライブラリ」で, このヘッダをインクルードするとアプリケーションにコードが挿入され, ほとんどの場合は1度だけインクルードする必要がある.
@@ -45,12 +45,12 @@ SDL_main.hは「シングルヘッダライブラリ」で, このヘッダを�
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_AppEvent
-<li>SDL_AppInit
-<li>SDL_AppIterate
-<li>SDL_AppQuit
-<li>SDL_EnterAppMainCallbacks
-<li>SDL_GDKSuspendComplete
+<li><a href="SDL_AppEvent.html">SDL_AppEvent</a> - メインコールバックを使用する場合, アプリケーションが実装するイベント処理エントリーポイント
+<li><a href="SDL_AppInit.html">SDL_AppInit</a> - メインコールバックを使用する場合, アプリケーションが実装する初期化処理エントリーポイント
+<li><a href="SDL_AppIterate.html">SDL_AppIterate</a> - メインコールバックを使用する場合, アプリケーションが実装する反復処理エントリーポイント
+<li><a href="SDL_AppQuit.html">SDL_AppQuit</a> - メインコールバックを使用する場合, アプリケーションが実装する終了処理エントリーポイント
+<li><a href="SDL_EnterAppMainCallbacks.html">SDL_EnterAppMainCallbacks</a> - メインコールバックを使用する場合のエントリーポイント
+<li><a href="SDL_GDKSuspendComplete.html">SDL_GDKSuspendComplete</a> - 一時停止から実行を再開させるためのアプリケーションからのコールバック
 <li><a href="SDL_main.html">SDL_main</a> - アプリケーションのプログラムエントリー関数
 <li><a href="SDL_RegisterApp.html">SDL_RegisterApp</a> - SDLが使用するためにwin32ウィンドウクラスを登録する 
 <li><a href="SDL_RunApp.html">SDL_RunApp</a> - SDLアプリケーションの初期化と起動を行う
@@ -64,7 +64,7 @@ SDL_main.hは「シングルヘッダライブラリ」で, このヘッダを�
 <h2>マクロ</h2>
 <ol>
 <li><a href="SDL_MAIN_HANDLED.html">SDL_MAIN_HANDLED</a> - SDLの代わりにアプリケーションがエントリーポイントを提供することをSDLに知らせるマクロ
-<li><a href="SDL_MAIN_USE_CALLBACKS.html">SDL_MAIN_USE_CALLBACKS</a> - mainの代わりにmainコールバックを使用することをSDLに知らせるマクロ
+<li><a href="SDL_MAIN_USE_CALLBACKS.html">SDL_MAIN_USE_CALLBACKS</a> - mainの代わりにメインコールバックを使用することをSDLに知らせるマクロ
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryMain">SDL3/CategoryMain - SDL Wiki</a>

@@ -11,7 +11,7 @@
 <a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryMain.html">アプリケーションのエントリーポイント</a> - SDL_MAIN_USE_CALLBACKS
 <hr>
 <h1>SDL_MAIN_USE_CALLBACKS</h1>
-mainの代わりにmainコールバックを使用することをSDLに知らせるマクロ
+mainの代わりにメインコールバックを使用することをSDLに知らせるマクロ
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_main.h">SDL3/SDL_main.h</a>
 <h2>構文</h2>
@@ -19,7 +19,7 @@ mainの代わりにmainコールバックを使用することをSDLに知らせ
 <h2>詳細</h2>
 <p>
 SDL自身はこのマクロを定義しないが, 定義されているかをSDL_main.hでチェックしている.
-定義されている場合, SDLはアプリケーションが自身で<a href="SDL_AppEven.html">SDL_AppEvent</a>, <a href="SDL_AppIterate.html">SDL_AppIterate</a>, <a href="SDL_AppQuit.html">SDL_AppQuit</a>を作成していると見なす.
+定義されている場合, SDLはアプリケーションが自身で<a href="SDL_AppEvent.html">SDL_AppEvent</a>, <a href="SDL_AppIterate.html">SDL_AppIterate</a>, <a href="SDL_AppQuit.html">SDL_AppQuit</a>を作成していると見なす.
 この場合, アプリケーションはmain関数を作成してはならない. その場合, ビルドは失敗する.
 </p>
 <p>

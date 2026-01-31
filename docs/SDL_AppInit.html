@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryMain.html" title="1つ上">
+<title>SDL_AppInit</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryMain.html">メイン</a> - SDL_AppInit
+<hr>
+<h1>SDL_AppInit</h1>
+メインコールバックを使用する場合, アプリケーションが実装する初期化処理エントリーポイント
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_main.h">SDL3/SDL_main.h</a>
+<h2>構文</h2>
+<code>SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>void **</td><td>appstate</td><td>後のエントリーポイントで任意で使用できるポインタ</td></tr>
+<tr><td>int</td><td>argc</td><td>ANSI-Cスタイルのmain関数のargc. <code>argv</code>の要素数</td></tr>
+<tr><td>char **</td><td>argv</td><td>ANSI-Cスタイルのmain関数のargv. コマンドライン引数の配列</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_AppResult.html">SDL_AppResult</a>) エラーで終了させるとき<a href="SDL_AppResult.html">SDL_APP_FAILURE</a>, 成功で終了させるとき<a href="SDL_AppResult.html">SDL_APP_SUCCESS</a>, 継続するとき<a href="SDL_AppResult.html">SDL_APP_CONTINUE</a>を戻す.
+<h2>詳細</h2>
+<p>
+<a href="SDL_MAIN_USE_CALLBACKS.html">SDL_MAIN_USE_CALLBACKS</a>を使用する場合, アプリケーションはこの関数を実装すること.
+標準の"main"関数を使用する場合, この関数をSDLに提供してはならない.
+</p>
+<p>
+この関数は起動時に一度だけSDLに呼ばれる.
+ウィンドウの作成やオーディオデバイスのオープンなど, 必要なことは全てこの関数で初期化する必要がある.
+<code>argc</code>と<code>argv</code>引数は, 標準の"main"関数と同様の値を取る.
+</p>
+<p>
+この関数で無限ループに入ってはならない. ここでは必要な一度のセットアップを行い, その後に戻る必要がある.
+</p>
+<p>
+アプリケーションは任意でポインタを<code>*appstate</code>に設定することができる.
+このポインタは, 後で呼び出す各エントリーポイントに渡されるため, これを利用するとアプリケーションの状態をグローバル変数を使わずに関数間で共有することができる.
+これを設定しない場合, 後のエントリーポイントではポインタはNULLになる.
+</p>
+<p>
+この関数が<a href="SDL_AppResult.html">SDL_APP_CONTINUE</a>を戻した場合, アプリケーションは通常通りに進み, アプリケーションの実行中の<a href="SDL_AppIterate.html">SDL_AppIterate</a>と<a href="SDL_AppEvent.html">SDL_AppEvent</a>の呼び出しの繰り返しが始まる.
+<a href="SDL_AppResult.html">SDL_APP_FAILURE</a>を戻した場合, SDLは<a href="SDLはSDL_AppQuit.html">SDL_AppQuit</a>を呼び, エラーを報告する終了コードでプロセスを終了させる.
+<a href="SDL_AppResult.html">SDL_APP_SUCCESS</a>を戻した場合, SDLは<a href="SDLはSDL_AppQuit.html">SDL_AppQuit</a>を呼び, 正常終了を報告する終了コードでプロセスを終了させる.
+</p>
+<p>
+この関数は, SDLによってメインスレッドで呼ばれる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_AppIterate.html">SDL_AppIterate</a>
+<li><a href="SDL_AppEvent.html">SDL_AppEvent</a>
+<li><a href="SDL_AppQuit.html">SDL_AppQuit</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_AppInit">SDL_AppInit - SDL Wiki</a>
+<hr>
+</body>
+</html>

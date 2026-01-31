@@ -32,10 +32,10 @@
 <li>SDL_AddVulkanRenderSemaphores
 <li>SDL_aligned_alloc
 <li>SDL_aligned_free
-<li>SDL_AppEvent
-<li>SDL_AppInit
-<li>SDL_AppIterate
-<li>SDL_AppQuit
+<li><a href="SDL_AppEvent.html">SDL_AppEvent</a> - メインコールバックを使用する場合, アプリケーションが実装するイベント処理エントリーポイント
+<li><a href="SDL_AppInit.html">SDL_AppInit</a> - メインコールバックを使用する場合, アプリケーションが実装する初期化処理エントリーポイント
+<li><a href="SDL_AppIterate.html">SDL_AppIterate</a> - メインコールバックを使用する場合, アプリケーションが実装する反復処理エントリーポイント
+<li><a href="SDL_AppQuit.html">SDL_AppQuit</a> - メインコールバックを使用する場合, アプリケーションが実装する終了処理エントリーポイント
 <li>SDL_asin
 <li>SDL_asinf
 <li>SDL_asprintf
@@ -215,7 +215,7 @@
 <li>SDL_EndGPUComputePass
 <li>SDL_EndGPUCopyPass
 <li>SDL_EndGPURenderPass
-<li>SDL_EnterAppMainCallbacks
+<li><a href="SDL_EnterAppMainCallbacks.html">SDL_EnterAppMainCallbacks</a> - メインコールバックを使用する場合のエントリーポイント
 <li><a href="SDL_EnumerateDirectory.html">SDL_EnumerateDirectory</a> - コールバックを通してディレクトリの内容を列挙する
 <li><a href="SDL_EnumerateProperties.html">SDL_EnumerateProperties</a> - プロパティグループのプロパティを列挙する
 <li><a href="SDL_EnumerateStorageDirectory.html">SDL_EnumerateStorageDirectory</a> - コールバックを通してストレージコンテナのディレクトリの内容を列挙する
@@ -246,7 +246,7 @@
 <li><a href="SDL_GamepadHasSensor.html">SDL_GamepadHasSensor</a> - ゲームパッドに指定のセンサーが存在するかチェックする
 <li><a href="SDL_GamepadSensorEnabled.html">SDL_GamepadSensorEnabled</a> - ゲームパッドのセンサーデータ報告が有効かチェックする
 <li>SDL_GDKResumeGPU
-<li>SDL_GDKSuspendComplete
+<li><a href="SDL_GDKSuspendComplete.html">SDL_GDKSuspendComplete</a> - 一時停止から実行を再開させるためのアプリケーションからのコールバック
 <li>SDL_GDKSuspendGPU
 <li>SDL_GenerateMipmapsForGPUTexture
 <li>SDL_GetAndroidActivity
@@ -256,7 +256,7 @@
 <li>SDL_GetAndroidInternalStoragePath
 <li>SDL_GetAndroidJNIEnv
 <li>SDL_GetAndroidSDKVersion
-<li>SDL_GetAppMetadataProperty
+<li><a href="SDL_GetAppMetadataProperty.html">SDL_GetAppMetadataProperty</a> - アプリケーションのメタデータを得る
 <li>SDL_GetAssertionHandler
 <li>SDL_GetAssertionReport
 <li><a href="SDL_GetAsyncIOResult.html">SDL_GetAsyncIOResult</a> - 非同期I/Oタスクキューの完了状態をチェックする
@@ -733,7 +733,7 @@
 <li>SDL_IsJoystickHaptic
 <li><a href="SDL_IsJoystickVirtual.html">SDL_IsJoystickVirtual</a> - ジョイスティックが仮想か否かをチェックする
 <li>SDL_islower
-<li>SDL_IsMainThread
+<li><a href="SDL_IsMainThread.html">SDL_IsMainThread</a> - スレッドがメインスレッドかチェックする
 <li>SDL_IsMouseHaptic
 <li>SDL_isnan
 <li>SDL_isnanf
@@ -962,7 +962,7 @@
 <li><a href="SDL_RumbleJoystickTriggers.html">SDL_RumbleJoystickTriggers</a> - ジョイスティックのトリガーの振動を開始する
 <li><a href="SDL_RunApp.html">SDL_RunApp</a> - SDLアプリケーションの初期化と起動を行う
 <li>SDL_RunHapticEffect
-<li>SDL_RunOnMainThread
+<li><a href="SDL_RunOnMainThread.html">SDL_RunOnMainThread</a> - メインスレッドで関数を実行する
 <li><a href="SDL_SaveBMP.html">SDL_SaveBMP</a> - サーフェイスをBMPファイルとして保存する
 <li><a href="SDL_SaveBMP_IO.html">SDL_SaveBMP_IO</a> - サーフェイスをシーク可能なSDLデータストリームにBMP形式で書き込む
 <li><a href="SDL_SaveFile.html">SDL_SaveFile</a> - ファイルからデータを全て読み込む
@@ -1183,10 +1183,10 @@
 <li><a href="SDL_SurfaceHasAlternateImages.html">SDL_SurfaceHasAlternateImages</a> - サーフェイスに利用可能な別のバージョンがあるかを得る
 <li><a href="SDL_SurfaceHasColorKey.html">SDL_SurfaceHasColorKey</a> - サーフェイスのカラーキーの有無を得る
 <li><a href="SDL_SurfaceHasRLE.html">SDL_SurfaceHasRLE</a> - サーフェイスのRLEが有効かを得る
-<li>SDL_Swap16
-<li>SDL_Swap32
-<li>SDL_Swap64
-<li>SDL_SwapFloat
+<li><a href="SDL_Swap16.html">SDL_Swap16</a> - 符号なし16ビット整数をバイト交換する
+<li><a href="SDL_Swap32.html">SDL_Swap32</a> - 符号なし32ビット整数をバイト交換する
+<li><a href="SDL_Swap64.html">SDL_Swap64</a> - 符号なし64ビット整数をバイト交換する
+<li><a href="SDL_SwapFloat.html">SDL_SwapFloat</a> - 浮動小数点の値のバイト交換する
 <li>SDL_swprintf
 <li><a href="SDL_SyncWindow.html">SDL_SyncWindow</a> - 保留中のウィンドウ状態の変更が完了するまでブロックする
 <li>SDL_tan
@@ -1303,10 +1303,10 @@
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_AppEvent_func
-<li>SDL_AppInit_func
-<li>SDL_AppIterate_func
-<li>SDL_AppQuit_func
+<li><a href="SDL_AppEvent_func.html">SDL_AppEvent_func</a> - SDL_AppEvent関数のポインタ型
+<li><a href="SDL_AppInit_func.html">SDL_AppInit_func</a> - SDL_AppInit関数のポインタ型
+<li><a href="SDL_AppIterate_func.html">SDL_AppIterate_func</a> - SDL_AppIterate関数のポインタ型
+<li><a href="SDL_AppQuit_func.html">SDL_AppQuit_func</a> - SDL_AppQuit関数のポインタ型
 <li>SDL_AssertionHandler
 <li><a href="SDL_AsyncIO.html">SDL_AsyncIO</a> - 非同期I/O操作の型
 <li><a href="SDL_AsyncIOQueue.html">SDL_AsyncIOQueue</a> - 完了した非同期I/Oタスクのキューの型
@@ -1389,7 +1389,7 @@
 <li><a href="SDL_Keymod.html">SDL_Keymod</a> - 修飾キーの状態の型
 <li><a href="SDL_LogOutputFunction.html">SDL_LogOutputFunction</a> - ログ出力関数のプロトタイプ型
 <li><a href="SDL_main_func.html">SDL_main_func</a> - アプリケーションのmain()関数のプロトタイプ型
-<li>SDL_MainThreadCallback
+<li><a href="SDL_MainThreadCallback.html">SDL_MainThreadCallback</a> - メインスレッドで実行されるコールバックの型
 <li>SDL_malloc_func
 <li><a href="SDL_MessageBoxButtonFlags.html">SDL_MessageBoxButtonFlags</a> - SDL_MessageBoxButtonDataで使われるフラグの型
 <li><a href="SDL_MessageBoxFlags.html">SDL_MessageBoxFlags</a> - メッセージボックスフラグの型
@@ -1567,7 +1567,7 @@
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_AppResult
+<li><a href="SDL_AppResult.html">SDL_AppResult</a> - メインコールバックが戻す値の列挙体
 <li><a href="SDL_ArrayOrder.html">SDL_ArrayOrder</a> - 要素配列の順序の列挙体
 <li>SDL_AssertState
 <li><a href="SDL_AsyncIOResult.html">SDL_AsyncIOResult</a> - 非同期I/Oタスクの結果の列挙体
@@ -2156,7 +2156,7 @@
 <li>SDL_LINE
 <li><a href="SDL_LSX_INTRINSICS.html">SDL_LSX_INTRINSICS</a> - コンパイラがLoongarch LSX組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
 <li><a href="SDL_MAIN_HANDLED.html">SDL_MAIN_HANDLED</a> - SDLの代わりにアプリケーションがエントリーポイントを提供することをSDLに知らせるマクロ
-<li><a href="SDL_MAIN_USE_CALLBACKS.html">SDL_MAIN_USE_CALLBACKS</a> - mainの代わりにmainコールバックを使用することをSDLに知らせるマクロ
+<li><a href="SDL_MAIN_USE_CALLBACKS.html">SDL_MAIN_USE_CALLBACKS</a> - mainの代わりにメインコールバックを使用することをSDLに知らせるマクロ
 <li><a href="SDL_MAJOR_VERSION.html">SDL_MAJOR_VERSION</a> - SDLヘッダのメジャーバージョンのマクロ
 <li>SDL_MALLOC
 <li>SDL_max
@@ -2599,14 +2599,14 @@
 <li>SDL_SURFACE_LOCKED
 <li>SDL_SURFACE_PREALLOCATED
 <li>SDL_SURFACE_SIMD_ALIGNED
-<li>SDL_Swap16BE
-<li>SDL_Swap16LE
-<li>SDL_Swap32BE
-<li>SDL_Swap32LE
-<li>SDL_Swap64BE
-<li>SDL_Swap64LE
-<li>SDL_SwapFloatBE
-<li>SDL_SwapFloatLE
+<li><a href="SDL_Swap16BE.html">SDL_Swap16BE</a> - バイト順がビッグエンディアンの符号なし16ビット整数をネイティブのバイト順に変換する
+<li><a href="SDL_Swap16LE.html">SDL_Swap16LE</a> - バイト順がリトルエンディアンの符号なし16ビット整数をネイティブのバイト順に変換する 
+<li><a href="SDL_Swap32BE.html">SDL_Swap32BE</a> - バイト順がビッグエンディアンの符号なし32ビット整数をネイティブのバイト順に変換する
+<li><a href="SDL_Swap32LE.html">SDL_Swap32LE</a> - バイト順がリトルエンディアンの符号なし32ビット整数をネイティブのバイト順に変換する 
+<li><a href="SDL_Swap64BE.html">SDL_Swap64BE</a> - バイト順がビッグエンディアンの符号なし64ビット整数をネイティブのバイト順に変換する
+<li><a href="SDL_Swap64LE.html">SDL_Swap64LE</a> - バイト順がリトルエンディアンの符号なし64ビット整数をネイティブのバイト順に変換する
+<li><a href="SDL_SwapFloatBE.html">SDL_SwapFloatBE</a> - バイト順がビッグエンディアンの浮動小数点の値をネイティブのバイト順に変換する
+<li><a href="SDL_SwapFloatLE.html">SDL_SwapFloatLE</a> - バイト順がリトルエンディアンの浮動小数点の値をネイティブのバイト順に変換する
 <li><a href="SDL_TARGETING.html">SDL_TARGETING</a> - 特定のCPUアーキテクチャを対象とした関数のタグ付けのマクロ
 <li><a href="SDL_THREAD_ANNOTATION_ATTRIBUTE__.html">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a> - スレッドセーフ属性を有効にする(Clangのみ)
 <li><a href="SDL_TOUCH_MOUSEID.html">SDL_TOUCH_MOUSEID</a> - マウスイベントでのタッチ入力のSDL_MouseID

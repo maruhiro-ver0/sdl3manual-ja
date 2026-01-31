@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryMain.html" title="1つ上">
+<title>SDL_EnterAppMainCallbacks</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryMain.html">メイン</a> - SDL_EnterAppMainCallbacks
+<hr>
+<h1>SDL_EnterAppMainCallbacks</h1>
+メインコールバックを使用する場合のエントリーポイント
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_main.h">SDL3/SDL_main.h</a>
+<h2>構文</h2>
+<code>int SDL_EnterAppMainCallbacks(int argc, char *argv[], SDL_AppInit_func appinit, SDL_AppIterate_func appiter, SDL_AppEvent_func appevent, SDL_AppQuit_func appquit);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>int</td><td>argc</td><td>一般的なUnixのmain関数のargc</td></tr>
+<tr><td>char **</td><td>argv</td><td>一般的なUnixのmain関数のargv</td></tr>
+<tr><td><a href="SDL_AppInit_func.html">SDL_AppInit_func</a></td><td>appinit</td><td>アプリケーションのSDL_AppInit関数</td></tr>
+<tr><td><a href="SDL_AppIterate_func.html">SDL_AppIterate_func</a></td><td>appiter</td><td>アプリケーションのSDL_AppIterate関数</td></tr>
+<tr><td><a href="SDL_AppEvent_func.html">SDL_AppEvent_func</a></td><td>appevent</td><td>アプリケーションのSDL_AppEvent関数</td></tr>
+<tr><td><a href="SDL_AppQuit_func.html">SDL_AppQuit_func</a></td><td>appquit</td><td>アプリケーションのSDL_AppQuit関数</td></tr>
+</table>
+<h2>戻り値</h2>
+(int) 一般的なUnixのmain関数の戻り値を戻す.
+<h2>詳細</h2>
+<p>
+一般的には, この関数を直接呼ぶ必要はない.
+この関数は可能な限り早く多くの利用可能な制御と機能が存在するSDLに作業を引き継ぐため, そしてSDL_main.hのインラインコードを可能な限り小さくするためにのみ存在する
+</p>
+<p>
+全ての環境でこの関数を使用しているのではない.
+実際の使用はヘッダのみのライブラリにトリックのように隠されており, 少なくとも自分が何をしているのか<em>本当に</em>理解できていないならば使用するべきではない.
+</p>
+<h2>スレッドセーフ</h2>
+SDL_main以外の関数から呼ぶのは安全でない.
+<h2>バージョン</h2>
+SDL 3.2.0以降
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_EnterAppMainCallbacks">SDL_EnterAppMainCallbacks - SDL Wiki</a>
+<hr>
+</body>
+</html>

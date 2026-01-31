@@ -16,8 +16,9 @@
 エンディアンで異なる値のバイト順の変換を行う関数.
 </p>
 <p>
-これらの関数は, 無条件のバイト交換(SDL_Swap16, SDL_Swap32, SDL_Swap64, SDL_SwapFloat)と, システムのネイティブのバイト順への/からの交換(SDL_Swap16LE, SDL_Swap16BE, SDL_Swap32LE, SDL_Swap32BE, SDL_Swap32LE, SDL_Swap32BE, SDL_SwapFloatLE, SDL_SwapFloatBE)の両方を行える.
-後者の関数は, 機能はマクロで提供され, 交換の必要がない場合は何も行わない. 例えば, x86(リトルエンディアン)プロセッサならば, SDL_Swap32LEは何も行わないが, SDL_Swap32BEはバイト順を入れ替える.
+これらの関数は, 無条件のバイト交換(<a href="SDL_Swap16.html">SDL_Swap16</a>, <a href="SDL_Swap32.html">SDL_Swap32</a>, <a href="SDL_Swap64.html">SDL_Swap64</a>, <a href="SDL_SwapFloat.html">SDL_SwapFloat</a>)と,
+システムのネイティブのバイト順への/からの交換(<a href="SDL_Swap16LE.html">SDL_Swap16LE</a>, <a href="SDL_Swap16BE.html">SDL_Swap16BE</a>, <a href="SDL_Swap32LE.html">SDL_Swap32LE</a>, <a href="SDL_Swap32BE.html">SDL_Swap32BE</a>, <a href="SDL_Swap64LE.html">SDL_Swap64LE</a>, <a href="SDL_Swap64BE.html">SDL_Swap64BE</a>, <a href="SDL_SwapFloatLE.html">SDL_SwapFloatLE</a>, <a href="SDL_SwapFloatBE.html">SDL_SwapFloatBE</a>)の両方を行える.
+後者の関数は, 機能はマクロで提供され, 交換の必要がない場合は何も行わない. 例えば, x86(リトルエンディアン)プロセッサならば, <a href="SDL_Swap32LE.html">SDL_Swap32LE</a>は何も行わないが, <a href="SDL_Swap32BE.html">SDL_Swap32BE</a>はバイト順を入れ替える.
 PowerPC(ビッグエンディアン)ならば, マクロは逆に機能する.
 </p>
 <p>
@@ -25,10 +26,10 @@ PowerPC(ビッグエンディアン)ならば, マクロは逆に機能する.
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_Swap16
-<li>SDL_Swap32
-<li>SDL_Swap64
-<li>SDL_SwapFloat
+<li><a href="SDL_Swap16.html">SDL_Swap16</a> - 符号なし16ビット整数をバイト交換する
+<li><a href="SDL_Swap32.html">SDL_Swap32</a> - 符号なし32ビット整数をバイト交換する
+<li><a href="SDL_Swap64.html">SDL_Swap64</a> - 符号なし64ビット整数をバイト交換する
+<li><a href="SDL_SwapFloat.html">SDL_SwapFloat</a> - 浮動小数点の値のバイト交換する
 </ol>
 <h2>マクロ</h2>
 <ol>
@@ -36,14 +37,14 @@ PowerPC(ビッグエンディアン)ならば, マクロは逆に機能する.
 <li><a href="SDL_BYTEORDER.html">SDL_BYTEORDER</a> - システムのバイト順を報告するマクロ
 <li><a href="SDL_FLOATWORDORDER.html">SDL_FLOATWORDORDER</a> - システムの浮動小数点のワード順を報告するマクロ
 <li><a href="SDL_LIL_ENDIAN.html">SDL_LIL_ENDIAN</a> - バイト順がリトルエンディアンであることを表す値のマクロ
-<li>SDL_Swap16BE
-<li>SDL_Swap16LE
-<li>SDL_Swap32BE
-<li>SDL_Swap32LE
-<li>SDL_Swap64BE
-<li>SDL_Swap64LE
-<li>SDL_SwapFloatBE
-<li>SDL_SwapFloatLE
+<li><a href="SDL_Swap16BE.html">SDL_Swap16BE</a> - バイト順がビッグエンディアンの符号なし16ビット整数をネイティブのバイト順に変換する
+<li><a href="SDL_Swap16LE.html">SDL_Swap16LE</a> - バイト順がリトルエンディアンの符号なし16ビット整数をネイティブのバイト順に変換する 
+<li><a href="SDL_Swap32BE.html">SDL_Swap32BE</a> - バイト順がビッグエンディアンの符号なし32ビット整数をネイティブのバイト順に変換する
+<li><a href="SDL_Swap32LE.html">SDL_Swap32LE</a> - バイト順がリトルエンディアンの符号なし32ビット整数をネイティブのバイト順に変換する 
+<li><a href="SDL_Swap64BE.html">SDL_Swap64BE</a> - バイト順がビッグエンディアンの符号なし64ビット整数をネイティブのバイト順に変換する
+<li><a href="SDL_Swap64LE.html">SDL_Swap64LE</a> - バイト順がリトルエンディアンの符号なし64ビット整数をネイティブのバイト順に変換する
+<li><a href="SDL_SwapFloatBE.html">SDL_SwapFloatBE</a> - バイト順がビッグエンディアンの浮動小数点の値をネイティブのバイト順に変換する
+<li><a href="SDL_SwapFloatLE.html">SDL_SwapFloatLE</a> - バイト順がリトルエンディアンの浮動小数点の値をネイティブのバイト順に変換する
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryEndian">SDL3/CategoryEndian - SDL Wiki</a>

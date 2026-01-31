@@ -27,33 +27,33 @@
 <p>
 SDL3アプリケーションではスタートアップで<a href="SDL_SetAppMetadata.html">SDL_SetAppMetadata()</a>を呼んでプログラムの詳細を設定することを強く推奨する.
 これは完全に任意だが, わずかなことで様々な助けになる(macOSメニューのAboutダイアログボックスや, システムのオーディオミキサーのアプリケーション名などを提供できる).
-もっと多くの情報を提供したいならば, SDL_SetAppMetadataProperty()の詳細を見ること.
+もっと多くの情報を提供したいならば, <a href="SDL_SetAppMetadataProperty.html">SDL_SetAppMetadataProperty()</a>の詳細を見ること.
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_GetAppMetadataProperty
+<li><a href="SDL_GetAppMetadataProperty.html">SDL_GetAppMetadataProperty</a> - アプリケーションのメタデータを得る
 <li><a href="SDL_Init.html">SDL_Init</a> - SDLライブラリを初期化する
 <li><a href="SDL_InitSubSystem.html">SDL_InitSubSystem</a> - SDLライブラリを初期化する互換関数
-<li>SDL_IsMainThread
+<li><a href="SDL_IsMainThread.html">SDL_IsMainThread</a> - スレッドがメインスレッドかチェックする
 <li><a href="SDL_Quit.html">SDL_Quit</a> - 初期化した全てのサブシステムを終了する
 <li><a href="SDL_QuitSubSystem.html">SDL_QuitSubSystem</a> - SDLのサブシステムを終了する
-<li>SDL_RunOnMainThread
+<li><a href="SDL_RunOnMainThread.html">SDL_RunOnMainThread</a> - メインスレッドで関数を実行する
 <li><a href="SDL_SetAppMetadata.html">SDL_SetAppMetadata</a> - アプリケーションの基本的なメタデータを指定する
 <li><a href="SDL_SetAppMetadataProperty.html">SDL_SetAppMetadataProperty</a> - アプリケーションのメタデータをプロパティで指定する
 <li><a href="SDL_WasInit.html">SDL_WasInit</a> - 初期化された個別のサブシステムのマスクを得る
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_AppEvent_func
-<li>SDL_AppInit_func
-<li>SDL_AppIterate_func
-<li>SDL_AppQuit_func
+<li><a href="SDL_AppEvent_func.html">SDL_AppEvent_func</a> - SDL_AppEvent関数のポインタ型
+<li><a href="SDL_AppInit_func.html">SDL_AppInit_func</a> - SDL_AppInit関数のポインタ型
+<li><a href="SDL_AppIterate_func.html">SDL_AppIterate_func</a> - SDL_AppIterate関数のポインタ型
+<li><a href="SDL_AppQuit_func.html">SDL_AppQuit_func</a> - SDL_AppQuit関数のポインタ型
 <li><a href="SDL_InitFlags.html">SDL_InitFlags</a> - SDL_InitとSDL_InitSubSystemの初期化フラグの型 
-<li>SDL_MainThreadCallback
+<li><a href="SDL_MainThreadCallback.html">SDL_MainThreadCallback</a> - メインスレッドで実行されるコールバックの型
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_AppResult
+<li><a href="SDL_AppResult.html">SDL_AppResult</a> - メインコールバックが戻す値の列挙体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryInit">SDL3/CategoryInit - SDL Wiki</a>
