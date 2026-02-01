@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryTray.html" title="1つ上">
+<title>SDL_CreateTray</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryTray.html">システムトレイ</a> - SDL_CreateTray
+<hr>
+<h1>SDL_CreateTray</h1>
+OSのシステムトレイ(またはそれと同等のもの)にアイコンを生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_tray.h">SDL3/SDL_tray.h</a>
+<h2>構文</h2>
+<code>SDL_Tray * SDL_CreateTray(SDL_Surface *icon, const char *tooltip);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Surface.html">SDL_Surface</a> *</td><td>icon</td><td>アイコンとして使用するサーフェイス. NULLも可</td></tr>
+<tr><td>const char *</td><td>tooltip</td><td>マウスカーソルを重ねたとき表示されるツールチップに表示されるUTF-8文字列. 対応していない環境もある. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Tray.html">SDL_Tray</a> *) 生成されたトレイオブジェクトを戻す.
+<h2>詳細</h2>
+<p>
+多くの環境では常駐させる必要がない場合はシステムトレイを使用しないことを推奨している.
+ユーザにインターフェースの乱雑さを感じさせないためにも不要なトレイアイコンの生成は避けること.
+</p>
+<p>
+トレイアイコンの使用にはビデオサブシステムが必要である.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>サンプルコード</h2>
+<code>
+<pre>
+#include &lt;SDL3/SDL.h&gt;
+#include &lt;SDL3/SDL_main.h&gt;
+
+void callback_quit(void *userdata, SDL_TrayEntry *invoker)
+{
+    SDL_Event e;
+    e.type = SDL_EVENT_QUIT;
+    SDL_PushEvent(&amp;e);
+}
+
+int main(int argc, char *argv[])
+{
+    SDL_Tray *tray;
+    SDL_TrayMenu *menu;
+    SDL_TrayEntry *entry;
+    SDL_Event e;
+
+    SDL_Init(SDL_INIT_VIDEO);
+
+    // システムトレイにアイコンを生成する
+    // 通常はNULLではなくSDL_Surfaceを渡す
+    tray = SDL_CreateTray(NULL, "My tray");
+
+    // トレイのコンテキストメニューを生成する
+    menu = SDL_CreateTrayMenu(tray);
+
+    // コンテキストメニューのボタンを生成する
+    entry = SDL_InsertTrayEntryAt(menu, -1, "終了", SDL_TRAYENTRY_BUTTON);
+
+    // ボタンのコールバックを生成する
+    SDL_SetTrayEntryCallback(entry, callback_quit, NULL);
+
+    // メインループを実行する...
+    while (SDL_WaitEvent(&amp;e)) {
+        if (e.type == SDL_EVENT_QUIT) {
+            break;
+        }
+    }
+
+    // 破棄するのはトレイのみでよい
+    // 残りは自動的に破棄される
+    SDL_DestroyTray(tray);
+
+    SDL_Quit();
+
+    return 0;
+}
+</pre>
+</code>
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_CreateTrayMenu.html">SDL_CreateTrayMenu</a>
+<li><a href="SDL_GetTrayMenu.html">SDL_GetTrayMenu</a>
+<li><a href="SDL_DestroyTray.html">SDL_DestroyTray</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_CreateTray">SDL_CreateTray - SDL Wiki</a>
+<hr>
+</body>
+</html>

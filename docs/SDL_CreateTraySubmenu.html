@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryTray.html" title="1つ上">
+<title>SDL_CreateTraySubmenu</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryTray.html">システムトレイ</a> - SDL_CreateTraySubmenu
+<hr>
+<h1>SDL_CreateTraySubmenu</h1>
+トレイの項目のサブメニューを生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_tray.h">SDL3/SDL_tray.h</a>
+<h2>構文</h2>
+<code>SDL_TrayMenu * SDL_CreateTraySubmenu(SDL_TrayEntry *entry);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_TrayEntry.html">SDL_TrayEntry</a> *</td><td>entry</td><td>生成するメニューと関連付ける項目</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_TrayMenu.html">SDL_TrayMenu</a> *) 新しく生成したメニューを戻す.
+<h2>詳細</h2>
+<p>
+ほとんどの場合, この関数は1つのトレイの項目に対して1回だけ呼ばれる.
+</p>
+<p>
+この関数は, <a href="SDL_TrayEntry.html">SDL_TrayEntry</a>の代わりに<a href="SDL_Tray.html">SDL_Tray</a>を渡すこと以外は<a href=" SDL_CreateTrayMenu.html"> SDL_CreateTrayMenu()</a>と同じである.
+</p>
+<p>
+メニューを破棄する必要はない. トレイと共に破棄される.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_InsertTrayEntryAt.html">SDL_InsertTrayEntryAt</a>
+<li><a href="SDL_GetTraySubmenu.html">SDL_GetTraySubmenu</a>
+<li><a href="SDL_GetTrayMenuParentEntry.html">SDL_GetTrayMenuParentEntry</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_CreateTraySubmenu">SDL_CreateTraySubmenu - SDL Wiki</a>
+<hr>
+</body>
+</html>

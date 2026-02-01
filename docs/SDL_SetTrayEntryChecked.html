@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryTray.html" title="1つ上">
+<title>SDL_SetTrayEntryChecked</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryTray.html">システムトレイ</a> - SDL_SetTrayEntryChecked
+<hr>
+<h1>SDL_SetTrayEntryChecked</h1>
+トレイの項目のチェック状態を設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_tray.h">SDL3/SDL_tray.h</a>
+<h2>構文</h2>
+<code>void SDL_SetTrayEntryChecked(SDL_TrayEntry *entry, bool checked);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_TrayEntry.html">SDL_TrayEntry</a> *</td><td>entry</td><td>設定するトレイの項目</td></tr>
+<tr><td>bool</td><td>checked</td><td>真のときチェックする, 偽のときチェックを解除する</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+トレイの項目は<a href="SDL_TrayEntryFlags.html">SDL_TRAYENTRY_CHECKBOX</a>フラグで生成されている必要がある.
+</p>
+<h2>スレッドセーフ</h2>
+この関数はトレイを生成したスレッドで呼ぶ必要がある.
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetTrayEntries.html">SDL_GetTrayEntries</a>
+<li><a href="SDL_InsertTrayEntryAt.html">SDL_InsertTrayEntryAt</a>
+<li><a href="SDL_GetTrayEntryChecked.html">SDL_GetTrayEntryChecked</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SetTrayEntryChecked">SDL_SetTrayEntryChecked - SDL Wiki</a>
+<hr>
+</body>
+</html>

@@ -19,7 +19,7 @@ mainの代わりにメインコールバックを使用することをSDLに知�
 <h2>詳細</h2>
 <p>
 SDL自身はこのマクロを定義しないが, 定義されているかをSDL_main.hでチェックしている.
-定義されている場合, SDLはアプリケーションが自身で<a href="SDL_AppEvent.html">SDL_AppEvent</a>, <a href="SDL_AppIterate.html">SDL_AppIterate</a>, <a href="SDL_AppQuit.html">SDL_AppQuit</a>を作成していると見なす.
+定義されている場合, SDLはアプリケーションが自身で<a href="SDL_AppInit.html">SDL_AppInit</a>, <a href="SDL_AppEvent.html">SDL_AppEvent</a>, <a href="SDL_AppIterate.html">SDL_AppIterate</a>, <a href="SDL_AppQuit.html">SDL_AppQuit</a>を作成していると見なす.
 この場合, アプリケーションはmain関数を作成してはならない. その場合, ビルドは失敗する.
 </p>
 <p>

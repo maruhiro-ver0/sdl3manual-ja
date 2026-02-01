@@ -92,7 +92,7 @@
 <li><a href="SDL_ClearError.html">SDL_ClearError</a> - エラーメッセージを消去する
 <li><a href="SDL_ClearProperty.html">SDL_ClearProperty</a> - プロパティグループのプロパティを消去する
 <li><a href="SDL_ClearSurface.html">SDL_ClearSurface</a> - サーフェイスを浮動小数点で指定した色で消去する
-<li>SDL_ClickTrayEntry
+<li><a href="SDL_ClickTrayEntry.html">SDL_ClickTrayEntry</a> - トレイの項目を疑似的にクリックする
 <li><a href="SDL_CloseAsyncIO.html">SDL_CloseAsyncIO</a> - 非同期I/O操作をクローズして資源を解放する
 <li><a href="SDL_CloseAudioDevice.html">SDL_CloseAudioDevice</a> - オーディオデバイスをクローズする 
 <li>SDL_CloseCamera
@@ -163,9 +163,9 @@
 <li>SDL_CreateTextureWithProperties
 <li><a href="SDL_CreateThread.html">SDL_CreateThread</a> - 新しいスレッドをデフォルトのスタックサイズで生成する
 <li><a href="SDL_CreateThreadWithProperties.html">SDL_CreateThreadWithProperties</a> - 新しいスレッドをプロパティを指定して生成する
-<li>SDL_CreateTray
-<li>SDL_CreateTrayMenu
-<li>SDL_CreateTraySubmenu
+<li><a href="SDL_CreateTray.html">SDL_CreateTray</a> - OSのシステムトレイ(またはそれと同等のもの)にアイコンを生成する
+<li><a href="SDL_CreateTrayMenu.html">SDL_CreateTrayMenu</a> - システムトレイのメニューを生成する
+<li><a href="SDL_CreateTraySubmenu.html">SDL_CreateTraySubmenu</a> - トレイの項目のサブメニューを生成する
 <li><a href="SDL_CreateWindow.html">SDL_CreateWindow</a> - 大きさとフラグを指定してウィンドウを生成する
 <li>SDL_CreateWindowAndRenderer
 <li><a href="SDL_CreateWindowWithProperties.html">SDL_CreateWindowWithProperties</a> - プロパティを指定してウィンドウを生成する
@@ -191,7 +191,7 @@
 <li><a href="SDL_DestroySemaphore.html">SDL_DestroySemaphore</a> - セマフォを破棄する
 <li><a href="SDL_DestroySurface.html">SDL_DestroySurface</a> - サーフェイスを破棄する 
 <li>SDL_DestroyTexture
-<li>SDL_DestroyTray
+<li><a href="SDL_DestroyTray.html">SDL_DestroyTray</a> - システムトレイオブジェクトを破棄する
 <li><a href="SDL_DestroyWindow.html">SDL_DestroyWindow</a> - ウィンドウを破棄する
 <li><a href="SDL_DestroyWindowSurface.html">SDL_DestroyWindowSurface</a> - ウィンドウに関連付けられたサーフェイスを破棄する
 <li><a href="SDL_DetachThread.html">SDL_DetachThread</a> - スレッドが終了したとき自分で消滅するようにする
@@ -582,15 +582,15 @@
 <li><a href="SDL_GetTouchDevices.html">SDL_GetTouchDevices</a> - 接続されたタッチデバイスの一覧を得る
 <li><a href="SDL_GetTouchDeviceType.html">SDL_GetTouchDeviceType</a> - タッチデバイスの種類を得る
 <li><a href="SDL_GetTouchFingers.html">SDL_GetTouchFingers</a> - タッチデバイス上の指の一覧を得る
-<li>SDL_GetTrayEntries
-<li>SDL_GetTrayEntryChecked
-<li>SDL_GetTrayEntryEnabled
-<li>SDL_GetTrayEntryLabel
-<li>SDL_GetTrayEntryParent
-<li>SDL_GetTrayMenu
-<li>SDL_GetTrayMenuParentEntry
-<li>SDL_GetTrayMenuParentTray
-<li>SDL_GetTraySubmenu
+<li><a href="SDL_GetTrayEntries.html">SDL_GetTrayEntries</a> - トレイのメニューの項目の一覧を順序通りに得る
+<li><a href="SDL_GetTrayEntryChecked.html">SDL_GetTrayEntryChecked</a> - トレイの項目のチェック状態を得る
+<li><a href="SDL_GetTrayEntryEnabled.html">SDL_GetTrayEntryEnabled</a> - トレイの項目が有効状態を得る
+<li><a href="SDL_GetTrayEntryLabel.html">SDL_GetTrayEntryLabel</a> - トレイの項目のラベルを得る
+<li><a href="SDL_GetTrayEntryParent.html">SDL_GetTrayEntryParent</a> - 指定のトレイの項目を含むメニューを得る
+<li><a href="SDL_GetTrayMenu.html">SDL_GetTrayMenu</a> - システムトレイのメニューを得る
+<li><a href="SDL_GetTrayMenuParentEntry.html">SDL_GetTrayMenuParentEntry</a> - トレイのメニューがサブメニューの場合, その項目を得る
+<li><a href="SDL_GetTrayMenuParentTray.html">SDL_GetTrayMenuParentTray</a> - トレイのメニューがトップレベルメニューの場合, そのトレイを得る
+<li><a href="SDL_GetTraySubmenu.html">SDL_GetTraySubmenu</a> - トレイの項目に関連付けられたサブメニューを得る
 <li><a href="SDL_GetUserFolder.html">SDL_GetUserFolder</a> - 指定した種類のユーザフォルダを得る
 <li><a href="SDL_GetVersion.html">SDL_GetVersion</a> - アプリケーションにリンクされたSDLのバージョンを得る
 <li><a href="SDL_GetVideoDriver.html">SDL_GetVideoDriver</a> - 組み込まれたビデオドライバの一覧から名前を得る
@@ -710,7 +710,7 @@
 <li>SDL_InitHapticRumble
 <li><a href="SDL_InitSubSystem.html">SDL_InitSubSystem</a> - SDLライブラリを初期化する互換関数
 <li>SDL_InsertGPUDebugLabel
-<li>SDL_InsertTrayEntryAt
+<li><a href="SDL_InsertTrayEntryAt.html">SDL_InsertTrayEntryAt</a> - トレイの項目を指定の場所に挿入する
 <li><a href="SDL_IOFromConstMem.html">SDL_IOFromConstMem</a> - 読取専用メモリの読み取りを行うデータストリームを生成する
 <li><a href="SDL_IOFromDynamicMem.html">SDL_IOFromDynamicMem</a> - 動的に確保されるメモリの読み書きを行うデータストリームを生成する
 <li><a href="SDL_IOFromFile.html">SDL_IOFromFile</a> - ファイルの読み書きを行うデータストリームを生成する
@@ -741,7 +741,6 @@
 <li>SDL_ispunct
 <li>SDL_isspace
 <li>SDL_IsTablet
-<li>SDL_IsTraySupported
 <li>SDL_IsTV
 <li>SDL_isupper
 <li>SDL_isxdigit
@@ -915,7 +914,7 @@
 <li><a href="SDL_RemoveStoragePath.html">SDL_RemoveStoragePath</a> - 書込可能ストレージコンテナのファイルまたは空のディレクトリを削除する
 <li><a href="SDL_RemoveSurfaceAlternateImages.html">SDL_RemoveSurfaceAlternateImages</a> - サーフェイスの全ての別バージョンを取り除く
 <li><a href="SDL_RemoveTimer.html">SDL_RemoveTimer</a> - SDL_AddTimer()で生成したタイマを破棄する
-<li>SDL_RemoveTrayEntry
+<li><a href="SDL_RemoveTrayEntry.html">SDL_RemoveTrayEntry</a> - トレイの項目を削除する
 <li><a href="SDL_RenamePath.html">SDL_RenamePath</a> - ファイル名またはディレクトリ名を変更する
 <li><a href="SDL_RenameStoragePath.html">SDL_RenameStoragePath</a> - 書込可能ストレージコンテナのファイル名またはディレクトリ名を変更する
 <li>SDL_RenderClear
@@ -1085,12 +1084,12 @@
 <li>SDL_SetTexturePalette
 <li>SDL_SetTextureScaleMode
 <li><a href="SDL_SetTLS.html">SDL_SetTLS</a> - 現在のスレッドのスレッド局所記憶IDが保持する値を設定する
-<li>SDL_SetTrayEntryCallback
-<li>SDL_SetTrayEntryChecked
-<li>SDL_SetTrayEntryEnabled
-<li>SDL_SetTrayEntryLabel
-<li>SDL_SetTrayIcon
-<li>SDL_SetTrayTooltip
+<li><a href="SDL_SetTrayEntryCallback.html">SDL_SetTrayEntryCallback</a> - トレイの項目を選択したとき呼ばれるコールバックを設定する
+<li><a href="SDL_SetTrayEntryChecked.html">SDL_SetTrayEntryChecked</a> - トレイの項目のチェック状態を設定する
+<li><a href="SDL_SetTrayEntryEnabled.html">SDL_SetTrayEntryEnabled</a> - トレイの項目の有効状態を設定する
+<li><a href="SDL_SetTrayEntryLabel.html">SDL_SetTrayEntryLabel</a> - トレイの項目のラベルを設定する
+<li><a href="SDL_SetTrayIcon.html">SDL_SetTrayIcon</a> - システムトレイのアイコンを設定する
+<li><a href="SDL_SetTrayTooltip.html">SDL_SetTrayTooltip</a> - システムトレイのツールチップを設定する
 <li><a href="SDL_SetWindowAlwaysOnTop.html">SDL_SetWindowAlwaysOnTop</a> - ウィンドウを常に他のウィンドウより上にする
 <li><a href="SDL_SetWindowAspectRatio.html">SDL_SetWindowAspectRatio</a> - ウィンドウのクライアント領域の縦横比の設定を要求する
 <li><a href="SDL_SetWindowBordered.html">SDL_SetWindowBordered</a> - ウィンドウの枠の状態を設定する
@@ -1230,7 +1229,7 @@
 <li>SDL_UpdateNVTexture
 <li><a href="SDL_UpdateSensors.html">SDL_UpdateSensors</a> - オープンされたセンサーの現在の状態を得る
 <li>SDL_UpdateTexture
-<li>SDL_UpdateTrays
+<li><a href="SDL_UpdateTrays.html">SDL_UpdateTrays</a> - システムトレイを更新する
 <li><a href="SDL_UpdateWindowSurface.html">SDL_UpdateWindowSurface</a> - ウィンドウサーフェイスを画面にコピーする
 <li><a href="SDL_UpdateWindowSurfaceRects.html">SDL_UpdateWindowSurfaceRects</a> - ウィンドウサーフェイスの領域を画面にコピーする
 <li>SDL_UpdateYUVTexture
@@ -1423,11 +1422,11 @@
 <li><a href="SDL_TLSDestructorCallback.html">SDL_TLSDestructorCallback</a> - データの後処理としてSDL_SetTLSに渡すコールバックの型
 <li><a href="SDL_TLSID.html">SDL_TLSID</a> - スレッド局所記憶IDの型
 <li><a href="SDL_Finger.html">SDL_Finger</a> - マルチタッチイベントの1本の指のデータの構造体
-<li>SDL_Tray
-<li>SDL_TrayCallback
-<li>SDL_TrayEntry
-<li>SDL_TrayEntryFlags
-<li>SDL_TrayMenu
+<li><a href="SDL_Tray.html">SDL_Tray</a> - システムトレイオブジェクトの不透明型
+<li><a href="SDL_TrayCallback.html">SDL_TrayCallback</a> - トレイの項目を選択したとき呼ばれるコールバックの型
+<li><a href="SDL_TrayEntry.html">SDL_TrayEntry</a> - トレイの項目の不透明型
+<li><a href="SDL_TrayEntryFlags.html">SDL_TrayEntryFlags</a> - トレイの項目の生成時のフラグの列挙体
+<li><a href="SDL_TrayMenu.html">SDL_TrayMenu</a> - トレイのメニュー/サブメニューの不透明型
 <li><a href="SDL_Window.html">SDL_Window</a> - ウィンドウを識別する不透明型 
 <li><a href="SDL_WindowFlags.html">SDL_WindowFlags</a> - ウィンドウ状態フラグの型
 <li><a href="SDL_WindowID.html">SDL_WindowID</a> - ウィンドウユニークID
