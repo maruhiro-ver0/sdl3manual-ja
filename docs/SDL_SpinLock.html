@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryAtomic.html" title="1つ上">
+<title>SDL_SpinLock</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAtomic.html">アトミック操作</a> - SDL_SpinLock
+<hr>
+<h1>SDL_SpinLock</h1>
+アトミックスピンロックの型
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_atomic.h">SDL3/SDL_atomic.h</a>
+<h2>構文</h2>
+<code>typedef int SDL_SpinLock;</code>
+<h2>詳細</h2>
+<p>
+アトミックロックはCPU命令を使った効率的なスピンロックである. しかし, それは飢餓状態に弱く, スレッドがロックしたまま終了すると永遠にスピンしてしまう.
+そのため, アトミックロック内で実行するコードは最小限にして, APIやシステムコール等の負荷の大きな処理はロック中に行わないようにする必要がある. 
+</p>
+<p>
+ロックしたスレッドの優先度が他のスレッドよりも低くスケジューリングされない場合も飢餓状態に陥る.
+一般的には, アトミックロックよりもパフォーマンスと競合時の挙動がよりよいミューテックスを使用するべきである.
+
+</p>
+<p>
+アトミックロックで再帰的にロックするのは安全ではない.
+</p>
+<p>
+移植に関する注意: スピンロック関数と型は必須であり, アトミックエミュレーションコードで使用しているためエミュレートできない.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SpinLock">SDL_SpinLock - SDL Wiki</a>
+<hr>
+</body>
+</html>
