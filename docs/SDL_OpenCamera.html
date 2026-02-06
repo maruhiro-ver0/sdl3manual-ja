@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySensor.html" title="1つ上">
+<title>SDL_OpenCamera</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryCamera.html">ビデオキャプチャ</a> - SDL_CameraID
+<hr>
+<h1>SDL_OpenCamera</h1>
+ビデオ録画デバイス(カメラ)をオープンする
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_camera.h">SDL3/SDL_camera.h</a>
+<h2>構文</h2>
+<code>SDL_Camera * SDL_OpenCamera(SDL_CameraID instance_id, const SDL_CameraSpec *spec);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_CameraID.html">SDL_CameraID</a></td><td>instance_id</td><td>カメラデバイスインスタンスID</td></tr>
+<tr><td>const <a href="SDL_CameraSpec.html">SDL_CameraSpec</a> *</td><td>spec</td><td>the desired format for data the device will provide. Can be NULL.</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Camera.html">SDL_Camera</a> *) カメラオブジェクトを戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+デバイスは指定のスペックでオープンすることができる. そのスペックにハードウェアが直接対応できない場合は, データを要求した形式にシームレスに変換させる.
+これには画像データの拡大縮小などのオーバーヘッドが存在する場合がある.
+</p>
+<p>
+デバイスが提供する形式がどのようなものでもよいならば, <code>spec</code>にNULLを渡して選ばせる(そして必要ならばSDLサーフェイスの変換・拡大縮小関数を直接使用する)こともできる.
+</p>
+<p>
+<code>spec</code>にNULLを渡した場合, <a href="SDL_GetCameraFormat.html">SDL_GetCameraFormat()</a>で実際のデータ形式を得ることができる.
+変換ではないデバイスの実際のスペックは<a href="SDL_GetCameraSupportedFormats.html">SDL_GetCameraSupportedFormats()</a>で得ることができる.
+</p>
+<p>
+SDLはフレームレートをエミュレートしない. 要求した速度と近いフレームレートをハードウェアに設定しようとするが, フレームの作為的なドロップやコピーは行わない. これがアプリケーションにとって重要ならば, <a href="SDL_GetCameraFormat.html">SDL_GetCameraFormat()</a>でオープンしたデバイスの実際のフレームレートを得て, アプリケーションでタイムスタンプをチェックすること.
+</p>
+<p>
+カメラはユーザが許可するまで使用できないので注意すること.
+一部の環境では, OSはユーザにカメラへのアクセスの許可を確認し, ユーザはこの時点で許可か不許可化を選択できる.
+それまではカメラは使用できない.
+アプリケーションは<a href="SDL_CameraDeviceEvent.html">SDL_EVENT_CAMERA_DEVICE_APPROVED</a>(または<a href="SDL_CameraDeviceEvent.html">SDL_EVENT_CAMERA_DEVICE_DENIED</a>)イベントを待つか, <a href="SDL_GetCameraPermissionState.html">SDL_GetCameraPermissionState()</a>が0以外を戻すまでポーリングする必要がある.
+ユーザに明示的に許可を求めない環境(およびユーザが以前にアクセスを許可した場合)は, 許可イベントはすぐに発生する場合もあるが, 数秒後, 数分後, 数時間後もありうる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetCameras.html">SDL_GetCameras</a>
+<li><a href="SDL_GetCameraFormat.html">SDL_GetCameraFormat</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_OpenCamera">SDL_OpenCamera - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
