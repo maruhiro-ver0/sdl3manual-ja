@@ -18,17 +18,17 @@ SDLハプティックサブシステムはハプティックデバイス(力覚�
 <p>
 基本的な使い方は次の通りである.
 <ol>
-<li>サブシステム(SDL_INIT_HAPTIC)を初期化する
+<li>サブシステム(<a href="SDL_Init.html">SDL_INIT_HAPTIC</a>)を初期化する
 <li>ハプティックデバイスを開く
 <ul>
-<li>SDL_OpenHaptic()でインデックス番号を指定して開く
-<li>SDL_OpenHapticFromJoystick()でジョイスティックから開く
+<li><a href="SDL_OpenHaptic.html">SDL_OpenHaptic()</a>でインスタンスIDを指定して開く
+<li><a href="SDL_OpenHapticFromJoystick.html">SDL_OpenHapticFromJoystick()</a>でジョイスティックから開く
 </ul>
 <li>効果を生成する (SDL_HapticEffect)
 <li>効果をアップロードする SDL_CreateHapticEffect()
 <li>効果をSDL_HapticRunEffect()</a>で再生する SDL_RunHapticEffect()
 <li>(任意) 効果をSDL_DestroyHapticEffect()で解放する
-<li>ハプティックデバイスをSDL_CloseHaptic()で閉じる
+<li>ハプティックデバイスを<a href="SDL_CloseHaptic.html">SDL_CloseHaptic()</a>で閉じる
 </ol>
 </p>
 <h3>振動させる簡単な例</h3>
@@ -114,7 +114,7 @@ SDLハプティックサブシステムはスレッドセーフではないの�
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_CloseHaptic
+<li><a href="SDL_CloseHaptic.html">SDL_CloseHaptic</a> - SDL_OpenHaptic()でオープンしたハプティックデバイスをクローズする
 <li>SDL_CreateHapticEffect
 <li>SDL_DestroyHapticEffect
 <li>SDL_GetHapticEffectStatus
@@ -123,7 +123,7 @@ SDLハプティックサブシステムはスレッドセーフではないの�
 <li>SDL_GetHapticID
 <li>SDL_GetHapticName
 <li>SDL_GetHapticNameForID
-<li>SDL_GetHaptics
+<li><a href="SDL_GetHaptics.html">SDL_GetHaptics</a> - 接続されているハプティックデバイスの一覧を得る
 <li>SDL_GetMaxHapticEffects
 <li>SDL_GetMaxHapticEffectsPlaying
 <li>SDL_GetNumHapticAxes
@@ -132,9 +132,9 @@ SDLハプティックサブシステムはスレッドセーフではないの�
 <li>SDL_InitHapticRumble
 <li>SDL_IsJoystickHaptic
 <li>SDL_IsMouseHaptic
-<li>SDL_OpenHaptic
-<li>SDL_OpenHapticFromJoystick
-<li>SDL_OpenHapticFromMouse
+<li><a href="SDL_OpenHaptic.html">SDL_OpenHaptic</a> - ハプティックデバイスを使用するためにオープンする
+<li><a href="SDL_OpenHapticFromJoystick.html">SDL_OpenHapticFromJoystick</a> - ジョイスティックからハプティックデバイスをオープンする
+<li><a href="SDL_OpenHapticFromMouse.html">SDL_OpenHapticFromMouse</a> - 使用中のマウスからハプティックデバイスをオープンする
 <li>SDL_PauseHaptic
 <li>SDL_PlayHapticRumble
 <li>SDL_ResumeHaptic
@@ -148,11 +148,11 @@ SDLハプティックサブシステムはスレッドセーフではないの�
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_Haptic
+<li><a href="SDL_Haptic.html">SDL_Haptic</a> - SDLハプティックデバイスの識別子の構造体
 <li>SDL_HapticDirectionType
 <li>SDL_HapticEffectID
 <li>SDL_HapticEffectType
-<li>SDL_HapticID
+<li><a href="SDL_HapticID.html">SDL_HapticID</a> - システムに接続されたハプティックデバイスのユニークなIDの型
 </ol>
 <h2>構造体</h2>
 <ol>
@@ -160,7 +160,7 @@ SDLハプティックサブシステムはスレッドセーフではないの�
 <li>SDL_HapticConstant
 <li>SDL_HapticCustom
 <li>SDL_HapticDirection
-<li>SDL_HapticEffect
+<li><a href="SDL_HapticEffect.html">SDL_HapticEffect</a> - ハプティック効果の全テンプレートの共用体
 <li>SDL_HapticLeftRight
 <li>SDL_HapticPeriodic
 <li>SDL_HapticRamp

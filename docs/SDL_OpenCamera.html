@@ -19,7 +19,7 @@
 <h2>引数</h2>
 <table border="1">
 <tr><td><a href="SDL_CameraID.html">SDL_CameraID</a></td><td>instance_id</td><td>カメラデバイスインスタンスID</td></tr>
-<tr><td>const <a href="SDL_CameraSpec.html">SDL_CameraSpec</a> *</td><td>spec</td><td>the desired format for data the device will provide. Can be NULL.</td></tr>
+<tr><td>const <a href="SDL_CameraSpec.html">SDL_CameraSpec</a> *</td><td>spec</td><td>デバイスに要求するデータの形式. NULLも可</td></tr>
 </table>
 <h2>戻り値</h2>
 (<a href="SDL_Camera.html">SDL_Camera</a> *) カメラオブジェクトを戻す. 失敗のときNULLを戻す.
@@ -46,6 +46,8 @@ SDLはフレームレートをエミュレートしない. 要求した速度と
 アプリケーションは<a href="SDL_CameraDeviceEvent.html">SDL_EVENT_CAMERA_DEVICE_APPROVED</a>(または<a href="SDL_CameraDeviceEvent.html">SDL_EVENT_CAMERA_DEVICE_DENIED</a>)イベントを待つか, <a href="SDL_GetCameraPermissionState.html">SDL_GetCameraPermissionState()</a>が0以外を戻すまでポーリングする必要がある.
 ユーザに明示的に許可を求めない環境(およびユーザが以前にアクセスを許可した場合)は, 許可イベントはすぐに発生する場合もあるが, 数秒後, 数分後, 数時間後もありうる.
 </p>
+<h2>スレッドセーフ</h2>
+この関数はどのスレッドでも安全に使用できる.
 <h2>バージョン</h2>
 SDL 3.2.0以降
 <h2>関連項目</h2>

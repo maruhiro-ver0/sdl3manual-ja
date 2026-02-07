@@ -18,14 +18,14 @@
 <p>
 このAPIはウェブカメラのようにアプリケーションにビデオソースから入力を読み込ませる.
 カメラデバイスに対して, 一覧の獲得, 問い合わせ, オープンを行うことができる.
-オープンすると, ビデオから入力があるたびに新しいフレームがSDL_Surfaceオブジェクトとして提供される.
-これらのサーフェイスはSDL_Textureやメモリ上のピクセル群にすることもできる.
+オープンすると, ビデオから入力があるたびに新しいフレームが<a href="SDL_Surface.html">SDL_Surface</a>オブジェクトとして提供される.
+これらのサーフェイスは<a href="SDL_Texture.html">SDL_Texture</a>やメモリ上のピクセル群にすることもできる.
 </p>
 <p>
 一部の環境では, アプリケーションがカメラにアクセスしようとするとユーザに警告する.
 さらに一部の環境では, アプリケーションが映像を獲得することを許可するかをユーザに尋ねるダイアログを表示し, 拒否されることもある.
 カメラのオープンに成功しても許可が確定するまで映像は提供されない.
-アプリケーションは, カメラデバイスをオープンした後, SDL_GetCameraPermissionState()関数のポーリングでアクセス可能になるまで待つことや, SDL_EVENT_CAMERA_DEVICE_APPROVEDまたはSDL_EVENT_CAMERA_DEVICE_DENIEDイベントを待つことが可能である.
+アプリケーションは, カメラデバイスをオープンした後, <a href="SDL_GetCameraPermissionState.html">SDL_GetCameraPermissionState()</a>関数のポーリングでアクセス可能になるまで待つことや, <a href="SDL_CameraDeviceEvent.html">SDL_EVENT_CAMERA_DEVICE_APPROVED</a>または<a href="SDL_CameraDeviceEvent.html">SDL_EVENT_CAMERA_DEVICE_DENIED</a>イベントを待つことが可能である.
 ユーザの許可を必要としない環境では, 即座に許可される.
 </p>
 <p>
@@ -46,21 +46,21 @@ SDLカメラは, 動画ファイル形式でエンコードした全フレーム
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_AcquireCameraFrame
-<li>SDL_CloseCamera
-<li>SDL_GetCameraDriver
-<li>SDL_GetCameraFormat
-<li>SDL_GetCameraID
-<li>SDL_GetCameraName
-<li>SDL_GetCameraPermissionState
-<li>SDL_GetCameraPosition
-<li>SDL_GetCameraProperties
+<li><a href="SDL_AcquireCameraFrame.html">SDL_AcquireCameraFrame</a> - カメラにビデオフレームを要求する
+<li><a href="SDL_CloseCamera.html">SDL_CloseCamera</a> - カメラ処理を終了しカメラデバイスをクローズする
+<li><a href="SDL_GetCameraDriver.html">SDL_GetCameraDriver</a> - SDLに組み込まれたカメラドライバの名前を得る
+<li><a href="SDL_GetCameraFormat.html">SDL_GetCameraFormat</a> - カメラが画像を生成するとき使用するスペックを得る
+<li><a href="SDL_GetCameraID.html">SDL_GetCameraID</a> - オープンしたカメラのインスタンスIDを得る
+<li><a href="SDL_GetCameraName.html">SDL_GetCameraName</a> - カメラの人が読めるデバイス名を得る
+<li><a href="SDL_GetCameraPermissionState.html">SDL_GetCameraPermissionState</a> - ユーザによるカメラの使用許可状態をチェックする
+<li><a href="SDL_GetCameraPosition.html">SDL_GetCameraPosition</a> - ハードウェア上のカメラの位置を得る
+<li><a href="SDL_GetCameraProperties.html">SDL_GetCameraProperties</a> - カメラに関連付けられたプロパティを得る
 <li><a href="SDL_GetCameras.html">SDL_GetCameras</a> - 接続されているカメラの一覧を得る
-<li>SDL_GetCameraSupportedFormats
-<li>SDL_GetCurrentCameraDriver
-<li>SDL_GetNumCameraDrivers
+<li><a href="SDL_GetCameraSupportedFormats.html">SDL_GetCameraSupportedFormats</a> - カメラのハードウェアが対応する形式/サイズの一覧を得る
+<li><a href="SDL_GetCurrentCameraDriver.html">SDL_GetCurrentCameraDriver</a> - 現在のカメラドライバの名前を得る
+<li><a href="SDL_GetNumCameraDrivers.html">SDL_GetNumCameraDrivers</a> - SDLに組み込まれたカメラドライバの数を得る
 <li><a href="SDL_OpenCamera.html">SDL_OpenCamera</a> - ビデオ録画デバイス(カメラ)をオープンする
-<li>SDL_ReleaseCameraFrame
+<li><a href="SDL_ReleaseCameraFrame.html">SDL_ReleaseCameraFrame</a> - カメラに要求したビデオフレームを返却する
 </ol>
 <h2>型</h2>
 <ol>
@@ -69,12 +69,12 @@ SDLカメラは, 動画ファイル形式でエンコードした全フレーム
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>SDL_CameraSpec
+<li><a href="SDL_CameraSpec.html">SDL_CameraSpec</a> - カメラデバイスの出力形式の詳細の構造体
 </ol>
 <h2>列挙体</h2>
 <ol>
-<li>SDL_CameraPermissionState
-<li>SDL_CameraPosition
+<li><a href="SDL_CameraPermissionState.html">SDL_CameraPermissionState</a> - カメラのアクセス許可状態の列挙体
+<li><a href="SDL_CameraPosition.html">SDL_CameraPosition</a> - ハードウェア上のカメラの位置の列挙体
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryCamera">SDL3/CategoryCamera - SDL Wiki</a>
