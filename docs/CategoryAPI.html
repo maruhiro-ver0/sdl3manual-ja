@@ -141,7 +141,7 @@
 <li>SDL_CreateGPUShader
 <li>SDL_CreateGPUTexture
 <li>SDL_CreateGPUTransferBuffer
-<li>SDL_CreateHapticEffect
+<li><a href="SDL_CreateHapticEffect.html">SDL_CreateHapticEffect</a> - ハプティックデバイスに新しいエフェクトを生成する
 <li><a href="SDL_CreateMutex.html">SDL_CreateMutex</a> - 新しいミューテックスを生成する
 <li><a href="SDL_CreatePalette.html">SDL_CreatePalette</a> - 色の数を指定してパレットを生成する
 <li><a href="SDL_CreatePopupWindow.html">SDL_CreatePopupWindow</a> - 指定した親ウィンドウの子ポップアップウィンドウを生成する
@@ -181,7 +181,7 @@
 <li>SDL_DestroyEnvironment
 <li>SDL_DestroyGPUDevice
 <li>SDL_DestroyGPURenderState
-<li>SDL_DestroyHapticEffect
+<li><a href="SDL_DestroyHapticEffect.html">SDL_DestroyHapticEffect</a> - ハプティックデバイスのエフェクトを再生する
 <li><a href="SDL_DestroyMutex.html">SDL_DestroyMutex</a> - SDL_CreateMutex()で生成したミューテックスを破棄する
 <li><a href="SDL_DestroyPalette.html">SDL_DestroyPalette</a> - SDL_CreatePalette()で生成したパレットを解放する
 <li><a href="SDL_DestroyProcess.html">SDL_DestroyProcess</a> - プロセスオブジェクトを破棄する
@@ -396,11 +396,11 @@
 <li>SDL_GetGPUSwapchainTextureFormat
 <li>SDL_GetGPUTextureFormatFromPixelFormat
 <li><a href="SDL_GetGrabbedWindow.html">SDL_GetGrabbedWindow</a> - 入力グラブされているウィンドウを得る
-<li>SDL_GetHapticEffectStatus
+<li><a href="SDL_GetHapticEffectStatus.html">SDL_GetHapticEffectStatus</a> - ハプティックデバイスのエフェクトの再生状態を得る
 <li>SDL_GetHapticFeatures
 <li>SDL_GetHapticFromID
 <li>SDL_GetHapticID
-<li>SDL_GetHapticName
+<li><a href="SDL_GetHapticName.html">SDL_GetHapticName</a> - ハプティックデバイスの実装に依存する名前を得る
 <li>SDL_GetHapticNameForID
 <li><a href="SDL_GetHaptics.html">SDL_GetHaptics</a> - 接続されているハプティックデバイスの一覧を得る
 <li><a href="SDL_GetHint.html">SDL_GetHint</a> - ヒントの値を得る
@@ -960,7 +960,7 @@
 <li><a href="SDL_RumbleJoystick.html">SDL_RumbleJoystick</a> - ジョイスティックの振動を開始する
 <li><a href="SDL_RumbleJoystickTriggers.html">SDL_RumbleJoystickTriggers</a> - ジョイスティックのトリガーの振動を開始する
 <li><a href="SDL_RunApp.html">SDL_RunApp</a> - SDLアプリケーションの初期化と起動を行う
-<li>SDL_RunHapticEffect
+<li><a href="SDL_RunHapticEffect.html">SDL_RunHapticEffect</a> - ハプティックデバイスのエフェクトを再生する
 <li><a href="SDL_RunOnMainThread.html">SDL_RunOnMainThread</a> - メインスレッドで関数を実行する
 <li><a href="SDL_SaveBMP.html">SDL_SaveBMP</a> - サーフェイスをBMPファイルとして保存する
 <li><a href="SDL_SaveBMP_IO.html">SDL_SaveBMP_IO</a> - サーフェイスをシーク可能なSDLデータストリームにBMP形式で書き込む
@@ -1369,10 +1369,10 @@
 <li>SDL_GPUTexture
 <li>SDL_GPUTextureUsageFlags
 <li>SDL_GPUTransferBuffer
-<li><a href="SDL_Haptic.html">SDL_Haptic</a> - SDLハプティックデバイスの識別子の構造体
-<li>SDL_HapticDirectionType
-<li>SDL_HapticEffectID
-<li>SDL_HapticEffectType
+<li><a href="SDL_Haptic.html">SDL_Haptic</a> - SDLハプティックデバイスオブジェクトの型
+<li><a href="SDL_HapticDirectionType.html">SDL_HapticDirectionType</a> - ハプティックの方向で使用する座標系の型
+<li><a href="SDL_HapticEffectID.html">SDL_HapticEffectID</a> - ハプティックエフェクトIDの型
+<li><a href="SDL_HapticEffectType.html">SDL_HapticEffectType</a> - ハプティックエフェクトの種類の型
 <li><a href="SDL_HapticID.html">SDL_HapticID</a> - システムに接続されたハプティックデバイスのユニークなIDの型
 <li><a href="SDL_hid_device.html">SDL_hid_device</a> - オープンしたHIDデバイスのハンドルの不透明型
 <li><a href="SDL_HintCallback.html">SDL_HintCallback</a> - ヒントの値の変化の通知するために使用されるコールバックの型
@@ -1508,14 +1508,14 @@
 <li>SDL_GPUVertexInputState
 <li>SDL_GPUViewport
 <li><a href="SDL_GUID.html">SDL_GUID</a> - 128ビットの識別子の構造体
-<li>SDL_HapticCondition
-<li>SDL_HapticConstant
-<li>SDL_HapticCustom
-<li>SDL_HapticDirection
-<li><a href="SDL_HapticEffect.html">SDL_HapticEffect</a> - ハプティック効果の全テンプレートの共用体
-<li>SDL_HapticLeftRight
-<li>SDL_HapticPeriodic
-<li>SDL_HapticRamp
+<li><a href="SDL_HapticCondition.html">SDL_HapticCondition</a> - 条件エフェクトのテンプレートの構造体
+<li><a href="SDL_HapticConstant.html">SDL_HapticConstant</a> - 一定エフェクトのテンプレートの構造体
+<li><a href="SDL_HapticCustom.html">SDL_HapticCustom</a> - カスタムエフェクトのテンプレートの構造体
+<li><a href="SDL_HapticDirection.html">SDL_HapticDirection</a> - エフェクトの方向の構造体
+<li><a href="SDL_HapticEffect.html">SDL_HapticEffect</a> - ハプティックエフェクトの全テンプレートの共用体
+<li><a href="SDL_HapticLeftRight.html">SDL_HapticLeftRight</a> - 左右エフェクトのテンプレートの構造体
+<li><a href="SDL_HapticPeriodic.html">SDL_HapticPeriodic</a> - 周期エフェクトのテンプレートの構造体
+<li><a href="SDL_HapticRamp.html">SDL_HapticRamp</a> - 増減エフェクトのテンプレートの構造体
 <li><a href="SDL_hid_device_info.html">SDL_hid_device_info</a> - 接続されたHIDデバイスの情報の構造体
 <li><a href="SDL_InitState.html">SDL_InitState</a> - スレッドセーフな初期化と終了で使用する構造体
 <li><a href="SDL_IOStreamInterface.html">SDL_IOStreamInterface</a> - SDL_IOStreamの処理を行う関数へのポインタの構造体
@@ -1804,30 +1804,30 @@
 <li>SDL_GPU_TEXTUREUSAGE_SAMPLER
 <li><a href="SDL_GUARDED_BY.html">SDL_GUARDED_BY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
 <li>SDL_HAPTIC_AUTOCENTER
-<li>SDL_HAPTIC_CARTESIAN
-<li>SDL_HAPTIC_CONSTANT
-<li>SDL_HAPTIC_CUSTOM
-<li>SDL_HAPTIC_DAMPER
-<li>SDL_HAPTIC_FRICTION
+<li><a href="SDL_HAPTIC_CARTESIAN.html">SDL_HAPTIC_CARTESIAN</a> - ハプティックデバイスのエフェクトの方向で直交座標を使用することを表すマクロ
+<li><a href="SDL_HAPTIC_CONSTANT.html">SDL_HAPTIC_CONSTANT</a> - ハプティックデバイスの一定エフェクトを表すマクロ
+<li><a href="SDL_HAPTIC_CUSTOM.html">SDL_HAPTIC_CUSTOM</a> - ハプティックデバイスのカスタムエフェクトを表すマクロ
+<li><a href="SDL_HAPTIC_DAMPER.html">SDL_HAPTIC_DAMPER</a> - ハプティックデバイスのダンパーエフェクト(速度を使用)を表すマクロ
+<li><a href="SDL_HAPTIC_FRICTION.html">SDL_HAPTIC_FRICTION</a> - ハプティックデバイスの摩擦エフェクト(運動を使用)を表すマクロ
 <li>SDL_HAPTIC_GAIN
-<li>SDL_HAPTIC_INERTIA
-<li>SDL_HAPTIC_INFINITY
-<li>SDL_HAPTIC_LEFTRIGHT
+<li><a href="SDL_HAPTIC_INERTIA.html">SDL_HAPTIC_INERTIA</a> - ハプティックデバイスの慣性エフェクト(加速度を使用)を表すマクロ
+<li><a href="SDL_HAPTIC_INFINITY.html">SDL_HAPTIC_INFINITY</a> - ハプティックデバイスの無限の再生回数のマクロ
+<li><a href="SDL_HAPTIC_LEFTRIGHT.html">SDL_HAPTIC_LEFTRIGHT</a> - ハプティックデバイスの左右エフェクトを表すマクロ
 <li>SDL_HAPTIC_PAUSE
-<li>SDL_HAPTIC_POLAR
-<li>SDL_HAPTIC_RAMP
+<li><a href="SDL_HAPTIC_POLAR.html">SDL_HAPTIC_POLAR</a> - ハプティックデバイスのエフェクトの方向で極座標を使用することを表すマクロ
+<li><a href="SDL_HAPTIC_RAMP.html">SDL_HAPTIC_RAMP</a> - ハプティックデバイスの増減エフェクトを表すマクロ
 <li>SDL_HAPTIC_RESERVED1
 <li>SDL_HAPTIC_RESERVED2
 <li>SDL_HAPTIC_RESERVED3
-<li>SDL_HAPTIC_SAWTOOTHDOWN
-<li>SDL_HAPTIC_SAWTOOTHUP
-<li>SDL_HAPTIC_SINE
-<li>SDL_HAPTIC_SPHERICAL
-<li>SDL_HAPTIC_SPRING
-<li>SDL_HAPTIC_SQUARE
+<li><a href="SDL_HAPTIC_SAWTOOTHDOWN.html">SDL_HAPTIC_SAWTOOTHDOWN</a> - ハプティックデバイスの下降ノコギリ波エフェクトを表すマクロ
+<li><a href="SDL_HAPTIC_SAWTOOTHUP.html">SDL_HAPTIC_SAWTOOTHUP</a> - ハプティックデバイスの上昇ノコギリ波エフェクトを表すマクロ
+<li><a href="SDL_HAPTIC_SINE.html">SDL_HAPTIC_SINE</a> - ハプティックデバイスのサイン波エフェクトを表すマクロ
+<li><a href="SDL_HAPTIC_SPHERICAL.html">SDL_HAPTIC_SPHERICAL</a> - ハプティックデバイスのエフェクトの方向で球面座標を使用することを表すマクロ
+<li><a href="SDL_HAPTIC_SPRING.html">SDL_HAPTIC_SPRING</a> - ハプティックデバイスのバネエフェクト(位置を使用)を表すマクロ
+<li><a href="SDL_HAPTIC_SQUARE.html">SDL_HAPTIC_SQUARE</a> - ハプティックデバイスの矩形波エフェクトを表すマクロ
 <li>SDL_HAPTIC_STATUS
 <li>SDL_HAPTIC_STEERING_AXIS
-<li>SDL_HAPTIC_TRIANGLE
+<li><a href="SDL_HAPTIC_TRIANGLE.html">SDL_HAPTIC_TRIANGLE</a> - ハプティックデバイスの三角波エフェクトを表すマクロ
 <li>SDL_HAS_BUILTIN
 <li><a href="SDL_HAS_TARGET_ATTRIBS.html">SDL_HAS_TARGET_ATTRIBS</a> - コンパイラが__attribute__((target))に対応しているとき定義されているマクロ
 <li>SDL_HAT_CENTERED

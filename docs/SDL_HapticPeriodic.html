@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryHaptic.html" title="1つ上">
+<title>SDL_HapticPeriodic</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryHaptic.html">力覚フィードバック</a> - SDL_HapticPeriodic
+<hr>
+<h1>SDL_HapticPeriodic</h1>
+周期エフェクトのテンプレートの構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_haptic.h">SDL3/SDL_haptic.h</a>
+<h2>フィールド</h2>
+<table border="1">
+<tr><td colspan="3" align="center">ヘッダ</td></tr>
+<tr><td><a href="SDL_HapticEffectType.html">SDL_HapticEffectType</a></td><td>type</td><td>SDL_HAPTIC_SINE, SDL_HAPTIC_SQUARE, SDL_HAPTIC_TRIANGLE, SDL_HAPTIC_SAWTOOTHUP, SDL_HAPTIC_SAWTOOTHDOWN</td></tr>
+<tr><td><a href="SDL_HapticDirection.html">SDL_HapticDirection</a></td><td>direction</td><td>(ユーザに相対的な)エフェクトの向き</td></tr>
+<tr><td colspan="3" align="center">再生</td></tr>
+<tr><td>Uint32</td><td>length</td><td>継続時間(ミリ秒)</td></tr>
+<tr><td>Uint16</td><td>delay</td><td>エフェクトが始まるまでの待ち時間</td></tr>
+<tr><td colspan="3" align="center">トリガ</td></tr>
+<tr><td>Uint16</td><td>button</td><td>エフェクトを引き起こすボタン</td></tr>
+<tr><td>Uint16</td><td>interval</td><td>エフェクトを再び引き起こす時間</td></tr>
+<tr><td colspan="3" align="center">周期</td></tr>
+<tr><td>Uint16</td><td>period</td><td>波の周期</td></tr>
+<tr><td>Sint16</td><td>magnitude</td><td>ピーク値. 負のとき180度位相がずれる</td></tr>
+<tr><td>Sint16</td><td>offset</td><td>波の平均値</td></tr>
+<tr><td>Uint16</td><td>phase</td><td>円の100分の1単位の水平方向のずれ</td></tr>
+<tr><td colspan="3" align="center">エンベロープ</td></tr>
+<tr><td>Uint16</td><td>attack_length</td><td>立ち上がりの継続時間</td></tr>
+<tr><td>Uint16</td><td>attack_level</td><td>立ち上がりの強さ</td></tr>
+<tr><td>Uint16</td><td>fade_length</td><td>立ち下げの継続時間</td></tr>
+<tr><td>Uint16</td><td>fade_level</td><td>立ち下げの強さ</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+この構造体は次のエフェクトを扱う:
+</p>
+<ul>
+<li><a href="SDL_HAPTIC_SINE.html">SDL_HAPTIC_SINE</a>: サイン波
+<li><a href="SDL_HAPTIC_SQUARE.html">SDL_HAPTIC_SQUARE</a>: 矩形波
+<li><a href="SDL_HAPTIC_TRIANGLE.html">SDL_HAPTIC_TRIANGLE</a>: 三角波
+<li><a href="SDL_HAPTIC_SAWTOOTHUP.html">SDL_HAPTIC_SAWTOOTHUP</a>: 上昇ノコギリ波
+<li><a href="SDL_HAPTIC_SAWTOOTHDOWN.html">SDL_HAPTIC_SAWTOOTHDOWN</a>: 下降ノコギリ波
+</ul>
+<p>
+周期エフェクトは, エフェクトを波のように何度も繰り返す.
+<code>type</code>は波形を決め, 他のパラメータは次元を決める.
+</p>
+<p>
+<code>phase</code>は1度の100分の1単位で指定する.
+もし9000ならば, 位相が25%ずれる.
+以下は値の例である.
+</p>
+<ul>
+<li>0: 位相のずれなし
+<li>9000: 位相が25%ずれる
+<li>18000: 位相が50%ずれる
+<li>27000: 位相が75%ずれる
+<li>36000: 位相が100%ずれる. 0と同じだが, 0が推奨される
+</ul>
+<p>
+例:
+</p>
+<p>
+<a href="SDL_HAPTIC_SINE.html">SDL_HAPTIC_SINE</a><br>
+<pre>
+  __      __      __      __
+ /  ¥    /  ¥    /  ¥    /
+/    ¥__/    ¥__/    ¥__/
+</pre>
+</p>
+<p>
+<a href="SDL_HAPTIC_TRIANGLE.html">SDL_HAPTIC_TRIANGLE</a><br>
+<pre>
+  /¥    /¥    /¥    /¥    /¥
+ /  ¥  /  ¥  /  ¥  /  ¥  /
+/    ¥/    ¥/    ¥/    ¥/
+</pre>
+</p>
+<p>
+<a href="SDL_HAPTIC_SAWTOOTHUP.html">SDL_HAPTIC_SAWTOOTHUP</a><br>
+<pre>
+  /|  /|  /|  /|  /|  /|  /|
+ / | / | / | / | / | / | / |
+/  |/  |/  |/  |/  |/  |/  |
+</pre>
+</p>
+<p>
+<a href="SDL_HAPTIC_SAWTOOTHDOWN.html">SDL_HAPTIC_SAWTOOTHDOWN</a><br>
+<pre>
+¥  |¥  |¥  |¥  |¥  |¥  |¥  |
+ ¥ | ¥ | ¥ | ¥ | ¥ | ¥ | ¥ |
+  ¥|  ¥|  ¥|  ¥|  ¥|  ¥|  ¥|
+</pre>
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_HAPTIC_LEFTRIGHT.html">SDL_HAPTIC_LEFTRIGHT</a>
+<li><a href="SDL_HapticEffect.html">SDL_HapticEffect</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_HapticPeriodic">SDL_HapticPeriodic - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
