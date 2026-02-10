@@ -21,7 +21,7 @@
 </table>
 <h2>詳細</h2>
 <p>
-This is the direction where the force comes from, instead of the direction in which the force is exerted.
+これは力が来る方向であり, 力が向かう方向ではない.
 </p>
 <p>
 座標系には次のものがある:
@@ -67,8 +67,8 @@ This is the direction where the force comes from, instead of the direction in wh
 </pre>
 </p>
 <p>
-typeがSDL_HAPTIC_POLARならば, 方向は北から時計回りの度数の100倍で指定する.
-SDL_HAPTIC_POLARはdirの1番目のみ使う.
+<code>type</code>が<a href="SDL_HAPTIC_POLAR.html">SDL_HAPTIC_POLAR</a>ならば, 方向は北から時計回りの度数の100倍で指定する.
+<a href="SDL_HAPTIC_POLAR.html">SDL_HAPTIC_POLAR</a>は<code>dir</code>の1番目のみ使う.
 基本方位は次のようになる.
 </p>
 <ul>
@@ -78,8 +78,8 @@ SDL_HAPTIC_POLARはdirの1番目のみ使う.
 <li>西: 27000 (270度)
 </ul>
 <p>
-typeがSDL_HAPTIC_CARTESIANならば, 方向は3軸(X軸, Y軸, Z軸)で指定する.
-SDL_HAPTIC_CARTESIANはdirの3番目までを使う.
+<code>type</code>が<a href="SDL_HAPTIC_CARTESIAN.html">SDL_HAPTIC_CARTESIAN</a>ならば, 方向は3軸(X軸, Y軸, Z軸)で指定する.
+<a href="SDL_HAPTIC_CARTESIAN.html">SDL_HAPTIC_CARTESIAN</a>は<code>dir</code>の3番目までを使う.
 基本方位は次のようになる.
 </p>
 <ul>
@@ -93,9 +93,9 @@ SDL_HAPTIC_CARTESIANはdirの3番目までを使う.
 直行座標系では(1, 2)は(2, 4)は同じである. 考慮されるのは方向のみで, 望むならば何倍にしてもよい.
 </p>
 <p>
-typeがSDL_HAPTIC_SPHERICALならば, 方向は2つの角度で指定する.
-dirの2番目までを使う.
-dirの値は次の通りである(全ての値は度数の100倍).
+<code>type</code>が<a href="SDL_HAPTIC_SPHERICAL.html">SDL_HAPTIC_SPHERICAL</a>ならば, 方向は2つの角度で指定する.
+<code>dir</code>の2番目までを使う.
+<code>dir</code>の値は次の通りである(全ての値は度数の100倍).
 </p>
 <ul>
 <li>(1, 0)から(0, 1)へ回転する角度</td></tr>

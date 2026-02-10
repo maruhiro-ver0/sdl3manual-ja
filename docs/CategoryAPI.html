@@ -397,11 +397,11 @@
 <li>SDL_GetGPUTextureFormatFromPixelFormat
 <li><a href="SDL_GetGrabbedWindow.html">SDL_GetGrabbedWindow</a> - 入力グラブされているウィンドウを得る
 <li><a href="SDL_GetHapticEffectStatus.html">SDL_GetHapticEffectStatus</a> - ハプティックデバイスのエフェクトの再生状態を得る
-<li>SDL_GetHapticFeatures
-<li>SDL_GetHapticFromID
-<li>SDL_GetHapticID
-<li><a href="SDL_GetHapticName.html">SDL_GetHapticName</a> - ハプティックデバイスの実装に依存する名前を得る
-<li>SDL_GetHapticNameForID
+<li><a href="SDL_GetHapticFeatures.html">SDL_GetHapticFeatures</a> - ハプティックデバイスの対応する機能を得る
+<li><a href="SDL_GetHapticFromID.html">SDL_GetHapticFromID</a> - オープンされている場合, インスタンスIDからハプティックデバイスオブジェクトを得る
+<li><a href="SDL_GetHapticID.html">SDL_GetHapticID</a> - オープンされたハプティックデバイスからインスタンスIDを得る
+<li><a href="SDL_GetHapticName.html">SDL_GetHapticName</a> - オープンされたハプティックデバイスの実装に依存する名前を得る
+<li><a href="SDL_GetHapticNameForID.html">SDL_GetHapticNameForID</a> - インスタンスIDからハプティックデバイスの実装に依存する名前を得る
 <li><a href="SDL_GetHaptics.html">SDL_GetHaptics</a> - 接続されているハプティックデバイスの一覧を得る
 <li><a href="SDL_GetHint.html">SDL_GetHint</a> - ヒントの値を得る
 <li><a href="SDL_GetHintBoolean.html">SDL_GetHintBoolean</a> - ヒントの真偽値を得る
@@ -449,8 +449,8 @@
 <li><a href="SDL_GetLogOutputFunction.html">SDL_GetLogOutputFunction</a> - 現在のログ出力関数を得る
 <li><a href="SDL_GetLogPriority.html">SDL_GetLogPriority</a> - ログの分類の重要度を得る
 <li><a href="SDL_GetMasksForPixelFormat.html">SDL_GetMasksForPixelFormat</a> - ピクセル形式からビット深度とRGBAマスクを得る
-<li>SDL_GetMaxHapticEffects
-<li>SDL_GetMaxHapticEffectsPlaying
+<li><a href="SDL_GetMaxHapticEffects.html">SDL_GetMaxHapticEffects</a> - ハプティックデバイスに格納できるエフェクトの数を得る
+<li><a href="SDL_GetMaxHapticEffectsPlaying.html">SDL_GetMaxHapticEffectsPlaying</a> - ハプティックデバイスが同時に再生できるエフェクトの数を得る
 <li>SDL_GetMemoryFunctions
 <li><a href="SDL_GetMice.html">SDL_GetMice</a> - 接続されたマウスの一覧を得る
 <li><a href="SDL_GetModState.html">SDL_GetModState</a> - 現在の修飾キーの状態を得る
@@ -465,7 +465,7 @@
 <li><a href="SDL_GetNumGamepadTouchpadFingers.html">SDL_GetNumGamepadTouchpadFingers</a> - ゲームパッドのタッチパッドで同時に認識できる指の数を得る
 <li><a href="SDL_GetNumGamepadTouchpads.html">SDL_GetNumGamepadTouchpads</a> - ゲームパッドのタッチパッド数を得る
 <li>SDL_GetNumGPUDrivers
-<li>SDL_GetNumHapticAxes
+<li><a href="SDL_GetNumHapticAxes.html">SDL_GetNumHapticAxes</a> - ハプティックデバイスの方向の数を得る
 <li><a href="SDL_GetNumJoystickAxes.html">SDL_GetNumJoystickAxes</a> - ジョイスティックの方向コントローラーの数を得る
 <li><a href="SDL_GetNumJoystickBalls.html">SDL_GetNumJoystickBalls</a> - ジョイスティックのトラックボールの数を得る
 <li><a href="SDL_GetNumJoystickButtons.html">SDL_GetNumJoystickButtons</a> - ジョイスティックのボタンの数を得る
@@ -536,8 +536,8 @@
 <li><a href="SDL_GetSensorData.html">SDL_GetSensorData</a> - オープンしたセンサーの現在の状態を得る
 <li><a href="SDL_GetSensorFromID.html">SDL_GetSensorFromID</a> - オープンされている場合, インスタンスIDと関連付けられたSDL_Sensorを得る
 <li><a href="SDL_GetSensorID.html">SDL_GetSensorID</a> - オープンされたセンサーのインスタンスIDを得る
-<li><a href="SDL_GetSensorName.html">SDL_GetSensorName</a> - オープンされたセンサーの実装に依存した名前を得る
-<li><a href="SDL_GetSensorNameForID.html">SDL_GetSensorNameForID</a> - センサーの実装に依存した名前を得る
+<li><a href="SDL_GetSensorName.html">SDL_GetSensorName</a> - オープンされたセンサーの実装に依存する名前を得る
+<li><a href="SDL_GetSensorNameForID.html">SDL_GetSensorNameForID</a> - センサーの実装に依存する名前を得る
 <li><a href="SDL_GetSensorNonPortableType.html">SDL_GetSensorNonPortableType</a> - オープンしたセンサーの環境に依存した種類を得る
 <li><a href="SDL_GetSensorNonPortableTypeForID.html">SDL_GetSensorNonPortableTypeForID</a> - センサーの環境に依存した種類を得る
 <li><a href="SDL_GetSensorProperties.html">SDL_GetSensorProperties</a> - センサーに関連付けられたプロパティを得る
@@ -647,7 +647,7 @@
 <li>SDL_GPUTextureSupportsFormat
 <li>SDL_GPUTextureSupportsSampleCount
 <li><a href="SDL_GUIDToString.html">SDL_GUIDToString</a> - SDL_GUIDからASCII文字列を得る
-<li>SDL_HapticEffectSupported
+<li><a href="SDL_HapticEffectSupported.html">SDL_HapticEffectSupported</a> - ハプティックデバイスがエフェクトに対応しているかチェックする
 <li>SDL_HapticRumbleSupported
 <li><a href="SDL_HasAltiVec.html">SDL_HasAltiVec</a> - CPUにAltiVec仕様があるかチェックする
 <li><a href="SDL_HasARMSIMD.html">SDL_HasARMSIMD</a> - CPUにARM SIMD (ARMv6)仕様があるかチェックする
