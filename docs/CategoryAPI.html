@@ -148,19 +148,19 @@
 <li><a href="SDL_CreateProcess.html">SDL_CreateProcess</a> - 新しいプロセスを生成する
 <li><a href="SDL_CreateProcessWithProperties.html">SDL_CreateProcessWithProperties</a> - プロパティを指定して新しいプロセスを生成する
 <li><a href="SDL_CreateProperties.html">SDL_CreateProperties</a> - プロパティグループを生成する
-<li>SDL_CreateRenderer
-<li>SDL_CreateRendererWithProperties
+<li><a href="SDL_CreateRenderer.html">SDL_CreateRenderer</a> - ウィンドウの2Dレンダリングコンテキストを生成する
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_CreateRendererWithProperties</a> - プロパティを指定してウィンドウの2Dレンダリングコンテキストを生成する
 <li><a href="SDL_CreateRWLock.html">SDL_CreateRWLock</a> - 読取/書込ロックを生成する
 <li><a href="SDL_CreateSemaphore.html">SDL_CreateSemaphore</a> - 新しいセマフォを生成する
-<li>SDL_CreateSoftwareRenderer
+<li><a href="SDL_CreateSoftwareRenderer.html">SDL_CreateSoftwareRenderer</a> - サーフェイスの2Dソフトウェアレンダリングコンテキストを作成する
 <li><a href="SDL_CreateStorageDirectory.html">SDL_CreateStorageDirectory</a> - 書込可能ストレージコンテナにディレクトリを作成する
 <li><a href="SDL_CreateSurface.html">SDL_CreateSurface</a> - 指定したピクセル形式で新しいサーフェイスを生成する
 <li><a href="SDL_CreateSurfaceFrom.html">SDL_CreateSurfaceFrom</a> - 既存のピクセルデータから指定のピクセル形式の新しいサーフェイスを生成する
 <li><a href="SDL_CreateSurfacePalette.html">SDL_CreateSurfacePalette</a> - パレットを生成してサーフェイスに関連付ける
 <li><a href="SDL_CreateSystemCursor.html">SDL_CreateSystemCursor</a> - システムカーソルを生成する
-<li>SDL_CreateTexture
-<li>SDL_CreateTextureFromSurface
-<li>SDL_CreateTextureWithProperties
+<li><a href="SDL_CreateTexture.html">SDL_CreateTexture</a> - レンダリングコンテキストのテクスチャを生成する
+<li><a href="SDL_CreateTextureFromSurface.html">SDL_CreateTextureFromSurface</a> - サーフェイスからテクスチャを生成する
+<li><a href="SDL_CreateTextureWithProperties.html">SDL_CreateTextureWithProperties</a> - プロパティを指定してレンダリングコンテキストのテクスチャを生成する
 <li><a href="SDL_CreateThread.html">SDL_CreateThread</a> - 新しいスレッドをデフォルトのスタックサイズで生成する
 <li><a href="SDL_CreateThreadWithProperties.html">SDL_CreateThreadWithProperties</a> - 新しいスレッドをプロパティを指定して生成する
 <li><a href="SDL_CreateTray.html">SDL_CreateTray</a> - OSのシステムトレイ(またはそれと同等のもの)にアイコンを生成する
@@ -186,11 +186,11 @@
 <li><a href="SDL_DestroyPalette.html">SDL_DestroyPalette</a> - SDL_CreatePalette()で生成したパレットを解放する
 <li><a href="SDL_DestroyProcess.html">SDL_DestroyProcess</a> - プロセスオブジェクトを破棄する
 <li><a href="SDL_DestroyProperties.html">SDL_DestroyProperties</a> - プロパティグループを破棄する
-<li>SDL_DestroyRenderer
+<li><a href="SDL_DestroyRenderer.html">SDL_DestroyRenderer</a> - ウィンドウのレンダリングコンテキストと関連のテクスチャを破棄する
 <li><a href="SDL_DestroyRWLock.html">SDL_DestroyRWLock</a> - SDL_CreateRWLock()で生成した読取/書込ロックを破棄する
 <li><a href="SDL_DestroySemaphore.html">SDL_DestroySemaphore</a> - セマフォを破棄する
 <li><a href="SDL_DestroySurface.html">SDL_DestroySurface</a> - サーフェイスを破棄する 
-<li>SDL_DestroyTexture
+<li><a href="SDL_DestroyTexture.html">SDL_DestroyTexture</a> - テクスチャを破棄する
 <li><a href="SDL_DestroyTray.html">SDL_DestroyTray</a> - システムトレイオブジェクトを破棄する
 <li><a href="SDL_DestroyWindow.html">SDL_DestroyWindow</a> - ウィンドウを破棄する
 <li><a href="SDL_DestroyWindowSurface.html">SDL_DestroyWindowSurface</a> - ウィンドウに関連付けられたサーフェイスを破棄する
@@ -471,7 +471,7 @@
 <li><a href="SDL_GetNumJoystickButtons.html">SDL_GetNumJoystickButtons</a> - ジョイスティックのボタンの数を得る
 <li><a href="SDL_GetNumJoystickHats.html">SDL_GetNumJoystickHats</a> - ジョイスティックのPOVハットの数を得る
 <li><a href="SDL_GetNumLogicalCPUCores.html">SDL_GetNumLogicalCPUCores</a> - CPUの使用可能な論理コア数を得る
-<li>SDL_GetNumRenderDrivers
+<li><a href="SDL_GetNumRenderDrivers.html">SDL_GetNumRenderDrivers</a> - 組み込まれた2Dレンダリングドライバの数を得る
 <li><a href="SDL_GetNumVideoDrivers.html">SDL_GetNumVideoDrivers</a> - SDLにコンパイルされたビデオドライバの数を得る
 <li>SDL_GetOriginalMemoryFunctions
 <li><a href="SDL_GetPathInfo.html">SDL_GetPathInfo</a> - ファイルシステムパスの情報を得る
@@ -508,7 +508,7 @@
 <li>SDL_GetRenderDrawBlendMode
 <li>SDL_GetRenderDrawColor
 <li>SDL_GetRenderDrawColorFloat
-<li>SDL_GetRenderDriver
+<li><a href="SDL_GetRenderDriver.html">SDL_GetRenderDriver</a> - 組み込まれた2Dレンダリングドライバの名前を得る
 <li>SDL_GetRenderer
 <li>SDL_GetRendererFromTexture
 <li>SDL_GetRendererName
@@ -648,7 +648,7 @@
 <li>SDL_GPUTextureSupportsSampleCount
 <li><a href="SDL_GUIDToString.html">SDL_GUIDToString</a> - SDL_GUIDからASCII文字列を得る
 <li><a href="SDL_HapticEffectSupported.html">SDL_HapticEffectSupported</a> - ハプティックデバイスがエフェクトに対応しているかチェックする
-<li>SDL_HapticRumbleSupported
+<li><a href="SDL_HapticRumbleSupported.html">SDL_HapticRumbleSupported</a> - ハプティックデバイスが単純な振動に対応しているかチェックする
 <li><a href="SDL_HasAltiVec.html">SDL_HasAltiVec</a> - CPUにAltiVec仕様があるかチェックする
 <li><a href="SDL_HasARMSIMD.html">SDL_HasARMSIMD</a> - CPUにARM SIMD (ARMv6)仕様があるかチェックする
 <li><a href="SDL_HasAVX.html">SDL_HasAVX</a> - CPUにAVX仕様があるかチェックする
@@ -707,7 +707,7 @@
 <li>SDL_iconv_open
 <li>SDL_iconv_string
 <li><a href="SDL_Init.html">SDL_Init</a> - SDLライブラリを初期化する
-<li>SDL_InitHapticRumble
+<li><a href="SDL_InitHapticRumble.html">SDL_InitHapticRumble</a> - ジョイスティックにハプティックの機能があるかチェックする
 <li><a href="SDL_InitSubSystem.html">SDL_InitSubSystem</a> - SDLライブラリを初期化する互換関数
 <li>SDL_InsertGPUDebugLabel
 <li><a href="SDL_InsertTrayEntryAt.html">SDL_InsertTrayEntryAt</a> - トレイの項目を指定の場所に挿入する
@@ -730,11 +730,11 @@
 <li>SDL_isgraph
 <li>SDL_isinf
 <li>SDL_isinff
-<li>SDL_IsJoystickHaptic
+<li><a href="SDL_IsJoystickHaptic.html">SDL_IsJoystickHaptic</a> - ジョイスティックにハプティックの機能があるかチェックする
 <li><a href="SDL_IsJoystickVirtual.html">SDL_IsJoystickVirtual</a> - ジョイスティックが仮想か否かをチェックする
 <li>SDL_islower
 <li><a href="SDL_IsMainThread.html">SDL_IsMainThread</a> - スレッドがメインスレッドかチェックする
-<li>SDL_IsMouseHaptic
+<li><a href="SDL_IsMouseHaptic.html">SDL_IsMouseHaptic</a> - マウスにハプティックの機能があるかチェックする
 <li>SDL_isnan
 <li>SDL_isnanf
 <li>SDL_isprint
@@ -836,9 +836,9 @@
 <li><a href="SDL_OutOfMemory.html">SDL_OutOfMemory</a> - メモリの確保に失敗したことを表すエラーを設定する
 <li><a href="SDL_PauseAudioDevice.html">SDL_PauseAudioDevice</a> - オーディオデバイスの再生を一時停止する
 <li><a href="SDL_PauseAudioStreamDevice.html">SDL_PauseAudioStreamDevice</a> - オーディオデバイスに関連付けられたオーディオストリームの再生を一時停止する
-<li>SDL_PauseHaptic
+<li><a href="SDL_PauseHaptic.html">SDL_PauseHaptic</a> - ハプティックデバイスを一時停止する
 <li><a href="SDL_PeepEvents.html">SDL_PeepEvents</a> - イベントキューのメッセージをチェックし, それらを戻す
-<li>SDL_PlayHapticRumble
+<li><a hreF="SDL_PlayHapticRumble.html">SDL_PlayHapticRumble</a> - ハプティックデバイスの単純な振動を開始する
 <li><a href="SDL_PointInRect.html">SDL_PointInRect</a> - 点が長方形の内側にあるかチェックする
 <li><a href="SDL_PointInRectFloat.html">SDL_PointInRectFloat</a> - 浮動小数点で表された点が長方形の内側にあるかチェックする
 <li><a href="SDL_PollEvent.html">SDL_PollEvent</a> - 未処理のイベントをキューから得る
@@ -952,7 +952,7 @@
 <li><a href="SDL_RestoreWindow.html">SDL_RestoreWindow</a> - 最小化または最大化されたウィンドウの位置とサイズを戻すように要求する
 <li><a href="SDL_ResumeAudioDevice.html">SDL_ResumeAudioDevice</a> - オーディオデバイスの再生の一時停止を解除する
 <li><a href="SDL_ResumeAudioStreamDevice.html">SDL_ResumeAudioStreamDevice</a> - オーディオデバイスに関連付けられたオーディオストリームの一時停止を解除する
-<li>SDL_ResumeHaptic
+<li><a href="SDL_ResumeHaptic.html">SDL_ResumeHaptic</a> - 一時停止中のハプティックデバイスを再開する
 <li>SDL_round
 <li>SDL_roundf
 <li><a href="SDL_RumbleGamepad.html">SDL_RumbleGamepad</a> - ジョイスティックの振動を開始する
@@ -1023,8 +1023,8 @@
 <li>SDL_SetGPUSwapchainParameters
 <li>SDL_SetGPUTextureName
 <li>SDL_SetGPUViewport
-<li>SDL_SetHapticAutocenter
-<li>SDL_SetHapticGain
+<li><a href="SDL_SetHapticAutocenter.html">SDL_SetHapticAutocenter</a> - ハプティックデバイスの自動センタリングを設定する
+<li><a href="SDL_SetHapticGain.html">SDL_SetHapticGain</a> - 指定のハプティックデバイスのゲインを設定する
 <li><a href="SDL_SetHint.html">SDL_SetHint</a> - ヒントを通常の優先度で設定する
 <li><a href="SDL_SetHintWithPriority.html">SDL_SetHintWithPriority</a> - ヒントを指定の優先度で設定する
 <li><a href="SDL_SetInitialized.html">SDL_SetInitialized</a> - 初期化状態を完了にする
@@ -1145,9 +1145,9 @@
 <li><a href="SDL_StartTextInputWithProperties.html">SDL_StartTextInputWithProperties</a> - プロパティを設定してウィンドウのUnicodeテキスト入力イベントの受け入れを開始する
 <li>SDL_StepBackUTF8
 <li>SDL_StepUTF8
-<li>SDL_StopHapticEffect
-<li>SDL_StopHapticEffects
-<li>SDL_StopHapticRumble
+<li><a href="SDL_StopHapticEffect.html">SDL_StopHapticEffect</a> - ハプティックデバイスの再生中のエフェクトを停止する
+<li><a href="SDL_StopHapticEffects.html">SDL_StopHapticEffects</a> - ハプティックデバイスの再生中のエフェクトを全て停止する
+<li><a href="SDL_StopHapticRumble.html">SDL_StopHapticRumble</a> - ハプティックデバイスの単純な振動を停止する
 <li><a href="SDL_StopTextInput.html">SDL_StopTextInput</a> - ウィンドウのUnicodeテキスト入力イベントの受け入れを停止する
 <li><a href="SDL_StorageReady.html">SDL_StorageReady</a> - ストレージコンテナを使う準備ができているかチェックする
 <li>SDL_strcasecmp
@@ -1224,7 +1224,7 @@
 <li>SDL_unsetenv_unsafe
 <li>SDL_UnsetEnvironmentVariable
 <li><a href="SDL_UpdateGamepads.html">SDL_UpdateGamepads</a> - イベントループを使用せずに手動でゲームパッドを更新する
-<li>SDL_UpdateHapticEffect
+<li><a href="SDL_UpdateHapticEffect.html">SDL_UpdateHapticEffect</a> - ハプティックデバイスのエフェクトのパラメータを変更する
 <li><a href="SDL_UpdateJoysticks.html">SDL_UpdateJoysticks</a> - オープンされているジョイスティックの状態を更新する
 <li>SDL_UpdateNVTexture
 <li><a href="SDL_UpdateSensors.html">SDL_UpdateSensors</a> - オープンされたセンサーの現在の状態を得る
@@ -1403,7 +1403,7 @@
 <li><a href="SDL_Process.html">SDL_Process</a> - システムプロセスのハンドルの不透明型
 <li><a href="SDL_PropertiesID.html">SDL_PropertiesID</a> - SDLプロパティグループID
 <li>SDL_realloc_func
-<li>SDL_Renderer
+<li><a href="SDL_Renderer.html">SDL_Renderer</a> - レンダラの状態の型
 <li>SDL_RequestAndroidPermissionCallback
 <li><a href="SDL_RWLock.html">SDL_RWLock</a> - 読取専用スレッドは平行して実行できるミューテックスの型
 <li><a href="SDL_Semaphore.html">SDL_Semaphore</a> - セマフォ(スレッド間のアクセスをカウントして管理する手段)の型
@@ -1555,7 +1555,7 @@
 <li><a href="SDL_TextEditingCandidatesEvent.html">SDL_TextEditingCandidatesEvent</a> - IME変換候補イベントの構造体(event.edit_candidates.*)
 <li><a href="SDL_TextEditingEvent.html">SDL_TextEditingEvent</a> - テキスト編集イベントの構造体(event.edit.*)
 <li><a href="SDL_TextInputEvent.html">SDL_TextInputEvent</a> - テキスト入力イベントの構造体(event.text.*)
-<li>SDL_Texture
+<li><a href="SDL_Texture.html">SDL_Texture</a> - ドライバ固有に効率化されたピクセルデータの構造体
 <li><a href="SDL_TouchFingerEvent.html">SDL_TouchFingerEvent</a> - タッチイベントの構造体(event.tfinger.*)
 <li><a href="SDL_UserEvent.html">SDL_UserEvent</a> - ユーザ定義イベントの構造体(event.user.*)
 <li>SDL_Vertex
@@ -1803,30 +1803,30 @@
 <li>SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ
 <li>SDL_GPU_TEXTUREUSAGE_SAMPLER
 <li><a href="SDL_GUARDED_BY.html">SDL_GUARDED_BY</a> - Clangのスレッドセーフ分析アノテーションのラッパーのマクロ
-<li>SDL_HAPTIC_AUTOCENTER
+<li><a href="SDL_HAPTIC_AUTOCENTER.html">SDL_HAPTIC_AUTOCENTER</a> - ハプティックデバイスが自動センタリングに対応していることを表すマクロ
 <li><a href="SDL_HAPTIC_CARTESIAN.html">SDL_HAPTIC_CARTESIAN</a> - ハプティックデバイスのエフェクトの方向で直交座標を使用することを表すマクロ
 <li><a href="SDL_HAPTIC_CONSTANT.html">SDL_HAPTIC_CONSTANT</a> - ハプティックデバイスの一定エフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_CUSTOM.html">SDL_HAPTIC_CUSTOM</a> - ハプティックデバイスのカスタムエフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_DAMPER.html">SDL_HAPTIC_DAMPER</a> - ハプティックデバイスのダンパーエフェクト(速度を使用)を表すマクロ
 <li><a href="SDL_HAPTIC_FRICTION.html">SDL_HAPTIC_FRICTION</a> - ハプティックデバイスの摩擦エフェクト(運動を使用)を表すマクロ
-<li>SDL_HAPTIC_GAIN
+<li><a href="SDL_HAPTIC_GAIN.html">SDL_HAPTIC_GAIN</a> - ハプティックデバイス全体のゲインを設定できることを表すマクロ
 <li><a href="SDL_HAPTIC_INERTIA.html">SDL_HAPTIC_INERTIA</a> - ハプティックデバイスの慣性エフェクト(加速度を使用)を表すマクロ
 <li><a href="SDL_HAPTIC_INFINITY.html">SDL_HAPTIC_INFINITY</a> - ハプティックデバイスの無限の再生回数のマクロ
 <li><a href="SDL_HAPTIC_LEFTRIGHT.html">SDL_HAPTIC_LEFTRIGHT</a> - ハプティックデバイスの左右エフェクトを表すマクロ
-<li>SDL_HAPTIC_PAUSE
+<li><a href="SDL_HAPTIC_PAUSE.html">SDL_HAPTIC_PAUSE</a> - ハプティックデバイスが一時停止可能であることを表すマクロ
 <li><a href="SDL_HAPTIC_POLAR.html">SDL_HAPTIC_POLAR</a> - ハプティックデバイスのエフェクトの方向で極座標を使用することを表すマクロ
 <li><a href="SDL_HAPTIC_RAMP.html">SDL_HAPTIC_RAMP</a> - ハプティックデバイスの増減エフェクトを表すマクロ
-<li>SDL_HAPTIC_RESERVED1
-<li>SDL_HAPTIC_RESERVED2
-<li>SDL_HAPTIC_RESERVED3
+<li><a href="SDL_HAPTIC_RESERVED1.html">SDL_HAPTIC_RESERVED1</a> - ハプティックデバイスの将来のための予約
+<li><a href="SDL_HAPTIC_RESERVED2.html">SDL_HAPTIC_RESERVED2</a> - ハプティックデバイスの将来のための予約
+<li><a href="SDL_HAPTIC_RESERVED3.html">SDL_HAPTIC_RESERVED3</a> - ハプティックデバイスの将来のための予約
 <li><a href="SDL_HAPTIC_SAWTOOTHDOWN.html">SDL_HAPTIC_SAWTOOTHDOWN</a> - ハプティックデバイスの下降ノコギリ波エフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_SAWTOOTHUP.html">SDL_HAPTIC_SAWTOOTHUP</a> - ハプティックデバイスの上昇ノコギリ波エフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_SINE.html">SDL_HAPTIC_SINE</a> - ハプティックデバイスのサイン波エフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_SPHERICAL.html">SDL_HAPTIC_SPHERICAL</a> - ハプティックデバイスのエフェクトの方向で球面座標を使用することを表すマクロ
 <li><a href="SDL_HAPTIC_SPRING.html">SDL_HAPTIC_SPRING</a> - ハプティックデバイスのバネエフェクト(位置を使用)を表すマクロ
 <li><a href="SDL_HAPTIC_SQUARE.html">SDL_HAPTIC_SQUARE</a> - ハプティックデバイスの矩形波エフェクトを表すマクロ
-<li>SDL_HAPTIC_STATUS
-<li>SDL_HAPTIC_STEERING_AXIS
+<li><a href="SDL_HAPTIC_STATUS.html">SDL_HAPTIC_STATUS</a> - ハプティックデバイスの状態を得られることを表すマクロ
+<li><a href="SDL_HAPTIC_STEERING_AXIS.html">SDL_HAPTIC_STEERING_AXIS</a> - ハンドル型コントローラのエフェクトで使用する座標系のマクロ
 <li><a href="SDL_HAPTIC_TRIANGLE.html">SDL_HAPTIC_TRIANGLE</a> - ハプティックデバイスの三角波エフェクトを表すマクロ
 <li>SDL_HAS_BUILTIN
 <li><a href="SDL_HAS_TARGET_ATTRIBS.html">SDL_HAS_TARGET_ATTRIBS</a> - コンパイラが__attribute__((target))に対応しているとき定義されているマクロ

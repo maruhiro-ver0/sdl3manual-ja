@@ -128,23 +128,23 @@ SDLハプティックサブシステムはスレッドセーフではないの�
 <li><a href="SDL_GetMaxHapticEffectsPlaying.html">SDL_GetMaxHapticEffectsPlaying</a> - ハプティックデバイスが同時に再生できるエフェクトの数を得る
 <li><a href="SDL_GetNumHapticAxes.html">SDL_GetNumHapticAxes</a> - ハプティックデバイスの方向の数を得る
 <li><a href="SDL_HapticEffectSupported.html">SDL_HapticEffectSupported</a> - ハプティックデバイスがエフェクトに対応しているかチェックする
-<li>SDL_HapticRumbleSupported
-<li>SDL_InitHapticRumble
-<li>SDL_IsJoystickHaptic
-<li>SDL_IsMouseHaptic
+<li><a href="SDL_HapticRumbleSupported.html">SDL_HapticRumbleSupported</a> - ハプティックデバイスが単純な振動に対応しているかチェックする
+<li><a href="SDL_InitHapticRumble.html">SDL_InitHapticRumble</a> - ジョイスティックにハプティックの機能があるかチェックする
+<li><a href="SDL_IsJoystickHaptic.html">SDL_IsJoystickHaptic</a> - ジョイスティックにハプティックの機能があるかチェックする
+<li><a href="SDL_IsMouseHaptic.html">SDL_IsMouseHaptic</a> - マウスにハプティックの機能があるかチェックする
 <li><a href="SDL_OpenHaptic.html">SDL_OpenHaptic</a> - ハプティックデバイスを使用するためにオープンする
 <li><a href="SDL_OpenHapticFromJoystick.html">SDL_OpenHapticFromJoystick</a> - ジョイスティックからハプティックデバイスをオープンする
 <li><a href="SDL_OpenHapticFromMouse.html">SDL_OpenHapticFromMouse</a> - 使用中のマウスからハプティックデバイスをオープンする
-<li>SDL_PauseHaptic
-<li>SDL_PlayHapticRumble
-<li>SDL_ResumeHaptic
+<li><a href="SDL_PauseHaptic.html">SDL_PauseHaptic</a> - ハプティックデバイスを一時停止する
+<li><a hreF="SDL_PlayHapticRumble.html">SDL_PlayHapticRumble</a> - ハプティックデバイスの単純な振動を開始する
+<li><a href="SDL_ResumeHaptic.html">SDL_ResumeHaptic</a> - 一時停止中のハプティックデバイスを再開する
 <li><a href="SDL_RunHapticEffect.html">SDL_RunHapticEffect</a> - ハプティックデバイスのエフェクトを再生する
-<li>SDL_SetHapticAutocenter
-<li>SDL_SetHapticGain
-<li>SDL_StopHapticEffect
-<li>SDL_StopHapticEffects
-<li>SDL_StopHapticRumble
-<li>SDL_UpdateHapticEffect
+<li><a href="SDL_SetHapticAutocenter.html">SDL_SetHapticAutocenter</a> - ハプティックデバイスの自動センタリングを設定する
+<li><a href="SDL_SetHapticGain.html">SDL_SetHapticGain</a> - 指定のハプティックデバイスのゲインを設定する
+<li><a href="SDL_StopHapticEffect.html">SDL_StopHapticEffect</a> - ハプティックデバイスの再生中のエフェクトを停止する
+<li><a href="SDL_StopHapticEffects.html">SDL_StopHapticEffects</a> - ハプティックデバイスの再生中のエフェクトを全て停止する
+<li><a href="SDL_StopHapticRumble.html">SDL_StopHapticRumble</a> - ハプティックデバイスの単純な振動を停止する
+<li><a href="SDL_UpdateHapticEffect.html">SDL_UpdateHapticEffect</a> - ハプティックデバイスのエフェクトのパラメータを変更する
 </ol>
 <h2>型</h2>
 <ol>
@@ -167,30 +167,30 @@ SDLハプティックサブシステムはスレッドセーフではないの�
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_HAPTIC_AUTOCENTER
+<li><a href="SDL_HAPTIC_AUTOCENTER.html">SDL_HAPTIC_AUTOCENTER</a> - ハプティックデバイスが自動センタリングに対応していることを表すマクロ
 <li><a href="SDL_HAPTIC_CARTESIAN.html">SDL_HAPTIC_CARTESIAN</a> - ハプティックデバイスのエフェクトの方向で直交座標を使用することを表すマクロ
 <li><a href="SDL_HAPTIC_CONSTANT.html">SDL_HAPTIC_CONSTANT</a> - ハプティックデバイスの一定エフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_CUSTOM.html">SDL_HAPTIC_CUSTOM</a> - ハプティックデバイスのカスタムエフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_DAMPER.html">SDL_HAPTIC_DAMPER</a> - ハプティックデバイスのダンパーエフェクト(速度を使用)を表すマクロ
 <li><a href="SDL_HAPTIC_FRICTION.html">SDL_HAPTIC_FRICTION</a> - ハプティックデバイスの摩擦エフェクト(運動を使用)を表すマクロ
-<li>SDL_HAPTIC_GAIN
+<li><a href="SDL_HAPTIC_GAIN.html">SDL_HAPTIC_GAIN</a> - ハプティックデバイス全体のゲインを設定できることを表すマクロ
 <li><a href="SDL_HAPTIC_INERTIA.html">SDL_HAPTIC_INERTIA</a> - ハプティックデバイスの慣性エフェクト(加速度を使用)を表すマクロ
 <li><a href="SDL_HAPTIC_INFINITY.html">SDL_HAPTIC_INFINITY</a> - ハプティックデバイスの無限の再生回数のマクロ
 <li><a href="SDL_HAPTIC_LEFTRIGHT.html">SDL_HAPTIC_LEFTRIGHT</a> - ハプティックデバイスの左右エフェクトを表すマクロ
-<li>SDL_HAPTIC_PAUSE
+<li><a href="SDL_HAPTIC_PAUSE.html">SDL_HAPTIC_PAUSE</a> - ハプティックデバイスが一時停止可能であることを表すマクロ
 <li><a href="SDL_HAPTIC_POLAR.html">SDL_HAPTIC_POLAR</a> - ハプティックデバイスのエフェクトの方向で極座標を使用することを表すマクロ
 <li><a href="SDL_HAPTIC_RAMP.html">SDL_HAPTIC_RAMP</a> - ハプティックデバイスの増減エフェクトを表すマクロ
-<li>SDL_HAPTIC_RESERVED1
-<li>SDL_HAPTIC_RESERVED2
-<li>SDL_HAPTIC_RESERVED3
+<li><a href="SDL_HAPTIC_RESERVED1.html">SDL_HAPTIC_RESERVED1</a> - ハプティックデバイスの将来のための予約
+<li><a href="SDL_HAPTIC_RESERVED2.html">SDL_HAPTIC_RESERVED2</a> - ハプティックデバイスの将来のための予約
+<li><a href="SDL_HAPTIC_RESERVED3.html">SDL_HAPTIC_RESERVED3</a> - ハプティックデバイスの将来のための予約
 <li><a href="SDL_HAPTIC_SAWTOOTHDOWN.html">SDL_HAPTIC_SAWTOOTHDOWN</a> - ハプティックデバイスの下降ノコギリ波エフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_SAWTOOTHUP.html">SDL_HAPTIC_SAWTOOTHUP</a> - ハプティックデバイスの上昇ノコギリ波エフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_SINE.html">SDL_HAPTIC_SINE</a> - ハプティックデバイスのサイン波エフェクトを表すマクロ
 <li><a href="SDL_HAPTIC_SPHERICAL.html">SDL_HAPTIC_SPHERICAL</a> - ハプティックデバイスのエフェクトの方向で球面座標を使用することを表すマクロ
 <li><a href="SDL_HAPTIC_SPRING.html">SDL_HAPTIC_SPRING</a> - ハプティックデバイスのバネエフェクト(位置を使用)を表すマクロ
 <li><a href="SDL_HAPTIC_SQUARE.html">SDL_HAPTIC_SQUARE</a> - ハプティックデバイスの矩形波エフェクトを表すマクロ
-<li>SDL_HAPTIC_STATUS
-<li>SDL_HAPTIC_STEERING_AXIS
+<li><a href="SDL_HAPTIC_STATUS.html">SDL_HAPTIC_STATUS</a> - ハプティックデバイスの状態を得られることを表すマクロ
+<li><a href="SDL_HAPTIC_STEERING_AXIS.html">SDL_HAPTIC_STEERING_AXIS</a> - ハンドル型コントローラのエフェクトで使用する座標系のマクロ
 <li><a href="SDL_HAPTIC_TRIANGLE.html">SDL_HAPTIC_TRIANGLE</a> - ハプティックデバイスの三角波エフェクトを表すマクロ
 </ol>
 <h2>SDL Wikiへのリンク</h2>

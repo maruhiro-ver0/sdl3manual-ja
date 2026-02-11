@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryRender.html" title="1つ上">
+<title>SDL_CreateTextureWithProperties</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryRender.html">2Dレンダリング</a> - SDL_CreateTextureWithProperties
+<hr>
+<h1>SDL_CreateTextureWithProperties</h1>
+プロパティを指定してレンダリングコンテキストのテクスチャを生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_render.h">SDL3/SDL_render.h</a>
+<h2>構文</h2>
+<code>SDL_Texture * SDL_CreateTextureWithProperties(SDL_Renderer *renderer, SDL_PropertiesID props);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Renderer.html">SDL_Renderer</a> *</td><td>renderer</td><td>レンダリングコンテキスト</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>設定するプロパティ</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Texture.html">SDL_Texture</a> *) 成功のとき生成されたテクスチャ, 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+これらのプロパティに対応している:
+</p>
+<ul>
+<li><code>SDL_PROP_TEXTURE_CREATE_COLORSPACE_NUMBER</code>: テクスチャの色空間を表す<a href="SDL_Colorspace.html">SDL_Colorspace</a>の値. デフォルトは浮動小数点テクスチャのときSDL_COLORSPACE_SRGB_LINEAR, 10ビットテクスチャのときSDL_COLORSPACE_HDR10, 他のRGBテクスチャのときSDL_COLORSPACE_SRGB, YUVテクスチャのときSDL_COLORSPACE_JPEG
+<li><code>SDL_PROP_TEXTURE_CREATE_FORMAT_NUMBER</code>: <a href="SDL_PixelFormat.html">SDL_PixelFormat</a>の値の1つ. デフォルトはレンダラの最善のRGBA形式
+<li><code>SDL_PROP_TEXTURE_CREATE_ACCESS_NUMBER</code>: <a href="SDL_TextureAccess.html">SDL_TextureAccess</a>の値の1つ. デフォルトはSDL_TEXTUREACCESS_STATIC
+<li><code>SDL_PROP_TEXTURE_CREATE_WIDTH_NUMBER</code>: テクスチャの幅ピクセル数. 必須
+<li><code>SDL_PROP_TEXTURE_CREATE_HEIGHT_NUMBER</code>: テクスチャの高さピクセル数. 必須
+<li><code>SDL_PROP_TEXTURE_CREATE_PALETTE_POINTER</code>: パレット形式テクスチャで使用する<a href="SDL_Palette.html">SDL_Palette</a>
+これは後で<a href="SDL_SetTexturePalette.html">SDL_SetTexturePalette()</a>で設定できる
+<li><code>SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT</code>: HDR10および浮動小数点テクスチャ用. 100% diffuse white(拡散反射の白)の値を設定し, それ以上の値はHDR(ハイダイナミックレンジ)ヘッドルームとして表示する.
+HDR10テクスチャのデフォルトは100, 浮動小数点テクスチャのデフォルトは1.0
+<li><code>SDL_PROP_TEXTURE_CREATE_HDR_HEADROOM_FLOAT</code>: HDR10および浮動小数点テクスチャ用. SDR(スタンダードダイナミックレンジ)ホワイトポイントの基準で, 表示で使用する最大ダイナミックレンジの値を設定する.
+HDR10画像の場合, これはmaxCLL / SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOATと等しい
+これが定義されているとき, ディスプレイの対応外の値は有効なHDRヘッドルーム内にスケーリングされる. 定義されていない場合は切り捨てられる
+</ul>
+<p>
+direct3d11レンダラの場合:
+</p>
+<ul>
+<li><code>SDL_PROP_TEXTURE_CREATE_D3D11_TEXTURE_POINTER</code>: テクスチャのID3D11Texture2D. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_D3D11_TEXTURE_U_POINTER</code>: YUVテクスチャのUプレーンのID3D11Texture2D. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_D3D11_TEXTURE_V_POINTER</code>: YUVテクスチャのVプレーンのID3D11Texture2D. 既存のテクスチャをラップしたい場合に使用する
+</ul>
+<p>
+direct3d12レンダラの場合:
+</p>
+<ul>
+<li><code>SDL_PROP_TEXTURE_CREATE_D3D12_TEXTURE_POINTER</code>: テクスチャのID3D12Resource. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_D3D12_TEXTURE_U_POINTER</code>: YUVテクスチャのUプレーンのID3D12Resource. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_D3D12_TEXTURE_V_POINTER</code>: YUVテクスチャのVプレーンのID3D12Resource. 既存のテクスチャをラップしたい場合に使用する
+</ul>
+<p>
+metalレンダラの場合:
+</p>
+<ul>
+<li><code>SDL_PROP_TEXTURE_CREATE_METAL_PIXELBUFFER_POINTER</code>: テクスチャのCVPixelBufferRef. 既存のピクセルバッファからテクスチャを生成したい場合に使用する
+</ul>
+<p>
+openglレンダラの場合:
+</p>
+<ul>
+<li><code>SDL_PROP_TEXTURE_CREATE_OPENGL_TEXTURE_NUMBER</code>: テクスチャのGLuintテクスチャ. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_OPENGL_TEXTURE_UV_NUMBER</code>: NV12テクスチャのUVプレーンのGLuintテクスチャ. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_OPENGL_TEXTURE_U_NUMBER</code>: YUVテクスチャのUプレーンのGLuint. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_OPENGL_TEXTURE_V_NUMBER</code>: YUVテクスチャのVプレーンのGLuint. 既存のテクスチャをラップしたい場合に使用する
+</ul>
+<p>
+opengles2レンダラの場合:
+</p>
+<ul>
+<li><code>SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_NUMBER</code>: テクスチャのGLuintテクスチャ. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_UV_NUMBER</code>: テクスチャのUVプレーンのGLuintテクスチャ. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_U_NUMBER</code>: YUVテクスチャのUプレーンのGLuint. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_V_NUMBER</code>: YUVテクスチャのVプレーンのGLuint. 既存のテクスチャをラップしたい場合に使用する
+</ul>
+<p>
+vulkanレンダラの場合:
+</p>
+<ul>
+<li><code>SDL_PROP_TEXTURE_CREATE_VULKAN_TEXTURE_NUMBER</code>: テクスチャのVkImage. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_VULKAN_LAYOUT_NUMBER</code>: VkImageのVkImageLayout. デフォルトはVK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL
+</ul>
+<p>
+GPUレンダラの場合:
+</p>
+<ul>
+<li><code>SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_POINTER</code>: テクスチャのSDL_GPUTexture. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_UV_NUMBER</code>: NV12テクスチャのSDL_GPUTexture. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_U_NUMBER</code>: YUVテクスチャのUプレーンのSDL_GPUTexture. 既存のテクスチャをラップしたい場合に使用する
+<li><code>SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_V_NUMBER</code>: YUVテクスチャのVプレーンのSDL_GPUTexture. 既存のテクスチャをラップしたい場合に使用する
+</ul>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼べるのはメインスレッドのみである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_CreateProperties.html">SDL_CreateProperties</a>
+<li><a href="SDL_CreateTexture.html">SDL_CreateTexture</a>
+<li><a href="SDL_CreateTextureFromSurface.html">SDL_CreateTextureFromSurface</a>
+<li><a href="SDL_DestroyTexture.html">SDL_DestroyTexture</a>
+<li><a href="SDL_GetTextureSize.html">SDL_GetTextureSize</a>
+<li><a href="SDL_UpdateTexture.html">SDL_UpdateTexture</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_CreateTextureWithProperties">SDL_CreateTextureWithProperties - SDL Wiki</a>
+<hr>
+</body>
+</html>
