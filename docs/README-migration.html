@@ -986,10 +986,10 @@ SDL3の代わりの計画もない.
 </ul>
 <h2><a name="#sdl_haptich">SDL_haptic.h (ハプティック)</a></h2>
 <p>
-ゲームパッドの単純な振動はSDLハプティックインターフェースからなくなった. 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_RumbleGamepad">SDL_RumbleGamepad()</a>を使用すること.
+ゲームパッドの単純な振動はSDLハプティックインターフェースからなくなった. 代わりに<a href="SDL_RumbleGamepad.html">SDL_RumbleGamepad()</a>を使用すること.
 </p>
 <p>
-デバイスのインデックス番号を用いてハプティックデバイスを反復処理するのではなく, 新しい関数<a href="https://wiki.libsdl.org/SDL3/SDL_GetHaptics">SDL_GetHaptics()</a>で現在のハプティックデバイスの一覧を得て, そのインスタンスIDから新しい関数でハプティックデバイスの情報を得ることもできる:
+デバイスのインデックス番号を用いてハプティックデバイスを反復処理するのではなく, 新しい関数<a href="SDL_GetHaptics.html">SDL_GetHaptics()</a>で現在のハプティックデバイスの一覧を得て, そのインスタンスIDから新しい関数でハプティックデバイスの情報を得ることもできる:
 <code>
 <pre>
 {
@@ -1010,46 +1010,46 @@ SDL3の代わりの計画もない.
 </code>
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetHapticEffectStatus">SDL_GetHapticEffectStatus()</a>はintの代わりにboolを戻すようになった.
-この関数を呼ぶ前に<a href="https://wiki.libsdl.org/SDL3/SDL_GetHapticFeatures">SDL_GetHapticFeatures()</a>を呼んでエフェクトが対応していること確認する必要がある.
+<a href="SDL_GetHapticEffectStatus.html">SDL_GetHapticEffectStatus()</a>はintの代わりにboolを戻すようになった.
+この関数を呼ぶ前に<a href="SDL_GetHapticFeatures.html">SDL_GetHapticFeatures()</a>を呼んでエフェクトが対応していること確認する必要がある.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticClose.html">SDL_HapticClose()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_CloseHaptic">SDL_CloseHaptic()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticDestroyEffect.html">SDL_HapticDestroyEffect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_DestroyHapticEffect">SDL_DestroyHapticEffect()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticGetEffectStatus.html">SDL_HapticGetEffectStatus()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetHapticEffectStatus">SDL_GetHapticEffectStatus()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticNewEffect.html">SDL_HapticNewEffect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_CreateHapticEffect">SDL_CreateHapticEffect()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticNumAxes.html">SDL_HapticNumAxes()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetNumHapticAxes">SDL_GetNumHapticAxes()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticNumEffects.html">SDL_HapticNumEffects()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetMaxHapticEffects">SDL_GetMaxHapticEffects()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticNumEffectsPlaying.html">SDL_HapticNumEffectsPlaying()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetMaxHapticEffectsPlaying">SDL_GetMaxHapticEffectsPlaying()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticOpen.html">SDL_HapticOpen()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_OpenHaptic">SDL_OpenHaptic()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticOpenFromJoystick.html">SDL_HapticOpenFromJoystick()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_OpenHapticFromJoystick">SDL_OpenHapticFromJoystick()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticOpenFromMouse.html">SDL_HapticOpenFromMouse()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_OpenHapticFromMouse">SDL_OpenHapticFromMouse()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticPause.html">SDL_HapticPause()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_PauseHaptic">SDL_PauseHaptic()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticQuery.html">SDL_HapticQuery()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetHapticFeatures">SDL_GetHapticFeatures()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticRumbleInit.html">SDL_HapticRumbleInit()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_InitHapticRumble">SDL_InitHapticRumble()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticRumblePlay.html">SDL_HapticRumblePlay()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_PlayHapticRumble">SDL_PlayHapticRumble()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticRumbleStop.html">SDL_HapticRumbleStop()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_StopHapticRumble">SDL_StopHapticRumble()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticRunEffect.html">SDL_HapticRunEffect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_RunHapticEffect">SDL_RunHapticEffect()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticSetAutocenter.html">SDL_HapticSetAutocenter()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetHapticAutocenter">SDL_SetHapticAutocenter()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticSetGain.html">SDL_HapticSetGain()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetHapticGain">SDL_SetHapticGain()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticStopAll.html">SDL_HapticStopAll()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_StopHapticEffects">SDL_StopHapticEffects()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticStopEffect.html">SDL_HapticStopEffect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_StopHapticEffect">SDL_StopHapticEffect()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticUnpause.html">SDL_HapticUnpause()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ResumeHaptic">SDL_ResumeHaptic()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticUpdateEffectv">SDL_HapticUpdateEffect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_UpdateHapticEffect">SDL_UpdateHapticEffect()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickIsHaptic.html">SDL_JoystickIsHaptic()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_IsJoystickHaptic">SDL_IsJoystickHaptic()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_MouseIsHaptic.html">SDL_MouseIsHaptic()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_IsMouseHaptic">SDL_IsMouseHaptic()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticClose.html">SDL_HapticClose()</a> → <a href="SDL_CloseHaptic.html">SDL_CloseHaptic()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticDestroyEffect.html">SDL_HapticDestroyEffect()</a> → <a href="SDL_DestroyHapticEffect.html">SDL_DestroyHapticEffect()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticGetEffectStatus.html">SDL_HapticGetEffectStatus()</a> → <a href="SDL_GetHapticEffectStatus.html">SDL_GetHapticEffectStatus()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticNewEffect.html">SDL_HapticNewEffect()</a> → <a href="SDL_CreateHapticEffect.html">SDL_CreateHapticEffect()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticNumAxes.html">SDL_HapticNumAxes()</a> → <a href="SDL_GetNumHapticAxes.html">SDL_GetNumHapticAxes()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticNumEffects.html">SDL_HapticNumEffects()</a> → <a href="SDL_GetMaxHapticEffects.html">SDL_GetMaxHapticEffects()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticNumEffectsPlaying.html">SDL_HapticNumEffectsPlaying()</a> → <a href="SDL_GetMaxHapticEffectsPlaying.html">SDL_GetMaxHapticEffectsPlaying()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticOpen.html">SDL_HapticOpen()</a> → <a href="SDL_OpenHaptic.html">SDL_OpenHaptic()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticOpenFromJoystick.html">SDL_HapticOpenFromJoystick()</a> → <a href="SDL_OpenHapticFromJoystick.html">SDL_OpenHapticFromJoystick()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticOpenFromMouse.html">SDL_HapticOpenFromMouse()</a> → <a href="SDL_OpenHapticFromMouse.html">SDL_OpenHapticFromMouse()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticPause.html">SDL_HapticPause()</a> → <a href="SDL_PauseHaptic.html">SDL_PauseHaptic()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticQuery.html">SDL_HapticQuery()</a> → <a href="SDL_GetHapticFeatures.html">SDL_GetHapticFeatures()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticRumbleInit.html">SDL_HapticRumbleInit()</a> → <a href="SDL_InitHapticRumble.html">SDL_InitHapticRumble()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticRumblePlay.html">SDL_HapticRumblePlay()</a> → <a href="SDL_PlayHapticRumble.html">SDL_PlayHapticRumble()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticRumbleStop.html">SDL_HapticRumbleStop()</a> → <a href="SDL_StopHapticRumble.html">SDL_StopHapticRumble()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticRunEffect.html">SDL_HapticRunEffect()</a> → <a href="SDL_RunHapticEffect.html">SDL_RunHapticEffect()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticSetAutocenter.html">SDL_HapticSetAutocenter()</a> → <a href="SDL_SetHapticAutocenter.html">SDL_SetHapticAutocenter()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticSetGain.html">SDL_HapticSetGain()</a> → <a href="SDL_SetHapticGain.html">SDL_SetHapticGain()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticStopAll.html">SDL_HapticStopAll()</a> → <a href="SDL_StopHapticEffects.html">SDL_StopHapticEffects()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticStopEffect.html">SDL_HapticStopEffect()</a> → <a href="SDL_StopHapticEffect.html">SDL_StopHapticEffect()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticUnpause.html">SDL_HapticUnpause()</a> → <a href="SDL_ResumeHaptic.html">SDL_ResumeHaptic()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticUpdateEffectv">SDL_HapticUpdateEffect()</a> → <a href="SDL_UpdateHapticEffect.html">SDL_UpdateHapticEffect()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoystickIsHaptic.html">SDL_JoystickIsHaptic()</a> → <a href="SDL_IsJoystickHaptic.html">SDL_IsJoystickHaptic()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_MouseIsHaptic.html">SDL_MouseIsHaptic()</a> → <a href="SDL_IsMouseHaptic.html">SDL_IsMouseHaptic()</a>
 </ul>
 <p>
 以下の関数は削除された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticIndex.html">SDL_HapticIndex()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetHapticID">SDL_GetHapticID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticName.html">SDL_HapticName()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetHapticNameForID">SDL_GetHapticNameForID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticOpened.html">SDL_HapticOpened()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetHapticFromID">SDL_GetHapticFromID()</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_NumHaptics.html">SDL_NumHaptics()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_GetHaptics">SDL_GetHaptics()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticIndex.html">SDL_HapticIndex()</a> - <a href="SDL_GetHapticID.html">SDL_GetHapticID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticName.html">SDL_HapticName()</a> - <a href="SDL_GetHapticNameForID.html">SDL_GetHapticNameForID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HapticOpened.html">SDL_HapticOpened()</a> - <a href="SDL_GetHapticFromID.html">SDL_GetHapticFromID()</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_NumHaptics.html">SDL_NumHaptics()</a> - <a href="SDL_GetHaptics.html">SDL_GetHaptics()</a>に置き換えられた
 </ul>
 <h2><a name="#sdl_hintsh">SDL_hints.h (ヒント)</a></h2>
 <p>
