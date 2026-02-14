@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryRender.html" title="1つ上">
+<title>SDL_GetRenderWindow</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryRender.html">2Dレンダリング</a> - SDL_GetRenderWindow
+<hr>
+<h1>SDL_GetRenderWindow</h1>
+レンダラに関連付けられたウィンドウを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_render.h">SDL3/SDL_render.h</a>
+<h2>構文</h2>
+<code>SDL_Window * SDL_GetRenderWindow(SDL_Renderer *renderer);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Renderer.html">SDL_Renderer</a> *</td><td>renderer</td><td>問い合わせるレンダラ</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(<a href="SDL_Window.html">SDL_Window</a> *) 成功のときウィンドウを戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GetRenderWindow">SDL_GetRenderWindow - SDL Wiki</a>
+<hr>
+</body>
+</html>

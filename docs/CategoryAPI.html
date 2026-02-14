@@ -303,7 +303,7 @@
 <li><a href="SDL_GetCurrentDirectory.html">SDL_GetCurrentDirectory</a> - システムが「カレントディレクトリ」としているディレクトリを得る
 <li><a href="SDL_GetCurrentDisplayMode.html">SDL_GetCurrentDisplayMode</a> - 現在のディスプレイモードを得る
 <li><a href="SDL_GetCurrentDisplayOrientation.html">SDL_GetCurrentDisplayOrientation</a> - ディスプレイの方向を得る
-<li>SDL_GetCurrentRenderOutputSize
+<li><a href="SDL_GetCurrentRenderOutputSize.html">SDL_GetCurrentRenderOutputSize</a> - 現在のレンダリングコンテキストの出力サイズをピクセル数で得る
 <li><a href="SDL_GetCurrentThreadID.html">SDL_GetCurrentThreadID</a> - 現在のスレッドのスレッドIDを得る
 <li><a href="SDL_GetCurrentTime.html">SDL_GetCurrentTime</a> - システムの現在日時をエポックナノ秒で得る
 <li><a href="SDL_GetCurrentVideoDriver.html">SDL_GetCurrentVideoDriver</a> - 初期化された現在のビデオドライバの名前を得る
@@ -315,7 +315,7 @@
 <li>SDL_GetDefaultAssertionHandler
 <li><a href="SDL_GetDefaultCursor.html">SDL_GetDefaultCursor</a> - デフォルトのマウスカーソルを得る
 <li><a href="SDL_GetDefaultLogOutputFunction.html">SDL_GetDefaultLogOutputFunction</a> - デフォルトログ出力関数を得る
-<li>SDL_GetDefaultTextureScaleMode
+<li><a href="SDL_GetDefaultTextureScaleMode.html">SDL_GetDefaultTextureScaleMode</a> - 指定のレンダラのデフォルトの拡大縮小モードを得る
 <li><a href="SDL_GetDesktopDisplayMode.html">SDL_GetDesktopDisplayMode</a> - デスクトップのディスプレイモードを得る
 <li>SDL_GetDirect3D9AdapterIndex
 <li><a href="SDL_GetDisplayBounds.html">SDL_GetDisplayBounds</a> - ディスプレイに表示されるデスクトップの領域を得る
@@ -503,28 +503,28 @@
 <li><a href="SDL_GetRectUnion.html">SDL_GetRectUnion</a> - 2つの長方形の重なる部分を求める
 <li><a href="SDL_GetRectUnionFloat.html">SDL_GetRectUnionFloat</a> - 浮動小数点で表された2つの長方形の重なる部分を求める
 <li><a href="SDL_GetRelativeMouseState.html">SDL_GetRelativeMouseState</a> - SDLがキャッシュした同期したマウスボタンの状態と最後に呼び出したときからのマウスの移動量を得る
-<li>SDL_GetRenderClipRect
+<li><a href="SDL_GetRenderClipRect.html">SDL_GetRenderClipRect</a> - 現在のレンダーターゲットのクリップ枠を得る
 <li>SDL_GetRenderColorScale
 <li>SDL_GetRenderDrawBlendMode
 <li>SDL_GetRenderDrawColor
 <li>SDL_GetRenderDrawColorFloat
 <li><a href="SDL_GetRenderDriver.html">SDL_GetRenderDriver</a> - 組み込まれた2Dレンダリングドライバの名前を得る
-<li>SDL_GetRenderer
-<li>SDL_GetRendererFromTexture
+<li><a href="SDL_GetRenderer.html">SDL_GetRenderer</a> - ウィンドウに関連付けられたレンダラを得る
+<li><a href="SDL_GetRendererFromTexture.html">SDL_GetRendererFromTexture</a> - テクスチャを生成したレンダラを得る
 <li>SDL_GetRendererName
 <li>SDL_GetRendererProperties
-<li>SDL_GetRenderLogicalPresentation
+<li><a href="SDL_GetRenderLogicalPresentation.html">SDL_GetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しないサイズと表示モードを得る
 <li>SDL_GetRenderLogicalPresentationRect
 <li>SDL_GetRenderMetalCommandEncoder
 <li>SDL_GetRenderMetalLayer
-<li>SDL_GetRenderOutputSize
+<li><a href="SDL_GetRenderOutputSize.html">SDL_GetRenderOutputSize</a> - レンダリングコンテキストの出力サイズをピクセル数で得る
 <li>SDL_GetRenderSafeArea
-<li>SDL_GetRenderScale
-<li>SDL_GetRenderTarget
+<li><a href="SDL_GetRenderScale.html">SDL_GetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を得る
+<li><a href="SDL_GetRenderTarget.html">SDL_GetRenderTarget</a> - 現在のレンダーターゲットを得る
 <li>SDL_GetRenderTextureAddressMode
-<li>SDL_GetRenderViewport
+<li><a href="SDL_GetRenderViewport.html">SDL_GetRenderViewport</a> - 現在のレンダーターゲットの描画領域を得る
 <li>SDL_GetRenderVSync
-<li>SDL_GetRenderWindow
+<li><a href="SDL_GetRenderWindow.html">SDL_GetRenderWindow</a> - レンダラに関連付けられたウィンドウを得る
 <li><a href="SDL_GetRevision.html">SDL_GetRevision</a> - アプリケーションにリンクされたSDLのリビジョンコードを得る
 <li><a href="SDL_GetRGB.html">SDL_GetRGB</a> - 指定のピクセルのRGB値を得る
 <li><a href="SDL_GetRGBA.html">SDL_GetRGBA</a> - 指定のピクセルのRGBA値を得る
@@ -918,7 +918,7 @@
 <li><a href="SDL_RenamePath.html">SDL_RenamePath</a> - ファイル名またはディレクトリ名を変更する
 <li><a href="SDL_RenameStoragePath.html">SDL_RenameStoragePath</a> - 書込可能ストレージコンテナのファイル名またはディレクトリ名を変更する
 <li>SDL_RenderClear
-<li>SDL_RenderClipEnabled
+<li><a href="SDL_RenderClipEnabled.html">SDL_RenderClipEnabled</a> - 指定のレンダラでクリップが有効かチェックする
 <li>SDL_RenderCoordinatesFromWindow
 <li>SDL_RenderCoordinatesToWindow
 <li>SDL_RenderDebugText
@@ -941,7 +941,7 @@
 <li>SDL_RenderTextureAffine
 <li>SDL_RenderTextureRotated
 <li>SDL_RenderTextureTiled
-<li>SDL_RenderViewportSet
+<li><a href="SDL_RenderViewportSet.html">SDL_RenderViewportSet</a> - 現在のレンダーターゲットに描画領域を表す長方形が設定されているかチェックする
 <li>SDL_ReportAssertion
 <li>SDL_RequestAndroidPermission
 <li>SDL_ResetAssertionReport
@@ -1000,7 +1000,7 @@
 <li><a href="SDL_SetClipboardText.html">SDL_SetClipboardText</a> - クリップボードにUTF-8テキストを設定する
 <li><a href="SDL_SetCurrentThreadPriority.html">SDL_SetCurrentThreadPriority</a> - 現在のスレッドの優先度を設定する
 <li><a href="SDL_SetCursor.html">SDL_SetCursor</a> - マウスカーソルを設定する
-<li>SDL_SetDefaultTextureScaleMode
+<li><a href="SDL_SetDefaultTextureScaleMode.html">SDL_SetDefaultTextureScaleMode</a> - 指定のレンダラのデフォルトの拡大縮小モードを設定する
 <li>SDL_setenv_unsafe
 <li>SDL_SetEnvironmentVariable
 <li><a href="SDL_SetError.html">SDL_SetError</a> - 現在のスレッドのSDLエラーメッセージを設定する
@@ -1053,17 +1053,17 @@
 <li><a href="SDL_SetPointerPropertyWithCleanup.html">SDL_SetPointerPropertyWithCleanup</a> - プロパティグループのポインタ型プロパティをプロパティが削除されたとき呼ばれる終了処理関数付きで設定する
 <li><a href="SDL_SetPrimarySelectionText.html">SDL_SetPrimarySelectionText</a> - プライマリ選択にUTF-8テキストを設定する
 <li><a href="SDL_SetRelativeMouseTransform.html">SDL_SetRelativeMouseTransform</a> - 相対マウスの入力を変換するユーザ定義の関数を設定する
-<li>SDL_SetRenderClipRect
+<li><a href="SDL_SetRenderClipRect.html">SDL_SetRenderClipRect</a> - レンダーターゲットにクリップ領域を設定する
 <li>SDL_SetRenderColorScale
 <li>SDL_SetRenderDrawBlendMode
 <li>SDL_SetRenderDrawColor
 <li>SDL_SetRenderDrawColorFloat
 <li>SDL_SetRenderGPUState
-<li>SDL_SetRenderLogicalPresentation
-<li>SDL_SetRenderScale
-<li>SDL_SetRenderTarget
+<li><a href="SDL_SetRenderLogicalPresentation.html">SDL_SetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しない論理サイズと表示モードを設定する
+<li><a href="SDL_SetRenderScale.html">SDL_SetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を設定する
+<li><a href="SDL_SetRenderTarget.html">SDL_SetRenderTarget</a> - レンダラの現在のレンダーターゲットを設定する
 <li>SDL_SetRenderTextureAddressMode
-<li>SDL_SetRenderViewport
+<li><a href="SDL_SetRenderViewport.html">SDL_SetRenderViewport</a> - 現在のレンダーターゲットの描画領域を設定する
 <li>SDL_SetRenderVSync
 <li><a href="SDL_SetScancodeName.html">SDL_SetScancodeName</a> - スキャンコードの人が読める名前を設定する
 <li><a href="SDL_SetStringProperty.html">SDL_SetStringProperty</a> - プロパティグループの文字列型プロパティを設定する
@@ -1645,7 +1645,7 @@
 <li><a href="SDL_ProcessIO.html">SDL_ProcessIO</a> - 生成するプロセスの入出力ストリームの接続の列挙体
 <li><a href="SDL_ProgressState.html">SDL_ProgressState</a> - プログレスバーの状態の列挙体
 <li><a href="SDL_PropertyType.html">SDL_PropertyType</a> - SDLプロパティ型の列挙体
-<li>SDL_RendererLogicalPresentation
+<li><a href="SDL_RendererLogicalPresentation.html">SDL_RendererLogicalPresentation</a> - 論理サイズと出力の対応方法の列挙体
 <li>SDL_Sandbox
 <li><a href="SDL_ScaleMode.html">SDL_ScaleMode</a> - 拡大縮小モードの列挙体
 <li><a href="SDL_Scancode.html">SDL_Scancode</a> - SDLキーボードスキャンコードの列挙体 

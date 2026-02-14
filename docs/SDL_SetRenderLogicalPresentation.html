@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryRender.html" title="1つ上">
+<title>SDL_SetRenderLogicalPresentation</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryRender.html">2Dレンダリング</a> - SDL_SetRenderLogicalPresentation
+<hr>
+<h1>SDL_SetRenderLogicalPresentation</h1>
+レンダリングのデバイスに依存しない論理サイズと表示モードを設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_render.h">SDL3/SDL_render.h</a>
+<h2>構文</h2>
+<code>bool SDL_SetRenderLogicalPresentation(SDL_Renderer *renderer, int w, int h, SDL_RendererLogicalPresentation mode);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Renderer.html">SDL_Renderer</a> *</td><td>renderer</td><td>レンダリングコンテキスト</td></tr>
+<tr><td>int</td><td>w</td><td>論理幅</td></tr>
+<tr><td>int</td><td>h</td><td>論理高さ</td></tr>
+<tr><td><a href="SDL_RendererLogicalPresentation.html">SDL_RendererLogicalPresentation</a></td><td>mode</td><td>使用する表示モード</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+この関数は論理レンダリング出力の幅と高さを設定する.
+レンダラは, 現在のレンダラターゲットが常に設定されたサイズであるかのようにふるまい, 必要に応じて実際の解像度に拡大縮小する.
+</p>
+<p>
+これは, アプリケーションは固定の画面サイズを想定しているが, ユーザがウィンドウサイズを変更または高DPIディスプレイであっても, 出力サイズを拡大縮小して対応させたい場合に便利である.
+</p>
+<p>
+論理サイズと表示モードはレンダーターゲットテクスチャとレンダラのウィンドウの両方に使用できる.
+論理サイズと表示モードはそれぞれのレンダーターゲットで異なり, この関数は現在のレンダーターゲットに対して設定する.
+このことは, 表示モードを有効にしてウィンドウと同じサイズのテクスチャに描画し,その後で表示モードを無効にしてウィンドウ全体に表示させたい場合に有用になりうる.
+両方のレンダラの表示モードを有効にすると, 上下または左右に黒帯が生じることがあるので注意すること.
+</p>
+<p>
+論理座標は<a href="SDL_RendererLogicalPresentation.html">SDL_LOGICAL_PRESENTATION_DISABLED</a>を設定して無効にできる. この場合, レンダーターゲットの完全なピクセルの解像度が得られる.
+フレームのレンダリングの間に表示モードを変更しても安全である. 恐らくほとんどのレンダリングは設定したサイズで行われるが, フォントを鮮明にするため, アプリケーションはテキストの表示中は表示モードをオフにするなどしている.
+</p>
+<p>
+イベント内で座標を<a href="SDL_ConvertEventToRenderCoordinates.html">SDL_ConvertEventToRenderCoordinates()</a>でレンダリング座標に変換できる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼べるのはメインスレッドのみである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_ConvertEventToRenderCoordinates.html">SDL_ConvertEventToRenderCoordinates</a>
+<li><a href="SDL_GetRenderLogicalPresentation.html">SDL_GetRenderLogicalPresentation</a>
+<li><a href="SDL_GetRenderLogicalPresentationRect.html">SDL_GetRenderLogicalPresentationRect</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SetRenderLogicalPresentation">SDL_SetRenderLogicalPresentation - SDL Wiki</a>
+<hr>
+</body>
+</html>
