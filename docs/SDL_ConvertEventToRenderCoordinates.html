@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryRender.html" title="1つ上">
+<title>SDL_ConvertEventToRenderCoordinates</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryRender.html">2Dレンダリング</a> - SDL_ConvertEventToRenderCoordinates
+<hr>
+<h1>SDL_ConvertEventToRenderCoordinates</h1>
+イベント構造体の座標をレンダリングの座標に変換する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_render.h">SDL3/SDL_render.h</a>
+<h2>構文</h2>
+<code>bool SDL_ConvertEventToRenderCoordinates(SDL_Renderer *renderer, SDL_Event *event);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Renderer.html">SDL_Renderer</a> *</td><td>renderer</td><td>レンダリングコンテキスト</td></tr>
+<tr><td><a href="SDL_Event.html">SDL_Event</a> *</td><td>event</td><td>変換するイベント</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) イベントが変換された, または変更の必要がないとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+これはいくつかの状態を考慮する:
+</p>
+<ul>
+<li>ウィンドウのサイズ
+<li>表示モードの設定 (<a href="SDL_SetRenderLogicalPresentation.html">SDL_SetRenderLogicalPresentation</a>)
+<li>倍率 (<a href="SDL_SetRenderScale.html">SDL_SetRenderScale</a>)
+<li>描画領域 (<a href="SDL_SetRenderViewport.html">SDL_SetRenderViewport</a>)
+</ul>
+<p>
+この関数で様々な種類(マウス, タッチ, ペンなど)のイベントを変換できる.
+</p>
+<p>
+タッチ座標は, ウィンドウで正規化された座標から, 正規化されていないレンダリング座標に変換される.
+</p>
+<p>
+相対マウス座標(イベントの<code>xrel</code>, <code>yrel</code>フィールド)も変換される.
+このフィールドを変換したくないアプリケーションは, <a href="SDL_RenderCoordinatesFromWindow.html">SDL_RenderCoordinatesFromWindow()</a>でイベント構造体全体ではなく特定のフィールドのみを変換する必要がある.
+</p>
+<p>
+変換の結果, 座標がレンダリング領域の範囲外になる可能性がある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼べるのはメインスレッドのみである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_RenderCoordinatesFromWindow.html">SDL_RenderCoordinatesFromWindow</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_ConvertEventToRenderCoordinates">SDL_ConvertEventToRenderCoordinates - SDL Wiki</a>
+<hr>
+</body>
+</html>

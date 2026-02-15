@@ -1819,7 +1819,7 @@ SDL 3.0で同様の機能をどのように得るかは後の項目を参照す�
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RenderWindowToLogical.html">SDL_RenderWindowToLogical()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RenderLogicalToWindow.html">SDL_RenderLogicalToWindow()</a>の名称は<a href="https://wiki.libsdl.org/SDL3/SDL_RenderCoordinatesFromWindow">SDL_RenderCoordinatesFromWindow()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_RenderCoordinatesToWindow">SDL_RenderCoordinatesToWindow()</a>に変更され, どちらの座標も浮動小数点となった.
 </p>
 <p>
-レンダラーターゲットのビューポート, クリッピング状態, 拡大率は永続的になり, アクティブな間は常に設定が維持されるようになった.
+レンダラーターゲットの描画領域, クリッピング状態, 拡大率は永続的になり, アクティブな間は常に設定が維持されるようになった.
 </p>
 <p>
 <a href="https://wiki.libsdl.org/SDL3/SDL_Vertex">SDL_Vertex</a>は浮動小数点の色指定に変更され, SDR(Standard Dynamic Range)では[0..1]の範囲となった.
@@ -1828,8 +1828,8 @@ SDL 3.0で同様の機能をどのように得るかは後の項目を参照す�
 <a href="https://wiki.libsdl.org/SDL3/SDL_RenderReadPixels">SDL_RenderReadPixels()</a>はメモリ上に確保された領域への代入に代わりサーフェイスを戻すようになった.
 </p>
 <p>
-SDL2の<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RenderSetLogicalSize.html">SDL_RenderSetLogicalSize()</a>(現在の<a href="https://wiki.libsdl.org/SDL3/SDL_SetRenderLogicalPresentation">SDL_SetRenderLogicalPresentation()</a>)は拡大率とビューポート状態を変更していた.
-SDL3では, 論理サイズから物理サイズへの変換時の表示モードと拡大率・ビューポート状態は分離しているため, アプリケーションはビューポートや拡大率を設定しながら論理サイズを設定することができる.
+SDL2の<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RenderSetLogicalSize.html">SDL_RenderSetLogicalSize()</a>(現在の<a href="https://wiki.libsdl.org/SDL3/SDL_SetRenderLogicalPresentation">SDL_SetRenderLogicalPresentation()</a>)は拡大率と描画領域を変更していた.
+SDL3では, 論理サイズから物理サイズへの変換時の表示モードと拡大率・描画領域は分離しているため, アプリケーションは描画領域や拡大率を設定しながら論理サイズを設定することができる.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:

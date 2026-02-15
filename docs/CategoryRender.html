@@ -43,7 +43,7 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <h2>関数</h2>
 <ol>
 <li>SDL_AddVulkanRenderSemaphores
-<li>SDL_ConvertEventToRenderCoordinates
+<li><a href="SDL_ConvertEventToRenderCoordinates.html">SDL_ConvertEventToRenderCoordinates</a> - イベント構造体の座標をレンダリングの座標に変換する
 <li>SDL_CreateGPURenderer
 <li>SDL_CreateGPURenderState
 <li><a href="SDL_CreateRenderer.html">SDL_CreateRenderer</a> - ウィンドウの2Dレンダリングコンテキストを生成する
@@ -61,21 +61,21 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <li><a href="SDL_GetDefaultTextureScaleMode.html">SDL_GetDefaultTextureScaleMode</a> - 指定のレンダラのデフォルトの拡大縮小モードを得る
 <li><a href="SDL_GetNumRenderDrivers.html">SDL_GetNumRenderDrivers</a> - 組み込まれた2Dレンダリングドライバの数を得る
 <li><a href="SDL_GetRenderClipRect.html">SDL_GetRenderClipRect</a> - 現在のレンダーターゲットのクリップ枠を得る
-<li>SDL_GetRenderColorScale
-<li>SDL_GetRenderDrawBlendMode
-<li>SDL_GetRenderDrawColor
-<li>SDL_GetRenderDrawColorFloat
+<li><a href="SDL_GetRenderColorScale.html">SDL_GetRenderColorScale</a> - 描画で使われる色倍率を得る
+<li><a href="SDL_GetRenderDrawBlendMode.html">SDL_GetRenderDrawBlendMode</a> - 描画時のブレンドモードを得る
+<li><a href="SDL_GetRenderDrawColor.html">SDL_GetRenderDrawColor</a> - 描画(長方形, 直線, 消去)で使われている色を得る
+<li><a href="SDL_GetRenderDrawColorFloat.html">SDL_GetRenderDrawColorFloat</a> - 描画(長方形, 直線, 消去)で使われている色を得る
 <li><a href="SDL_GetRenderDriver.html">SDL_GetRenderDriver</a> - 組み込まれた2Dレンダリングドライバの名前を得る
 <li><a href="SDL_GetRenderer.html">SDL_GetRenderer</a> - ウィンドウに関連付けられたレンダラを得る
 <li><a href="SDL_GetRendererFromTexture.html">SDL_GetRendererFromTexture</a> - テクスチャを生成したレンダラを得る
-<li>SDL_GetRendererName
-<li>SDL_GetRendererProperties
+<li><a href="SDL_GetRendererName.html">SDL_GetRendererName</a> - レンダラの名前を得る
+<li><a href="SDL_GetRendererProperties.html">SDL_GetRendererProperties</a> - レンダラに関連付けられたプロパティを得る
 <li><a href="SDL_GetRenderLogicalPresentation.html">SDL_GetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しないサイズと表示モードを得る
-<li>SDL_GetRenderLogicalPresentationRect
+<li><a href="SDL_GetRenderLogicalPresentationRect.html">SDL_GetRenderLogicalPresentationRect</a> - レンダリングの最終的な表示領域を得る
 <li>SDL_GetRenderMetalCommandEncoder
 <li>SDL_GetRenderMetalLayer
 <li><a href="SDL_GetRenderOutputSize.html">SDL_GetRenderOutputSize</a> - レンダリングコンテキストの出力サイズをピクセル数で得る
-<li>SDL_GetRenderSafeArea
+<li><a href="SDL_GetRenderSafeArea.html">SDL_GetRenderSafeArea</a> - レンダラの現在の表示領域のセーフエリアを得る
 <li><a href="SDL_GetRenderScale.html">SDL_GetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を得る
 <li><a href="SDL_GetRenderTarget.html">SDL_GetRenderTarget</a> - 現在のレンダーターゲットを得る
 <li>SDL_GetRenderTextureAddressMode
@@ -92,10 +92,10 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <li>SDL_GetTextureSize
 <li>SDL_LockTexture
 <li>SDL_LockTextureToSurface
-<li>SDL_RenderClear
+<li><a href="SDL_RenderClear.html">SDL_RenderClear</a> - 現在のレンダーターゲットを色で塗りつぶして消去する
 <li><a href="SDL_RenderClipEnabled.html">SDL_RenderClipEnabled</a> - 指定のレンダラでクリップが有効かチェックする
-<li>SDL_RenderCoordinatesFromWindow
-<li>SDL_RenderCoordinatesToWindow
+<li><a href="SDL_RenderCoordinatesFromWindow.html">SDL_RenderCoordinatesFromWindow</a> - ウィンドウの座標をレンダリングの座標に変換する
+<li><a href="SDL_RenderCoordinatesToWindow.html">SDL_RenderCoordinatesToWindow</a> - レンダリングの座標をウィンドウの座標に変換する
 <li>SDL_RenderDebugText
 <li>SDL_RenderDebugTextFormat
 <li>SDL_RenderFillRect
@@ -120,10 +120,10 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <li><a href="SDL_SetDefaultTextureScaleMode.html">SDL_SetDefaultTextureScaleMode</a> - 指定のレンダラのデフォルトの拡大縮小モードを設定する
 <li>SDL_SetGPURenderStateFragmentUniforms
 <li><a href="SDL_SetRenderClipRect.html">SDL_SetRenderClipRect</a> - レンダーターゲットにクリップ領域を設定する
-<li>SDL_SetRenderColorScale
-<li>SDL_SetRenderDrawBlendMode
-<li>SDL_SetRenderDrawColor
-<li>SDL_SetRenderDrawColorFloat
+<li><a href="SDL_SetRenderColorScale.html">SDL_SetRenderColorScale</a> - 描画で使われる色倍率を設定する
+<li><a href="SDL_SetRenderDrawBlendMode.html">SDL_SetRenderDrawBlendMode</a> - 描画(塗りつぶしと直線)時のブレンドモードを設定する
+<li><a href="SDL_SetRenderDrawColor.html">SDL_SetRenderDrawColor</a> - 描画(長方形, 直線, 消去)で使う色を設定する
+<li><a href="SDL_SetRenderDrawColorFloat.html">SDL_SetRenderDrawColorFloat</a> - 描画(長方形, 直線, 消去)で使う色を設定する
 <li>SDL_SetRenderGPUState
 <li><a href="SDL_SetRenderLogicalPresentation.html">SDL_SetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しない論理サイズと表示モードを設定する
 <li><a href="SDL_SetRenderScale.html">SDL_SetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を設定する
@@ -158,7 +158,7 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <ol>
 <li><a href="SDL_RendererLogicalPresentation.html">SDL_RendererLogicalPresentation</a> - 論理サイズと出力の対応方法の列挙体
 <li><a href="SDL_TextureAccess.html">SDL_TextureAccess</a> - テクスチャのアクセスパターンの列挙体
-<li>SDL_TextureAddressMode
+<li><a href="SDL_TextureAddressMode.html">SDL_TextureAddressMode</a> - テクスチャのSDL_RenderGeometry()で使用されるアドレッシングモードの列挙体
 </ol>
 <h2>マクロ</h2>
 <ol>

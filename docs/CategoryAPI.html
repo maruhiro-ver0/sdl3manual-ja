@@ -107,7 +107,7 @@
 <li><A HREF="SDL_CompareAndSwapAtomicU32.html">SDL_CompareAndSwapAtomicU32</a> - もしアトミック変数が「古い値」ならば「新しい値」にする
 <li><a href="SDL_ComposeCustomBlendMode.html">SDL_ComposeCustomBlendMode</a> - レンダラ用のカスタムブレンドモードを構成する
 <li><a href="SDL_ConvertAudioSamples.html">SDL_ConvertAudioSamples</a> - オーディオデータを別の形式に変換する
-<li>SDL_ConvertEventToRenderCoordinates
+<li><a href="SDL_ConvertEventToRenderCoordinates.html">SDL_ConvertEventToRenderCoordinates</a> - イベント構造体の座標をレンダリングの座標に変換する
 <li><a href="SDL_ConvertPixels.html">SDL_ConvertPixels</a> - ある形式のピクセル群を別の形式に変換してコピーする
 <li><a href="SDL_ConvertPixelsAndColorspace.html">SDL_ConvertPixelsAndColorspace</a> - ある形式のピクセル群を別の形式と色空間に変換してコピーする
 <li><a href="SDL_ConvertSurface.html">SDL_ConvertSurface</a> - 既存のサーフェイスを別の形式に変換して新しいサーフェイスを生成する
@@ -504,21 +504,21 @@
 <li><a href="SDL_GetRectUnionFloat.html">SDL_GetRectUnionFloat</a> - 浮動小数点で表された2つの長方形の重なる部分を求める
 <li><a href="SDL_GetRelativeMouseState.html">SDL_GetRelativeMouseState</a> - SDLがキャッシュした同期したマウスボタンの状態と最後に呼び出したときからのマウスの移動量を得る
 <li><a href="SDL_GetRenderClipRect.html">SDL_GetRenderClipRect</a> - 現在のレンダーターゲットのクリップ枠を得る
-<li>SDL_GetRenderColorScale
-<li>SDL_GetRenderDrawBlendMode
-<li>SDL_GetRenderDrawColor
-<li>SDL_GetRenderDrawColorFloat
+<li><a href="SDL_GetRenderColorScale.html">SDL_GetRenderColorScale</a> - 描画で使われる色倍率を得る
+<li><a href="SDL_GetRenderDrawBlendMode.html">SDL_GetRenderDrawBlendMode</a> - 描画時のブレンドモードを得る
+<li><a href="SDL_GetRenderDrawColor.html">SDL_GetRenderDrawColor</a> - 描画(長方形, 直線, 消去)で使われている色を得る
+<li><a href="SDL_GetRenderDrawColorFloat.html">SDL_GetRenderDrawColorFloat</a> - 描画(長方形, 直線, 消去)で使われている色を得る
 <li><a href="SDL_GetRenderDriver.html">SDL_GetRenderDriver</a> - 組み込まれた2Dレンダリングドライバの名前を得る
 <li><a href="SDL_GetRenderer.html">SDL_GetRenderer</a> - ウィンドウに関連付けられたレンダラを得る
 <li><a href="SDL_GetRendererFromTexture.html">SDL_GetRendererFromTexture</a> - テクスチャを生成したレンダラを得る
-<li>SDL_GetRendererName
-<li>SDL_GetRendererProperties
+<li><a href="SDL_GetRendererName.html">SDL_GetRendererName</a> - レンダラの名前を得る
+<li><a href="SDL_GetRendererProperties.html">SDL_GetRendererProperties</a> - レンダラに関連付けられたプロパティを得る
 <li><a href="SDL_GetRenderLogicalPresentation.html">SDL_GetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しないサイズと表示モードを得る
-<li>SDL_GetRenderLogicalPresentationRect
+<li><a href="SDL_GetRenderLogicalPresentationRect.html">SDL_GetRenderLogicalPresentationRect</a> - レンダリングの最終的な表示領域を得る
 <li>SDL_GetRenderMetalCommandEncoder
 <li>SDL_GetRenderMetalLayer
 <li><a href="SDL_GetRenderOutputSize.html">SDL_GetRenderOutputSize</a> - レンダリングコンテキストの出力サイズをピクセル数で得る
-<li>SDL_GetRenderSafeArea
+<li><a href="SDL_GetRenderSafeArea.html">SDL_GetRenderSafeArea</a> - レンダラの現在の表示領域のセーフエリアを得る
 <li><a href="SDL_GetRenderScale.html">SDL_GetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を得る
 <li><a href="SDL_GetRenderTarget.html">SDL_GetRenderTarget</a> - 現在のレンダーターゲットを得る
 <li>SDL_GetRenderTextureAddressMode
@@ -917,10 +917,10 @@
 <li><a href="SDL_RemoveTrayEntry.html">SDL_RemoveTrayEntry</a> - トレイの項目を削除する
 <li><a href="SDL_RenamePath.html">SDL_RenamePath</a> - ファイル名またはディレクトリ名を変更する
 <li><a href="SDL_RenameStoragePath.html">SDL_RenameStoragePath</a> - 書込可能ストレージコンテナのファイル名またはディレクトリ名を変更する
-<li>SDL_RenderClear
+<li><a href="SDL_RenderClear.html">SDL_RenderClear</a> - 現在のレンダーターゲットを色で塗りつぶして消去する
 <li><a href="SDL_RenderClipEnabled.html">SDL_RenderClipEnabled</a> - 指定のレンダラでクリップが有効かチェックする
-<li>SDL_RenderCoordinatesFromWindow
-<li>SDL_RenderCoordinatesToWindow
+<li><a href="SDL_RenderCoordinatesFromWindow.html">SDL_RenderCoordinatesFromWindow</a> - ウィンドウの座標をレンダリングの座標に変換する
+<li><a href="SDL_RenderCoordinatesToWindow.html">SDL_RenderCoordinatesToWindow</a> - レンダリングの座標をウィンドウの座標に変換する
 <li>SDL_RenderDebugText
 <li>SDL_RenderDebugTextFormat
 <li>SDL_RenderFillRect
@@ -1054,10 +1054,10 @@
 <li><a href="SDL_SetPrimarySelectionText.html">SDL_SetPrimarySelectionText</a> - プライマリ選択にUTF-8テキストを設定する
 <li><a href="SDL_SetRelativeMouseTransform.html">SDL_SetRelativeMouseTransform</a> - 相対マウスの入力を変換するユーザ定義の関数を設定する
 <li><a href="SDL_SetRenderClipRect.html">SDL_SetRenderClipRect</a> - レンダーターゲットにクリップ領域を設定する
-<li>SDL_SetRenderColorScale
-<li>SDL_SetRenderDrawBlendMode
-<li>SDL_SetRenderDrawColor
-<li>SDL_SetRenderDrawColorFloat
+<li><a href="SDL_SetRenderColorScale.html">SDL_SetRenderColorScale</a> - 描画で使われる色倍率を設定する
+<li><a href="SDL_SetRenderDrawBlendMode.html">SDL_SetRenderDrawBlendMode</a> - 描画(塗りつぶしと直線)時のブレンドモードを設定する
+<li><a href="SDL_SetRenderDrawColor.html">SDL_SetRenderDrawColor</a> - 描画(長方形, 直線, 消去)で使う色を設定する
+<li><a href="SDL_SetRenderDrawColorFloat.html">SDL_SetRenderDrawColorFloat</a> - 描画(長方形, 直線, 消去)で使う色を設定する
 <li>SDL_SetRenderGPUState
 <li><a href="SDL_SetRenderLogicalPresentation.html">SDL_SetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しない論理サイズと表示モードを設定する
 <li><a href="SDL_SetRenderScale.html">SDL_SetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を設定する
@@ -1654,7 +1654,7 @@
 <li><a href="SDL_SystemTheme.html">SDL_SystemTheme</a> - システムのテーマの列挙体
 <li><a href="SDL_TextInputType.html">SDL_TextInputType</a> - テキスト入力の種類の列挙体
 <li><a href="SDL_TextureAccess.html">SDL_TextureAccess</a> - テクスチャのアクセスパターンの列挙体
-<li>SDL_TextureAddressMode
+<li><a href="SDL_TextureAddressMode.html">SDL_TextureAddressMode</a> - テクスチャのSDL_RenderGeometry()で使用されるアドレッシングモードの列挙体
 <li><a href="SDL_ThreadPriority.html">SDL_ThreadPriority</a> - スレッドの優先度の列挙体
 <li><a href="SDL_ThreadState.html">SDL_ThreadState</a> - SDLスレッドの状態の列挙体
 <li><a href="SDL_TimeFormat.html">SDL_TimeFormat</a> - システムのロケールの時刻の形式の列挙体
