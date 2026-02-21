@@ -11,7 +11,7 @@
 <a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryRender.html">2Dレンダリング</a> - SDL_RenderGeometry
 <hr>
 <h1>SDL_RenderGeometry</h1>
-三角形の一覧をレンダリングする. テクスチャと頂点配列の番号も使用できる. 色成分とα値の乗算は頂点ごとに行われる(<a href="SDL_SetTextureColorMod.html">SDL_SetTextureColorMod</a>と<a href="SDL_SetTextureAlphaMod.html">SDL_SetTextureAlphaMod</a>は無視される)
+三角形の一覧をレンダリングする. テクスチャと頂点配列のインデックス番号も指定できる. 色成分とα値の乗算は頂点ごとに行われる(<a href="SDL_SetTextureColorMod.html">SDL_SetTextureColorMod</a>と<a href="SDL_SetTextureAlphaMod.html">SDL_SetTextureAlphaMod</a>は無視される)
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_render.h">SDL3/SDL_render.h</a>
 <h2>構文</h2>
@@ -29,6 +29,10 @@
 <p>
 (bool) 成功のとき真, 失敗のとき偽を戻す.
 <a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼べるのはメインスレッドのみである.
 </p>
 <h2>バージョン</h2>
 SDL 3.2.0以降

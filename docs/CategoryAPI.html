@@ -235,7 +235,7 @@
 <li><a href="SDL_FlushEvent.html">SDL_FlushEvent</a> - イベントキューからイベントを消去する
 <li><a href="SDL_FlushEvents.html">SDL_FlushEvents</a> - イベントキューから複数のイベントを消去する
 <li><a href="SDL_FlushIO.html">SDL_FlushIO</a> - データストリームのバッファを掃き出す
-<li>SDL_FlushRenderer
+<li><a href="SDL_FlushRenderer.html">SDL_FlushRenderer</a> - レンダリングコンテキストに保留中のコマンドと状態を強制的に掃き出す
 <li>SDL_fmod
 <li>SDL_fmodf
 <li><a href="SDL_free.html">SDL_free</a> - 確保したメモリを解放する
@@ -506,8 +506,8 @@
 <li><a href="SDL_GetRenderClipRect.html">SDL_GetRenderClipRect</a> - 現在のレンダーターゲットのクリップ枠を得る
 <li><a href="SDL_GetRenderColorScale.html">SDL_GetRenderColorScale</a> - 描画で使われる色倍率を得る
 <li><a href="SDL_GetRenderDrawBlendMode.html">SDL_GetRenderDrawBlendMode</a> - 描画時のブレンドモードを得る
-<li><a href="SDL_GetRenderDrawColor.html">SDL_GetRenderDrawColor</a> - 描画(長方形, 直線, 消去)で使われている色を得る
-<li><a href="SDL_GetRenderDrawColorFloat.html">SDL_GetRenderDrawColorFloat</a> - 描画(長方形, 直線, 消去)で使われている色を得る
+<li><a href="SDL_GetRenderDrawColor.html">SDL_GetRenderDrawColor</a> - 描画(長方形, 線分, 消去)で使われている色を得る
+<li><a href="SDL_GetRenderDrawColorFloat.html">SDL_GetRenderDrawColorFloat</a> - 描画(長方形, 線分, 消去)で使われている色を得る
 <li><a href="SDL_GetRenderDriver.html">SDL_GetRenderDriver</a> - 組み込まれた2Dレンダリングドライバの名前を得る
 <li><a href="SDL_GetRenderer.html">SDL_GetRenderer</a> - ウィンドウに関連付けられたレンダラを得る
 <li><a href="SDL_GetRendererFromTexture.html">SDL_GetRendererFromTexture</a> - テクスチャを生成したレンダラを得る
@@ -523,7 +523,7 @@
 <li><a href="SDL_GetRenderTarget.html">SDL_GetRenderTarget</a> - 現在のレンダーターゲットを得る
 <li><a href="SDL_GetRenderTextureAddressMode.html">SDL_GetRenderTextureAddressMode</a> - SDL_RenderGeometry()で使用されるテクスチャのアドレッシングモードを得る
 <li><a href="SDL_GetRenderViewport.html">SDL_GetRenderViewport</a> - 現在のレンダーターゲットの描画領域を得る
-<li>SDL_GetRenderVSync
+<li><a href="SDL_GetRenderVSync.html">SDL_GetRenderVSync</a> - レンダラの垂直同期の方法を得る
 <li><a href="SDL_GetRenderWindow.html">SDL_GetRenderWindow</a> - レンダラに関連付けられたウィンドウを得る
 <li><a href="SDL_GetRevision.html">SDL_GetRevision</a> - アプリケーションにリンクされたSDLのリビジョンコードを得る
 <li><a href="SDL_GetRGB.html">SDL_GetRGB</a> - 指定のピクセルのRGB値を得る
@@ -768,8 +768,8 @@
 <li><a href="SDL_LockRWLockForWriting.html">SDL_LockRWLockForWriting</a> - ブロックせずに読取/書込ロックの書込ロックを試みる
 <li><a href="SDL_LockSpinlock.html">SDL_LockSpinlock</a> - 0でない値を設定することでスピンロックする
 <li><a href="SDL_LockSurface.html">SDL_LockSurface</a> - ピクセル領域に直接アクセスできるように設定する
-<li>SDL_LockTexture
-<li>SDL_LockTextureToSurface
+<li><a href="SDL_LockTexture.html">SDL_LockTexture</a> - ピクセルの書込専用アクセスのためにテクスチャの一部をロックする
+<li><a href="SDL_LockTextureToSurface.html">SDL_LockTextureToSurface</a> - ピクセルの書込専用アクセスのためにテクスチャの一部をロックしてSDLサーフェイスとする
 <li><a href="SDL_Log.html">SDL_Log</a> - SDL_LOG_CATEGORY_APPLICATION分類ログをSDL_LOG_PRIORITY_INFOの重要度で出力する
 <li>SDL_log
 <li>SDL_log10
@@ -926,21 +926,21 @@
 <li><a href="SDL_RenderFillRect.html">SDL_RenderFillRect</a> - レンダーターゲットに描画色で塗りつぶしたサブピクセルの精度の長方形を描く
 <li><a href="SDL_RenderFillRects.html">SDL_RenderFillRects</a> - レンダーターゲットに描画色で塗りつぶしたサブピクセルの精度の複数の長方形を描く
 <li><a href="SDL_RenderGeometry.html">SDL_RenderGeometry</a> - 三角形の一覧をレンダリングする
-<li>SDL_RenderGeometryRaw
-<li>SDL_RenderLine
-<li>SDL_RenderLines
-<li>SDL_RenderPoint
-<li>SDL_RenderPoints
-<li>SDL_RenderPresent
-<li>SDL_RenderReadPixels
+<li><a href="SDL_RenderGeometryRaw.html">SDL_RenderGeometryRaw</a> - 三角形の一覧をレンダリングする
+<li><a href="SDL_RenderLine.html">SDL_RenderLine</a> - レンダーターゲットにサブピクセルの精度の線分を描く
+<li><a href="SDL_RenderLines.html">SDL_RenderLines</a> - レンダーターゲットにサブピクセルの精度の線分を描く
+<li><a href="SDL_RenderPoint.html">SDL_RenderPoint</a> - レンダーターゲットにサブピクセルの精度の点を描く
+<li><a href="SDL_RenderPoints.html">SDL_RenderPoints</a> - レンダーターゲットにサブピクセルの精度の複数の点を描く
+<li><a href="SDL_RenderPresent.html">SDL_RenderPresent</a> - レンダリングの結果を画面に反映する
+<li><a href="SDL_RenderReadPixels.html">SDL_RenderReadPixels</a> - 現在のレンダーターゲットのピクセルデータを読み込む
 <li><a href="SDL_RenderRect.html">SDL_RenderRect</a> - レンダーターゲットにサブピクセルの精度の長方形を描く
 <li><a href="SDL_RenderRects.html">SDL_RenderRects</a> - レンダーターゲットにサブピクセルの精度の複数の長方形を描く
 <li><a href="SDL_RenderTexture.html">SDL_RenderTexture</a> - テクスチャの一部を現在のレンダーターゲットにサブピクセルの精度でコピーする
-<li>SDL_RenderTexture9Grid
-<li>SDL_RenderTexture9GridTiled
-<li>SDL_RenderTextureAffine
-<li>SDL_RenderTextureRotated
-<li>SDL_RenderTextureTiled
+<li><a href="SDL_RenderTexture9Grid.html">SDL_RenderTexture9Grid</a> - テクスチャの一部を現在のレンダーターゲットに9-grid algorithmを使用して拡大縮小してサブピクセルの精度でコピーする
+<li><a href="SDL_RenderTexture9GridTiled.html">SDL_RenderTexture9GridTiled</a> - テクスチャの一部を現在のレンダーターゲットに9-grid algorithmを使用して拡大縮小してサブピクセルの精度でコピーする
+<li><a href="SDL_RenderTextureAffine.html">SDL_RenderTextureAffine</a> - テクスチャの一部を現在のレンダーターゲットにアフィン変換を適用してサブピクセルの精度でコピーする
+<li><a href="SDL_RenderTextureRotated.html">SDL_RenderTextureRotated</a> - テクスチャの一部を現在のレンダーターゲットに回転と反転を行いサブピクセルの精度でコピーする
+<li><a href="SDL_RenderTextureTiled.html">SDL_RenderTextureTiled</a> - テクスチャの一部を現在のレンダーターゲットにサブピクセルの精度でコピーする
 <li><a href="SDL_RenderViewportSet.html">SDL_RenderViewportSet</a> - 現在のレンダーターゲットに描画領域を表す長方形が設定されているかチェックする
 <li>SDL_ReportAssertion
 <li>SDL_RequestAndroidPermission
@@ -1055,16 +1055,16 @@
 <li><a href="SDL_SetRelativeMouseTransform.html">SDL_SetRelativeMouseTransform</a> - 相対マウスの入力を変換するユーザ定義の関数を設定する
 <li><a href="SDL_SetRenderClipRect.html">SDL_SetRenderClipRect</a> - レンダーターゲットにクリップ領域を設定する
 <li><a href="SDL_SetRenderColorScale.html">SDL_SetRenderColorScale</a> - 描画で使われる色倍率を設定する
-<li><a href="SDL_SetRenderDrawBlendMode.html">SDL_SetRenderDrawBlendMode</a> - 描画(塗りつぶしと直線)時のブレンドモードを設定する
-<li><a href="SDL_SetRenderDrawColor.html">SDL_SetRenderDrawColor</a> - 描画(長方形, 直線, 消去)で使う色を設定する
-<li><a href="SDL_SetRenderDrawColorFloat.html">SDL_SetRenderDrawColorFloat</a> - 描画(長方形, 直線, 消去)で使う色を設定する
+<li><a href="SDL_SetRenderDrawBlendMode.html">SDL_SetRenderDrawBlendMode</a> - 描画(塗りつぶしと線分)時のブレンドモードを設定する
+<li><a href="SDL_SetRenderDrawColor.html">SDL_SetRenderDrawColor</a> - 描画(長方形, 線分, 消去)で使う色を設定する
+<li><a href="SDL_SetRenderDrawColorFloat.html">SDL_SetRenderDrawColorFloat</a> - 描画(長方形, 線分, 消去)で使う色を設定する
 <li>SDL_SetRenderGPUState
 <li><a href="SDL_SetRenderLogicalPresentation.html">SDL_SetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しない論理サイズと表示モードを設定する
 <li><a href="SDL_SetRenderScale.html">SDL_SetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を設定する
 <li><a href="SDL_SetRenderTarget.html">SDL_SetRenderTarget</a> - レンダラの現在のレンダーターゲットを設定する
 <li><a href="SDL_SetRenderTextureAddressMode.html">SDL_SetRenderTextureAddressMode</a> - SDL_RenderGeometry()で使用するテクスチャのアドレッシングモードを設定する
 <li><a href="SDL_SetRenderViewport.html">SDL_SetRenderViewport</a> - 現在のレンダーターゲットの描画領域を設定する
-<li>SDL_SetRenderVSync
+<li><a href="SDL_SetRenderVSync.html">SDL_SetRenderVSync</a> - レンダラの垂直同期の方法を設定する
 <li><a href="SDL_SetScancodeName.html">SDL_SetScancodeName</a> - スキャンコードの人が読める名前を設定する
 <li><a href="SDL_SetStringProperty.html">SDL_SetStringProperty</a> - プロパティグループの文字列型プロパティを設定する
 <li><a href="SDL_SetSurfaceAlphaMod.html">SDL_SetSurfaceAlphaMod</a> - 転送で使用するα値を設定する
@@ -1218,7 +1218,7 @@
 <li><a href="SDL_UnlockRWLock.html">SDL_UnlockRWLock</a> - 読取/書込ロックをロック解除する
 <li><a href="SDL_UnlockSpinlock.html">SDL_UnlockSpinlock</a> - 0を設定することでスピンロックを解除する
 <li><a href="SDL_UnlockSurface.html">SDL_UnlockSurface</a> - ピクセル領域に直接アクセスした後にロックを解放する
-<li>SDL_UnlockTexture
+<li><a href="SDL_UnlockTexture.html">SDL_UnlockTexture</a> - 必要なら変更をビデオメモリに反映させるためにテクスチャのロックを解除する
 <li>SDL_UnmapGPUTransferBuffer
 <li><a href="SDL_UnregisterApp.html">SDL_UnregisterApp</a> - SDL_RegisterAppで登録したwin32ウィンドウクラスを解除する
 <li>SDL_unsetenv_unsafe

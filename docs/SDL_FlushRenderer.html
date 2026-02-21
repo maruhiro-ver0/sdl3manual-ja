@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryRender.html" title="1つ上">
+<title>SDL_FlushRenderer</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryRender.html">2Dレンダリング</a> - SDL_FlushRenderer
+<hr>
+<h1>SDL_FlushRenderer</h1>
+レンダリングコンテキストに保留中のコマンドと状態を強制的に掃き出す
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_render.h">SDL3/SDL_render.h</a>
+<h2>構文</h2>
+<code>bool SDL_FlushRenderer(SDL_Renderer *renderer);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Renderer.html">SDL_Renderer</a> *</td><td>renderer</td><td>レンダリングコンテキスト</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+<a href="SDL_Renderer.html">SDL_Renderer</a>を使用した後に追加でOpenGL/Direct3D/Metal/その他を直接呼び出そうとしない限り, この関数は必要ない. (そして, 本来は使うべきではない.) 
+</p>
+<p>
+この関数は極めて特殊な場合のためにある: SDLのレンダーAPIを使っていて, SDLレンダーAPIの呼び出しに追加してOpenGL/Direct3D/その他を呼び出す場合である.
+この場合, SDLレンダーAPIと, 連携して使用する下位レベルAPIの間で, SDL_FlushRenderer()を呼ぶ必要がある.
+</p>
+<p>
+これ以外の場合, この関数は不要である.
+</p>
+<p>
+この関数を呼び出すと, SDLは1つのバッチのキューに入れられた保留中のレンダリングを全て掃き出し, 内部にキャッシュされた状態を無効状態にマークする. そのため, 後で状態を最初からやり直す準備が行われる.
+</p>
+<p>
+その結果, SDL以外でレンダリングをする前にSDLレンダラの状態を保存する必要はない.
+しかし, Direct3DやOpenGLによる予期しない状態の変化で混乱が生じる可能性がある. 特定の状態を保護する必要があるならば, 必要性を判断し, 状態の変化に備えるべきである.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼べるのはメインスレッドのみである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_FlushRenderer">SDL_FlushRenderer - SDL Wiki</a>
+<hr>
+</body>
+</html>
