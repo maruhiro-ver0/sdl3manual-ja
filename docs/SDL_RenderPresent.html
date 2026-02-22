@@ -39,7 +39,7 @@ SDLのレンダリング関数は背景バッファを操作する. つまり, <
 全てのピクセルを上書きする場合でも, 各フレームを描く前に<a href="SDL_RenderClear.html">SDL_RenderClear()</a>を呼んで背景バッファを初期化することを強く推奨する. 
 </p>
 <p>
-テクスチャへのレンダリングの場合, テクスチャに描画した後でSDL_RenderPresentを呼ぶ必要はなく, かつ呼んではならない.
+テクスチャへのレンダリングの場合, テクスチャに描画した後でSDL_RenderPresentを呼ぶ<em>必要はなく</em>, かつ呼んではならない.
 テクスチャには背景バッファの概念がないため, レンダーターゲットをデフォルトに戻すには<code><a href="SDL_SetRenderTarget.html">SDL_SetRenderTarget</a>(renderer, NULL)</code>を呼ぶだけでよい.
 テクスチャのレンダリング中にSDL_RenderPresentを呼ぶと失敗する.
 </p>

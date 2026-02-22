@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryRender.html" title="1つ上">
+<title>SDL_AddVulkanRenderSemaphores</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryRender.html">2Dレンダリング</a> - SDL_AddVulkanRenderSemaphores
+<hr>
+<h1>SDL_AddVulkanRenderSemaphores</h1>
+現在のフレームに同期セマフォを追加する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_render.h">SDL3/SDL_render.h</a>
+<h2>構文</h2>
+<code>bool SDL_AddVulkanRenderSemaphores(SDL_Renderer *renderer, Uint32 wait_stage_mask, Sint64 wait_semaphore, Sint64 signal_semaphore);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Renderer.html">SDL_Renderer</a> *</td><td>renderer</td><td>テクスチャの一部がコピーされるレンダラ</td></tr>
+<tr><td>Uint32</td><td>wait_stage_mask</td><td>待機のVkPipelineStageFlagsフラグ</td></tr>
+<tr><td>Sint64</td><td>wait_semaphore</td><td>現在のフレームの前の待機のVkSempahore. 不要のとき0</td></tr>
+<tr><td>Sint64</td><td>signal_semaphore</td><td>現在のフレームのレンダリングが完了したときSDLが発信するVkSempahore. 不要のとき0s</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+Vulkanレンダラはレンダリングコマンドを発行する前にwait_semaphoreを待ち, そのフレームのコマンドが完了した後にsignal_semaphoreを発信する.
+</p>
+<p>
+これはセマフォ同期が必要なフレームごとに行う必要がある.
+VulkanレンダラはGPUで複数のフレームを処理している可能性があるため, 同期のために複数のセマフォが必要である.
+<a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_VULKAN_SWAPCHAIN_IMAGE_COUNT_NUMBER</a>で必要なセマフォの最大数が得られる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を複数のスレッドで同時に呼ぶのは安全ではない.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_AddVulkanRenderSemaphores">SDL_AddVulkanRenderSemaphores - SDL Wiki</a>
+<hr>
+</body>
+</html>

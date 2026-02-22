@@ -29,7 +29,7 @@
 <li><a href="SDL_AddSurfaceAlternateImage.html">SDL_AddSurfaceAlternateImage</a> - サーフェイスに別のバージョンを追加する
 <li><a href="SDL_AddTimer.html">SDL_AddTimer</a> - 指定のミリ秒が経過した後にコールバック関数を呼ぶように設定する
 <li><a href="SDL_AddTimerNS.html">SDL_AddTimerNS</a> - 指定のナノ秒が経過した後にコールバック関数を呼ぶように設定する
-<li>SDL_AddVulkanRenderSemaphores
+<li><a href="SDL_AddVulkanRenderSemaphores.html">SDL_AddVulkanRenderSemaphores</a> - 現在のフレームに同期セマフォを追加する
 <li>SDL_aligned_alloc
 <li>SDL_aligned_free
 <li><a href="SDL_AppEvent.html">SDL_AppEvent</a> - メインコールバックを使用する場合, アプリケーションが実装するイベント処理エントリーポイント
@@ -135,8 +135,8 @@
 <li>SDL_CreateGPUDevice
 <li>SDL_CreateGPUDeviceWithProperties
 <li>SDL_CreateGPUGraphicsPipeline
-<li>SDL_CreateGPURenderer
-<li>SDL_CreateGPURenderState
+<li><a href="SDL_CreateGPURenderer.html">SDL_CreateGPURenderer</a> - 2D GPUレンダリングコンテキストを生成する
+<li><a href="SDL_CreateGPURenderState.html">SDL_CreateGPURenderState</a> - GPUレンダリング状態を生成する
 <li>SDL_CreateGPUSampler
 <li>SDL_CreateGPUShader
 <li>SDL_CreateGPUTexture
@@ -180,7 +180,7 @@
 <li><a href="SDL_DestroyCursor.html">SDL_DestroyCursor</a> - カーソルを解放する
 <li>SDL_DestroyEnvironment
 <li>SDL_DestroyGPUDevice
-<li>SDL_DestroyGPURenderState
+<li><a href="SDL_DestroyGPURenderState.html">SDL_DestroyGPURenderState</a> - カスタムGPUレンダリング状態を破棄する
 <li><a href="SDL_DestroyHapticEffect.html">SDL_DestroyHapticEffect</a> - ハプティックデバイスのエフェクトを再生する
 <li><a href="SDL_DestroyMutex.html">SDL_DestroyMutex</a> - SDL_CreateMutex()で生成したミューテックスを破棄する
 <li><a href="SDL_DestroyPalette.html">SDL_DestroyPalette</a> - SDL_CreatePalette()で生成したパレットを解放する
@@ -391,7 +391,7 @@
 <li>SDL_GetGPUDeviceDriver
 <li>SDL_GetGPUDeviceProperties
 <li>SDL_GetGPUDriver
-<li>SDL_GetGPURendererDevice
+<li><a href="SDL_GetGPURendererDevice.html">SDL_GetGPURendererDevice</a> - レンダラが使用しているGPUデバイスを得る
 <li>SDL_GetGPUShaderFormats
 <li>SDL_GetGPUSwapchainTextureFormat
 <li>SDL_GetGPUTextureFormatFromPixelFormat
@@ -515,8 +515,8 @@
 <li><a href="SDL_GetRendererProperties.html">SDL_GetRendererProperties</a> - レンダラに関連付けられたプロパティを得る
 <li><a href="SDL_GetRenderLogicalPresentation.html">SDL_GetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しないサイズと表示モードを得る
 <li><a href="SDL_GetRenderLogicalPresentationRect.html">SDL_GetRenderLogicalPresentationRect</a> - レンダリングの最終的な表示領域を得る
-<li>SDL_GetRenderMetalCommandEncoder
-<li>SDL_GetRenderMetalLayer
+<li><a href="SDL_GetRenderMetalCommandEncoder.html">SDL_GetRenderMetalCommandEncoder</a> - 現在のフレームのMetalコマンドエンコーダを得る
+<li><a href="SDL_GetRenderMetalLayer.html">SDL_GetRenderMetalLayer</a> - MetalレンダラのCAMetalLayerを得る
 <li><a href="SDL_GetRenderOutputSize.html">SDL_GetRenderOutputSize</a> - レンダリングコンテキストの出力サイズをピクセル数で得る
 <li><a href="SDL_GetRenderSafeArea.html">SDL_GetRenderSafeArea</a> - レンダラの現在の表示領域のセーフエリアを得る
 <li><a href="SDL_GetRenderScale.html">SDL_GetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を得る
@@ -568,7 +568,7 @@
 <li><a href="SDL_GetTextureBlendMode.html">SDL_GetTextureBlendMode</a> - テクスチャのコピー操作で使われるブレンドモードを得る
 <li><a href="SDL_GetTextureColorMod.html">SDL_GetTextureColorMod</a> - レンダのコピー操作で各色成分に乗算される値を得る
 <li><a href="SDL_GetTextureColorModFloat.html">SDL_GetTextureColorModFloat</a> - レンダのコピー操作で各色成分に乗算される値を得る
-<li>SDL_GetTexturePalette
+<li><a href="SDL_GetTexturePalette.html">SDL_GetTexturePalette</a> - テクスチャのパレットを得る
 <li><a href="SDL_GetTextureProperties.html">SDL_GetTextureProperties</a> - テクスチャに関連付けられたプロパティを得る
 <li><a href="SDL_GetTextureScaleMode.html">SDL_GetTextureScaleMode</a> - テクスチャの拡大縮小で使われるモードを得る 
 <li><a href="SDL_GetTextureSize.html">SDL_GetTextureSize</a> - テクスチャのサイズを浮動小数点で得る
@@ -921,8 +921,8 @@
 <li><a href="SDL_RenderClipEnabled.html">SDL_RenderClipEnabled</a> - 指定のレンダラでクリップが有効かチェックする
 <li><a href="SDL_RenderCoordinatesFromWindow.html">SDL_RenderCoordinatesFromWindow</a> - ウィンドウの座標をレンダリングの座標に変換する
 <li><a href="SDL_RenderCoordinatesToWindow.html">SDL_RenderCoordinatesToWindow</a> - レンダリングの座標をウィンドウの座標に変換する
-<li>SDL_RenderDebugText
-<li>SDL_RenderDebugTextFormat
+<li><a href="SDL_RenderDebugText.html">SDL_RenderDebugText</a> - SDL_Rendererにデバッグ用テキストを描く
+<li><a href="SDL_RenderDebugTextFormat.html">SDL_RenderDebugTextFormat</a> - SDL_Rendererにデバッグ用テキストを描く
 <li><a href="SDL_RenderFillRect.html">SDL_RenderFillRect</a> - レンダーターゲットに描画色で塗りつぶしたサブピクセルの精度の長方形を描く
 <li><a href="SDL_RenderFillRects.html">SDL_RenderFillRects</a> - レンダーターゲットに描画色で塗りつぶしたサブピクセルの精度の複数の長方形を描く
 <li><a href="SDL_RenderGeometry.html">SDL_RenderGeometry</a> - 三角形の一覧をレンダリングする
@@ -1016,8 +1016,8 @@
 <li>SDL_SetGPUAllowedFramesInFlight
 <li>SDL_SetGPUBlendConstants
 <li>SDL_SetGPUBufferName
-<li>SDL_SetGPURenderState
-<li>SDL_SetGPURenderStateFragmentUniforms
+<li><a href="SDL_SetGPURenderState.html">SDL_SetGPURenderState</a> - カスタムGPUレンダリング状態を設定する
+<li><a href="SDL_SetGPURenderStateFragmentUniforms.html">SDL_SetGPURenderStateFragmentUniforms</a> - カスタムGPUレンダリング状態のフラグメントシェーダのユニフォーム変数を設定する
 <li>SDL_SetGPUScissor
 <li>SDL_SetGPUStencilReference
 <li>SDL_SetGPUSwapchainParameters
@@ -1058,7 +1058,6 @@
 <li><a href="SDL_SetRenderDrawBlendMode.html">SDL_SetRenderDrawBlendMode</a> - 描画(塗りつぶしと線分)時のブレンドモードを設定する
 <li><a href="SDL_SetRenderDrawColor.html">SDL_SetRenderDrawColor</a> - 描画(長方形, 線分, 消去)で使う色を設定する
 <li><a href="SDL_SetRenderDrawColorFloat.html">SDL_SetRenderDrawColorFloat</a> - 描画(長方形, 線分, 消去)で使う色を設定する
-<li>SDL_SetRenderGPUState
 <li><a href="SDL_SetRenderLogicalPresentation.html">SDL_SetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しない論理サイズと表示モードを設定する
 <li><a href="SDL_SetRenderScale.html">SDL_SetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を設定する
 <li><a href="SDL_SetRenderTarget.html">SDL_SetRenderTarget</a> - レンダラの現在のレンダーターゲットを設定する
@@ -1081,7 +1080,7 @@
 <li><a href="SDL_SetTextureBlendMode.html">SDL_SetTextureBlendMode</a> - SDL_RenderTexture()で使用するテクスチャのブレンドモードを設定する
 <li><a href="SDL_SetTextureColorMod.html">SDL_SetTextureColorMod</a> - レンダのコピー操作で各色成分に乗算される値を設定する
 <li><a href="SDL_SetTextureColorModFloat.html">SDL_SetTextureColorModFloat</a> - レンダのコピー操作で各色成分に乗算される値を設定する
-<li>SDL_SetTexturePalette
+<li><a href="SDL_SetTexturePalette.html">SDL_SetTexturePalette</a> - テクスチャのパレットを設定する
 <li><a href="SDL_SetTextureScaleMode.html">SDL_SetTextureScaleMode</a> - テクスチャの拡大縮小で使用するモードを設定する
 <li><a href="SDL_SetTLS.html">SDL_SetTLS</a> - 現在のスレッドのスレッド局所記憶IDが保持する値を設定する
 <li><a href="SDL_SetTrayEntryCallback.html">SDL_SetTrayEntryCallback</a> - トレイの項目を選択したとき呼ばれるコールバックを設定する
@@ -1226,13 +1225,13 @@
 <li><a href="SDL_UpdateGamepads.html">SDL_UpdateGamepads</a> - イベントループを使用せずに手動でゲームパッドを更新する
 <li><a href="SDL_UpdateHapticEffect.html">SDL_UpdateHapticEffect</a> - ハプティックデバイスのエフェクトのパラメータを変更する
 <li><a href="SDL_UpdateJoysticks.html">SDL_UpdateJoysticks</a> - オープンされているジョイスティックの状態を更新する
-<li>SDL_UpdateNVTexture
+<li><a href="SDL_UpdateNVTexture.html">SDL_UpdateNVTexture</a> - Planar NV12またはNV21テクスチャの領域を新しいピクセルデータで更新する
 <li><a href="SDL_UpdateSensors.html">SDL_UpdateSensors</a> - オープンされたセンサーの現在の状態を得る
-<li>SDL_UpdateTexture
+<li><a href="SDL_UpdateTexture.html">SDL_UpdateTexture</a> - テクスチャの領域を新しいピクセルデータで更新する
 <li><a href="SDL_UpdateTrays.html">SDL_UpdateTrays</a> - システムトレイを更新する
 <li><a href="SDL_UpdateWindowSurface.html">SDL_UpdateWindowSurface</a> - ウィンドウサーフェイスを画面にコピーする
 <li><a href="SDL_UpdateWindowSurfaceRects.html">SDL_UpdateWindowSurfaceRects</a> - ウィンドウサーフェイスの領域を画面にコピーする
-<li>SDL_UpdateYUVTexture
+<li><a href="SDL_UpdateYUVTexture.html">SDL_UpdateYUVTexture</a> - Planar YV12またはIYUVテクスチャの領域を新しいピクセルデータで更新する
 <li>SDL_UploadToGPUBuffer
 <li>SDL_UploadToGPUTexture
 <li>SDL_utf8strlcpy
@@ -1351,22 +1350,22 @@
 <li><a href="SDL_GLContextResetNotification.html">SDL_GLContextResetNotification</a> - SDL_GL_CONTEXT_RESET_NOTIFICATIONで設定可能なフラグの型
 <li><a href="SDL_GlobFlags.html">SDL_GlobFlags</a> - パスの一致フラグの型
 <li><a href="SDL_GLProfile.html">SDL_GLProfile</a> - SDL_GL_CONTEXT_PROFILE_MASKで設定可能なフラグの型
-<li>SDL_GPUBuffer
+<li><a href="SDL_GPUBuffer.html">SDL_GPUBuffer</a> - バッファの不透明型
 <li>SDL_GPUBufferUsageFlags
 <li>SDL_GPUColorComponentFlags
 <li>SDL_GPUCommandBuffer
 <li>SDL_GPUComputePass
 <li>SDL_GPUComputePipeline
 <li>SDL_GPUCopyPass
-<li>SDL_GPUDevice
+<li><a href="SDL_GPUDevice.html">SDL_GPUDevice</a> - SDL GPUコンテキストの不透明型
 <li>SDL_GPUFence
 <li>SDL_GPUGraphicsPipeline
 <li>SDL_GPURenderPass
-<li>SDL_GPURenderState
-<li>SDL_GPUSampler
-<li>SDL_GPUShader
+<li><a href="SDL_GPURenderState.html">SDL_GPURenderState</a> - カスタムGPUレンダリング状態の不透明型
+<li><a href="SDL_GPUSampler.html">SDL_GPUSampler</a> - サンプラの不透明型
+<li><a href="SDL_GPUShader.html">SDL_GPUShader</a> - コンパイルされたシェーダオブジェクトの不透明型
 <li>SDL_GPUShaderFormat
-<li>SDL_GPUTexture
+<li><a href="SDL_GPUTexture.html">SDL_GPUTexture</a> - テクスチャの不透明型
 <li>SDL_GPUTextureUsageFlags
 <li>SDL_GPUTransferBuffer
 <li><a href="SDL_Haptic.html">SDL_Haptic</a> - SDLハプティックデバイスオブジェクトの型
@@ -1489,8 +1488,7 @@
 <li>SDL_GPUIndirectDrawCommand
 <li>SDL_GPUMultisampleState
 <li>SDL_GPURasterizerState
-<li>SDL_GPURenderStateCreateInfo
-<li>SDL_GPURenderStateDesc
+<li><a href="SDL_GPURenderStateCreateInfo.html">SDL_GPURenderStateCreateInfo</a> - GPUレンダリング状態の生成時のパラメータの構造体
 <li>SDL_GPUSamplerCreateInfo
 <li>SDL_GPUShaderCreateInfo
 <li>SDL_GPUStencilOpState
@@ -1499,7 +1497,7 @@
 <li>SDL_GPUTextureCreateInfo
 <li>SDL_GPUTextureLocation
 <li>SDL_GPUTextureRegion
-<li>SDL_GPUTextureSamplerBinding
+<li><a href="SDL_GPUTextureSamplerBinding.html">SDL_GPUTextureSamplerBinding</a> - サンプラのバインド時のパラメータの構造体
 <li>SDL_GPUTextureTransferInfo
 <li>SDL_GPUTransferBufferCreateInfo
 <li>SDL_GPUTransferBufferLocation
@@ -1743,7 +1741,7 @@
 <li>SDL_const_cast
 <li>SDL_copyp
 <li><a href="SDL_CPUPauseInstruction.html">SDL_CPUPauseInstruction</a> - プログラムにCPU固有の「一時停止」命令を挿入するマクロ
-<li>SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE
+<li><a href="SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE.html">SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE</a> - SDL_RenderDebugText()の文字のピクセル数のマクロ
 <li>SDL_DECLSPEC
 <li><a href="SDL_DEFINE_AUDIO_FORMAT.html">SDL_DEFINE_AUDIO_FORMAT</a> - オーディオ形式を定義するマクロ
 <li><a href="SDL_DEFINE_COLORSPACE.html">SDL_DEFINE_COLORSPACE</a> - カスタムされた色空間情報を定義するマクロ

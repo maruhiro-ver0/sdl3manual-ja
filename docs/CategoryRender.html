@@ -42,10 +42,10 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 </p>
 <h2>関数</h2>
 <ol>
-<li>SDL_AddVulkanRenderSemaphores
+<li><a href="SDL_AddVulkanRenderSemaphores.html">SDL_AddVulkanRenderSemaphores</a> - 現在のフレームに同期セマフォを追加する
 <li><a href="SDL_ConvertEventToRenderCoordinates.html">SDL_ConvertEventToRenderCoordinates</a> - イベント構造体の座標をレンダリングの座標に変換する
-<li>SDL_CreateGPURenderer
-<li>SDL_CreateGPURenderState
+<li><a href="SDL_CreateGPURenderer.html">SDL_CreateGPURenderer</a> - 2D GPUレンダリングコンテキストを生成する
+<li><a href="SDL_CreateGPURenderState.html">SDL_CreateGPURenderState</a> - GPUレンダリング状態を生成する
 <li><a href="SDL_CreateRenderer.html">SDL_CreateRenderer</a> - ウィンドウの2Dレンダリングコンテキストを生成する
 <li><a href="SDL_CreateRendererWithProperties.html">SDL_CreateRendererWithProperties</a> - プロパティを指定してウィンドウの2Dレンダリングコンテキストを生成する
 <li><a href="SDL_CreateSoftwareRenderer.html">SDL_CreateSoftwareRenderer</a> - サーフェイスの2Dソフトウェアレンダリングコンテキストを作成する
@@ -53,12 +53,13 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <li><a href="SDL_CreateTextureFromSurface.html">SDL_CreateTextureFromSurface</a> - サーフェイスからテクスチャを生成する
 <li><a href="SDL_CreateTextureWithProperties.html">SDL_CreateTextureWithProperties</a> - プロパティを指定してレンダリングコンテキストのテクスチャを生成する
 <li><a href="SDL_CreateWindowAndRenderer.html">SDL_CreateWindowAndRenderer</a> - ウィンドウとデフォルトのレンダラを生成する
-<li>SDL_DestroyGPURenderState
+<li><a href="SDL_DestroyGPURenderState.html">SDL_DestroyGPURenderState</a> - カスタムGPUレンダリング状態を破棄する
 <li><a href="SDL_DestroyRenderer.html">SDL_DestroyRenderer</a> - ウィンドウのレンダリングコンテキストと関連のテクスチャを破棄する
 <li><a href="SDL_DestroyTexture.html">SDL_DestroyTexture</a> - テクスチャを破棄する
 <li><a href="SDL_FlushRenderer.html">SDL_FlushRenderer</a> - レンダリングコンテキストに保留中のコマンドと状態を強制的に掃き出す
 <li><a href="SDL_GetCurrentRenderOutputSize.html">SDL_GetCurrentRenderOutputSize</a> - 現在のレンダリングコンテキストの出力サイズをピクセル数で得る
 <li><a href="SDL_GetDefaultTextureScaleMode.html">SDL_GetDefaultTextureScaleMode</a> - 指定のレンダラのデフォルトの拡大縮小モードを得る
+<li><a href="SDL_GetGPURendererDevice.html">SDL_GetGPURendererDevice</a> - レンダラが使用しているGPUデバイスを得る
 <li><a href="SDL_GetNumRenderDrivers.html">SDL_GetNumRenderDrivers</a> - 組み込まれた2Dレンダリングドライバの数を得る
 <li><a href="SDL_GetRenderClipRect.html">SDL_GetRenderClipRect</a> - 現在のレンダーターゲットのクリップ枠を得る
 <li><a href="SDL_GetRenderColorScale.html">SDL_GetRenderColorScale</a> - 描画で使われる色倍率を得る
@@ -72,8 +73,8 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <li><a href="SDL_GetRendererProperties.html">SDL_GetRendererProperties</a> - レンダラに関連付けられたプロパティを得る
 <li><a href="SDL_GetRenderLogicalPresentation.html">SDL_GetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しないサイズと表示モードを得る
 <li><a href="SDL_GetRenderLogicalPresentationRect.html">SDL_GetRenderLogicalPresentationRect</a> - レンダリングの最終的な表示領域を得る
-<li>SDL_GetRenderMetalCommandEncoder
-<li>SDL_GetRenderMetalLayer
+<li><a href="SDL_GetRenderMetalCommandEncoder.html">SDL_GetRenderMetalCommandEncoder</a> - 現在のフレームのMetalコマンドエンコーダを得る
+<li><a href="SDL_GetRenderMetalLayer.html">SDL_GetRenderMetalLayer</a> - MetalレンダラのCAMetalLayerを得る
 <li><a href="SDL_GetRenderOutputSize.html">SDL_GetRenderOutputSize</a> - レンダリングコンテキストの出力サイズをピクセル数で得る
 <li><a href="SDL_GetRenderSafeArea.html">SDL_GetRenderSafeArea</a> - レンダラの現在の表示領域のセーフエリアを得る
 <li><a href="SDL_GetRenderScale.html">SDL_GetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を得る
@@ -86,6 +87,7 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <li><a href="SDL_GetTextureAlphaModFloat.html">SDL_GetTextureAlphaModFloat</a> - レンダのコピー操作で乗算されるα値を得る
 <li><a href="SDL_GetTextureBlendMode.html">SDL_GetTextureBlendMode</a> - テクスチャのコピー操作で使われるブレンドモードを得る
 <li><a href="SDL_GetTextureColorMod.html">SDL_GetTextureColorMod</a> - レンダのコピー操作で各色成分に乗算される値を得る
+<li><a href="SDL_GetTexturePalette.html">SDL_GetTexturePalette</a> - テクスチャのパレットを得る
 <li><a href="SDL_GetTextureColorModFloat.html">SDL_GetTextureColorModFloat</a> - レンダのコピー操作で各色成分に乗算される値を得る
 <li><a href="SDL_GetTextureProperties.html">SDL_GetTextureProperties</a> - テクスチャに関連付けられたプロパティを得る
 <li><a href="SDL_GetTextureScaleMode.html">SDL_GetTextureScaleMode</a> - テクスチャの拡大縮小で使われるモードを得る 
@@ -96,8 +98,8 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <li><a href="SDL_RenderClipEnabled.html">SDL_RenderClipEnabled</a> - 指定のレンダラでクリップが有効かチェックする
 <li><a href="SDL_RenderCoordinatesFromWindow.html">SDL_RenderCoordinatesFromWindow</a> - ウィンドウの座標をレンダリングの座標に変換する
 <li><a href="SDL_RenderCoordinatesToWindow.html">SDL_RenderCoordinatesToWindow</a> - レンダリングの座標をウィンドウの座標に変換する
-<li>SDL_RenderDebugText
-<li>SDL_RenderDebugTextFormat
+<li><a href="SDL_RenderDebugText.html">SDL_RenderDebugText</a> - SDL_Rendererにデバッグ用テキストを描く
+<li><a href="SDL_RenderDebugTextFormat.html">SDL_RenderDebugTextFormat</a> - SDL_Rendererにデバッグ用テキストを描く
 <li><a href="SDL_RenderFillRect.html">SDL_RenderFillRect</a> - レンダーターゲットに描画色で塗りつぶしたサブピクセルの精度の長方形を描く
 <li><a href="SDL_RenderFillRects.html">SDL_RenderFillRects</a> - レンダーターゲットに描画色で塗りつぶしたサブピクセルの精度の複数の長方形を描く
 <li><a href="SDL_RenderGeometry.html">SDL_RenderGeometry</a> - 三角形の一覧をレンダリングする
@@ -118,13 +120,13 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <li><a href="SDL_RenderTextureTiled.html">SDL_RenderTextureTiled</a> - テクスチャの一部を現在のレンダーターゲットにサブピクセルの精度でコピーする
 <li><a href="SDL_RenderViewportSet.html">SDL_RenderViewportSet</a> - 現在のレンダーターゲットに描画領域を表す長方形が設定されているかチェックする
 <li><a href="SDL_SetDefaultTextureScaleMode.html">SDL_SetDefaultTextureScaleMode</a> - 指定のレンダラのデフォルトの拡大縮小モードを設定する
-<li>SDL_SetGPURenderStateFragmentUniforms
+<li><a href="SDL_SetGPURenderState.html">SDL_SetGPURenderState</a> - カスタムGPUレンダリング状態を設定する
+<li><a href="SDL_SetGPURenderStateFragmentUniforms.html">SDL_SetGPURenderStateFragmentUniforms</a> - カスタムGPUレンダリング状態のフラグメントシェーダのユニフォーム変数を設定する
 <li><a href="SDL_SetRenderClipRect.html">SDL_SetRenderClipRect</a> - レンダーターゲットにクリップ領域を設定する
 <li><a href="SDL_SetRenderColorScale.html">SDL_SetRenderColorScale</a> - 描画で使われる色倍率を設定する
 <li><a href="SDL_SetRenderDrawBlendMode.html">SDL_SetRenderDrawBlendMode</a> - 描画(塗りつぶしと線分)時のブレンドモードを設定する
 <li><a href="SDL_SetRenderDrawColor.html">SDL_SetRenderDrawColor</a> - 描画(長方形, 線分, 消去)で使う色を設定する
 <li><a href="SDL_SetRenderDrawColorFloat.html">SDL_SetRenderDrawColorFloat</a> - 描画(長方形, 線分, 消去)で使う色を設定する
-<li>SDL_SetRenderGPUState
 <li><a href="SDL_SetRenderLogicalPresentation.html">SDL_SetRenderLogicalPresentation</a> - レンダリングのデバイスに依存しない論理サイズと表示モードを設定する
 <li><a href="SDL_SetRenderScale.html">SDL_SetRenderScale</a> - 現在のレンダーターゲットの描画の拡大率を設定する
 <li><a href="SDL_SetRenderTarget.html">SDL_SetRenderTarget</a> - レンダラの現在のレンダーターゲットを設定する
@@ -136,21 +138,21 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 <li><a href="SDL_SetTextureBlendMode.html">SDL_SetTextureBlendMode</a> - SDL_RenderTexture()で使用するテクスチャのブレンドモードを設定する
 <li><a href="SDL_SetTextureColorMod.html">SDL_SetTextureColorMod</a> - レンダのコピー操作で各色成分に乗算される値を設定する
 <li><a href="SDL_SetTextureColorModFloat.html">SDL_SetTextureColorModFloat</a> - レンダのコピー操作で各色成分に乗算される値を設定する
+<li><a href="SDL_SetTexturePalette.html">SDL_SetTexturePalette</a> - テクスチャのパレットを設定する
 <li><a href="SDL_SetTextureScaleMode.html">SDL_SetTextureScaleMode</a> - テクスチャの拡大縮小で使用するモードを設定する
 <li><a href="SDL_UnlockTexture.html">SDL_UnlockTexture</a> - 必要なら変更をビデオメモリに反映させるためにテクスチャのロックを解除する
-<li>SDL_UpdateNVTexture
-<li>SDL_UpdateTexture
-<li>SDL_UpdateYUVTexture
+<li><a href="SDL_UpdateNVTexture.html">SDL_UpdateNVTexture</a> - Planar NV12またはNV21テクスチャの領域を新しいピクセルデータで更新する
+<li><a href="SDL_UpdateTexture.html">SDL_UpdateTexture</a> - テクスチャの領域を新しいピクセルデータで更新する
+<li><a href="SDL_UpdateYUVTexture.html">SDL_UpdateYUVTexture</a> - Planar YV12またはIYUVテクスチャの領域を新しいピクセルデータで更新する
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_GPURenderState
+<li><a href="SDL_GPURenderState.html">SDL_GPURenderState</a> - カスタムGPUレンダリング状態の不透明型
 <li><a href="SDL_Renderer.html">SDL_Renderer</a> - レンダラの状態の型
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>SDL_GPURenderStateCreateInfo
-<li>SDL_GPURenderStateDesc
+<li><a href="SDL_GPURenderStateCreateInfo.html">SDL_GPURenderStateCreateInfo</a> - GPUレンダリング状態の生成時のパラメータの構造体
 <li><a href="SDL_Texture.html">SDL_Texture</a> - ドライバ固有に効率化されたピクセルデータの構造体
 <li><a href="SDL_Vertex.html">SDL_Vertex</a> - 頂点の構造体
 </ol>
@@ -162,7 +164,7 @@ SDL 2Dレンダリング関数のヘッダファイルである.
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE
+<li><a href="SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE.html">SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE</a> - SDL_RenderDebugText()の文字のピクセル数のマクロ
 <li><a href="SDL_GPU_RENDERER.html">SDL_GPU_RENDERER</a> - GPUレンダラの名前のマクロ
 <li><a href="SDL_SOFTWARE_RENDERER.html">SDL_SOFTWARE_RENDERER</a> - ソフトウェアレンダラの名前のマクロ
 </ol>
