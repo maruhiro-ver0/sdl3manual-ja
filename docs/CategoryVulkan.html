@@ -14,14 +14,26 @@
 <p>
 SDLウィンドウのVulkanサーフェイスを生成する関数のヘッダである.
 </p>
+<p>
+ほとんどの部分でVulkan関数はSDLとは独立しているが, 初期化時に役立つものがある.
+</p>
+<p>
+SDL_Vulkan_GetInstanceExtensions()でVkInstanceを生成するための環境固有のビットを得ることができ, <a href="SDL_Vulkan_GetVkGetInstanceProcAddr.html">SDL_Vulkan_GetVkGetInstanceProcAddr()</a>でVulkanエントリーポイントを問い合わせるための関数を得ることができる.
+その後, <a href="SDL_Vulkan_CreateSurface.html">SDL_Vulkan_CreateSurface()</a>でVulkanを使用してSDL_Windowにレンダリングを行うための準備が完了する.
+</p>
+<p>
+OpenGLとは異なり, ほとんどの「コンテキスト」生成とウィンドウバッファスワップはVulkan APIで直接行っているため,
+SDLはVulkan用に<a href="SDL_GL_SwapWindow.html">SDL_GL_SwapWindow()</a>などのような関数を提供しない. それは必要ないためである.
 <h2>関数</h2>
+</p>
 <ol>
-<li>SDL_Vulkan_CreateSurface
-<li>SDL_Vulkan_GetDrawableSize
-<li>SDL_Vulkan_GetInstanceExtensions
-<li>SDL_Vulkan_GetVkGetInstanceProcAddr
-<li>SDL_Vulkan_LoadLibrary
-<li>SDL_Vulkan_UnloadLibrary
+<li><a href="SDL_Vulkan_CreateSurface.html">SDL_Vulkan_CreateSurface</a> - ウィンドウのVulkanレンダリングサーフェイスを生成する
+<li><a href="SDL_Vulkan_DestroySurface.html">SDL_Vulkan_DestroySurface</a> - ウィンドウのVulkanレンダリングサーフェイスを破棄する
+<li><a href="SDL_Vulkan_GetInstanceExtensions.html">SDL_Vulkan_GetInstanceExtensions</a> - SDL_Vulkan_CreateSurfaceで必要なVulkanインスタンス拡張機能を得る
+<li><a href="SDL_Vulkan_GetPresentationSupport.html">SDL_Vulkan_GetPresentationSupport</a> - 物理デバイスとキューファミリがプレゼンテーションに対応しているかチェックする
+<li><a href="SDL_Vulkan_GetVkGetInstanceProcAddr.html">SDL_Vulkan_GetVkGetInstanceProcAddr</a> - vkGetInstanceProcAddr関数のアドレスを得る
+<li><a href="SDL_Vulkan_LoadLibrary.html">SDL_Vulkan_LoadLibrary</a> - Vulkanライブラリの関数を動的に読み込む
+<li><a href="SDL_Vulkan_UnloadLibrary.html">SDL_Vulkan_UnloadLibrary</a> - SDL_Vulkan_LoadLibraryで読み込んだVulkanライブラリを解放する
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryVulkan">SDL3/CategoryVulkan - SDL Wiki</a>

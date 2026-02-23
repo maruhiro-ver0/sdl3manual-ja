@@ -802,9 +802,9 @@
 <li>SDL_MemoryBarrierReleaseFunction
 <li>SDL_memset
 <li>SDL_memset4
-<li>SDL_Metal_CreateView
-<li>SDL_Metal_DestroyView
-<li>SDL_Metal_GetLayer
+<li><a href="SDL_Metal_CreateView.html">SDL_Metal_CreateView</a> - CAMetalLayerがバックエンドのNSView/UIView(iOS/tvOS)を生成しウィンドウに関連付ける
+<li><a href="SDL_Metal_DestroyView.html">SDL_Metal_DestroyView</a> - 既存のSDL_MetalViewを破棄する
+<li><a href="SDL_Metal_GetLayer.html">SDL_Metal_GetLayer</a> - ビューのバックエンドのCAMetalLayerへのポインタを得る
 <li><a href="SDL_MinimizeWindow.html">SDL_MinimizeWindow</a> - ウィンドウを最小化してアイコン化する
 <li><a href="SDL_MixAudio.html">SDL_MixAudio</a> - オーディオデータをミックスする
 <li>SDL_modf
@@ -1241,13 +1241,13 @@
 <li>SDL_vsnprintf
 <li>SDL_vsscanf
 <li>SDL_vswprintf
-<li>SDL_Vulkan_CreateSurface
-<li>SDL_Vulkan_DestroySurface
-<li>SDL_Vulkan_GetInstanceExtensions
-<li>SDL_Vulkan_GetPresentationSupport
-<li>SDL_Vulkan_GetVkGetInstanceProcAddr
-<li>SDL_Vulkan_LoadLibrary
-<li>SDL_Vulkan_UnloadLibrary
+<li><a href="SDL_Vulkan_CreateSurface.html">SDL_Vulkan_CreateSurface</a> - ウィンドウのVulkanレンダリングサーフェイスを生成する
+<li><a href="SDL_Vulkan_DestroySurface.html">SDL_Vulkan_DestroySurface</a> - ウィンドウのVulkanレンダリングサーフェイスを破棄する
+<li><a href="SDL_Vulkan_GetInstanceExtensions.html">SDL_Vulkan_GetInstanceExtensions</a> - SDL_Vulkan_CreateSurfaceで必要なVulkanインスタンス拡張機能を得る
+<li><a href="SDL_Vulkan_GetPresentationSupport.html">SDL_Vulkan_GetPresentationSupport</a> - 物理デバイスとキューファミリがプレゼンテーションに対応しているかチェックする
+<li><a href="SDL_Vulkan_GetVkGetInstanceProcAddr.html">SDL_Vulkan_GetVkGetInstanceProcAddr</a> - vkGetInstanceProcAddr関数のアドレスを得る
+<li><a href="SDL_Vulkan_LoadLibrary.html">SDL_Vulkan_LoadLibrary</a> - Vulkanライブラリの関数を動的に読み込む
+<li><a href="SDL_Vulkan_UnloadLibrary.html">SDL_Vulkan_UnloadLibrary</a> - SDL_Vulkan_LoadLibraryで読み込んだVulkanライブラリを解放する
 <li>SDL_WaitAndAcquireGPUSwapchainTexture
 <li><a href="SDL_WaitAsyncIOResult.html">SDL_WaitAsyncIOResult</a> - キューの非同期I/Oタスクが完了するまでブロックして待つ
 <li><a href="SDL_WaitCondition.html">SDL_WaitCondition</a> - 条件変数が通知されるまで待つ
@@ -1342,7 +1342,7 @@
 <li><a href="SDL_EventFilter.html">SDL_EventFilter</a> - イベントキューを監視するためのコールバック関数の型
 <li><a href="SDL_FingerID.html">SDL_FingerID</a> - タッチデバイス上の1本の指のユニークIDの型
 <li>SDL_free_func
-<li>SDL_FunctionPointer
+<li><a href="SDL_FunctionPointer.html">SDL_FunctionPointer</a> - 汎用的な関数ポインタの型
 <li><a href="SDL_Gamepad.html">SDL_Gamepad</a> - SDLゲームパッドの識別のために使用される型
 <li><a href="SDL_GLContext.html">SDL_GLContext</a> - OpenGLコンテキストの不透明ハンドル型
 <li><a href="SDL_GLContextFlag.html">SDL_GLContextFlag</a> - SDL_GL_CONTEXT_FLAGSで設定可能なフラグの型
@@ -1391,7 +1391,7 @@
 <li>SDL_malloc_func
 <li><a href="SDL_MessageBoxButtonFlags.html">SDL_MessageBoxButtonFlags</a> - SDL_MessageBoxButtonDataで使われるフラグの型
 <li><a href="SDL_MessageBoxFlags.html">SDL_MessageBoxFlags</a> - メッセージボックスフラグの型
-<li>SDL_MetalView
+<li><a href="SDL_MetalView.html">SDL_MetalView</a> - CAMetalLayerがバックエンドのNSView(macOS)またはUIView(iOS/tvOS)のハンドルの型
 <li><a href="SDL_MouseButtonFlags.html">SDL_MouseButtonFlags</a> - SDL_GetMouseState等が報告するマウスボタンのビットマスクの型
 <li><a href="SDL_MouseID.html">SDL_MouseID</a> - システムに接続されたマウスのユニークIDの型
 <li><a href="SDL_MouseMotionTransformCallback.html">SDL_MouseMotionTransformCallback</a> - マウスの移動量を変換するコールバックの型

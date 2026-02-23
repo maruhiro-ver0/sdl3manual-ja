@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryVulkan.html" title="1つ上">
+<title>SDL_Vulkan_GetInstanceExtensions</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryVulkan.html">Vulkanグラフィック</a> - SDL_Vulkan_GetInstanceExtensions
+<hr>
+<h1>SDL_Vulkan_GetInstanceExtensions</h1>
+<a href="SDL_Vulkan_CreateSurface.html">SDL_Vulkan_CreateSurface</a>で必要なVulkanインスタンス拡張機能を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_vulkan.h">SDL3/SDL_vulkan.h</a>
+<h2>構文</h2>
+<code>char const * const * SDL_Vulkan_GetInstanceExtensions(Uint32 *count);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>Uint32 *</td><td>count</td><td>戻された拡張機能の数の代入先へのポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(char const * const *) 成功のとき拡張機能名の文字列配列を戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+この関数は, <a href="SDL_Vulkan_LoadLibrary.html">SDL_Vulkan_LoadLibrary()</a>を呼んだ場合も, <a href="SDL_Window.html">SDL_Window</a>を<a href="SDL_WindowFlags.html">SDL_WINDOW_VULKAN</a>フラグを付けて生成した場合も, 呼ぶ必要がある.
+</p>
+<p>
+<code>count</code>変数に代入された要素数はVkInstanceCreateInfo::enabledExtensionCountに設定され, 戻された配列はVkInstanceCreateInfo::ppEnabledExtensionNamesに設定され, VulkanのvkCreateInstance APIで使用される.
+</p>
+<p>
+戻された配列を解放してはならない. これはSDLが解放する.
+</p>
+<h2>バージョン</h2>
+<p>
+SDL 3.2.0以降
+</p>
+<h2>サンプルコード</h2>
+<code>
+<pre>
+extern void handle_error(void);
+#ifndef VK_EXT_DEBUG_REPORT_EXTENSION_NAME
+#define VK_EXT_DEBUG_REPORT_EXTENSION_NAME "VK_EXT_debug_report"
+#endif
+
+Uint32 count_instance_extensions;
+const char * const *instance_extensions = SDL_Vulkan_GetInstanceExtensions(&amp;count_instance_extensions);
+
+if (instance_extensions == NULL) { handle_error(); }
+
+int count_extensions = count_instance_extensions + 1;
+const char **extensions = SDL_malloc(count_extensions * sizeof(const char *));
+extensions[0] = VK_EXT_DEBUG_REPORT_EXTENSION_NAME;
+SDL_memcpy(&amp;extensions[1], instance_extensions, count_instance_extensions * sizeof(const char*)); 
+
+// ここでVulkanインスタンスを生成する
+VkInstanceCreateInfo create_info = {};
+create_info.enabledExtensionCount = count_extensions;
+create_info.ppEnabledExtensionNames = extensions;
+
+VkInstance instance;
+VkResult result = vkCreateInstance(&amp;create_info, NULL, &amp;instance);
+SDL_free(extensions);
+</pre>
+</code>
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_Vulkan_CreateSurface.html">SDL_Vulkan_CreateSurface</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_Vulkan_GetInstanceExtensions">SDL_Vulkan_GetInstanceExtensions - SDL Wiki</a>
+<hr>
+</body>
+</html>

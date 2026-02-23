@@ -2964,19 +2964,19 @@ IDの型<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Window.html">
 </p>
 <h2><a name="#sdl_vulkanh">SDL_vulkan.h (Vulkan)</a></h2>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_Vulkan_GetInstanceExtensions">SDL_Vulkan_GetInstanceExtensions()</a>はウィンドウを引数に取らなくなり,
+<a href="SDL_Vulkan_GetInstanceExtensions.html">SDL_Vulkan_GetInstanceExtensions()</a>はウィンドウを引数に取らなくなり,
 結果のためにアプリケーションの領域を確保せず内部の静的な読み取り専用の文字列を戻すようになった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_Vulkan_GetVkGetInstanceProcAddr">SDL_Vulkan_GetVkGetInstanceProcAddr()</a>の戻り値はvoid *から<a href="https://wiki.libsdl.org/SDL3/SDL_FunctionPointer">SDL_FunctionPointer</a>となり, 関数はPFN_vkGetInstanceProcAddrへのキャストが必要になった.
+<a href="SDL_Vulkan_GetVkGetInstanceProcAddr.html">SDL_Vulkan_GetVkGetInstanceProcAddr()</a>の戻り値はvoid *から<a href="SDL_FunctionPointer.html">SDL_FunctionPointer</a>となり, 関数はPFN_vkGetInstanceProcAddrへのキャストが必要になった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_Vulkan_CreateSurface">SDL_Vulkan_CreateSurface()</a>は第3引数にVkAllocationCallbacksポインタを取るようになった.
+<a href="SDL_Vulkan_CreateSurface.html">SDL_Vulkan_CreateSurface()</a>は第3引数にVkAllocationCallbacksポインタを取るようになった.
 渡すべきアロケータがない場合は, NULLを渡してシステムのデフォルトのアロケータを使うこともできる(SDL2はここでは常にシステムのデフォルトのアロケータを使用していた).
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Vulkan_GetDrawableSize.html">SDL_Vulkan_GetDrawableSize()</a>は削除された.
-<a href="https://wiki.libsdl.org/SDL3/SDL_GetWindowSizeInPixels">SDL_GetWindowSizeInPixels()</a>に置き換えることができる.
+<a href="SDL_GetWindowSizeInPixels.html">SDL_GetWindowSizeInPixels()</a>に置き換えることができる.
 </p>
 <p>
 SDL_vulkanInstanceとSDL_vulkanSurfaceは削除された.
