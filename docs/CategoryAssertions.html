@@ -22,7 +22,7 @@ SDLアサーションは通常のアサーションマクロと似ているが, 
 <li>sizeofを巧妙に使うことで, 検証を無効化してコンパイルするコードから除外したとき, アサーションが参照する変数が使用されなくなってもコンパイラが警告を発しないようになっている.
 <li><code>if (x) SDL_assert(y); else do_something();</code> のような「ぶらさがりelse(dangling-else)」でも安全に使用できる.
 <li>様々な環境のCコンパイラやランタイムでも同じように動作する.
-<li>有か無しかのどちらかではなく, 複数のレベルのアサーション(SDL_assert, SDL_assert_release, SDL_assert_paranoid)が用意されている.
+<li>有か無しかのどちらかではなく, 複数のレベルのアサーション(<a href="SDL_assert.html">SDL_assert</a>, <a href="SDL_assert_release.html">SDL_assert_release</a>, <a href="SDL_assert_paranoid.html">SDL_assert_paranoid</a>)が用意されている.
 <li>検証に失敗したとき様々な対応(リトライ, デバッガの呼び出し, プログラムの中断, 1回目を無視する, 無視して残りのプログラムを実行する)を提供している.
 <li>デフォルトでは可能ならばユーザにダイアログを表示するが, 検証失敗時にコールバックさせることもできる.
 <li>失敗した検証の再検証を行える. ネットワークを失敗させ, ケーブルを接続した後にもう一度テストするなどが可能.
@@ -67,11 +67,11 @@ SDLアサーションは通常のアサーションマクロと似ているが, 
 <li><a href="SDL_AssertBreakpoint.html">SDL_AssertBreakpoint</a> - アサーションがブレイクポイントを発生させたとき使用するマクロ
 <li><a href="SDL_disabled_assert.html">SDL_disabled_assert</a> - アサーションが無効のとき使用されるマクロ
 <li><a href="SDL_enabled_assert.html">SDL_enabled_assert</a> - アサーションが無効のとき使用されるマクロ
-<li>SDL_FILE
-<li>SDL_FUNCTION
-<li>SDL_LINE
-<li>SDL_NULL_WHILE_LOOP_CONDITION
-<li>SDL_TriggerBreakpoint
+<li><a href="SDL_FILE.html">SDL_FILE</a> - 現在コンパイル中のファイルのマクロ
+<li><a href="SDL_FUNCTION.html">SDL_FUNCTION</a> - 現在コンパイル中の関数名のマクロ
+<li><a href="SDL_LINE.html">SDL_LINE</a> - 現在コンパイル中のファイルの行番号のマクロ
+<li><a href="SDL_NULL_WHILE_LOOP_CONDITION.html">SDL_NULL_WHILE_LOOP_CONDITION</a> - do {} while (0);でコードを囲むときコンパイラが警告を発しないようにするためのマクロ
+<li><a href="SDL_TriggerBreakpoint.html">SDL_TriggerBreakpoint</a> - デバッガに停止を指示するマクロ
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryAssert">SDL3/CategoryAssert - SDL Wiki</a>
