@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySystem.html" title="1つ上">
+<title>SDL_GetDirect3D9AdapterIndex</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategorySystem.html">環境固有の機能</a> - SDL_GetDirect3D9AdapterIndex
+<hr>
+<h1>SDL_GetDirect3D9AdapterIndex</h1>
+指定のディスプレイのD3D9アダプタのインデックス番号を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_system.h">SDL3/SDL_system.h</a>
+<h2>構文</h2>
+<code>int SDL_GetDirect3D9AdapterIndex(SDL_DisplayID displayID);</code>
+<h2>引数</h2>
+<table border="1"><tr><td><a href="SDL_DisplayID.html">SDL_DisplayID</a></td><td>displayID</td><td>D3D9アダプタインデックス番号を求めるディスプレイのインスタンスID</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(int) 成功のときD3D9アダプタインデックス番号, 失敗のとき-1を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+戻り値のアダプタインデックスは<code>IDirect3D9::CreateDevice</code>に渡すことができる.
+そしてそのインデックス番号のディスプレイにフルスクリーンのアプリケーションが現れる.
+</p>
+<h2>バージョン</h2>
+<p>
+SDL 3.2.0以降
+</p>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GetDirect3D9AdapterIndex">SDL_GetDirect3D9AdapterIndex - SDL Wiki</a>
+<hr>
+</body>
+</html>

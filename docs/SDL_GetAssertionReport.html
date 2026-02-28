@@ -11,14 +11,14 @@
 <a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryAssertions.html">アサーション</a> - SDL_GetAssertionReport
 <hr>
 <h1>SDL_GetAssertionReport</h1>
-失敗した全てのアサーションの一覧を戻す
+失敗した全てのアサーションのリストを戻す
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_assert.h">SDL3/SDL_assert.h</a>
 <h2>構文</h2>
 <code>const SDL_AssertData * SDL_GetAssertionReport(void);</code>
 <h2>戻り値</h2>
 <p>
-(const <a href="SDL_AssertData.html">SDL_AssertData</a> *) 失敗した全てのアサーションの一覧を戻す. 一覧が空の場合NULLを戻す.
+(const <a href="SDL_AssertData.html">SDL_AssertData</a> *) 失敗した全てのアサーションのリストを戻す. リストが空の場合NULLを戻す.
 アプリケーションはこのメモリは編集または解放してはならない.
 このポインタは次の<a href="SDL_Quit.html">SDL_Quit()</a>またはSDL_ResetAssertionReport()の呼び出しまで有効である.
 </p>
