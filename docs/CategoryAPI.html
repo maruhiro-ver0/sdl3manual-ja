@@ -13,9 +13,9 @@
 <h1>SDL 3.0 API (アルファベット順)</h1>
 <h2>関数</h2>
 <ol>
-<li>SDL_abs
-<li>SDL_acos
-<li>SDL_acosf
+<li><a href="SDL_abs.html">SDL_abs</a> - xの絶対値を求める
+<li><a href="SDL_acos.html">SDL_acos</a> - xのアークコサインを求める
+<li><a href="SDL_acosf.html">SDL_acosf</a> - xのアークコサインを求める
 <li><a href="SDL_AcquireCameraFrame.html">SDL_AcquireCameraFrame</a> - カメラにビデオフレームを要求する
 <li>SDL_AcquireGPUCommandBuffer
 <li>SDL_AcquireGPUSwapchainTexture
@@ -36,14 +36,14 @@
 <li><a href="SDL_AppInit.html">SDL_AppInit</a> - メインコールバックを使用する場合, アプリケーションが実装する初期化処理エントリーポイント
 <li><a href="SDL_AppIterate.html">SDL_AppIterate</a> - メインコールバックを使用する場合, アプリケーションが実装する反復処理エントリーポイント
 <li><a href="SDL_AppQuit.html">SDL_AppQuit</a> - メインコールバックを使用する場合, アプリケーションが実装する終了処理エントリーポイント
-<li>SDL_asin
-<li>SDL_asinf
+<li><a href="SDL_asin.html">SDL_asin</a> - xのアークサインを求める
+<li><a href="SDL_asinf.html">SDL_asinf</a> - xのアークサインを求める
 <li>SDL_asprintf
 <li><a href="SDL_AsyncIOFromFile.html">SDL_AsyncIOFromFile</a> - ファイルの読み書きを行う非同期I/O操作を生成する
-<li>SDL_atan
+<li><a href="SDL_atan.html">SDL_atan</a> - xのアークタンジェントを求める
 <li>SDL_atan2
 <li>SDL_atan2f
-<li>SDL_atanf
+<li><a href="SDL_atanf.html">SDL_atanf</a> - xのアークタンジェントを求める
 <li>SDL_atof
 <li>SDL_atoi
 <li><a href="SDL_AttachVirtualJoystick.html">SDL_AttachVirtualJoystick</a> - 仮想ジョイスティックを新しく接続する
@@ -943,7 +943,7 @@
 <li><a href="SDL_RenderTextureTiled.html">SDL_RenderTextureTiled</a> - テクスチャの一部を現在のレンダーターゲットにサブピクセルの精度でコピーする
 <li><a href="SDL_RenderViewportSet.html">SDL_RenderViewportSet</a> - 現在のレンダーターゲットに描画領域を表す長方形が設定されているかチェックする
 <li><a href="SDL_ReportAssertion.html">SDL_ReportAssertion</a> - この関数を直接呼んではならない
-<li>SDL_RequestAndroidPermission
+<li><a href="SDL_RequestAndroidPermission.html">SDL_RequestAndroidPermission</a> - Androidで実行中に権限を非同期に要求する
 <li><a href="SDL_ResetAssertionReport.html">SDL_ResetAssertionReport</a> - 失敗したアサーションのリストを全て消去する
 <li><a href="SDL_ResetHint.html">SDL_ResetHint</a> - ヒントをデフォルト値に戻す
 <li><a href="SDL_ResetHints.html">SDL_ResetHints</a> - 全てのヒントをデフォルトの値にリセットする
@@ -974,8 +974,8 @@
 <li><a href="SDL_ScreenKeyboardShown.html">SDL_ScreenKeyboardShown</a> - ウィンドウにスクリーンキーボードが表示されているかチェックする
 <li><a href="SDL_ScreenSaverEnabled.html">SDL_ScreenSaverEnabled</a> - スクリーンセーバーを有効にする
 <li><a href="SDL_SeekIO.html">SDL_SeekIO</a> - データストリームをシークする
-<li>SDL_SendAndroidBackButton
-<li>SDL_SendAndroidMessage
+<li><a href="SDL_SendAndroidBackButton.html">SDL_SendAndroidBackButton</a> - Androidで戻るボタンの挙動を引き起こす
+<li><a href="SDL_SendAndroidMessage.html">SDL_SendAndroidMessage</a> - SDLActivityにユーザコマンドを送信する
 <li><a href="SDL_SendGamepadEffect.html">SDL_SendGamepadEffect</a> - ゲームパッドにエフェクトパケットを送信する
 <li><a href="SDL_SendJoystickEffect.html">SDL_SendJoystickEffect</a> - ジョイスティックにエフェクトパケットを送信する
 <li><a href="SDL_SendJoystickVirtualSensorData.html">SDL_SendJoystickVirtualSensorData</a> - オープンした仮想ジョイスティックのセンサーの状態を設定する
@@ -1028,8 +1028,8 @@
 <li><a href="SDL_SetHint.html">SDL_SetHint</a> - ヒントを通常の優先度で設定する
 <li><a href="SDL_SetHintWithPriority.html">SDL_SetHintWithPriority</a> - ヒントを指定の優先度で設定する
 <li><a href="SDL_SetInitialized.html">SDL_SetInitialized</a> - 初期化状態を完了にする
-<li>SDL_SetiOSAnimationCallback
-<li>SDL_SetiOSEventPump
+<li><a href="SDL_SetiOSAnimationCallback.html">SDL_SetiOSAnimationCallback</a> - Apple iOSのアニメーションコールバックを設定する
+<li><a href="SDL_SetiOSEventPump.html">SDL_SetiOSEventPump</a> - Apple iOSでSDLのイベントの吸出しを有効または無効にする
 <li><a href="SDL_SetJoystickEventsEnabled.html">SDL_SetJoystickEventsEnabled</a> - ジョイスティックイベント処理の有無を設定する
 <li><a href="SDL_SetJoystickLED.html">SDL_SetJoystickLED</a> - ジョイスティックのLEDの色を設定する
 <li><a href="SDL_SetJoystickPlayerIndex.html">SDL_SetJoystickPlayerIndex</a> - オープンされたジョイスティックにプレイヤーインデックス番号を設定する
@@ -1038,8 +1038,8 @@
 <li><a href="SDL_SetJoystickVirtualButton.html">SDL_SetJoystickVirtualButton</a> - オープンした仮想ジョイスティックのボタンの状態を設定する
 <li><a href="SDL_SetJoystickVirtualHat.html">SDL_SetJoystickVirtualHat</a> - オープンした仮想ジョイスティックのハットの状態を設定する
 <li><a href="SDL_SetJoystickVirtualTouchpad.html">SDL_SetJoystickVirtualTouchpad</a> - オープンした仮想ジョイスティックのタッチパッドの指の状態を設定する
-<li>SDL_SetLinuxThreadPriority
-<li>SDL_SetLinuxThreadPriorityAndPolicy
+<li><a href="SDL_SetLinuxThreadPriority.html">SDL_SetLinuxThreadPriority</a> - スレッドにUNIXナイス値を設定する
+<li><a href="SDL_SetLinuxThreadPriorityAndPolicy.html">SDL_SetLinuxThreadPriorityAndPolicy</a> - スレッドの優先度(nice値ではない)とスケジューリングポリシーを設定する
 <li><a href="SDL_SetLogOutputFunction.html">SDL_SetLogOutputFunction</a> - ログ出力関数を置き換える
 <li><a href="SDL_SetLogPriorities.html">SDL_SetLogPriorities</a> - 全ての分類の重要度を設定する
 <li><a href="SDL_SetLogPriority.html">SDL_SetLogPriority</a> - 分類の重要度を設定する
@@ -1112,13 +1112,13 @@
 <li><a href="SDL_SetWindowResizable.html">SDL_SetWindowResizable</a> - ウィンドウのサイズ変更許可状態を設定する
 <li><a href="SDL_SetWindowShape.html">SDL_SetWindowShape</a> - 透過ウィンドウの形状を設定する
 <li><a href="SDL_SetWindowSize.html">SDL_SetWindowSize</a> - ウィンドウのクライアント領域のサイズの設定を要求する
-<li>SDL_SetWindowsMessageHook
+<li><a href="SDL_SetWindowsMessageHook.html">SDL_SetWindowsMessageHook</a> - ウィンドウメッセージのたびにTranslateMessage()の前に呼ばれる関数を設定する
 <li><a href="SDL_SetWindowSurfaceVSync.html">SDL_SetWindowSurfaceVSync</a> - ウィンドウのサーフェイスの垂直同期を設定する
 <li><a href="SDL_SetWindowTitle.html">SDL_SetWindowTitle</a> - ウィンドウのタイトルを設定する
-<li>SDL_SetX11EventHook
+<li><a href="SDL_SetX11EventHook.html">SDL_SetX11EventHook</a> - X11イベントのたびに呼ばれるコールバックを設定する
 <li><a href="SDL_ShouldInit.html">SDL_ShouldInit</a> - 初期化が完了しているかをチェックする
 <li><a href="SDL_ShouldQuit.html">SDL_ShouldQuit</a> - 終了処理が完了しているかをチェックする
-<li>SDL_ShowAndroidToast
+<li><a href="SDL_ShowAndroidToast.html">SDL_ShowAndroidToast</a> - Androidトースト通知を表示する
 <li><a href="SDL_ShowCursor.html">SDL_ShowCursor</a> - マウスカーソルを表示する
 <li><a href="SDL_ShowFileDialogWithProperties.html">SDL_ShowFileDialogWithProperties</a> - プロパティを指定してファイルダイアログを生成し表示する
 <li><a href="SDL_ShowMessageBox.html">SDL_ShowMessageBox</a> - モーダルなメッセージボックスを生成する
@@ -1430,7 +1430,7 @@
 <li><a href="SDL_WindowFlags.html">SDL_WindowFlags</a> - ウィンドウ状態フラグの型
 <li><a href="SDL_WindowID.html">SDL_WindowID</a> - ウィンドウユニークID
 <li>SDL_WindowsMessageHook
-<li>SDL_X11EventHook
+<li><a href="SDL_X11EventHook.html">SDL_X11EventHook</a> - SDL_SetX11EventHookで使用するコールバックの型
 <li><a href="Sint16.html">Sint16</a> - 符号あり16ビット整数型
 <li><a href="Sint32.html">Sint32</a> - 符号あり32ビット整数型
 <li><a href="Sint64.html">Sint64</a> - 符号あり64ビット整数型
@@ -1644,7 +1644,7 @@
 <li><a href="SDL_ProgressState.html">SDL_ProgressState</a> - プログレスバーの状態の列挙体
 <li><a href="SDL_PropertyType.html">SDL_PropertyType</a> - SDLプロパティ型の列挙体
 <li><a href="SDL_RendererLogicalPresentation.html">SDL_RendererLogicalPresentation</a> - 論理サイズと出力の対応方法の列挙体
-<li>SDL_Sandbox
+<li><a href="SDL_Sandbox.html">SDL_Sandbox</a> - アプリケーションのサンドボックス環境の列挙体
 <li><a href="SDL_ScaleMode.html">SDL_ScaleMode</a> - 拡大縮小モードの列挙体
 <li><a href="SDL_Scancode.html">SDL_Scancode</a> - SDLキーボードスキャンコードの列挙体 
 <li><a hreF="SDL_SensorType.html">SDL_SensorType</a> - SDLに定義されたセンサーの種類の列挙体
@@ -1673,8 +1673,8 @@
 <li><a href="SDL_ALPHA_TRANSPARENT_FLOAT.html">SDL_ALPHA_TRANSPARENT_FLOAT</a> - 完全に透明なα値の浮動小数点数値のマクロ
 <li><a href="SDL_ALTIVEC_INTRINSICS.html">SDL_ALTIVEC_INTRINSICS</a> - コンパイラがPowerPC Altivec組み込み関数に対応しているとき(その場合のみ)定義されているマクロ
 <li>SDL_ANALYZER_NORETURN
-<li>SDL_ANDROID_EXTERNAL_STORAGE_READ
-<li>SDL_ANDROID_EXTERNAL_STORAGE_WRITE
+<li><a href="SDL_ANDROID_EXTERNAL_STORAGE_READ.html">SDL_ANDROID_EXTERNAL_STORAGE_READ</a> - 外部ストレージの現在の状態のマクロ
+<li><a href="SDL_ANDROID_EXTERNAL_STORAGE_WRITE.html">SDL_ANDROID_EXTERNAL_STORAGE_WRITE</a> - 外部ストレージの現在の状態のマクロ
 <li>SDL_arraysize
 <li><a href="SDL_assert.html">SDL_assert</a> - デバッグビルド時のみアサーションを生成するマクロ
 <li><a href="SDL_assert_always.html">SDL_assert_always</a> - 常にアサーションを生成するマクロ
