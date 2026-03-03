@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryStdinc.html" title="1つ上">
+<title>SDL_atan</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_atan
+<hr>
+<h1>SDL_atan</h1>
+xのアークタンジェントを求める
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
+<h2>構文</h2>
+<code>double SDL_atan(double x);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>double</td><td>x</td><td>浮動小数点の値</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(double) <code>x</code>のアークタンジェントをラジアンで戻す. <code>x = 0</code>のとき0を戻す.
+</p>
+<h2>詳細</h2>
+<p>
+<code>y = atan(x)</code>の定義は<code>x = tan(y)</code>である.
+</p>
+<p>
+定義域: <code>-INF <= x <= INF</code>
+</p>
+<p>
+値域: <code>-π/2 <= y <= π/2</code>
+</p>
+<p>
+この関数は倍精度浮動小数点の値を扱う. 単精度の場合は<a href="SDL_atanf.html">SDL_atanf</a>を使用すること.
+</p>
+<p>
+y / xのアークタンジェントを求める場合は<a href="SDL_atan2.html">SDL_atan2</a>を使用すること.
+</p>
+<p>
+この関数は, バージョン, 環境, 設定で精度が異なる可能性がある.
+つまり, 同じ入力でも異なるマシンやOSやSDLのバージョン更新で結果が異なることがありうる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_atanf.html">SDL_atanf</a>
+<li><a href="SDL_atan2.html">SDL_atan2</a>
+<li><a href="SDL_tan.html">SDL_tan</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_atan">SDL_atan - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

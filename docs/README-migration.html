@@ -373,12 +373,12 @@ SDL_AudioSpecから削除された<a href="https://maruhiro-ver0.github.io/sdl2m
 </code>
 </p>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioFormat.html">AUDIO_U16, AUDIO_U16LSB, AUDIO_U16MSB, AUDIO_U16SYS</a>は削除された.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioFormat.html">AUDIO_U16</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioFormat.html">AUDIO_U16LSB</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioFormat.html">AUDIO_U16MSB</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioFormat.html">AUDIO_U16SYS</a>は削除された.
 これらはあまり使われず, memsetを用いて1バイトで無音にできなかった.
 他の形式を使用すること.
 </p>
 <p>
-U16音声データに対応するため, 実行時に変換する必要がある場合, 高速に劣化させずに変換できるのはSDL_AUDIO_S16である:
+U16音声データに対応するため, 実行時に変換する必要がある場合, 高速に劣化させずに変換できるのは<a href="SDL_AudioFormat.html">SDL_AUDIO_S16</a>である:
 <code>
 <pre>
     /* バッファ上で変換する. バッファのサイズは変わらない */
@@ -585,13 +585,13 @@ SDL_EVENT_WINDOW_SIZE_CHANGEDは削除された.
 </code>
 </p>
 <p>
-SDL_Eventのゲームパッドイベントの<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Event.html">caxis, cbutton, cdevice, ctouchpad, csensor</a>メンバの名前は, <a href="SDL_Event.html">gaxis, gbutton, gdevice, gtouchpad, gsensor</a>に変更された.
+SDL_Eventのゲームパッドイベントの<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Event.html">caxis</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Event.html">cbutton</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Event.html">cdevice</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Event.html">ctouchpad</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Event.html">csensor</a>メンバの名前は, <a href="SDL_Event.html">gaxis</a>, <a href="SDL_Event.html">gbutton</a>, <a href="SDL_Event.html">gdevice</a>, <a href="SDL_Event.html">gtouchpad</a>, <a href="SDL_Event.html">gsensor</a>に変更された.
 </p>
 <p>
-SDL_TouchFingerEventの<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TouchFingerEvent.html">touchId, fingerId</a>メンバの名前は, <a href="SDL_TouchFingerEvent.html">touchID, fingerID</a>に変更された.
+SDL_TouchFingerEventの<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TouchFingerEvent.html">touchId</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_TouchFingerEvent.html">fingerId</a>メンバの名前は, <a href="SDL_TouchFingerEvent.html">touchID</a>, <a href="SDL_TouchFingerEvent.html">fingerID</a>に変更された.
 </p>
 <p>
-SDL_JoyBatteryEventの<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoyBatteryEvent.html">level</a>メンバは, <a href="SDL_JoyBatteryEvent.html">stateとpercent</a>に分けられた.
+SDL_JoyBatteryEventの<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_JoyBatteryEvent.html">level</a>メンバは, <a href="SDL_JoyBatteryEvent.html">state</a>と<a href="SDL_JoyBatteryEvent.html">percent</a>に分けられた.
 </p>
 <p>
 SDL_AudioDeviceEventの<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioDeviceEvent.html">iscapture</a>メンバの名前は, <a href="SDL_AudioDeviceEvent.html">recording</a>に変更された.
@@ -2103,7 +2103,7 @@ stdioを背後で使用するために<a href="SDL_IOFromFile.html">SDL_IOFromFi
 </p>
 <p>
 Appleの環境では, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWFromFile.html">SDL_RWFromFile</a>(現在は<a href="SDL_IOFromFile.html">SDL_IOFromFile</a>)はアプリケーションにバンドルされたリソースディレクトリから読み込もうとせず, 指定されたパスを変更せずに使用するようになった.
-これらの環境では, <a href="https://wiki.libsdl.org/SDL3/SDL_GetBasePath">SDL_GetBasePath()</a>でリソースディレクトリを見つけることができる.
+これらの環境では, <a href="SDL_GetBasePath.html">SDL_GetBasePath()</a>でリソースディレクトリを見つけることができる.
 </p>
 <p>
 <a href="SDL_ReadU8.html">SDL_ReadU8()</a>, <a href="SDL_ReadU16LE.html">SDL_ReadU16LE()</a>, <a href="SDL_ReadU16BE.html">SDL_ReadU16BE()</a>, <a href="SDL_ReadU32LE.html">SDL_ReadU32LE()</a>, <a href="SDL_ReadU32BE.html">SDL_ReadU32BE()</a>, <a href="SDL_ReadU64LE.html">SDL_ReadU64LE()</a>, <a href="SDL_ReadU64BE.html">SDL_ReadU64BE()</a>は成功のとき真, そうでないとき偽を戻し, 引数として渡したポインタのデータを保持するようになった.
@@ -2307,11 +2307,11 @@ SDL_setenv()はスレッドセーフではないため名称が<a href="https://
 <p>
 <a href="SDL_Surface.html">SDL_Surfaceのformatメンバ</a>は<a href="SDL_PixelFormat.html">ピクセル形式の列挙体</a>の値となった.
 ピクセル形式の完全な詳細は<code>SDL_GetPixelFormatDetails(surface-&gt;format)</code>で得ることができる.
-サーフェイスに関連付けられたパレットは<a href="https://wiki.libsdl.org/SDL3/SDL_GetSurfacePalette">SDL_GetSurfacePalette()</a>で得ることができる.
-クリップ枠は<a href="https://wiki.libsdl.org/SDL3/SDL_GetSurfaceClipRect">SDL_GetSurfaceClipRect()</a>で得ることができる.
+サーフェイスに関連付けられたパレットは<a href="SDL_GetSurfacePalette.html">SDL_GetSurfacePalette()</a>で得ることができる.
+クリップ枠は<a href="SDL_GetSurfaceClipRect.html">SDL_GetSurfaceClipRect()</a>で得ることができる.
 </p>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Surface">SDL_Surfaceのuserdataメンバ</a>はより汎用的なプロパティインターフェースに置き換えられた. これは<a href="https://wiki.libsdl.org/SDL3/SDL_GetSurfaceProperties">SDL_GetSurfaceProperties()</a>で問い合わせることができる.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Surface">SDL_Surfaceのuserdataメンバ</a>はより汎用的なプロパティインターフェースに置き換えられた. これは<a href="SDL_GetSurfaceProperties.html">SDL_GetSurfaceProperties()</a>で問い合わせることができる.
 </p>
 <p>
 インデックス形式のサーフェイスはデフォルトでパレットを持たないようになった.
@@ -2342,7 +2342,7 @@ SDL_setenv()はスレッドセーフではないため名称が<a href="https://
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateRGBSurface.html">SDL_CreateRGBSurface()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateRGBSurfaceWithFormat.html">SDL_CreateRGBSurfaceWithFormat()</a>は新しい関数<a href="SDL_CreateSurface.html">SDL_CreateSurface()</a>に統合された.
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateRGBSurfaceFrom.html">SDL_CreateRGBSurfaceFrom()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateRGBSurfaceWithFormatFrom.html">SDL_CreateRGBSurfaceWithFormatFrom()</a>は新しい関数<a href="https://wiki.libsdl.org/SDL3/SDL_CreateSurfaceFrom">SDL_CreateSurfaceFrom()</a>に統合され, 引数の順序は<a href="https://wiki.libsdl.org/SDL3/SDL_CreateSurface">SDL_CreateSurface()</a>との一貫性のため変更された.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateRGBSurfaceFrom.html">SDL_CreateRGBSurfaceFrom()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_CreateRGBSurfaceWithFormatFrom.html">SDL_CreateRGBSurfaceWithFormatFrom()</a>は新しい関数<a href="SDL_CreateSurfaceFrom.html">SDL_CreateSurfaceFrom()</a>に統合され, 引数の順序は<a href="SDL_CreateSurface.html">SDL_CreateSurface()</a>との一貫性のため変更された.
 </p>
 <p>
 古い関数は簡単に実装できる:
@@ -2384,43 +2384,43 @@ SDL_setenv()はスレッドセーフではないため名称が<a href="https://
 </code>
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_BlitSurface">SDL_BlitSurface()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_BlitSurfaceScaled">SDL_BlitSurfaceScaled()</a>の引数dstrectはconstになり, 最後にコピーされた領域は代入されないようになった.
+<a href="SDL_BlitSurface.html">SDL_BlitSurface()</a>と<a href="SDL_BlitSurfaceScaled.html">SDL_BlitSurfaceScaled()</a>の引数dstrectはconstになり, 最後にコピーされた領域は代入されないようになった.
 </p>
 <p>
-拡大率付きの<a href="https://wiki.libsdl.org/SDL3/SDL_BlitSurfaceScaled">SDL_BlitSurfaceScaled()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_BlitSurfaceUncheckedScaled">SDL_BlitSurfaceUncheckedScaled()</a>が追加された.
+拡大率付きの<a href="SDL_BlitSurfaceScaled.html">SDL_BlitSurfaceScaled()</a>と<a href="SDL_BlitSurfaceUncheckedScaled.html">SDL_BlitSurfaceUncheckedScaled()</a>が追加された.
 </p>
 <p>
 API関数のピクセル形式の<a href="SDL_PixelFormat.html">SDL_PixelFormat</a>は, Uint32ではなく列挙体の値となった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_SetSurfaceColorKey">SDL_SetSurfaceColorKey()</a>はbool値でカラーキーの有効無効を設定できるようになった.
+<a href="SDL_SetSurfaceColorKey.html">SDL_SetSurfaceColorKey()</a>はbool値でカラーキーの有効無効を設定できるようになった.
 この引数でRLEアクセラレーションは制御できない.
-<a href="https://wiki.libsdl.org/SDL3/SDL_SetSurfaceRLE">SDL_SetSurfaceRLE()</a>を用いて別に変更する必要がある.
+<a href="SDL_SetSurfaceRLE.html">SDL_SetSurfaceRLE()</a>を用いて別に変更する必要がある.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_SetSurfaceRLE">SDL_SetSurfaceRLE()</a>はbool値でRLEアクセラレーションの有効無効を設定できるようになった.
+<a href="SDL_SetSurfaceRLE.html">SDL_SetSurfaceRLE()</a>はbool値でRLEアクセラレーションの有効無効を設定できるようになった.
 </p>
 <p>
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_BlitScaled.html">SDL_BlitScaled()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_BlitSurfaceScaled">SDL_BlitSurfaceScaled()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ConvertSurfaceFormat.html">SDL_ConvertSurfaceFormat()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ConvertSurface">SDL_ConvertSurface()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FillRect.html">SDL_FillRect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_FillSurfaceRect">SDL_FillSurfaceRect()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FillRects.html">SDL_FillRects()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_FillSurfaceRects">SDL_FillSurfaceRects()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FreeSurface.html">SDL_FreeSurface()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_DestroySurface">SDL_DestroySurface()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetClipRect.html">SDL_GetClipRect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetSurfaceClipRect">SDL_GetSurfaceClipRect()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetColorKey.html">SDL_GetColorKey()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetSurfaceColorKey">SDL_GetSurfaceColorKey()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HasColorKey.html">SDL_HasColorKey()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SurfaceHasColorKey">SDL_SurfaceHasColorKey()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HasSurfaceRLE.html">SDL_HasSurfaceRLE()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SurfaceHasRLE">SDL_SurfaceHasRLE()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LoadBMP_RW.html">SDL_LoadBMP_RW()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_LoadBMP_IO">SDL_LoadBMP_IO()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LowerBlit.html">SDL_LowerBlit()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_BlitSurfaceUnchecked">SDL_BlitSurfaceUnchecked()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LowerBlitScaled.html">SDL_LowerBlitScaled()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_BlitSurfaceUncheckedScaled">SDL_BlitSurfaceUncheckedScaled()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SaveBMP_RW.html">SDL_SaveBMP_RW()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SaveBMP_IO">SDL_SaveBMP_IO()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetClipRect.html">SDL_SetClipRect()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetSurfaceClipRect">SDL_SetSurfaceClipRect()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetColorKey.html">SDL_SetColorKey()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetSurfaceColorKey">SDL_SetSurfaceColorKey()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_UpperBlit.html">SDL_UpperBlit()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_BlitSurface">SDL_BlitSurface()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_UpperBlitScaled.html">SDL_UpperBlitScaled()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_BlitSurfaceScaled">SDL_BlitSurfaceScaled()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_BlitScaled.html">SDL_BlitScaled()</a> → <a href="SDL_BlitSurfaceScaled.html">SDL_BlitSurfaceScaled()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_ConvertSurfaceFormat.html">SDL_ConvertSurfaceFormat()</a> → <a href="SDL_ConvertSurface.html">SDL_ConvertSurface()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FillRect.html">SDL_FillRect()</a> → <a href="SDL_FillSurfaceRect.html">SDL_FillSurfaceRect()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FillRects.html">SDL_FillRects()</a> → <a href="SDL_FillSurfaceRects.html">SDL_FillSurfaceRects()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FreeSurface.html">SDL_FreeSurface()</a> → <a href="SDL_DestroySurface.html">SDL_DestroySurface()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetClipRect.html">SDL_GetClipRect()</a> → <a href="SDL_GetSurfaceClipRect.html">SDL_GetSurfaceClipRect()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetColorKey.html">SDL_GetColorKey()</a> → <a href="SDL_GetSurfaceColorKey.html">SDL_GetSurfaceColorKey()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HasColorKey.html">SDL_HasColorKey()</a> → <a href="SDL_SurfaceHasColorKey.html">SDL_SurfaceHasColorKey()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HasSurfaceRLE.html">SDL_HasSurfaceRLE()</a> → <a href="SDL_SurfaceHasRLE.html">SDL_SurfaceHasRLE()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LoadBMP_RW.html">SDL_LoadBMP_RW()</a> → <a href="SDL_LoadBMP_IO.html">SDL_LoadBMP_IO()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LowerBlit.html">SDL_LowerBlit()</a> → <a href="SDL_BlitSurfaceUnchecked.html">SDL_BlitSurfaceUnchecked()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LowerBlitScaled.html">SDL_LowerBlitScaled()</a> → <a href="SDL_BlitSurfaceUncheckedScaled.html">SDL_BlitSurfaceUncheckedScaled()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SaveBMP_RW.html">SDL_SaveBMP_RW()</a> → <a href="SDL_SaveBMP_IO.html">SDL_SaveBMP_IO()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetClipRect.html">SDL_SetClipRect()</a> → <a href="SDL_SetSurfaceClipRect.html">SDL_SetSurfaceClipRect()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetColorKey.html">SDL_SetColorKey()</a> → <a href="SDL_SetSurfaceColorKey.html">SDL_SetSurfaceColorKey()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_UpperBlit.html">SDL_UpperBlit()</a> → <a href="SDL_BlitSurface.html">SDL_BlitSurface()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_UpperBlitScaled.html">SDL_UpperBlitScaled()</a> → <a href="SDL_BlitSurfaceScaled.html">SDL_BlitSurfaceScaled()</a>, bool値を戻す
 </ul>
 <p>
 以下のシンボルは削除された:
@@ -2435,30 +2435,30 @@ API関数のピクセル形式の<a href="SDL_PixelFormat.html">SDL_PixelFormat<
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_FreeFormat.html">SDL_FreeFormat()</a>
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetYUVConversionMode.html">SDL_GetYUVConversionMode()</a>
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetYUVConversionModeForResolution.html">SDL_GetYUVConversionModeForResolution()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetYUVConversionMode.html">SDL_SetYUVConversionMode()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_SetSurfaceColorspace">use SDL_SetSurfaceColorspace()</a>を使いサーフェイスの色空間を設定し, SDL_PROP_TEXTURE_CREATE_COLORSPACE_NUMBERを<a href="https://wiki.libsdl.org/SDL3/SDL_CreateTextureWithProperties">SDL_CreateTextureWithProperties()</a>で使ってテクスチャの色空間を設定すること. YUVピクセル形式のデフォルト色空間はSDL_COLORSPACE_JPEGである.
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SoftStretch.html">SDL_SoftStretch()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_StretchSurface">SDL_StretchSurface()</a>をSDL_SCALEMODE_NEARESTで使うこと
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SoftStretchLinear.html">SDL_SoftStretchLinear()</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_StretchSurface">SDL_StretchSurface()</a>をSDL_SCALEMODE_LINEARで使うこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SetYUVConversionMode.html">SDL_SetYUVConversionMode()</a> - <a href="SDL_SetSurfaceColorspace.html">SDL_SetSurfaceColorspace()</a>を使いサーフェイスの色空間を設定し, SDL_PROP_TEXTURE_CREATE_COLORSPACE_NUMBERを<a href="SDL_CreateTextureWithProperties.html">SDL_CreateTextureWithProperties()</a>で使ってテクスチャの色空間を設定すること. YUVピクセル形式のデフォルト色空間はSDL_COLORSPACE_JPEGである.
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SoftStretch.html">SDL_SoftStretch()</a> - <a href="SDL_StretchSurface.html">SDL_StretchSurface()</a>をSDL_SCALEMODE_NEARESTで使うこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_SoftStretchLinear.html">SDL_SoftStretchLinear()</a> - <a href="SDL_StretchSurface.html">SDL_StretchSurface()</a>をSDL_SCALEMODE_LINEARで使うこと
 </ul>
 <p>
 以下のシンボルの名前は次の様に変更された:
 </p>
 <ul>
-<li>SDL_PREALLOC → <a href="https://wiki.libsdl.org/SDL3/SDL_SurfaceFlags">SDL_SURFACE_PREALLOCATED</a>
-<li>SDL_SIMD_ALIGNED → <a href="https://wiki.libsdl.org/SDL3/SDL_SurfaceFlags">SDL_SURFACE_SIMD_ALIGNED</a>
+<li>SDL_PREALLOC → <a href="SDL_SurfaceFlags.html">SDL_SURFACE_PREALLOCATED</a>
+<li>SDL_SIMD_ALIGNED → <a href="SDL_SurfaceFlags.html">SDL_SURFACE_SIMD_ALIGNED</a>
 </ul>
 <h2><a name="#sdl_systemh">SDL_system.h (環境固有の機能)</a></h2>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_WindowsMessageHook">SDL_WindowsMessageHook</a>はシグネチャ(関数宣言)が変更され, メッセージを変更することができ, 以降のメッセージ処理をブロックできるようになった.
+<a href="SDL_WindowsMessageHook.html">SDL_WindowsMessageHook</a>はシグネチャ(関数宣言)が変更され, メッセージを変更することができ, 以降のメッセージ処理をブロックできるようになった.
 </p>
 <p>
-<a href="https://wiki.libsdl.org/SDL3/SDL_RequestAndroidPermission">SDL_RequestAndroidPermission</a>はブロッキング呼び出しではなくなった. 呼び出し側は応答可能になったとき呼び出されるコールバック関数を提供するようになった.
+<a href="SDL_RequestAndroidPermission.html">SDL_RequestAndroidPermission</a>はブロッキング呼び出しではなくなった. 呼び出し側は応答可能になったとき呼び出されるコールバック関数を提供するようになった.
 </p>
 <p>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iPhoneSetAnimationCallback.html">SDL_iPhoneSetAnimationCallback()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iPhoneSetEventPump.html">SDL_iPhoneSetEventPump()</a>の名前はそれぞれ<a href="https://wiki.libsdl.org/SDL3/SDL_SetiOSAnimationCallback">SDL_SetiOSAnimationCallback()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_SetiOSEventPump">SDL_SetiOSEventPump()</a>に変更された.
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iPhoneSetAnimationCallback.html">SDL_iPhoneSetAnimationCallback()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iPhoneSetEventPump.html">SDL_iPhoneSetEventPump()</a>の名前はそれぞれ<a href="SDL_SetiOSAnimationCallback.html">SDL_SetiOSAnimationCallback()</a>と<a href="SDL_SetiOSEventPump.html">SDL_SetiOSEventPump()</a>に変更された.
 SDL2ではiPadが登場する前の古いシンボルに新しい名前を与えるためのマクロだったが, 正式な名前のシンボルが唯一の選択肢となった.
 </p>
 <p>
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsAndroidTV.html">SDL_IsAndroidTV()</a>の名前は<a href="https://wiki.libsdl.org/SDL3/SDL_IsTV">SDL_IsTV()</a>に変更され, Android固有ではなくなった.
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsAndroidTV.html">SDL_IsAndroidTV()</a>の名前は<a href="SDL_IsTV.html">SDL_IsTV()</a>に変更され, Android固有ではなくなった.
 これにより, 例えばApple TVの場合も真を戻すようになった.
 </p>
 <p>
@@ -2476,36 +2476,36 @@ SDL2ではiPadが登場する前の古いシンボルに新しい名前を与え
 以下の関数の名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidBackButton.html">SDL_AndroidBackButton()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SendAndroidBackButton">SDL_SendAndroidBackButton()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetActivity.html">SDL_AndroidGetActivity()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetAndroidActivity">SDL_GetAndroidActivity()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetExternalStoragePath.html">SDL_AndroidGetExternalStoragePath()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetAndroidExternalStoragePath">SDL_GetAndroidExternalStoragePath()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetExternalStorageState.html">SDL_AndroidGetExternalStorageState()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetAndroidExternalStorageState">SDL_GetAndroidExternalStorageState()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetInternalStoragePath.html">SDL_AndroidGetInternalStoragePath()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetAndroidInternalStoragePath">SDL_GetAndroidInternalStoragePath()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetJNIEnv.html">SDL_AndroidGetJNIEnv()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetAndroidJNIEnv">SDL_GetAndroidJNIEnv()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidRequestPermission.html">SDL_AndroidRequestPermission()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_RequestAndroidPermission">SDL_RequestAndroidPermission()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidRequestPermissionCallback.html">SDL_AndroidRequestPermissionCallback()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_RequestAndroidPermissionCallback">SDL_RequestAndroidPermissionCallback()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidSendMessage.html">SDL_AndroidSendMessage()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SendAndroidMessage">SDL_SendAndroidMessage()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidShowToast.html">SDL_AndroidShowToast()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_ShowAndroidToast">SDL_ShowAndroidToast()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_DXGIGetOutputInfo.html">SDL_DXGIGetOutputInfo()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetDXGIOutputInfo">SDL_GetDXGIOutputInfo()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Direct3D9GetAdapterIndex.html">SDL_Direct3D9GetAdapterIndex()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetDirect3D9AdapterIndex">SDL_GetDirect3D9AdapterIndex()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GDKGetDefaultUser.html">SDL_GDKGetDefaultUser()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGDKDefaultUser">SDL_GetGDKDefaultUser()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GDKGetTaskQueue.html">SDL_GDKGetTaskQueue()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_GetGDKTaskQueue">SDL_GetGDKTaskQueue()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsAndroidTV.html">SDL_IsAndroidTV()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_IsTV">SDL_IsTV()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LinuxSetThreadPriority.html">SDL_LinuxSetThreadPriority()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetLinuxThreadPriority">SDL_SetLinuxThreadPriority()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LinuxSetThreadPriorityAndPolicy.html">SDL_LinuxSetThreadPriorityAndPolicy()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetLinuxThreadPriorityAndPolicy">SDL_SetLinuxThreadPriorityAndPolicy()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_OnApplicationDidBecomeActive.html">SDL_OnApplicationDidBecomeActive()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_OnApplicationDidEnterForeground">SDL_OnApplicationDidEnterForeground()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_OnApplicationWillResignActive.html">SDL_OnApplicationWillResignActive()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_OnApplicationWillEnterBackground">SDL_OnApplicationWillEnterBackground()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iOSSetAnimationCallback.html">SDL_iOSSetAnimationCallback()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetiOSAnimationCallback">SDL_SetiOSAnimationCallback()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iOSSetEventPump.html">SDL_iOSSetEventPump()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetiOSEventPump">SDL_SetiOSEventPump()</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iPhoneSetAnimationCallback.html">SDL_iPhoneSetAnimationCallback()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetiOSAnimationCallback">SDL_SetiOSAnimationCallback()</a>, bool値を戻す
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iPhoneSetEventPump.html">SDL_iPhoneSetEventPump()</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_SetiOSEventPump">SDL_SetiOSEventPump()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidBackButton.html">SDL_AndroidBackButton()</a> → <a href="SDL_SendAndroidBackButton.html">SDL_SendAndroidBackButton()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetActivity.html">SDL_AndroidGetActivity()</a> → <a href="SDL_GetAndroidActivity.html">SDL_GetAndroidActivity()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetExternalStoragePath.html">SDL_AndroidGetExternalStoragePath()</a> → <a href="SDL_GetAndroidExternalStoragePath.html">SDL_GetAndroidExternalStoragePath()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetExternalStorageState.html">SDL_AndroidGetExternalStorageState()</a> → <a href="SDL_GetAndroidExternalStorageState.html">SDL_GetAndroidExternalStorageState()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetInternalStoragePath.html">SDL_AndroidGetInternalStoragePath()</a> → <a href="SDL_GetAndroidInternalStoragePath.html">SDL_GetAndroidInternalStoragePath()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidGetJNIEnv.html">SDL_AndroidGetJNIEnv()</a> → <a href="SDL_GetAndroidJNIEnv.html">SDL_GetAndroidJNIEnv()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidRequestPermission.html">SDL_AndroidRequestPermission()</a> → <a href="SDL_RequestAndroidPermission.html">SDL_RequestAndroidPermission()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidRequestPermissionCallback.html">SDL_AndroidRequestPermissionCallback()</a> → <a href="SDL_RequestAndroidPermissionCallback.html">SDL_RequestAndroidPermissionCallback()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidSendMessage.html">SDL_AndroidSendMessage()</a> → <a href="SDL_SendAndroidMessage.html">SDL_SendAndroidMessage()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AndroidShowToast.html">SDL_AndroidShowToast()</a> → <a href="SDL_ShowAndroidToast.html">SDL_ShowAndroidToast()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_DXGIGetOutputInfo.html">SDL_DXGIGetOutputInfo()</a> → <a href="SDL_GetDXGIOutputInfo.html">SDL_GetDXGIOutputInfo()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Direct3D9GetAdapterIndex.html">SDL_Direct3D9GetAdapterIndex()</a> → <a href="SDL_GetDirect3D9AdapterIndex.html">SDL_GetDirect3D9AdapterIndex()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GDKGetDefaultUser.html">SDL_GDKGetDefaultUser()</a> → <a href="SDL_GetGDKDefaultUser.html">SDL_GetGDKDefaultUser()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GDKGetTaskQueue.html">SDL_GDKGetTaskQueue()</a> → <a href="SDL_GetGDKTaskQueue.html">SDL_GetGDKTaskQueue()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_IsAndroidTV.html">SDL_IsAndroidTV()</a> → <a href="SDL_IsTV.html">SDL_IsTV()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LinuxSetThreadPriority.html">SDL_LinuxSetThreadPriority()</a> → <a href="SDL_SetLinuxThreadPriority.html">SDL_SetLinuxThreadPriority()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LinuxSetThreadPriorityAndPolicy.html">SDL_LinuxSetThreadPriorityAndPolicy()</a> → <a href="SDL_SetLinuxThreadPriorityAndPolicy.html">SDL_SetLinuxThreadPriorityAndPolicy()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_OnApplicationDidBecomeActive.html">SDL_OnApplicationDidBecomeActive()</a> → <a href="SDL_OnApplicationDidEnterForeground.html">SDL_OnApplicationDidEnterForeground()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_OnApplicationWillResignActive.html">SDL_OnApplicationWillResignActive()</a> → <a href="SDL_OnApplicationWillEnterBackground.html">SDL_OnApplicationWillEnterBackground()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iOSSetAnimationCallback.html">SDL_iOSSetAnimationCallback()</a> → <a href="SDL_SetiOSAnimationCallback.html">SDL_SetiOSAnimationCallback()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iOSSetEventPump.html">SDL_iOSSetEventPump()</a> → <a href="SDL_SetiOSEventPump.html">SDL_SetiOSEventPump()</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iPhoneSetAnimationCallback.html">SDL_iPhoneSetAnimationCallback()</a> → <a href="SDL_SetiOSAnimationCallback.html">SDL_SetiOSAnimationCallback()</a>, bool値を戻す
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_iPhoneSetEventPump.html">SDL_iPhoneSetEventPump()</a> → <a href="SDL_SetiOSEventPump.html">SDL_SetiOSEventPump()</a>
 </ul>
 <h2><a name="#sdl_syswmh">SDL_syswm.h (環境依存ウィンドウ)</a></h2>
 <p>
 ヘッダは削除された.
 </p>
 <p>
-WindowsとX11のイベントは<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowsMessageHook">SDL_SetWindowsMessageHook()</a>と<a href="https://wiki.libsdl.org/SDL3/SDL_SetX11EventHook">SDL_SetX11EventHook()</a>で設定できるコールバックで処理できるようになった.
+WindowsとX11のイベントは<a href="SDL_SetWindowsMessageHook.html">SDL_SetWindowsMessageHook()</a>と<a href="SDL_SetX11EventHook.html">SDL_SetX11EventHook()</a>で設定できるコールバックで処理できるようになった.
 </p>
 <p>
 以前<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetWindowWMInfo.html">SDL_GetWindowWMInfo()</a>で得られた情報はウィンドウのプロパティとなった. 例:
@@ -2707,7 +2707,7 @@ WindowsとX11のイベントは<a href="https://wiki.libsdl.org/SDL3/SDL_SetWind
 これは SDL 2.0では常に0を戻していた.
 </p>
 <p>
-<a href="SDL_GetVersion.html">SDL_GetVersion()</a>はバージョンを表す値を戻す. この値はSDL_VERSIONNUM()を通して別のバージョンと比較できる.
+<a href="SDL_GetVersion.html">SDL_GetVersion()</a>はバージョンを表す値を戻す. この値は<a href="SDL_VERSIONNUM.html">SDL_VERSIONNUM()</a>を通して別のバージョンと比較できる.
 </p>
 <p>
 以下の構造体は削除された:
