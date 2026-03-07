@@ -5,41 +5,37 @@
 <meta name="keywords" content="Simple Directmedia Layer SDL3.0">
 <link rel="top" href="index.html" title="ホーム">
 <link rel="parent" href="CategoryStdinc.html" title="1つ上">
-<title>SDL_expf</title>
+<title>SDL_log10f</title>
 </head>
 <body>
-<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_expf
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_log10f
 <hr>
-<h1>SDL_expf</h1>
-自然対数の底のx乗を求める
+<h1>SDL_log10f</h1>
+xの常用対数を求める
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
 <h2>構文</h2>
-<code>float SDL_expf(float x);</code>
+<code>float SDL_log10f(float x);</code>
 <h2>引数</h2>
 <table border="1">
-<tr><td>float</td><td>x</td><td>浮動小数点の値</td></tr>
+<tr><td>float</td><td>x</td><td>浮動小数点の値. 0よりも大きな値</td></tr>
 </table>
 <h2>戻り値</h2>
 <p>
-(float) <code>e^x</code>を戻す.
+(float) <code>x</code>の常用対数を戻す.
 </p>
 <h2>詳細</h2>
 <p>
-<code>y = exp(x)</code>の定義は, <code>e</code>が自然対数の底の<code>y = e^x</code>である.
-その逆関数が<a href="SDL_logf.html">SDL_logf</a>である.
+定義域: <code>0 &lt= x &lt= INF</code>
 </p>
 <p>
-定義域: <code>-INF &lt= x &lt= INF</code>
+値域: <code>-INF &lt= y &lt= INF</code>
 </p>
 <p>
-値域: <code>0 &lt= y &lt= INF</code>
+<code>x</code>が0または負のときはエラーとなる.
 </p>
 <p>
-<code>exp(x)</code>が大きすぎで表せない場合, オーバーフローとなる.
-</p>
-<p>
-この関数は単精度浮動小数点の値を扱う. 倍精度の場合は<a href="SDL_exp.html">SDL_exp</a>を使用すること.
+この関数は単精度浮動小数点の値を扱う. 倍精度の場合は<a href="SDL_log10f.html">SDL_log10f</a>を使用すること.
 </p>
 <p>
 この関数は, バージョン, 環境, 設定で精度が異なる可能性がある.
@@ -53,11 +49,12 @@
 SDL 3.2.0以降
 <h2>関連項目</h2>
 <ul>
-<li><a href="SDL_expf.html">SDL_expf</a>
-<li><a href="SDL_log(Stdinc).html">SDL_log</a>
+<li><a href="SDL_log10.html">SDL_log10</a>
+<li><a href="SDL_logf.html">SDL_logf</a>
+<li><a href="SDL_powf.html">SDL_powf</a>
 </ul>
 <h2>SDL Wikiへのリンク</h2>
-<a href="https://wiki.libsdl.org/SDL3/SDL_expf">SDL_expf - SDL Wiki</a><br>
+<a href="https://wiki.libsdl.org/SDL3/SDL_log10f">SDL_log10f - SDL Wiki</a><br>
 <hr>
 </body>
 </html>

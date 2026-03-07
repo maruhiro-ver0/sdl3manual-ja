@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryStdinc.html" title="1つ上">
+<title>SDL_strtoll</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_strtoll
+<hr>
+<h1>SDL_strtoll</h1>
+文字列を解析してlong long型の数値に変換する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
+<h2>構文</h2>
+<code>long long SDL_strtoll(const char *str, char **endp, int base);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const char *</td><td>str</td><td>NUL終端の文字列. NULL不可</td></tr>
+<tr><td>char **</td><td>endp</td><td>NULLでない場合, 先頭の無効な文字列(その後の文字列から数値の解析が行われる)の書込先へのポインタ</td></tr>
+<tr><td>int</td><td>base</td><td>基数. 0と2から36に対応している. 0の場合, 基数は数字の先頭(0xのとき16進数, 0のとき8進数, その他のとき10進数)による</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(long long) 解析されたlong long型の数値を戻す. 解析できなかった場合0を戻す.
+</p>
+<h2>詳細</h2>
+<p>
+<code>str</code>が空白で始まる場合, その空白を無視して数値を解析する.
+</p>
+<p>
+解析された数値がlong longの範囲外の場合, 結果はlong longで表現可能な最小値または最大値で制限される.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_atoi.html">SDL_atoi</a>
+<li><a href="SDL_atof.html">SDL_atof</a>
+<li><a href="SDL_strtol.html">SDL_strtol</a>
+<li><a href="SDL_strtoul.html">SDL_strtoul</a>
+<li><a href="SDL_strtoull.html">SDL_strtoull</a>
+<li><a href="SDL_strtod.html">SDL_strtod</a>
+<li><a href="SDL_lltoa.html">SDL_lltoa</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_strtoll">SDL_strtoll - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
