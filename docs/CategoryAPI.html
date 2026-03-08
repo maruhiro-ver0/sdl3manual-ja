@@ -38,7 +38,7 @@
 <li><a href="SDL_AppQuit.html">SDL_AppQuit</a> - メインコールバックを使用する場合, アプリケーションが実装する終了処理エントリーポイント
 <li><a href="SDL_asin.html">SDL_asin</a> - xのアークサインを求める
 <li><a href="SDL_asinf.html">SDL_asinf</a> - xのアークサインを求める
-<li><a href="SDL_asprintf.html">SDL_asprintf</a> - asprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_asprintf.html">SDL_asprintf</a> - asprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_AsyncIOFromFile.html">SDL_AsyncIOFromFile</a> - ファイルの読み書きを行う非同期I/O操作を生成する
 <li><a href="SDL_atan.html">SDL_atan</a> - xのアークタンジェントを求める
 <li><a href="SDL_atan2.html">SDL_atan2</a> - y / xのアークタンジェントを求める. 解の象限を決定するためにxとyの符号を使用する
@@ -728,15 +728,15 @@
 <li><a href="SDL_isdigit.html">SDL_isdigit</a> - 文字が数字であるかチェックする
 <li><a href="SDL_IsGamepad.html">SDL_IsGamepad</a> - ジョイスティックがゲームパッドインターフェースに対応しているかチェックする
 <li><a href="SDL_isgraph.html">SDL_isgraph</a> - 文字が空白を除く表示可能な文字であるかチェックする
-<li>SDL_isinf
-<li>SDL_isinff
+<li><a href="SDL_isinf.html">SDL_isinf</a> - 数値が無限であるかチェックする
+<li><a href="SDL_isinff.html">SDL_isinff</a> - 数値が無限であるかチェックする
 <li><a href="SDL_IsJoystickHaptic.html">SDL_IsJoystickHaptic</a> - ジョイスティックにハプティックの機能があるかチェックする
 <li><a href="SDL_IsJoystickVirtual.html">SDL_IsJoystickVirtual</a> - ジョイスティックが仮想か否かをチェックする
 <li><a href="SDL_islower.html">SDL_islower</a> - 文字が小文字であるかチェックする
 <li><a href="SDL_IsMainThread.html">SDL_IsMainThread</a> - スレッドがメインスレッドかチェックする
 <li><a href="SDL_IsMouseHaptic.html">SDL_IsMouseHaptic</a> - マウスにハプティックの機能があるかチェックする
-<li>SDL_isnan
-<li>SDL_isnanf
+<li><a href="SDL_isnan.html">SDL_isnan</a> - 数値が非数であるかチェックする
+<li><a href="SDL_isnanf.html">SDL_isnanf</a> - 数値が非数であるかチェックする
 <li><a href="SDL_isprint.html">SDL_isprint</a> - 文字が表示可能な文字であるかチェックする
 <li><a href="SDL_ispunct.html">SDL_ispunct</a> - 文字が記号であるかチェックする
 <li><a href="SDL_isspace.html">SDL_isspace</a> - 文字が空白であるかチェックする
@@ -744,11 +744,11 @@
 <li><a href="SDL_IsTV.html">SDL_IsTV</a> - 現在のデバイスがテレビかを得る
 <li><a href="SDL_isupper.html">SDL_isupper</a> - 文字が大文字であるかチェックする
 <li><a href="SDL_isxdigit.html">SDL_isxdigit</a> - 文字が16進数の数字であるかチェックする
-<li>SDL_itoa
+<li><a href="SDL_itoa.html">SDL_itoa</a> - int型の整数を文字列に変換する
 <li><a href="SDL_JoystickConnected.html">SDL_JoystickConnected</a> - ジョイスティックが接続されているかチェックする
 <li><a href="SDL_JoystickEventsEnabled.html">SDL_JoystickEventsEnabled</a> - ジョイスティックイベント処理の有無を得る
 <li><a href="SDL_KillProcess.html">SDL_KillProcess</a> - プロセスを停止させる
-<li>SDL_lltoa
+<li><a href="SDL_lltoa.html">SDL_lltoa</a> - long long型の整数を文字列に変換する
 <li><a href="SDL_LoadBMP.html">SDL_LoadBMP</a> - BMPファイルをサーフェイスに読み込む
 <li><a href="SDL_LoadBMP_IO.html">SDL_LoadBMP_IO</a> - シーク可能なSDLデータストリームからBMP形式をサーフェイスに読み込む
 <li><a href="SDL_LoadFile.html">SDL_LoadFile</a> - ファイルからデータを全て読み込む
@@ -786,7 +786,7 @@
 <li><a href="SDL_LogWarn.html">SDL_LogWarn</a> - SDL_LOG_PRIORITY_WARNの重要度でログを出力する
 <li><a href="SDL_lround.html">SDL_lround</a> - xを四捨五入したlong型の値を求める
 <li><a href="SDL_lroundf.html">SDL_lroundf</a> - xを四捨五入したlong型の値を求める
-<li>SDL_ltoa
+<li><a href="SDL_ltoa.html">SDL_ltoa</a> - long型の整数を文字列に変換する
 <li><a href="SDL_main.html">SDL_main</a> - アプリケーションのプログラムエントリー関数
 <li>SDL_malloc
 <li>SDL_MapGPUTransferBuffer
@@ -1135,7 +1135,7 @@
 <li><a href="SDL_sinf.html">SDL_sinf</a> - xのサインを求める
 <li>SDL_size_add_check_overflow
 <li>SDL_size_mul_check_overflow
-<li><a href="SDL_snprintf.html">SDL_snprintf</a> - snprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_snprintf.html">SDL_snprintf</a> - snprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_sqrt.html">SDL_sqrt</a> - xの平方根を求める
 <li><a href="SDL_sqrtf.html">SDL_sqrtf</a> - xの平方根を求める
 <li>SDL_srand
@@ -1149,19 +1149,19 @@
 <li><a href="SDL_StopHapticRumble.html">SDL_StopHapticRumble</a> - ハプティックデバイスの単純な振動を停止する
 <li><a href="SDL_StopTextInput.html">SDL_StopTextInput</a> - ウィンドウのUnicodeテキスト入力イベントの受け入れを停止する
 <li><a href="SDL_StorageReady.html">SDL_StorageReady</a> - ストレージコンテナを使う準備ができているかチェックする
-<li>SDL_strcasecmp
-<li>SDL_strcasestr
-<li>SDL_strchr
-<li>SDL_strcmp
-<li>SDL_strdup
+<li><a href="SDL_strcasecmp.html">SDL_strcasecmp</a> - 2つのNUL終端のUTF-8文字列を大文字小文字を無視して比較する
+<li><a href="SDL_strcasestr.html">SDL_strcasestr</a> - UTF-8文字列から最初に一致する文字列を大文字小文字を無視して検索する
+<li><a href="SDL_strchr.html">SDL_strchr</a> - 文字列から最初に一致するバイトを検索する
+<li><a href="SDL_strcmp.html">SDL_strcmp</a> - 2つのNUL終端のUTF-8文字列を比較する
+<li><a href="SDL_strdup.html">SDL_strdup</a> - メモリを確保して文字列をコピーする
 <li><a href="SDL_StretchSurface.html">SDL_StretchSurface</a> - サーフェイスにピクセルを引き延ばして転送する
 <li><a href="SDL_StringToGUID.html">SDL_StringToGUID</a> - GUID文字列をSDL_GUID構造体に変換する
-<li>SDL_strlcat
-<li>SDL_strlcpy
-<li>SDL_strlen
-<li>SDL_strlwr
-<li>SDL_strncasecmp
-<li>SDL_strncmp
+<li><a href="SDL_strlcat.html">SDL_strlcat</a> - 文字列を結合する
+<li><a href="SDL_strlcpy.html">SDL_strlcpy</a> - 文字列をコピーする
+<li><a href="SDL_strlen.html">SDL_strlen</a> - strlen()と同機能だがCランタイムを必要としない関数
+<li><a href="SDL_strlwr.html">SDL_strlwr</a> - 文字列を小文字に変換する
+<li><a href="SDL_strncasecmp.html">SDL_strncasecmp</a> - 2つのNUL終端のUTF-8文字列を大文字小文字を無視して最大nバイトを比較する
+<li><a href="SDL_strncmp.html">SDL_strncmp</a> - 2つのNUL終端のUTF-8文字列の最大nバイトを比較する
 <li>SDL_strndup
 <li>SDL_strnlen
 <li>SDL_strnstr
@@ -1185,7 +1185,7 @@
 <li><a href="SDL_Swap32.html">SDL_Swap32</a> - 符号なし32ビット整数をバイト交換する
 <li><a href="SDL_Swap64.html">SDL_Swap64</a> - 符号なし64ビット整数をバイト交換する
 <li><a href="SDL_SwapFloat.html">SDL_SwapFloat</a> - 浮動小数点の値のバイト交換する
-<li><a href="SDL_swprintf.html">SDL_swprintf</a> - swprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_swprintf.html">SDL_swprintf</a> - swprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_SyncWindow.html">SDL_SyncWindow</a> - 保留中のウィンドウ状態の変更が完了するまでブロックする
 <li><a href="SDL_tan.html">SDL_tan</a> - xのタンジェントを求める
 <li><a href="SDL_tanf.html">SDL_tanf</a> - xのタンジェントを求める
@@ -1204,9 +1204,9 @@
 <li><a href="SDL_TryLockSpinlock.html">SDL_TryLockSpinlock</a> - 0でない値を設定することでスピンロックを試みる
 <li><a href="SDL_TryWaitSemaphore.html">SDL_TryWaitSemaphore</a> - セマフォの値が正であるか調査し, そうならば減算する
 <li>SDL_UCS4ToUTF8
-<li>SDL_uitoa
-<li>SDL_ulltoa
-<li>SDL_ultoa
+<li><a href="SDL_uitoa.html">SDL_uitoa</a> - unsigned int型の整数を文字列に変換する
+<li><a href="SDL_ulltoa.html">SDL_ulltoa</a> - unsigned long long型の整数を文字列に変換する
+<li><a href="SDL_ultoa.html">SDL_ultoa</a> - unsigned long型の整数を文字列に変換する
 <li><a href="SDL_UnbindAudioStream.html">SDL_UnbindAudioStream</a> - 1つのオーディオストリームのオーディオデバイスへのバインドを解除する
 <li><a href="SDL_UnbindAudioStreams.html">SDL_UnbindAudioStreams</a> - 一覧のオーディオストリームのオーディオデバイスへのバインドを解除する
 <li>SDL_UnloadObject
@@ -1237,10 +1237,10 @@
 <li>SDL_utf8strlcpy
 <li>SDL_utf8strlen
 <li>SDL_utf8strnlen
-<li><a href="SDL_vasprintf.html">SDL_vasprintf</a> - vasprintf()と同機能だがCランタイムにアクセスしない関数
-<li><a href="SDL_vsnprintf.html">SDL_vsnprintf</a> - vsnprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_vasprintf.html">SDL_vasprintf</a> - vasprintf()と同機能だがCランタイムを必要としない関数
+<li><a href="SDL_vsnprintf.html">SDL_vsnprintf</a> - vsnprintf()と同機能だがCランタイムを必要としない関数
 <li>SDL_vsscanf
-<li><a href="SDL_vswprintf.html">SDL_vswprintf</a> - vswprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_vswprintf.html">SDL_vswprintf</a> - vswprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_Vulkan_CreateSurface.html">SDL_Vulkan_CreateSurface</a> - ウィンドウのVulkanレンダリングサーフェイスを生成する
 <li><a href="SDL_Vulkan_DestroySurface.html">SDL_Vulkan_DestroySurface</a> - ウィンドウのVulkanレンダリングサーフェイスを破棄する
 <li><a href="SDL_Vulkan_GetInstanceExtensions.html">SDL_Vulkan_GetInstanceExtensions</a> - SDL_Vulkan_CreateSurfaceで必要なVulkanインスタンス拡張機能を得る

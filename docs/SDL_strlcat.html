@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryStdinc.html" title="1つ上">
+<title>SDL_strlcat</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_strlcat
+<hr>
+<h1>SDL_strlcat</h1>
+文字列を結合する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
+<h2>構文</h2>
+<code>size_t SDL_strlcat(char *dst, const char *src, size_t maxlen);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>char *</td><td>dst</td><td>結合先のNUL終端の文字列. NULLであってはならず, <code>src</code>と重なっていてはならない</td></tr>
+<tr><td>const char *</td><td>src</td><td>結合するNUL終端の文字列. NULLであってはならず, <code>dst</code>と重なっていてはならない</td></tr>
+<tr><td>size_t</td><td>maxlen</td><td>結合先バッファの最大長(文字数)</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(size_t) <code>dst</code>に<code>src</code>を結合した文字列の長さ(NUL終端を含まない文字数)を戻す.
+</p>
+<h2>詳細</h2>
+<p>
+この関数は最大<code>maxlen</code> - <a href="SDL_strlen.html">SDL_strlen</a>(dst) - 1文字を<code>src</code>から<code>dst</code>に結合してNUL終端を追加する.
+</p>
+<p>
+<code>src</code>と<code>dst</code>は重なっていてはならない.
+</p>
+<p>
+<code>maxlen</code> - <a href="SDL_strlen.html">SDL_strlen</a>(dst) - 1が0以下の場合, <code>dst</code>は変わらない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_strlcpy.html">SDL_strlcpy</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_strlcat">SDL_strlcat - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

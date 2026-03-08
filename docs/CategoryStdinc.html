@@ -35,7 +35,7 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li>SDL_aligned_free
 <li><a href="SDL_asin.html">SDL_asin</a> - xのアークサインを求める
 <li><a href="SDL_asinf.html">SDL_asinf</a> - xのアークサインを求める
-<li><a href="SDL_asprintf.html">SDL_asprintf</a> - asprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_asprintf.html">SDL_asprintf</a> - asprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_atan.html">SDL_atan</a> - xのアークタンジェントを求める
 <li><a href="SDL_atan2.html">SDL_atan2</a> - y / xのアークタンジェントを求める. 解の象限を決定するためにxとyの符号を使用する
 <li><a href="SDL_atan2f.html">SDL_atan2f</a> - y / xのアークタンジェントを求める. 解の象限を決定するためにxとyの符号を使用する
@@ -82,25 +82,25 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_iscntrl.html">SDL_iscntrl</a> - 文字が制御文字であるかチェックする
 <li><a href="SDL_isdigit.html">SDL_isdigit</a> - 文字が数字であるかチェックする
 <li><a href="SDL_isgraph.html">SDL_isgraph</a> - 文字が空白を除く表示可能な文字であるかチェックする
-<li>SDL_isinf
-<li>SDL_isinff
+<li><a href="SDL_isinf.html">SDL_isinf</a> - 数値が無限であるかチェックする
+<li><a href="SDL_isinff.html">SDL_isinff</a> - 数値が無限であるかチェックする
 <li><a href="SDL_islower.html">SDL_islower</a> - 文字が小文字であるかチェックする
-<li>SDL_isnan
-<li>SDL_isnanf
+<li><a href="SDL_isnan.html">SDL_isnan</a> - 数値が非数であるかチェックする
+<li><a href="SDL_isnanf.html">SDL_isnanf</a> - 数値が非数であるかチェックする
 <li><a href="SDL_isprint.html">SDL_isprint</a> - 文字が表示可能な文字であるかチェックする
 <li><a href="SDL_ispunct.html">SDL_ispunct</a> - 文字が記号であるかチェックする
 <li><a href="SDL_isspace.html">SDL_isspace</a> - 文字が空白であるかチェックする
 <li><a href="SDL_isupper.html">SDL_isupper</a> - 文字が大文字であるかチェックする
 <li><a href="SDL_isxdigit.html">SDL_isxdigit</a> - 文字が16進数の数字であるかチェックする
-<li>SDL_itoa
-<li>SDL_lltoa
+<li><a href="SDL_itoa.html">SDL_itoa</a> - int型の整数を文字列に変換する
+<li><a href="SDL_lltoa.html">SDL_lltoa</a> - long long型の整数を文字列に変換する
 <li><a href="SDL_log(Stdinc).html">SDL_log</a> - xの自然対数を求める
 <li><a href="SDL_log10.html">SDL_log10</a> - xの常用対数を求める
 <li><a href="SDL_log10f.html">SDL_log10f</a> - xの常用対数を求める
 <li><a href="SDL_logf.html">SDL_logf</a> - xの自然対数を求める
 <li><a href="SDL_lround.html">SDL_lround</a> - xを四捨五入したlong型の値を求める
 <li><a href="SDL_lroundf.html">SDL_lroundf</a> - xを四捨五入したlong型の値を求める
-<li>SDL_ltoa
+<li><a href="SDL_ltoa.html">SDL_ltoa</a> - long型の整数を文字列に変換する
 <li>SDL_malloc
 <li>SDL_memcmp
 <li>SDL_memcpy
@@ -132,24 +132,24 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_sinf.html">SDL_sinf</a> - xのサインを求める
 <li>SDL_size_add_check_overflow
 <li>SDL_size_mul_check_overflow
-<li><a href="SDL_snprintf.html">SDL_snprintf</a> - snprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_snprintf.html">SDL_snprintf</a> - snprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_sqrt.html">SDL_sqrt</a> - xの平方根を求める
 <li><a href="SDL_sqrtf.html">SDL_sqrtf</a> - xの平方根を求める
 <li>SDL_srand
 <li>SDL_sscanf
 <li>SDL_StepBackUTF8
 <li>SDL_StepUTF8
-<li>SDL_strcasecmp
-<li>SDL_strcasestr
-<li>SDL_strchr
-<li>SDL_strcmp
-<li>SDL_strdup
-<li>SDL_strlcat
-<li>SDL_strlcpy
-<li>SDL_strlen
-<li>SDL_strlwr
-<li>SDL_strncasecmp
-<li>SDL_strncmp
+<li><a href="SDL_strcasecmp.html">SDL_strcasecmp</a> - 2つのNUL終端のUTF-8文字列を大文字小文字を無視して比較する
+<li><a href="SDL_strcasestr.html">SDL_strcasestr</a> - UTF-8文字列から最初に一致する文字列を大文字小文字を無視して検索する
+<li><a href="SDL_strchr.html">SDL_strchr</a> - 文字列から最初に一致するバイトを検索する
+<li><a href="SDL_strcmp.html">SDL_strcmp</a> - 2つのNUL終端のUTF-8文字列を比較する
+<li><a href="SDL_strdup.html">SDL_strdup</a> - メモリを確保して文字列をコピーする
+<li><a href="SDL_strlcat.html">SDL_strlcat</a> - 文字列を結合する
+<li><a href="SDL_strlcpy.html">SDL_strlcpy</a> - 文字列をコピーする
+<li><a href="SDL_strlen.html">SDL_strlen</a> - strlen()と同機能だがCランタイムを必要としない関数
+<li><a href="SDL_strlwr.html">SDL_strlwr</a> - 文字列を小文字に変換する
+<li><a href="SDL_strncasecmp.html">SDL_strncasecmp</a> - 2つのNUL終端のUTF-8文字列を大文字小文字を無視して最大nバイトを比較する
+<li><a href="SDL_strncmp.html">SDL_strncmp</a> - 2つのNUL終端のUTF-8文字列の最大nバイトを比較する
 <li>SDL_strndup
 <li>SDL_strnlen
 <li>SDL_strnstr
@@ -164,7 +164,7 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_strtoul.html">SDL_strtoul</a> - 文字列を解析してunsigned long型の数値に変換する
 <li><a href="SDL_strtoull.html">SDL_strtoull</a> - 文字列を解析してunsigned long long型の数値に変換する
 <li>SDL_strupr
-<li><a href="SDL_swprintf.html">SDL_swprintf</a> - swprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_swprintf.html">SDL_swprintf</a> - swprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_tan.html">SDL_tan</a> - xのタンジェントを求める
 <li><a href="SDL_tanf.html">SDL_tanf</a> - xのタンジェントを求める
 <li>SDL_tolower
@@ -172,18 +172,18 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_trunc.html">SDL_trunc</a> - xの整数部を求める
 <li><a href="SDL_truncf.html">SDL_truncf</a> - xの整数部を求める
 <li>SDL_UCS4ToUTF8
-<li>SDL_uitoa
-<li>SDL_ulltoa
-<li>SDL_ultoa
+<li><a href="SDL_uitoa.html">SDL_uitoa</a> - unsigned int型の整数を文字列に変換する
+<li><a href="SDL_ulltoa.html">SDL_ulltoa</a> - unsigned long long型の整数を文字列に変換する
+<li><a href="SDL_ultoa.html">SDL_ultoa</a> - unsigned long型の整数を文字列に変換する
 <li>SDL_unsetenv_unsafe
 <li>SDL_UnsetEnvironmentVariable
 <li>SDL_utf8strlcpy
 <li>SDL_utf8strlen
 <li>SDL_utf8strnlen
-<li><a href="SDL_vasprintf.html">SDL_vasprintf</a> - vasprintf()と同機能だがCランタイムにアクセスしない関数
-<li><a href="SDL_vsnprintf.html">SDL_vsnprintf</a> - vsnprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_vasprintf.html">SDL_vasprintf</a> - vasprintf()と同機能だがCランタイムを必要としない関数
+<li><a href="SDL_vsnprintf.html">SDL_vsnprintf</a> - vsnprintf()と同機能だがCランタイムを必要としない関数
 <li>SDL_vsscanf
-<li><a href="SDL_vswprintf.html">SDL_vswprintf</a> - vswprintf()と同機能だがCランタイムにアクセスしない関数
+<li><a href="SDL_vswprintf.html">SDL_vswprintf</a> - vswprintf()と同機能だがCランタイムを必要としない関数
 <li>SDL_wcscasecmp
 <li>SDL_wcscmp
 <li>SDL_wcsdup
