@@ -5,20 +5,21 @@
 <meta name="keywords" content="Simple Directmedia Layer SDL3.0">
 <link rel="top" href="index.html" title="ホーム">
 <link rel="parent" href="CategoryStdinc.html" title="1つ上">
-<title>SDL_strdup</title>
+<title>SDL_strndup</title>
 </head>
 <body>
-<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_strdup
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_strndup
 <hr>
-<h1>SDL_strdup</h1>
-メモリを確保して文字列をコピーする
+<h1>SDL_strndup</h1>
+メモリを確保して最大n文字の文字列をコピーする
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
 <h2>構文</h2>
-<code>char * SDL_strdup(const char *str);</code>
+<code>char * SDL_strndup(const char *str, size_t maxlen);</code>
 <h2>引数</h2>
 <table border="1">
 <tr><td>const char *</td><td>str</td><td>コピーする文字列</td></tr>
+<tr><td>size_t</td><td>maxlen</td><td>コピーする文字列の最大バイト数. NUL終端の分は含まれない</td></tr>
 </table>
 <h2>戻り値</h2>
 <p>
@@ -26,7 +27,10 @@
 </p>
 <h2>詳細</h2>
 <p>
-この関数はNUL終端の文字列<code>str</code>にとって十分な領域を<a href="SDL_malloc.html">SDL_malloc</a>で確保し, この領域に文字列をコピーする.
+この関数はNUL終端の文字列<code>str</code>にとって十分な領域を最大<code>maxlen</code>バイト<a href="SDL_malloc.html">SDL_malloc</a>で確保し, この領域に文字列をコピーする.
+</p>
+<p>
+文字列が<code>maxlen</code>バイトよりも長い場合, 戻された文字列の長さは<code>maxlen</code>バイトで, さらに最大バイト数には含まれないNUL終端が追加されている.
 </p>
 <p>
 戻された文字列は呼び出し側の管理となる. 不要になった場合は<a href="SDL_free.html">SDL_free</a>に渡す必要がある.
@@ -38,7 +42,7 @@
 <h2>バージョン</h2>
 SDL 3.2.0以降
 <h2>SDL Wikiへのリンク</h2>
-<a href="https://wiki.libsdl.org/SDL3/SDL_strdup">SDL_strdup - SDL Wiki</a><br>
+<a href="https://wiki.libsdl.org/SDL3/SDL_strndup">SDL_strndup - SDL Wiki</a><br>
 <hr>
 </body>
 </html>
