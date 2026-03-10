@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryStdinc.html" title="1つ上">
+<title>SDL_strrev</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_strrev
+<hr>
+<h1>SDL_strrev</h1>
+文字列の順序を逆にする
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
+<h2>構文</h2>
+<code>char * SDL_strrev(char *str);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>char *</td><td>str</td><td>順序を逆にする文字列</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(char *) <code>str</code>を戻す.
+</p>
+<h2>詳細</h2>
+<p>
+NUL終端の文字列の順序を逆にして置き換える.
+文字列の内容のみを入れ替え, NUL終端は順序が入れ替えられた文字列の末尾に残る.
+</p>
+<p>
+注意: この関数は文字列をコードポイントではなくバイトで扱う.
+もし<code>str</code>がUnicodeコードポイント127を超えるUTF-8文字列ならば, 文字列データは破壊される.
+この関数で扱う文字列は全てASCII文字で構成されたもののみにするべきである.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_strrev">SDL_strrev - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
