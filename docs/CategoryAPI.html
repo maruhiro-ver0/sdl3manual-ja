@@ -30,8 +30,8 @@
 <li><a href="SDL_AddTimer.html">SDL_AddTimer</a> - 指定のミリ秒が経過した後にコールバック関数を呼ぶように設定する
 <li><a href="SDL_AddTimerNS.html">SDL_AddTimerNS</a> - 指定のナノ秒が経過した後にコールバック関数を呼ぶように設定する
 <li><a href="SDL_AddVulkanRenderSemaphores.html">SDL_AddVulkanRenderSemaphores</a> - 現在のフレームに同期セマフォを追加する
-<li>SDL_aligned_alloc
-<li>SDL_aligned_free
+<li><a href="SDL_aligned_alloc.html">SDL_aligned_alloc</a> - アライメントを指定してメモリを確保する
+<li><a href="SDL_aligned_free.html">SDL_aligned_free</a> - SDL_aligned_alloc()で確保したメモリを解放する
 <li><a href="SDL_AppEvent.html">SDL_AppEvent</a> - メインコールバックを使用する場合, アプリケーションが実装するイベント処理エントリーポイント
 <li><a href="SDL_AppInit.html">SDL_AppInit</a> - メインコールバックを使用する場合, アプリケーションが実装する初期化処理エントリーポイント
 <li><a href="SDL_AppIterate.html">SDL_AppIterate</a> - メインコールバックを使用する場合, アプリケーションが実装する反復処理エントリーポイント
@@ -76,10 +76,10 @@
 <li><a href="SDL_BlitSurfaceUnchecked.html">SDL_BlitSurfaceUnchecked</a> - 低レベルのサーフェイス転送のみを行う
 <li><a href="SDL_BlitSurfaceUncheckedScaled.html">SDL_BlitSurfaceUncheckedScaled</a> - 低レベルの拡大縮小サーフェイス転送のみを行う
 <li><a href="SDL_BroadcastCondition.html">SDL_BroadcastCondition</a> - 条件変数を待つ全てのスレッドを再開する
-<li>SDL_bsearch
-<li>SDL_bsearch_r
+<li><a href="SDL_bsearch.html">SDL_bsearch</a> - ソートされた配列にバイナリサーチを行う
+<li><a href="SDL_bsearch_r.html">SDL_bsearch_r</a> - ソートされた配列に比較関数にユーザデータを渡してバイナリサーチを行う
 <li>SDL_CalculateGPUTextureFormatSize
-<li>SDL_calloc
+<li><a href="SDL_calloc.html">SDL_calloc</a> - 0で初期化された配列を確保する
 <li>SDL_CancelGPUCommandBuffer
 <li><a href="SDL_CaptureMouse.html">SDL_CaptureMouse</a> - SDLウィンドウの外でのマウスやトラックボールの入力を得られるように捕捉する
 <li><a href="SDL_ceil.html">SDL_ceil</a> - xを切り上げた値を求める
@@ -116,20 +116,20 @@
 <li>SDL_CopyGPUBufferToBuffer
 <li>SDL_CopyGPUTextureToTexture
 <li><a href="SDL_CopyProperties.html">SDL_CopyProperties</a> - プロパティグループをコピーする
-<li>SDL_copysign
-<li>SDL_copysignf
+<li><a href="SDL_copysign.html">SDL_copysign</a> - ある浮動小数点の値の符号を別の浮動小数点の符号にコピーする
+<li><a href="SDL_copysignf.html">SDL_copysignf</a> - ある浮動小数点の値の符号を別の浮動小数点の符号にコピーする
 <li><a href="SDL_CopyStorageFile.html">SDL_CopyStorageFile</a> - 書込可能ストレージコンテナにファイルをコピーする
 <li><a href="SDL_cos.html">SDL_cos</a> - xのコサインを求める
 <li><a href="SDL_cosf.html">SDL_cosf</a> - xのコサインを求める
-<li>SDL_crc16
-<li>SDL_crc32
+<li><a href="SDL_crc16.html">SDL_crc16</a> - CRC-16を求める
+<li><a href="SDL_crc32.html">SDL_crc32</a> - CRC-32を求める
 <li><a href="SDL_CreateAsyncIOQueue.html">SDL_CreateAsyncIOQueue</a> - 複数の非同期I/O操作を追跡するタスクキューを生成する
 <li><a href="SDL_CreateAudioStream.html">SDL_CreateAudioStream</a> - オーディオストリームを生成する 
 <li><a href="SDL_CreateColorCursor.html">SDL_CreateColorCursor</a> - 色つきのマウスカーソルを生成する
 <li><a href="SDL_CreateCondition.html">SDL_CreateCondition</a> - 新しい条件変数を生成する
 <li><a href="SDL_CreateCursor.html">SDL_CreateCursor</a> - 指定のビットマップデータとマスク(MSB形式)からマウスカーソルを生成する
 <li><a href="SDL_CreateDirectory.html">SDL_CreateDirectory</a> - ディレクトリと, 存在しなければその親ディレクトリを作成する
-<li>SDL_CreateEnvironment
+<li><a href="SDL_CreateEnvironment.html">SDL_CreateEnvironment</a> - 環境変数セットを生成する
 <li>SDL_CreateGPUBuffer
 <li>SDL_CreateGPUComputePipeline
 <li>SDL_CreateGPUDevice
@@ -178,7 +178,7 @@
 <li><a href="SDL_DestroyAudioStream.html">SDL_DestroyAudioStream</a> - オーディオストリームを破棄する
 <li><a href="SDL_DestroyCondition.html">SDL_DestroyCondition</a> - 条件変数を破棄する
 <li><a href="SDL_DestroyCursor.html">SDL_DestroyCursor</a> - カーソルを解放する
-<li>SDL_DestroyEnvironment
+<li><a href="SDL_DestroyEnvironment.html">SDL_DestroyEnvironment</a> - 環境変数セットを破棄する
 <li>SDL_DestroyGPUDevice
 <li><a href="SDL_DestroyGPURenderState.html">SDL_DestroyGPURenderState</a> - カスタムGPUレンダリング状態を破棄する
 <li><a href="SDL_DestroyHapticEffect.html">SDL_DestroyHapticEffect</a> - ハプティックデバイスのエフェクトを再生する
@@ -328,11 +328,11 @@
 <li><a href="SDL_GetDisplays.html">SDL_GetDisplays</a> - 現在接続中のディスプレイの一覧を得る
 <li><a href="SDL_GetDisplayUsableBounds.html">SDL_GetDisplayUsableBounds</a> - ディスプレイに表示されるデスクトップの利用可能領域をスクリーン座標系で得る
 <li><a href="SDL_GetDXGIOutputInfo.html">SDL_GetDXGIOutputInfo</a> - 指定のディスプレイのDXGIアダプタと出力のインデックス番号の一覧を得る
-<li>SDL_getenv
-<li>SDL_getenv_unsafe
-<li>SDL_GetEnvironment
-<li>SDL_GetEnvironmentVariable
-<li>SDL_GetEnvironmentVariables
+<li><a href="SDL_getenv.html">SDL_getenv</a> - 環境変数の値を得る
+<li><a href="SDL_getenv_unsafe.html">SDL_getenv_unsafe</a> - 環境変数の値を得る
+<li><a href="SDL_GetEnvironment.html">SDL_GetEnvironment</a> - プロセスの環境変数セットを得る
+<li><a href="SDL_GetEnvironmentVariable.html">SDL_GetEnvironmentVariable</a> - 環境変数セットから環境変数の値を得る
+<li><a href="SDL_GetEnvironmentVariables.html">SDL_GetEnvironmentVariables</a> - 環境変数セットから全ての環境変数の値を得る
 <li><a href="SDL_GetError.html">SDL_GetError</a> - 現在のスレッドで最後に発生したエラーのメッセージを得る
 <li><a href="SDL_GetEventDescription.html">SDL_GetEventDescription</a> - イベントの人が読むことのできる記述を得る
 <li><a href="SDL_GetEventFilter.html">SDL_GetEventFilter</a> - 現在のイベントフィルタを得る
@@ -788,7 +788,7 @@
 <li><a href="SDL_lroundf.html">SDL_lroundf</a> - xを四捨五入したlong型の値を求める
 <li><a href="SDL_ltoa.html">SDL_ltoa</a> - long型の整数を文字列に変換する
 <li><a href="SDL_main.html">SDL_main</a> - アプリケーションのプログラムエントリー関数
-<li>SDL_malloc
+<li><a href="SDL_malloc.html">SDL_malloc</a> - メモリを初期化せずに確保する
 <li>SDL_MapGPUTransferBuffer
 <li><a href="SDL_MapRGB.html">SDL_MapRGB</a> - RGBの3つの値から指定のピクセル形式の不透明なピクセル値を求める
 <li><a href="SDL_MapRGBA.html">SDL_MapRGBA</a> - RGBAの4つの値から指定のピクセル形式のピクセル値を求める
@@ -888,7 +888,7 @@
 <li><a href="SDL_ReadU64BE.html">SDL_ReadU64BE</a> - データストリームから符号なしビッグエンディアン8バイトを読み込む
 <li><a href="SDL_ReadU64LE.html">SDL_ReadU64LE</a> - データストリームから符号なしリトルエンディアン8バイトを読み込む
 <li><a href="SDL_ReadU8.html">SDL_ReadU8</a> - データストリームから1バイトを読み込む
-<li>SDL_realloc
+<li><a href="SDL_realloc.html">SDL_realloc</a> - サイズを変更してメモリを再確保する
 <li><a href="SDL_RectEmpty.html">SDL_RectEmpty</a> - 長方形に面積がないかチェックする
 <li><a href="SDL_RectEmptyFloat.html">SDL_RectEmptyFloat</a> - 浮動小数点で表された長方形に面積がないかチェックする
 <li><a href="SDL_RectsEqual.html">SDL_RectsEqual</a> - 2つの長方形が同一かチェックする
@@ -1001,8 +1001,8 @@
 <li><a href="SDL_SetCurrentThreadPriority.html">SDL_SetCurrentThreadPriority</a> - 現在のスレッドの優先度を設定する
 <li><a href="SDL_SetCursor.html">SDL_SetCursor</a> - マウスカーソルを設定する
 <li><a href="SDL_SetDefaultTextureScaleMode.html">SDL_SetDefaultTextureScaleMode</a> - 指定のレンダラのデフォルトの拡大縮小モードを設定する
-<li>SDL_setenv_unsafe
-<li>SDL_SetEnvironmentVariable
+<li><a href="SDL_setenv_unsafe.html">SDL_setenv_unsafe</a> - 環境変数に値を設定する
+<li><a href="SDL_SetEnvironmentVariable.html">SDL_SetEnvironmentVariable</a> - 環境変数セットの環境変数の値を設定する
 <li><a href="SDL_SetError.html">SDL_SetError</a> - 現在のスレッドのSDLエラーメッセージを設定する
 <li><a href="SDL_SetErrorV.html">SDL_SetErrorV</a> - 現在のスレッドのSDLエラーメッセージを設定する
 <li><a href="SDL_SetEventEnabled.html">SDL_SetEventEnabled</a> - イベントの種類ごとの処理の有無を得る
@@ -1220,8 +1220,8 @@
 <li><a href="SDL_UnlockTexture.html">SDL_UnlockTexture</a> - 必要なら変更をビデオメモリに反映させるためにテクスチャのロックを解除する
 <li>SDL_UnmapGPUTransferBuffer
 <li><a href="SDL_UnregisterApp.html">SDL_UnregisterApp</a> - SDL_RegisterAppで登録したwin32ウィンドウクラスを解除する
-<li>SDL_unsetenv_unsafe
-<li>SDL_UnsetEnvironmentVariable
+<li><a href="SDL_unsetenv_unsafe.html">SDL_unsetenv_unsafe</a> - 環境変数の値を消去する
+<li><a href="SDL_UnsetEnvironmentVariable.html">SDL_UnsetEnvironmentVariable</a> - 環境変数セットの環境変数の値を消去する
 <li><a href="SDL_UpdateGamepads.html">SDL_UpdateGamepads</a> - イベントループを使用せずに手動でゲームパッドを更新する
 <li><a href="SDL_UpdateHapticEffect.html">SDL_UpdateHapticEffect</a> - ハプティックデバイスのエフェクトのパラメータを変更する
 <li><a href="SDL_UpdateJoysticks.html">SDL_UpdateJoysticks</a> - オープンされているジョイスティックの状態を更新する
@@ -1338,7 +1338,7 @@
 <li><a href="SDL_EGLSurface.html">SDL_EGLSurface</a> - EGLサーフェイスの不透明型
 <li><a href="SDL_EnumerateDirectoryCallback.html">SDL_EnumerateDirectoryCallback</a> - ディレクトリ内の各項目に対して呼ばれるコールバックの型
 <li><a href="SDL_EnumeratePropertiesCallback.html">SDL_EnumeratePropertiesCallback</a> - プロパティグループのプロパティの列挙で使用されるコールバックの型
-<li>SDL_Environment
+<li><a href="SDL_Environment.html">SDL_Environment</a> - スレッドセーフな環境変数セットの型
 <li><a href="SDL_EventFilter.html">SDL_EventFilter</a> - イベントキューを監視するためのコールバック関数の型
 <li><a href="SDL_FingerID.html">SDL_FingerID</a> - タッチデバイス上の1本の指のユニークIDの型
 <li>SDL_free_func

@@ -31,8 +31,8 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_abs.html">SDL_abs</a> - xの絶対値を求める
 <li><a href="SDL_acos.html">SDL_acos</a> - xのアークコサインを求める
 <li><a href="SDL_acosf.html">SDL_acosf</a> - xのアークコサインを求める
-<li>SDL_aligned_alloc
-<li>SDL_aligned_free
+<li><a href="SDL_aligned_alloc.html">SDL_aligned_alloc</a> - アライメントを指定してメモリを確保する
+<li><a href="SDL_aligned_free.html">SDL_aligned_free</a> - SDL_aligned_alloc()で確保したメモリを解放する
 <li><a href="SDL_asin.html">SDL_asin</a> - xのアークサインを求める
 <li><a href="SDL_asinf.html">SDL_asinf</a> - xのアークサインを求める
 <li><a href="SDL_asprintf.html">SDL_asprintf</a> - asprintf()と同機能だがCランタイムを必要としない関数
@@ -42,19 +42,19 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_atanf.html">SDL_atanf</a> - xのアークタンジェントを求める
 <li><a href="SDL_atof.html">SDL_atof</a> - 文字列を解析してdouble型の数値に変換する
 <li><a href="SDL_atoi.html">SDL_atoi</a> - 文字列を解析してint型の数値に変換する
-<li>SDL_bsearch
-<li>SDL_bsearch_r
-<li>SDL_calloc
+<li><a href="SDL_bsearch.html">SDL_bsearch</a> - ソートされた配列にバイナリサーチを行う
+<li><a href="SDL_bsearch_r.html">SDL_bsearch_r</a> - ソートされた配列に比較関数にユーザデータを渡してバイナリサーチを行う
+<li><a href="SDL_calloc.html">SDL_calloc</a> - 0で初期化された配列を確保する
 <li><a href="SDL_ceil.html">SDL_ceil</a> - xを切り上げた値を求める
 <li><a href="SDL_ceilf.html">SDL_ceilf</a> - xを切り上げた値を求める
-<li>SDL_copysign
-<li>SDL_copysignf
+<li><a href="SDL_copysign.html">SDL_copysign</a> - ある浮動小数点の値の符号を別の浮動小数点の符号にコピーする
+<li><a href="SDL_copysignf.html">SDL_copysignf</a> - ある浮動小数点の値の符号を別の浮動小数点の符号にコピーする
 <li><a href="SDL_cos.html">SDL_cos</a> - xのコサインを求める
 <li><a href="SDL_cosf.html">SDL_cosf</a> - xのコサインを求める
-<li>SDL_crc16
-<li>SDL_crc32
-<li>SDL_CreateEnvironment
-<li>SDL_DestroyEnvironment
+<li><a href="SDL_crc16.html">SDL_crc16</a> - CRC-16を求める
+<li><a href="SDL_crc32.html">SDL_crc32</a> - CRC-32を求める
+<li><a href="SDL_CreateEnvironment.html">SDL_CreateEnvironment</a> - 環境変数セットを生成する
+<li><a href="SDL_DestroyEnvironment.html">SDL_DestroyEnvironment</a> - 環境変数セットを破棄する
 <li><a href="SDL_exp.html">SDL_exp</a> - 自然対数の底のx乗を求める
 <li><a href="SDL_expf.html">SDL_expf</a> - 自然対数の底のx乗を求める
 <li><a href="SDL_fabs.html">SDL_fabs</a> - xの絶対値を求める
@@ -64,11 +64,11 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_fmod.html">SDL_fmod</a> - 浮動小数点のx / yの余りを求める
 <li><a href="SDL_fmodf.html">SDL_fmodf</a> - 浮動小数点のx / yの余りを求める
 <li><a href="SDL_free.html">SDL_free</a> - 確保したメモリを解放する
-<li>SDL_getenv
-<li>SDL_getenv_unsafe
-<li>SDL_GetEnvironment
-<li>SDL_GetEnvironmentVariable
-<li>SDL_GetEnvironmentVariables
+<li><a href="SDL_getenv.html">SDL_getenv</a> - 環境変数の値を得る
+<li><a href="SDL_getenv_unsafe.html">SDL_getenv_unsafe</a> - 環境変数の値を得る
+<li><a href="SDL_GetEnvironment.html">SDL_GetEnvironment</a> - プロセスの環境変数セットを得る
+<li><a href="SDL_GetEnvironmentVariable.html">SDL_GetEnvironmentVariable</a> - 環境変数セットから環境変数の値を得る
+<li><a href="SDL_GetEnvironmentVariables.html">SDL_GetEnvironmentVariables</a> - 環境変数セットから全ての環境変数の値を得る
 <li>SDL_GetMemoryFunctions
 <li>SDL_GetNumAllocations
 <li>SDL_GetOriginalMemoryFunctions
@@ -101,7 +101,7 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_lround.html">SDL_lround</a> - xを四捨五入したlong型の値を求める
 <li><a href="SDL_lroundf.html">SDL_lroundf</a> - xを四捨五入したlong型の値を求める
 <li><a href="SDL_ltoa.html">SDL_ltoa</a> - long型の整数を文字列に変換する
-<li>SDL_malloc
+<li><a href="SDL_malloc.html">SDL_malloc</a> - メモリを初期化せずに確保する
 <li>SDL_memcmp
 <li>SDL_memcpy
 <li>SDL_memmove
@@ -120,13 +120,13 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li>SDL_rand_r
 <li>SDL_randf
 <li>SDL_randf_r
-<li>SDL_realloc
+<li><a href="SDL_realloc.html">SDL_realloc</a> - サイズを変更してメモリを再確保する
 <li><a href="SDL_round.html">SDL_round</a> - xを四捨五入した値を求める
 <li><a href="SDL_roundf.html">SDL_roundf</a> - xを四捨五入した値を求める
 <li>SDL_scalbn
 <li>SDL_scalbnf
-<li>SDL_setenv_unsafe
-<li>SDL_SetEnvironmentVariable
+<li><a href="SDL_setenv_unsafe.html">SDL_setenv_unsafe</a> - 環境変数に値を設定する
+<li><a href="SDL_SetEnvironmentVariable.html">SDL_SetEnvironmentVariable</a> - 環境変数セットの環境変数の値を設定する
 <li>SDL_SetMemoryFunctions
 <li><a href="SDL_sin.html">SDL_sin</a> - xのサインを求める
 <li><a href="SDL_sinf.html">SDL_sinf</a> - xのサインを求める
@@ -175,8 +175,8 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_uitoa.html">SDL_uitoa</a> - unsigned int型の整数を文字列に変換する
 <li><a href="SDL_ulltoa.html">SDL_ulltoa</a> - unsigned long long型の整数を文字列に変換する
 <li><a href="SDL_ultoa.html">SDL_ultoa</a> - unsigned long型の整数を文字列に変換する
-<li>SDL_unsetenv_unsafe
-<li>SDL_UnsetEnvironmentVariable
+<li><a href="SDL_unsetenv_unsafe.html">SDL_unsetenv_unsafe</a> - 環境変数の値を消去する
+<li><a href="SDL_UnsetEnvironmentVariable.html">SDL_UnsetEnvironmentVariable</a> - 環境変数セットの環境変数の値を消去する
 <li><a hreF="SDL_utf8strlcpy.html">SDL_utf8strlcpy</a> - UTF-8文字列をコピーする
 <li><a href="SDL_utf8strlen.html">SDL_utf8strlen</a> - UTF-8文字列のコードポイントの数を求める
 <li><a href="SDL_utf8strnlen.html">SDL_utf8strnlen</a> - 最大nバイトのUTF-8文字列のコードポイントの数を求める
@@ -202,7 +202,7 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li>SDL_calloc_func
 <li>SDL_CompareCallback
 <li>SDL_CompareCallback_r
-<li>SDL_Environment
+<li><a href="SDL_Environment.html">SDL_Environment</a> - スレッドセーフな環境変数セットの型
 <li>SDL_free_func
 <li><a href="SDL_FunctionPointer.html">SDL_FunctionPointer</a> - 汎用的な関数ポインタの型
 <li>SDL_iconv_t
