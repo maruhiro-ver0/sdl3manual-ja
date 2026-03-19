@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryStdinc.html" title="1つ上">
+<title>SDL_rand_r</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_rand_r
+<hr>
+<h1>SDL_rand_r</h1>
+正の整数n未満の疑似乱数を生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
+<h2>構文</h2>
+<code>Sint32 SDL_rand_r(Uint64 *state, Sint32 n);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>Uint64 *</td><td>state</td><td>現在の乱数状態へのポインタ. NULL不可</td></tr>
+<tr><td>Sint32</td><td>n</td><td>発生させる乱数の数. nは正である必要がある</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(Sint32) [0 .. <code>n-1</code>]の乱数を戻す.
+</p>
+<h2>詳細</h2>
+<p>
+高速かつ<code>rand() % n</code>よりも高品質な方法が使われている.
+確率はn=100万でおよそ99.9%で均等である.
+均等性はnが小さいほど高く, nが大きいほど低くなる.
+</p>
+<p>
+使用例: 6面ダイスの目を生成したい場合は<code>SDL_rand_r(6) + 1</code>とする. +1は0..5を1..6にするためにある.
+</p>
+<p>
+Sint32の全範囲の疑似乱数を生成したい場合は<code>(Sint32)<a href="SDL_rand_bits.html">SDL_rand_bits()</a></code>を使用すること.
+</p>
+<p>
+再現性が必要な場合は, 初めに<a href="SDL_srand.html">SDL_srand()</a>で初期化すること.
+</p>
+<p>
+生成のランダム順序には品質の保証がないため, セキュリティ(暗号, パスワード)や金銭(ルートボックス(ガチャ), カジノ)が関係する場合は使用してはならない.
+異なる目的のための様々な乱数ライブラリが存在するので, 目的に合ったものを選択するべきである.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はスレッド間で状態ポインタを共有しない限りスレッドセーフである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_rand.html">SDL_rand</a>
+<li><a href="SDL_rand_bits_r.html">SDL_rand_bits_r</a>
+<li><a href="SDL_randf_r.html">SDL_randf_r</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_rand_r">SDL_rand_r - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
