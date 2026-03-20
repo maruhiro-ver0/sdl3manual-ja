@@ -702,10 +702,10 @@
 <li><a href="SDL_hid_write.html">SDL_hid_write</a> - HIDデバイスに出力レポートを書き込む
 <li><a href="SDL_HideCursor.html">SDL_HideCursor</a> - マウスカーソルを非表示にする
 <li><a href="SDL_HideWindow.html">SDL_HideWindow</a> - ウィンドウを隠す
-<li>SDL_iconv
-<li>SDL_iconv_close
-<li>SDL_iconv_open
-<li>SDL_iconv_string
+<li><a href="SDL_iconv.html">SDL_iconv</a> - 読込バッファのテキストのテキストの文字コードを変換して書込バッファに書き込む
+<li><a href="SDL_iconv_close.html">SDL_iconv_close</a> - 指定の文字コードへの変換を解放する
+<li><a href="SDL_iconv_open.html">SDL_iconv_open</a> - 指定の文字コードへの変換を割り当てる
+<li><a href="SDL_iconv_string.html">SDL_iconv_string</a> - 文字列の文字コードを変換する
 <li><a href="SDL_Init.html">SDL_Init</a> - SDLライブラリを初期化する
 <li><a href="SDL_InitHapticRumble.html">SDL_InitHapticRumble</a> - ジョイスティックにハプティックの機能があるかチェックする
 <li><a href="SDL_InitSubSystem.html">SDL_InitSubSystem</a> - SDLライブラリを初期化する互換関数
@@ -863,11 +863,11 @@
 <li><a href="SDL_QuitSubSystem.html">SDL_QuitSubSystem</a> - SDLのサブシステムを終了する
 <li><a href="SDL_RaiseWindow.html">SDL_RaiseWindow</a> - ウィンドウを他のウィンドウよりも前面にして入力フォーカスを与えるように要求する
 <li><a href="SDL_rand.html">SDL_rand</a> - 正の整数n未満の疑似乱数を生成する
-<li>SDL_rand_bits
-<li>SDL_rand_bits_r
+<li><a href="SDL_rand_bits.html">SDL_rand_bits</a> - 32ビットの疑似乱数を生成する
+<li><a href="SDL_rand_bits_r.html">SDL_rand_bits_r</a> - 32ビットの疑似乱数を生成する
 <li><a href="SDL_rand_r.html">SDL_rand_r</a> - 正の整数n未満の疑似乱数を生成する
-<li>SDL_randf
-<li>SDL_randf_r
+<li><a href="SDL_randf.html">SDL_randf</a> - 1.0未満に正規化された符号小数点の疑似乱数を生成する
+<li><a href="SDL_randf_r.html">SDL_randf_r</a> - 1.0未満に正規化された符号小数点の疑似乱数を生成する
 <li><a href="SDL_ReadAsyncIO.html">SDL_ReadAsyncIO</a> - 非同期読込を開始する
 <li><a href="SDL_ReadIO.html">SDL_ReadIO</a> - データストリームからデータを読み込む
 <li><a href="SDL_ReadProcess.html">SDL_ReadProcess</a> - プロセスの標準出力を全て読み込む
@@ -1138,12 +1138,12 @@
 <li><a href="SDL_snprintf.html">SDL_snprintf</a> - snprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_sqrt.html">SDL_sqrt</a> - xの平方根を求める
 <li><a href="SDL_sqrtf.html">SDL_sqrtf</a> - xの平方根を求める
-<li>SDL_srand
+<li><a href="SDL_srand.html">SDL_srand</a> - 疑似乱数のシード値を設定する
 <li>SDL_sscanf
 <li><a href="SDL_StartTextInput.html">SDL_StartTextInput</a> - ウィンドウのUnicodeテキスト入力イベントの受け入れを開始する
 <li><a href="SDL_StartTextInputWithProperties.html">SDL_StartTextInputWithProperties</a> - プロパティを設定してウィンドウのUnicodeテキスト入力イベントの受け入れを開始する
-<li>SDL_StepBackUTF8
-<li>SDL_StepUTF8
+<li><a href="SDL_StepBackUTF8.html">SDL_StepBackUTF8</a> - UTF-8文字列から1つのコードポイントを逆順にデコードする
+<li><a href="SDL_StepUTF8.html">SDL_StepUTF8</a> - UTF-8文字列から1つのコードポイントをデコードする
 <li><a href="SDL_StopHapticEffect.html">SDL_StopHapticEffect</a> - ハプティックデバイスの再生中のエフェクトを停止する
 <li><a href="SDL_StopHapticEffects.html">SDL_StopHapticEffects</a> - ハプティックデバイスの再生中のエフェクトを全て停止する
 <li><a href="SDL_StopHapticRumble.html">SDL_StopHapticRumble</a> - ハプティックデバイスの単純な振動を停止する
@@ -1194,8 +1194,8 @@
 <li><a href="SDL_TimeFromWindows.html">SDL_TimeFromWindows</a> - Windows FILETIME(1601年1月1日からの100ナノ秒単位の数)をSDL時間に変換する
 <li><a href="SDL_TimeToDateTime.html">SDL_TimeToDateTime</a> - エポックナノ秒のSDL_TimeをSDL_DateTime形式に変換する
 <li><a href="SDL_TimeToWindows.html">SDL_TimeToWindows</a> - SDL時間をWindows FILETIME(1601年1月1日からの100ナノ秒単位の数)に変換する
-<li>SDL_tolower
-<li>SDL_toupper
+<li><a href="SDL_tolower.html">SDL_tolower</a> - ASCII文字のアルファベットを小文字に変換する
+<li><a href="SDL_toupper.html">SDL_toupper</a> - ASCII文字のアルファベットを大文字に変換する
 <li><a href="SDL_trunc.html">SDL_trunc</a> - xの整数部を求める
 <li><a href="SDL_truncf.html">SDL_truncf</a> - xの整数部を求める
 <li><a href="SDL_TryLockMutex.html">SDL_TryLockMutex</a> - ブロックせずにミューテックスのロックを試みる
@@ -1203,7 +1203,7 @@
 <li><a href="SDL_TryLockRWLockForWriting.html">SDL_TryLockRWLockForWriting</a> - 読取/書込ロックを書込ロックする
 <li><a href="SDL_TryLockSpinlock.html">SDL_TryLockSpinlock</a> - 0でない値を設定することでスピンロックを試みる
 <li><a href="SDL_TryWaitSemaphore.html">SDL_TryWaitSemaphore</a> - セマフォの値が正であるか調査し, そうならば減算する
-<li>SDL_UCS4ToUTF8
+<li><a href="SDL_UCS4ToUTF8.html">SDL_UCS4ToUTF8</a> - 1つのUnicodeコードポイントをUTF-8に変換する
 <li><a href="SDL_uitoa.html">SDL_uitoa</a> - unsigned int型の整数を文字列に変換する
 <li><a href="SDL_ulltoa.html">SDL_ulltoa</a> - unsigned long long型の整数を文字列に変換する
 <li><a href="SDL_ultoa.html">SDL_ultoa</a> - unsigned long型の整数を文字列に変換する
@@ -1376,7 +1376,7 @@
 <li><a href="SDL_hid_device.html">SDL_hid_device</a> - オープンしたHIDデバイスのハンドルの不透明型
 <li><a href="SDL_HintCallback.html">SDL_HintCallback</a> - ヒントの値の変化の通知するために使用されるコールバックの型
 <li><a href="SDL_HitTest.html">SDL_HitTest</a> - 領域判定コールバックの型
-<li>SDL_iconv_t
+<li><a href="SDL_iconv_t.html">SDL_iconv_t</a> - 文字列の文字コード変換状態を表す不透明ハンドル型
 <li><a href="SDL_InitFlags.html">SDL_InitFlags</a> - SDL_InitとSDL_InitSubSystemの初期化フラグの型 
 <li>SDL_iOSAnimationCallback
 <li><a href="SDL_IOStream.html">SDL_IOStream</a> - SDL データストリームの型

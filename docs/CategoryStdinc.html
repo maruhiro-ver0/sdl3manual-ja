@@ -72,10 +72,10 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li>SDL_GetMemoryFunctions
 <li>SDL_GetNumAllocations
 <li>SDL_GetOriginalMemoryFunctions
-<li>SDL_iconv
-<li>SDL_iconv_close
-<li>SDL_iconv_open
-<li>SDL_iconv_string
+<li><a href="SDL_iconv.html">SDL_iconv</a> - 読込バッファのテキストのテキストの文字コードを変換して書込バッファに書き込む
+<li><a href="SDL_iconv_close.html">SDL_iconv_close</a> - 指定の文字コードへの変換を解放する
+<li><a href="SDL_iconv_open.html">SDL_iconv_open</a> - 指定の文字コードへの変換を割り当てる
+<li><a href="SDL_iconv_string.html">SDL_iconv_string</a> - 文字列の文字コードを変換する
 <li><a href="SDL_isalnum.html">SDL_isalnum</a> - 文字がアルファベットまたは数字であるかチェックする
 <li><a href="SDL_isalpha.html">SDL_isalpha</a> - 文字がアルファベットであるかチェックする
 <li><a href="SDL_isblank.html">SDL_isblank</a> - 文字がブランク(空白またはタブ)であるかチェックする
@@ -115,11 +115,11 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_qsort.html">SDL_qsort</a> - 配列をソートする
 <li><a href="SDL_qsort_r.html">SDL_qsort_r</a> - 比較関数にユーザデータを渡してソートする
 <li><a href="SDL_rand.html">SDL_rand</a> - 正の整数n未満の疑似乱数を生成する
-<li>SDL_rand_bits
-<li>SDL_rand_bits_r
+<li><a href="SDL_rand_bits.html">SDL_rand_bits</a> - 32ビットの疑似乱数を生成する
+<li><a href="SDL_rand_bits_r.html">SDL_rand_bits_r</a> - 32ビットの疑似乱数を生成する
 <li><a href="SDL_rand_r.html">SDL_rand_r</a> - 正の整数n未満の疑似乱数を生成する
-<li>SDL_randf
-<li>SDL_randf_r
+<li><a href="SDL_randf.html">SDL_randf</a> - 1.0未満に正規化された符号小数点の疑似乱数を生成する
+<li><a href="SDL_randf_r.html">SDL_randf_r</a> - 1.0未満に正規化された符号小数点の疑似乱数を生成する
 <li><a href="SDL_realloc.html">SDL_realloc</a> - サイズを変更してメモリを再確保する
 <li><a href="SDL_round.html">SDL_round</a> - xを四捨五入した値を求める
 <li><a href="SDL_roundf.html">SDL_roundf</a> - xを四捨五入した値を求める
@@ -135,10 +135,10 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_snprintf.html">SDL_snprintf</a> - snprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_sqrt.html">SDL_sqrt</a> - xの平方根を求める
 <li><a href="SDL_sqrtf.html">SDL_sqrtf</a> - xの平方根を求める
-<li>SDL_srand
+<li><a href="SDL_srand.html">SDL_srand</a> - 疑似乱数のシード値を設定する
 <li>SDL_sscanf
-<li>SDL_StepBackUTF8
-<li>SDL_StepUTF8
+<li><a href="SDL_StepBackUTF8.html">SDL_StepBackUTF8</a> - UTF-8文字列から1つのコードポイントを逆順にデコードする
+<li><a href="SDL_StepUTF8.html">SDL_StepUTF8</a> - UTF-8文字列から1つのコードポイントをデコードする
 <li><a href="SDL_strcasecmp.html">SDL_strcasecmp</a> - 2つのNUL終端のUTF-8文字列を大文字小文字を無視して比較する
 <li><a href="SDL_strcasestr.html">SDL_strcasestr</a> - UTF-8文字列から最初に一致する文字列を大文字小文字を無視して検索する
 <li><a href="SDL_strchr.html">SDL_strchr</a> - 文字列から最初に一致するバイトを検索する
@@ -167,11 +167,11 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_swprintf.html">SDL_swprintf</a> - swprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_tan.html">SDL_tan</a> - xのタンジェントを求める
 <li><a href="SDL_tanf.html">SDL_tanf</a> - xのタンジェントを求める
-<li>SDL_tolower
-<li>SDL_toupper
+<li><a href="SDL_tolower.html">SDL_tolower</a> - ASCII文字のアルファベットを小文字に変換する
+<li><a href="SDL_toupper.html">SDL_toupper</a> - ASCII文字のアルファベットを大文字に変換する
 <li><a href="SDL_trunc.html">SDL_trunc</a> - xの整数部を求める
 <li><a href="SDL_truncf.html">SDL_truncf</a> - xの整数部を求める
-<li>SDL_UCS4ToUTF8
+<li><a href="SDL_UCS4ToUTF8.html">SDL_UCS4ToUTF8</a> - 1つのUnicodeコードポイントをUTF-8に変換する
 <li><a href="SDL_uitoa.html">SDL_uitoa</a> - unsigned int型の整数を文字列に変換する
 <li><a href="SDL_ulltoa.html">SDL_ulltoa</a> - unsigned long long型の整数を文字列に変換する
 <li><a href="SDL_ultoa.html">SDL_ultoa</a> - unsigned long型の整数を文字列に変換する
@@ -205,7 +205,7 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_Environment.html">SDL_Environment</a> - スレッドセーフな環境変数セットの型
 <li>SDL_free_func
 <li><a href="SDL_FunctionPointer.html">SDL_FunctionPointer</a> - 汎用的な関数ポインタの型
-<li>SDL_iconv_t
+<li><a href="SDL_iconv_t.html">SDL_iconv_t</a> - 文字列の文字コード変換状態を表す不透明ハンドル型
 <li>SDL_malloc_func
 <li>SDL_realloc_func
 <li><a href="SDL_Time.html">SDL_Time</a> - UNIXエポック(1970年1月1日)からのナノ秒を表す符号あり64ビット整数の型
