@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryStdinc.html" title="1つ上">
+<title>SDL_SetMemoryFunctions</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_SetMemoryFunctions
+<hr>
+<h1>SDL_SetMemoryFunctions</h1>
+SDLのメモリ関数を置き換える
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
+<h2>構文</h2>
+<p>
+<code>bool SDL_SetMemoryFunctions(SDL_malloc_func malloc_func, SDL_calloc_func calloc_func, SDL_realloc_func realloc_func, SDL_free_func free_func);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_malloc_func.html">SDL_malloc_func</a></td><td>malloc_func</td><td>カスタムmalloc関数</td></tr>
+<tr><td><a href="SDL_calloc_func.html">SDL_calloc_func</a></td><td>calloc_func</td><td>カスタムcalloc関数</td></tr>
+<tr><td><a href="SDL_realloc_func.html">SDL_realloc_func</a></td><td>realloc_func</td><td>カスタムrealloc関数</td></tr>
+<tr><td><a href="SDL_free_func.html">SDL_free_func</a></td><td>free_func</td><td>カスタムfree関数</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+</p>
+<h2>詳細</h2>
+<p>
+一度でもメモリを確保した後にこの関数を呼ぶのは安全ではない. 設定前の<a href="SDL_malloc.html">SDL_malloc</a>で確保した領域に対して新しく設定した<a href="SDL_free.html">SDL_free</a>が使われる可能性があるためである.
+</p>
+<p>
+これを使用する場合, 通常はSDLライブラリの最初の呼び出しの必要があり, 場合によってはプログラム起動後の最初の呼び出しの必要がある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べるが, 一度でもメモリ確保関数を呼んだ後でメモリ関数を置き換えてはならない.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetMemoryFunctions.html">SDL_GetMemoryFunctions</a>
+<li><a href="SDL_GetOriginalMemoryFunctions.html">SDL_GetOriginalMemoryFunctions</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_SetMemoryFunctions">SDL_SetMemoryFunctions - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

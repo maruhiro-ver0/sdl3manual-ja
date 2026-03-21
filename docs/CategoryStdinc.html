@@ -69,9 +69,9 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_GetEnvironment.html">SDL_GetEnvironment</a> - プロセスの環境変数セットを得る
 <li><a href="SDL_GetEnvironmentVariable.html">SDL_GetEnvironmentVariable</a> - 環境変数セットから環境変数の値を得る
 <li><a href="SDL_GetEnvironmentVariables.html">SDL_GetEnvironmentVariables</a> - 環境変数セットから全ての環境変数の値を得る
-<li>SDL_GetMemoryFunctions
-<li>SDL_GetNumAllocations
-<li>SDL_GetOriginalMemoryFunctions
+<li><a href="SDL_GetMemoryFunctions.html">SDL_GetMemoryFunctions</a> - 現在のSDLメモリ関数を得る
+<li><a href="SDL_GetNumAllocations.html">SDL_GetNumAllocations</a> - 解放されていないメモリ領域の数を得る
+<li><a href="SDL_GetOriginalMemoryFunctions.html">SDL_GetOriginalMemoryFunctions</a> - 元のSDLメモリ関数を得る
 <li><a href="SDL_iconv.html">SDL_iconv</a> - 読込バッファのテキストのテキストの文字コードを変換して書込バッファに書き込む
 <li><a href="SDL_iconv_close.html">SDL_iconv_close</a> - 指定の文字コードへの変換を解放する
 <li><a href="SDL_iconv_open.html">SDL_iconv_open</a> - 指定の文字コードへの変換を割り当てる
@@ -123,20 +123,20 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_realloc.html">SDL_realloc</a> - サイズを変更してメモリを再確保する
 <li><a href="SDL_round.html">SDL_round</a> - xを四捨五入した値を求める
 <li><a href="SDL_roundf.html">SDL_roundf</a> - xを四捨五入した値を求める
-<li>SDL_scalbn
-<li>SDL_scalbnf
+<li><a href="SDL_scalbn.html">SDL_scalbn</a> - 2の整数乗のx倍を求める
+<li><a href="SDL_scalbnf.html">SDL_scalbnf</a> - 2の整数乗のx倍を求める
 <li><a href="SDL_setenv_unsafe.html">SDL_setenv_unsafe</a> - 環境変数に値を設定する
 <li><a href="SDL_SetEnvironmentVariable.html">SDL_SetEnvironmentVariable</a> - 環境変数セットの環境変数の値を設定する
-<li>SDL_SetMemoryFunctions
+<li><a href="SDL_SetMemoryFunctions.html">SDL_SetMemoryFunctions</a> - SDLのメモリ関数を置き換える
 <li><a href="SDL_sin.html">SDL_sin</a> - xのサインを求める
 <li><a href="SDL_sinf.html">SDL_sinf</a> - xのサインを求める
-<li>SDL_size_add_check_overflow
-<li>SDL_size_mul_check_overflow
+<li><a href="SDL_size_add_check_overflow.html">SDL_size_add_check_overflow</a> - 2つの整数を加算しオーバーフローをチェックする
+<li><a href="SDL_size_mul_check_overflow.html">SDL_size_mul_check_overflow</a> - 2つの整数を乗算しオーバーフローをチェックする
 <li><a href="SDL_snprintf.html">SDL_snprintf</a> - snprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_sqrt.html">SDL_sqrt</a> - xの平方根を求める
 <li><a href="SDL_sqrtf.html">SDL_sqrtf</a> - xの平方根を求める
 <li><a href="SDL_srand.html">SDL_srand</a> - 疑似乱数のシード値を設定する
-<li>SDL_sscanf
+<li><a href="SDL_sscanf.html">SDL_sscanf</a> - sscanf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_StepBackUTF8.html">SDL_StepBackUTF8</a> - UTF-8文字列から1つのコードポイントを逆順にデコードする
 <li><a href="SDL_StepUTF8.html">SDL_StepUTF8</a> - UTF-8文字列から1つのコードポイントをデコードする
 <li><a href="SDL_strcasecmp.html">SDL_strcasecmp</a> - 2つのNUL終端のUTF-8文字列を大文字小文字を無視して比較する
@@ -182,7 +182,7 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_utf8strnlen.html">SDL_utf8strnlen</a> - 最大nバイトのUTF-8文字列のコードポイントの数を求める
 <li><a href="SDL_vasprintf.html">SDL_vasprintf</a> - vasprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_vsnprintf.html">SDL_vsnprintf</a> - vsnprintf()と同機能だがCランタイムを必要としない関数
-<li>SDL_vsscanf
+<li><a href="SDL_vsscanf.html">SDL_vsscanf</a> - vsscanf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_vswprintf.html">SDL_vswprintf</a> - vswprintf()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_wcscasecmp.html">SDL_wcscasecmp</a> - 2つのNUL終端のワイド文字列を大文字小文字を無視して比較する
 <li><a href="SDL_wcscmp.html">SDL_wcscmp</a> - 2つのNUL終端のワイド文字列を比較する
@@ -199,15 +199,15 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 </ol>
 <h2>型</h2>
 <ol>
-<li>SDL_calloc_func
-<li>SDL_CompareCallback
-<li>SDL_CompareCallback_r
+<li><a href="SDL_calloc_func.html">SDL_calloc_func</a> - SDL_calloc()で使用するコールバックの型
+<li><a href="SDL_CompareCallback.html">SDL_CompareCallback</a> - SDLがソートとバイナリサーチで使用するコールバックの型
+<li><a href="SDL_CompareCallback_r.html">SDL_CompareCallback_r</a> - SDLがソートとバイナリサーチで使用するコールバックの型
 <li><a href="SDL_Environment.html">SDL_Environment</a> - スレッドセーフな環境変数セットの型
-<li>SDL_free_func
+<li><a href="SDL_free_func.html">SDL_free_func</a> - SDL_free()で使用するコールバックの型
 <li><a href="SDL_FunctionPointer.html">SDL_FunctionPointer</a> - 汎用的な関数ポインタの型
 <li><a href="SDL_iconv_t.html">SDL_iconv_t</a> - 文字列の文字コード変換状態を表す不透明ハンドル型
-<li>SDL_malloc_func
-<li>SDL_realloc_func
+<li><a href="SDL_malloc_func.html">SDL_malloc_func</a> - SDL_malloc_func()で使用するコールバックの型
+<li><a href="SDL_realloc_func.html">SDL_realloc_func</a> - SDL_realloc()で使用するコールバックの型
 <li><a href="SDL_Time.html">SDL_Time</a> - UNIXエポック(1970年1月1日)からのナノ秒を表す符号あり64ビット整数の型
 <li><a href="Sint16.html">Sint16</a> - 符号あり16ビット整数型
 <li><a href="Sint32.html">Sint32</a> - 符号あり32ビット整数型
@@ -220,21 +220,21 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_arraysize
-<li>SDL_clamp
-<li>SDL_COMPILE_TIME_ASSERT
-<li>SDL_const_cast
-<li>SDL_copyp
-<li>SDL_FLT_EPSILON
-<li>SDL_FOURCC
-<li>SDL_iconv_utf8_locale
-<li>SDL_iconv_utf8_ucs2
-<li>SDL_iconv_utf8_ucs4
-<li>SDL_iconv_wchar_utf8
-<li>SDL_IN_BYTECAP
+<li><a href="SDL_arraysize.html">SDL_arraysize</a> - 静的配列の要素数を得るマクロ
+<li><a href="SDL_clamp.html">SDL_clamp</a> - 範囲内に収めた値を戻す
+<li><a href="SDL_COMPILE_TIME_ASSERT.html">SDL_COMPILE_TIME_ASSERT</a> - コンパイル時アサーションのマクロ
+<li><a href="SDL_const_cast.html">SDL_const_cast</a> - CまたはC++のconstキャストのマクロ
+<li><a href="SDL_copyp.html">SDL_copyp</a> - 基本的な型チェックを行いオブジェクト間のメモリコピーするマクロ
+<li><a href="SDL_FLT_EPSILON.html">SDL_FLT_EPSILON</a> - 浮動小数点の値の比較で使用するイプシロン定数のマクロ
+<li><a href="SDL_FOURCC.html">SDL_FOURCC</a> - FOURCCをUint32として定義するマクロ
+<li><a href="SDL_iconv_utf8_locale.html">SDL_iconv_utf8_locale</a> - UTF-8文字列を現在のロケールの文字コードに変換するマクロ
+<li><a href="SDL_iconv_utf8_ucs2.html">SDL_iconv_utf8_ucs2</a> - UTF-8文字列をUCS-2に変換するマクロ
+<li><a href="SDL_iconv_utf8_ucs4.html">SDL_iconv_utf8_ucs4</a> - UTF-8文字列をUCS-4に変換するマクロ
+<li><a href="SDL_iconv_wchar_utf8.html">SDL_iconv_wchar_utf8</a> - wchar_t文字列をUTF-8に変換するマクロ
+<li><a href="SDL_IN_BYTECAP.html">SDL_IN_BYTECAP</a> - 関数の入力パラメータのバッファサイズに対するアノテーションのマクロ
 <li><a href="SDL_INIT_INTERFACE.html">SDL_INIT_INTERFACE</a> - SDLインターフェースを初期化するマクロ
-<li>SDL_INOUT_Z_CAP
-<li>SDL_INVALID_UNICODE_CODEPOINT
+<li><a href="SDL_INOUT_Z_CAP.html">SDL_INOUT_Z_CAP</a> - 関数の入出力パラメータの文字列バッファサイズに対するアノテーションのマクロ
+<li><a href="SDL_INVALID_UNICODE_CODEPOINT.html">SDL_INVALID_UNICODE_CODEPOINT</a> - Unicodeの置換文字のコードポイントのマクロ
 <li>SDL_max
 <li>SDL_min
 <li>SDL_NOLONGLONG
