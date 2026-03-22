@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryStdinc.html" title="1つ上">
+<title>SDL_max</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryStdinc.html">標準ライブラリ</a> - SDL_max
+<hr>
+<h1>SDL_max</h1>
+2つの値の大きい方を戻す
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_stdinc.h">SDL3/SDL_stdinc.h</a>
+<h2>構文</h2>
+<code>#define SDL_max(x, y) (((x) > (y)) ? (x) : (y))</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td></td><td>x</td><td>比較する1つ目の値</td></tr>
+<tr><td></td><td>y</td><td>比較する2つ目の値</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+<code>x<code>と</code>y</code>の大きい方を戻す.
+</p>
+<h2>詳細</h2>
+<p>
+これは比較を直接記述するよりも明瞭な補助的なマクロで, &gt;で比較できる全ての型で使用できる.
+しかし, 全ての引数で2重評価を行っており, 副作用の生じる式を使用してはならない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+このマクロはどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_max">SDL_max - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

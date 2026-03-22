@@ -24,7 +24,7 @@ strlcatにアノテーションを付与するとする:
 <code>size_t strlcat(SDL_INOUT_Z_CAP(maxlen) char *dst, const char *src, size_t maxlen);</code>
 </p>
 <p>
-これは<code>dst</code>はNUL終端のC文字列で, サイズが<code>maxlen</code>バイトで, この関数は読込と書込を行うという注釈である.
+これは<code>dst</code>はNUL終端のC文字列で, サイズが<code>maxlen</code>バイトで, かつ読込と書込を行うという注釈である.
 コンパイラやアナライザツールは, その通りになっていないと思われるとき警告を発することがある.
 </p>
 <p>

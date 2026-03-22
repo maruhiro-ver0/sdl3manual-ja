@@ -20,10 +20,10 @@ SDLは重要なCランタイム関数の一部を自身で実装している.
 さらに重要なのは, SDLの実装は全ての環境で同じなので, アプリケーションはsnprintf()のWindowsとLinuxの動作の違いや, 一部の環境にのみ存在するitoa()などの予期しない問題を避けることができる.
 </p>
 <p>
-SDL_memcpyのような, 多くの共通関数のほとんどは, SDLは動作が同じならば背後で通常のCランタイムを呼ぶだけであり(高速で利用可能/信頼できるならば), ライブラリのサイズが小さく, 最適化されている.
+<a href="SDL_memcpy.html">SDL_memcpy</a>のような, 多くの共通関数のほとんどは, SDLは動作が同じならば背後で通常のCランタイムを呼ぶだけであり(高速で利用可能/信頼できるならば), ライブラリのサイズが小さく, 最適化されている.
 </p>
 <p>
-SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc32()やSDL_reinterpret_castのようなCランタイムと隣接した機能も提供している.
+SDLはのヘッダで, 厳密にはCランタイムの標準ではない<a href="SDL_crc32.html">SDL_crc32()</a>や<a href="SDL_reinterpret_cast.html">SDL_reinterpret_cast</a>のようなCランタイムと隣接した機能も提供している.
 また, より良い選択肢として, <a href="SDL_strlcpy.html">SDL_strlcpy()</a>のようなstrcpy()よりも安全な関数も提供している.
 </p>
 <h2>関数</h2>
@@ -224,7 +224,7 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_clamp.html">SDL_clamp</a> - 範囲内に収めた値を戻す
 <li><a href="SDL_COMPILE_TIME_ASSERT.html">SDL_COMPILE_TIME_ASSERT</a> - コンパイル時アサーションのマクロ
 <li><a href="SDL_const_cast.html">SDL_const_cast</a> - CまたはC++のconstキャストのマクロ
-<li><a href="SDL_copyp.html">SDL_copyp</a> - 基本的な型チェックを行いオブジェクト間のメモリコピーするマクロ
+<li><a href="SDL_copyp.html">SDL_copyp</a> - 基本的な型チェックを行いオブジェクト同士のメモリコピーするマクロ
 <li><a href="SDL_FLT_EPSILON.html">SDL_FLT_EPSILON</a> - 浮動小数点の値の比較で使用するイプシロン定数のマクロ
 <li><a href="SDL_FOURCC.html">SDL_FOURCC</a> - FOURCCをUint32として定義するマクロ
 <li><a href="SDL_iconv_utf8_locale.html">SDL_iconv_utf8_locale</a> - UTF-8文字列を現在のロケールの文字コードに変換するマクロ
@@ -235,46 +235,47 @@ SDLはのヘッダで, 厳密にはCランタイムの標準ではないSDL_crc3
 <li><a href="SDL_INIT_INTERFACE.html">SDL_INIT_INTERFACE</a> - SDLインターフェースを初期化するマクロ
 <li><a href="SDL_INOUT_Z_CAP.html">SDL_INOUT_Z_CAP</a> - 関数の入出力パラメータの文字列バッファサイズに対するアノテーションのマクロ
 <li><a href="SDL_INVALID_UNICODE_CODEPOINT.html">SDL_INVALID_UNICODE_CODEPOINT</a> - Unicodeの置換文字のコードポイントのマクロ
-<li>SDL_max
-<li>SDL_min
-<li>SDL_NOLONGLONG
-<li>SDL_OUT_BYTECAP
-<li>SDL_OUT_CAP
-<li>SDL_OUT_Z_BYTECAP
-<li>SDL_OUT_Z_CAP
-<li>SDL_PI_D
-<li>SDL_PI_F
-<li>SDL_PRILL_PREFIX
-<li>SDL_PRILLd
-<li>SDL_PRILLu
-<li>SDL_PRILLx
-<li>SDL_PRILLX
-<li>SDL_PRINTF_FORMAT_STRING
-<li>SDL_PRINTF_VARARG_FUNC
-<li>SDL_PRINTF_VARARG_FUNCV
-<li>SDL_PRIs32
-<li>SDL_PRIs64
-<li>SDL_PRIu32
-<li>SDL_PRIu64
-<li>SDL_PRIX32
-<li>SDL_PRIx32
-<li>SDL_PRIx64
-<li>SDL_PRIX64
-<li>SDL_reinterpret_cast
-<li>SDL_SCANF_FORMAT_STRING
-<li>SDL_SCANF_VARARG_FUNC
-<li>SDL_SCANF_VARARG_FUNCV
-<li>SDL_SINT64_C
-<li>SDL_SIZE_MAX
-<li>SDL_stack_alloc
-<li>SDL_static_cast
-<li>SDL_STRINGIFY_ARG
-<li>SDL_UINT64_C
-<li>SDL_WPRINTF_VARARG_FUNC
-<li>SDL_WPRINTF_VARARG_FUNCV
-<li>SDL_zero
-<li>SDL_zeroa
-<li>SDL_zerop
+<li><a href="SDL_max.html">SDL_max</a> - 2つの値の大きい方を戻す
+<li><a href="SDL_min.html">SDL_min</a> - 2つの値の小さい方を戻す
+<li><a href="SDL_NOLONGLONG.html">SDL_NOLONGLONG</a> - SDLがCのlong long型を使用しないようにするマクロ
+<li><a href="SDL_OUT_BYTECAP.html">SDL_OUT_BYTECAP</a> - 関数の出力パラメータのバッファサイズに対するアノテーションのマクロ
+<li><a href="SDL_OUT_CAP.html">SDL_OUT_CAP</a> - 関数の出力パラメータのバッファサイズに対するアノテーションのマクロ
+<li><a href="SDL_OUT_Z_BYTECAP.html">SDL_OUT_Z_BYTECAP</a> - 関数の出力パラメータの文字列バッファサイズに対するアノテーションのマクロ
+<li><a href="SDL_OUT_Z_CAP.html">SDL_OUT_Z_CAP</a> - 関数の出力パラメータの文字列バッファサイズに対するアノテーションのマクロ
+<li><a href="SDL_PI_D.html">SDL_PI_D</a> - 倍精度浮動小数点による円周率の値のマクロ
+<li><a href="SDL_PI_F.html">SDL_PI_F</a> - 単精度浮動小数点による円周率の値のマクロ
+<li><a href="SDL_PRILL_PREFIX.html">SDL_PRILL_PREFIX</a> - printf形式文字列のlong long型の値のサイズ接頭辞のマクロ
+<li><a href="SDL_PRILLd.html">SDL_PRILLd</a> - printf形式文字列のlong long型の値の変換書式のマクロ
+<li><a href="SDL_PRILLu.html">SDL_PRILLu</a> - printf形式文字列のunsigned long long型の値の変換書式のマクロ
+<li><a href="SDL_PRILLx.html">SDL_PRILLx</a> - printf形式文字列のunsigned long long型の値の小文字による16進数表記の変換書式のマクロ
+<li><a href="SDL_PRILLX(upper-case).html">SDL_PRILLX</a> - printf形式文字列のunsigned long long型の値の大文字による16進数表記の変換書式のマクロ
+<li><a href="SDL_PRINTF_FORMAT_STRING.html">SDL_PRINTF_FORMAT_STRING</a> - 関数のprintf形式の文字列に対するアノテーションのマクロ
+<li><a href="SDL_PRINTF_VARARG_FUNC.html">SDL_PRINTF_VARARG_FUNC</a> - 可変長引数をprintfのように使用する関数に対するアノテーションのマクロ
+<li><a href="SDL_PRINTF_VARARG_FUNCV.html">SDL_PRINTF_VARARG_FUNCV</a> - va_listをprintfのように使用する関数に対するアノテーションのマクロ
+<li><a href="SDL_PRIs32.html">SDL_PRIs32</a> - printf形式文字列のSint32型の値の変換書式のマクロ
+<li><a href="SDL_PRIs64.html">SDL_PRIs64</a> - printf形式文字列のSint64型の値の変換書式のマクロ
+<li><a href="SDL_PRIu32.html">SDL_PRIu32</a> - printf形式文字列のUint32型の値の変換書式のマクロ
+<li><a href="SDL_PRIu64.html">SDL_PRIu64</a> - printf形式文字列のUint64型の値の変換書式のマクロ
+<li><a href="SDL_PRIx32.html">SDL_PRIx32</a> - printf形式文字列のUint32型の値の小文字による16進数表記の変換書式のマクロ
+<li><a href="SDL_PRIX32(upper-case).html">SDL_PRIX32</a> - printf形式文字列のUint32型の値の大文字による16進数表記の変換書式のマクロ
+<li><a href="SDL_PRIx64.html">SDL_PRIx64</a> - printf形式文字列のUint64型の値の小文字による16進数表記の変換書式のマクロ
+<li><a href="SDL_PRIX64(upper-case).html">SDL_PRIX64</a> - printf形式文字列のUint64型の値の大文字による16進数表記の変換書式のマクロ
+<li><a href="SDL_reinterpret_cast.html">SDL_reinterpret_cast</a> - CまたはC++のreinterpretキャストのマクロ
+<li><a href="SDL_SCANF_FORMAT_STRING.html">SDL_SCANF_FORMAT_STRING</a> - 関数のscanf形式の文字列に対するアノテーションのマクロ
+<li><a href="SDL_SCANF_VARARG_FUNC.html">SDL_SCANF_VARARG_FUNC</a> - 可変長引数をscanfのように使用する関数に対するアノテーションのマクロ
+<li><a href="SDL_SCANF_VARARG_FUNCV.html">SDL_SCANF_VARARG_FUNCV</a> - va_listをscanfのように使用する関数に対するアノテーションのマクロ
+<li><a href="SDL_SINT64_C.html">SDL_SINT64_C</a> - 64ビット整数に符号あり整数リテラルを表す接尾辞を付ける
+<li><a href="SDL_SIZE_MAX.html">SDL_SIZE_MAX</a> - size_t型の最大値のマクロ
+<li><a href="SDL_stack_alloc.html">SDL_stack_alloc</a> - (可能ならば)スタックにメモリを確保する
+<li><a href="SDL_stack_free.html">SDL_stack_free</a> - SDL_stack_allocで確保したメモリを解放する
+<li><a href="SDL_static_cast.html">SDL_static_cast</a> - CまたはC++のstaticキャストのマクロ
+<li><a href="SDL_STRINGIFY_ARG.html">SDL_STRINGIFY_ARG</a> - 文字列を組み合わせて別のマクロを構成するためのマクロ
+<li><a href="SDL_UINT64_C.html">SDL_UINT64_C</a> - 64ビット整数に符号なし整数リテラルを表す接尾辞を付ける
+<li><a href="SDL_WPRINTF_VARARG_FUNC.html">SDL_WPRINTF_VARARG_FUNC</a> - 可変長引数をwprintfのように使用する関数に対するアノテーションのマクロ
+<li><a href="SDL_WPRINTF_VARARG_FUNCV.html">SDL_WPRINTF_VARARG_FUNCV</a> - va_listをwprintfのように使用する関数に対するアノテーションのマクロ
+<li><a href="SDL_zero.html">SDL_zero</a> - オブジェクトのメモリを0でクリアする
+<li><a href="SDL_zeroa.html">SDL_zeroa</a> - 配列のメモリを0でクリアする
+<li><a href="SDL_zerop.html">SDL_zerop</a> - ポインタを使用してオブジェクトのメモリを0でクリアする
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/CategoryStdinc">SDL3/CategoryStdinc - SDL Wiki</a>
