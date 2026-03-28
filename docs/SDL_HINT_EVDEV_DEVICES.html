@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryHints.html" title="1つ上">
+<title>SDL_HINT_EVDEV_DEVICES</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryHints.html">ヒント</a> - SDL_HINT_EVDEV_DEVICES
+<hr>
+<h1>SDL_HINT_EVDEV_DEVICES</h1>
+udevが利用できない場合に使用するevdevデバイスの一覧のヒント
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_hints.h">SDL3/SDL_hints.h</a>
+<h2>構文</h2>
+<code>#define SDL_HINT_EVDEV_DEVICES "SDL_EVDEV_DEVICES"</code>
+<h2>詳細</h2>
+<p>
+デバイスの一覧の書式は次のようになっている:
+</p>
+<p>
+deviceclass:path[,deviceclass:path[,...]]
+</p>
+<p>
+deviceclassはSDL_UDEV_deviceclassを表す整数で, pathはイベントデバイスのフルパスである.
+</p>
+<p>
+このヒントはSDLの初期化の前に設定する必要がある.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_EVDEV_DEVICES">SDL_HINT_EVDEV_DEVICES - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
