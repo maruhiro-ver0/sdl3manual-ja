@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryHints.html" title="1つ上">
+<title>SDL_HINT_JOYSTICK_HAPTIC_AXES</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryHints.html">ヒント</a> - SDL_HINT_JOYSTICK_HAPTIC_AXES
+<hr>
+<h1>SDL_HINT_JOYSTICK_HAPTIC_AXES</h1>
+方向を有効にしたいハプティック(力覚フィードバック)のデバイスと番号の一覧のヒント
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_hints.h">SDL3/SDL_hints.h</a>
+<h2>構文</h2>
+<code>#define SDL_HINT_JOYSTICK_HAPTIC_AXES "SDL_JOYSTICK_HAPTIC_AXES"</code>
+<h2>詳細</h2>
+<p>
+一覧は, カンマで区切られたUSB VID/PIDの16進数のペアに方向の番号を追加した形式の文字列で指定する. 例:
+</p>
+<p>
+0xAAAA/0xBBBB/1,0xCCCC/0xDDDD/3
+</p>
+<p>
+このヒントは「ワイルドカード」デバイスを指定することで全ての初期化されたデバイスの方向を設定できる.
+</p>
+<p>
+0xFFFF/0xFFFF/1
+</p>
+<p>
+このヒントはコントローラをオープンする前に設定する必要がある.
+ハプティックの方向の番号はデバイスの実際の軸の数を超えてはならない.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.5以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_HAPTIC_AXES">SDL_HINT_JOYSTICK_HAPTIC_AXES - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

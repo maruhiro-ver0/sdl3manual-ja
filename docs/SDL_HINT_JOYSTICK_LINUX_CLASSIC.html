@@ -11,24 +11,24 @@
 <a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryHints.html">ヒント</a> - SDL_HINT_JOYSTICK_DIRECTINPUT
 <hr>
 <h1>SDL_HINT_JOYSTICK_DIRECTINPUT</h1>
-コントローラでDirectInputを使用するか否かを設定するヒント
+Linuxで古い/dev/input/js*ジョイスティックインターフェースを使用するか, 新しい/dev/input/event*ジョイスティックインターフェースを使用するかを設定するヒント
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_hints.h">SDL3/SDL_hints.h</a>
 <h2>構文</h2>
-<code>#define SDL_HINT_JOYSTICK_DIRECTINPUT "SDL_JOYSTICK_DIRECTINPUT"</code>
+<code>#define SDL_HINT_JOYSTICK_LINUX_CLASSIC "SDL_JOYSTICK_LINUX_CLASSIC"</code>
 <h2>詳細</h2>
 <p>
 次の値を設定できる:
 </p>
 <table border="1">
-<tr><td>"0"</td><td>DirectInputの検知を無効にする</td></tr>
-<tr><td>"1"</td><td>DirectInputの検知を有効にする (デフォルト)</td></tr>
+<tr><td>"0"</td><td>/dev/input/event*を使用する (デフォルト)</td></tr>
+<tr><td>"1"</td><td>/dev/input/js*を使用する</td></tr>
 </table>
 <p>
 このヒントはSDLの初期化の前に設定する必要がある.
 </p>
 <h2>バージョン</h2>
-SDL 3.4.0以降
+SDL 3.2.0以降
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_DIRECTINPUT">SDL_HINT_JOYSTICK_DIRECTINPUT - SDL Wiki</a><br>
 <hr>
