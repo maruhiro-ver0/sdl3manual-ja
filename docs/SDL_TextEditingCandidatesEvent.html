@@ -18,7 +18,7 @@ IME変換候補イベントの構造体(event.edit_candidates.*)
 <table border="1">
 <tr><td>Uint32</td><td>type</td><td>SDL_EVENT_TEXT_EDITING_CANDIDATES</td></tr>
 <tr><td>Uint32</td><td>reserved</td><td>予約</td></tr>
-<tr><td>Uint64</td><td>timestamp</td><td>イベントのナノ秒単位のタイムスタンプ. SDL_GetTicksNS()で設定</td></tr>
+<tr><td>Uint64</td><td>timestamp</td><td>イベントのナノ秒単位のタイムスタンプ. <a href="SDL_GetTicksNS.html">SDL_GetTicksNS()</a>で設定</td></tr>
 <tr><td><a href="SDL_WindowID.html">SDL_WindowID</a></td><td>windowID</td><td>フォーカスのあるウィンドウ (存在すれば)</td></tr>
 <tr><td>const char * const *</td><td>candidates</td><td>変換候補の一覧. 利用できない場合はNULL</td></tr>
 <tr><td>Sint32</td><td>num_candidates</td><td><code>candidates</code>内の文字列の数</td></tr>

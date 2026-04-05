@@ -20,12 +20,12 @@
 <tr><th colspan="3" align="center">アプリケーションのイベント</th></tr>
 <tr><td><a href="SDL_QuitEvent.html">SDL_EVENT_QUIT</a></td><td>0x100</td><td>ユーザが終了を要求した</td></tr>
 <tr><th colspan="3" align="center">Android, iOSに特化したイベント (詳細はREADME-ios.md, README-android.mdを参照すること)</th></tr>
-<tr><td>SDL_EVENT_TERMINATING</td><td></td><td>OSがアプリケーションを終了させようとしている. このイベントはSDL_AddEventWatch()で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationWillTerminate()が, Androidの場合はonDestroy()が呼ばれたとき発生する</td></tr>
-<tr><td>SDL_EVENT_LOWMEMORY</td><td></td><td>空きメモリが少ない. 可能ならば何かを解放すること. このイベントはSDL_AddEventWatch()で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationDidReceiveMemoryWarning()が, Androidの場合はonTrimMemory()が呼ばれたとき発生する</td></tr>
-<tr><td>SDL_EVENT_WILLENTERBACKGROUND</td><td></td><td>アプリケーションが裏側へ回ろうとしている. このイベントはSDL_AddEventWatch()で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationWillResignActive()が, Androidの場合はonPause()が呼ばれたとき発生する</td></tr></td></tr>
-<tr><td>SDL_EVENT_DIDENTERBACKGROUND</td><td></td><td>アプリケーションが裏側へ回った. このイベントはSDL_AddEventWatch()で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationDidEnterBackground()が, Androidの場合はonPause()が呼ばれたとき発生する</td></tr>
-<tr><td>SDL_EVENT_WILLENTERFOREGROUND</td><td></td><td>アプリケーションが表へ現れようとしている. このイベントはSDL_AddEventWatch()で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationWillEnterForeground()が, Androidの場合はonResume()が呼ばれたとき発生する</td></tr>
-<tr><td>SDL_EVENT_DIDENTERFOREGROUND</td><td></td><td>アプリケーションが表へ現れた. このイベントはSDL_AddEventWatch()で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationDidBecomeActive()が, Androidの場合はonResume()が呼ばれたとき発生する</td></tr>
+<tr><td>SDL_EVENT_TERMINATING</td><td></td><td>OSがアプリケーションを終了させようとしている. このイベントは<a href="SDL_AddEventWatch.html">SDL_AddEventWatch()</a>で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationWillTerminate()が, Androidの場合はonDestroy()が呼ばれたとき発生する</td></tr>
+<tr><td>SDL_EVENT_LOWMEMORY</td><td></td><td>空きメモリが少ない. 可能ならば何かを解放すること. このイベントは<a href="SDL_AddEventWatch.html">SDL_AddEventWatch()</a>で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationDidReceiveMemoryWarning()が, Androidの場合はonTrimMemory()が呼ばれたとき発生する</td></tr>
+<tr><td>SDL_EVENT_WILLENTERBACKGROUND</td><td></td><td>アプリケーションが裏側へ回ろうとしている. このイベントは<a href="SDL_AddEventWatch.html">SDL_AddEventWatch()</a>で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationWillResignActive()が, Androidの場合はonPause()が呼ばれたとき発生する</td></tr></td></tr>
+<tr><td>SDL_EVENT_DIDENTERBACKGROUND</td><td></td><td>アプリケーションが裏側へ回った. このイベントは<a href="SDL_AddEventWatch.html">SDL_AddEventWatch()</a>で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationDidEnterBackground()が, Androidの場合はonPause()が呼ばれたとき発生する</td></tr>
+<tr><td>SDL_EVENT_WILLENTERFOREGROUND</td><td></td><td>アプリケーションが表へ現れようとしている. このイベントは<a href="SDL_AddEventWatch.html">SDL_AddEventWatch()</a>で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationWillEnterForeground()が, Androidの場合はonResume()が呼ばれたとき発生する</td></tr>
+<tr><td>SDL_EVENT_DIDENTERFOREGROUND</td><td></td><td>アプリケーションが表へ現れた. このイベントは<a href="SDL_AddEventWatch.html">SDL_AddEventWatch()</a>で設定したコールバックで扱う必要がある<br>iOSの場合はapplicationDidBecomeActive()が, Androidの場合はonResume()が呼ばれたとき発生する</td></tr>
 <tr><td>SDL_EVENT_LOCALE_CHANGED</td><td></td><td>ユーザのロケール選択が変わった</td></tr>
 <tr><td>SDL_EVENT_SYSTEM_THEME_CHANGED</td><td></td><td>システムのテーマが変わった</td></tr>
 <tr><th colspan="3" align="center">ディスプレイのイベント</th></tr>

@@ -21,7 +21,7 @@
 </p>
 <p>
 アプリケーションは間隔を取って, あるいは新しいフレームのたびに, 前回から新しいイベントが発生していないかチェックし, それを処理または無視する.
-一般的にはループで偽を戻すまで<a href="SDL_PollEvent.html">SDL_PollEvent()</a>を呼ぶことで行う. (またはメインコールバックを使用する. 次のSDL_AppIterate()を呼ぶまでは, SDL_AppEvent()を呼ぶと1つずつイベントが渡される. この場合は<a href="SDL_PollEvent.html">SDL_PollEvent()</a>をまったく使用しない.)
+一般的にはループで偽を戻すまで<a href="SDL_PollEvent.html">SDL_PollEvent()</a>を呼ぶことで行う. (またはメインコールバックを使用する. 次の<a href="SDL_AppIterate.html">SDL_AppIterate()</a>を呼ぶまでは, <a href="SDL_AppEvent.html">SDL_AppEvent()</a>を呼ぶと1つずつイベントが渡される. この場合は<a href="SDL_PollEvent.html">SDL_PollEvent()</a>をまったく使用しない.)
 </p>
 <p>
 他の処理方法も存在する: <a href="SDL_PeepEvents.html">SDL_PeepEvents()</a>を使うと, 複雑だがより詳細な処理が行える.
