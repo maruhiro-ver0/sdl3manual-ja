@@ -1978,31 +1978,36 @@
 <li><a href="SDL_HINT_JOYSTICK_WHEEL_DEVICES_EXCLUDED.html">SDL_HINT_JOYSTICK_WHEEL_DEVICES_EXCLUDED</a> - ハンドル型コントローラーの一覧に含めないコントローラーを設定するヒント
 <li><a href="SDL_HINT_JOYSTICK_ZERO_CENTERED_DEVICES.html">SDL_HINT_JOYSTICK_ZERO_CENTERED_DEVICES</a> - 全方向の中心が0のコントローラーの一覧に含めるコントローラーを設定するヒント
 <li><a href="SDL_HINT_KEYCODE_OPTIONS.html">SDL_HINT_KEYCODE_OPTIONS</a> - キーボードイベントでのキーコードの変換方法を設定するヒント
-<li>SDL_HINT_KMSDRM_DEVICE_INDEX
-<li>SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER
+<li><a href="SDL_HINT_KMSDRM_ATOMIC.html">SDL_HINT_KMSDRM_ATOMIC</a> - KMSDRMが「アトミック」機能を使用するか否かを設定するヒント
+<li><a href="SDL_HINT_KMSDRM_DEVICE_INDEX.html">SDL_HINT_KMSDRM_DEVICE_INDEX</a> - どのKMSDRMデバイスを使用するかを設定するヒント
+<li><a href="SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER.html">SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER</a> - KMSDRMビデオバックエンドを初期化するためにDRMマスタを必要とするか否かを設定するヒント
 <li><a href="SDL_HINT_LOGGING.html">SDL_HINT_LOGGING</a> - SDLログのデフォルトレベルを設定するヒント
 <li><a href="SDL_HINT_MAC_BACKGROUND_APP.html">SDL_HINT_MAC_BACKGROUND_APP</a> - macOSで起動時にアプリケーションを強制的にフォアグラウンドプロセスにするか否かを設定するヒント
 <li><a href="SDL_HINT_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK.html">SDL_HINT_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK</a> - macOSでCTRL+クリックで右クリックイベントを発生させるか否かのヒント
 <li><a href="SDL_HINT_MAC_OPENGL_ASYNC_DISPATCH.html">SDL_HINT_MAC_OPENGL_ASYNC_DISPATCH</a> - macOSでOpenGLコンテキストのディスパッチはメインスレッドの処理が完了するまでディスパッチスレッドをブロックするか否かを設定するヒント
 <li><a href="SDL_HINT_MAC_OPTION_AS_ALT.html">SDL_HINT_MAC_OPTION_AS_ALT</a> - macOSのOptionキーをALTキーに再割当するか否かを設定するヒント
-<li>SDL_HINT_MAC_SCROLL_MOMENTUM
-<li>SDL_HINT_MAIN_CALLBACK_RATE
-<li>SDL_HINT_MOUSE_AUTO_CAPTURE
-<li>SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR
-<li>SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS
-<li>SDL_HINT_MOUSE_DOUBLE_CLICK_TIME
-<li>SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE
-<li>SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH
-<li>SDL_HINT_MOUSE_NORMAL_SPEED_SCALE
-<li>SDL_HINT_MOUSE_RELATIVE_CURSOR_VISIBLE
-<li>SDL_HINT_MOUSE_RELATIVE_MODE_CENTER
-<li>SDL_HINT_MOUSE_RELATIVE_SPEED_SCALE
-<li>SDL_HINT_MOUSE_RELATIVE_SYSTEM_SCALE
-<li>SDL_HINT_MOUSE_RELATIVE_WARP_MOTION
-<li>SDL_HINT_MOUSE_TOUCH_EVENTS
-<li>SDL_HINT_MUTE_CONSOLE_KEYBOARD
-<li>SDL_HINT_NO_SIGNAL_HANDLERS
-<li>SDL_HINT_OPENGL_ES_DRIVER
+<li><a href="SDL_HINT_MAC_PRESS_AND_HOLD.html">SDL_HINT_MAC_PRESS_AND_HOLD</a> - macOSでキーを押し続けたときキーリピートするかアクセントメニューを開くかを設定するヒント
+<li><a href="SDL_HINT_MAC_SCROLL_MOMENTUM.html">SDL_HINT_MAC_SCROLL_MOMENTUM</a> - macOSでSDL_EVENT_MOUSE_WHEELイベントの値に慣性を含める否かを設定するヒント
+<li><a href="SDL_HINT_MAIN_CALLBACK_RATE.html">SDL_HINT_MAIN_CALLBACK_RATE</a> - SDL_AppIterate()が呼ばれる周期を設定するヒント
+<li><a href="SDL_HINT_MOUSE_AUTO_CAPTURE.html">SDL_HINT_MOUSE_AUTO_CAPTURE</a> - マウスのボタンを押している間マウスがキャプチャされるか否かを選択するヒント
+<li><a href="SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR.html">SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR</a> - デフォルトマウスカーソルとして使用するシステムカーソルを設定するヒント
+<li><a href="SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS.html">SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS</a> - ダブルクリックの半径をピクセル数単位で設定するヒント
+<li><a href="SDL_HINT_MOUSE_DOUBLE_CLICK_TIME.html">SDL_HINT_MOUSE_DOUBLE_CLICK_TIME</a> - ダブルクリックの時間をミリ秒単位で設定するヒント
+<li><a href="SDL_HINT_MOUSE_DPI_SCALE_CURSORS.html">SDL_HINT_MOUSE_DPI_SCALE_CURSORS</a> - ディスプレイの倍率でマウスカーソルを拡大縮小するか否かを設定するヒント
+<li><a href="SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE.html">SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE</a> - 非表示のマウスカーソルのワープを相対マウスモードで行うか否かを設定するヒント
+<li><a href="SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH.html">SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH</a> - SDLウィンドウをクリックしてフォーカスしたときマウスイベントが送られるか否かを指定するヒント
+<li><a href="SDL_HINT_MOUSE_NORMAL_SPEED_SCALE.html">SDL_HINT_MOUSE_NORMAL_SPEED_SCALE</a> - マウスが相対モードでない場合のマウスの速度倍率を浮動小数点で設定するヒント
+<li><a href="SDL_HINT_MOUSE_RELATIVE_CURSOR_VISIBLE.html">SDL_HINT_MOUSE_RELATIVE_CURSOR_VISIBLE</a> - 相対モードのとき実マウスのカーソルが表示されたままか否かを設定するヒント
+<li><a href="SDL_HINT_MOUSE_RELATIVE_MODE_CENTER.html">SDL_HINT_MOUSE_RELATIVE_MODE_CENTER</a> - マウスが相対モードのときウィンドウの中央に拘束するか否かを設定するヒント
+<li><a href="SDL_HINT_MOUSE_RELATIVE_SPEED_SCALE.html">SDL_HINT_MOUSE_RELATIVE_SPEED_SCALE</a> - マウスが相対モードのときマウスの移動速度の倍率を浮動小数点で指定するヒント
+<li><a href="SDL_HINT_MOUSE_RELATIVE_SYSTEM_SCALE.html">SDL_HINT_MOUSE_RELATIVE_SYSTEM_SCALE</a> - マウスが相対モードのときマウスワープでマウス移動イベントが発生するか否かを設定するヒント
+<li><a href="SDL_HINT_MOUSE_RELATIVE_WARP_MOTION.html">SDL_HINT_MOUSE_RELATIVE_WARP_MOTION</a> - マウスが相対モードのときマウスワープでマウス移動イベントが発生するか否かを設定するヒント
+<li><a href="SDL_HINT_MOUSE_TOUCH_EVENTS.html">SDL_HINT_MOUSE_TOUCH_EVENTS</a> - マウスイベントでタッチイベントを生成するか否かを設定するヒント
+<li><a href="SDL_HINT_MUTE_CONSOLE_KEYBOARD.html">SDL_HINT_MUTE_CONSOLE_KEYBOARD</a> - コンソールのキーボードをミュートするか否かを設定するヒント
+<li><a href="SDL_HINT_NO_SIGNAL_HANDLERS.html">SDL_HINT_NO_SIGNAL_HANDLERS</a> - SIGINTとSIGTERMシグナルを捕らえないようにするヒント
+<li><a href="SDL_HINT_OPENGL_ES_DRIVER.html">SDL_HINT_OPENGL_ES_DRIVER</a> - OpenGL ESコンテキストのためにどのドライバを使用するか設定するヒント
+<li>SDL_HINT_OPENGL_FORCE_SRGB_CAPABLE
+<li>SDL_HINT_OPENGL_FORCE_SRGB_FRAMEBUFFER
 <li>SDL_HINT_OPENGL_LIBRARY
 <li>SDL_HINT_OPENVR_LIBRARY
 <li>SDL_HINT_ORIENTATIONS

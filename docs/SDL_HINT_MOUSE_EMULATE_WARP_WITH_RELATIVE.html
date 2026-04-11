@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryHints.html" title="1つ上">
+<title>SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryHints.html">ヒント</a> - SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE
+<hr>
+<h1>SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE</h1>
+非表示のマウスカーソルのワープを相対マウスモードで行うか否かを設定するヒント
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_hints.h">SDL3/SDL_hints.h</a>
+<h2>構文</h2>
+<code>#define SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE "SDL_MOUSE_EMULATE_WARP_WITH_RELATIVE"</code>
+<h2>詳細</h2>
+<p>
+このヒントを設定すると, マウスカーソルは非表示になり, マウスカーソルはウィンドウの中心に短い時間で繰り返しワープし, マウスカーソルのワープは相対マウスモードを使用してエミュレートする.
+これは相対マウスの移動量を使用するのではなく, 相対マウスモードで短い時間で移動距離を計算しウィンドウの中央にワープさせることで, 一部の古いゲームでマウスがよりスムーズで移動量が信頼できるものになる.
+</p>
+<p>
+相対マウスモードはマウスカーソルのワープとマウスの加速の動作が異なる場合があるので注意すること.
+</p>
+<p>
+別の目的で高頻度で非表示のマウスカーソルを繰り返しワープさせる必要がある場合は, このヒントは無効にする必要がある.
+</p>
+<p>
+次の値を設定できる:
+</p>
+<table border="1">
+<tr><td>"0"</td><td>常にワープさせようとする</td></tr>
+<tr><td>"1"</td><td>ワープを強制的な相対マウスモードでエミュレートする場合がある (デフォルト)</td></tr>
+</table>
+<p>
+このヒントはいつでも変更できる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE">SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
