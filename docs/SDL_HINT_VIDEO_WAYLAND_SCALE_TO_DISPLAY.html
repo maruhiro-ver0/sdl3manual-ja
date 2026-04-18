@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryHints.html" title="1つ上">
+<title>SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryHints.html">ヒント</a> - SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY
+<hr>
+<h1>SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY</h1>
+非DPI-awareのWaylandウィンドウの1:1ピクセルマッピングを強制するか否かを設定するヒント
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_hints.h">SDL3/SDL_hints.h</a>
+<h2>構文</h2>
+<code>#define SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY "SDL_VIDEO_WAYLAND_SCALE_TO_DISPLAY"</code>
+<h2>詳細</h2>
+<p>
+このヒントはビデオサブシステムを初期化する前に設定する必要がある.
+</p>
+<p>
+このヒントを設定すると, DPI-awareとしてフラグ付けされていないWaylandウィンドウは1:1ピクセルマッピングが強制される.
+</p>
+<p>
+このヒントは古いアプリケーションをデスクトップの拡大を適用せずに表示させることを意図しているが,
+これはウィンドウにWaylandデスクトップが受け入れるように設計されていない動作を強制するため, 一部のディスプレイ設定では問題が発生する.
+</p>
+<ul>
+<li>奇数サイズかつ/または奇数デスクトップ拡大率の場合, 丸めの誤差が発生し表示がわずかにぼやける場合がある
+<li>ウィンドウ位置の設定が変換と丸めのため正確でない場合がある
+<li>拡大されたデスクトップではウィンドウが使えないほど小さくなる可能性がある
+<li>異なる倍率のディスプレイに移動したときウィンドウのサイズが突然変わる場合がある
+<li>拡大を有効にしたマルチモニタを使用する場合, 重なって表示される場合がある
+<li>ウィンドウの論理サイズが縮小されるためカーソルの精度が下がる可能性がある
+</ul>
+<p>
+新しいアプリケーションはこれを有効にするのではなくDPI-awareを正しく扱うように設計すべきである.
+</p>
+<p>
+次の値を設定できる:
+</p>
+<table border="1">
+<tr><td>"0"</td><td>ウィンドウは通常通り拡大される</td></tr>
+<tr><td>"1"</td><td>ウィンドウは1:1ピクセルマッピングを強制される</td></tr>
+</table>
+<p>
+このヒントはウィンドウを生成する前に設定する必要がある.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY">SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY - SDL Wiki</a><br>
+<hr>
+</body>
+</html>

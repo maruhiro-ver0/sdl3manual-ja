@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryHints.html" title="1つ上">
+<title>SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryHints.html">ヒント</a> - SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS
+<hr>
+<h1>SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS</h1>
+全てのウィンドウ操作を完了までブロックするか否かを設定するヒント
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_hints.h">SDL3/SDL_hints.h</a>
+<h2>構文</h2>
+<code>#define SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS "SDL_VIDEO_SYNC_WINDOW_OPERATIONS"</code>
+<h2>詳細</h2>
+<p>
+非同期に実行されるウィンドウシステムでは, ウィンドウのサイズ変更や移動を要求した関数から戻った直後はウィンドウ操作が行われていない可能性がある.
+このヒントを設定すると, 呼び出しごとに保留中の操作が完了するまで操作がブロックされる.
+このヒントに"1"を設定するのは関数の呼び出しごとに<a href="SDL_SyncWindow.html">SDL_SyncWindow()</a>を呼ぶことと同じである.
+</p>
+<p>
+アニメーションの完了などは数秒間を要する場合があるもあり, ウィンドウ操作の完了をブロックして待つことは多くの時間がかかり遅れを引き起こす可能性があるので注意すること.
+</p>
+<p>
+次の値を設定できる:
+</p>
+<table border="1">
+<tr><td>"0"</td><td>ウィンドウ操作は非ブロッキングとする (デフォルト)</td></tr>
+<tr><td>"1"</td><td>ウィンドウ操作は完了までブロックする</td></tr>
+</table>
+<p>
+このヒントはいつでも変更できる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS">SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
