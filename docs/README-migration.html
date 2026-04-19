@@ -10,7 +10,7 @@
 <title>SDL 3.0への移行</title>
 </head>
 <body>
-<a href="index.html">目次</a> - <a href="Introduction.html">概要</a> - SDL 3.0への移行
+<a href="index.html">目次</a> - 概要 - SDL 3.0への移行
 <hr>
 <h1><a name="#migrating-to-sdl-30">SDL 3.0への移行</a></h1>
 <p>
@@ -316,7 +316,7 @@ SDL音声サブシステムと<a href="SDL_AudioStream.html">SDL_AudioStream</a>
 <p>
 <a href="SDL_AudioSpec.html">SDL_AudioSpec</a>の機能は縮小され, 形式, チャネル数, サンプリングレートのみを扱うようになった.
 SDL_AudioSpecから削除された<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioSpec.html">silenceメンバ</a>(無音の値)は<a href="SDL_GetSilenceValueForFormat.html">SDL_GetSilenceValueForFormat()</a>で得ることができる.
-削除された<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioSpec.html">samplesメンバ</a>(音声バッファの長さ)はSDL3が管理するようになった. デバイスの遅れと処理量を調整したい場合は, 新たにオープンするデバイスのサンプルを<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES">SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMESヒント</a>で強制的に設定できるが, リスクを避けるためデフォルト値から変更すべきではない. 
+削除された<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioSpec.html">samplesメンバ</a>(音声バッファの長さ)はSDL3が管理するようになった. デバイスの遅れと処理量を調整したい場合は, 新たにオープンするデバイスのサンプルを<a href="SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES.html">SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES</a>ヒントで強制的に設定できるが, リスクを避けるためデフォルト値から変更すべきではない. 
 他のSDL2の<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_AudioSpec.html">SDL_AudioSpec</a>メンバは現在では無関係である.
 </p>
 <p>
@@ -325,7 +325,7 @@ SDL_AudioSpecから削除された<a href="https://maruhiro-ver0.github.io/sdl2m
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetDefaultAudioInfo.html">SDL_GetDefaultAudioInfo()</a>は削除された.
-<a href="SDL_GetAudioDeviceFormat.html">SDL_GetAudioDeviceFormat()</a>に<a href="https://wiki.libsdl.org/SDL3/SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK">SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK</a>または<a href="https://wiki.libsdl.org/SDL3/SDL_AUDIO_DEVICE_DEFAULT_RECORDING">SDL_AUDIO_DEVICE_DEFAULT_RECORDING</a>を渡すこと.
+<a href="SDL_GetAudioDeviceFormat.html">SDL_GetAudioDeviceFormat()</a>に<a href="SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK.html">SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK</a>または<a href="SDL_AUDIO_DEVICE_DEFAULT_RECORDING.html">SDL_AUDIO_DEVICE_DEFAULT_RECORDING</a>を渡すこと.
 デバイスのオープンには文字列を使用しなくなったため, デフォルトデバイス名を得る手段はなくなった. さらに, SDL3はシステムのデフォルトを変更すると物理デバイス間で即座に移行するため, これをユーザに見せる必要がある場合は, "System default"のような名前を推奨する.
 </p>
 <p>
@@ -718,7 +718,7 @@ SDL_EVENT_GAMEPAD_ADDEDイベントは, <a href="SDL_Event.html">イベント構
 <p>
 ゲームパッドの前面ボタンの名称はA/B/X/YからNorth/South/East/Westに変更され, 特定のハードウェア(XBOXのボタン名)ではなく位置を示すようになった.
 <a href="SDL_GetGamepadButtonLabel.html">SDL_GetGamepadButtonLabel()</a>を使えば前面ボタンのラベル名(A/B/X/Yや×/〇/□/△)を得ることができる.
-<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS">SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELSヒント</a>は無視され, このヒントを使った変換はボタンの位置に訂正される.<br>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS">SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS</a>ヒントは無視され, このヒントを使った変換はボタンの位置に訂正される.<br>
 アプリケーションは, 地域や慣れによって異なるため, ユーザにOK/キャンセルボタンとしてのSouth/Eastボタンを入れ替える方法を提供すべきである.
 これは次のような方法で対応できる:
 <code>
@@ -1064,58 +1064,58 @@ SDL3の代わりの計画もない.
 </p>
 <p>
 環境変数AUDIODEVはOSSとNetBSDのオーディオドライバのオーディオデバイスの場合のみ使用されるようになった.
-ALSAドライバの場合は<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_AUDIO_ALSA_DEFAULT_DEVICE">SDL_HINT_AUDIO_ALSA_DEFAULT_DEVICE</a>ヒントに, sndioドライバの場合は環境変数AUDIODEVICEに置き換えられた.
+ALSAドライバの場合は<a href="SDL_HINT_AUDIO_ALSA_DEFAULT_DEVICE.html">SDL_HINT_AUDIO_ALSA_DEFAULT_DEVICE</a>ヒントに, sndioドライバの場合は環境変数AUDIODEVICEに置き換えられた.
 </p>
 <p>
 以下のヒントの名前は次の様に変更された:
 </p>
 <ul>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_ALLOW_TOPMOST.html">SDL_HINT_ALLOW_TOPMOST</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_WINDOW_ALLOW_TOPMOST">SDL_HINT_WINDOW_ALLOW_TOPMOST</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_AUDIODRIVER.html">SDL_HINT_AUDIODRIVER</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_AUDIO_DRIVER">SDL_HINT_AUDIO_DRIVER</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_DIRECTINPUT_ENABLED.html">SDL_HINT_DIRECTINPUT_ENABLED</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_DIRECTINPUT">SDL_HINT_JOYSTICK_DIRECTINPUT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GDK_TEXTINPUT_DEFAULT.html">SDL_HINT_GDK_TEXTINPUT_DEFAULT</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_GDK_TEXTINPUT_DEFAULT_TEXT">SDL_HINT_GDK_TEXTINPUT_DEFAULT_TEXT</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_JOYSTICK_GAMECUBE_RUMBLE_BRAKE.html">SDL_HINT_JOYSTICK_GAMECUBE_RUMBLE_BRAKE</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE">SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE.html">SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_ENHANCED_REPORTS">SDL_HINT_JOYSTICK_ENHANCED_REPORTS</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE.html">SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_ENHANCED_REPORTS">SDL_HINT_JOYSTICK_ENHANCED_REPORTS</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_LINUX_DIGITAL_HATS.html">SDL_HINT_LINUX_DIGITAL_HATS</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_LINUX_DIGITAL_HATS">SDL_HINT_JOYSTICK_LINUX_DIGITAL_HATS</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_LINUX_HAT_DEADZONES.html">SDL_HINT_LINUX_HAT_DEADZONES</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_LINUX_HAT_DEADZONES">SDL_HINT_JOYSTICK_LINUX_HAT_DEADZONES</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_LINUX_JOYSTICK_CLASSIC.html">SDL_HINT_LINUX_JOYSTICK_CLASSIC.</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_LINUX_CLASSIC">SDL_HINT_JOYSTICK_LINUX_CLASSIC</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_LINUX_JOYSTICK_DEADZONES.html">SDL_HINT_LINUX_JOYSTICK_DEADZONES</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_JOYSTICK_LINUX_DEADZONES">SDL_HINT_JOYSTICK_LINUX_DEADZONES</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEODRIVER.html">SDL_HINT_VIDEODRIVER</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_DRIVER">SDL_HINT_VIDEO_DRIVER</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_WAYLAND_EMULATE_MOUSE_WARP.html">SDL_HINT_VIDEO_WAYLAND_EMULATE_MOUSE_WARP</a> → <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE">SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_ALLOW_TOPMOST.html">SDL_HINT_ALLOW_TOPMOST</a> → <a href="SDL_HINT_WINDOW_ALLOW_TOPMOST.html">SDL_HINT_WINDOW_ALLOW_TOPMOST</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_AUDIODRIVER.html">SDL_HINT_AUDIODRIVER</a> → <a href="SDL_HINT_AUDIO_DRIVER.html">SDL_HINT_AUDIO_DRIVER</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_DIRECTINPUT_ENABLED.html">SDL_HINT_DIRECTINPUT_ENABLED</a> → <a href="SDL_HINT_JOYSTICK_DIRECTINPUT.html">SDL_HINT_JOYSTICK_DIRECTINPUT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GDK_TEXTINPUT_DEFAULT.html">SDL_HINT_GDK_TEXTINPUT_DEFAULT</a> → <a href="SDL_HINT_GDK_TEXTINPUT_DEFAULT_TEXT.html">SDL_HINT_GDK_TEXTINPUT_DEFAULT_TEXT</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_JOYSTICK_GAMECUBE_RUMBLE_BRAKE.html">SDL_HINT_JOYSTICK_GAMECUBE_RUMBLE_BRAKE</a> → <a href="SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE.html">SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE.html">SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE</a> → <a href="SDL_HINT_JOYSTICK_ENHANCED_REPORTS.html">SDL_HINT_JOYSTICK_ENHANCED_REPORTS</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE.html">SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE</a> → <a href="SDL_HINT_JOYSTICK_ENHANCED_REPORTS.html">SDL_HINT_JOYSTICK_ENHANCED_REPORTS</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_LINUX_DIGITAL_HATS.html">SDL_HINT_LINUX_DIGITAL_HATS</a> → <a href="SDL_HINT_JOYSTICK_LINUX_DIGITAL_HATS.html">SDL_HINT_JOYSTICK_LINUX_DIGITAL_HATS</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_LINUX_HAT_DEADZONES.html">SDL_HINT_LINUX_HAT_DEADZONES</a> → <a href="SDL_HINT_JOYSTICK_LINUX_HAT_DEADZONES.html">SDL_HINT_JOYSTICK_LINUX_HAT_DEADZONES</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_LINUX_JOYSTICK_CLASSIC.html">SDL_HINT_LINUX_JOYSTICK_CLASSIC.</a> → <a href="SDL_HINT_JOYSTICK_LINUX_CLASSIC.html">SDL_HINT_JOYSTICK_LINUX_CLASSIC</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_LINUX_JOYSTICK_DEADZONES.html">SDL_HINT_LINUX_JOYSTICK_DEADZONES</a> → <a href="SDL_HINT_JOYSTICK_LINUX_DEADZONES.html">SDL_HINT_JOYSTICK_LINUX_DEADZONES</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEODRIVER.html">SDL_HINT_VIDEODRIVER</a> → <a href="SDL_HINT_VIDEO_DRIVER.html">SDL_HINT_VIDEO_DRIVER</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_WAYLAND_EMULATE_MOUSE_WARP.html">SDL_HINT_VIDEO_WAYLAND_EMULATE_MOUSE_WARP</a> → <a href="SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE.html">SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE</a>
 </ul>
 <p>
 以下のヒントは削除された:
 </p>
 <ul>
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_ACCELEROMETER_AS_JOYSTICK.html">SDL_HINT_ACCELEROMETER_AS_JOYSTICK</a>
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO.html">SDL_HINT_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO</a> - 音声はアプリケーションが一時停止すると一時停止する. この動作は<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_ANDROID_BLOCK_ON_PAUSE">SDL_HINT_ANDROID_BLOCK_ON_PAUSE</a>で変更できる
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_AUDIO_DEVICE_APP_NAME.html">SDL_HINT_AUDIO_DEVICE_APP_NAME</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_SetAppMetadata">SDL_SetAppMetadata()</a>のappname引数, または<a href="https://wiki.libsdl.org/SDL3/SDL_SetAppMetadataProperty">SDL_SetAppMetadataProperty()</a>にSDL_PROP_APP_METADATA_NAME_STRINGを設定する, のいずれかに置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO.html">SDL_HINT_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO</a> - 音声はアプリケーションが一時停止すると一時停止する. この動作は<a href="SDL_HINT_ANDROID_BLOCK_ON_PAUSE.html">SDL_HINT_ANDROID_BLOCK_ON_PAUSE</a>で変更できる
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_AUDIO_DEVICE_APP_NAME.html">SDL_HINT_AUDIO_DEVICE_APP_NAME</a> - <a href="SDL_SetAppMetadata.html">SDL_SetAppMetadata()</a>のappname引数, または<a href="SDL_SetAppMetadataProperty.html">SDL_SetAppMetadataProperty()</a>にSDL_PROP_APP_METADATA_NAME_STRINGを設定する, のいずれかに置き換えられた
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS.html">SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS</a> - ゲームパッドのボタンは常に位置を表すようになった
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GRAB_KEYBOARD.html">SDL_HINT_GRAB_KEYBOARD</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_SetWindowKeyboardGrab">SDL_SetWindowKeyboardGrab()</a>を使うこと
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_IDLE_TIMER_DISABLED.html">SDL_HINT_IDLE_TIMER_DISABLED</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_DisableScreenSaver">SDL_DisableScreenSaver()</a>を使うこと
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_IME_INTERNAL_EDITING.html">SDL_HINT_IME_INTERNAL_EDITING</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_IME_IMPLEMENTED_UI">SDL_HINT_IME_IMPLEMENTED_UI</a>に置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_IME_SHOW_UI.html">SDL_HINT_IME_SHOW_UI</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_IME_IMPLEMENTED_UI">SDL_HINT_IME_IMPLEMENTED_UI</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_GRAB_KEYBOARD.html">SDL_HINT_GRAB_KEYBOARD</a> - 代わりに<a href="SDL_SetWindowKeyboardGrab.html">SDL_SetWindowKeyboardGrab()</a>を使うこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_IDLE_TIMER_DISABLED.html">SDL_HINT_IDLE_TIMER_DISABLED</a> - 代わりに<a href="SDL_DisableScreenSaver.html">SDL_DisableScreenSaver()</a>を使うこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_IME_INTERNAL_EDITING.html">SDL_HINT_IME_INTERNAL_EDITING</a> - <a href="SDL_HINT_IME_IMPLEMENTED_UI.html">SDL_HINT_IME_IMPLEMENTED_UI</a>に置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_IME_SHOW_UI.html">SDL_HINT_IME_SHOW_UI</a> - <a href="SDL_HINT_IME_IMPLEMENTED_UI.html">SDL_HINT_IME_IMPLEMENTED_UI</a>に置き換えられた
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_IME_SUPPORT_EXTENDED_TEXT.html">SDL_HINT_IME_SUPPORT_EXTENDED_TEXT</a> - 拡張テキストは通常のテキスト編集イベントに追加された
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_MOUSE_RELATIVE_MODE_WARP.html">SDL_HINT_MOUSE_RELATIVE_MODE_WARP</a> - 相対モードは, ハードウェアレベルで対応しているか, 使用不可が報告される
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_MOUSE_RELATIVE_SCALING.html">SDL_HINT_MOUSE_RELATIVE_SCALING</a> - マウス座標はSDLレンダラによって自動的に拡大縮小しないようになった
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_PS2_DYNAMIC_VSYNC.html">SDL_HINT_PS2_DYNAMIC_VSYNC</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_SetRenderVSync">SDL_SetRenderVSync(renderer, -1)</a>を使用すること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_RENDER_BATCHING.html">SDL_HINT_RENDER_BATCHING</a> - レンダラのバッチ化は常に有効で, アプリケーションは低レベルグラフィックAPIを呼ぶ前には必ず<a href="https://wiki.libsdl.org/SDL3/SDL_FlushRenderer">SDL_FlushRenderer()</a>を呼ぶ必要があるようになった
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_RENDER_LOGICAL_SIZE_MODE.html">SDL_HINT_RENDER_LOGICAL_SIZE_MODE</a> - 論理サイズのモードは<a href="https://wiki.libsdl.org/SDL3/SDL_SetRenderLogicalPresentation">SDL_SetRenderLogicalPresentation()</a>で明確に設定するようになった
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_PS2_DYNAMIC_VSYNC.html">SDL_HINT_PS2_DYNAMIC_VSYNC</a> - 代わりに<a href="SDL_SetRenderVSync.html">SDL_SetRenderVSync(renderer, -1)</a>を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_RENDER_BATCHING.html">SDL_HINT_RENDER_BATCHING</a> - レンダラのバッチ化は常に有効で, アプリケーションは低レベルグラフィックAPIを呼ぶ前には必ず<a href="SDL_FlushRenderer.html">SDL_FlushRenderer()</a>を呼ぶ必要があるようになった
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_RENDER_LOGICAL_SIZE_MODE.html">SDL_HINT_RENDER_LOGICAL_SIZE_MODE</a> - 論理サイズのモードは<a href="SDL_SetRenderLogicalPresentation.html">SDL_SetRenderLogicalPresentation()</a>で明確に設定するようになった
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_RENDER_OPENGL_SHADERS.html">SDL_HINT_RENDER_OPENGL_SHADERS</a> - 可能な場合は常にシェーダーを使用するようになった
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_RENDER_SCALE_QUALITY.html">SDL_HINT_RENDER_SCALE_QUALITY</a> - テクスチャは線形フィルタがデフォルトとなった. 最近傍補間を使用したい場合は<a href="https://wiki.libsdl.org/SDL3/SDL_SetTextureScaleMode">SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST)</a>とすること
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_THREAD_STACK_SIZE.html">SDL_HINT_THREAD_STACK_SIZE</a> - スタックサイズは<a href="https://wiki.libsdl.org/SDL3/SDL_CreateThreadWithProperties">SDL_CreateThreadWithProperties()</a>で指定できるようになった
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_EXTERNAL_CONTEXT.html">SDL_HINT_VIDEO_EXTERNAL_CONTEXT</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_CreateWindowWithProperties">SDL_CreateWindowWithProperties()</a>のSDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEANに置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_FOREIGN_WINDOW_OPENGL.html">SDL_HINT_VIDEO_FOREIGN_WINDOW_OPENGL</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_CreateWindowWithProperties">SDL_CreateWindowWithProperties()</a>のSDL_PROP_WINDOW_CREATE_OPENGL_BOOLEANに置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_FOREIGN_WINDOW_VULKAN.html">SDL_HINT_VIDEO_FOREIGN_WINDOW_VULKAN</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_CreateWindowWithProperties">SDL_CreateWindowWithProperties()</a>のSDL_PROP_WINDOW_CREATE_VULKAN_BOOLEANに置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_RENDER_SCALE_QUALITY.html">SDL_HINT_RENDER_SCALE_QUALITY</a> - テクスチャは線形フィルタがデフォルトとなった. 最近傍補間を使用したい場合は<a href="SDL_SetTextureScaleMode.html">SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST)</a>とすること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_THREAD_STACK_SIZE.html">SDL_HINT_THREAD_STACK_SIZE</a> - スタックサイズは<a href="SDL_CreateThreadWithProperties.html">SDL_CreateThreadWithProperties()</a>で指定できるようになった
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_EXTERNAL_CONTEXT.html">SDL_HINT_VIDEO_EXTERNAL_CONTEXT</a> - <a href="SDL_CreateWindowWithProperties.html">SDL_CreateWindowWithProperties()</a>のSDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEANに置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_FOREIGN_WINDOW_OPENGL.html">SDL_HINT_VIDEO_FOREIGN_WINDOW_OPENGL</a> - <a href="SDL_CreateWindowWithProperties.html">SDL_CreateWindowWithProperties()</a>のSDL_PROP_WINDOW_CREATE_OPENGL_BOOLEANに置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_FOREIGN_WINDOW_VULKAN.html">SDL_HINT_VIDEO_FOREIGN_WINDOW_VULKAN</a> - <a href="SDL_CreateWindowWithProperties.html">SDL_CreateWindowWithProperties()</a>のSDL_PROP_WINDOW_CREATE_VULKAN_BOOLEANに置き換えられた
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_HIGHDPI_DISABLED.html">SDL_HINT_VIDEO_HIGHDPI_DISABLED</a> - 高DPIは常に有効になった
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_WINDOW_SHARE_PIXEL_FORMAT.html">SDL_HINT_VIDEO_WINDOW_SHARE_PIXEL_FORMAT</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_CreateWindowWithProperties">SDL_CreateWindowWithProperties()</a>のSDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTERに置き換えられた
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_X11_FORCE_EGL.html">SDL_HINT_VIDEO_X11_FORCE_EGL</a> - 代わりに<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_FORCE_EGL">SDL_HINT_VIDEO_FORCE_EGL</a>を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_WINDOW_SHARE_PIXEL_FORMAT.html">SDL_HINT_VIDEO_WINDOW_SHARE_PIXEL_FORMAT</a> - <a href="SDL_CreateWindowWithProperties.html">SDL_CreateWindowWithProperties()</a>のSDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTERに置き換えられた
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_X11_FORCE_EGL.html">SDL_HINT_VIDEO_X11_FORCE_EGL</a> - 代わりに<a href="SDL_HINT_VIDEO_FORCE_EGL.html">SDL_HINT_VIDEO_FORCE_EGL</a>を使用すること
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_X11_XINERAMA.html">SDL_HINT_VIDEO_X11_XINERAMA</a> - XineramaはX11のバックエンドとしてサポートしない
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_VIDEO_X11_XVIDMODE.html">SDL_HINT_VIDEO_X11_XVIDMODE</a> - XvidmodeはX11のバックエンドとしてサポートしない
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_WINDOWS_DISABLE_THREAD_NAMING.html">SDL_HINT_WINDOWS_DISABLE_THREAD_NAMING</a> - デバッガが阻止しなければSDLは正式に例外0x406D1388に対応し伝搬を防ぐようになった
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_WINDOWS_FORCE_MUTEX_CRITICAL_SECTIONS.html">SDL_HINT_WINDOWS_FORCE_MUTEX_CRITICAL_SECTIONS</a> - 可能ならば常にSlim Reader/Writerロックを使用するようになった
-<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_WINDOWS_NO_CLOSE_ON_ALT_F4.html">SDL_HINT_WINDOWS_NO_CLOSE_ON_ALT_F4</a> - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4">SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4</a>に置き換えられた. デフォルトは真
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_WINDOWS_NO_CLOSE_ON_ALT_F4.html">SDL_HINT_WINDOWS_NO_CLOSE_ON_ALT_F4</a> - <a href="SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4.html">SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4</a>に置き換えられた. デフォルトは真
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_WINRT_HANDLE_BACK_BUTTON.html">SDL_HINT_WINRT_HANDLE_BACK_BUTTON</a> - SDL3はWinRTをサポートしない
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_WINRT_PRIVACY_POLICY_LABEL.html">SDL_HINT_WINRT_PRIVACY_POLICY_LABEL</a> - SDL3はWinRTをサポートしない
 <li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_HINT_WINRT_PRIVACY_POLICY_URL.html">SDL_HINT_WINRT_PRIVACY_POLICY_URL</a> - SDL3はWinRTをサポートしない
@@ -1133,22 +1133,22 @@ ALSAドライバの場合は<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_AUDIO
 以下の環境変数は削除された:
 </p>
 <ul>
-<li>SDL_AUDIO_ALSA_DEBUG - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_LOGGING">SDL_HINT_LOGGING</a>ヒントの"audio=debug"に置き換えられた
-<li>SDL_DISKAUDIODELAY - 遅れを絶対的な時間ではなくオーディオ時間の倍率で指定できる<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_AUDIO_DISK_TIMESCALE">SDL_HINT_AUDIO_DISK_TIMESCALE</a>ヒントに置き換えられた
-<li>SDL_DISKAUDIOFILE - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_AUDIO_DISK_OUTPUT_FILE">SDL_HINT_AUDIO_DISK_OUTPUT_FILE</a>にヒントに置き換えられた
-<li>SDL_DISKAUDIOFILEIN - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_AUDIO_DISK_INPUT_FILE">SDL_HINT_AUDIO_DISK_INPUT_FILE</a>ヒントに置き換えられた
-<li>SDL_DUMMYAUDIODELAY - 遅れを絶対的な時間ではなくオーディオ時間の倍率で指定できる<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_AUDIO_DUMMY_TIMESCALE">SDL_HINT_AUDIO_DUMMY_TIMESCALE</a>ヒントに置き換えられた
+<li>SDL_AUDIO_ALSA_DEBUG - <a href="SDL_HINT_LOGGING.html">SDL_HINT_LOGGING</a>ヒントの"audio=debug"に置き換えられた
+<li>SDL_DISKAUDIODELAY - 遅れを絶対的な時間ではなくオーディオ時間の倍率で指定できる<a href="SDL_HINT_AUDIO_DISK_TIMESCALE.html">SDL_HINT_AUDIO_DISK_TIMESCALE</a>ヒントに置き換えられた
+<li>SDL_DISKAUDIOFILE - <a href="SDL_HINT_AUDIO_DISK_OUTPUT_FILE.html">SDL_HINT_AUDIO_DISK_OUTPUT_FILE</a>にヒントに置き換えられた
+<li>SDL_DISKAUDIOFILEIN - <a href="SDL_HINT_AUDIO_DISK_INPUT_FILE.html">SDL_HINT_AUDIO_DISK_INPUT_FILE</a>ヒントに置き換えられた
+<li>SDL_DUMMYAUDIODELAY - 遅れを絶対的な時間ではなくオーディオ時間の倍率で指定できる<a href="SDL_HINT_AUDIO_DUMMY_TIMESCALE.html">SDL_HINT_AUDIO_DUMMY_TIMESCALE</a>ヒントに置き換えられた
 <li>SDL_HAPTIC_GAIN_MAX
-<li>SDL_HIDAPI_DISABLE_LIBUSB - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_HIDAPI_LIBUSB">SDL_HINT_HIDAPI_LIBUSB</a>ヒントに置き換えられた
-<li>SDL_HIDAPI_JOYSTICK_DISABLE_UDEV - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_HIDAPI_UDEV">SDL_HINT_HIDAPI_UDEV</a>ヒントに置き換えられた
-<li>SDL_INPUT_FREEBSD_KEEP_KBD - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_MUTE_CONSOLE_KEYBOARD">SDL_HINT_MUTE_CONSOLE_KEYBOARD</a>ヒントに置き換えられた
-<li>SDL_INPUT_LINUX_KEEP_KBD - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_MUTE_CONSOLE_KEYBOARD">SDL_HINT_MUTE_CONSOLE_KEYBOARD</a>ヒントに置き換えられた
-<li>VITA_DISABLE_TOUCH_BACK - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VITA_ENABLE_BACK_TOUCH">SDL_HINT_VITA_ENABLE_BACK_TOUCH</a>ヒントに置き換えられた
-<li>VITA_DISABLE_TOUCH_FRONT - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VITA_ENABLE_FRONT_TOUCH">SDL_HINT_VITA_ENABLE_FRONT_TOUCH</a>ヒントに置き換えられた
-<li>VITA_MODULE_PATH - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VITA_MODULE_PATH">SDL_HINT_VITA_MODULE_PATH</a>ヒントに置き換えられた
-<li>VITA_PVR_OGL - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VITA_PVR_OPENGL">SDL_HINT_VITA_PVR_OPENGL</a>ヒントに置き換えられた
-<li>VITA_PVR_SKIP_INIT - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VITA_PVR_INIT">SDL_HINT_VITA_PVR_INIT</a>ヒントに置き換えられた
-<li>VITA_RESOLUTION - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VITA_RESOLUTION">SDL_HINT_VITA_RESOLUTION</a>ヒントに置き換えられた
+<li>SDL_HIDAPI_DISABLE_LIBUSB - <a href="SDL_HINT_HIDAPI_LIBUSB.html">SDL_HINT_HIDAPI_LIBUSB</a>ヒントに置き換えられた
+<li>SDL_HIDAPI_JOYSTICK_DISABLE_UDEV - <a href="SDL_HINT_HIDAPI_UDEV.html">SDL_HINT_HIDAPI_UDEV</a>ヒントに置き換えられた
+<li>SDL_INPUT_FREEBSD_KEEP_KBD - <a href="SDL_HINT_MUTE_CONSOLE_KEYBOARD.html">SDL_HINT_MUTE_CONSOLE_KEYBOARD</a>ヒントに置き換えられた
+<li>SDL_INPUT_LINUX_KEEP_KBD - <a href="SDL_HINT_MUTE_CONSOLE_KEYBOARD.html">SDL_HINT_MUTE_CONSOLE_KEYBOARD</a>ヒントに置き換えられた
+<li>VITA_DISABLE_TOUCH_BACK - <a href="SDL_HINT_VITA_ENABLE_BACK_TOUCH.html">SDL_HINT_VITA_ENABLE_BACK_TOUCH</a>ヒントに置き換えられた
+<li>VITA_DISABLE_TOUCH_FRONT - <a href="SDL_HINT_VITA_ENABLE_FRONT_TOUCH.html">SDL_HINT_VITA_ENABLE_FRONT_TOUCH</a>ヒントに置き換えられた
+<li>VITA_MODULE_PATH - <a href="SDL_HINT_VITA_MODULE_PATH.html">SDL_HINT_VITA_MODULE_PATH</a>ヒントに置き換えられた
+<li>VITA_PVR_OGL - <a href="SDL_HINT_VITA_PVR_OPENGL.html">SDL_HINT_VITA_PVR_OPENGL</a>ヒントに置き換えられた
+<li>VITA_PVR_SKIP_INIT - <a href="SDL_HINT_VITA_PVR_INIT.html">SDL_HINT_VITA_PVR_INIT</a>ヒントに置き換えられた
+<li>VITA_RESOLUTION - <a href="SDL_HINT_VITA_RESOLUTION.html">SDL_HINT_VITA_RESOLUTION</a>ヒントに置き換えられた
 </ul>
 <p>
 以下の関数は削除された:
@@ -2725,13 +2725,13 @@ WindowsとX11のイベントは<a href="SDL_SetWindowsMessageHook.html">SDL_SetW
 <h2><a name="#sdl_videoh">SDL_video.h (ディスプレイとウィンドウ)</a></h2>
 <p>
 一部のビデオバックエンドは名前が小文字になっている ("kmsdrm", "rpi", "android", "psp", "ps2", "vita").
-SDLは既に<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_DRIVER">SDL_HINT_VIDEO_DRIVER</a>はでは大文字小文字を無視する.
+SDLは既に<a href="SDL_HINT_VIDEO_DRIVER.html">SDL_HINT_VIDEO_DRIVER</a>はでは大文字小文字を無視する.
 しかし, アプリケーションで<a href="SDL_GetVideoDriver.html">SDL_GetVideoDriver()</a>または<a href="SDL_GetCurrentVideoDriver.html">SDL_GetCurrentVideoDriver()</a>を呼び, 大文字小文字を無視せず比較している場合は, プログラムを変更する必要がある.
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_VideoInit.html">SDL_VideoInit()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_VideoQuit.html">SDL_VideoQuit()</a>は削除された.
 代わりに<a href="SDL_InitSubSystem.html">SDL_InitSubSystem()</a>と<a href="SDL_QuitSubSystem.html">SDL_QuitSubSystem()</a>をSDL_INIT_VIDEOで呼ぶこと. これで参照カウンタを正常にカウントできる.
-<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_DRIVER">SDL_HINT_VIDEO_DRIVER</a>で特定のビデオドライバを選択できる.
+<a href="SDL_HINT_VIDEO_DRIVER.html">SDL_HINT_VIDEO_DRIVER</a>で特定のビデオドライバを選択できる.
 </p>
 <p>
 ディスプレイのインデックス番号を反復処理するのではなく, 新しい関数<a href="SDL_GetDisplays.html">SDL_GetDisplays()</a>でディスプレイの一覧を得ることもできる.
@@ -2840,7 +2840,7 @@ OpenGL設定から<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GLa
 </p>
 <p>
 <a href="SDL_GL_GetProcAddress.html">SDL_GL_GetProcAddress()</a>, <a href="SDL_EGL_GetProcAddress.html">SDL_EGL_GetProcAddress()</a>はvoid *の代わりに<a href="SDL_FunctionPointer.html">SDL_FunctionPointer</a>を戻すようになり, 正しい関数の型でキャストしなければならなくなった.
-<a href="https://wiki.libsdl.org/SDL3/SDL_FUNCTION_POINTER_IS_VOID_POINTER">SDL_FUNCTION_POINTER_IS_VOID_POINTER</a>を定義すると以前と同じ動作になる.
+<a href="SDL_FUNCTION_POINTER_IS_VOID_POINTER.html">SDL_FUNCTION_POINTER_IS_VOID_POINTER</a>を定義すると以前と同じ動作になる.
 </p>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GL_DeleteContext.html">SDL_GL_DeleteContext()</a>の名前はSDL(とglX/EGL)の命名規則に合わせるため<a href="SDL_GL_DestroyContext.html">SDL_GL_DestroyContext</a>に変更された.
@@ -2905,8 +2905,8 @@ IDの型<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Window.html">
 以下の環境変数は削除された:
 </p>
 <ul>
-<li>SDL_VIDEO_GL_DRIVER - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_OPENGL_LIBRARY">SDL_HINT_OPENGL_LIBRARY</a>に置き換えること
-<li>SDL_VIDEO_EGL_DRIVER - <a href="https://wiki.libsdl.org/SDL3/SDL_HINT_EGL_LIBRARY">SDL_HINT_EGL_LIBRARY</a>に置き換えること
+<li>SDL_VIDEO_GL_DRIVER - <a href="SDL_HINT_OPENGL_LIBRARY.html">SDL_HINT_OPENGL_LIBRARY</a>に置き換えること
+<li>SDL_VIDEO_EGL_DRIVER - <a href="SDL_HINT_EGL_LIBRARY.html">SDL_HINT_EGL_LIBRARY</a>に置き換えること
 </ul>
 <p>
 以下のシンボルの名前は次の様に変更された:
@@ -2958,7 +2958,7 @@ IDの型<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_Window.html">
 </ul>
 <p>
 これらの関数の呼び出しの後, 即時に操作を適用したい場合は, <a href="SDL_SyncWindow.html">SDL_SyncWindow()</a>関数で待機中の全てのウィンドウ操作が完了するまで待つこと.
-<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS">SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS</a>ヒントで, SDL2の動作に似せて全ての非同期ウィンドウ操作関数の呼び出しを自動的に同期処理にすることもできる.
+<a href="SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS.html">SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS</a>ヒントで, SDL2の動作に似せて全ての非同期ウィンドウ操作関数の呼び出しを自動的に同期処理にすることもできる.
 ウィンドウのアニメーションが完了するまで待つため, 同期させると長時間ブロックされる可能性があるので注意すること.
 さらに, ウィンドウシステムは要求を拒否したり, 正確に従わないこともある(例えばウィンドウはデスクトップの利用可能な領域やスクリーンの外に移動できない)ため, 対応するイベントが送られないことや, 期待する値が含まれない場合がある.
 </p>
