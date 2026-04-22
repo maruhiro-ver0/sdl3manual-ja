@@ -179,7 +179,7 @@
 <li><a href="SDL_DestroyCondition.html">SDL_DestroyCondition</a> - 条件変数を破棄する
 <li><a href="SDL_DestroyCursor.html">SDL_DestroyCursor</a> - カーソルを解放する
 <li><a href="SDL_DestroyEnvironment.html">SDL_DestroyEnvironment</a> - 環境変数セットを破棄する
-<li>SDL_DestroyGPUDevice
+<li><a href="SDL_DestroyGPUDevice.html">SDL_DestroyGPUDevice</a> - SDL_CreateGPUDeviceが戻したGPUコンテキストを破棄する
 <li><a href="SDL_DestroyGPURenderState.html">SDL_DestroyGPURenderState</a> - カスタムGPUレンダリング状態を破棄する
 <li><a href="SDL_DestroyHapticEffect.html">SDL_DestroyHapticEffect</a> - ハプティックデバイスのエフェクトを再生する
 <li><a href="SDL_DestroyMutex.html">SDL_DestroyMutex</a> - SDL_CreateMutex()で生成したミューテックスを破棄する
@@ -388,9 +388,9 @@
 <li><a href="SDL_GetGDKTaskQueue.html">SDL_GetGDKTaskQueue</a> - GDKのグローバル非同期タスクキューへの参照を必要ならば初期化して得る
 <li><a href="SDL_GetGlobalMouseState.html">SDL_GetGlobalMouseState</a> - 動作環境の非同期なマウスボタンの状態とデスクトップ上のマウスカーソルの位置を得る
 <li><a href="SDL_GetGlobalProperties.html">SDL_GetGlobalProperties</a> - グローバルSDLプロパティを得る
-<li>SDL_GetGPUDeviceDriver
+<li><a href="SDL_GetGPUDeviceDriver.html">SDL_GetGPUDeviceDriver</a> - GPUコンテキストを生成するために使用したバックエンドの名前を得る
 <li>SDL_GetGPUDeviceProperties
-<li>SDL_GetGPUDriver
+<li><a href="SDL_GetGPUDriver.html">SDL_GetGPUDriver</a> - 組み込まれたGPUドライバの名前を得る
 <li><a href="SDL_GetGPURendererDevice.html">SDL_GetGPURendererDevice</a> - レンダラが使用しているGPUデバイスを得る
 <li>SDL_GetGPUShaderFormats
 <li>SDL_GetGPUSwapchainTextureFormat
@@ -464,7 +464,7 @@
 <li><a href="SDL_GetNumCameraDrivers.html">SDL_GetNumCameraDrivers</a> - SDLに組み込まれたカメラドライバの数を得る
 <li><a href="SDL_GetNumGamepadTouchpadFingers.html">SDL_GetNumGamepadTouchpadFingers</a> - ゲームパッドのタッチパッドで同時に認識できる指の数を得る
 <li><a href="SDL_GetNumGamepadTouchpads.html">SDL_GetNumGamepadTouchpads</a> - ゲームパッドのタッチパッド数を得る
-<li>SDL_GetNumGPUDrivers
+<li><a href="SDL_GetNumGPUDrivers.html">SDL_GetNumGPUDrivers</a> - 組み込まれたオーディオドライバの数を得る
 <li><a href="SDL_GetNumHapticAxes.html">SDL_GetNumHapticAxes</a> - ハプティックデバイスの方向の数を得る
 <li><a href="SDL_GetNumJoystickAxes.html">SDL_GetNumJoystickAxes</a> - ジョイスティックの方向コントローラーの数を得る
 <li><a href="SDL_GetNumJoystickBalls.html">SDL_GetNumJoystickBalls</a> - ジョイスティックのトラックボールの数を得る
@@ -798,8 +798,8 @@
 <li><a href="SDL_memcmp.html">SDL_memcmp</a> - 2つのメモリバッファを比較する
 <li><a href="SDL_memcpy.html">SDL_memcpy</a> - メモリをコピーする. 領域が重なっていてはならない
 <li><a href="SDL_memmove.html">SDL_memmove</a> - メモリをコピーする. 領域が重なっていてもよい
-<li>SDL_MemoryBarrierAcquireFunction
-<li>SDL_MemoryBarrierReleaseFunction
+<li><a href="SDL_MemoryBarrierAcquireFunction.html">SDL_MemoryBarrierAcquireFunction</a> - メモリacquireバリアを挿入する(関数版)
+<li><a href="SDL_MemoryBarrierReleaseFunction.html">SDL_MemoryBarrierReleaseFunction</a> - メモリreleaseバリアを挿入する(関数版)
 <li><a href="SDL_memset.html">SDL_memset</a> - メモリバッファの全てのバイトを指定した値で初期化する
 <li><a href="SDL_memset4.html">SDL_memset4</a> - メモリバッファを指定した32ビットの値で初期化する
 <li><a href="SDL_Metal_CreateView.html">SDL_Metal_CreateView</a> - CAMetalLayerがバックエンドのNSView/UIView(iOS/tvOS)を生成しウィンドウに関連付ける
@@ -822,12 +822,12 @@
 <li><a href="SDL_OpenAudioDeviceStream.html">SDL_OpenAudioDeviceStream</a> - 簡単のため典型的なオーディオの初期化を一度に行う関数
 <li><a href="SDL_OpenCamera.html">SDL_OpenCamera</a> - ビデオ録画デバイス(カメラ)をオープンする
 <li><a href="SDL_OpenFileStorage.html">SDL_OpenFileStorage</a> - ローカルファイルシステムへのアクセスのためのストレージコンテナをオープンする
-<li>SDL_OpenGamepad
+<li><a href="SDL_OpenGamepad.html">SDL_OpenGamepad</a> - ゲームパッドを使用するためにオープンする
 <li><a href="SDL_OpenHaptic.html">SDL_OpenHaptic</a> - ハプティックデバイスを使用するためにオープンする
 <li><a href="SDL_OpenHapticFromJoystick.html">SDL_OpenHapticFromJoystick</a> - ジョイスティックからハプティックデバイスをオープンする
 <li><a href="SDL_OpenHapticFromMouse.html">SDL_OpenHapticFromMouse</a> - 使用中のマウスからハプティックデバイスをオープンする
 <li><a href="SDL_OpenIO.html">SDL_OpenIO</a> - カスタムデータストリームを生成する
-<li>SDL_OpenJoystick
+<li><a href="SDL_OpenJoystick.html">SDL_OpenJoystick</a> - ジョイスティックを使用するためにオープンする
 <li><a href="SDL_OpenSensor.html">SDL_OpenSensor</a> - センサーを使用するためにオープンする
 <li><a href="SDL_OpenStorage.html">SDL_OpenStorage</a> - クライアントが提供したインターフェースを使用してストレージコンテナをオープンする
 <li><a href="SDL_OpenTitleStorage.html">SDL_OpenTitleStorage</a> - アプリケーションのためにファイルシステムを読込専用ストレージコンテナとしてオープンする
@@ -1209,7 +1209,7 @@
 <li><a href="SDL_ultoa.html">SDL_ultoa</a> - unsigned long型の整数を文字列に変換する
 <li><a href="SDL_UnbindAudioStream.html">SDL_UnbindAudioStream</a> - 1つのオーディオストリームのオーディオデバイスへのバインドを解除する
 <li><a href="SDL_UnbindAudioStreams.html">SDL_UnbindAudioStreams</a> - 一覧のオーディオストリームのオーディオデバイスへのバインドを解除する
-<li>SDL_UnloadObject
+<li><a href="SDL_UnloadObject.html">SDL_UnloadObject</a> - 共有オブジェクトを解放する
 <li><a href="SDL_UnlockAudioStream.html">SDL_UnlockAudioStream</a> - オーディオストリームのアクセスの直列化のためのロックを解除する
 <li><a href="SDL_UnlockJoysticks.html">SDL_UnlockJoysticks</a> - ジョイスティックAPIへのアトミックなアクセスのためのロックを解除する
 <li><a href="SDL_UnlockMutex.html">SDL_UnlockMutex</a> - ミューテックスのロックを解除する
@@ -1378,10 +1378,10 @@
 <li><a href="SDL_HitTest.html">SDL_HitTest</a> - 領域判定コールバックの型
 <li><a href="SDL_iconv_t.html">SDL_iconv_t</a> - 文字列の文字コード変換状態を表す不透明ハンドル型
 <li><a href="SDL_InitFlags.html">SDL_InitFlags</a> - SDL_InitとSDL_InitSubSystemの初期化フラグの型 
-<li>SDL_iOSAnimationCallback
+<li><a href="SDL_iOSAnimationCallback.html">SDL_iOSAnimationCallback</a> - Apple iOSアニメーションコールバック関数の型
 <li><a href="SDL_IOStream.html">SDL_IOStream</a> - SDL データストリームの型
-<li>SDL_Joystick
-<li>SDL_JoystickID
+<li><a href="SDL_Joystick.html">SDL_Joystick</a> - SDLジョイスティックの識別のために使用される型
+<li><a href="SDL_JoystickID.html">SDL_JoystickID</a> - システムに接続されたジョイスティックのユニークIDの型
 <li><a href="SDL_KeyboardID.html">SDL_KeyboardID</a> - 現在システムに接続されているキーボードのユニークID
 <li><a href="SDL_Keycode.html">SDL_Keycode</a> - SDL仮想キーコードの型
 <li><a href="SDL_Keymod.html">SDL_Keymod</a> - 修飾キーの状態の型
@@ -1403,7 +1403,7 @@
 <li><a href="SDL_PropertiesID.html">SDL_PropertiesID</a> - SDLプロパティグループID
 <li><a href="SDL_realloc_func.html">SDL_realloc_func</a> - SDL_realloc()で使用するコールバックの型
 <li><a href="SDL_Renderer.html">SDL_Renderer</a> - レンダラの状態の型
-<li>SDL_RequestAndroidPermissionCallback
+<li><a href="SDL_RequestAndroidPermissionCallback.html">SDL_RequestAndroidPermissionCallback</a> - SDL_RequestAndroidPermissionの応答で呼ばれるコールバックの型
 <li><a href="SDL_RWLock.html">SDL_RWLock</a> - 読取専用スレッドは平行して実行できるミューテックスの型
 <li><a href="SDL_Semaphore.html">SDL_Semaphore</a> - セマフォ(スレッド間のアクセスをカウントして管理する手段)の型
 <li><a href="SDL_Sensor.html">SDL_Sensor</a> - オープンしたSDLセンサーの識別のために使用する不透明型
@@ -1429,7 +1429,7 @@
 <li><a href="SDL_Window.html">SDL_Window</a> - ウィンドウを識別する不透明型 
 <li><a href="SDL_WindowFlags.html">SDL_WindowFlags</a> - ウィンドウ状態フラグの型
 <li><a href="SDL_WindowID.html">SDL_WindowID</a> - ウィンドウユニークID
-<li>SDL_WindowsMessageHook
+<li><a href="SDL_WindowsMessageHook.html">SDL_WindowsMessageHook</a> - SDL_SetWindowsMessageHookで使用するコールバックの型
 <li><a href="SDL_X11EventHook.html">SDL_X11EventHook</a> - SDL_SetX11EventHookで使用するコールバックの型
 <li><a href="Sint16.html">Sint16</a> - 符号あり16ビット整数型
 <li><a href="Sint32.html">Sint32</a> - 符号あり32ビット整数型
@@ -1460,7 +1460,7 @@
 <li><a href="SDL_DropEvent.html">SDL_DropEvent</a> - ドロップイベントの構造体(event.drop.*)
 <li><a href="SDL_Event.html">SDL_Event</a> - 異なる種類のイベントの情報を持つ共用体
 <li><a href="SDL_FColor.html">SDL_FColor</a> - SDL_PIXELFORMAT_RGBA128_FLOAT形式の浮動小数点の値を並べた色として解釈させることができる構造体
-<li>SDL_Finger
+<li><a href="SDL_Finger.html">SDL_Finger</a> - マルチタッチイベントの1本の指のデータの構造体
 <li><a href="SDL_FPoint.html">SDL_FPoint</a> - 浮動小数点で表された点を定義する構造体
 <li><a href="SDL_FRect.html">SDL_FRect</a> - 浮動小数点で表された左上を基点とした長方形を定義する構造体
 <li><a href="SDL_GamepadAxisEvent.html">SDL_GamepadAxisEvent</a> - ゲームパッド移動イベントの構造体(event.gaxis.*)
@@ -1584,7 +1584,7 @@
 <li><a href="SDL_DateFormat.html">SDL_DateFormat</a> - システムのロケールの日付の形式の列挙体
 <li><a href="SDL_DisplayOrientation.html">SDL_DisplayOrientation</a> - ディスプレイの向きを表す列挙体
 <li><a href="SDL_EnumerationResult.html">SDL_EnumerationResult</a> - 列挙コールバックの戻り値の列挙体
-<li>SDL_EventAction
+<li><a href="SDL_EventAction.html">SDL_EventAction</a> - SDL_PeepEvents()への要求の列挙体
 <li><a href="SDL_EventType.html">SDL_EventType</a> - イベントの種類の列挙体
 <li><a href="SDL_FileDialogType.html">SDL_FileDialogType</a> - ファイルダイアログの種類の列挙体
 <li><a href="SDL_FlashOperation.html">SDL_FlashOperation</a> - ウィンドウのフラッシュ方法の列挙体
@@ -1606,7 +1606,7 @@
 <li>SDL_GPUFrontFace
 <li>SDL_GPUIndexElementSize
 <li>SDL_GPULoadOp
-<li>SDL_GPUPresentMode
+<li><a href="SDL_GPUPresentMode.html">SDL_GPUPresentMode</a> - スワップチェーンテクスチャがOSに提示されるタイミングの列挙体
 <li>SDL_GPUPrimitiveType
 <li>SDL_GPUSampleCount
 <li>SDL_GPUSamplerAddressMode
@@ -1614,7 +1614,7 @@
 <li>SDL_GPUShaderStage
 <li>SDL_GPUStencilOp
 <li>SDL_GPUStoreOp
-<li>SDL_GPUSwapchainComposition
+<li><a href="SDL_GPUSwapchainComposition.html">SDL_GPUSwapchainComposition</a> - スワップチェーンテクスチャのテクスチャの形式と色空間の列挙体
 <li>SDL_GPUTextureFormat
 <li>SDL_GPUTextureType
 <li>SDL_GPUTransferBufferUsage
@@ -1749,7 +1749,7 @@
 <li><a href="SDL_DEFINE_PIXELFORMAT.html">SDL_DEFINE_PIXELFORMAT</a> - カスタムされたFourCC以外のピクセル形式を定義するマクロ
 <li><a href="SDL_DEFINE_PIXELFOURCC.html">SDL_DEFINE_PIXELFOURCC</a> - カスタムされたFourCCピクセル形式を定義するマクロ
 <li>SDL_DEPRECATED
-<li>SDL_disabled_assert
+<li><a href="SDL_disabled_assert.html">SDL_disabled_assert</a> - アサーションが無効のとき使用されるマクロ
 <li>SDL_ELF_NOTE_DLOPEN
 <li>SDL_ELF_NOTE_DLOPEN_PRIORITY_RECOMMENDED
 <li>SDL_ELF_NOTE_DLOPEN_PRIORITY_REQUIRED
