@@ -130,7 +130,7 @@
 <li><a href="SDL_CreateCursor.html">SDL_CreateCursor</a> - 指定のビットマップデータとマスク(MSB形式)からマウスカーソルを生成する
 <li><a href="SDL_CreateDirectory.html">SDL_CreateDirectory</a> - ディレクトリと, 存在しなければその親ディレクトリを作成する
 <li><a href="SDL_CreateEnvironment.html">SDL_CreateEnvironment</a> - 環境変数セットを生成する
-<li>SDL_CreateGPUBuffer
+<li><a href="SDL_CreateGPUBuffer.html">SDL_CreateGPUBuffer</a> - グラフィックまたはコンピューティングのワークフローで使用するバッファを生成する
 <li>SDL_CreateGPUComputePipeline
 <li><a href="SDL_CreateGPUDevice.html">SDL_CreateGPUDevice</a> - GPUコンテキストを生成する
 <li>SDL_CreateGPUDeviceWithProperties
@@ -138,8 +138,8 @@
 <li><a href="SDL_CreateGPURenderer.html">SDL_CreateGPURenderer</a> - 2D GPUレンダリングコンテキストを生成する
 <li><a href="SDL_CreateGPURenderState.html">SDL_CreateGPURenderState</a> - GPUレンダリング状態を生成する
 <li>SDL_CreateGPUSampler
-<li>SDL_CreateGPUShader
-<li>SDL_CreateGPUTexture
+<li><a href="SDL_CreateGPUShader.html">SDL_CreateGPUShader</a> - グラフィックパイプラインを生成するとき使用されるシェーダを生成する
+<li><a href="SDL_CreateGPUTexture.html">SDL_CreateGPUTexture</a> - グラフィックまたはコンピューティングのワークフローで使用するテクスチャオブジェクトを生成する
 <li>SDL_CreateGPUTransferBuffer
 <li><a href="SDL_CreateHapticEffect.html">SDL_CreateHapticEffect</a> - ハプティックデバイスに新しいエフェクトを生成する
 <li><a href="SDL_CreateMutex.html">SDL_CreateMutex</a> - 新しいミューテックスを生成する
@@ -1232,7 +1232,7 @@
 <li><a href="SDL_UpdateWindowSurface.html">SDL_UpdateWindowSurface</a> - ウィンドウサーフェイスを画面にコピーする
 <li><a href="SDL_UpdateWindowSurfaceRects.html">SDL_UpdateWindowSurfaceRects</a> - ウィンドウサーフェイスの領域を画面にコピーする
 <li><a href="SDL_UpdateYUVTexture.html">SDL_UpdateYUVTexture</a> - Planar YV12またはIYUVテクスチャの領域を新しいピクセルデータで更新する
-<li>SDL_UploadToGPUBuffer
+<li><a href="SDL_UploadToGPUBuffer.html">SDL_UploadToGPUBuffer</a> - データを転送バッファからバッファにアップロードする
 <li>SDL_UploadToGPUTexture
 <li><a hreF="SDL_utf8strlcpy.html">SDL_utf8strlcpy</a> - UTF-8文字列をコピーする
 <li><a href="SDL_utf8strlen.html">SDL_utf8strlen</a> - UTF-8文字列のコードポイントの数を求める
@@ -1350,13 +1350,13 @@
 <li><a href="SDL_GLContextResetNotification.html">SDL_GLContextResetNotification</a> - SDL_GL_CONTEXT_RESET_NOTIFICATIONで設定可能なフラグの型
 <li><a href="SDL_GlobFlags.html">SDL_GlobFlags</a> - パスの一致フラグの型
 <li><a href="SDL_GLProfile.html">SDL_GLProfile</a> - SDL_GL_CONTEXT_PROFILE_MASKで設定可能なフラグの型
-<li><a href="SDL_GPUBuffer.html">SDL_GPUBuffer</a> - バッファの不透明型
-<li>SDL_GPUBufferUsageFlags
+<li><a href="SDL_GPUBuffer.html">SDL_GPUBuffer</a> - GPUバッファの不透明型
+<li><a href="SDL_GPUBufferUsageFlags.html">SDL_GPUBufferUsageFlags</a> - クライアントのGPUバッファの使用方法のフラグの型
 <li>SDL_GPUColorComponentFlags
 <li>SDL_GPUCommandBuffer
 <li>SDL_GPUComputePass
 <li>SDL_GPUComputePipeline
-<li>SDL_GPUCopyPass
+<li><a href="SDL_GPUCopyPass.html">SDL_GPUCopyPass</a> - GPUコピーパスの不透明ハンドルの型
 <li><a href="SDL_GPUDevice.html">SDL_GPUDevice</a> - SDL GPUコンテキストの不透明型
 <li>SDL_GPUFence
 <li>SDL_GPUGraphicsPipeline
@@ -1366,8 +1366,8 @@
 <li><a href="SDL_GPUShader.html">SDL_GPUShader</a> - コンパイルされたシェーダオブジェクトの不透明型
 <li><a href="SDL_GPUShaderFormat.html">SDL_GPUShaderFormat</a> - シェーダコードの形式の型
 <li><a href="SDL_GPUTexture.html">SDL_GPUTexture</a> - テクスチャの不透明型
-<li>SDL_GPUTextureUsageFlags
-<li>SDL_GPUTransferBuffer
+<li><a href="SDL_GPUTextureUsageFlags.html">SDL_GPUTextureUsageFlags</a> - クライアントのGPUテクスチャの使用方法のフラグの型
+<li><a href="SDL_GPUTransferBuffer.html">SDL_GPUTransferBuffer</a> - GPU転送バッファの不透明型
 <li><a href="SDL_Haptic.html">SDL_Haptic</a> - SDLハプティックデバイスオブジェクトの型
 <li><a href="SDL_HapticDirectionType.html">SDL_HapticDirectionType</a> - ハプティックの方向で使用する座標系の型
 <li><a href="SDL_HapticEffectID.html">SDL_HapticEffectID</a> - ハプティックエフェクトIDの型
@@ -1472,9 +1472,9 @@
 <li>SDL_GPUBlitInfo
 <li>SDL_GPUBlitRegion
 <li>SDL_GPUBufferBinding
-<li>SDL_GPUBufferCreateInfo
+<li><a href="SDL_GPUBufferCreateInfo.html">SDL_GPUBufferCreateInfo</a> - GPUバッファのパラメータの構造体
 <li>SDL_GPUBufferLocation
-<li>SDL_GPUBufferRegion
+<li><a href="SDL_GPUBufferRegion.html">SDL_GPUBufferRegion</a> - GPUバッファ内の領域を表す構造体
 <li>SDL_GPUColorTargetBlendState
 <li>SDL_GPUColorTargetDescription
 <li>SDL_GPUColorTargetInfo
@@ -1490,17 +1490,17 @@
 <li>SDL_GPURasterizerState
 <li><a href="SDL_GPURenderStateCreateInfo.html">SDL_GPURenderStateCreateInfo</a> - GPUレンダリング状態の生成時のパラメータの構造体
 <li>SDL_GPUSamplerCreateInfo
-<li>SDL_GPUShaderCreateInfo
+<li><a href="SDL_GPUShaderCreateInfo.html">SDL_GPUShaderCreateInfo</a> - 生成するシェーダオブジェクトのコードとメタデータを指定する構造体
 <li>SDL_GPUStencilOpState
 <li>SDL_GPUStorageBufferReadWriteBinding
 <li>SDL_GPUStorageTextureReadWriteBinding
-<li>SDL_GPUTextureCreateInfo
+<li><a href="SDL_GPUTextureCreateInfo.html">SDL_GPUTextureCreateInfo</a> - GPUテクスチャのパラメータの構造体
 <li>SDL_GPUTextureLocation
 <li>SDL_GPUTextureRegion
 <li><a href="SDL_GPUTextureSamplerBinding.html">SDL_GPUTextureSamplerBinding</a> - サンプラのバインド時のパラメータの構造体
 <li>SDL_GPUTextureTransferInfo
 <li>SDL_GPUTransferBufferCreateInfo
-<li>SDL_GPUTransferBufferLocation
+<li><a href="SDL_GPUTransferBufferLocation.html">SDL_GPUTransferBufferLocation</a> - GPU転送バッファ内の位置を表す構造体
 <li>SDL_GPUVertexAttribute
 <li>SDL_GPUVertexBufferDescription
 <li>SDL_GPUVertexInputState
@@ -1608,15 +1608,15 @@
 <li>SDL_GPULoadOp
 <li><a href="SDL_GPUPresentMode.html">SDL_GPUPresentMode</a> - スワップチェーンテクスチャがOSに提示されるタイミングの列挙体
 <li>SDL_GPUPrimitiveType
-<li>SDL_GPUSampleCount
+<li><a href="SDL_GPUSampleCount.html">SDL_GPUSampleCount</a> - テクスチャのサンプリング数の列挙体
 <li>SDL_GPUSamplerAddressMode
 <li>SDL_GPUSamplerMipmapMode
-<li>SDL_GPUShaderStage
+<li><a href="SDL_GPUShaderStage.html">SDL_GPUShaderStage</a> - シェーダプログラムの対応するステージの列挙体
 <li>SDL_GPUStencilOp
 <li>SDL_GPUStoreOp
 <li><a href="SDL_GPUSwapchainComposition.html">SDL_GPUSwapchainComposition</a> - スワップチェーンテクスチャのテクスチャの形式と色空間の列挙体
-<li>SDL_GPUTextureFormat
-<li>SDL_GPUTextureType
+<li><a href="SDL_GPUTextureFormat.html">SDL_GPUTextureFormat</a> - GPUテクスチャのピクセル形式の列挙体
+<li><a href="SDL_GPUTextureType.html">SDL_GPUTextureType</a> - GPUテクスチャの種類の列挙体
 <li>SDL_GPUTransferBufferUsage
 <li>SDL_GPUVertexElementFormat
 <li>SDL_GPUVertexInputRate

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_GPUTextureFormat</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_GPUTextureFormat
+<hr>
+<h1>SDL_GPUTextureFormat</h1>
+GPUテクスチャのピクセル形式の列挙体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>値</h2>
+<table border="1">
+<tr><td>SDL_GPU_TEXTUREFORMAT_INVALID</td><td></td><td>無効</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_A8_UNORM</td><td></td><td>正規化された符号なし浮動小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8G8_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8G8B8A8_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16B16A16_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R10G10B10A2_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_B5G6R5_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_B5G5R5A1_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_B4G4R4A4_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_B8G8R8A8_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC1_RGBA_UNORM</td><td></td><td>圧縮された正規化された符号あり浮動小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC2_RGBA_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC3_RGBA_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC4_R_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC5_RG_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC7_RGBA_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC6H_RGB_FLOAT</td><td></td><td>圧縮された符号あり浮動小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC6H_RGB_UFLOAT</td><td></td><td>圧縮された符号なし浮動小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8_SNORM</td><td></td><td>正規化された符号あり浮動小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8G8_SNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8G8B8A8_SNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16_SNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16_SNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16B16A16_SNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16_FLOAT</td><td></td><td>符号あり符号小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16B16A16_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R32_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R32G32_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R32G32B32A32_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R11G11B10_UFLOAT</td><td></td><td>符号なし符号小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8_UINT</td><td></td><td>符号なし整数のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8G8_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8G8B8A8_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16B16A16_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R32_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R32G32_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R32G32B32A32_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8_INT</td><td></td><td>符号あり整数のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8G8_INT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8G8B8A8_INT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16_INT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16_INT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R16G16B16A16_INT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R32_INT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R32G32_INT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R32G32B32A32_INT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_R8G8B8A8_UNORM_SRGB</td><td></td><td>正規化された符号なしsRGBのカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_B8G8R8A8_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC1_RGBA_UNORM_SRGB</td><td></td><td>圧縮された正規化された符号なしsRGBのカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC2_RGBA_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC3_RGBA_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_BC7_RGBA_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_D16_UNORM</td><td></td><td>深度の形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_D24_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_D32_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_D24_UNORM_S8_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_D32_FLOAT_S8_UINT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_4x4_UNORM</td><td></td><td>ASTC圧縮された正規化された浮動小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_5x4_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_5x5_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_6x5_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_6x6_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_8x5_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_8x6_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_8x8_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x5_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x6_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x8_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x10_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_12x10_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_12x12_UNORM</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_4x4_UNORM_SRGB</td><td></td><td>ASTC圧縮された正規化されたsRGB浮動小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_5x4_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_5x5_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_6x5_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_6x6_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_8x5_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_8x6_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_8x8_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x5_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x6_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x8_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x10_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_12x10_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_12x12_UNORM_SRGB</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_4x4_FLOAT</td><td></td><td>ASTC圧縮された符号あり浮動小数点のカラー形式</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_5x4_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_5x5_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_6x5_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_6x6_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_8x5_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_8x6_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_8x8_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x5_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x6_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x8_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_10x10_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_12x10_FLOAT</td><td></td><td>↑</td></tr>
+<tr><td>SDL_GPU_TEXTUREFORMAT_ASTC_12x12_FLOAT</td><td></td><td>↑</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+テクスチャ形式の対応はドライバ, ハードウェア, <code>usage</code>フラグに依存する.
+一般的にはその形式を使用する前に<a href="SDL_GPUTextureSupportsFormat.html">SDL_GPUTextureSupportsFormat</a>でチェックするべきである.
+しかし, いくつかの形式は利用できることが保証されている.
+</p>
+<!--
+<p>
+FIXME: Check universal support for 32-bit component formats
+FIXME: Check universal support for SIMULTANEOUS_READ_WRITE
+</p>
+-->
+<p>
+<code>usage</code>がSAMPLERの場合, 次の形式には必ず対応している:
+</p>
+<ul>
+<li>R8G8B8A8_UNORM
+<li>B8G8R8A8_UNORM
+<li>R8_UNORM
+<li>R8_SNORM
+<li>R8G8_UNORM
+<li>R8G8_SNORM
+<li>R8G8B8A8_SNORM
+<li>R16_FLOAT
+<li>R16G16_FLOAT
+<li>R16G16B16A16_FLOAT
+<li>R32_FLOAT
+<li>R32G32_FLOAT
+<li>R32G32B32A32_FLOAT
+<li>R11G11B10_UFLOAT
+<li>R8G8B8A8_UNORM_SRGB
+<li>B8G8R8A8_UNORM_SRGB
+<li>D16_UNORM
+</ul>
+<p>
+<code>usage</code>がCOLOR_TARGETの場合, 次の形式には必ず対応している:
+</p>
+<ul>
+<li>R8G8B8A8_UNORM
+<li>B8G8R8A8_UNORM
+<li>R8_UNORM
+<li>R16_FLOAT
+<li>R16G16_FLOAT
+<li>R16G16B16A16_FLOAT
+<li>R32_FLOAT
+<li>R32G32_FLOAT
+<li>R32G32B32A32_FLOAT
+<li>R8_UINT
+<li>R8G8_UINT
+<li>R8G8B8A8_UINT
+<li>R16_UINT
+<li>R16G16_UINT
+<li>R16G16B16A16_UINT
+<li>R8_INT
+<li>R8G8_INT
+<li>R8G8B8A8_INT
+<li>R16_INT
+<li>R16G16_INT
+<li>R16G16B16A16_INT
+<li>R8G8B8A8_UNORM_SRGB
+<li>B8G8R8A8_UNORM_SRGB
+</ul>
+<p>
+<code>usage</code>がSTORAGEの場合, 次の形式には必ず対応している:
+</p>
+<ul>
+<li>R8G8B8A8_UNORM
+<li>R8G8B8A8_SNORM
+<li>R16G16B16A16_FLOAT
+<li>R32_FLOAT
+<li>R32G32_FLOAT
+<li>R32G32B32A32_FLOAT
+<li>R8G8B8A8_UINT
+<li>R16G16B16A16_UINT
+<li>R8G8B8A8_INT
+<li>R16G16B16A16_INT
+</ul>
+<p>
+<code>usage</code>がDEPTH_STENCIL_TARGETの場合, 次の形式には必ず対応している:
+</p>
+<ul>
+<li>D16_UNORM
+<li>どちらか(必ずしも両方とは限らない) D24_UNORMまたはD32_FLOAT
+<li>どちらか(必ずしも両方とは限らない) D24_UNORM_S8_UINTまたはD32_FLOAT_S8_UINT
+</ul>
+<p>
+D16_UNORMで目的が達成できる場合を除き, 深度ステンシルテクスチャを生成する前に常にD24とD32のどちらが対応しているかをチェックすること.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_CreateGPUTexture.html">SDL_CreateGPUTexture</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GPUTextureFormat">SDL_GPUTextureFormat - SDL Wiki</a>
+<hr>
+</body>
+</html>

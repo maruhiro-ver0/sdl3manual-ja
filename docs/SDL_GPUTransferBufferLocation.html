@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_GPUTransferBufferLocation</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_GPUTransferBufferLocation
+<hr>
+<h1>SDL_GPUTransferBufferLocation</h1>
+GPU転送バッファ内の位置を表す構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>フィールド</h2>
+<table border="1">
+<tr><td><a href="SDL_GPUTransferBuffer.html">SDL_GPUTransferBuffer</a> *</td><td>transfer_buffer</td><td>転送操作で使用する転送バッファ</td></tr>
+<tr><td>Uint32</td><td>offset</td><td>バッファデータの転送バッファ内の先頭位置のバイト</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+これはバッファデータを転送バッファに転送する場合と, 転送バッファから転送する場合の両方で使用する.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_UploadToGPUBuffer.html">SDL_UploadToGPUBuffer</a>
+<li><a href="SDL_DownloadFromGPUBuffer.html">SDL_DownloadFromGPUBuffer</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GPUTransferBufferLocation">SDL_GPUTransferBufferLocation - SDL Wiki</a>
+<hr>
+</body>
+</html>

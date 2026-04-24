@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_GPUTextureCreateInfo</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_GPUTextureCreateInfo
+<hr>
+<h1>SDL_GPUTextureCreateInfo</h1>
+GPUテクスチャのパラメータの構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>フィールド</h2>
+<table border="1">
+<tr><td><a href="SDL_GPUTextureType.html">SDL_GPUTextureType</a></td><td>type</td><td>テクスチャの次元数</td></tr>
+<tr><td><a href="SDL_GPUTextureFormat.html">SDL_GPUTextureFormat</a></td><td>format</td><td>テクスチャのピクセル形式</td></tr>
+<tr><td><a href="SDL_GPUTextureUsageFlags.html">SDL_GPUTextureUsageFlags</a></td><td>usage</td><td>クライアントのGPUテクスチャの使用方法</td></tr>
+<tr><td>Uint32</td><td>width</td><td>テクスチャの幅</td></tr>
+<tr><td>Uint32</td><td>height</td><td>テクスチャの高さ</td></tr>
+<tr><td>Uint32</td><td>layer_count_or_depth</td><td>テクスチャのレイヤ数または深度. この値は2次元テクスチャの場合は配列のレイヤ数, 3次元テクスチャの場合は深度として扱われる</td></tr>
+<tr><td>Uint32</td><td>num_levels</td><td>テクスチャのミップレベル数</td></tr>
+<tr><td><a href="SDL_GPUSampleCount.html">SDL_GPUSampleCount</a></td><td>sample_count</td><td>テクセル当たりのサンプリング数. テクスチャをレンダーターゲットとして使用する場合のみ適用される</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>拡張のプロパティグループID. 拡張が必要ない場合は0にすること</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+<code>usage</code>フラグは論理和(OR)で組み合わせることができる.
+フラグの不正な組み合わせに注意すること.
+例えば, SAMPLERとGRAPHICS_STORAGEのフラグを同時には設定できない.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_CreateGPUTexture.html">SDL_CreateGPUTexture</a>
+<li><a href="SDL_GPUTextureType.html">SDL_GPUTextureType</a>
+<li><a href="SDL_GPUTextureFormat.html">SDL_GPUTextureFormat</a>
+<li><a href="SDL_GPUTextureUsageFlags.html">SDL_GPUTextureUsageFlags</a>
+<li><a href="SDL_GPUSampleCount.html">SDL_GPUSampleCount</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GPUTextureCreateInfo">SDL_GPUTextureCreateInfo - SDL Wiki</a>
+<hr>
+</body>
+</html>
