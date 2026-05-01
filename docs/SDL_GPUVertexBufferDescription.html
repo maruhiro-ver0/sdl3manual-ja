@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_GPUVertexBufferDescription</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_GPUVertexBufferDescription
+<hr>
+<h1>SDL_GPUVertexBufferDescription</h1>
+グラフィックパイプラインで使用される頂点バッファのパラメータの構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>フィールド</h2>
+<table border="1">
+<tr><td>Uint32</td><td>slot</td><td>バインドする頂点バッファスロット</td></tr>
+<tr><td>Uint32</td><td>pitch</td><td>1つの要素 + 要素間オフセット のサイズ</td></tr>
+<tr><td><a href="SDL_GPUVertexInputRate.html">SDL_GPUVertexInputRate</a></td><td>input_rate</td><td>属性のアドレッシングは頂点インデックスの関数かインスタンスインデックスの関数か</td></tr>
+<tr><td>Uint32</td><td>instance_step_rate</td><td>将来のための予約. 必ず0を設定すること</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+<a href="SDL_BindGPUVertexBuffers.html">SDL_BindGPUVertexBuffers</a>を呼ぶ場合, 頂点バッファをバインドするバインドするスロットを指定する必要がある.
+例えば, <a href="SDL_BindGPUVertexBuffers.html">SDL_BindGPUVertexBuffers</a>で<code>first_slot</code>が2, <code>num_bindings</code>が3ならば, スロット2, 3, 4が渡した頂点バッファをバインドするために使用される.
+</p>
+<p>
+頂点の属性は<a href="SDL_GPUVertexAttribute.html">SDL_GPUVertexAttribute</a>の<code>buffer_slot</code>フィールドを通してバッファと結びつれられる.
+例えば, 属性の<code>buffer_slot</code>が0ならば, それはスロット0にバインドされた頂点バッファの属性となる.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GPUVertexAttribute.html">SDL_GPUVertexAttribute</a>
+<li><a href="SDL_GPUVertexInputRate.html">SDL_GPUVertexInputRate</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GPUVertexBufferDescription">SDL_GPUVertexBufferDescription - SDL Wiki</a>
+<hr>
+</body>
+</html>
