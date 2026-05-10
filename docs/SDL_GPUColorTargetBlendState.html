@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_GPUColorTargetBlendState</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_GPUColorTargetBlendState
+<hr>
+<h1>SDL_GPUColorTargetBlendState</h1>
+カラーターゲットのブレンドを指定する構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>フィールド</h2>
+<table border="1">
+<tr><td><a href="SDL_GPUBlendFactor.html">SDL_GPUBlendFactor</a></td><td>src_color_blendfactor</td><td>元RGB値に積算される値</td></tr>
+<tr><td><a href="SDL_GPUBlendFactor.html">SDL_GPUBlendFactor</a></td><td>dst_color_blendfactor</td><td>先RGB値に積算される値</td></tr>
+<tr><td><a href="SDL_GPUBlendOp.html">SDL_GPUBlendOp</a></td><td>color_blend_op</td><td>RGB成分のブレンド演算</td></tr>
+<tr><td><a href="SDL_GPUBlendFactor.html">SDL_GPUBlendFactor</a></td><td>src_alpha_blendfactor</td><td>元α値に積算される値</td></tr>
+<tr><td><a href="SDL_GPUBlendFactor.html">SDL_GPUBlendFactor</a></td><td>dst_alpha_blendfactor</td><td>先α値に積算される値</td></tr>
+<tr><td><a href="SDL_GPUBlendOp.html">SDL_GPUBlendOp</a></td><td>alpha_blend_op</td><td>α値のブレンド演算</td></tr>
+<tr><td><a href="SDL_GPUColorComponentFlags.html">SDL_GPUColorComponentFlags</a></td><td>color_write_mask</td><td>書き込みを有効化するRGBA要素のビットマスク. <code>enable_color_write_mask</code>が偽のとき全ての成分に書き込む</td></tr>
+<tr><td>bool</td><td>enable_blend</td><td>カラーターゲットのブレンドを行うか</td></tr>
+<tr><td>bool</td><td>enable_color_write_mask</td><td>カラー書き込みマスクは有効か</td></tr>
+<tr><td>Uint8</td><td>padding1</td><td></td></tr>
+<tr><td>Uint8</td><td>padding2</td><td></td></tr>
+</table>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GPUColorTargetDescription.html">SDL_GPUColorTargetDescription</a>
+<li><a href="SDL_GPUBlendFactor.html">SDL_GPUBlendFactor</a>
+<li><a href="SDL_GPUBlendOp.html">SDL_GPUBlendOp</a>
+<li><a href="SDL_GPUColorComponentFlags.html">SDL_GPUColorComponentFlags</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GPUColorTargetBlendState">SDL_GPUColorTargetBlendState - SDL Wiki</a>
+<hr>
+</body>
+</html>

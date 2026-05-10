@@ -13,13 +13,13 @@
 <h1>SDL_CreateProcess</h1>
 新しいプロセスを生成する
 <h2>ヘッダ</h2>
-<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_timer.h">SDL3/SDL_timer.h</a>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_process.h">SDL3/SDL_process.h</a>
 <h2>構文</h2>
 <code>SDL_Process * SDL_CreateProcess(const char * const *args, bool pipe_stdio);</code>
 <h2>引数</h2>
 <table border="1">
 <tr><td>const char * const *</td><td>args</td><td>新しいプロセスのパスと引数</td></tr>
-<tr><td>bool</td><td>pipe_stdio</td><td>真のとき, プロセスの標準入力へのパイプと標準出力からのパイプを生成する. 偽のときプロセスの入力はなくアプロケーションの標準出力を継承する</td></tr>
+<tr><td>bool</td><td>pipe_stdio</td><td>真のとき, プロセスの標準入力へのパイプと標準出力からのパイプを生成する. 偽のときプロセスの入力はなくアプリケーションの標準出力を継承する</td></tr>
 </table>
 <h2>戻り値</h2>
 (<a href="SDL_Process.html">SDL_Process</a> *) 新しく生成した実行中のプロセスを戻す. プロセスを生成できなかったときNULLを戻す.
