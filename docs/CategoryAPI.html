@@ -51,7 +51,7 @@
 <li><a href="SDL_AudioStreamDevicePaused.html">SDL_AudioStreamDevicePaused</a> - オーディオデバイスに関連付けられたオーディオストリームが一時停止中かチェックする
 <li>SDL_BeginGPUComputePass
 <li>SDL_BeginGPUCopyPass
-<li>SDL_BeginGPURenderPass
+<li><a href="SDL_BeginGPURenderPass.html">SDL_BeginGPURenderPass</a> - コマンドバッファのレンダーパスを開始する
 <li><a href="SDL_BindAudioStream.html">SDL_BindAudioStream</a> - 1つのオーディオストリームをオーディオデバイスにバインドする
 <li><a href="SDL_BindAudioStreams.html">SDL_BindAudioStreams</a> - オーディオストリームの一覧をオーディオデバイスにバインドする
 <li>SDL_BindGPUComputePipeline
@@ -61,10 +61,10 @@
 <li>SDL_BindGPUFragmentSamplers
 <li>SDL_BindGPUFragmentStorageBuffers
 <li>SDL_BindGPUFragmentStorageTextures
-<li><a href="SDL_BindGPUGraphicsPipeline.html">SDL_BindGPUGraphicsPipeline</a> - レンダリングで使用するレンダリングパスをグラフィックパイプラインにバインドする
+<li><a href="SDL_BindGPUGraphicsPipeline.html">SDL_BindGPUGraphicsPipeline</a> - レンダリングで使用するレンダーパスをグラフィックパイプラインにバインドする
 <li><a href="SDL_BindGPUIndexBuffer.html">SDL_BindGPUIndexBuffer</a> - 後の描画呼び出しのためにインデックスバッファをコマンドバッファにバインドする
 <li><a href="SDL_BindGPUVertexBuffers.html">SDL_BindGPUVertexBuffers</a> - 後の描画呼び出しのために頂点バッファをコマンドバッファにバインドする
-<li>SDL_BindGPUVertexSamplers
+<li><a href="SDL_BindGPUVertexSamplers.html">SDL_BindGPUVertexSamplers()</a> - 頂点シェーダで使用するためにテクスチャとサンプラをバインドする
 <li>SDL_BindGPUVertexStorageBuffers
 <li>SDL_BindGPUVertexStorageTextures
 <li>SDL_BlitGPUTexture
@@ -202,9 +202,9 @@
 <li>SDL_DownloadFromGPUBuffer
 <li>SDL_DownloadFromGPUTexture
 <li>SDL_DrawGPUIndexedPrimitives
-<li>SDL_DrawGPUIndexedPrimitivesIndirect
-<li>SDL_DrawGPUPrimitives
-<li>SDL_DrawGPUPrimitivesIndirect
+<li><a href="SDL_DrawGPUIndexedPrimitivesIndirect.html">SDL_DrawGPUIndexedPrimitivesIndirect</a> - バインドしたインデックスバッファを有効にしたグラフィックステートを使用してバッファの描画パラメータでデータを描画する
+<li><a href="SDL_DrawGPUPrimitives.html">SDL_DrawGPUPrimitives</a> - バインドしたグラフィックステートを使用してデータを描画する
+<li><a href="SDL_DrawGPUPrimitivesIndirect.html">SDL_DrawGPUPrimitivesIndirect</a> - バインドしたグラフィックステートを使用してバッファの描画パラメータでデータを描画する
 <li><a href="SDL_DuplicateSurface.html">SDL_DuplicateSurface</a> - 既存のサーフェイスを複製する
 <li><a href="SDL_EGL_GetCurrentConfig.html">SDL_EGL_GetCurrentConfig</a> - 現在のEGLコンフィグを得る
 <li><a href="SDL_EGL_GetCurrentDisplay.html">SDL_EGL_GetCurrentDisplay</a> - 現在のEGLディスプレイを得る
@@ -214,7 +214,7 @@
 <li><a href="SDL_EnableScreenSaver.html">SDL_EnableScreenSaver</a> - スクリーンセーバーを有効にする
 <li>SDL_EndGPUComputePass
 <li>SDL_EndGPUCopyPass
-<li>SDL_EndGPURenderPass
+<li><a href="SDL_EndGPURenderPass.html">SDL_EndGPURenderPass()</a> - 指定したレンダーパスを終了する
 <li><a href="SDL_EnterAppMainCallbacks.html">SDL_EnterAppMainCallbacks</a> - メインコールバックを使用する場合のエントリーポイント
 <li><a href="SDL_EnumerateDirectory.html">SDL_EnumerateDirectory</a> - コールバックを通してディレクトリの内容を列挙する
 <li><a href="SDL_EnumerateProperties.html">SDL_EnumerateProperties</a> - プロパティグループのプロパティを列挙する
@@ -1022,7 +1022,7 @@
 <li>SDL_SetGPUStencilReference
 <li>SDL_SetGPUSwapchainParameters
 <li>SDL_SetGPUTextureName
-<li>SDL_SetGPUViewport
+<li><a href="SDL_SetGPUViewport.html">SDL_SetGPUViewport</a> - コマンドバッファの現在のビューポート状態を設定する
 <li><a href="SDL_SetHapticAutocenter.html">SDL_SetHapticAutocenter</a> - ハプティックデバイスの自動センタリングを設定する
 <li><a href="SDL_SetHapticGain.html">SDL_SetHapticGain</a> - 指定のハプティックデバイスのゲインを設定する
 <li><a href="SDL_SetHint.html">SDL_SetHint</a> - ヒントを通常の優先度で設定する
@@ -1360,7 +1360,7 @@
 <li><a href="SDL_GPUDevice.html">SDL_GPUDevice</a> - SDL GPUコンテキストの不透明型
 <li>SDL_GPUFence
 <li><a href="SDL_GPUGraphicsPipeline.html">SDL_GPUGraphicsPipeline</a> - グラフィックパイプラインの不透明ハンドルの型
-<li><a href="SDL_GPURenderPass.html">SDL_GPURenderPass</a> - レンダリングパスの不透明ハンドルの型
+<li><a href="SDL_GPURenderPass.html">SDL_GPURenderPass</a> - レンダーパスの不透明ハンドルの型
 <li><a href="SDL_GPURenderState.html">SDL_GPURenderState</a> - カスタムGPUレンダリング状態の不透明型
 <li><a href="SDL_GPUSampler.html">SDL_GPUSampler</a> - サンプラの不透明型
 <li><a href="SDL_GPUShader.html">SDL_GPUShader</a> - コンパイルされたシェーダオブジェクトの不透明型
@@ -1477,13 +1477,13 @@
 <li><a href="SDL_GPUBufferRegion.html">SDL_GPUBufferRegion</a> - GPUバッファ内の領域を表す構造体
 <li><a href="SDL_GPUColorTargetBlendState.html">SDL_GPUColorTargetBlendState</a> - カラーターゲットのブレンドを指定する構造体
 <li><a href="SDL_GPUColorTargetDescription.html">SDL_GPUColorTargetDescription</a> - グラフィックパイプラインで使用するカラーターゲットのパラメータの構造体
-<li>SDL_GPUColorTargetInfo
+<li><a href="SDL_GPUColorTargetInfo.html">SDL_GPUColorTargetInfo</a> - レンダーパスで使用するカラーターゲットのパラメータの構造体
 <li>SDL_GPUComputePipelineCreateInfo
 <li><a href="SDL_GPUDepthStencilState.html">SDL_GPUDepthStencilState</a> - グラフィックパイプラインの深度ステンシルのパラメータの構造体
-<li>SDL_GPUDepthStencilTargetInfo
+<li><a href="SDL_GPUDepthStencilTargetInfo.html">SDL_GPUDepthStencilTargetInfo</a> - レンダーパスで使用する深度ステンシルターゲットのパラメータの構造体
 <li><a href="SDL_GPUGraphicsPipelineCreateInfo.html">SDL_GPUGraphicsPipelineCreateInfo</a> - グラフィックパイプラインのパラメータを指定する構造体 
 <li><a href="SDL_GPUGraphicsPipelineTargetInfo.html">SDL_GPUGraphicsPipelineTargetInfo</a> - グラフィックパイプラインで使用するレンダーターゲットの情報の構造体
-<li>SDL_GPUIndexedIndirectDrawCommand
+<li><a href="SDL_GPUIndexedIndirectDrawCommand.html">SDL_GPUIndexedIndirectDrawCommand</a> - インデックス付き間接描画コマンドのパラメータの構造体
 <li>SDL_GPUIndirectDispatchCommand
 <li>SDL_GPUIndirectDrawCommand
 <li><a href="SDL_GPUMultisampleState.html">SDL_GPUMultisampleState</a> - グラフィックパイプラインのマルチサンプリングのパラメータの構造体
@@ -1504,7 +1504,7 @@
 <li>SDL_GPUVertexAttribute
 <li><a href="SDL_GPUVertexBufferDescription.html">SDL_GPUVertexBufferDescription</a> - グラフィックパイプラインで使用される頂点バッファのパラメータの構造体
 <li><a href="SDL_GPUVertexInputState.html">SDL_GPUVertexInputState</a> - グラフィックパイプラインの頂点の入力状態のパラメータの構造体
-<li>SDL_GPUViewport
+<li><a href="SDL_GPUViewport.html">SDL_GPUViewport</a> - ビューポートを表す構造体
 <li><a href="SDL_GUID.html">SDL_GUID</a> - 128ビットの識別子の構造体
 <li><a href="SDL_HapticCondition.html">SDL_HapticCondition</a> - 条件エフェクトのテンプレートの構造体
 <li><a href="SDL_HapticConstant.html">SDL_HapticConstant</a> - 一定エフェクトのテンプレートの構造体
@@ -1605,7 +1605,7 @@
 <li><a href="SDL_GPUFilter.html">SDL_GPUFilter</a> - サンプラが使用するフィルタリング処理の列挙体
 <li><a href="SDL_GPUFrontFace.html">SDL_GPUFrontFace</a> - 三角形を表面とする頂点の回転方向の列挙体
 <li><a href="SDL_GPUIndexElementSize.html">SDL_GPUIndexElementSize</a> - インデックスバッファの要素のサイズの列挙体
-<li>SDL_GPULoadOp
+<li><a href="SDL_GPULoadOp.html">SDL_GPULoadOp<a> - レンダーパスに割り付けられたテクスチャのレンダーパスの開始時の扱い方の列挙体
 <li><a href="SDL_GPUPresentMode.html">SDL_GPUPresentMode</a> - スワップチェーンテクスチャがOSに提示されるタイミングの列挙体
 <li><a href="SDL_GPUPrimitiveType.html">SDL_GPUPrimitiveType</a> - グラフィックパイプラインのプリミティブトポロジの列挙体
 <li><a href="SDL_GPUSampleCount.html">SDL_GPUSampleCount</a> - テクスチャのサンプリング数の列挙体
@@ -1613,7 +1613,7 @@
 <li><a href="SDL_GPUSamplerMipmapMode.html">SDL_GPUSamplerMipmapMode</a> - サンプラが使用するミップマップモードの列挙体
 <li><a href="SDL_GPUShaderStage.html">SDL_GPUShaderStage</a> - シェーダプログラムの対応するステージの列挙体
 <li><a href="SDL_GPUStencilOp.html">SDL_GPUStencilOp</a> - 深度テストに合格または失敗したときストアされたステンシル値に起こることの列挙体
-<li>SDL_GPUStoreOp
+<li><a href="SDL_GPUStoreOp.html">SDL_GPUStoreOp</a> - レンダーパスに割り付けられたテクスチャのレンダーパスの終了時の扱い方の列挙体
 <li><a href="SDL_GPUSwapchainComposition.html">SDL_GPUSwapchainComposition</a> - スワップチェーンテクスチャのテクスチャの形式と色空間の列挙体
 <li><a href="SDL_GPUTextureFormat.html">SDL_GPUTextureFormat</a> - GPUテクスチャのピクセル形式の列挙体
 <li><a href="SDL_GPUTextureType.html">SDL_GPUTextureType</a> - GPUテクスチャの種類の列挙体
