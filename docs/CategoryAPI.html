@@ -49,12 +49,12 @@
 <li><a href="SDL_AttachVirtualJoystick.html">SDL_AttachVirtualJoystick</a> - 仮想ジョイスティックを新しく接続する
 <li><a href="SDL_AudioDevicePaused.html">SDL_AudioDevicePaused</a> - オーディオデバイスが一時停止中かチェックする
 <li><a href="SDL_AudioStreamDevicePaused.html">SDL_AudioStreamDevicePaused</a> - オーディオデバイスに関連付けられたオーディオストリームが一時停止中かチェックする
-<li>SDL_BeginGPUComputePass
-<li>SDL_BeginGPUCopyPass
+<li><a href="SDL_BeginGPUComputePass.html">SDL_BeginGPUComputePass</a> - コマンドバッファのコンピュートパスを開始する
+<li><a href="SDL_BeginGPUCopyPass.html">SDL_BeginGPUCopyPass</a> - コマンドバッファのコピーパスを開始する
 <li><a href="SDL_BeginGPURenderPass.html">SDL_BeginGPURenderPass</a> - コマンドバッファのレンダーパスを開始する
 <li><a href="SDL_BindAudioStream.html">SDL_BindAudioStream</a> - 1つのオーディオストリームをオーディオデバイスにバインドする
 <li><a href="SDL_BindAudioStreams.html">SDL_BindAudioStreams</a> - オーディオストリームの一覧をオーディオデバイスにバインドする
-<li>SDL_BindGPUComputePipeline
+<li><a href="SDL_BindGPUComputePipeline.html">SDL_BindGPUComputePipeline</a> - コンピュートディスパッチで使用するためにコンピュートパイプラインをコマンドバッファにバインドする
 <li>SDL_BindGPUComputeSamplers
 <li>SDL_BindGPUComputeStorageBuffers
 <li>SDL_BindGPUComputeStorageTextures
@@ -199,8 +199,8 @@
 <li><a href="SDL_DisableScreenSaver.html">SDL_DisableScreenSaver</a> - スクリーンセーバーを無効にする
 <li>SDL_DispatchGPUCompute
 <li>SDL_DispatchGPUComputeIndirect
-<li>SDL_DownloadFromGPUBuffer
-<li>SDL_DownloadFromGPUTexture
+<li><a href="SDL_DownloadFromGPUBuffer.html">SDL_DownloadFromGPUBuffer()</a> - バッファのデータを転送バッファにGPUタイムラインでコピーする
+<li><a href="SDL_DownloadFromGPUTexture.html">SDL_DownloadFromGPUTexture</a> - テクスチャのデータを転送バッファにGPUタイムラインでコピーする
 <li>SDL_DrawGPUIndexedPrimitives
 <li><a href="SDL_DrawGPUIndexedPrimitivesIndirect.html">SDL_DrawGPUIndexedPrimitivesIndirect</a> - バインドしたインデックスバッファを有効にしたグラフィックステートを使用してバッファの描画パラメータでデータを描画する
 <li><a href="SDL_DrawGPUPrimitives.html">SDL_DrawGPUPrimitives</a> - バインドしたグラフィックステートを使用してデータを描画する
@@ -212,8 +212,8 @@
 <li><a href="SDL_EGL_GetWindowSurface.html">SDL_EGL_GetWindowSurface</a> - ウィンドウのEGLサーフェイスを得る
 <li><a href="SDL_EGL_SetAttributeCallbacks.html">SDL_EGL_SetAttributeCallbacks</a> - EGL初期化時のカスタムattribute配列を設定するのためのコールバックを設定する 
 <li><a href="SDL_EnableScreenSaver.html">SDL_EnableScreenSaver</a> - スクリーンセーバーを有効にする
-<li>SDL_EndGPUComputePass
-<li>SDL_EndGPUCopyPass
+<li><a href="SDL_EndGPUComputePass.html">SDL_EndGPUComputePass</a> - 現在のコンピュートパスを終了する
+<li><a href="SDL_EndGPUCopyPass.html">SDL_EndGPUCopyPass</a> - 現在のコピーパスを終了する
 <li><a href="SDL_EndGPURenderPass.html">SDL_EndGPURenderPass()</a> - 指定したレンダーパスを終了する
 <li><a href="SDL_EnterAppMainCallbacks.html">SDL_EnterAppMainCallbacks</a> - メインコールバックを使用する場合のエントリーポイント
 <li><a href="SDL_EnumerateDirectory.html">SDL_EnumerateDirectory</a> - コールバックを通してディレクトリの内容を列挙する
@@ -900,7 +900,7 @@
 <li><a href="SDL_ReleaseCameraFrame.html">SDL_ReleaseCameraFrame</a> - カメラに要求したビデオフレームを返却する
 <li>SDL_ReleaseGPUBuffer
 <li>SDL_ReleaseGPUComputePipeline
-<li>SDL_ReleaseGPUFence
+<li><a href="SDL_ReleaseGPUFence.html">SDL_ReleaseGPUFence()</a> - SDL_SubmitGPUCommandBufferAndAcquireFenceで得たフェンスを解放する
 <li><a href="SDL_ReleaseGPUGraphicsPipeline.html">SDL_ReleaseGPUGraphicsPipeline</a> - 指定のグラフィックパイプラインを安全に行えるようになれば可能な限り早く解放する
 <li>SDL_ReleaseGPUSampler
 <li>SDL_ReleaseGPUShader
@@ -1176,8 +1176,8 @@
 <li><a href="SDL_strtoul.html">SDL_strtoul</a> - 文字列を解析してunsigned long型の数値に変換する
 <li><a href="SDL_strtoull.html">SDL_strtoull</a> - 文字列を解析してunsigned long long型の数値に変換する
 <li><a href="SDL_strupr.html">SDL_strupr</a> - 文字列を大文字に変換する
-<li>SDL_SubmitGPUCommandBuffer
-<li>SDL_SubmitGPUCommandBufferAndAcquireFence
+<li><a href="SDL_SubmitGPUCommandBuffer.html">SDL_SubmitGPUCommandBuffer</a> - GPUにコマンドを実行させるためにコマンドバッファを送信する
+<li><a href="SDL_SubmitGPUCommandBufferAndAcquireFence.html">SDL_SubmitGPUCommandBufferAndAcquireFence</a> - GPUにコマンドを実行させるためにコマンドバッファを送信し, コマンドバッファに関連付けられたフェンスを要求する
 <li><a href="SDL_SurfaceHasAlternateImages.html">SDL_SurfaceHasAlternateImages</a> - サーフェイスに利用可能な別のバージョンがあるかを得る
 <li><a href="SDL_SurfaceHasColorKey.html">SDL_SurfaceHasColorKey</a> - サーフェイスのカラーキーの有無を得る
 <li><a href="SDL_SurfaceHasRLE.html">SDL_SurfaceHasRLE</a> - サーフェイスのRLEが有効かを得る
@@ -1354,8 +1354,8 @@
 <li><a href="SDL_GPUBufferUsageFlags.html">SDL_GPUBufferUsageFlags</a> - クライアントのGPUバッファの使用方法のフラグの型
 <li><a href="SDL_GPUColorComponentFlags.html">SDL_GPUColorComponentFlags</a> - グラフィックパイプラインで書き込まれる色成分の型
 <li><a href="SDL_GPUCommandBuffer.html">SDL_GPUCommandBuffer</a> - コマンドバッファの不透明型
-<li>SDL_GPUComputePass
-<li>SDL_GPUComputePipeline
+<li><a href="SDL_GPUComputePass.html">SDL_GPUComputePass</a> - GPUコンピュートパスの不透明ハンドルの型
+<li><a href="SDL_GPUComputePipeline.html">SDL_GPUComputePipeline</a> - コンピュートパイプラインの不透明型
 <li><a href="SDL_GPUCopyPass.html">SDL_GPUCopyPass</a> - GPUコピーパスの不透明ハンドルの型
 <li><a href="SDL_GPUDevice.html">SDL_GPUDevice</a> - SDL GPUコンテキストの不透明型
 <li>SDL_GPUFence
@@ -1492,8 +1492,8 @@
 <li>SDL_GPUSamplerCreateInfo
 <li><a href="SDL_GPUShaderCreateInfo.html">SDL_GPUShaderCreateInfo</a> - 生成するシェーダオブジェクトのコードとメタデータを指定する構造体
 <li><a href="SDL_GPUStencilOpState.html">SDL_GPUStencilOpState</a> - グラフィックパイプラインのステンシル演算の構造体
-<li>SDL_GPUStorageBufferReadWriteBinding
-<li>SDL_GPUStorageTextureReadWriteBinding
+<li><a href="SDL_GPUStorageBufferReadWriteBinding.html">SDL_GPUStorageBufferReadWriteBinding</a> - コンピュートパスのバインドするバッファに関連付けられたパラメータの構造体
+<li><a href="SDL_GPUStorageTextureReadWriteBinding.html">SDL_GPUStorageTextureReadWriteBinding</a> - コンピュートパスのバインドするテクスチャに関連付けられたパラメータの構造体
 <li><a href="SDL_GPUTextureCreateInfo.html">SDL_GPUTextureCreateInfo</a> - GPUテクスチャのパラメータの構造体
 <li>SDL_GPUTextureLocation
 <li><a href="SDL_GPUTextureRegion.html">SDL_GPUTextureRegion</a> - GPUテクスチャの領域の構造体

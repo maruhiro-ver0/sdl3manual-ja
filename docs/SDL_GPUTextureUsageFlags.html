@@ -23,8 +23,8 @@
 <tr><td>SDL_GPU_TEXTUREUSAGE_COLOR_TARGET</td><td>(1u &lt;&lt; 1)</td><td>テクスチャはカラーレンダリングターゲットである</td></tr>
 <tr><td>SDL_GPU_TEXTUREUSAGE_DEPTH_STENCIL_TARGET</td><td>(1u &lt;&lt; 2)</td><td>テクスチャは深度ステンシルである</td></tr>
 <tr><td>SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ</td><td>(1u &lt;&lt; 3)</td><td>テクスチャはグラフィックステージでの読込に対応する</td></tr>
-<tr><td>SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_READ</td><td>(1u &lt;&lt; 4)</td><td>テクスチャはコンピューティングステージでの読込に対応する</td></tr>
-<tr><td>SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_WRITE</td><td>(1u &lt;&lt; 5)</td><td>テクスチャはコンピューティングステージでの書込に対応する</td></tr>
+<tr><td>SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_READ</td><td>(1u &lt;&lt; 4)</td><td>テクスチャはコンピュートステージでの読込に対応する</td></tr>
+<tr><td>SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_WRITE</td><td>(1u &lt;&lt; 5)</td><td>テクスチャはコンピュートステージでの書込に対応する</td></tr>
 <tr><td>SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE</td><td>(1u &lt;&lt; 6)</td><td>テクスチャは同一のコンピューティングシェーダによる読込と書込に対応する. これはREAD | WRITEとは異なる</td></tr>
 </table>
 <h2>詳細</h2>
@@ -34,9 +34,9 @@
 </p>
 <p>
 COMPUTE_STORAGEでは, READ | WRITEは, テクスチャへの書込のみを行うシェーダAとテクスチャからの読込のみを行うシェーダBを持ち, それぞれのシェーダが同一のテクスチャにバインドできることを意味する.
-SIMULTANEOUSは, 同一のシェーダまたはコンピューティングパスが読込と書込を行えることを意味する.
+SIMULTANEOUSは, 同一のシェーダまたはコンピュートパスが読込と書込を行えることを意味する.
 さらにこれらはリード・モディファイ・ライト操作であるため, アトミックな操作が可能であることも意味している.
-SIMULTANEOUSを使用する場合, コンピューティングパスではデータ同期を行わないため, 利用者の責任でデータ競合を防ぐ必要がある.
+SIMULTANEOUSを使用する場合, コンピュートパスではデータ同期を行わないため, 利用者の責任でデータ競合を防ぐ必要がある.
 SIMULTANEOUSを使用できるのは一部のテクスチャ形式のみなので注意すること.
 <h2>バージョン</h2>
 SDL 3.2.0以降
