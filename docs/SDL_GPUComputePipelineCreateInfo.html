@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_GPUComputePipelineCreateInfo</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_GPUComputePipelineCreateInfo
+<hr>
+<h1>SDL_GPUComputePipelineCreateInfo</h1>
+生成するコンピュートパイプラインのパラメータを指定する構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>フィールド</h2>
+<table border="1">
+<tr><td>size_t</td><td>code_size</td><td>ポインタのコードのバイト数</td></tr>
+<tr><td>const Uint8 *</td><td>code</td><td>コンピュートシェーダコードへのポインタ</td></tr>
+<tr><td>const char *</td><td>entrypoint</td><td>シェーダのエントリーポイント関数名を表すNUL終端のUTF-8文字列へのポインタ</td></tr>
+<tr><td><a href="SDL_GPUShaderFormat.html">SDL_GPUShaderFormat</a></td><td>format</td><td>コンピュートシェーダコードの形式</td></tr>
+<tr><td>Uint32</td><td>num_samplers</td><td>シェーダに定義されたサンプラの数</td></tr>
+<tr><td>Uint32</td><td>num_readonly_storage_textures</td><td>シェーダに定義された読取専用ストレージテクスチャの数</td></tr>
+<tr><td>Uint32</td><td>num_readonly_storage_buffers</td><td>シェーダに定義された読取専用ストレージバッファの数</td></tr>
+<tr><td>Uint32</td><td>num_readwrite_storage_textures</td><td>シェーダに定義された読み書き可能ストレージテクスチャの数</td></tr>
+<tr><td>Uint32</td><td>num_readwrite_storage_buffers</td><td>シェーダに定義された読み書き可能ストレージバッファの数</td></tr>
+<tr><td>Uint32</td><td>num_uniform_buffers</td><td>シェーダに定義されたユニフォームバッファの数</td></tr>
+<tr><td>Uint32</td><td>threadcount_x</td><td>X軸方向のスレッド数. これはシェーダの値と一致する必要がある</td></tr>
+<tr><td>Uint32</td><td>threadcount_y</td><td>Y軸方向のスレッド数. これはシェーダの値と一致する必要がある</td></tr>
+<tr><td>Uint32</td><td>threadcount_z</td><td>Z軸方向のスレッド数. これはシェーダの値と一致する必要がある</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>拡張のプロパティグループID. 拡張が必要ない場合は0にすること</td></tr>
+</table>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_CreateGPUComputePipeline.html">SDL_CreateGPUComputePipeline</a>
+<li><a href="SDL_GPUShaderFormat.html">SDL_GPUShaderFormat</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GPUComputePipelineCreateInfo">SDL_GPUComputePipelineCreateInfo - SDL Wiki</a>
+<hr>
+</body>
+</html>
