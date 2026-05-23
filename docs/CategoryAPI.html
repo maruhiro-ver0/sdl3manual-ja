@@ -67,7 +67,7 @@
 <li><a href="SDL_BindGPUVertexSamplers.html">SDL_BindGPUVertexSamplers()</a> - 頂点シェーダで使用するためにテクスチャとサンプラをバインドする
 <li><a href="SDL_BindGPUVertexStorageBuffers.html">SDL_BindGPUVertexStorageBuffers</a> - 頂点シェーダで使用するためにストレージバッファをバインドする
 <li><a href="SDL_BindGPUVertexStorageTextures.html">SDL_BindGPUVertexStorageTextures</a> - 頂点シェーダで使用するためにストレージテクスチャをバインドする
-<li>SDL_BlitGPUTexture
+<li><a href="SDL_BlitGPUTexture.html">SDL_BlitGPUTexture</a> - 元領域のテクスチャを先領域のテクスチャに転送する
 <li><a href="SDL_BlitSurface.html">SDL_BlitSurface</a> - サーフェイスを別のサーフェイスに高速にブロック転送する
 <li><a href="SDL_BlitSurface9Grid.html">SDL_BlitSurface9Grid</a> - サーフェイスに9-grid algorithmを使用して拡大縮小して転送する
 <li><a href="SDL_BlitSurfaceScaled.html">SDL_BlitSurfaceScaled</a> - サーフェイスに拡大縮小して転送する
@@ -78,9 +78,9 @@
 <li><a href="SDL_BroadcastCondition.html">SDL_BroadcastCondition</a> - 条件変数を待つ全てのスレッドを再開する
 <li><a href="SDL_bsearch.html">SDL_bsearch</a> - ソートされた配列にバイナリサーチを行う
 <li><a href="SDL_bsearch_r.html">SDL_bsearch_r</a> - ソートされた配列に比較関数にユーザデータを渡してバイナリサーチを行う
-<li>SDL_CalculateGPUTextureFormatSize
+<li><a href="SDL_CalculateGPUTextureFormatSize.html">SDL_CalculateGPUTextureFormatSize</a> - 形式と次元を指定してテクスチャのサイズのバイト数を求める
 <li><a href="SDL_calloc.html">SDL_calloc</a> - 0で初期化された配列を確保する
-<li>SDL_CancelGPUCommandBuffer
+<li><a href="SDL_CancelGPUCommandBuffer.html">SDL_CancelGPUCommandBuffer</a> - コマンドバッファを取り消す
 <li><a href="SDL_CaptureMouse.html">SDL_CaptureMouse</a> - SDLウィンドウの外でのマウスやトラックボールの入力を得られるように捕捉する
 <li><a href="SDL_ceil.html">SDL_ceil</a> - xを切り上げた値を求める
 <li><a href="SDL_ceilf.html">SDL_ceilf</a> - xを切り上げた値を求める
@@ -113,8 +113,8 @@
 <li><a href="SDL_ConvertSurface.html">SDL_ConvertSurface</a> - 既存のサーフェイスを別の形式に変換して新しいサーフェイスを生成する
 <li><a href="SDL_ConvertSurfaceAndColorspace.html">SDL_ConvertSurfaceAndColorspace</a> - 既存のサーフェイスを別の形式に変換して新しいサーフェイスを生成する
 <li><a href="SDL_CopyFile.html">SDL_CopyFile</a> - ファイルをコピーする
-<li>SDL_CopyGPUBufferToBuffer
-<li>SDL_CopyGPUTextureToTexture
+<li><a href="SDL_CopyGPUBufferToBuffer.html">SDL_CopyGPUBufferToBuffer</a> - バッファ間のコピーを行う
+<li><a href="SDL_CopyGPUTextureToTexture.html">SDL_CopyGPUTextureToTexture</a> - テクスチャ間のコピーを行う
 <li><a href="SDL_CopyProperties.html">SDL_CopyProperties</a> - プロパティグループをコピーする
 <li><a href="SDL_copysign.html">SDL_copysign</a> - ある浮動小数点の値の符号を別の浮動小数点の符号にコピーする
 <li><a href="SDL_copysignf.html">SDL_copysignf</a> - ある浮動小数点の値の符号を別の浮動小数点の符号にコピーする
@@ -1469,11 +1469,11 @@
 <li><a href="SDL_GamepadDeviceEvent.html">SDL_GamepadDeviceEvent</a> - ゲームパッドデバイスイベントの構造体(event.gdevice.*)
 <li><a href="SDL_GamepadSensorEvent.html">SDL_GamepadSensorEvent</a> - ゲームパッドセンサーイベントの構造体(event.gsensor.*)
 <li><a href="SDL_GamepadTouchpadEvent.html">SDL_GamepadTouchpadEvent</a> - ゲームパッドタッチイベントの構造体(event.gdevice.*)
-<li>SDL_GPUBlitInfo
-<li>SDL_GPUBlitRegion
+<li><a href="SDL_GPUBlitInfo.html">SDL_GPUBlitInfo</a> - 転送コマンドのパラメータの構造体 
+<li><a href="SDL_GPUBlitRegion.html">SDL_GPUBlitRegion</a> - 転送操作で使用するテクスチャの領域の構造体
 <li><a href="SDL_GPUBufferBinding.html">SDL_GPUBufferBinding</a> - バッファのバインドの呼び出しのパラメータの構造体
 <li><a href="SDL_GPUBufferCreateInfo.html">SDL_GPUBufferCreateInfo</a> - GPUバッファのパラメータの構造体
-<li>SDL_GPUBufferLocation
+<li><a href="SDL_GPUBufferLocation.html">SDL_GPUBufferLocation</a> - バッファ内の位置を指定する構造体
 <li><a href="SDL_GPUBufferRegion.html">SDL_GPUBufferRegion</a> - GPUバッファ内の領域を表す構造体
 <li><a href="SDL_GPUColorTargetBlendState.html">SDL_GPUColorTargetBlendState</a> - カラーターゲットのブレンドを指定する構造体
 <li><a href="SDL_GPUColorTargetDescription.html">SDL_GPUColorTargetDescription</a> - グラフィックパイプラインで使用するカラーターゲットのパラメータの構造体
@@ -1495,7 +1495,7 @@
 <li><a href="SDL_GPUStorageBufferReadWriteBinding.html">SDL_GPUStorageBufferReadWriteBinding</a> - コンピュートパスのバインドするバッファに関連付けられたパラメータの構造体
 <li><a href="SDL_GPUStorageTextureReadWriteBinding.html">SDL_GPUStorageTextureReadWriteBinding</a> - コンピュートパスのバインドするテクスチャに関連付けられたパラメータの構造体
 <li><a href="SDL_GPUTextureCreateInfo.html">SDL_GPUTextureCreateInfo</a> - GPUテクスチャのパラメータの構造体
-<li>SDL_GPUTextureLocation
+<li><a href="SDL_GPUTextureLocation.html">SDL_GPUTextureLocation</a> - テクスチャ内の位置を指定する構造体
 <li><a href="SDL_GPUTextureRegion.html">SDL_GPUTextureRegion</a> - GPUテクスチャの領域の構造体
 <li><a href="SDL_GPUTextureSamplerBinding.html">SDL_GPUTextureSamplerBinding</a> - サンプラのバインド時のパラメータの構造体
 <li><a href="SDL_GPUTextureTransferInfo.html">SDL_GPUTextureTransferInfo</a> - データのテクスチャへの転送とテクスチャからの転送に関するパラメータの構造体

@@ -328,12 +328,12 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li><a href="SDL_BindGPUVertexSamplers.html">SDL_BindGPUVertexSamplers</a> - 頂点シェーダで使用するためにテクスチャとサンプラをバインドする
 <li><a href="SDL_BindGPUVertexStorageBuffers.html">SDL_BindGPUVertexStorageBuffers</a> - 頂点シェーダで使用するためにストレージバッファをバインドする
 <li><a href="SDL_BindGPUVertexStorageTextures.html">SDL_BindGPUVertexStorageTextures</a> - 頂点シェーダで使用するためにストレージテクスチャをバインドする
-<li>SDL_BlitGPUTexture
-<li>SDL_CalculateGPUTextureFormatSize
-<li>SDL_CancelGPUCommandBuffer
+<li><a href="SDL_BlitGPUTexture.html">SDL_BlitGPUTexture</a> - 元領域のテクスチャを先領域のテクスチャに転送する
+<li><a href="SDL_CalculateGPUTextureFormatSize.html">SDL_CalculateGPUTextureFormatSize</a> - 形式と次元を指定してテクスチャのサイズのバイト数を求める
+<li><a href="SDL_CancelGPUCommandBuffer.html">SDL_CancelGPUCommandBuffer</a> - コマンドバッファを取り消す
 <li><a href="SDL_ClaimWindowForGPUDevice.html">SDL_ClaimWindowForGPUDevice</a> - ウィンドウを割り当ててスワップチェーンを生成する
-<li>SDL_CopyGPUBufferToBuffer
-<li>SDL_CopyGPUTextureToTexture
+<li><a href="SDL_CopyGPUBufferToBuffer.html">SDL_CopyGPUBufferToBuffer</a> - バッファ間のコピーを行う
+<li><a href="SDL_CopyGPUTextureToTexture.html">SDL_CopyGPUTextureToTexture</a> - テクスチャ間のコピーを行う
 <li><a href="SDL_CreateGPUBuffer.html">SDL_CreateGPUBuffer</a> - グラフィックまたはコンピューティングのワークフローで使用するバッファを生成する
 <li><a href="SDL_CreateGPUComputePipeline.html">SDL_CreateGPUComputePipeline</a> - グラフィックパイプラインを生成するとき使用されるシェーダを生成する
 <li><a href="SDL_CreateGPUDevice.html">SDL_CreateGPUDevice</a> - GPUコンテキストを生成する
@@ -381,7 +381,7 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li>SDL_QueryGPUFence
 <li>SDL_ReleaseGPUBuffer
 <li>SDL_ReleaseGPUComputePipeline
-<li><a href="SDL_ReleaseGPUFence.html">SDL_ReleaseGPUFence()</a> - SDL_SubmitGPUCommandBufferAndAcquireFenceで得たフェンスを解放する
+<li><a href="SDL_ReleaseGPUFence.html">SDL_ReleaseGPUFence</a> - SDL_SubmitGPUCommandBufferAndAcquireFenceで得たフェンスを解放する
 <li><a href="SDL_ReleaseGPUGraphicsPipeline.html">SDL_ReleaseGPUGraphicsPipeline</a> - 指定のグラフィックパイプラインを安全に行えるようになれば可能な限り早く解放する
 <li>SDL_ReleaseGPUSampler
 <li>SDL_ReleaseGPUShader
@@ -430,11 +430,11 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>SDL_GPUBlitInfo
-<li>SDL_GPUBlitRegion
+<li><a href="SDL_GPUBlitInfo.html">SDL_GPUBlitInfo</a> - 転送コマンドのパラメータの構造体 
+<li><a href="SDL_GPUBlitRegion.html">SDL_GPUBlitRegion</a> - 転送操作で使用するテクスチャの領域の構造体
 <li><a href="SDL_GPUBufferBinding.html">SDL_GPUBufferBinding</a> - バッファのバインドの呼び出しのパラメータの構造体
 <li><a href="SDL_GPUBufferCreateInfo.html">SDL_GPUBufferCreateInfo</a> - GPUバッファのパラメータの構造体
-<li>SDL_GPUBufferLocation
+<li><a href="SDL_GPUBufferLocation.html">SDL_GPUBufferLocation</a> - バッファ内の位置を指定する構造体
 <li><a href="SDL_GPUBufferRegion.html">SDL_GPUBufferRegion</a> - GPUバッファ内の領域を表す構造体
 <li><a href="SDL_GPUColorTargetBlendState.html">SDL_GPUColorTargetBlendState</a> - カラーターゲットのブレンドを指定する構造体
 <li><a href="SDL_GPUColorTargetDescription.html">SDL_GPUColorTargetDescription</a> - グラフィックパイプラインで使用するカラーターゲットのパラメータの構造体
@@ -455,7 +455,7 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li><a href="SDL_GPUStorageBufferReadWriteBinding.html">SDL_GPUStorageBufferReadWriteBinding</a> - コンピュートパスのバインドするバッファに関連付けられたパラメータの構造体
 <li><a href="SDL_GPUStorageTextureReadWriteBinding.html">SDL_GPUStorageTextureReadWriteBinding</a> - コンピュートパスのバインドするテクスチャに関連付けられたパラメータの構造体
 <li><a href="SDL_GPUTextureCreateInfo.html">SDL_GPUTextureCreateInfo</a> - GPUテクスチャのパラメータの構造体
-<li>SDL_GPUTextureLocation
+<li><a href="SDL_GPUTextureLocation.html">SDL_GPUTextureLocation</a> - テクスチャ内の位置を指定する構造体
 <li><a href="SDL_GPUTextureRegion.html">SDL_GPUTextureRegion</a> - GPUテクスチャの領域の構造体
 <li><a href="SDL_GPUTextureSamplerBinding.html">SDL_GPUTextureSamplerBinding</a> - サンプラのバインド時のパラメータの構造体
 <li><a href="SDL_GPUTextureTransferInfo.html">SDL_GPUTextureTransferInfo</a> - データのテクスチャへの転送とテクスチャからの転送に関するパラメータの構造体
