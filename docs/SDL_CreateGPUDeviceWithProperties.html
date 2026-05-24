@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_CreateGPUDeviceWithProperties</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_CreateGPUDeviceWithProperties
+<hr>
+<h1>SDL_CreateGPUDeviceWithProperties</h1>
+GPUコンテキストを生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>構文</h2>
+<code>SDL_GPUDevice * SDL_CreateGPUDeviceWithProperties(SDL_PropertiesID props);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>使用するプロパティグループ</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_GPUDevice.html">SDL_GPUDevice</a> *) 成功のときGPUコンテキストを戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+これらのプロパティに対応している:
+</p>
+<ul>
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_DEBUGMODE_BOOLEAN</code>: デバッグモードプロパティと検証を有効にする. デフォルトは真
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_PREFERLOWPOWER_BOOLEAN</code>: 最大GPUパフォーマンスよりも省電力を優先する. デフォルトは偽
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_VERBOSE_BOOLEAN</code>: デバイス生成時にデバッグ時に有用なログを自動的に出力する. デフォルトは真
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_NAME_STRING</code>: 特定のドライバを使用したい場合のGPUドライバの名前
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_FEATURE_CLIP_DISTANCE_BOOLEAN</code>: VulkanデバイスのshaderClipDistance機能.
+偽のとき, シェーダコードの距離によるクリッピング(GLSLのgl_ClipDistance[]組込変数, HLSLのSV_ClipDistance0/1セマンティクス, Metalの[[clip_distance]]属性)が無効になる.
+この機能を無効化すると一部の古いAndroid端末でアプリケーションが実行できるようになる.
+デフォルトは真
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_FEATURE_DEPTH_CLAMPING_BOOLEAN</code>: VulkanデバイスのdepthClamp機能.
+偽のとき, 深度クランピングが無効になり, <a href="SDL_GPURasterizerState.html">SDL_GPURasterizerState</a>の<code>enable_depth_clip</code>には常に真を設定することが必要になる.
+この機能を無効化すると一部の古いAndroid端末でアプリケーションが実行できるようになる.
+デフォルトは真
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_FEATURE_INDIRECT_DRAW_FIRST_INSTANCE_BOOLEAN</code>: VulkanデバイスのdrawIndirectFirstInstance機能.
+偽のとき, <a href="SDL_GPUIndirectDrawCommand.html">SDL_GPUIndirectDrawCommand</a>の<code>first_instance</code>引数には必ず0が設定される.
+この機能を無効化すると一部の古いAndroid端末でアプリケーションが実行できるようになる.
+デフォルトは真
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_FEATURE_ANISOTROPY_BOOLEAN</code>: VulkanデバイスのsamplerAnisotropy機能.
+偽のとき, SDL_GPUSamplerCreateInfoのenable_anisotropyには必ず偽が設定される.
+この機能を無効化すると一部の古いAndroid端末でアプリケーションが実行できるようになる.
+デフォルトは真
+</ul>
+<p>
+これらのシェーダ形式プロパティに対応している:
+</p>
+<ul>
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_PRIVATE_BOOLEAN</code>: アプリケーションはNDA(機密保持契約された)シェーダを提供できる
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_SPIRV_BOOLEAN</code>: アプリケーションは可能ならばVulkanのSPIR-Vシェーダを提供できる
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_DXBC_BOOLEAN</code>: アプリケーションは可能ならばD3D12のDXBC SM5_1シェーダを提供できる
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_DXIL_BOOLEAN</code>: アプリケーションは可能ならばD3D12のDXIL SM6_0シェーダを提供できる
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_MSL_BOOLEAN</code>: アプリケーションは可能ならばMetalのMSLシェーダを提供できる
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_METALLIB_BOOLEAN</code>: アプリケーションは可能ならばMetalのプリコンパイルされたmetallibシェーダを提供できる
+</ul>
+<p>
+バックエンドがD3D12の場合:
+</p>
+<ul>
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_D3D12_SEMANTIC_NAME_STRING</code>: 全ての頂点セマンティクスで使用する接頭辞. デフォルトは"TEXCOORD"
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_D3D12_ALLOW_FEWER_RESOURCE_SLOTS_BOOLEAN</code>: デフォルトでは, D3D12対応にはResourcing Binding Tier 2が必要である.
+しかし, もし(かつこの場合のみ)アプリケーションが全てのシェーダステージに渡り8以下のストレージリソースしか使用しない場合, アプリケーションはこのプロパティを真にしてTier 1対応を有効にできる.
+現時点では, このプロパティはIntel HaswellとBroadwell GPUを対象とするとき有用であり, 他のハードウェアはTier 2 Resource Bindingにも対応しているかD3D12に全く対応していない.
+デフォルトは偽
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_D3D12_AGILITY_SDK_VERSION_NUMBER</code>: デフォルトでは一部の機能のチェックはWindows 11の場合のみ可能である.
+これとSDL_PROP_GPU_DEVICE_CREATE_D3D12_AGILITY_SDK_PATH_STRINGを設定してD3D12 Agility SDKからD3D12Core.dllをベンダリングすると, 古い環境でもこのチェック機能を使用できる.
+設定するバージョンは, DLLのものと一致している必要がある.
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_D3D12_AGILITY_SDK_PATH_STRING</code>: デフォルトでは一部の機能のチェックはWindows 11の場合のみ可能である.
+これとSDL_PROP_GPU_DEVICE_CREATE_D3D12_AGILITY_SDK_VERSION_NUMBERを設定してD3D12 Agility SDKからD3D12Core.dllをベンダリングすると, 古い環境でもこのチェック機能を使用できる.
+設定するパスはアプリケーションの実行パスからの相対パスの必要がある.
+DLLとexeを同じディレクトリに配置しないこと. Microsoftはそれを強く推奨している.
+</ul>
+<p>
+バックエンドがVulkanの場合:
+</p>
+<ul>
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_VULKAN_REQUIRE_HARDWARE_ACCELERATION_BOOLEAN</code>: デフォルトでは, ソフトウェアレンダラ(例えばLavapipe Mesaドライバ)を含む全ての種類のVulkanデバイスが列挙される.
+これはアプリケーションがSDL_GPUを必要としているが, 自身でフォールバックレンダラ(例えばOpenGLレンダラ)を与えられる場合, このプロパティに真を設定するとよい.
+デフォルトは偽
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_VULKAN_OPTIONS_POINTER</code>: デバイスの生成で処理される<a href="SDL_GPUVulkanOptions.html">SDL_GPUVulkanOptions</a>構造体へのポインタ.
+これにより, APIバージョンやSDLの最小条件とは別に拡張機能を選択するなどのVulkan固有のオプションの設定を行える
+</ul>
+<p>
+バックエンドがMetalの場合:
+</p>
+<ul>
+<li><code>SDL_PROP_GPU_DEVICE_CREATE_METAL_ALLOW_MACFAMILY1_BOOLEAN</code>: デフォルトでは, macOSの対応はAppleが"MTLGPUFamilyMac2"と呼ぶものか, それよりも新しいハードウェアを求める.
+しかし, もし(かつこの場合のみ)アプリケーションがsRGBテクスチャの書き込みを行わない場合, アプリケーションがこのプロパティに真を設定すると, "MTLGPUFamilyMac1"ハードウェアの対応が有効になる.
+(参考: MacFamily1は間接コマンドバッファ, MSAA深度resolve, ステンシルresolve/feedbackに対応していないが, これらはSDL_GPUが公開している機能ではない.)
+</ul>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_GetGPUShaderFormats.html">SDL_GetGPUShaderFormats</a>
+<li><a href="SDL_GetGPUDeviceDriver.html">SDL_GetGPUDeviceDriver</a>
+<li><a href="SDL_DestroyGPUDevice.html">SDL_DestroyGPUDevice</a>
+<li><a href="SDL_GPUSupportsProperties.html">SDL_GPUSupportsProperties</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_CreateGPUDeviceWithProperties">SDL_CreateGPUDeviceWithProperties - SDL Wiki</a>
+<hr>
+</body>
+</html>

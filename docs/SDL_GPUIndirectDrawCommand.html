@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_GPUIndirectDrawCommand</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_GPUIndirectDrawCommand
+<hr>
+<h1>SDL_GPUIndirectDrawCommand</h1>
+間接描画コマンドのパラメータの構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>フィールド</h2>
+<table border="1">
+<tr><td>Uint32</td><td>num_vertices</td><td>描画する頂点の数</td></tr>
+<tr><td>Uint32</td><td>num_instances</td><td>描画するインスタンスの数</td></tr>
+<tr><td>Uint32</td><td>first_vertex</td><td>インデックスバッファの先頭インデックス番号</td></tr>
+<tr><td>Uint32</td><td>first_instance</td><td>描画する先頭インスタンスのID</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+<code>first_vertex</code>と<code>first_instance</code>は, シェーダの組込変数頂点/インスタンスID(例えばSV_VertexID)とは互換ではないので注意すること.
+GPU APIとシェーダ言語はこれらの組込変数を一貫性を保って定義していない.
+そのためシェーダがこれらに依存している場合, 動作の一貫性と移植性を保つ唯一の方法は, 描画の呼び出しで関連の引数に常に0を渡すことである.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_DrawGPUPrimitivesIndirect.html">SDL_DrawGPUPrimitivesIndirect</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GPUIndirectDrawCommand">SDL_GPUIndirectDrawCommand - SDL Wiki</a>
+<hr>
+</body>
+</html>
