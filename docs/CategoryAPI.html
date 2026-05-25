@@ -17,7 +17,7 @@
 <li><a href="SDL_acos.html">SDL_acos</a> - xのアークコサインを求める
 <li><a href="SDL_acosf.html">SDL_acosf</a> - xのアークコサインを求める
 <li><a href="SDL_AcquireCameraFrame.html">SDL_AcquireCameraFrame</a> - カメラにビデオフレームを要求する
-<li><a href="SDL_AcquireGPUCommandBuffer.html">SDL_AcquireGPUCommandBuffer()</a> - コマンドバッファを要求する
+<li><a href="SDL_AcquireGPUCommandBuffer.html">SDL_AcquireGPUCommandBuffer</a> - コマンドバッファを要求する
 <li><a href="SDL_AcquireGPUSwapchainTexture.html">SDL_AcquireGPUSwapchainTexture</a> - プレゼンテーションで使用するテクスチャを要求する
 <li><a href="SDL_AddAtomicInt.html">SDL_AddAtomicInt</a> - アトミック変数に加算する
 <li><a href="SDL_AddAtomicU32.html">SDL_AddAtomicU32</a> - アトミック変数に加算する
@@ -64,7 +64,7 @@
 <li><a href="SDL_BindGPUGraphicsPipeline.html">SDL_BindGPUGraphicsPipeline</a> - レンダリングで使用するレンダーパスをグラフィックパイプラインにバインドする
 <li><a href="SDL_BindGPUIndexBuffer.html">SDL_BindGPUIndexBuffer</a> - 後の描画呼び出しのためにインデックスバッファをコマンドバッファにバインドする
 <li><a href="SDL_BindGPUVertexBuffers.html">SDL_BindGPUVertexBuffers</a> - 後の描画呼び出しのために頂点バッファをコマンドバッファにバインドする
-<li><a href="SDL_BindGPUVertexSamplers.html">SDL_BindGPUVertexSamplers()</a> - 頂点シェーダで使用するためにテクスチャとサンプラをバインドする
+<li><a href="SDL_BindGPUVertexSamplers.html">SDL_BindGPUVertexSamplers</a> - 頂点シェーダで使用するためにテクスチャとサンプラをバインドする
 <li><a href="SDL_BindGPUVertexStorageBuffers.html">SDL_BindGPUVertexStorageBuffers</a> - 頂点シェーダで使用するためにストレージバッファをバインドする
 <li><a href="SDL_BindGPUVertexStorageTextures.html">SDL_BindGPUVertexStorageTextures</a> - 頂点シェーダで使用するためにストレージテクスチャをバインドする
 <li><a href="SDL_BlitGPUTexture.html">SDL_BlitGPUTexture</a> - 元領域のテクスチャを先領域のテクスチャに転送する
@@ -199,9 +199,9 @@
 <li><a href="SDL_DisableScreenSaver.html">SDL_DisableScreenSaver</a> - スクリーンセーバーを無効にする
 <li><a href="SDL_DispatchGPUCompute.html">SDL_DispatchGPUCompute</a> - コンピュートワークをディスパッチする
 <li><a href="SDL_DispatchGPUComputeIndirect.html">SDL_DispatchGPUComputeIndirect</a> - バッファのパラメータを設定してコンピュートワークをディスパッチする
-<li><a href="SDL_DownloadFromGPUBuffer.html">SDL_DownloadFromGPUBuffer()</a> - バッファのデータを転送バッファにGPUタイムラインでコピーする
+<li><a href="SDL_DownloadFromGPUBuffer.html">SDL_DownloadFromGPUBuffer</a> - バッファのデータを転送バッファにGPUタイムラインでコピーする
 <li><a href="SDL_DownloadFromGPUTexture.html">SDL_DownloadFromGPUTexture</a> - テクスチャのデータを転送バッファにGPUタイムラインでコピーする
-<li>SDL_DrawGPUIndexedPrimitives
+<li><a href="SDL_DrawGPUIndexedPrimitives.html">SDL_DrawGPUIndexedPrimitives</a> - インデックスバッファを使用しインスタンス化を有効にしたバインドされたグラフィックステートでデータを描画する
 <li><a href="SDL_DrawGPUIndexedPrimitivesIndirect.html">SDL_DrawGPUIndexedPrimitivesIndirect</a> - バインドしたインデックスバッファを有効にしたグラフィックステートを使用してバッファの描画パラメータでデータを描画する
 <li><a href="SDL_DrawGPUPrimitives.html">SDL_DrawGPUPrimitives</a> - バインドしたグラフィックステートを使用してデータを描画する
 <li><a href="SDL_DrawGPUPrimitivesIndirect.html">SDL_DrawGPUPrimitivesIndirect</a> - バインドしたグラフィックステートを使用してバッファの描画パラメータでデータを描画する
@@ -214,7 +214,7 @@
 <li><a href="SDL_EnableScreenSaver.html">SDL_EnableScreenSaver</a> - スクリーンセーバーを有効にする
 <li><a href="SDL_EndGPUComputePass.html">SDL_EndGPUComputePass</a> - 現在のコンピュートパスを終了する
 <li><a href="SDL_EndGPUCopyPass.html">SDL_EndGPUCopyPass</a> - 現在のコピーパスを終了する
-<li><a href="SDL_EndGPURenderPass.html">SDL_EndGPURenderPass()</a> - 指定したレンダーパスを終了する
+<li><a href="SDL_EndGPURenderPass.html">SDL_EndGPURenderPass</a> - 指定したレンダーパスを終了する
 <li><a href="SDL_EnterAppMainCallbacks.html">SDL_EnterAppMainCallbacks</a> - メインコールバックを使用する場合のエントリーポイント
 <li><a href="SDL_EnumerateDirectory.html">SDL_EnumerateDirectory</a> - コールバックを通してディレクトリの内容を列挙する
 <li><a href="SDL_EnumerateProperties.html">SDL_EnumerateProperties</a> - プロパティグループのプロパティを列挙する
@@ -245,10 +245,10 @@
 <li><a href="SDL_GamepadHasButton.html">SDL_GamepadHasButton</a> - ゲームパッドに指定のボタンが存在するかチェックする
 <li><a href="SDL_GamepadHasSensor.html">SDL_GamepadHasSensor</a> - ゲームパッドに指定のセンサーが存在するかチェックする
 <li><a href="SDL_GamepadSensorEnabled.html">SDL_GamepadSensorEnabled</a> - ゲームパッドのセンサーデータ報告が有効かチェックする
-<li>SDL_GDKResumeGPU
+<li><a href="SDL_GDKResumeGPU.html">SDL_GDKResumeGPU</a> - XboxでSDL_EVENT_WILL_ENTER_FOREGROUNDイベントを受信した後にGPU処理を復帰させる
 <li><a href="SDL_GDKSuspendComplete.html">SDL_GDKSuspendComplete</a> - 一時停止から実行を再開させるためのアプリケーションからのコールバック
-<li>SDL_GDKSuspendGPU
-<li>SDL_GenerateMipmapsForGPUTexture
+<li><a href="SDL_GDKSuspendGPU.html">SDL_GDKSuspendGPU</a> - XboxでSDL_EVENT_DID_ENTER_BACKGROUNDイベントを受信した後にGPU処理を一時停止させる
+<li><a href="SDL_GenerateMipmapsForGPUTexture.html">SDL_GenerateMipmapsForGPUTexture</a> - テクスチャのミップマップを生成する
 <li><a href="SDL_GetAndroidActivity.html">SDL_GetAndroidActivity</a> - AndroidアクティビティクラスのJavaインスタンスを得る
 <li><a href="SDL_GetAndroidCachePath.html">SDL_GetAndroidCachePath</a> - Androidアプリケーションのキャッシュデータのパス名を得る
 <li><a href="SDL_GetAndroidExternalStoragePath.html">SDL_GetAndroidExternalStoragePath</a> - Androidアプリケーションの使う外部ストレージのパス名を得る
@@ -898,11 +898,11 @@
 <li><a href="SDL_RegisterApp.html">SDL_RegisterApp</a> - SDLが使用するためにwin32ウィンドウクラスを登録する 
 <li><a href="SDL_RegisterEvents.html">SDL_RegisterEvents</a> - 複数のユーザ定義のイベントの領域を確保し, 先頭のイベントの番号を戻す
 <li><a href="SDL_ReleaseCameraFrame.html">SDL_ReleaseCameraFrame</a> - カメラに要求したビデオフレームを返却する
-<li>SDL_ReleaseGPUBuffer
-<li>SDL_ReleaseGPUComputePipeline
-<li><a href="SDL_ReleaseGPUFence.html">SDL_ReleaseGPUFence()</a> - SDL_SubmitGPUCommandBufferAndAcquireFenceで得たフェンスを解放する
+<li><a href="SDL_ReleaseGPUBuffer.html">SDL_ReleaseGPUBuffer</a> - 指定のバッファを安全に行えるようになれば可能な限り早く解放する
+<li><a href="SDL_ReleaseGPUComputePipeline.html">SDL_ReleaseGPUComputePipeline</a> - 指定のコンピュートパイプラインを安全に行えるようになれば可能な限り早く解放する
+<li><a href="SDL_ReleaseGPUFence.html">SDL_ReleaseGPUFence</a> - SDL_SubmitGPUCommandBufferAndAcquireFenceで得たフェンスを解放する
 <li><a href="SDL_ReleaseGPUGraphicsPipeline.html">SDL_ReleaseGPUGraphicsPipeline</a> - 指定のグラフィックパイプラインを安全に行えるようになれば可能な限り早く解放する
-<li>SDL_ReleaseGPUSampler
+<li><a href="SDL_ReleaseGPUSampler.html">SDL_ReleaseGPUSampler</a> - 指定のサンプラを安全に行えるようになれば可能な限り早く解放する
 <li>SDL_ReleaseGPUShader
 <li>SDL_ReleaseGPUTexture
 <li>SDL_ReleaseGPUTransferBuffer
@@ -1248,7 +1248,7 @@
 <li><a href="SDL_Vulkan_GetVkGetInstanceProcAddr.html">SDL_Vulkan_GetVkGetInstanceProcAddr</a> - vkGetInstanceProcAddr関数のアドレスを得る
 <li><a href="SDL_Vulkan_LoadLibrary.html">SDL_Vulkan_LoadLibrary</a> - Vulkanライブラリの関数を動的に読み込む
 <li><a href="SDL_Vulkan_UnloadLibrary.html">SDL_Vulkan_UnloadLibrary</a> - SDL_Vulkan_LoadLibraryで読み込んだVulkanライブラリを解放する
-<li><a href="SDL_WaitAndAcquireGPUSwapchainTexture.html">SDL_WaitAndAcquireGPUSwapchainTexture()</a> - スワップチェーンテクスチャを要求できるまでスレッドをブロックし, その後に要求する
+<li><a href="SDL_WaitAndAcquireGPUSwapchainTexture.html">SDL_WaitAndAcquireGPUSwapchainTexture</a> - スワップチェーンテクスチャを要求できるまでスレッドをブロックし, その後に要求する
 <li><a href="SDL_WaitAsyncIOResult.html">SDL_WaitAsyncIOResult</a> - キューの非同期I/Oタスクが完了するまでブロックして待つ
 <li><a href="SDL_WaitCondition.html">SDL_WaitCondition</a> - 条件変数が通知されるまで待つ
 <li><a href="SDL_WaitConditionTimeout.html">SDL_WaitConditionTimeout</a> - 条件変数が通知されるか指定の時間が経過するまで待つ

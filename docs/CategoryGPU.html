@@ -348,16 +348,16 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li><a href="SDL_DispatchGPUComputeIndirect.html">SDL_DispatchGPUComputeIndirect</a> - バッファのパラメータを設定してコンピュートワークをディスパッチする
 <li><a href="SDL_DownloadFromGPUBuffer.html">SDL_DownloadFromGPUBuffer()</a> - バッファのデータを転送バッファにGPUタイムラインでコピーする
 <li><a href="SDL_DownloadFromGPUTexture.html">SDL_DownloadFromGPUTexture</a> - テクスチャのデータを転送バッファにGPUタイムラインでコピーする
-<li>SDL_DrawGPUIndexedPrimitives
+<li><a href="SDL_DrawGPUIndexedPrimitives.html">SDL_DrawGPUIndexedPrimitives</a> - インデックスバッファを使用しインスタンス化を有効にしたバインドされたグラフィックステートでデータを描画する
 <li><a href="SDL_DrawGPUIndexedPrimitivesIndirect.html">SDL_DrawGPUIndexedPrimitivesIndirect</a> - バインドしたインデックスバッファを有効にしたグラフィックステートを使用してバッファの描画パラメータでデータを描画する
 <li><a href="SDL_DrawGPUPrimitives.html">SDL_DrawGPUPrimitives</a> - バインドしたグラフィックステートを使用してデータを描画する
 <li><a href="SDL_DrawGPUPrimitivesIndirect.html">SDL_DrawGPUPrimitivesIndirect</a> - バインドしたグラフィックステートを使用してバッファの描画パラメータでデータを描画する
 <li><a href="SDL_EndGPUComputePass.html">SDL_EndGPUComputePass</a> - 現在のコンピュートパスを終了する
 <li><a href="SDL_EndGPUCopyPass.html">SDL_EndGPUCopyPass</a> - 現在のコピーパスを終了する
 <li><a href="SDL_EndGPURenderPass.html">SDL_EndGPURenderPass</a> - 指定したレンダーパスを終了する
-<li>SDL_GDKResumeGPU
-<li>SDL_GDKSuspendGPU
-<li>SDL_GenerateMipmapsForGPUTexture
+<li><a href="SDL_GDKResumeGPU.html">SDL_GDKResumeGPU</a> - XboxでSDL_EVENT_WILL_ENTER_FOREGROUNDイベントを受信した後にGPU処理を復帰させる
+<li><a href="SDL_GDKSuspendGPU.html">SDL_GDKSuspendGPU</a> - XboxでSDL_EVENT_DID_ENTER_BACKGROUNDイベントを受信した後にGPU処理を一時停止させる
+<li><a href="SDL_GenerateMipmapsForGPUTexture.html">SDL_GenerateMipmapsForGPUTexture</a> - テクスチャのミップマップを生成する
 <li><a href="SDL_GetGPUDeviceDriver.html">SDL_GetGPUDeviceDriver</a> - GPUコンテキストを生成するために使用したバックエンドの名前を得る
 <li>SDL_GetGPUDeviceProperties
 <li><a href="SDL_GetGPUDriver.html">SDL_GetGPUDriver</a> - 組み込まれたGPUドライバの名前を得る
@@ -379,11 +379,11 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li>SDL_PushGPUFragmentUniformData
 <li>SDL_PushGPUVertexUniformData
 <li>SDL_QueryGPUFence
-<li>SDL_ReleaseGPUBuffer
-<li>SDL_ReleaseGPUComputePipeline
+<li><a href="SDL_ReleaseGPUBuffer.html">SDL_ReleaseGPUBuffer</a> - 指定のバッファを安全に行えるようになれば可能な限り早く解放する
+<li><a href="SDL_ReleaseGPUComputePipeline.html">SDL_ReleaseGPUComputePipeline</a> - 指定のコンピュートパイプラインを安全に行えるようになれば可能な限り早く解放する
 <li><a href="SDL_ReleaseGPUFence.html">SDL_ReleaseGPUFence</a> - SDL_SubmitGPUCommandBufferAndAcquireFenceで得たフェンスを解放する
 <li><a href="SDL_ReleaseGPUGraphicsPipeline.html">SDL_ReleaseGPUGraphicsPipeline</a> - 指定のグラフィックパイプラインを安全に行えるようになれば可能な限り早く解放する
-<li>SDL_ReleaseGPUSampler
+<li><a href="SDL_ReleaseGPUSampler.html">SDL_ReleaseGPUSampler</a> - 指定のサンプラを安全に行えるようになれば可能な限り早く解放する
 <li>SDL_ReleaseGPUShader
 <li>SDL_ReleaseGPUTexture
 <li>SDL_ReleaseGPUTransferBuffer
@@ -401,7 +401,7 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li>SDL_UnmapGPUTransferBuffer
 <li><a href="SDL_UploadToGPUBuffer.html">SDL_UploadToGPUBuffer</a> - データを転送バッファからバッファにアップロードする
 <li><a href="SDL_UploadToGPUTexture.html">SDL_UploadToGPUTexture</a> - データを転送バッファからテクスチャにアップロードする
-<li><a href="SDL_WaitAndAcquireGPUSwapchainTexture.html">SDL_WaitAndAcquireGPUSwapchainTexture()</a> - スワップチェーンテクスチャを要求できるまでスレッドをブロックし, その後に要求する
+<li><a href="SDL_WaitAndAcquireGPUSwapchainTexture.html">SDL_WaitAndAcquireGPUSwapchainTexture</a> - スワップチェーンテクスチャを要求できるまでスレッドをブロックし, その後に要求する
 <li>SDL_WaitForGPUFences
 <li>SDL_WaitForGPUIdle
 <li>SDL_WaitForGPUSwapchain

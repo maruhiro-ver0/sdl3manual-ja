@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_GDKResumeGPU</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_GDKResumeGPU
+<hr>
+<h1>SDL_GDKResumeGPU</h1>
+XboxでSDL_EVENT_DID_ENTER_BACKGROUNDイベントを受信した後にGPU処理を一時停止させる
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>構文</h2>
+<code>void SDL_GDKResumeGPU(SDL_GPUDevice *device);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>SDL_GPUDevice *</td><td>device</td><td>GPUコンテキスト</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+この関数を呼んだ後はSDL_GPU関数を呼んではならない.
+この関数は<a href="SDL_GDKSuspendComplete.html">SDL_GDKSuspendComplete</a>を呼ぶ前にも呼ぶ必要がある.
+</p>
+<p>
+この関数は<em>必ず</em>アプリケーションのレンダースレッドで呼ばなければならない.
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="SDL_AddEventWatch.html">SDL_AddEventWatch</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GDKResumeGPU">SDL_GDKResumeGPU - SDL Wiki</a>
+<hr>
+</body>
+</html>
