@@ -16,6 +16,10 @@
 <p>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
 </p>
+<h2>構文</h2>
+<p>
+<code>typedef Uint32 SDL_GPUShaderFormat;</code>
+</p>
 <table border="1">
 <tr><td>SDL_GPU_SHADERFORMAT_INVALID</td><td>0</td><td></td></tr>
 <tr><td>SDL_GPU_SHADERFORMAT_PRIVATE</td><td>(1u << 0)</td><td>NDA(機密保持契約された)シェーダ</td></tr>
@@ -25,8 +29,6 @@
 <tr><td>SDL_GPU_SHADERFORMAT_MSL</td><td>(1u << 4)</td><td>MetalのMSLシェーダ</td></tr>
 <tr><td>SDL_GPU_SHADERFORMAT_METALLIB</td><td>(1u << 5)</td><td>Metalのプリコンパイルされたmetallibシェーダ</td></tr>
 </table>
-<h2>構文</h2>
-<code>typedef Uint32 SDL_GPUShaderFormat;</code>
 <h2>詳細</h2>
 <p>
 各形式はそれを受け入れる各バックエンドに対応している.

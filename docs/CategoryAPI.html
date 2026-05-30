@@ -389,12 +389,12 @@
 <li><a href="SDL_GetGlobalMouseState.html">SDL_GetGlobalMouseState</a> - 動作環境の非同期なマウスボタンの状態とデスクトップ上のマウスカーソルの位置を得る
 <li><a href="SDL_GetGlobalProperties.html">SDL_GetGlobalProperties</a> - グローバルSDLプロパティを得る
 <li><a href="SDL_GetGPUDeviceDriver.html">SDL_GetGPUDeviceDriver</a> - GPUコンテキストを生成するために使用したバックエンドの名前を得る
-<li>SDL_GetGPUDeviceProperties
+<li><a href="SDL_GetGPUDeviceProperties.html">SDL_GetGPUDeviceProperties</a> - GPUデバイスに関連付けられたプロパティを得る
 <li><a href="SDL_GetGPUDriver.html">SDL_GetGPUDriver</a> - 組み込まれたGPUドライバの名前を得る
 <li><a href="SDL_GetGPURendererDevice.html">SDL_GetGPURendererDevice</a> - レンダラが使用しているGPUデバイスを得る
-<li>SDL_GetGPUShaderFormats
-<li>SDL_GetGPUSwapchainTextureFormat
-<li>SDL_GetGPUTextureFormatFromPixelFormat
+<li><a href="SDL_GetGPUShaderFormats.html">SDL_GetGPUShaderFormats</a> - GPUコンテキストが対応するシェーダ形式を得る
+<li><a href="SDL_GetGPUSwapchainTextureFormat.html">SDL_GetGPUSwapchainTextureFormat</a> - ウィンドウのスワップチェーンのテクスチャ形式を得る
+<li><a href="SDL_GetGPUTextureFormatFromPixelFormat.html">SDL_GetGPUTextureFormatFromPixelFormat</a> - SDLピクセル形式と一致するGPUテクスチャ形式を求める
 <li><a href="SDL_GetGrabbedWindow.html">SDL_GetGrabbedWindow</a> - 入力グラブされているウィンドウを得る
 <li><a href="SDL_GetHapticEffectStatus.html">SDL_GetHapticEffectStatus</a> - ハプティックデバイスのエフェクトの再生状態を得る
 <li><a href="SDL_GetHapticFeatures.html">SDL_GetHapticFeatures</a> - ハプティックデバイスの対応する機能を得る
@@ -479,7 +479,7 @@
 <li><a href="SDL_GetPerformanceFrequency.html">SDL_GetPerformanceFrequency</a> - 1秒あたりの高分解能カウンタを得る
 <li><a href="SDL_GetPixelFormatDetails.html">SDL_GetPixelFormatDetails</a> - ピクセル形式と一致するSDL_PixelFormatDetailsを生成する
 <li><a href="SDL_GetPixelFormatForMasks.html">SDL_GetPixelFormatForMasks</a> - ビット深度とRGBAマスクからピクセル形式を得る
-<li>SDL_GetPixelFormatFromGPUTextureFormat
+<li><a href="SDL_GetPixelFormatFromGPUTextureFormat.html">SDL_GetPixelFormatFromGPUTextureFormat</a> - GPUテクスチャ形式と一致するSDLピクセル形式を求める
 <li><a href="SDL_GetPixelFormatName.html">SDL_GetPixelFormatName</a> - ピクセル形式の人間が読める名前を得る
 <li><a href="SDL_GetPlatform.html">SDL_GetPlatform</a> - 環境の名前を得る
 <li><a href="SDL_GetPointerProperty.html">SDL_GetPointerProperty</a> - プロパティグループからポインタ型プロパティを得る
@@ -641,11 +641,11 @@
 <li><a href="SDL_GL_UnloadLibrary.html">SDL_GL_UnloadLibrary</a> - SDL_GL_LoadLibrary()で読み込んだOpenGLライブラリを解放する
 <li><a href="SDL_GlobDirectory.html">SDL_GlobDirectory</a> - ディレクトリツリーをフィルタを適用して列挙する
 <li><a href="SDL_GlobStorageDirectory.html">SDL_GlobStorageDirectory</a> - ストレージコンテナのディレクトリツリーをフィルタを適用して列挙する
-<li>SDL_GPUSupportsProperties
-<li>SDL_GPUSupportsShaderFormats
-<li>SDL_GPUTextureFormatTexelBlockSize
-<li>SDL_GPUTextureSupportsFormat
-<li>SDL_GPUTextureSupportsSampleCount
+<li><a href="SDL_GPUSupportsProperties.html">SDL_GPUSupportsProperties</a> - GPUランタイムの対応をチェックする
+<li><a href="SDL_GPUSupportsShaderFormats.html">SDL_GPUSupportsShaderFormats</a> - GPUランタイムの対応をチェックする
+<li><a href="SDL_GPUTextureFormatTexelBlockSize.html">SDL_GPUTextureFormatTexelBlockSize</a> - テクスチャ形式のテクセルブロックサイズを得る
+<li><a href="SDL_GPUTextureSupportsFormat.html">SDL_GPUTextureSupportsFormat</a> - テクスチャ形式が指定の種類と使用方法に対応しているかチェックする
+<li><a href="SDL_GPUTextureSupportsSampleCount.html">SDL_GPUTextureSupportsSampleCount</a> - テクスチャ形式がサンプル数に対応しているかチェックする
 <li><a href="SDL_GUIDToString.html">SDL_GUIDToString</a> - SDL_GUIDからASCII文字列を得る
 <li><a href="SDL_HapticEffectSupported.html">SDL_HapticEffectSupported</a> - ハプティックデバイスがエフェクトに対応しているかチェックする
 <li><a href="SDL_HapticRumbleSupported.html">SDL_HapticRumbleSupported</a> - ハプティックデバイスが単純な振動に対応しているかチェックする
@@ -709,7 +709,7 @@
 <li><a href="SDL_Init.html">SDL_Init</a> - SDLライブラリを初期化する
 <li><a href="SDL_InitHapticRumble.html">SDL_InitHapticRumble</a> - ジョイスティックにハプティックの機能があるかチェックする
 <li><a href="SDL_InitSubSystem.html">SDL_InitSubSystem</a> - SDLライブラリを初期化する互換関数
-<li>SDL_InsertGPUDebugLabel
+<li><a href="SDL_InsertGPUDebugLabel.html">SDL_InsertGPUDebugLabel</a> - コマンドバッファ呼び出しストリームに任意の文字列のラベルを挿入する
 <li><a href="SDL_InsertTrayEntryAt.html">SDL_InsertTrayEntryAt</a> - トレイの項目を指定の場所に挿入する
 <li><a href="SDL_IOFromConstMem.html">SDL_IOFromConstMem</a> - 読取専用メモリの読み取りを行うデータストリームを生成する
 <li><a href="SDL_IOFromDynamicMem.html">SDL_IOFromDynamicMem</a> - 動的に確保されるメモリの読み書きを行うデータストリームを生成する
@@ -789,7 +789,7 @@
 <li><a href="SDL_ltoa.html">SDL_ltoa</a> - long型の整数を文字列に変換する
 <li><a href="SDL_main.html">SDL_main</a> - アプリケーションのプログラムエントリー関数
 <li><a href="SDL_malloc.html">SDL_malloc</a> - メモリを初期化せずに確保する
-<li>SDL_MapGPUTransferBuffer
+<li><a href="SDL_MapGPUTransferBuffer.html">SDL_MapGPUTransferBuffer</a> - 転送バッファとアプリケーションアドレス空間のマッピングを行う
 <li><a href="SDL_MapRGB.html">SDL_MapRGB</a> - RGBの3つの値から指定のピクセル形式の不透明なピクセル値を求める
 <li><a href="SDL_MapRGBA.html">SDL_MapRGBA</a> - RGBAの4つの値から指定のピクセル形式のピクセル値を求める
 <li><a href="SDL_MapSurfaceRGB.html">SDL_MapSurfaceRGB</a> - RGBの値からサーフェイスの不透明なピクセルの値を求める
@@ -842,17 +842,17 @@
 <li><a href="SDL_PointInRect.html">SDL_PointInRect</a> - 点が長方形の内側にあるかチェックする
 <li><a href="SDL_PointInRectFloat.html">SDL_PointInRectFloat</a> - 浮動小数点で表された点が長方形の内側にあるかチェックする
 <li><a href="SDL_PollEvent.html">SDL_PollEvent</a> - 未処理のイベントをキューから得る
-<li>SDL_PopGPUDebugGroup
+<li><a href="SDL_PopGPUDebugGroup.html">SDL_PopGPUDebugGroup</a> - 最後にプッシュしたデバッググループを終了する
 <li><a href="SDL_pow.html">SDL_pow</a> - xのy乗を求める
 <li><a href="SDL_powf.html">SDL_powf</a> - xのy乗を求める
 <li><a href="SDL_PremultiplyAlpha.html">SDL_PremultiplyAlpha</a> - ピクセル群のα要素を事前に積算する
 <li><a href="SDL_PremultiplySurfaceAlpha.html">SDL_PremultiplySurfaceAlpha</a> - サーフェイスのα要素を事前に積算する
 <li><a href="SDL_PumpEvents.html">SDL_PumpEvents</a> - 入力デバイスから吸い出したイベントをイベントループに加える
 <li><a href="SDL_PushEvent.html">SDL_PushEvent</a> - イベントをキューに加える
-<li>SDL_PushGPUComputeUniformData
-<li>SDL_PushGPUDebugGroup
-<li>SDL_PushGPUFragmentUniformData
-<li>SDL_PushGPUVertexUniformData
+<li><a href="SDL_PushGPUComputeUniformData.html">SDL_PushGPUComputeUniformData</a> - コマンドバッファのユニフォームスロットにデータをプッシュする
+<li><a href="SDL_PushGPUDebugGroup.html">SDL_PushGPUDebugGroup</a> - 任意の名前のデバッググループを開始する
+<li><a href="SDL_PushGPUFragmentUniformData.html">SDL_PushGPUFragmentUniformData</a> - コマンドバッファのフラグメントユニフォームスロットにデータをプッシュする
+<li><a href="SDL_PushGPUVertexUniformData.html">SDL_PushGPUVertexUniformData</a> - コマンドバッファの頂点ユニフォームスロットにデータをプッシュする
 <li><a href="SDL_PutAudioStreamData.html">SDL_PutAudioStreamData</a> - データストリームにデータを追加する
 <li><a href="SDL_PutAudioStreamDataNoCopy.html">SDL_PutAudioStreamDataNoCopy</a> - データストリームにデータをコピーせずに追加する
 <li><a href="SDL_PutAudioStreamPlanarData.html">SDL_PutAudioStreamPlanarData</a> - オーディオストリームにチャネルごとの配列に分けられたデータを追加する
@@ -1218,7 +1218,7 @@
 <li><a href="SDL_UnlockSpinlock.html">SDL_UnlockSpinlock</a> - 0を設定することでスピンロックを解除する
 <li><a href="SDL_UnlockSurface.html">SDL_UnlockSurface</a> - ピクセル領域に直接アクセスした後にロックを解放する
 <li><a href="SDL_UnlockTexture.html">SDL_UnlockTexture</a> - 必要なら変更をビデオメモリに反映させるためにテクスチャのロックを解除する
-<li>SDL_UnmapGPUTransferBuffer
+<li><a href="SDL_UnmapGPUTransferBuffer.html">SDL_UnmapGPUTransferBuffer</a> - マッピングされた転送バッファのマッピングを解除する
 <li><a href="SDL_UnregisterApp.html">SDL_UnregisterApp</a> - SDL_RegisterAppで登録したwin32ウィンドウクラスを解除する
 <li><a href="SDL_unsetenv_unsafe.html">SDL_unsetenv_unsafe</a> - 環境変数の値を消去する
 <li><a href="SDL_UnsetEnvironmentVariable.html">SDL_UnsetEnvironmentVariable</a> - 環境変数セットの環境変数の値を消去する
@@ -1618,7 +1618,7 @@
 <li><a href="SDL_GPUSwapchainComposition.html">SDL_GPUSwapchainComposition</a> - スワップチェーンテクスチャのテクスチャの形式と色空間の列挙体
 <li><a href="SDL_GPUTextureFormat.html">SDL_GPUTextureFormat</a> - GPUテクスチャのピクセル形式の列挙体
 <li><a href="SDL_GPUTextureType.html">SDL_GPUTextureType</a> - GPUテクスチャの種類の列挙体
-<li>SDL_GPUTransferBufferUsage
+<li><a href="SDL_GPUTransferBufferUsage.html">SDL_GPUTransferBufferUsage</a> - クライアントによる転送バッファの使用方法の列挙体
 <li><a href="SDL_GPUVertexElementFormat.html">SDL_GPUVertexElementFormat</a> - 頂点の属性の形式の列挙体
 <li><a href="SDL_GPUVertexInputRate.html">SDL_GPUVertexInputRate</a> - 頂点属性をバッファから取り出すタイミングの列挙体
 <li><a href="SDL_hid_bus_type.html">SDL_hid_bus_type</a> - HIDのバスの列挙体

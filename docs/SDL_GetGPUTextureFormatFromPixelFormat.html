@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryGPU.html" title="1つ上">
+<title>SDL_GetGPUTextureFormatFromPixelFormat</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryGPU.html">3DレンダリングとGPUコンピューティング</a> - SDL_GetGPUTextureFormatFromPixelFormat
+<hr>
+<h1>SDL_GetGPUTextureFormatFromPixelFormat</h1>
+SDLピクセル形式と一致するGPUテクスチャ形式を求める
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_gpu.h">SDL3/SDL_gpu.h</a>
+<h2>構文</h2>
+<code>SDL_GPUTextureFormat SDL_GetGPUTextureFormatFromPixelFormat(SDL_PixelFormat format);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_PixelFormat.html">SDL_PixelFormat</a></td><td>format</td><td>ピクセル形式</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_GPUTextureFormat.html">SDL_GPUTextureFormat</a>) 一致するGPUテクスチャ形式を戻す. 一致する形式がない場合, SDL_GPU_TEXTUREFORMAT_INVALIDを戻す.
+<h2>バージョン</h2>
+SDL 3.4.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_GetGPUTextureFormatFromPixelFormat">SDL_GetGPUTextureFormatFromPixelFormat - SDL Wiki</a>
+<hr>
+</body>
+</html>
