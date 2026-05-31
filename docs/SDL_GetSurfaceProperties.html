@@ -28,19 +28,22 @@
 次のプロパティに対応している:
 </p>
 <ul>
-<li>SDL_PROP_SURFACE_SDR_WHITE_POINT_FLOAT: HDR10および浮動小数点サーフェイス用.
+<li><code>SDL_PROP_SURFACE_SDR_WHITE_POINT_FLOAT</code>: HDR10および浮動小数点サーフェイス用.
 100% diffuse white(拡散反射の白)の値を設定し, それ以上の値はHDR(ハイダイナミックレンジ)ヘッドルームとして表示する.
 HDR10サーフェイスのデフォルトは203で, 浮動小数点インターフェースのデフォルトは1.0である
-<li>SDL_PROP_SURFACE_HDR_HEADROOM_FLOAT: HDR10および浮動小数点サーフェイス用.
+<li><code>SDL_PROP_SURFACE_HDR_HEADROOM_FLOAT</code>: HDR10および浮動小数点サーフェイス用.
 SDRホワイトポイントの基準で, 表示で使用する最大ダイナミックレンジの値を設定する.
 デフォルトは0.0で, トーンマッピングを無効化する
-<li>SDL_PROP_SURFACE_TONEMAP_OPERATOR_STRING: サーフェイスのハイダイナミックレンジをそれよりも低いダイナミックレンジに圧縮する場合のトーンマッピングの方法を設定する.
+<li><code>SDL_PROP_SURFACE_TONEMAP_OPERATOR_STRING</code>: サーフェイスのハイダイナミックレンジをそれよりも低いダイナミックレンジに圧縮する場合のトーンマッピングの方法を設定する.
 現在は, "chrome"の場合はChromeのHDR表示と同様のトーンマッピングを使用し, "*=N"の場合はNを適用される線形空間の浮動小数点の倍率係数として, "none"の場合はトーンマッピングを無効化する.
 デフォルトは"chrome"
-<li>SDL_PROP_SURFACE_HOTSPOT_X_NUMBER:
-サーフェイスをマウスカーソルとして使用する場合のホットスポットの画像の左からのピクセル数
-<li>SDL_PROP_SURFACE_HOTSPOT_Y_NUMBER:
-サーフェイスをマウスカーソルとして使用する場合のホットスポットの画像の上からのピクセル数
+<li><code>SDL_PROP_SURFACE_HOTSPOT_X_NUMBER</code>: サーフェイスをマウスカーソルとして使用する場合のホットスポットの画像の左からのピクセル数
+<li><code>SDL_PROP_SURFACE_HOTSPOT_Y_NUMBER</code>: サーフェイスをマウスカーソルとして使用する場合のホットスポットの画像の上からのピクセル数
+<li><code>SDL_PROP_SURFACE_ROTATION_FLOAT</code>: サーフェイスのデータを正しい方向で表示させるために時計回りに回転させる角度(弧度法).
+デフォルトは0.
+これはモバイルデバイスの方向とカメラが提供する方向が異なる場合にカメラAPIで使用される
+(例えば, カメラは常に縦長の画像を提供するが, スマートフォンを横にしている場合など).
+SDL 3.4.0以降
 </ul>
 <h2>スレッドセーフ</h2>
 <p>

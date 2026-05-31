@@ -104,7 +104,7 @@
 <li><a href="SDL_CloseStorage.html">SDL_CloseStorage</a> - ストレージコンテナをクローズし解放する
 <li><a href="SDL_CompareAndSwapAtomicInt.html">SDL_CompareAndSwapAtomicInt</a> - もしアトミック変数が「古い値」ならば「新しい値」にする
 <li><a href="SDL_CompareAndSwapAtomicPointer.html">SDL_CompareAndSwapAtomicPointer</a> - もしポインタが「古い値」ならば「新しい値」にする
-<li><A HREF="SDL_CompareAndSwapAtomicU32.html">SDL_CompareAndSwapAtomicU32</a> - もしアトミック変数が「古い値」ならば「新しい値」にする
+<li><a href="SDL_CompareAndSwapAtomicU32.html">SDL_CompareAndSwapAtomicU32</a> - もしアトミック変数が「古い値」ならば「新しい値」にする
 <li><a href="SDL_ComposeCustomBlendMode.html">SDL_ComposeCustomBlendMode</a> - レンダラ用のカスタムブレンドモードを構成する
 <li><a href="SDL_ConvertAudioSamples.html">SDL_ConvertAudioSamples</a> - オーディオデータを別の形式に変換する
 <li><a href="SDL_ConvertEventToRenderCoordinates.html">SDL_ConvertEventToRenderCoordinates</a> - イベント構造体の座標をレンダリングの座標に変換する
@@ -559,7 +559,7 @@
 <li><a href="SDL_GetSurfaceImages.html">SDL_GetSurfaceImages</a> - サーフェイスの全てのバージョンの配列を得る
 <li><a href="SDL_GetSurfacePalette.html">SDL_GetSurfacePalette</a> - サーフェイスのパレットを得る
 <li><a href="SDL_GetSurfaceProperties.html">SDL_GetSurfaceProperties</a> - サーフェイスのプロパティを得る
-<li>SDL_GetSystemPageSize
+<li><a href="SDL_GetSystemPageSize.html">SDL_GetSystemPageSize</a> - メモリのページサイズを得る
 <li><a href="SDL_GetSystemRAM.html">SDL_GetSystemRAM</a> - システムに設定されたのRAMのサイズを得る
 <li><a href="SDL_GetSystemTheme.html">SDL_GetSystemTheme</a> - 現在のシステムテーマを得る
 <li><a href="SDL_GetTextInputArea.html">SDL_GetTextInputArea</a> - Unicodeテキストの入力で使用される領域を得る
@@ -755,9 +755,13 @@
 <li><a href="SDL_LoadFile_IO.html">SDL_LoadFile_IO</a> - データストリームからデータを全て読み込む
 <li><a href="SDL_LoadFileAsync.html">SDL_LoadFileAsync</a> - 非同期にファイルからデータを全て読み込む
 <li><a href="SDL_LoadFunction.html">SDL_LoadFunction</a> - 共有オブジェクトから名前で関数のアドレスを検索しそれを戻す
+<li><a href="SDL_LoadJPG.html">SDL_LoadJPG</a> - JPG画像をファイルからサーフェイスに読み込む
+<li><a href="SDL_LoadJPG_IO.html">SDL_LoadJPG_IO</a> - シーク可能なSDLデータストリームからJPEG画像をサーフェイスに読み込む
 <li><a href="SDL_LoadObject.html">SDL_LoadObject</a> - 共有オブジェクトを動的に読み込む
-<li>SDL_LoadPNG
-<li>SDL_LoadPNG_IO
+<li><a href="SDL_LoadPNG.html">SDL_LoadPNG</a> - PNG画像をファイルからサーフェイスに読み込む
+<li><a href="SDL_LoadPNG_IO.html">SDL_LoadPNG_IO</a> - シーク可能なSDLデータストリームからPNG画像をサーフェイスに読み込む
+<li><a href="SDL_LoadSurface.html">SDL_LoadSurface</a> - BMP, PNG, JPEG画像をファイルからサーフェイスに読み込む
+<li><a href="SDL_LoadSurface_IO.html">SDL_LoadSurface_IO</a> - シーク可能なSDLデータストリームからBMP, PNG, JPEG画像をサーフェイスに読み込む
 <li><a href="SDL_LoadWAV.html">SDL_LoadWAV</a> - WAVファイルを読み込む
 <li><a href="SDL_LoadWAV_IO.html">SDL_LoadWAV_IO</a> - WAVファイルをメモリに読み込む
 <li><a href="SDL_LockAudioStream.html">SDL_LockAudioStream</a> - オーディオストリームをアクセスの直列化のためロックする
@@ -858,7 +862,7 @@
 <li><a href="SDL_PutAudioStreamPlanarData.html">SDL_PutAudioStreamPlanarData</a> - オーディオストリームにチャネルごとの配列に分けられたデータを追加する
 <li><a href="SDL_qsort.html">SDL_qsort</a> - 配列をソートする
 <li><a href="SDL_qsort_r.html">SDL_qsort_r</a> - 比較関数にユーザデータを渡してソートする
-<li>SDL_QueryGPUFence
+<li><a href="SDL_QueryGPUFence.html">SDL_QueryGPUFence</a> - フェンスの状態をチェックする
 <li><a href="SDL_Quit.html">SDL_Quit</a> - 初期化した全てのサブシステムを終了する
 <li><a href="SDL_QuitSubSystem.html">SDL_QuitSubSystem</a> - SDLのサブシステムを終了する
 <li><a href="SDL_RaiseWindow.html">SDL_RaiseWindow</a> - ウィンドウを他のウィンドウよりも前面にして入力フォーカスを与えるように要求する
@@ -903,10 +907,10 @@
 <li><a href="SDL_ReleaseGPUFence.html">SDL_ReleaseGPUFence</a> - SDL_SubmitGPUCommandBufferAndAcquireFenceで得たフェンスを解放する
 <li><a href="SDL_ReleaseGPUGraphicsPipeline.html">SDL_ReleaseGPUGraphicsPipeline</a> - 指定のグラフィックパイプラインを安全に行えるようになれば可能な限り早く解放する
 <li><a href="SDL_ReleaseGPUSampler.html">SDL_ReleaseGPUSampler</a> - 指定のサンプラを安全に行えるようになれば可能な限り早く解放する
-<li>SDL_ReleaseGPUShader
-<li>SDL_ReleaseGPUTexture
-<li>SDL_ReleaseGPUTransferBuffer
-<li>SDL_ReleaseWindowFromGPUDevice
+<li><a href="SDL_ReleaseGPUShader.html">SDL_ReleaseGPUShader</a> - 指定のシェーダを安全に行えるようになれば可能な限り早く解放する
+<li><a href="SDL_ReleaseGPUTexture.html">SDL_ReleaseGPUTexture</a> - 指定のテクスチャを安全に行えるようになれば可能な限り早く解放する
+<li><a href="SDL_ReleaseGPUTransferBuffer.html">SDL_ReleaseGPUTransferBuffer</a> - 指定の転送バッファを安全に行えるようになれば可能な限り早く解放する
+<li><a href="SDL_ReleaseWindowFromGPUDevice.html">SDL_ReleaseWindowFromGPUDevice</a> - ウィンドウの要求を解除しスワップチェーンを破棄する
 <li><a href="SDL_ReloadGamepadMappings.html">SDL_ReloadGamepadMappings</a> - ゲームパッドのマッピングデータベースを初期状態に戻す
 <li><a href="SDL_RemoveEventWatch.html">SDL_RemoveEventWatch</a> - SDL_AddEventWatch()で追加されたイベント監視コールバックを削除する
 <li><a href="SDL_RemoveHintCallback.html">SDL_RemoveHintCallback</a> - 指定のヒントを監視する関数を取り除く
@@ -953,6 +957,7 @@
 <li><a href="SDL_ResumeAudioDevice.html">SDL_ResumeAudioDevice</a> - オーディオデバイスの再生の一時停止を解除する
 <li><a href="SDL_ResumeAudioStreamDevice.html">SDL_ResumeAudioStreamDevice</a> - オーディオデバイスに関連付けられたオーディオストリームの一時停止を解除する
 <li><a href="SDL_ResumeHaptic.html">SDL_ResumeHaptic</a> - 一時停止中のハプティックデバイスを再開する
+<li><a href="SDL_RotateSurface.html">SDL_RotateSurface</a> - サーフェイスの弧度法で指定した角度に時計回りに回転させたコピーを生成する
 <li><a href="SDL_round.html">SDL_round</a> - xを四捨五入した値を求める
 <li><a href="SDL_roundf.html">SDL_roundf</a> - xを四捨五入した値を求める
 <li><a href="SDL_RumbleGamepad.html">SDL_RumbleGamepad</a> - ジョイスティックの振動を開始する
@@ -966,8 +971,8 @@
 <li><a href="SDL_SaveBMP_IO.html">SDL_SaveBMP_IO</a> - サーフェイスをシーク可能なSDLデータストリームにBMP形式で書き込む
 <li><a href="SDL_SaveFile.html">SDL_SaveFile</a> - ファイルからデータを全て読み込む
 <li><a href="SDL_SaveFile_IO.html">SDL_SaveFile_IO</a> - データストリームにデータを書き込む
-<li>SDL_SavePNG
-<li>SDL_SavePNG_IO
+<li><a href="SDL_SavePNG.html">SDL_SavePNG</a> - サーフェイスをPNGファイルとして保存する
+<li><a href="SDL_SavePNG_IO.html">SDL_SavePNG_IO</a> - サーフェイスをシーク可能なSDLデータストリームにPNG形式で書き込む
 <li><a href="SDL_scalbn.html">SDL_scalbn</a> - 2の整数乗のx倍を求める
 <li><a href="SDL_scalbnf.html">SDL_scalbnf</a> - 2の整数乗のx倍を求める
 <li><a href="SDL_ScaleSurface.html">SDL_ScaleSurface</a> - 既存のサーフェイスのサイズを変更して新しいサーフェイスを生成する
@@ -1013,15 +1018,15 @@
 <li><a href="SDL_SetGamepadMapping.html">SDL_SetGamepadMapping</a> - ジョイスティックまたはゲームパッドのマッピングを設定する
 <li><a href="SDL_SetGamepadPlayerIndex.html">SDL_SetGamepadPlayerIndex</a> - オープンされたゲームパッドにプレイヤーインデックス番号を設定する
 <li><a href="SDL_SetGamepadSensorEnabled.html">SDL_SetGamepadSensorEnabled</a> - ゲームパッドのセンサーのデータ報告の有効状態を設定する
-<li>SDL_SetGPUAllowedFramesInFlight
-<li>SDL_SetGPUBlendConstants
-<li>SDL_SetGPUBufferName
+<li><a href="SDL_SetGPUAllowedFramesInFlight.html">SDL_SetGPUAllowedFramesInFlight</a> - GPU内に留めておくことができる最大フレーム数を変更する
+<li><a href="SDL_SetGPUBlendConstants.html">SDL_SetGPUBlendConstants</a> - コマンドバッファの現在のブレンド定数を設定する
+<li><a href="SDL_SetGPUBufferName.html">SDL_SetGPUBufferName</a> - バッファのラベルとして任意の文字列定数を設定する
 <li><a href="SDL_SetGPURenderState.html">SDL_SetGPURenderState</a> - カスタムGPUレンダリング状態を設定する
 <li><a href="SDL_SetGPURenderStateFragmentUniforms.html">SDL_SetGPURenderStateFragmentUniforms</a> - カスタムGPUレンダリング状態のフラグメントシェーダのユニフォーム変数を設定する
-<li>SDL_SetGPUScissor
-<li>SDL_SetGPUStencilReference
-<li>SDL_SetGPUSwapchainParameters
-<li>SDL_SetGPUTextureName
+<li><a href="SDL_SetGPUScissor.html">SDL_SetGPUScissor</a> - コマンドバッファの現在のシザーの状態を設定する
+<li><a href="SDL_SetGPUStencilReference.html">SDL_SetGPUStencilReference</a> - コマンドバッファの現在のステンシル参照値を設定する
+<li><a href="SDL_SetGPUSwapchainParameters.html">SDL_SetGPUSwapchainParameters</a> - 指定のウィンドウのスワップチェーンパラメータを変更する
+<li><a href="SDL_SetGPUTextureName.html">SDL_SetGPUTextureName</a> - バッファのラベルとして任意の文字列定数を設定する
 <li><a href="SDL_SetGPUViewport.html">SDL_SetGPUViewport</a> - コマンドバッファの現在のビューポート状態を設定する
 <li><a href="SDL_SetHapticAutocenter.html">SDL_SetHapticAutocenter</a> - ハプティックデバイスの自動センタリングを設定する
 <li><a href="SDL_SetHapticGain.html">SDL_SetHapticGain</a> - 指定のハプティックデバイスのゲインを設定する
@@ -1254,9 +1259,9 @@
 <li><a href="SDL_WaitConditionTimeout.html">SDL_WaitConditionTimeout</a> - 条件変数が通知されるか指定の時間が経過するまで待つ
 <li><a href="SDL_WaitEvent.html">SDL_WaitEvent</a> - 次のイベントが発生するまで無制限に待つ
 <li><a href="SDL_WaitEventTimeout.html">SDL_WaitEventTimeout</a> - 次のイベントが発生するまで指定の時間(ミリ秒)待つ
-<li>SDL_WaitForGPUFences
-<li>SDL_WaitForGPUIdle
-<li>SDL_WaitForGPUSwapchain
+<li><a href="SDL_WaitForGPUFences.html">SDL_WaitForGPUFences</a> - フェンスがシグナルを受けるまでスレッドをブロックする
+<li><a href="SDL_WaitForGPUIdle.html">SDL_WaitForGPUIdle</a> - GPUが完全にアイドル状態になるまでスレッドをブロックする
+<li><a href="SDL_WaitForGPUSwapchain.html">SDL_WaitForGPUSwapchain</a> - 全てのプレゼンテーション中のコマンドバッファの実行が完了するまでスレッドをブロックする
 <li><a href="SDL_WaitProcess.html">SDL_WaitProcess</a> - プロセスの完了を待つ
 <li><a href="SDL_WaitSemaphore.html">SDL_WaitSemaphore</a> - セマフォの値が正になるまで待機し, セマフォの値を減算する
 <li><a href="SDL_WaitSemaphoreTimeout.html">SDL_WaitSemaphoreTimeout</a> - セマフォの値が正になるまで待機し, セマフォの値を減算する(タイムアウト付き)
@@ -1272,13 +1277,13 @@
 <li><a href="SDL_wcslen.html">SDL_wcslen</a> - wcslen()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_wcsncasecmp.html">SDL_wcsncasecmp</a> - 2つのNUL終端のワイド文字列を大文字小文字を無視して最大n w_char個をを比較する
 <li><a href="SDL_wcsncmp.html">SDL_wcsncmp</a> - 2つのNUL終端のワイド文字列の最大n w_char個をを比較する
-<<li><a href="SDL_wcsnlen.html">SDL_wcsnlen</a> - wcsnlen()と同機能だがCランタイムを必要としない関数
+<li><a href="SDL_wcsnlen.html">SDL_wcsnlen</a> - wcsnlen()と同機能だがCランタイムを必要としない関数
 <li><a href="SDL_wcsnstr.html">SDL_wcsnstr</a> - ワイド文字列から最初に一致するワイド文字列をn wchar_t数の範囲で検索する
 <li><a href="SDL_wcsstr.html">SDL_wcsstr</a> - ワイド文字列から最初に一致するワイド文字列を検索する
 <li><a href="SDL_wcstol.html">SDL_wcstol</a> - ワイド文字列を解析してlong型の数値に変換する
 <li><a href="SDL_WindowHasSurface.html">SDL_WindowHasSurface</a> - ウィンドウに関連付けられたサーフェイスがあるかを得る
-<li>SDL_WindowSupportsGPUPresentMode
-<li>SDL_WindowSupportsGPUSwapchainComposition
+<li><a href="SDL_WindowSupportsGPUPresentMode.html">SDL_WindowSupportsGPUPresentMode</a> - ウィンドウのプレゼンテーションモードの対応をチェックする
+<li><a href="SDL_WindowSupportsGPUSwapchainComposition.html">SDL_WindowSupportsGPUSwapchainComposition</a> - ウィンドウのスワップチェーンコンポジションの対応をチェックする
 <li><a href="SDL_WriteAsyncIO.html">SDL_WriteAsyncIO</a> - 非同期書込を開始する
 <li><a href="SDL_WriteIO.html">SDL_WriteIO</a> - データストリームにデータを書き込む
 <li><a href="SDL_WriteS16BE.html">SDL_WriteS16BE</a> - データストリームに符号ありビッグエンディアン2バイトを書き込む
@@ -1484,12 +1489,12 @@
 <li><a href="SDL_GPUGraphicsPipelineCreateInfo.html">SDL_GPUGraphicsPipelineCreateInfo</a> - グラフィックパイプラインのパラメータを指定する構造体 
 <li><a href="SDL_GPUGraphicsPipelineTargetInfo.html">SDL_GPUGraphicsPipelineTargetInfo</a> - グラフィックパイプラインで使用するレンダーターゲットの情報の構造体
 <li><a href="SDL_GPUIndexedIndirectDrawCommand.html">SDL_GPUIndexedIndirectDrawCommand</a> - インデックス付き間接描画コマンドのパラメータの構造体
-<li>SDL_GPUIndirectDispatchCommand
+<li><a href="SDL_GPUIndirectDispatchCommand.html">SDL_GPUIndirectDispatchCommand</a> - インデックス付きディスパッチコマンドのパラメータの構造体
 <li><a href="SDL_GPUIndirectDrawCommand.html">SDL_GPUIndirectDrawCommand</a> - 間接描画コマンドのパラメータの構造体
 <li><a href="SDL_GPUMultisampleState.html">SDL_GPUMultisampleState</a> - グラフィックパイプラインのマルチサンプリングのパラメータの構造体
 <li><a href="SDL_GPURasterizerState.html">SDL_GPURasterizerState</a> - グラフィックパイプラインのラスタライザのパラメータの構造体
 <li><a href="SDL_GPURenderStateCreateInfo.html">SDL_GPURenderStateCreateInfo</a> - GPUレンダリング状態の生成時のパラメータの構造体
-<li>SDL_GPUSamplerCreateInfo
+<li><a href="SDL_GPUSamplerCreateInfo.html">SDL_GPUSamplerCreateInfo</a> - サンプラのパラメータを指定する構造体
 <li><a href="SDL_GPUShaderCreateInfo.html">SDL_GPUShaderCreateInfo</a> - 生成するシェーダオブジェクトのコードとメタデータを指定する構造体
 <li><a href="SDL_GPUStencilOpState.html">SDL_GPUStencilOpState</a> - グラフィックパイプラインのステンシル演算の構造体
 <li><a href="SDL_GPUStorageBufferReadWriteBinding.html">SDL_GPUStorageBufferReadWriteBinding</a> - コンピュートパスのバインドするバッファに関連付けられたパラメータの構造体
@@ -1501,7 +1506,7 @@
 <li><a href="SDL_GPUTextureTransferInfo.html">SDL_GPUTextureTransferInfo</a> - データのテクスチャへの転送とテクスチャからの転送に関するパラメータの構造体
 <li><a href="SDL_GPUTransferBufferCreateInfo.html">SDL_GPUTransferBufferCreateInfo</a> - 生成する転送バッファのパラメータを指定する構造体
 <li><a href="SDL_GPUTransferBufferLocation.html">SDL_GPUTransferBufferLocation</a> - GPU転送バッファ内の位置を表す構造体
-<li>SDL_GPUVertexAttribute
+<li><a href="SDL_GPUVertexAttribute.html">SDL_GPUVertexAttribute</a> - 頂点の属性の構造体
 <li><a href="SDL_GPUVertexBufferDescription.html">SDL_GPUVertexBufferDescription</a> - グラフィックパイプラインで使用される頂点バッファのパラメータの構造体
 <li><a href="SDL_GPUVertexInputState.html">SDL_GPUVertexInputState</a> - グラフィックパイプラインの頂点の入力状態のパラメータの構造体
 <li><a href="SDL_GPUViewport.html">SDL_GPUViewport</a> - ビューポートを表す構造体
@@ -1600,7 +1605,7 @@
 <li><a href="SDL_GPUBlendFactor.html">SDL_GPUBlendFactor</a> - レンダーターゲットのピクセルとテクスチャの既存のピクセルをブレンドするとき使用するブレンド係数の列挙体
 <li><a href="SDL_GPUBlendOp.html">SDL_GPUBlendOp</a> - レンダーターゲットのピクセルとテクスチャの既存のピクセルをブレンドするとき使用する演算の列挙体
 <li><a href="SDL_GPUCompareOp.html">SDL_GPUCompareOp</a> - 深度, マスク, サンプラ処理の比較演算の列挙体
-<li>SDL_GPUCubeMapFace
+<li><a href="SDL_GPUCubeMapFace.html">SDL_GPUCubeMapFace</a> - 立方体マッピングの面の列挙体
 <li><a href="SDL_GPUCullMode.html">SDL_GPUCullMode</a> - 陰面する三角形の面の方向の列挙体
 <li><a href="SDL_GPUFillMode.html">SDL_GPUFillMode</a> - グラフィックパイプラインの塗りつぶしモードの列挙体
 <li><a href="SDL_GPUFilter.html">SDL_GPUFilter</a> - サンプラが使用するフィルタリング処理の列挙体

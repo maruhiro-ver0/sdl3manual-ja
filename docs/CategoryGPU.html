@@ -378,23 +378,23 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li><a href="SDL_PushGPUDebugGroup.html">SDL_PushGPUDebugGroup</a> - 任意の名前のデバッググループを開始する
 <li><a href="SDL_PushGPUFragmentUniformData.html">SDL_PushGPUFragmentUniformData</a> - コマンドバッファのフラグメントユニフォームスロットにデータをプッシュする
 <li><a href="SDL_PushGPUVertexUniformData.html">SDL_PushGPUVertexUniformData</a> - コマンドバッファの頂点ユニフォームスロットにデータをプッシュする
-<li>SDL_QueryGPUFence
+<li><a href="SDL_QueryGPUFence.html">SDL_QueryGPUFence</a> - フェンスの状態をチェックする
 <li><a href="SDL_ReleaseGPUBuffer.html">SDL_ReleaseGPUBuffer</a> - 指定のバッファを安全に行えるようになれば可能な限り早く解放する
 <li><a href="SDL_ReleaseGPUComputePipeline.html">SDL_ReleaseGPUComputePipeline</a> - 指定のコンピュートパイプラインを安全に行えるようになれば可能な限り早く解放する
 <li><a href="SDL_ReleaseGPUFence.html">SDL_ReleaseGPUFence</a> - SDL_SubmitGPUCommandBufferAndAcquireFenceで得たフェンスを解放する
 <li><a href="SDL_ReleaseGPUGraphicsPipeline.html">SDL_ReleaseGPUGraphicsPipeline</a> - 指定のグラフィックパイプラインを安全に行えるようになれば可能な限り早く解放する
 <li><a href="SDL_ReleaseGPUSampler.html">SDL_ReleaseGPUSampler</a> - 指定のサンプラを安全に行えるようになれば可能な限り早く解放する
-<li>SDL_ReleaseGPUShader
-<li>SDL_ReleaseGPUTexture
-<li>SDL_ReleaseGPUTransferBuffer
-<li>SDL_ReleaseWindowFromGPUDevice
-<li>SDL_SetGPUAllowedFramesInFlight
-<li>SDL_SetGPUBlendConstants
-<li>SDL_SetGPUBufferName
-<li>SDL_SetGPUScissor
-<li>SDL_SetGPUStencilReference
-<li>SDL_SetGPUSwapchainParameters
-<li>SDL_SetGPUTextureName
+<li><a href="SDL_ReleaseGPUShader.html">SDL_ReleaseGPUShader</a> - 指定のシェーダを安全に行えるようになれば可能な限り早く解放する
+<li><a href="SDL_ReleaseGPUTexture.html">SDL_ReleaseGPUTexture</a> - 指定のテクスチャを安全に行えるようになれば可能な限り早く解放する
+<li><a href="SDL_ReleaseGPUTransferBuffer.html">SDL_ReleaseGPUTransferBuffer</a> - 指定の転送バッファを安全に行えるようになれば可能な限り早く解放する
+<li><a href="SDL_ReleaseWindowFromGPUDevice.html">SDL_ReleaseWindowFromGPUDevice</a> - ウィンドウの要求を解除しスワップチェーンを破棄する
+<li><a href="SDL_SetGPUAllowedFramesInFlight.html">SDL_SetGPUAllowedFramesInFlight</a> - GPU内に留めておくことができる最大フレーム数を変更する
+<li><a href="SDL_SetGPUBlendConstants.html">SDL_SetGPUBlendConstants</a> - コマンドバッファの現在のブレンド定数を設定する
+<li><a href="SDL_SetGPUBufferName.html">SDL_SetGPUBufferName</a> - バッファのラベルとして任意の文字列定数を設定する
+<li><a href="SDL_SetGPUScissor.html">SDL_SetGPUScissor</a> - コマンドバッファの現在のシザーの状態を設定する
+<li><a href="SDL_SetGPUStencilReference.html">SDL_SetGPUStencilReference</a> - コマンドバッファの現在のステンシル参照値を設定する
+<li><a href="SDL_SetGPUSwapchainParameters.html">SDL_SetGPUSwapchainParameters</a> - 指定のウィンドウのスワップチェーンパラメータを変更する
+<li><a href="SDL_SetGPUTextureName.html">SDL_SetGPUTextureName</a> - バッファのラベルとして任意の文字列定数を設定する
 <li><a href="SDL_SetGPUViewport.html">SDL_SetGPUViewport</a> - コマンドバッファの現在のビューポート状態を設定する
 <li><a href="SDL_SubmitGPUCommandBuffer.html">SDL_SubmitGPUCommandBuffer</a> - GPUにコマンドを実行させるためにコマンドバッファを送信する
 <li><a href="SDL_SubmitGPUCommandBufferAndAcquireFence.html">SDL_SubmitGPUCommandBufferAndAcquireFence</a> - GPUにコマンドを実行させるためにコマンドバッファを送信し, コマンドバッファに関連付けられたフェンスを要求する
@@ -402,11 +402,11 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li><a href="SDL_UploadToGPUBuffer.html">SDL_UploadToGPUBuffer</a> - データを転送バッファからバッファにアップロードする
 <li><a href="SDL_UploadToGPUTexture.html">SDL_UploadToGPUTexture</a> - データを転送バッファからテクスチャにアップロードする
 <li><a href="SDL_WaitAndAcquireGPUSwapchainTexture.html">SDL_WaitAndAcquireGPUSwapchainTexture</a> - スワップチェーンテクスチャを要求できるまでスレッドをブロックし, その後に要求する
-<li>SDL_WaitForGPUFences
-<li>SDL_WaitForGPUIdle
-<li>SDL_WaitForGPUSwapchain
-<li>SDL_WindowSupportsGPUPresentMode
-<li>SDL_WindowSupportsGPUSwapchainComposition
+<li><a href="SDL_WaitForGPUFences.html">SDL_WaitForGPUFences</a> - フェンスがシグナルを受けるまでスレッドをブロックする
+<li><a href="SDL_WaitForGPUIdle.html">SDL_WaitForGPUIdle</a> - GPUが完全にアイドル状態になるまでスレッドをブロックする
+<li><a href="SDL_WaitForGPUSwapchain.html">SDL_WaitForGPUSwapchain</a> - 全てのプレゼンテーション中のコマンドバッファの実行が完了するまでスレッドをブロックする
+<li><a href="SDL_WindowSupportsGPUPresentMode.html">SDL_WindowSupportsGPUPresentMode</a> - ウィンドウのプレゼンテーションモードの対応をチェックする
+<li><a href="SDL_WindowSupportsGPUSwapchainComposition.html">SDL_WindowSupportsGPUSwapchainComposition</a> - ウィンドウのスワップチェーンコンポジションの対応をチェックする
 </ol>
 <h2>型</h2>
 <ol>
@@ -445,11 +445,11 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li><a href="SDL_GPUGraphicsPipelineCreateInfo.html">SDL_GPUGraphicsPipelineCreateInfo</a> - グラフィックパイプラインのパラメータを指定する構造体 
 <li><a href="SDL_GPUGraphicsPipelineTargetInfo.html">SDL_GPUGraphicsPipelineTargetInfo</a> - グラフィックパイプラインで使用するレンダーターゲットの情報の構造体
 <li><a href="SDL_GPUIndexedIndirectDrawCommand.html">SDL_GPUIndexedIndirectDrawCommand</a> - インデックス付き間接描画コマンドのパラメータの構造体
-<li>SDL_GPUIndirectDispatchCommand
+<li><a href="SDL_GPUIndirectDispatchCommand.html">SDL_GPUIndirectDispatchCommand</a> - インデックス付きディスパッチコマンドのパラメータの構造体
 <li><a href="SDL_GPUIndirectDrawCommand.html">SDL_GPUIndirectDrawCommand</a> - 間接描画コマンドのパラメータの構造体
 <li><a href="SDL_GPUMultisampleState.html">SDL_GPUMultisampleState</a> - グラフィックパイプラインのマルチサンプリングのパラメータの構造体
 <li><a href="SDL_GPURasterizerState.html">SDL_GPURasterizerState</a> - グラフィックパイプラインのラスタライザのパラメータの構造体
-<li>SDL_GPUSamplerCreateInfo
+<li><a href="SDL_GPUSamplerCreateInfo.html">SDL_GPUSamplerCreateInfo</a> - サンプラのパラメータを指定する構造体
 <li><a href="SDL_GPUShaderCreateInfo.html">SDL_GPUShaderCreateInfo</a> - 生成するシェーダオブジェクトのコードとメタデータを指定する構造体
 <li><a href="SDL_GPUStencilOpState.html">SDL_GPUStencilOpState</a> - グラフィックパイプラインのステンシル演算の構造体
 <li><a href="SDL_GPUStorageBufferReadWriteBinding.html">SDL_GPUStorageBufferReadWriteBinding</a> - コンピュートパスのバインドするバッファに関連付けられたパラメータの構造体
@@ -461,7 +461,7 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li><a href="SDL_GPUTextureTransferInfo.html">SDL_GPUTextureTransferInfo</a> - データのテクスチャへの転送とテクスチャからの転送に関するパラメータの構造体
 <li><a href="SDL_GPUTransferBufferCreateInfo.html">SDL_GPUTransferBufferCreateInfo</a> - 生成する転送バッファのパラメータを指定する構造体
 <li><a href="SDL_GPUTransferBufferLocation.html">SDL_GPUTransferBufferLocation</a> - GPU転送バッファ内の位置を表す構造体
-<li>SDL_GPUVertexAttribute
+<li><a href="SDL_GPUVertexAttribute.html">SDL_GPUVertexAttribute</a> - 頂点の属性の構造体
 <li><a href="SDL_GPUVertexBufferDescription.html">SDL_GPUVertexBufferDescription</a> - グラフィックパイプラインで使用される頂点バッファのパラメータの構造体
 <li><a href="SDL_GPUVertexInputState.html">SDL_GPUVertexInputState</a> - グラフィックパイプラインの頂点の入力状態のパラメータの構造体
 <li><a href="SDL_GPUViewport.html">SDL_GPUViewport</a> - ビューポートを表す構造体
@@ -472,7 +472,7 @@ GPUを使用していると, 通常のデバッガでは追跡できない問題
 <li><a href="SDL_GPUBlendFactor.html">SDL_GPUBlendFactor</a> - レンダーターゲットのピクセルとテクスチャの既存のピクセルをブレンドするとき使用するブレンド係数の列挙体
 <li><a href="SDL_GPUBlendOp.html">SDL_GPUBlendOp</a> - レンダーターゲットのピクセルとテクスチャの既存のピクセルをブレンドするとき使用する演算の列挙体
 <li><a href="SDL_GPUCompareOp.html">SDL_GPUCompareOp</a> - 深度, マスク, サンプラ処理の比較演算の列挙体
-<li>SDL_GPUCubeMapFace
+<li><a href="SDL_GPUCubeMapFace.html">SDL_GPUCubeMapFace</a> - 立方体マッピングの面の列挙体
 <li><a href="SDL_GPUCullMode.html">SDL_GPUCullMode</a> - 陰面する三角形の面の方向の列挙体
 <li><a href="SDL_GPUFillMode.html">SDL_GPUFillMode</a> - グラフィックパイプラインの塗りつぶしモードの列挙体
 <li><a href="SDL_GPUFilter.html">SDL_GPUFilter</a> - サンプラが使用するフィルタリング処理の列挙体
