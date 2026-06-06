@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="ApiByCategory.html" title="1つ上">
+<title>CategoryBeginCode</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - CategoryBeginCode
+<hr>
+<h1>CategoryBeginCode</h1>
+<h2>概要</h2>
+<p>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_begin_code.h">SDL_begin_code.h</a>は, C動的ライブラリ関数の定義, 静的インライン関数, 構造体の4バイトアライメントのための設定を行う.
+醜いCプリプロセッサコードを好まないのであれば, このファイルを見てはならない :)
+</p>
+<p>
+SDLヘッダがこれを使用している. 一般的にはアプリケーションはこのヘッダを直接インクルードすべきではない.
+</p>
+<h2>マクロ</h2>
+<ol>
+<li><a href="SDL_ALIGNED.html">SDL_ALIGNED</a> - データのアライメントを指定するマクロ
+<li><a href="SDL_ALLOC_SIZE.html">SDL_ALLOC_SIZE</a> - 関数がメモリを確保して戻すことをタグ付けするマクロ
+<li><a href="SDL_ANALYZER_NORETURN.html">SDL_ANALYZER_NORETURN</a> - 関数が決して戻らないことを解析のためにタグ付けするマクロ
+<li><a href="SDL_DECLSPEC.html">SDL_DECLSPEC</a> - シンボルが公開APIであることをタグ付けするマクロ
+<li><a href="SDL_DEPRECATED.html">SDL_DEPRECATED</a> - シンボルが廃止されたことをタグ付けするマクロ
+<li>SDL_FALLTHROUGH
+<li>SDL_FORCE_INLINE
+<li>SDL_HAS_BUILTIN
+<li>SDL_HAS_EXTENSION
+<li>SDL_INLINE
+<li>SDL_MALLOC
+<li>SDL_NODISCARD
+<li>SDL_NORETURN
+<li>SDL_RESTRICT
+<li>SDLCALL
+</ol>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/CategoryBeginCode">SDL3/CategoryBeginCode - SDL Wiki</a>
+<hr>
+</body>
+</html>
