@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="ApiByCategory.html" title="1つ上">
+<title>CategoryDlopenNotes</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - CategoryDlopenNotes
+<hr>
+<h1>CategoryDlopenNotes</h1>
+<h2>概要</h2>
+<p>
+このヘッダはコードにアノテーション(注釈)を付加することで外部ツールに動的共有ライブラリへの依存を知らせることができるようにする.
+</p>
+<p>
+使用するツールチェーンがdlopenの注釈に対応していないならば, <code>SDL_DISABLE_DLOPEN_NOTES</code>を定義してこの機能を無効化できる.
+このCMakeスニペットを使用すると対応をチェックできる:
+</p>
+<p>
+<code>
+<pre>
+include(CheckCSourceCompiles)
+find_package(SDL3 REQUIRED CONFIG COMPONENTS Headers)
+list(APPEND CMAKE_REQUIRED_LIBRARIES SDL3::Headers)
+check_c_source_compiles([==[
+  #include <SDL3/SDL_dlopennote.h>
+  SDL_ELF_NOTE_DLOPEN("sdl-video",
+    "Support for video through SDL",
+    SDL_ELF_NOTE_DLOPEN_PRIORITY_SUGGESTED,
+    "libSDL-1.2.so.0", "libSDL-2.0.so.0", "libSDL3.so.0"
+  )
+  int main(int argc, char *argv[]) {
+    return argc + argv[0][1];
+  }
+]==] COMPILER_SUPPORTS_SDL_ELF_NOTE_DLOPEN)
+if(NOT COMPILER_SUPPORTS_SDL_ELF_NOTE_DLOPEN)
+  add_compile_definitions(-DSDL_DISABLE_DLOPEN_NOTE)
+endif()
+</pre>
+</code>
+</p>
+<h2>マクロ</h2>
+<ol>
+<li><a href="SDL_ELF_NOTE_DLOPEN.html">SDL_ELF_NOTE_DLOPEN</a> - アプリケーションの動的共有ライブラリへの依存の注釈を追加するマクロ
+<li><a href="SDL_ELF_NOTE_DLOPEN_PRIORITY_RECOMMENDED.html">SDL_ELF_NOTE_DLOPEN_PRIORITY_RECOMMENDED</a> - SDL_ELF_NOTE_DLOPEN()で依存する動的共有ライブラリが推奨であることを注釈するマクロ
+<li><a href="SDL_ELF_NOTE_DLOPEN_PRIORITY_REQUIRED.html">SDL_ELF_NOTE_DLOPEN_PRIORITY_REQUIRED</a> - SDL_ELF_NOTE_DLOPEN()で依存する動的共有ライブラリが必須であることを注釈するマクロ
+<li><a href="SDL_ELF_NOTE_DLOPEN_PRIORITY_SUGGESTED.html">SDL_ELF_NOTE_DLOPEN_PRIORITY_SUGGESTED</a> - SDL_ELF_NOTE_DLOPEN()で依存する動的共有ライブラリが任意であることを注釈するマクロ
+</ol>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/CategoryDlopenNotes">SDL3/CategoryDlopenNotes - SDL Wiki</a>
+<hr>
+</body>
+</html>

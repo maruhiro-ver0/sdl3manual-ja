@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryBeginCode.html" title="1つ上">
+<title>SDL_FALLTHROUGH</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryBeginCode.html">CategoryBeginCode</a> - SDL_FALLTHROUGH
+<hr>
+<h1>SDL_FALLTHROUGH</h1>
+breakのないcase文が意図したものであることを知らせるマクロ
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_begin_code.h">SDL3/SDL_begin_code.h</a>
+<h2>構文</h2>
+<code>#define SDL_FALLTHROUGH [[fallthrough]]</code>
+<h2>詳細</h2>
+<p>
+Cコンパイラはswitchのcaseブロックにbreakや他のフロー制御がなく次のcaseに流れる場合に積極的に警告を発するようになった. これはよくあるミスで, バグの原因となるためである.
+しかし, 次のcaseに通り過ぎることは正しく望ましい場合もある.
+このシンボルはアプリケーションがコンパイラに意図を伝えるもので, 警告が発せられなくなる.
+</p>
+<p>
+このように使用する:
+</p>
+<p>
+<code>
+<pre>
+switch (x) {
+    case 1:
+        DoSomethingOnlyForOne();
+        SDL_FALLTHROUGH;  // コンパイラにこれは意図したものであることを伝える
+    case 2:
+        DoSomethingForOneAndTwo();
+        break;
+}
+</pre>
+</code>
+</p>
+<h2>バージョン</h2>
+SDL 3.2.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_FALLTHROUGH">SDL_FALLTHROUGH - SDL Wiki</a>
+<hr>
+</body>
+</html>
