@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Simple Directmedia Layer SDL3.0">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategoryHints.html" title="1つ上">
+<title>SDL_HINT_ANDROID_ALLOW_PERSISTENT_FOLDER_ACCESS</title>
+</head>
+<body>
+<a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryHints.html">ヒント</a> - SDL_HINT_ANDROID_ALLOW_PERSISTENT_FOLDER_ACCESS
+<hr>
+<h1>SDL_HINT_ANDROID_ALLOW_PERSISTENT_FOLDER_ACCESS</h1>
+AndroidでSDLフォルダ選択ダイアログで選択したフォルダに永続的にアクセスできるか否かを設定するヒント
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_hints.h">SDL3/SDL_hints.h</a>
+<h2>構文</h2>
+<code>#define SDL_HINT_ANDROID_ALLOW_PERSISTENT_FOLDER_ACCESS "SDL_ANDROID_ALLOW_PERSISTENT_FOLDER_ACCESS"</code>
+<h2>詳細</h2>
+<p>
+1を設定すると, 選択されたフォルダはアプリケーションの起動後は永続的にアクセスできるようになる.
+これでユーザが一度ディレクトリを選択すると, アプリケーションがそのディレクトリを再びアクセスしたとき, ユーザの許可を再び得なくてもアクセスできるようになる.
+</p>
+<p>
+次の値を設定できる:
+</p>
+<table border="1">
+<tr><td>"0"</td><td>永続的なフォルダアクセスを認めない (デフォルト)</td></tr>
+<tr><td>"1"</td><td>永続的なフォルダアクセスを認める</td></tr>
+</table>
+<p>
+このヒントはSDLフォルダ選択ダイアログが表示される前に設定する必要があり, ダイアログの呼び出しの間に変更できる.
+</p>
+<h2>バージョン</h2>
+SDL 3.6.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3/SDL_HINT_ANDROID_ALLOW_PERSISTENT_FOLDER_ACCESS">SDL_HINT_ANDROID_ALLOW_PERSISTENT_FOLDER_ACCESS - SDL Wiki</a><br>
+<hr>
+</body>
+</html>
