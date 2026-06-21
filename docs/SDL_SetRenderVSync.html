@@ -18,15 +18,17 @@
 <p>
 <code>bool SDL_SetRenderVSync(SDL_Renderer *renderer, int vsync);</code>
 </p>
-<p>
-<code>#define SDL_RENDERER_VSYNC_DISABLED 0</code><br>
-<code>#define SDL_RENDERER_VSYNC_ADAPTIVE (-1)</code>
-</p>
 <h2>引数</h2>
 <table border="1">
 <tr><td><a href="SDL_Renderer.html">SDL_Renderer</a> *</td><td>renderer</td><td>レンダリングコンテキスト</td></tr>
 <tr><td>int</td><td>vsync</td><td>垂直同期の周期</td></tr>
 </table>
+<p>
+<table border="1">
+<tr><td>SDL_RENDERER_VSYNC_DISABLED</td><td>0</td><td>無効</td></tr>
+<tr><td>SDL_RENDERER_VSYNC_ADAPTIVE</td><td>-1</td><td>適応垂直同期</td></tr>
+</table>
+</p>
 <h2>戻り値</h2>
 <p>
 (bool) 成功のとき真, 失敗のとき偽を戻す.

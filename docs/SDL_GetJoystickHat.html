@@ -18,6 +18,15 @@
 <p>
 <code>Uint8 SDL_GetJoystickHat(SDL_Joystick *joystick, int hat);</code>
 </p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Joystick.html">SDL_Joystick</a> *</td><td>joystick</td><td>ジョイスティックの情報を持つSDL_Joystick</td></tr>
+<tr><td>int</td><td>hat</td><td>問い合わせるハット. インデックス番号は0から始まる</td></tr>
+</table>
+<h2>戻り値</h2>
+<p>
+(uint8) 現在の位置を戻す.
+</p>
 <table border="1">
 <tr><td>SDL_HAT_CENTERED</td><td>0x00u</td><td>中央</td></tr>
 <tr><td>SDL_HAT_UP</td><td>0x01u</td><td>上</td></tr>
@@ -29,15 +38,6 @@
 <tr><td>SDL_HAT_LEFTUP</td><td>(SDL_HAT_LEFT|SDL_HAT_UP)</td><td>左上</td></tr>
 <tr><td>SDL_HAT_LEFTDOWN</td><td>(SDL_HAT_LEFT|SDL_HAT_DOWN)</td><td>左下</td></tr>
 </table>
-<h2>引数</h2>
-<table border="1">
-<tr><td><a href="SDL_Joystick.html">SDL_Joystick</a> *</td><td>joystick</td><td>ジョイスティックの情報を持つSDL_Joystick</td></tr>
-<tr><td>int</td><td>hat</td><td>問い合わせるハット. インデックス番号は0から始まる</td></tr>
-</table>
-<h2>戻り値</h2>
-<p>
-(uint8) 現在の位置を戻す.
-</p>
 <h2>詳細</h2>
 <p>
 戻り値は<code>SDL_HAT_*</code>の値の内の1つである.
