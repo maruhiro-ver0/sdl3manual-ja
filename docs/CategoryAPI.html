@@ -2305,33 +2305,32 @@
 <li><a href="SDL_PRIX32(upper-case).html">SDL_PRIX32</a> - printf形式文字列のUint32型の値の大文字による16進数表記の変換書式のマクロ
 <li><a href="SDL_PRIx64.html">SDL_PRIx64</a> - printf形式文字列のUint64型の値の小文字による16進数表記の変換書式のマクロ
 <li><a href="SDL_PRIX64(upper-case).html">SDL_PRIX64</a> - printf形式文字列のUint64型の値の大文字による16進数表記の変換書式のマクロ
-<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_COPYRIGHT_STRING</a> - SDL_SetAppMetadataPropertyで設定できる人が読むことができる著作権表記のプロパティ
-<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_CREATOR_STRING</a> - SDL_SetAppMetadataPropertyで設定できる人が読むことができるアプリケーションのクリエイター/開発者/メーカーの名前のプロパティ
-<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_IDENTIFIER_STRING</a> - SDL_SetAppMetadataPropertyで設定できるアプリケーションのユニークな文字列のプロパティ
-<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_NAME_STRING</a> - SDL_SetAppMetadataPropertyで設定できる人が読むことのできるアプリケーションの名前のプロパティ
-<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_TYPE_STRING</a> - SDL_SetAppMetadataPropertyで設定できるアプリケーションの種類のプロパティ
-<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_URL_STRING</a> - SDL_SetAppMetadataPropertyで設定できるアプリケーションのwebサイトのURLのプロパティ
-<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_VERSION_STRING</a> - SDL_SetAppMetadataPropertyで設定できるアプリケーションのバージョンのプロパティ
-<li>SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN
-<li>SDL_PROP_AUDIOSTREAM_KEEP_ON_SHUTDOWN_BOOLEAN
-<li>SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN
-<li>SDL_PROP_DISPLAY_KMSDRM_PANEL_ORIENTATION_NUMBER
-<li>SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER
-<li>SDL_PROP_FILE_DIALOG_ACCEPT_STRING
-<li>SDL_PROP_FILE_DIALOG_CANCEL_STRING
-<li>SDL_PROP_FILE_DIALOG_FILTERS_POINTER
-<li>SDL_PROP_FILE_DIALOG_LOCATION_STRING
-<li>SDL_PROP_FILE_DIALOG_MANY_BOOLEAN
-<li>SDL_PROP_FILE_DIALOG_NFILTERS_NUMBER
-<li>SDL_PROP_FILE_DIALOG_TITLE_STRING
-<li>SDL_PROP_FILE_DIALOG_WINDOW_POINTER
-<li>SDL_PROP_GAMEPAD_CAP_MONO_LED_BOOLEAN
-<li>SDL_PROP_GAMEPAD_CAP_PLAYER_LED_BOOLEAN
-<li>SDL_PROP_GAMEPAD_CAP_RGB_LED_BOOLEAN
-<li>SDL_PROP_GAMEPAD_CAP_RUMBLE_BOOLEAN
-<li>SDL_PROP_GAMEPAD_CAP_TRIGGER_RUMBLE_BOOLEAN
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_COPYRIGHT_STRING</a> - アプリケーションのメタデータのプロパティ. 人が読むことができる著作権表記
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_CREATOR_STRING</a> - アプリケーションのメタデータのプロパティ. 人が読むことができるアプリケーションのクリエイター/開発者/メーカーの名前
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_IDENTIFIER_STRING</a> - アプリケーションのメタデータのプロパティ. アプリケーションのユニークな文字列
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_NAME_STRING</a> - アプリケーションのメタデータのプロパティ. 人が読むことのできるアプリケーションの名前
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_TYPE_STRING</a> - アプリケーションのメタデータのプロパティ. アプリケーションの種類
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_URL_STRING</a> - アプリケーションのメタデータのプロパティ. アプリケーションのwebサイトのURL
+<li><a href="SDL_SetAppMetadataProperty.html">SDL_PROP_APP_METADATA_VERSION_STRING</a> - アプリケーションのメタデータのプロパティ. アプリケーションのバージョン
+<li><a href="SDL_GetAudioStreamProperties.html">SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN</a> - オーディオストリームのプロパティ. 真のときストリームはオーディオサブシステムが終了したとき自動的に終了する
+<li><a href="SDL_GetDisplayProperties.html">SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN</a> - ディスプレイのプロパティ. ディスプレイにSDRホワイトポイントよりも高いHDRヘッドルーム(最大輝度)がある場合は真
+<li><a href="SDL_GetDisplayProperties.html">SDL_PROP_DISPLAY_KMSDRM_PANEL_ORIENTATION_NUMBER</a> - ディスプレイのプロパティ. KMS/DRMのディスプレイの"panel orientation"プロパティ(時計回りの角度)
+<li><a href="SDL_GetDisplayProperties.html">SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER</a> - ディスプレイのプロパティ. Waylandのディスプレイのwl_output
+<li><a href="SDL_ShowFileDialogWithProperties.html">SDL_PROP_FILE_DIALOG_ACCEPT_STRING</a> - ファイルダイアログのプロパティ. 選択ボタンのラベル
+<li><a href="SDL_ShowFileDialogWithProperties.html">SDL_PROP_FILE_DIALOG_CANCEL_STRING</a> - ファイルダイアログのプロパティ. キャンセルボタンのラベル
+<li><a href="SDL_ShowFileDialogWithProperties.html">SDL_PROP_FILE_DIALOG_FILTERS_POINTER</a> - ファイルダイアログのプロパティ. ファイル選択で使用されるフィルタを表すSDL_DialogFileFilter構造体へのポインタ
+<li><a href="SDL_ShowFileDialogWithProperties.html">SDL_PROP_FILE_DIALOG_LOCATION_STRING</a> - ファイルダイアログのプロパティ. ダイアログが開いたときのデフォルトのフォルダまたはファイル
+<li><a href="SDL_ShowFileDialogWithProperties.html">SDL_PROP_FILE_DIALOG_MANY_BOOLEAN</a> - ファイルダイアログのプロパティ. 真のときユーザは複数の項目を選択できる
+<li><a href="SDL_ShowFileDialogWithProperties.html">SDL_PROP_FILE_DIALOG_NFILTERS_NUMBER</a> - ファイルダイアログのプロパティ. フィルタの配列の数
+<li><a href="SDL_ShowFileDialogWithProperties.html">SDL_PROP_FILE_DIALOG_TITLE_STRING</a> - ファイルダイアログのプロパティ. ダイアログのタイトル
+<li><a href="SDL_ShowFileDialogWithProperties.html">SDL_PROP_FILE_DIALOG_WINDOW_POINTER</a> - ファイルダイアログのプロパティ. このウィンドウに対してモーダルにする
+<li><a href="SDL_GetGamepadProperties.html">SDL_PROP_GAMEPAD_CAP_MONO_LED_BOOLEAN</a> - ゲームパッドのプロパティ. 真のときジョイスティックには明るさを変更できるLEDがある
+<li><a href="SDL_GetGamepadProperties.html">SDL_PROP_GAMEPAD_CAP_PLAYER_LED_BOOLEAN</a> - ゲームパッドのプロパティ. 真のときジョイスティックにはプレイヤーLEDがある
+<li><a href="SDL_GetGamepadProperties.html">SDL_PROP_GAMEPAD_CAP_RGB_LED_BOOLEAN</a> - ゲームパッドのプロパティ. 真のときジョイスティックには色を変更できるLEDがある
+<li><a href="SDL_GetGamepadProperties.html">SDL_PROP_GAMEPAD_CAP_RUMBLE_BOOLEAN</a> - ゲームパッドのプロパティ. 真のときジョイスティックには左右振動がある
+<li><a href="SDL_GetGamepadProperties.html">SDL_PROP_GAMEPAD_CAP_TRIGGER_RUMBLE_BOOLEAN</a> - ゲームパッドのプロパティ. 真のときジョイスティックには単純な振動がある
 <li><a href="SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER.html">SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER</a> - Waylandビデオバックグラウンドで使用されるグローバルwl_displayオブジェクトへのポインタのマクロ
-<li>SDL_PROP_GPU_BUFFER_CREATE_NAME_STRING
+<li><a href="SDL_CreateGPUBuffer.html">SDL_PROP_GPU_BUFFER_CREATE_NAME_STRING</a> - GPUバッファ生成のプロパティ. デバッグツールに表示される名前
 <li>SDL_PROP_GPU_COMPUTEPIPELINE_CREATE_NAME_STRING
 <li>SDL_PROP_GPU_DEVICE_CREATE_D3D12_ALLOW_FEWER_RESOURCE_SLOTS_BOOLEAN
 <li>SDL_PROP_GPU_DEVICE_CREATE_D3D12_SEMANTIC_NAME_STRING

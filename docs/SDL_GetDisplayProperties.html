@@ -28,21 +28,21 @@
 SDLから次の読取専用プロパティが提供されている:
 </p>
 <ul>
-<li>SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN: ディスプレイにSDRホワイトポイントよりも高いHDRヘッドルーム(最大輝度)がある場合は真.
+<li><code>SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN</code>: ディスプレイにSDRホワイトポイントよりも高いHDRヘッドルーム(最大輝度)がある場合は真.
 全ての環境でレベルを得られるとは限らないため, このプロパティは有無のチェックのみを目的としている
 </ul>
 <p>
 KMS/DRMの場合:
 </p>
 <ul>
-<li>SDL_PROP_DISPLAY_KMSDRM_PANEL_ORIENTATION_NUMBER: ディスプレイの"panel orientation"プロパティ(時計回りの角度).
+<li><code>SDL_PROP_DISPLAY_KMSDRM_PANEL_ORIENTATION_NUMBER</code>: ディスプレイの"panel orientation"プロパティ(時計回りの角度).
 これはヒントとして提供されているだけで, アプリケーションが要求されたディスプレイの角度に合うように座標の変換を行う必要がある
 </ul>
 <p>
-On Waylandの場合:
+Waylandの場合:
 </p>
 <ul>
-<li>SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER: ディスプレイのwl_output
+<li><code>SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER</code>: ディスプレイのwl_output
 </ul>
 </p>
 <h2>スレッドセーフ</h2>
