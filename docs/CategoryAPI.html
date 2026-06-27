@@ -494,7 +494,7 @@
 <li><a href="SDL_GetPrimarySelectionText.html">SDL_GetPrimarySelectionText</a> - プライマリ選択されたUTF-8のテキストを得る
 <li><a href="SDL_GetProcessInput.html">SDL_GetProcessInput</a> - プロセスの標準入力に関連付けられたSDL_IOStreamを得る
 <li><a href="SDL_GetProcessOutput.html">SDL_GetProcessOutput</a> - プロセスの標準出力に関連付けられたSDL_IOStreamを得る
-<li><a href="SDL_GetProcessProperties.html">SDL_GetProcessProperties</a> - プロパティを指定して新しいプロセスを生成する
+<li><a href="SDL_GetProcessProperties.html">SDL_GetProcessProperties</a> - プロセスに関連付けられたプロパティを得る
 <li><a href="SDL_GetPropertyType.html">SDL_GetPropertyType</a> - プロパティグループのプロパティの型を得る
 <li><a href="SDL_GetRealGamepadType.html">SDL_GetRealGamepadType</a> - オープンしたマッピングの上書きを無視したゲームパッドの種類を得る
 <li><a href="SDL_GetRealGamepadTypeForID.html">SDL_GetRealGamepadTypeForID</a> - インスタンスIDからマッピングの上書きを無視したゲームパッドの種類を得る
@@ -2331,115 +2331,113 @@
 <li><a href="SDL_GetGamepadProperties.html">SDL_PROP_GAMEPAD_CAP_TRIGGER_RUMBLE_BOOLEAN</a> - ゲームパッドのプロパティ. 真のときジョイスティックには単純な振動がある
 <li><a href="SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER.html">SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER</a> - Waylandビデオバックグラウンドで使用されるグローバルwl_displayオブジェクトへのポインタのマクロ
 <li><a href="SDL_CreateGPUBuffer.html">SDL_PROP_GPU_BUFFER_CREATE_NAME_STRING</a> - GPUバッファ生成のプロパティ. デバッグツールに表示される名前
-<li>SDL_PROP_GPU_COMPUTEPIPELINE_CREATE_NAME_STRING
-<li>SDL_PROP_GPU_DEVICE_CREATE_D3D12_ALLOW_FEWER_RESOURCE_SLOTS_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_D3D12_SEMANTIC_NAME_STRING
-<li>SDL_PROP_GPU_DEVICE_CREATE_DEBUGMODE_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_FEATURE_ANISOTROPY_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_FEATURE_CLIP_DISTANCE_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_FEATURE_DEPTH_CLAMPING_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_FEATURE_INDIRECT_DRAW_FIRST_INSTANCE_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_NAME_STRING
-<li>SDL_PROP_GPU_DEVICE_CREATE_PREFERLOWPOWER_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_DXBC_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_DXIL_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_METALLIB_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_MSL_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_PRIVATE_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_SHADERS_SPIRV_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_VERBOSE_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_VULKAN_DEPTHCLAMP_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_VULKAN_DRAWINDIRECTFIRST_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_VULKAN_SAMPLERANISOTROPY_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_CREATE_VULKAN_SHADERCLIPDISTANCE_BOOLEAN
-<li>SDL_PROP_GPU_DEVICE_DRIVER_INFO_STRING
-<li>SDL_PROP_GPU_DEVICE_DRIVER_NAME_STRING
-<li>SDL_PROP_GPU_DEVICE_DRIVER_VERSION_STRING
-<li>SDL_PROP_GPU_DEVICE_NAME_STRING
-<li>SDL_PROP_GPU_GRAPHICSPIPELINE_CREATE_NAME_STRING
-<li>SDL_PROP_GPU_SAMPLER_CREATE_NAME_STRING
-<li>SDL_PROP_GPU_SHADER_CREATE_NAME_STRING
-<li>SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_A_FLOAT
-<li>SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_B_FLOAT
-<li>SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_DEPTH_FLOAT
-<li>SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_G_FLOAT
-<li>SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_R_FLOAT
-<li>SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_STENCIL_NUMBER
-<li>SDL_PROP_GPU_TEXTURE_CREATE_NAME_STRING
-<li>SDL_PROP_GPU_TRANSFERBUFFER_CREATE_NAME_STRING
-<li>SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER
-<li>SDL_PROP_IOSTREAM_ANDROID_AASSET_POINTER
-<li>SDL_PROP_IOSTREAM_DYNAMIC_CHUNKSIZE_NUMBER
-<li>SDL_PROP_IOSTREAM_DYNAMIC_MEMORY_POINTER
-<li>SDL_PROP_IOSTREAM_FILE_DESCRIPTOR_NUMBER
-<li>SDL_PROP_IOSTREAM_MEMORY_FREE_FUNC
-<li>SDL_PROP_IOSTREAM_MEMORY_FREE_FUNC_POINTER
-<li>SDL_PROP_IOSTREAM_MEMORY_POINTER
-<li>SDL_PROP_IOSTREAM_MEMORY_SIZE_NUMBER
-<li>SDL_PROP_IOSTREAM_STDIO_FILE_POINTER
-<li>SDL_PROP_IOSTREAM_WINDOWS_HANDLE_POINTER
-<li>SDL_PROP_JOYSTICK_CAP_MONO_LED_BOOLEAN
-<li>SDL_PROP_JOYSTICK_CAP_PLAYER_LED_BOOLEAN
-<li>SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN
-<li>SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN
-<li>SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN
-<li><a href="SDL_PROP_NAME_STRING.html">SDL_PROP_NAME_STRING</a> - 汎用的なプロパティグループ名のマクロ
-<li>SDL_PROP_PROCESS_BACKGROUND_BOOLEAN
-<li>SDL_PROP_PROCESS_CREATE_ARGS_POINTER
-<li>SDL_PROP_PROCESS_CREATE_BACKGROUND_BOOLEAN
-<li>SDL_PROP_PROCESS_CREATE_CMDLINE_STRING
-<li>SDL_PROP_PROCESS_CREATE_ENVIRONMENT_POINTER
-<li>SDL_PROP_PROCESS_CREATE_STDERR_NUMBER
-<li>SDL_PROP_PROCESS_CREATE_STDERR_POINTER
-<li>SDL_PROP_PROCESS_CREATE_STDERR_TO_STDOUT_BOOLEAN
-<li>SDL_PROP_PROCESS_CREATE_STDIN_NUMBER
-<li>SDL_PROP_PROCESS_CREATE_STDIN_POINTER
-<li>SDL_PROP_PROCESS_CREATE_STDOUT_NUMBER
-<li>SDL_PROP_PROCESS_CREATE_STDOUT_POINTER
-<li>SDL_PROP_PROCESS_CREATE_WORKING_DIRECTORY_STRING
-<li>SDL_PROP_PROCESS_PID_NUMBER
-<li>SDL_PROP_PROCESS_STDERR_POINTER
-<li>SDL_PROP_PROCESS_STDIN_POINTER
-<li>SDL_PROP_PROCESS_STDOUT_POINTER
-<li>SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER
-<li>SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN
-<li>SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN
-<li>SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN
-<li>SDL_PROP_RENDERER_CREATE_NAME_STRING
-<li>SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER
-<li>SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_NUMBER
-<li>SDL_PROP_RENDERER_CREATE_SURFACE_POINTER
-<li>SDL_PROP_RENDERER_CREATE_VULKAN_DEVICE_POINTER
-<li>SDL_PROP_RENDERER_CREATE_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER
-<li>SDL_PROP_RENDERER_CREATE_VULKAN_INSTANCE_POINTER
-<li>SDL_PROP_RENDERER_CREATE_VULKAN_PHYSICAL_DEVICE_POINTER
-<li>SDL_PROP_RENDERER_CREATE_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER
-<li>SDL_PROP_RENDERER_CREATE_VULKAN_SURFACE_NUMBER
-<li>SDL_PROP_RENDERER_CREATE_WINDOW_POINTER
-<li>SDL_PROP_RENDERER_D3D11_DEVICE_POINTER
-<li>SDL_PROP_RENDERER_D3D11_SWAPCHAIN_POINTER
-<li>SDL_PROP_RENDERER_D3D12_COMMAND_QUEUE_POINTER
-<li>SDL_PROP_RENDERER_D3D12_DEVICE_POINTER
-<li>SDL_PROP_RENDERER_D3D12_SWAPCHAIN_POINTER
-<li>SDL_PROP_RENDERER_D3D9_DEVICE_POINTER
-<li>SDL_PROP_RENDERER_GPU_DEVICE_POINTER
-<li>SDL_PROP_RENDERER_HDR_ENABLED_BOOLEAN
-<li>SDL_PROP_RENDERER_HDR_HEADROOM_FLOAT
-<li>SDL_PROP_RENDERER_MAX_TEXTURE_SIZE_NUMBER
-<li>SDL_PROP_RENDERER_NAME_STRING
-<li>SDL_PROP_RENDERER_OUTPUT_COLORSPACE_NUMBER
-<li>SDL_PROP_RENDERER_SDR_WHITE_POINT_FLOAT
-<li>SDL_PROP_RENDERER_SURFACE_POINTER
-<li>SDL_PROP_RENDERER_TEXTURE_FORMATS_POINTER
-<li>SDL_PROP_RENDERER_VSYNC_NUMBER
-<li>SDL_PROP_RENDERER_VULKAN_DEVICE_POINTER
-<li>SDL_PROP_RENDERER_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER
-<li>SDL_PROP_RENDERER_VULKAN_INSTANCE_POINTER
-<li>SDL_PROP_RENDERER_VULKAN_PHYSICAL_DEVICE_POINTER
-<li>SDL_PROP_RENDERER_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER
-<li>SDL_PROP_RENDERER_VULKAN_SURFACE_NUMBER
-<li>SDL_PROP_RENDERER_VULKAN_SWAPCHAIN_IMAGE_COUNT_NUMBER
-<li>SDL_PROP_RENDERER_WINDOW_POINTER
+<li><a href="SDL_CreateGPUComputePipeline.html">SDL_PROP_GPU_COMPUTEPIPELINE_CREATE_NAME_STRING</a> - GPUグラフィックパイプライン生成のプロパティ. デバッグツールに表示される名前
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_D3D12_AGILITY_SDK_PATH_STRING</a> - GPUグラフィックパイプライン生成のプロパティ. D3D12Core.dllのパス指定
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_D3D12_AGILITY_SDK_VERSION_NUMBER</a> - GPUグラフィックパイプライン生成のプロパティ. D3D12Core.dllのバージョン指定
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_D3D12_ALLOW_FEWER_RESOURCE_SLOTS_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. D3D12でResourcing Binding Tier 1に対応するか否か
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_D3D12_SEMANTIC_NAME_STRING</a> - GPUコンテキスト生成のプロパティ. 全ての頂点セマンティクスで使用する接頭辞
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_DEBUGMODE_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. デバッグモードプロパティと検証の有効化の有無
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_FEATURE_ANISOTROPY_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. VulkanデバイスのdrawIndirectFirstInstance機能. 偽のときSDL_GPUIndirectDrawCommandのfirst_instance引数には必ず0が設定される
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_FEATURE_CLIP_DISTANCE_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. VulkanデバイスのshaderClipDistance機能. 偽のときシェーダコードの距離によるクリッピングが無効になる
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_FEATURE_DEPTH_CLAMPING_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. VulkanデバイスのdepthClamp機能. 偽のとき深度クランピングが無効になり, SDL_GPURasterizerStateのenable_depth_clipには常に真を設定することが必要になる
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_FEATURE_INDIRECT_DRAW_FIRST_INSTANCE_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. VulkanデバイスのdrawIndirectFirstInstance機能. 偽のときSDL_GPUIndirectDrawCommandのfirst_instance引数には必ず0が設定される.
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_NAME_STRING</a> - GPUコンテキスト生成のプロパティ. 特定のドライバを使用したい場合のGPUドライバの名前
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_PREFERLOWPOWER_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. 最大GPUパフォーマンスよりも省電力を優先する
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_SHADERS_DXBC_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. アプリケーションは可能ならばD3D12のDXBC SM5_1シェーダを提供できる
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_SHADERS_DXIL_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. アプリケーションは可能ならばD3D12のDXIL SM6_0シェーダを提供できる
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_SHADERS_METALLIB_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. アプリケーションは可能ならばMetalのプリコンパイルされたmetallibシェーダを提供できる
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_SHADERS_MSL_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. アプリケーションは可能ならばMetalのMSLシェーダを提供できる
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_SHADERS_PRIVATE_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. アプリケーションはNDA(機密保持契約された)シェーダを提供できる
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_SHADERS_SPIRV_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. アプリケーションは可能ならばVulkanのSPIR-Vシェーダを提供できる
+<li><a href="SDL_CreateGPUDeviceWithProperties.html">SDL_PROP_GPU_DEVICE_CREATE_VERBOSE_BOOLEAN</a> - GPUコンテキスト生成のプロパティ. デバイス生成時にデバッグ時に有用なログを自動的に出力する
+<li><a href="SDL_GetGPUDeviceProperties.html">SDL_PROP_GPU_DEVICE_DRIVER_INFO_STRING</a> - GPUデバイスのプロパティ. 背後のシステムドライバ自身が報告した詳細なバージョン情報
+<li><a href="SDL_GetGPUDeviceProperties.html">SDL_PROP_GPU_DEVICE_DRIVER_NAME_STRING</a> - GPUデバイスのプロパティ. 背後のシステムドライバ自身が報告した名前
+<li><a href="SDL_GetGPUDeviceProperties.html">SDL_PROP_GPU_DEVICE_DRIVER_VERSION_STRING</a> - GPUデバイスのプロパティ. 背後のシステムドライバ自身が報告したバージョン
+<li><a href="SDL_GetGPUDeviceProperties.html">SDL_PROP_GPU_DEVICE_NAME_STRING</a> - GPUデバイスのプロパティ. システムドライバが報告した背後のデバイスの名前
+<li><a href="SDL_CreateGPUGraphicsPipeline.html">SDL_PROP_GPU_GRAPHICSPIPELINE_CREATE_NAME_STRING</a> - GPUグラフィックパイプラインのプロパティ. デバッグツールに表示される名前
+<li><a href="SDL_CreateGPUSampler.html">SDL_PROP_GPU_SAMPLER_CREATE_NAME_STRING</a> - GPUサンプラ生成のプロパティ. デバッグツールに表示される名前
+<li><a href="SDL_CreateGPUShader.html">SDL_PROP_GPU_SHADER_CREATE_NAME_STRING</a> - GPUシェーダ生成のプロパティ. デバッグツールに表示される名前
+<li><a href="SDL_CreateGPUTexture.html">SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_A_FLOAT</a> - GPUテクスチャのプロパティ. テクスチャのusageがSDL_GPU_TEXTUREUSAGE_COLOR_TARGETのときテクスチャのα要素をこの値でクリアする
+<li><a href="SDL_CreateGPUTexture.html">SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_B_FLOAT</a> - GPUテクスチャのプロパティ. テクスチャのusageがSDL_GPU_TEXTUREUSAGE_COLOR_TARGETのときテクスチャの青要素をこの値でクリアする
+<li><a href="SDL_CreateGPUTexture.html">SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_DEPTH_FLOAT</a> - GPUテクスチャのプロパティ. テクスチャのusageがSDL_GPU_TEXTUREUSAGE_DEPTH_STENCIL_TARGETのときテクスチャの深度をこの値でクリアする
+<li><a href="SDL_CreateGPUTexture.html">SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_G_FLOAT</a> - GPUテクスチャのプロパティ. テクスチャのusageがSDL_GPU_TEXTUREUSAGE_COLOR_TARGETのときテクスチャの緑要素をこの値でクリアする
+<li><a href="SDL_CreateGPUTexture.html">SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_R_FLOAT</a> - GPUテクスチャのプロパティ. テクスチャのusageがSDL_GPU_TEXTUREUSAGE_COLOR_TARGETのときテクスチャの赤要素をこの値でクリアする
+<li><a href="SDL_CreateGPUTexture.html">SDL_PROP_GPU_TEXTURE_CREATE_D3D12_CLEAR_STENCIL_NUMBER</a> - GPUテクスチャのプロパティ. テクスチャのusageがSDL_GPU_TEXTUREUSAGE_DEPTH_STENCIL_TARGETのときテクスチャのマスクをこのUint8の値でクリアする
+<li><a href="SDL_CreateGPUTexture.html">SDL_PROP_GPU_TEXTURE_CREATE_NAME_STRING</a> - GPUテクスチャ生成のプロパティ. デバッグツールに表示される名前
+<li><a href="SDL_CreateGPUTransferBuffer.html">SDL_PROP_GPU_TRANSFERBUFFER_CREATE_NAME_STRING</a> - GPU転送バッファ生成のプロパティ. デバッグツールに表示される名前
+<li><a href="SDL_hid_get_properties.html">SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER</a> - HIDデバイスのプロパティ. デバイスに関連付けられたlibusb_device_handle
+<li><a href="SDL_IOFromFile.html">SDL_PROP_IOSTREAM_ANDROID_AASSET_POINTER</a> - ファイルのデータストリームのプロパティ. Android NDK AAsset *でキャストできるポインタ
+<li><a href="SDL_IOFromDynamicMem.html">SDL_PROP_IOSTREAM_DYNAMIC_CHUNKSIZE_NUMBER</a> - 動的メモリのデータストリームのプロパティ. メモリはこの値の倍数で確保される
+<li><a href="SDL_IOFromFile.html">SDL_PROP_IOSTREAM_DYNAMIC_MEMORY_POINTER</a> - 動的メモリのデータストリームのプロパティ. データストリームの内部メモリへのポインタ
+<li><a href="SDL_IOFromFile.html">SDL_PROP_IOSTREAM_FILE_DESCRIPTOR_NUMBER</a> - ファイルのデータストリームのプロパティ. ファイルシステムへのアクセスに使用するファイルディスクリプタ
+<li><a href="SDL_IOFromMem.html">SDL_PROP_IOSTREAM_MEMORY_FREE_FUNC</a> - メモリのデータストリームのプロパティ. メモリ解放関数へのポインタ
+<li><a href="SDL_IOFromMem.html">SDL_PROP_IOSTREAM_MEMORY_FREE_FUNC_POINTER</a> - メモリのデータストリームのプロパティ. メモリ解放関数へのポインタ
+<li><a href="SDL_IOFromMem.html">SDL_PROP_IOSTREAM_MEMORY_POINTER</a> - メモリのデータストリームのプロパティ. メモリバッファへのポインタ
+<li><a href="SDL_IOFromMem.html">SDL_PROP_IOSTREAM_MEMORY_SIZE_NUMBER</a> - メモリのデータストリームのプロパティ. メモリバッファのバイト数
+<li><a href="SDL_IOFromFile.html">SDL_PROP_IOSTREAM_STDIO_FILE_POINTER</a> - ファイルのデータストリームのプロパティ. stdio FILE *でキャストできるポインタ
+<li><a href="SDL_IOFromFile.html">SDL_PROP_IOSTREAM_WINDOWS_HANDLE_POINTER</a> - ファイルのデータストリームのプロパティ. win32 HANDLEでキャストできるポインタ
+<li><a href="SDL_GetJoystickProperties.html">SDL_PROP_JOYSTICK_CAP_MONO_LED_BOOLEAN</a> - ジョイスティックのプロパティ. 真のときジョイスティックには明るさを変更できるLEDがある
+<li><a href="SDL_GetJoystickProperties.html">SDL_PROP_JOYSTICK_CAP_PLAYER_LED_BOOLEAN</a> - ジョイスティックのプロパティ. 真のときジョイスティックにはプレイヤーLEDがある
+<li><a href="SDL_GetJoystickProperties.html">SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN</a> - ジョイスティックのプロパティ. 真のときジョイスティックには色を変更できるLEDがある
+<li><a href="SDL_GetJoystickProperties.html">SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN</a> - ジョイスティックのプロパティ. 真のときジョイスティックには左右振動がある
+<li><a href="SDL_GetJoystickProperties.html">SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN</a> - ジョイスティックのプロパティ. 真のときジョイスティックには単純な振動がある
+<li><a href="SDL_PROP_NAME_STRING.html">SDL_PROP_NAME_STRING</a> - 汎用的なプロパティグループ名のプロパティ
+<li><a href="SDL_GetProcessProperties.html">SDL_PROP_PROCESS_BACKGROUND_BOOLEAN</a> - プロセスのプロパティ. 真のときプロセスはバックグラウンドで実行されている
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_ARGS_POINTER</a> - プロセス生成のプロパティ. 実行するプログラム
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_BACKGROUND_BOOLEAN</a> - プロセス生成のプロパティ. 真のときプロセスはバックグラウンドで実行される
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_CMDLINE_STRING</a> - プロセス生成のプロパティ. 実行するプログラムと引数の文字列
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_ENVIRONMENT_POINTER</a> - プロセス生成のプロパティ. SDL_Environmentポインタ
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDERR_NUMBER</a> - プロセス生成のプロパティ. プロセスの標準エラーの出力先のSDL_ProcessIO
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDERR_POINTER</a> - プロセス生成のプロパティ. 標準エラーで使用されるSDL_IOStreamポインタ
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDERR_TO_STDOUT_BOOLEAN</a> - プロセス生成のプロパティ. 真のときプロセスの標準エラーはプロセスの標準出力にリダイレクトされる
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDIN_NUMBER</a> - プロセス生成のプロパティ. プロセスの標準入力の入力元のSDL_ProcessIO
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDIN_POINTER</a> - プロセス生成のプロパティ. 標準入力で使用されるSDL_IOStreamポインタ
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDOUT_NUMBER</a> - プロセス生成のプロパティ. プロセスの標準出力の出力先のSDL_ProcessIO
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDOUT_POINTER</a> - プロセス生成のプロパティ. 標準出力で使用されるSDL_IOStreamポインタ
+<li><a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_WORKING_DIRECTORY_STRING</a> - プロセス生成のプロパティ. 
+<li><a href="SDL_GetProcessProperties.html">SDL_PROP_PROCESS_PID_NUMBER</a> - プロセスのプロパティ. プロセスのプロセスID
+<li><a href="SDL_GetProcessProperties.html">SDL_PROP_PROCESS_STDERR_POINTER</a> - プロセスのプロパティ. プロセスから標準エラーをブロックせずに読み込めるSDL_IOStream
+<li><a href="SDL_GetProcessProperties.html">SDL_PROP_PROCESS_STDIN_POINTER</a> - プロセスのプロパティ. 標準入力のSDL_IOStream
+<li><a href="SDL_GetProcessProperties.html">SDL_PROP_PROCESS_STDOUT_POINTER</a> - プロセスのプロパティ. プロセスから標準出力をブロックせずに読み込めるSDL_IOStream
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER</a> - レンダラ生成のプロパティ. レンダラで使用するデバイス
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN</a> - レンダラ生成のプロパティ. アプリケーションはSDL_GPURenderStateにDXILシェーダを提供できる
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN</a> - レンダラ生成のプロパティ. アプリケーションはSDL_GPURenderStateにMSLシェーダを提供できる
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN</a> - レンダラ生成のプロパティ. アプリケーションはSDL_GPURenderStateにSPIR-Vシェーダを提供できる
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_NAME_STRING</a> - レンダラ生成のプロパティ. 使用するレンダリングドライバの名前
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER</a> - レンダラ生成のプロパティ. ディスプレイへの出力のためのSDL_Colorspaceの値
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_NUMBER</a> - レンダラ生成のプロパティ. 0以外のとき更新周期と同期させる
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_SURFACE_POINTER</a> - レンダラ生成のプロパティ. レンダリングを表示するサーフェイス
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_VULKAN_DEVICE_POINTER</a> - レンダラ生成のプロパティ. レンダラで使用するVkDevice
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER</a> - レンダラ生成のプロパティ. レンダリングで使用するキューファミリのインデックス
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_VULKAN_INSTANCE_POINTER</a> - レンダラ生成のプロパティ. レンダラで使用するVkInstance
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_VULKAN_PHYSICAL_DEVICE_POINTER</a> - レンダラ生成のプロパティ. レンダラで使用するVkPhysicalDevice
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER</a> - レンダラ生成のプロパティ. 画面表示で使用するキューファミリのインデックス
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_VULKAN_SURFACE_NUMBER</a> - レンダラ生成のプロパティ. レンダラで使用するVkSurfaceKHR
+<li><a href="SDL_CreateRendererWithProperties.html">SDL_PROP_RENDERER_CREATE_WINDOW_POINTER</a> - レンダラ生成のプロパティ. レンダリングを表示するウィンドウ
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_D3D11_DEVICE_POINTER</a> - レンダラのプロパティ. レンダラのID3D11Device
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_D3D11_SWAPCHAIN_POINTER</a> - レンダラのプロパティ. レンダラのIDXGISwapChain1
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_D3D12_COMMAND_QUEUE_POINTER</a> - レンダラのプロパティ. レンダラのID3D12CommandQueue
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_D3D12_DEVICE_POINTER</a> - レンダラのプロパティ. レンダラのID3D12Device
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_D3D12_SWAPCHAIN_POINTER</a> - レンダラのプロパティ. レンダラのIDXGISwapChain4
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_D3D9_DEVICE_POINTER</a> - レンダラのプロパティ. レンダラのIDirect3DDevice9
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_GPU_DEVICE_POINTER</a> - レンダラのプロパティ. レンダラのSDL_GPUDevice
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_HDR_ENABLED_BOOLEAN</a> - レンダラのプロパティ. 真のとき色空間がSDL_COLORSPACE_SRGB_LINEARかつディスプレイに表示するレンダラのHDRが有効
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_HDR_HEADROOM_FLOAT</a> - レンダラのプロパティ. 表示可能なSDRホワイトポイント基準のハイダイナミックレンジの値
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_MAX_TEXTURE_SIZE_NUMBER</a> - レンダラのプロパティ. テクスチャの幅と高さの最大値
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_NAME_STRING</a> - レンダラのプロパティ. レンダリングドライバの名前
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_OUTPUT_COLORSPACE_NUMBER</a> - レンダラのプロパティ. ディスプレイ出力の色空間を表すSDL_Colorspaceの値
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_SDR_WHITE_POINT_FLOAT</a> - レンダラのプロパティ. SDRホワイトのSDL_COLORSPACE_SRGB_LINEARの値
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_SURFACE_POINTER</a> - レンダラのプロパティ. レンダリングが表示されるサーフェイス
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_TEXTURE_FORMATS_POINTER</a> - レンダラのプロパティ. このレンダラの有効なテクスチャの形式を表すSDL_PIXELFORMAT_UNKNOWN終端の(const SDL_PixelFormat *)配列のピクセル形式
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_VSYNC_NUMBER</a> - レンダラのプロパティ. 現在の垂直同期の設定
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_VULKAN_DEVICE_POINTER</a> - レンダラのプロパティ. レンダラのVkDevice
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER</a> - レンダラのプロパティ. レンダリングで使用するキューファミリのインデックス
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_VULKAN_INSTANCE_POINTER</a> - レンダラのプロパティ. レンダラのVkInstance
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_VULKAN_PHYSICAL_DEVICE_POINTER</a> - レンダラのプロパティ. レンダラのVkPhysicalDevice
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER</a> - レンダラのプロパティ. 画面表示で使用するキューファミリのインデックス
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_VULKAN_SURFACE_NUMBER</a> - レンダラのプロパティ. レンダラのVkSurfaceKHR
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_VULKAN_SWAPCHAIN_IMAGE_COUNT_NUMBER</a> - レンダラのプロパティ. Vulkanレンダラで使用されるスワップチェーン画像の数, または処理の潜在的なフレームの数
+<li><a href="SDL_GetRendererProperties.html">SDL_PROP_RENDERER_WINDOW_POINTER</a> - レンダラのプロパティ. レンダリングが表示されるウィンドウ
 <li>SDL_PROP_SURFACE_HDR_HEADROOM_FLOAT
 <li>SDL_PROP_SURFACE_HOTSPOT_X_NUMBER
 <li>SDL_PROP_SURFACE_HOTSPOT_Y_NUMBER

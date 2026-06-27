@@ -11,7 +11,7 @@
 <a href="index.html">目次</a> - <a href="ApiByCategory.html">SDL 3.0 API(機能別)</a> - <a href="CategoryProcess.html">プロセス</a> - SDL_GetProcessProperties
 <hr>
 <h1>SDL_GetProcessProperties</h1>
-プロパティを指定して新しいプロセスを生成する
+プロセスに関連付けられたプロパティを得る
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_process.h">SDL3/SDL_process.h</a>
 <h2>構文</h2>
@@ -28,11 +28,11 @@
 次の読取専用プロパティがSDLから提供される:
 </p>
 <ul>
-<li>SDL_PROP_PROCESS_PID_NUMBER: プロセスのプロセスID
-<li>SDL_PROP_PROCESS_STDIN_POINTER: プロセスがSDL_PROP_PROCESS_CREATE_STDIN_NUMBERにSDL_PROCESS_STDIO_APPを設定して生成された場合の標準入力のSDL_IOStream
-<li>SDL_PROP_PROCESS_STDOUT_POINTER: プロセスがSDL_PROP_PROCESS_CREATE_STDOUT_NUMBERにSDL_PROCESS_STDIO_APPを設定して生成された場合のプロセスから標準出力をブロックせずに読み込めるSDL_IOStream
-<li>SDL_PROP_PROCESS_STDERR_POINTER:プロセスがSDL_PROP_PROCESS_CREATE_STDERR_NUMBERにSDL_PROCESS_STDIO_APPを設定して生成された場合のプロセスから標準エラーをブロックせずに読み込めるSDL_IOStream
-<li>SDL_PROP_PROCESS_BACKGROUND_BOOLEAN: 真のときプロセスはバックグラウンドで実行されている
+<li><code>SDL_PROP_PROCESS_PID_NUMBER</code>: プロセスのプロセスID
+<li><code>SDL_PROP_PROCESS_STDIN_POINTER</code>: プロセスが<a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDIN_NUMBER</a>に<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_APP</a>を設定して生成された場合の標準入力の<a href="SDL_IOStream.html">SDL_IOStream</a>
+<li><code>SDL_PROP_PROCESS_STDOUT_POINTER</code>: プロセスが<a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDOUT_NUMBER</a>に<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_APP</a>を設定して生成された場合のプロセスから標準出力をブロックせずに読み込める<a href="SDL_IOStream.html">SDL_IOStream</a>
+<li><code>SDL_PROP_PROCESS_STDERR_POINTER</code>:プロセスが<a href="SDL_CreateProcessWithProperties.html">SDL_PROP_PROCESS_CREATE_STDERR_NUMBER</a>に<a href="SDL_ProcessIO.html">SDL_PROCESS_STDIO_APP</a>を設定して生成された場合のプロセスから標準エラーをブロックせずに読み込める<a href="SDL_IOStream.html">SDL_IOStream</a>
+<li><code>SDL_PROP_PROCESS_BACKGROUND_BOOLEAN</code>: 真のときプロセスはバックグラウンドで実行されている
 </ul>
 <h2>スレッドセーフ</h2>
 この関数はどのスレッドからも安全に呼べる.
