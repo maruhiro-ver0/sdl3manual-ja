@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_LoadTyped_IO</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_LoadTyped_IO
+<hr>
+<h1>IMG_LoadTyped_IO</h1>
+画像をSDLデータソースからサーフェイスに読み込む
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>SDL_Surface * IMG_LoadTyped_IO(SDL_IOStream *src, bool closeio, const char *type);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_IOStream.html">SDL_IOStream</a> *</td><td>src</td><td>読み込むSDL_IOStream</td></tr>
+<tr><td>bool</td><td>closeio</td><td>真のときsrcを自動的に閉じる/解放する. 偽のとき開いたままにする</td></tr>
+<tr><td>const char *</td><td>type</td><td>このデータを表すファイル拡張子("BMP", "GIF", "PNG"など)</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Surface.html">SDL_Surface</a> *) 新しいSDLサーフェイスを戻す. エラーのときNULLを戻す.
+<h2>詳細</h2>
+<p>
+<a href="SDL_Surface.html">SDL_Surface</a>はCPUからアクセスできるメモリ上のピクセルバッファである.
+後でデータを他に渡したり, 操作する場合はこれを使うことになる.
+</p>
+<p>
+生成された<a href="SDL_Surface.html">SDL_Surface</a>の形式には保証がない.
+多くの場合, SDL_imageは画像と完全に一致するサーフェイスを生成しようとするが, 変換される場合もある.
+(SDLが直接対応していない形式の画像や, 様々な形式で圧縮されていてSDL_imageがそのうちの1つを選択した場合など.)
+<a href="SDL_Surface.html">SDL_Surface</a>の形式を精査し, その後<a href="SDL_ConvertSurface.html">SDL_ConvertSurface()</a>で必要な形式に変換することもできる.
+</p>
+<p>
+画像ファイルが透過ピクセルに対応している場合, SDLはサーフェイスにカラーキーを設定する.
+以下のようにすると呼び出し後にRLEアクセラレーションを有効にできる:<br>
+<code><a href="SDL_SetSurfaceColorKey.html">SDL_SetSurfaceColorKey</a>(image, SDL_RLEACCEL, image->format->colorkey);</code>
+</p>
+<p>
+<code>closeio</code>が真の場合, 処理が成功してもしなくても<code>src</code>は閉じる. この関数を呼んだとき, どのような場合でもSDL_imageは必要ならば<code>src</code>を全て読み込む.
+</p>
+<p>
+この関数はファイルの種別を指定できるが, 画像データを別の形式として読み込める場合, SDL_imageは別のデコーダを見つけようとする.
+しかし, 自動検出できない場合は呼び出し側の画像種別文字列を信頼する. <code>type</code>がNULLのとき, SDL_imageは何も参考にせずに形式を推定する. 
+</p>
+<p>
+<a href="IMG_Load_IO.html">IMG_Load_IO()</a>関数も存在する. これは<code>type</code>にNULLを渡した場合のようにSDL_imageがファイル形式を読み込み時に自動的に判別すること以外はこの関数と同じである. 
+</p>
+<p>
+SDLの2DレンダリングAPIを使用する場合, GPUが使用する<a href="SDL_Texture.html">SDL_Texture</a>に画像を直接読み込む<a href="IMG_LoadTextureTyped_IO.html">IMG_LoadTextureTyped_IO()</a>をこの関数の代わりに使うこと.
+</p>
+<p>
+戻されたサーフェイスを使い終えたならば, アプリケーションは<a href="SDL_DestroySurface.html">SDL_DestroySurface()</a>で破棄する必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="IMG_Load.html">IMG_Load</a><br>
+<li><a href="IMG_Load_IO.html">IMG_Load_IO</a><br>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_LoadTyped_IO">SDL3_image/IMG_LoadTyped_IO</a>
+<hr>
+</body>
+</html>

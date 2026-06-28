@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="index.html#SDL3_image" title="1つ上">
+<title>SDL_image 3.0 API (アルファベット順)</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - API(アルファベット順)
+<hr>
+<h1>SDL_image 3.0 API (アルファベット順)</h1>
+<ol>
+<li>IMG_AddAnimationEncoderFrame
+<li>IMG_AddAnimationFrame
+<li>IMG_Animation
+<li>IMG_AnimationDecoder
+<li>IMG_AnimationDecoderStatus
+<li>IMG_AnimationEncoder
+<li>IMG_AnimationStream
+<li>IMG_CloseAnimationDecoder
+<li>IMG_CloseAnimationEncoder
+<li>IMG_CloseAnimationStream
+<li>IMG_CreateAnimatedCursor
+<li>IMG_CreateAnimationDecoder
+<li>IMG_CreateAnimationDecoder_IO
+<li>IMG_CreateAnimationDecoderWithProperties
+<li>IMG_CreateAnimationEncoder
+<li>IMG_CreateAnimationEncoder_IO
+<li>IMG_CreateAnimationEncoderWithProperties
+<li>IMG_CreateAnimationStream
+<li>IMG_CreateAnimationStream_IO
+<li>IMG_CreateAnimationStreamWithProperties
+<li>IMG_DECODER_STATUS_COMPLETE
+<li>IMG_DECODER_STATUS_FAILED
+<li>IMG_DECODER_STATUS_INVALID
+<li>IMG_DECODER_STATUS_OK
+<li>IMG_FreeAnimation
+<li>IMG_GetAnimationDecoderFrame
+<li>IMG_GetAnimationDecoderMetadata
+<li>IMG_GetAnimationDecoderPresentationTimestampMS
+<li>IMG_GetAnimationDecoderProperties
+<li>IMG_GetAnimationDecoderStatus
+<li>IMG_GetClipboardImage
+<li>IMG_GetNextAnimationDecoderFrame
+<li>IMG_isANI
+<li><a href="IMG_isAVIF.html">IMG_isAVIF</a> - 読込/シーク可能なSDL_IOStreamがAVIF画像データかチェックする
+<li><a href="IMG_isBMP.html">IMG_isBMP</a> - 読込/シーク可能なSDL_IOStreamがBMP画像データかチェックする
+<li><a href="IMG_isCUR.html">IMG_isCUR</a> - 読込/シーク可能なSDL_IOStreamがCUR画像データかチェックする
+<li><a href="IMG_isGIF.html">IMG_isGIF</a> - 読込/シーク可能なSDL_IOStreamがGIF画像データかチェックする
+<li><a href="IMG_isICO.html">IMG_isICO</a> - 読込/シーク可能なSDL_IOStreamがICO画像データかチェックする
+<li><a href="IMG_isJPG.html">IMG_isJPG</a> - 読込/シーク可能なSDL_IOStreamがJPG画像データかチェックする
+<li><a href="IMG_isJXL.html">IMG_isJXL</a> - 読込/シーク可能なSDL_IOStreamがJXL画像データかチェックする
+<li><a href="IMG_isLBM.html">IMG_isLBM</a> - 読込/シーク可能なSDL_IOStreamがLBM画像データかチェックする
+<li><a href="IMG_isPCX.html">IMG_isPCX</a> - 読込/シーク可能なSDL_IOStreamがPCX画像データかチェックする
+<li><a href="IMG_isPNG.html">IMG_isPNG</a> - 読込/シーク可能なSDL_IOStreamがPNG画像データかチェックする
+<li><a href="IMG_isPNM.html">IMG_isPNM</a> - 読込/シーク可能なSDL_IOStreamがPNM画像データかチェックする
+<li><a href="IMG_isQOI.html">IMG_isQOI</a> - 読込/シーク可能なSDL_IOStreamがQOI画像データかチェックする
+<li><a href="IMG_isSVG.html">IMG_isSVG</a> - 読込/シーク可能なSDL_IOStreamがAVG画像データかチェックする
+<li><a href="IMG_isTIF.html">IMG_isTIF</a> - 読込/シーク可能なSDL_IOStreamがTIF画像データかチェックする
+<li><a href="IMG_isWEBP.html">IMG_isWEBP</a> - 読込/シーク可能なSDL_IOStreamがWEBP画像データかチェックする
+<li><a href="IMG_isXCF.html">IMG_isXCF</a> - 読込/シーク可能なSDL_IOStreamがXCF画像データかチェックする
+<li><a href="IMG_isXPM.html">IMG_isXPM</a> - 読込/シーク可能なSDL_IOStreamがXPM画像データかチェックする
+<li><a href="IMG_isXV.html">IMG_isXV</a> - 読込/シーク可能なSDL_IOStreamがXV画像データかチェックする
+<li><a href="IMG_Load.html">IMG_Load</a> - 画像をファイルシステムのパスからサーフェイスに読み込む
+<li><a href="IMG_Load_IO.html">IMG_Load_IO</a> - 画像をSDLデータソースからサーフェイスに読み込む
+<li>IMG_LoadANIAnimation_IO
+<li>IMG_LoadAnimation
+<li><a href="IMG_LoadAnimation_IO.html">IMG_LoadAnimation_IO</a> - SDL_IOStreamからアニメーションを読み込む 
+<li>IMG_LoadAnimationTyped_IO
+<li>IMG_LoadAPNGAnimation_IO
+<li>IMG_LoadAVIF_IO
+<li>IMG_LoadAVIFAnimation_IO
+<li>IMG_LoadBMP_IO
+<li>IMG_LoadCUR_IO
+<li>IMG_LoadGIF_IO
+<li>IMG_LoadGIFAnimation_IO
+<li>IMG_LoadGPUTexture
+<li>IMG_LoadGPUTexture_IO
+<li>IMG_LoadGPUTextureTyped_IO
+<li>IMG_LoadICO_IO
+<li>IMG_LoadJPG_IO
+<li>IMG_LoadJXL_IO
+<li>IMG_LoadLBM_IO
+<li>IMG_LoadPCX_IO
+<li>IMG_LoadPNG_IO
+<li>IMG_LoadPNM_IO
+<li>IMG_LoadQOI_IO
+<li>IMG_LoadSizedSVG_IO
+<li>IMG_LoadSVG_IO
+<li>IMG_LoadTexture
+<li>IMG_LoadTexture_IO
+<li>IMG_LoadTextureTyped_IO
+<li>IMG_LoadTGA_IO
+<li>IMG_LoadTIF_IO
+<li><a href="IMG_LoadTyped_IO.html">IMG_LoadTyped_IO</a> - 画像をSDLデータソースからサーフェイスに読み込む
+<li>IMG_LoadWEBP_IO
+<li>IMG_LoadWEBPAnimation_IO
+<li>IMG_LoadXCF_IO
+<li>IMG_LoadXPM_IO
+<li>IMG_LoadXV_IO
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_AVIF_ALLOW_INCREMENTAL_BOOLEAN
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_AVIF_ALLOW_PROGRESSIVE_BOOLEAN
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_AVIF_MAX_THREADS_NUMBER
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_FILENAME_STRING
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_GIF_NUM_COLORS_NUMBER
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_GIF_TRANSPARENT_COLOR_INDEX_NUMBER
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_IOSTREAM_AUTOCLOSE_BOOLEAN
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_IOSTREAM_POINTER
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_TIMEBASE_DENOMINATOR_NUMBER
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_TIMEBASE_NUMERATOR_NUMBER
+<li>IMG_PROP_ANIMATION_DECODER_CREATE_TYPE_STRING
+<li>IMG_PROP_ANIMATION_DECODER_METADATA_FRAME_COUNT_NUMBER
+<li>IMG_PROP_ANIMATION_DECODER_METADATA_LOOP_COUNT_NUMBER
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_AVIF_KEYFRAME_INTERVAL_NUMBER
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_AVIF_MAX_THREADS_NUMBER
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_FILENAME_STRING
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_GIF_USE_LUT_BOOLEAN
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_IOSTREAM_AUTOCLOSE_BOOLEAN
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_IOSTREAM_POINTER
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_QUALITY_NUMBER
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_TIMEBASE_DENOMINATOR_NUMBER
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_TIMEBASE_NUMERATOR_NUMBER
+<li>IMG_PROP_ANIMATION_ENCODER_CREATE_TYPE_STRING
+<li>IMG_PROP_ANIMATION_STREAM_CREATE_FILENAME_STRING
+<li>IMG_PROP_ANIMATION_STREAM_CREATE_IOSTREAM_AUTOCLOSE_BOOLEAN
+<li>IMG_PROP_ANIMATION_STREAM_CREATE_IOSTREAM_POINTER
+<li>IMG_PROP_ANIMATION_STREAM_CREATE_QUALITY_NUMBER
+<li>IMG_PROP_ANIMATION_STREAM_CREATE_TIMEBASE_DENOMINATOR_NUMBER
+<li>IMG_PROP_ANIMATION_STREAM_CREATE_TIMEBASE_NUMERATOR_NUMBER
+<li>IMG_PROP_ANIMATION_STREAM_CREATE_TYPE_STRING
+<li>IMG_PROP_METADATA_AUTHOR_STRING
+<li>IMG_PROP_METADATA_COPYRIGHT_STRING
+<li>IMG_PROP_METADATA_CREATION_TIME_STRING
+<li>IMG_PROP_METADATA_DESCRIPTION_STRING
+<li>IMG_PROP_METADATA_FRAME_COUNT_NUMBER
+<li>IMG_PROP_METADATA_IGNORE_PROPS_BOOLEAN
+<li>IMG_PROP_METADATA_LOOP_COUNT_NUMBER
+<li>IMG_PROP_METADATA_TITLE_STRING
+<li>IMG_ReadXPMFromArray
+<li>IMG_ReadXPMFromArrayToRGB888
+<li>IMG_ResetAnimationDecoder
+<li>IMG_Save
+<li>IMG_SaveANIAnimation_IO
+<li>IMG_SaveAnimation
+<li>IMG_SaveAnimationTyped_IO
+<li>IMG_SaveAPNGAnimation_IO
+<li>IMG_SaveAVIF
+<li>IMG_SaveAVIF_IO
+<li>IMG_SaveAVIFAnimation_IO
+<li>IMG_SaveBMP
+<li>IMG_SaveBMP_IO
+<li>IMG_SaveCUR
+<li>IMG_SaveCUR_IO
+<li>IMG_SaveGIF
+<li>IMG_SaveGIF_IO
+<li>IMG_SaveGIFAnimation_IO
+<li>IMG_SaveICO
+<li>IMG_SaveICO_IO
+<li>IMG_SaveJPG
+<li>IMG_SaveJPG_IO
+<li>IMG_SavePNG
+<li>IMG_SavePNG_IO
+<li>IMG_SaveTGA
+<li>IMG_SaveTGA_IO
+<li>IMG_SaveTyped_IO
+<li>IMG_SaveWEBP
+<li>IMG_SaveWEBP_IO
+<li>IMG_SaveWEBPAnimation_IO
+<li>IMG_Version
+<li>SDL_IMAGE_MAJOR_VERSION
+<li>SDL_IMAGE_VERSION
+<li>SDL_IMAGE_VERSION_ATLEAST
+</ol>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/CategoryAPI">SDL3_image/CategoryAPI</a>
+<hr>
+</body>
+</html>
