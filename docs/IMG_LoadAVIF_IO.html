@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_LoadAVIF_IO</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_LoadAVIF_IO
+<hr>
+<h1>IMG_LoadAVIF_IO</h1>
+AVIF画像を直接読み込む
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>SDL_Surface * IMG_LoadAVIF_IO(SDL_IOStream *src);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_IOStream.html">SDL_IOStream</a> *</td><td>src</td><td>読み込む<a href="SDL_IOStream.html">SDL_IOStream</a></td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Surface.html">SDL_Surface</a> *) 成功したとき<a href="SDL_Surface.html">SDL_Surface</a>を戻す. エラーのときNULLを戻す
+<h2>詳細</h2>
+<p>
+あらかじめAVIF画像であるとわかっている場合, この関数を呼んでSDL_imageのファイルチェックルーチンをスキップすることができる.
+一般的には抽象インターフェースを使う方がよい. また, <a href="SDL_IOStream.html">SDL_IOStream</a>インターフェースしか使うことができない.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="IMG_LoadBMP_IO.html">IMG_LoadBMP_IO</a>
+<li><a href="IMG_LoadCUR_IO.html">IMG_LoadCUR_IO</a>
+<li><a href="IMG_LoadGIF_IO.html">IMG_LoadGIF_IO</a>
+<li><a href="IMG_LoadICO_IO.html">IMG_LoadICO_IO</a>
+<li><a href="IMG_LoadJPG_IO.html">IMG_LoadJPG_IO</a>
+<li><a href="IMG_LoadJXL_IO.html">IMG_LoadJXL_IO</a>
+<li><a href="IMG_LoadLBM_IO.html">IMG_LoadLBM_IO</a>
+<li><a href="IMG_LoadPCX_IO.html">IMG_LoadPCX_IO</a>
+<li><a href="IMG_LoadPNG_IO.html">IMG_LoadPNG_IO</a>
+<li><a href="IMG_LoadPNM_IO.html">IMG_LoadPNM_IO</a>
+<li><a href="IMG_LoadQOI_IO.html">IMG_LoadQOI_IO</a>
+<li><a href="IMG_LoadSVG_IO.html">IMG_LoadSVG_IO</a>
+<li><a href="IMG_LoadTGA_IO.html">IMG_LoadTGA_IO</a>
+<li><a href="IMG_LoadTIF_IO.html">IMG_LoadTIF_IO</a>
+<li><a href="IMG_LoadWEBP_IO.html">IMG_LoadWEBP_IO</a>
+<li><a href="IMG_LoadXCF_IO.html">IMG_LoadXCF_IO</a>
+<li><a href="IMG_LoadXPM_IO.html">IMG_LoadXPM_IO</a>
+<li><a href="IMG_LoadXV_IO.html">IMG_LoadXV_IO</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_LoadAVIF_IO">SDL3_image/IMG_LoadAVIF_IO</a>
+<hr>
+</body>
+</html>
