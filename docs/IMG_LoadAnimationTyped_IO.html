@@ -5,27 +5,33 @@
 <meta name="keywords" content="SDL3_image">
 <link rel="top" href="index.html" title="ホーム">
 <link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
-<title>SDL3_image/IMG_LoadAnimation_IO</title>
+<title>SDL3_image/IMG_LoadAnimationTyped_IO</title>
 </head>
 <body>
-<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_LoadAnimation_IO
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_LoadAnimationTyped_IO
 <hr>
-<h1>IMG_LoadAnimation_IO</h1>
-<a href="SDL_IOStream.html">SDL_IOStream</a>からアニメーションを読み込む
+<h1>IMG_LoadAnimationTyped_IO</h1>
+SDLデータソースからアニメーションを読み込む
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
 <h2>構文</h2>
 <p>
-<code>IMG_Animation * IMG_LoadAnimation_IO(SDL_IOStream *src, bool closeio);</code>
+<code>IMG_Animation * IMG_LoadAnimationTyped_IO(SDL_IOStream *src, bool closeio, const char *type);</code>
 </p>
 <h2>引数</h2>
 <table border="1">
 <tr><td><a href="SDL_IOStream.html">SDL_IOStream</a> *</td><td>src</td><td>読み込む<a href="SDL_IOStream.html">SDL_IOStream</a></td></tr>
 <tr><td>bool</td><td>closeio</td><td>真のとき<code>src</code>を自動的に閉じる/解放する. 偽のとき開いたままにする</td></tr>
+<tr><td>const char *</td><td>type</td><td>データの種類を表すファイルの拡張子("GIF"など)</td></tr>
 </table>
 <h2>戻り値</h2>
 (<a href="IMG_Animation.html">IMG_Animation</a> *) 新しいIMG_Animation, エラーのときNULLを戻す.
 <h2>詳細</h2>
+<p>
+この関数はファイルの種別を指定できるが, 画像データを別の形式として読み込める場合, SDL_imageは別のデコーダを見つけようとする.
+しかし, 自動検出できない場合は呼び出し側の画像種別文字列を信頼する.
+<code>type</code>がNULLのとき, SDL_imageは何も参考にせずに形式を推定する.
+</p>
 <p>
 <code>closeio</code>が真の場合, 処理が成功してもしなくても<code>src</code>は閉じる.
 この関数を呼んだとき, どのような場合でもSDL_imageは必要ならば<code>src</code>を全て読み込む.
@@ -39,7 +45,7 @@ SDL_image 3.0.0以降
 <ul>
 <li><a href="IMG_CreateAnimatedCursor.html">IMG_CreateAnimatedCursor</a>
 <li><a href="IMG_LoadAnimation.html">IMG_LoadAnimation</a>
-<li><a href="IMG_LoadAnimationTyped_IO.html">IMG_LoadAnimationTyped_IO</a>
+<li><a href="IMG_LoadAnimation_IO.html">IMG_LoadAnimation_IO</a>
 <li><a href="IMG_LoadANIAnimation_IO.html">IMG_LoadANIAnimation_IO</a>
 <li><a href="IMG_LoadAPNGAnimation_IO.html">IMG_LoadAPNGAnimation_IO</a>
 <li><a href="IMG_LoadAVIFAnimation_IO.html">IMG_LoadAVIFAnimation_IO</a>
@@ -48,7 +54,7 @@ SDL_image 3.0.0以降
 <li><a href="IMG_FreeAnimation.html">IMG_FreeAnimation</a>
 </ul>
 <h2>SDL Wikiへのリンク</h2>
-<a href="https://wiki.libsdl.org/SDL3_image/IMG_LoadAnimation_IO">SDL3_image/IMG_LoadAnimation_IO</a>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_LoadAnimationTyped_IO">SDL3_image/IMG_LoadAnimationTyped_IO</a>
 <hr>
 </body>
 </html>
