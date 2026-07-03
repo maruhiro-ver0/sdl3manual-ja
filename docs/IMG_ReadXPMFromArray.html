@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_ReadXPMFromArray</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_ReadXPMFromArray
+<hr>
+<h1>IMG_ReadXPMFromArray</h1>
+メモリ上の配列からXPM画像を読み込む
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>SDL_Surface * IMG_ReadXPMFromArray(char **xpm);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td>char **</td><td>xpm</td><td>XPM画像を構成するNUL終端文字列の配列</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Surface.html">SDL_Surface</a> *) 生成されたSDL_Surface, エラーのときNULLを戻す.
+<h2>詳細</h2>
+<p>
+戻されるサーフェイスは可能ならば8bppパレットカラーだが, そうでなければ32bppとなる.
+常に32ビットが必要ならば, 代わりに<a href="IMG_ReadXPMFromArrayToRGB888.html">IMG_ReadXPMFromArrayToRGB888()</a>を使用すること.
+</p>
+<p>
+サーフェイスを使用し終えたとき, アプリケーションは<a href="SDL_DestroySurface.html">SDL_DestroySurface()</a>を呼んで破棄する必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="IMG_ReadXPMFromArrayToRGB888.html">IMG_ReadXPMFromArrayToRGB888</a><br>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_ReadXPMFromArray">SDL3_image/IMG_ReadXPMFromArray</a>
+<hr>
+</body>
+</html>

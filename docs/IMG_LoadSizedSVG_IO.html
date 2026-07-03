@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_LoadSizedSVG_IO</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_LoadSizedSVG_IO
+<hr>
+<h1>IMG_LoadSizedSVG_IO</h1>
+SVG画像指定のサイズに拡大縮小して読み込む
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>SDL_Surface * IMG_LoadSizedSVG_IO(SDL_IOStream *src, int width, int height);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_IOStream.html">SDL_IOStream</a> *</td><td>src</td><td>読み込む<a href="SDL_IOStream.html">SDL_IOStream</a></td></tr>
+<tr><td>int</td><td>width</td><td>生成されるSDL_Surfaceの幅(ピクセル数)</td></tr>
+<tr><td>int</td><td>height</td><td>生成されるSDL_Surfaceの高さ(ピクセル数)</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_Surface.html">SDL_Surface</a> *) 成功したとき<a href="SDL_Surface.html">SDL_Surface</a>を戻す. エラーのときNULLを戻す
+<h2>詳細</h2>
+<p>
+SVGファイルは解像度非依存のため, この関数では出力画像のサイズを指定して生成することができる.
+</p>
+<p>
+<code>width</code>と<code>height</code>のどちらかを0にすると, 縦横比を保つようにサイズが自動的に設定される.
+</p>
+<p>
+戻されたSDL_Surfaceは, アプリケーションが<a href="SDL_DestroySurface.html">SDL_DestroySurface()</a>を呼んで破棄する必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="IMG_LoadSVG_IO.html">IMG_LoadSVG_IO</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_LoadSizedSVG_IO">SDL3_image/IMG_LoadSizedSVG_IO</a>
+<hr>
+</body>
+</html>
