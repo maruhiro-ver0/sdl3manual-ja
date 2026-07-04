@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_SaveCUR</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_SaveCUR
+<hr>
+<h1>IMG_SaveCUR</h1>
+<a href="SDL_Surface.html">SDL_Surface</a>をCUR画像として保存する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>bool IMG_SaveCUR(SDL_Surface *surface, const char *file);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_Surface.html">SDL_Surface</a> *</td><td>surface</td><td>保存するSDL_Surface</td></tr>
+<tr><td>const char *</td><td>file</td><td>新たに生成するファイルのパス名</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+ファイルが既に存在する場合は上書きされる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.4.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="IMG_SaveCUR_IO.html">IMG_SaveCUR_IO</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_SaveCUR">SDL3_image/IMG_SaveCUR</a>
+<hr>
+</body>
+</html>
