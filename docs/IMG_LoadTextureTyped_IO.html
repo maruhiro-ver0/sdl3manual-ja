@@ -4,14 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="SDL3_image">
 <link rel="top" href="index.html" title="ホーム">
-<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<link rel="parent" href="CategorySDLImage.html" title="1つ上">
 <title>SDL3_image/IMG_LoadTextureTyped_IO</title>
 </head>
 <body>
-<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_LoadTextureTyped_IO
+<a href="index.html#SDL3_image">目次</a> - <a href="CategorySDLImage.html">SDL_image 3.0</a> - IMG_LoadTextureTyped_IO
 <hr>
 <h1>IMG_LoadTextureTyped_IO</h1>
-画像をSDLデータソースからテクスチャに読み込む
+画像を<a href="SDL_IOStream.html">SDL_IOStream</a>からテクスチャに読み込む
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
 <h2>構文</h2>
@@ -50,8 +50,7 @@
 <a href="IMG_LoadTexture.html">IMG_LoadTexture(renderer, "filename.jpg")</a>のようにすると, 内部でこの関数を呼び, ファイル名の拡張子からファイル種別を類推する.
 </p>
 <p>
-<a href="IMG_LoadTextureTyped_IO.html">IMG_LoadTextureTyped_IO()</a>も存在する.
-この関数はSDL_imageがファイル形式を自動的に判別できない場合に備えてファイル拡張子("BMP", "JPG"など)を指定できること以外は同等である.
+<a href="IMG_LoadTexture_IO.html">IMG_LoadTexture_IO()</a>関数も存在する. これは<code>type</code>にNULLを渡した場合のようにSDL_imageがファイル形式を読み込み時に自動的に判別すること以外はこの関数と同じである. 
 </p>
 <p>
 <a href="SDL_Surface.html">SDL_Surface</a>(CPUメモリ内のピクセルバッファ)に読み込みたいならば, 代わりに<a href="IMG_Load_IO.html">IMG_Load_IO()</a>を使用すること.

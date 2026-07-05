@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLImage.html" title="1つ上">
+<title>SDL3_image/SDL_IMAGE_MAJOR_VERSION</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - <a href="CategorySDLImage.html">SDL_image 3.0</a> - SDL_IMAGE_MAJOR_VERSION
+<hr>
+<h1>SDL_IMAGE_MAJOR_VERSION</h1>
+コンパイルされたSDL_imageが少なくともX.Y.Zのとき真と評価されるマクロ
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>
+<pre>
+#define SDL_IMAGE_VERSION_ATLEAST(X, Y, Z) \
+    ((SDL_IMAGE_MAJOR_VERSION >= X) && \
+     (SDL_IMAGE_MAJOR_VERSION > X || SDL_IMAGE_MINOR_VERSION >= Y) && \
+     (SDL_IMAGE_MAJOR_VERSION > X || SDL_IMAGE_MINOR_VERSION > Y || SDL_IMAGE_MICRO_VERSION >= Z))
+</pre>
+</code>
+</p>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/SDL_IMAGE_MAJOR_VERSION">SDL3_image/SDL_IMAGE_MAJOR_VERSION</a>
+<hr>
+</body>
+</html>
