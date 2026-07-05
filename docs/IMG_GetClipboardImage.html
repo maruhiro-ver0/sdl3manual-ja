@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_GetClipboardImage</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_GetClipboardImage
+<hr>
+<h1>IMG_GetClipboardImage</h1>
+現在のクリップボードの画像を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>SDL_Surface * IMG_GetClipboardImage(void);</code>
+</p>
+<h2>戻り値</h2>
+(<a href="SDL_Surface.html">SDL_Surface</a> *) 新たに生成されたSDLサーフェイスを戻す. 対応した画像がない場合はNULLを戻す.
+<h2>詳細</h2>
+<p>
+戻されたサーフェイスは不要になったとき<a href="SDL_DestroySurface.html">SDL_DestroySurface()</a>で解放する必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.4.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_GetClipboardImage">SDL3_image/IMG_GetClipboardImage</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_CreateAnimationDecoderWithProperties</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_CreateAnimationDecoderWithProperties
+<hr>
+<h1>IMG_CreateAnimationDecoderWithProperties</h1>
+連続した画像ファイルを読み込むデコーダをプロパティを指定して生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>IMG_AnimationEncoder * IMG_CreateAnimationEncoderWithProperties(SDL_PropertiesID props);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>アニメーションエンコーダのプロパティ</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="IMG_AnimationDecoder.html">IMG_AnimationDecoder</a> *) 新しいIMG_AnimationDecoder, 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+現在はこれらの形式のアニメーションに対応している:
+</p>
+<ul>
+<li>ANI
+<li>APNG
+<li>AVIFS
+<li>GIF
+<li>WEBP
+</ul>
+<p>
+これらのプロパティに対応している:
+</p>
+<ul>
+<li><code>IMG_PROP_ANIMATION_DECODER_CREATE_FILENAME_STRING</code>: <a href="SDL_IOStream.html">SDL_IOStream</a>を使用しない場合の読み込むファイル名. <code>IMG_PROP_ANIMATION_DECODER_CREATE_IOSTREAM_POINTER</code>を設定していない必要がある 
+<li><code>IMG_PROP_ANIMATION_DECODER_CREATE_IOSTREAM_POINTER</code>: 連続した画像を含む<a href="SDL_IOStream.html">SDL_IOStream</a>. アニメーションデコーダをクローズするまでクローズしてはならない. <code>IMG_PROP_ANIMATION_DECODER_CREATE_FILENAME_STRING</code>を設定していない必要がある
+<li><code>IMG_PROP_ANIMATION_DECODER_CREATE_IOSTREAM_AUTOCLOSE_BOOLEAN</code>: 真のとき, アニメーションデコーダをクローズしたとき関連付けられた<a href="SDL_IOStream.html">SDL_IOStream</a>もクローズする
+<li><code>IMG_PROP_ANIMATION_DECODER_CREATE_TYPE_STRING</code>: "webp"のような出力ファイルの形式. <code>IMG_PROP_ANIMATION_DECODER_CREATE_FILENAME_STRING</code>が設定されている場合, デフォルトはファイルの拡張子となる
+</ul>
+<h2>バージョン</h2>
+SDL_image 3.4.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="IMG_CreateAnimationDecoder.html">IMG_CreateAnimationDecoder</a>
+<li><a href="IMG_CreateAnimationDecoder_IO.html">IMG_CreateAnimationDecoder_IO</a>
+<li><a href="IMG_GetAnimationDecoderFrame.html">IMG_GetAnimationDecoderFrame</a>
+<li><a href="IMG_ResetAnimationDecoder.html">IMG_ResetAnimationDecoder</a>
+<li><a href="IMG_CloseAnimationDecoder.html">IMG_CloseAnimationDecoder</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_CreateAnimationDecoderWithProperties">SDL3_image/IMG_CreateAnimationDecoderWithProperties</a>
+<hr>
+</body>
+</html>

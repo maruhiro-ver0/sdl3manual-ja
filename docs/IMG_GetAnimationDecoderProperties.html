@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_GetAnimationDecoderProperties</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_GetAnimationDecoderProperties
+<hr>
+<h1>IMG_GetAnimationDecoderProperties</h1>
+アニメーションデコーダのプロパティを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>SDL_PropertiesID IMG_GetAnimationDecoderProperties(IMG_AnimationDecoder *decoder);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="IMG_AnimationDecoder.html">IMG_AnimationDecoder</a> *</td><td>decoder</td><td>アニメーションデコーダ</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_PropertiesID.html">SDL_PropertiesID</a>) プロパティグループIDを戻す. 失敗のとき0を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数はアニメーションデコーダの背後の画像の説明, 著作権表記, ループ回数のような情報を持つプロパティを戻す:
+</p>
+<ul>
+<li><code>IMG_PROP_METADATA_IGNORE_PROPS_BOOLEAN</code>:
+<li><code>IMG_PROP_METADATA_DESCRIPTION_STRING</code>:
+<li><code>IMG_PROP_METADATA_COPYRIGHT_STRING</code>:
+<li><code>IMG_PROP_METADATA_TITLE_STRING</code>:
+<li><code>IMG_PROP_METADATA_AUTHOR_STRING</code>:
+<li><code>IMG_PROP_METADATA_CREATION_TIME_STRING</code>:
+<li><code>IMG_PROP_METADATA_FRAME_COUNT_NUMBER</code>:
+<li><code>IMG_PROP_METADATA_LOOP_COUNT_NUMBER</code>: もし存在すればアニメーションの再生回数. 0は繰り返しを意味する
+</ul>
+<h2>バージョン</h2>
+SDL_image 3.4.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="IMG_CreateAnimationDecoder.html">IMG_CreateAnimationDecoder</a>
+<li><a href="IMG_CreateAnimationDecoder_IO.html">IMG_CreateAnimationDecoder_IO</a>
+<li><a href="IMG_CreateAnimationDecoderWithProperties.html">IMG_CreateAnimationDecoderWithProperties</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_GetAnimationDecoderProperties">SDL3_image/IMG_GetAnimationDecoderProperties</a>
+<hr>
+</body>
+</html>

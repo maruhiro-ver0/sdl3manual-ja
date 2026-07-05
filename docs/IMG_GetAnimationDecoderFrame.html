@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_GetAnimationDecoderFrame</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_GetAnimationDecoderFrame
+<hr>
+<h1>IMG_GetAnimationDecoderFrame</h1>
+アニメーションデコーダの次のフレームを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>bool IMG_GetAnimationDecoderFrame(IMG_AnimationDecoder *decoder, SDL_Surface **frame, Uint64 *duration);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="IMG_AnimationDecoder.html">IMG_AnimationDecoder</a> *</td><td>decoder</td><td>アニメーションデコーダ</td></tr>
+<tr><td><a href="SDL_Surface.html">SDL_Surface</a> **</td><td>frame</td><td>アニメーションの次のフレームのSDL_Surfaceの代入先へのポインタ</td></tr>
+<tr><td>Uint64</td><td>duration</td> *<td>フレーム間隔. 単位はミリ秒だが, デコーダの生成時にIMG_PROP_ANIMATION_DECODER_CREATE_TIMEBASE_DENOMINATOR_NUMBERプロパティで単位を変えることもできる</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 利用可能なフレームがないとき偽を戻す.
+<a href="IMG_GetAnimationDecoderStatu.html">IMG_GetAnimationDecoderStatus()</a>または<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数はアニメーションデコーダの次のフレームをデコードし, <a href="SDL_Surface.html">SDL_Surface</a>として戻す.
+戻されたサーフェイスは不要になったとき<a href="SDL_DestroySurface.html">SDL_DestroySurface()</a>で解放する必要がある.
+</p>
+<p>
+アニメーションデコーダにこれ以上フレームがない, またはフレームのデコードでエラーが発生した場合, この関数は偽を戻す.
+この場合, <a href="SDL_GetError.html">SDL_GetError()</a>で詳細を得ること.
+<a href="SDL_GetError.html">SDL_GetError()</a>が空の文字列を戻した場合, フレームがないことを表す.
+<a href="SDL_GetError.html">SDL_GetError()</a>が有効な文字列を戻した場合, デコードに失敗したことを表す.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.4.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="IMG_CreateAnimationDecoder.html">IMG_CreateAnimationDecoder</a>
+<li><a href="IMG_CreateAnimationDecoder_IO.html">IMG_CreateAnimationDecoder_IO</a>
+<li><a href="IMG_CreateAnimationDecoderWithProperties.html">IMG_CreateAnimationDecoderWithProperties</a>
+<li><a href="IMG_GetAnimationDecoderStatus.html">IMG_GetAnimationDecoderStatus</a>
+<li><a href="IMG_ResetAnimationDecoder.html">IMG_ResetAnimationDecoder</a>
+<li><a href="IMG_CloseAnimationDecoder.html">IMG_CloseAnimationDecoder</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_GetAnimationDecoderFrame">SDL3_image/IMG_GetAnimationDecoderFrame</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="SDL3_image-CategoryAPI.html" title="1つ上">
+<title>SDL3_image/IMG_CreateAnimationEncoderWithProperties</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0 - <a href="SDL3_image-CategoryAPI.html">API(アルファベット順)</a> - IMG_CreateAnimationEncoderWithProperties
+<hr>
+<h1>IMG_CreateAnimationEncoderWithProperties</h1>
+連続した画像ファイルを保存するエンコーダをプロパティを指定して生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_image/blob/main/include/SDL3_image/SDL_image.h">SDL3_image/SDL_image.h</a>
+<h2>構文</h2>
+<p>
+<code>IMG_AnimationEncoder * IMG_CreateAnimationEncoderWithProperties(SDL_PropertiesID props);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>アニメーションエンコーダのプロパティ</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="IMG_AnimationEncoder.html">IMG_AnimationEncoder</a> *) 新しいIMG_AnimationEncoder, 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+現在はこれらの形式のアニメーションに対応している:
+</p>
+<ul>
+<li>ANI
+<li>APNG
+<li>AVIFS
+<li>GIF
+<li>WEBP
+</ul>
+<p>
+これらのプロパティに対応している:
+</p>
+<ul>
+<li><code>IMG_PROP_ANIMATION_ENCODER_CREATE_FILENAME_STRING</code>: <a href="SDL_IOStream.html">SDL_IOStream</a>を使用しない場合の保存するファイル名. <code>IMG_PROP_ANIMATION_ENCODER_CREATE_IOSTREAM_POINTER</code>を設定していない必要がある
+<li><code>IMG_PROP_ANIMATION_ENCODER_CREATE_IOSTREAM_POINTER</code>: ストリームへの保存で使用する<a href="SDL_IOStream.html">SDL_IOStream</a>. アニメーションエンコーダをクローズするまでクローズしてはならない. <code>IMG_PROP_ANIMATION_ENCODER_CREATE_FILENAME_STRING</code>を設定していない必要がある
+<li><code>IMG_PROP_ANIMATION_ENCODER_CREATE_IOSTREAM_AUTOCLOSE_BOOLEAN</code>: 真のとき, アニメーションエンコーダをクローズしたとき関連付けられた<a href="SDL_IOStream.html">SDL_IOStream</a>もクローズする
+<li><code>IMG_PROP_ANIMATION_ENCODER_CREATE_TYPE_STRING</code>: "webp"のような出力ファイルの形式. <code>IMG_PROP_ANIMATION_ENCODER_CREATE_FILENAME_STRING</code>が設定されている場合, デフォルトはファイルの拡張子となる
+<li><code>IMG_PROP_ANIMATION_ENCODER_CREATE_QUALITY_NUMBER</code>: 0から100の範囲の品質. 数が大きいほど高品質になりサイズも大きくなる. デフォルトは圧縮率と品質のバランスの取れた値
+<li><code>IMG_PROP_ANIMATION_ENCODER_CREATE_TIMEBASE_NUMERATOR_NUMBER</code>: 秒に変換するためにポイントに乗算する値の分子. デフォルトは1
+<li><code>IMG_PROP_ANIMATION_ENCODER_CREATE_TIMEBASE_DENOMINATOR_NUMBER</code>: 秒に変換するためにポイントに乗算する値の分母. デフォルトは1000
+</ul>
+<h2>バージョン</h2>
+SDL_image 3.4.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="IMG_CreateAnimationEncoder.html">IMG_CreateAnimationEncoder</a>
+<li><a href="IMG_CreateAnimationEncoder_IO.html">IMG_CreateAnimationEncoder_IO</a>
+<li><a href="IMG_AddAnimationEncoderFrame.html">IMG_AddAnimationEncoderFrame</a>
+<li><a href="IMG_CloseAnimationEncoder.html">IMG_CloseAnimationEncoder</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/IMG_CreateAnimationEncoderWithProperties">SDL3_image/IMG_CreateAnimationEncoderWithProperties</a>
+<hr>
+</body>
+</html>
