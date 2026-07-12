@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="index.html#SDL3_mixer" title="1つ上">
+<title>SDL_mixer 3.0</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - SDL_mixer 3.0
+<hr>
+<h1>SDL_mixer 3.0 API (アルファベット順)</h1>
+<h2>概要</h2>
+<p>
+SDL_mixerは面倒なオーディオ処理を簡単に行えるライブラリである.
+</p>
+<p>
+これはオーディオファイルのデコード, 複数音源のミキシング, 基本的な立体音響, 様々なエフェクトを提供する.
+</p>
+<p>
+リアルタイムで複数のオーディオデバイスにミックスすることや, ミックスしたオーディオデータを別の使用のためにメモリバッファに生成することができる.
+これらを同時に行うこともできる.
+</p>
+<p>
+このライブラリを使用するには, まず<a href="MIX_Init.html">MIX_Init()</a>を呼ぶ. それからMIX_CreateMixerDevice()でミキサーを生成する. (またはMIX_CreateMixer()でメモリに書き込むレンダーを生成する)
+</p>
+<p>
+ミキサーを生成した後は, MIX_LoadAudio()またはMIX_LoadAudio_IO()またはMIX_LoadAudioWithProperties()でオーディオデータを読み込む.
+一度読み込んだデータは何度でも再生できる.
+</p>
+<p>
+オーディオデータの読み込みでは, SDL_mixerはID3やAPEタグのようないくつかのメタデータタグ形式を解析でき, この情報はMIX_GetAudioProperties()関数を経由して表に出すことができる.
+</p>
+<p>
+オーディオデータの再生のためには, MIX_CreateTrack()でトラックを生成する.
+同時に再生するオーディオデータには, それぞれトラックが必要である. トラックはミキサーボード上の一つ一つのスライダーと考えればよい.
+何百ものオーディオファイルを読み込もうとしたことがあるかもしれないが, 再生の準備が整ったとき読み込んだファイルを割り当てるトラックはわずかで, これらのトラックは別のオーディオで再利用することになる.
+トラックはMIX_Audio(複数回再生される静的データ)またはSDL_AudioStream(アプリケーションが必要に応じて提供するストリーミングPCMオーディオ)から入力を受ける.
+その他の選択肢はSDL_IOStreamからの供給で読み込みと即座のデコードを行うもので, これは一度だけ使用するBGMなどで効果的かもしれない.
+</p>
+<p>
+Assign input to a MIX_Track with MIX_SetTrackAudio(), MIX_SetTrackAudioStream(), or MIX_SetTrackIOStream().
+</p>
+<p>
+トラックが入力を得た後は, MIX_PlayTrack()で再生を開始する.
+この関数にはミキシングの機能: ループ, フェードなどを指示する様々なオプションがある.
+</p>
+<p>
+トラックには"music", "ingame", "ui"のような任意の文字列をタグ付けできる.
+これらのタグは開始, 停止, 一時停止するトラックの選択を一度に行うために使用できる.
+</p>
+<p>
+ミキシングパイプラインの重要な部分はコールバックのため, アプリケーションは適切な場所でフックしてミキサーへ向かうオーディオデータの調査や編集を行うことができる:
+オーディオファイルからデコードされた無編集のPCMデータの"raw"コールバック, 
+同じデータに全ての変換(フェード, ポジショニングなど)が行われた後の"cooked"コールバック, 
+トラックがミキシングを完了したときの"stopped"コールバック, 
+最終的なミックスされた音声が再生のためのオーディオハードウェアに送られるときの"postmix"コールバックがある.
+さらに, MIX_Groupオブジェクトで再生中のトラックの一部をミックスしたり, 別のトラックとミックスする前のデータにアクセスしたりできる.
+これらは全てオプションだが, 強力なアクセスとミキシング処理の制御を可能にする.
+</p>
+<p>
+SDL_mixerはオーディオファイルのデコードを実際のミックス以外で使用することもできる.
+これはMIX_AudioDecoderで行う.
+アプリケーションのオーディオエンジンとして使用する場合, SDL_mixerはデコードを透過的に扱うため
+このインターフェースは通常の使用法では必要ないかもしれないが, 
+これは様々なファイル形式にアクセスするために別のオーディオライブラリを使用するとき有用になりうる.
+</p>
+<p>
+このライブラリは音声のミキシング以外にもいくつかの機能がある:
+マスターゲインとは別にそれぞれのトラックにゲインを持たせボリュームを調整することができる.
+また, トラックやミックス後の最終的な出力に「周波数比」を設定して, 速度の上げ下げやピッチの調整を行うことができ, 
+チャンネルマッピングもトラックごとに適用可能で, 指定のオーディオチャネルをどのスピーカーから出力するかを変えることができる.
+</p>
+<p>
+SDL_mixerのほぼ全てのタイミングはサンプルフレーム単位である.
+例えば, Sint16形式のステレオPCMオーディオデータは1サンプルフレーム当たり4バイト(1サンプル当たり2バイト×2チャネル)を消費する.
+これによりSDL_mixerでは全ての処理をサンプル単位で行うことができ, 実時間とは無関係に動作させることが, 必要ならば実時間よりも早くデータを与えることもできる.
+問題なのは, 異なるサンプリングレートのデータは同じ時間でもサンプルフレームの長さが異なることである.
+これを扱うために変換ルーチンのMIX_TrackMSToFrames(), MIX_TrackFramesToMS()などが提供されている.
+これらの関数は一度に複数のトラックをミリ秒単位を扱うため, 変換は内部で行う. 詳細な仕様はドキュメントを確認すること.
+</p>
+<p>
+SDL_mixerは, シンプルな3D位置APIのMIX_SetTrack3DPosition()とMIX_SetTrackStereo()で基本的な位置オーディオも提供する.
+前者はシンプルな距離による減衰と空間化処理を行い――ステレオ環境では音が左右に動くように聞こえる――, サラウンドの設定や個々のトラックの移動を行える.
+後者のMIX_SetTrackStereo()は音声を前面左から全面右のスピーカに強制し, 必要ならばアプリケーションで左右にパンさせる.
+どちらのエフェクトも状況に応じて役立ちうる.
+SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多くの目的で十分な機能がある.
+より強力な3Dオーディオが必要ならば, OpenALのような正式な3Dライブラリの使用を検討すること.
+</p>
+<h2>関数</h2>
+<ol>
+<li>MIX_AudioFramesToMS
+<li>MIX_AudioMSToFrames
+<li>MIX_CreateAudioDecoder
+<li>MIX_CreateAudioDecoder_IO
+<li>MIX_CreateGroup
+<li>MIX_CreateMixer
+<li>MIX_CreateMixerDevice
+<li>MIX_CreateSineWaveAudio
+<li>MIX_CreateTrack
+<li>MIX_DecodeAudio
+<li>MIX_DestroyAudio
+<li>MIX_DestroyAudioDecoder
+<li>MIX_DestroyGroup
+<li>MIX_DestroyMixer
+<li>MIX_DestroyTrack
+<li>MIX_FramesToMS
+<li>MIX_Generate
+<li>MIX_GetAudioDecoder
+<li>MIX_GetAudioDecoderFormat
+<li>MIX_GetAudioDecoderProperties
+<li>MIX_GetAudioDuration
+<li>MIX_GetAudioFormat
+<li>MIX_GetAudioProperties
+<li>MIX_GetGroupMixer
+<li>MIX_GetGroupProperties
+<li>MIX_GetMixerFormat
+<li>MIX_GetMixerFrequencyRatio
+<li>MIX_GetMixerGain
+<li>MIX_GetMixerProperties
+<li>MIX_GetNumAudioDecoders
+<li>MIX_GetTaggedTracks
+<li>MIX_GetTrack3DPosition
+<li>MIX_GetTrackAudio
+<li>MIX_GetTrackAudioStream
+<li>MIX_GetTrackFadeFrames
+<li>MIX_GetTrackFrequencyRatio
+<li>MIX_GetTrackGain
+<li>MIX_GetTrackLoops
+<li>MIX_GetTrackMixer
+<li>MIX_GetTrackPlaybackPosition
+<li>MIX_GetTrackProperties
+<li>MIX_GetTrackRemaining
+<li>MIX_GetTrackTags
+<li><a href="MIX_Init.html">MIX_Init</a> - SDL_mixerライブラリを初期化する
+<li>MIX_LoadAudio
+<li>MIX_LoadAudio_IO
+<li>MIX_LoadAudioNoCopy
+<li>MIX_LoadAudioWithProperties
+<li>MIX_LoadRawAudio
+<li>MIX_LoadRawAudio_IO
+<li>MIX_LoadRawAudioNoCopy
+<li>MIX_LockMixer
+<li>MIX_MSToFrames
+<li>MIX_PauseAllTracks
+<li>MIX_PauseTag
+<li>MIX_PauseTrack
+<li>MIX_PlayAudio
+<li>MIX_PlayTag
+<li>MIX_PlayTrack
+<li><a href="MIX_Quit.html">MIX_Quit</a> - SDL_mixerライブラリを終了する
+<li>MIX_ResumeAllTracks
+<li>MIX_ResumeTag
+<li>MIX_ResumeTrack
+<li>MIX_SetGroupPostMixCallback
+<li>MIX_SetMixerFrequencyRatio
+<li>MIX_SetMixerGain
+<li>MIX_SetPostMixCallback
+<li>MIX_SetTagGain
+<li>MIX_SetTrack3DPosition
+<li>MIX_SetTrackAudio
+<li>MIX_SetTrackAudioStream
+<li>MIX_SetTrackCookedCallback
+<li>MIX_SetTrackFrequencyRatio
+<li>MIX_SetTrackGain
+<li>MIX_SetTrackGroup
+<li>MIX_SetTrackIOStream
+<li>MIX_SetTrackLoops
+<li>MIX_SetTrackOutputChannelMap
+<li>MIX_SetTrackPlaybackPosition
+<li>MIX_SetTrackRawCallback
+<li>MIX_SetTrackRawIOStream
+<li>MIX_SetTrackStereo
+<li>MIX_SetTrackStoppedCallback
+<li>MIX_StopAllTracks
+<li>MIX_StopTag
+<li>MIX_StopTrack
+<li>MIX_TagTrack
+<li>MIX_TrackFramesToMS
+<li>MIX_TrackMSToFrames
+<li>MIX_TrackPaused
+<li>MIX_TrackPlaying
+<li>MIX_UnlockMixer
+<li>MIX_UntagTrack
+<li>MIX_Version
+</ol>
+<h2>型</h2>
+<ol>
+<li>MIX_Audio
+<li>MIX_AudioDecoder
+<li>MIX_Group
+<li>MIX_GroupMixCallback
+<li>MIX_Mixer
+<li>MIX_PostMixCallback
+<li>MIX_Track
+<li>MIX_TrackMixCallback
+<li>MIX_TrackStoppedCallback
+</ol>
+<h2>構造体</h2>
+<ol>
+<li>MIX_Point3D
+<li>MIX_StereoGains
+</ol>
+<h2>マクロ</h2>
+<ol>
+<li>SDL_MIXER_MAJOR_VERSION
+<li>SDL_MIXER_MICRO_VERSION
+<li>SDL_MIXER_MINOR_VERSION
+<li>SDL_MIXER_VERSION
+<li>SDL_MIXER_VERSION_ATLEAST
+</ol>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/CategorySDLMixer">SDL3_mixer/CategorySDLMixer</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_Quit</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_Quit
+<hr>
+<h1>MIX_Quit</h1>
+SDL_mixerライブラリを終了する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>void MIX_Quit(void);</code>
+</p>
+<h2>詳細</h2>
+<p>
+この関数はライブラリを使用し終えたとき, 恐らくプログラムの終了時に呼ぶ必要がある.
+</p>
+<p>
+この関数は複数回呼んでも安全である. ライブラリはこの関数が<a href="MIX_Init.html">MIX_Init</a>が成功した回数と同じ回数だけ呼ばれたとき終了する.
+</p>
+<p>
+ライブラリの終了に成功すると, <a href="MIX_Init.html">MIX_Init</a>で安全に再初期化することができるようになる.
+</p>
+<p>
+終了に成功すると, SDL_mixerは次の種類のオブジェクトを含むほぼすべてのオブジェクトを破棄する:
+</p>
+<ul>
+<li><a href="MIX_Mixer.html">MIX_Mixer</a>
+<li><a href="MIX_Track.html">MIX_Track</a>
+<li><a href="MIX_Audio.html">MIX_Audio</a>
+<li><a href="MIX_Group.html">MIX_Group</a>
+<li><a href="MIX_AudioDecoder.html">MIX_AudioDecoder</a>
+</ul>
+<p>
+...言い換えると, この関数を呼ぶと確保したリソースの解放, 音声出力の停止, オーディオデバイスのクローズなどを一度に行う.
+この関数を呼んだ後にオブジェクトを破棄しようとしてはならない.
+この関数はメモリリークに対するセーフティネットとして扱い, アプリケーションはリソースを注意深く扱い解放することが推奨される.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はスレッドセーフではない.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_Init.html">MIX_Init</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_Quit">SDL3_mixer/MIX_Quit</a>
+<hr>
+</body>
+</html>

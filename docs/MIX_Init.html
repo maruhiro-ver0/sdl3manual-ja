@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_Init</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_Init
+<hr>
+<h1>MIX_Init</h1>
+SDL_mixerライブラリを初期化する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_Init(void);</code>
+</p>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+他の(ほぼ)全てのSDL_mixer関数を使用する前にこの関数の呼び出しが成功している必要がある.
+</p>
+<p>
+この関数は複数回呼んでも安全である. ライブラリは一度しか初期化されず, また<a href="MIX_Quit.html">MIX_Quit()</a>が同じ回数だけ呼ばれるまで終了処理を行わない.
+追加で初期化しようとしたときは成功を戻す.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はスレッドセーフではない.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_Quit.html">MIX_Quit</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_Init">SDL3_mixer/MIX_Init</a>
+<hr>
+</body>
+</html>
