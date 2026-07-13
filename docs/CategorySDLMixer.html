@@ -23,7 +23,7 @@ SDL_mixerは面倒なオーディオ処理を簡単に行えるライブラリ�
 これらを同時に行うこともできる.
 </p>
 <p>
-このライブラリを使用するには, まず<a href="MIX_Init.html">MIX_Init()</a>を呼ぶ. それからMIX_CreateMixerDevice()でミキサーを生成する. (またはMIX_CreateMixer()でメモリに書き込むレンダーを生成する)
+このライブラリを使用するには, まず<a href="MIX_Init.html">MIX_Init()</a>を呼ぶ. それから<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>でミキサーを生成する. (または<a href="MIX_CreateMixer.html">MIX_CreateMixer()</a>でメモリに書き込むレンダーを生成する)
 </p>
 <p>
 ミキサーを生成した後は, MIX_LoadAudio()またはMIX_LoadAudio_IO()またはMIX_LoadAudioWithProperties()でオーディオデータを読み込む.
@@ -40,7 +40,7 @@ SDL_mixerは面倒なオーディオ処理を簡単に行えるライブラリ�
 その他の選択肢はSDL_IOStreamからの供給で読み込みと即座のデコードを行うもので, これは一度だけ使用するBGMなどで効果的かもしれない.
 </p>
 <p>
-Assign input to a MIX_Track with MIX_SetTrackAudio(), MIX_SetTrackAudioStream(), or MIX_SetTrackIOStream().
+入力をMIX_SetTrackAudio(), MIX_SetTrackAudioStream(), またはMIX_SetTrackIOStream()でMIX_Trackに割り当てる.
 </p>
 <p>
 トラックが入力を得た後は, MIX_PlayTrack()で再生を開始する.
@@ -95,15 +95,15 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_CreateAudioDecoder
 <li>MIX_CreateAudioDecoder_IO
 <li>MIX_CreateGroup
-<li>MIX_CreateMixer
-<li>MIX_CreateMixerDevice
+<li><a href="MIX_CreateMixer.html">MIX_CreateMixer</a> - オーディオデータをメモリバッファに生成するミキサーを生成する
+<li><a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice</a> - オーディオデバイスから音声を再生するミキサーを生成する
 <li>MIX_CreateSineWaveAudio
 <li>MIX_CreateTrack
 <li>MIX_DecodeAudio
 <li>MIX_DestroyAudio
 <li>MIX_DestroyAudioDecoder
 <li>MIX_DestroyGroup
-<li>MIX_DestroyMixer
+<li><a href="MIX_DestroyMixer.html">MIX_DestroyMixer</a> - ミキサーを破棄する
 <li>MIX_DestroyTrack
 <li>MIX_FramesToMS
 <li>MIX_Generate
@@ -191,7 +191,7 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_AudioDecoder
 <li>MIX_Group
 <li>MIX_GroupMixCallback
-<li>MIX_Mixer
+<li><a href="MIX_Mixer.html">MIX_Mixer</a> - ミキサーを表す不透明オブジェクトの型
 <li>MIX_PostMixCallback
 <li>MIX_Track
 <li>MIX_TrackMixCallback

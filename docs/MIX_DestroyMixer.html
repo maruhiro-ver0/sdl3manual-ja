@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_DestroyMixer</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_DestroyMixer
+<hr>
+<h1>MIX_DestroyMixer</h1>
+ミキサーを破棄する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>void MIX_DestroyMixer(MIX_Mixer *mixer);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>the mixer to destroy.</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+このミキサーが<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>で生成されたものならば, この関数はオーディオデバイスもクローズし, <code><a href="SDL_QuitSubSystem.html">SDL_QuitSubSystem</a>(SDL_INIT_AUDIO)</code>を呼ぶ.
+</p>
+<p>
+このミキサーのために生成された<a href="MIX_Group.html">MIX_Group</a>と<a href="MIX_Track.html">MIX_Track</a>も全て破棄される.
+それらに再びアクセスしようとしたり, デバイスを破棄した後にそれらを破棄しようとしてはならない.
+<a href="MIX_Audio.html">MIX_Audio</a>オブジェクトはミキサー間で共有できるため破棄されない. (しかし, <a href="MIX_Quit.html">MIX_Quit()</a>で全て破棄される.)
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice</a>で生成した<a href="MIX_Mixer.html">MIX_Mixer</a>に対して使用する場合, この関数を呼べるのはメインスレッドのみである.
+<a href="MIX_CreateMixer.html">MIX_CreateMixer</a>で生成した<a href="MIX_Mixer.html">MIX_Mixer</a>に対して使用する場合, この関数はどのスレッドからも呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice</a>
+<li><a href="MIX_CreateMixer.html">MIX_CreateMixer</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_DestroyMixer">SDL3_mixer/MIX_DestroyMixer</a>
+<hr>
+</body>
+</html>

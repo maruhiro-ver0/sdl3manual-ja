@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_Mixer</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_Mixer
+<hr>
+<h1>MIX_Mixer</h1>
+ミキサーを表す不透明オブジェクトの型
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>typedef struct MIX_Mixer MIX_Mixer;</code>
+</p>
+<h2>詳細</h2>
+<p>
+MIX_Mixerはこのライブラリの頂点にあるオブジェクトである.
+SDL_mixerを使うならば, 少なくとも1つは必要だが, 複数生成することも認められている.
+それぞれのミキサーは1つにミックスされた音声の出力ストリームの生成に対応し, 通常はリアルタイム再生のためのオーディオデバイスに出力する.
+</p>
+<p>
+ミキサーは, オーディオデバイスにデータを与える場合(<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>で生成)と, 様々な用途で使用するためにメモリ上のバッファにオーディオデータを生成する場合(<a href="MIX_CreateMixer.html">MIX_CreateMixer()</a>で生成)がある.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_Mixer">SDL3_mixer/MIX_Mixer</a>
+<hr>
+</body>
+</html>
