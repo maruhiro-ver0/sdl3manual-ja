@@ -26,7 +26,7 @@ SDL_mixerは面倒なオーディオ処理を簡単に行えるライブラリ�
 このライブラリを使用するには, まず<a href="MIX_Init.html">MIX_Init()</a>を呼ぶ. それから<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>でミキサーを生成する. (または<a href="MIX_CreateMixer.html">MIX_CreateMixer()</a>でメモリに書き込むレンダーを生成する)
 </p>
 <p>
-ミキサーを生成した後は, MIX_LoadAudio()またはMIX_LoadAudio_IO()またはMIX_LoadAudioWithProperties()でオーディオデータを読み込む.
+ミキサーを生成した後は, <a href="MIX_LoadAudio.html">MIX_LoadAudio()</a>, MIX_LoadAudio_IO()またはMIX_LoadAudioWithProperties()でオーディオデータを読み込む.
 一度読み込んだデータは何度でも再生できる.
 </p>
 <p>
@@ -134,7 +134,7 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_GetTrackRemaining
 <li>MIX_GetTrackTags
 <li><a href="MIX_Init.html">MIX_Init</a> - SDL_mixerライブラリを初期化する
-<li>MIX_LoadAudio
+<li><a href="MIX_LoadAudio.html">MIX_LoadAudio</a> - ファイルから再生するオーディオデータを読み込む
 <li>MIX_LoadAudio_IO
 <li>MIX_LoadAudioNoCopy
 <li>MIX_LoadAudioWithProperties
