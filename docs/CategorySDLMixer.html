@@ -26,21 +26,21 @@ SDL_mixerは面倒なオーディオ処理を簡単に行えるライブラリ�
 このライブラリを使用するには, まず<a href="MIX_Init.html">MIX_Init()</a>を呼ぶ. それから<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>でミキサーを生成する. (または<a href="MIX_CreateMixer.html">MIX_CreateMixer()</a>でメモリに書き込むレンダーを生成する)
 </p>
 <p>
-ミキサーを生成した後は, <a href="MIX_LoadAudio.html">MIX_LoadAudio()</a>, MIX_LoadAudio_IO()またはMIX_LoadAudioWithProperties()でオーディオデータを読み込む.
+ミキサーを生成した後は, <a href="MIX_LoadAudio.html">MIX_LoadAudio()</a>, <a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO()</a>または<a href="MIX_LoadAudioWithProperties.html">MIX_LoadAudioWithProperties()</a>でオーディオデータを読み込む.
 一度読み込んだデータは何度でも再生できる.
 </p>
 <p>
 オーディオデータの読み込みでは, SDL_mixerはID3やAPEタグのようないくつかのメタデータタグ形式を解析でき, この情報はMIX_GetAudioProperties()関数を経由して表に出すことができる.
 </p>
 <p>
-オーディオデータの再生のためには, MIX_CreateTrack()でトラックを生成する.
+オーディオデータの再生のためには, <a href="MIX_CreateTrack.html">MIX_CreateTrack()</a>でトラックを生成する.
 同時に再生するオーディオデータには, それぞれトラックが必要である. トラックはミキサーボード上の一つ一つのスライダーと考えればよい.
 何百ものオーディオファイルを読み込もうとしたことがあるかもしれないが, 再生の準備が整ったとき読み込んだファイルを割り当てるトラックはわずかで, これらのトラックは別のオーディオで再利用することになる.
-トラックはMIX_Audio(複数回再生される静的データ)またはSDL_AudioStream(アプリケーションが必要に応じて提供するストリーミングPCMオーディオ)から入力を受ける.
-その他の選択肢はSDL_IOStreamからの供給で読み込みと即座のデコードを行うもので, これは一度だけ使用するBGMなどで効果的かもしれない.
+トラックは<a href="MIX_Audio.html">MIX_Audio</a>(複数回再生される静的データ)または<a href="SDL_AudioStream.html">SDL_AudioStream</a>(アプリケーションが必要に応じて提供するストリーミングPCMオーディオ)から入力を受ける.
+その他の選択肢は<a href="SDL_IOStream.html">SDL_IOStream</a>からの供給で読み込みと即座のデコードを行うもので, これは一度だけ使用するBGMなどで効果的かもしれない.
 </p>
 <p>
-入力をMIX_SetTrackAudio(), MIX_SetTrackAudioStream(), またはMIX_SetTrackIOStream()でMIX_Trackに割り当てる.
+入力をMIX_SetTrackAudio(), MIX_SetTrackAudioStream(), またはMIX_SetTrackIOStream()で<a href="MIX_Track.html">MIX_Track</a>に割り当てる.
 </p>
 <p>
 トラックが入力を得た後は, MIX_PlayTrack()で再生を開始する.
@@ -98,13 +98,13 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li><a href="MIX_CreateMixer.html">MIX_CreateMixer</a> - オーディオデータをメモリバッファに生成するミキサーを生成する
 <li><a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice</a> - オーディオデバイスから音声を再生するミキサーを生成する
 <li>MIX_CreateSineWaveAudio
-<li>MIX_CreateTrack
+<li><a href="MIX_CreateTrack.html">MIX_CreateTrack</a> - ミキサーに新しいトラックを生成する
 <li>MIX_DecodeAudio
-<li>MIX_DestroyAudio
+<li><a href="MIX_DestroyAudio.html">MIX_DestroyAudio</a> - 指定したオーディオを破棄する
 <li>MIX_DestroyAudioDecoder
 <li>MIX_DestroyGroup
 <li><a href="MIX_DestroyMixer.html">MIX_DestroyMixer</a> - ミキサーを破棄する
-<li>MIX_DestroyTrack
+<li><a href="MIX_DestroyTrack.html">MIX_DestroyTrack</a> - 指定したトラックを破棄する
 <li>MIX_FramesToMS
 <li>MIX_Generate
 <li>MIX_GetAudioDecoder
@@ -135,9 +135,9 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_GetTrackTags
 <li><a href="MIX_Init.html">MIX_Init</a> - SDL_mixerライブラリを初期化する
 <li><a href="MIX_LoadAudio.html">MIX_LoadAudio</a> - ファイルから再生するオーディオデータを読み込む
-<li>MIX_LoadAudio_IO
+<li><a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO</a> - SDL_IOStreamから再生するオーディオデータを読み込む
 <li>MIX_LoadAudioNoCopy
-<li>MIX_LoadAudioWithProperties
+<li><a href="MIX_LoadAudioWithProperties.html">MIX_LoadAudioWithProperties</a> - プロパティグループを通して再生のためのオーディオを読み込む
 <li>MIX_LoadRawAudio
 <li>MIX_LoadRawAudio_IO
 <li>MIX_LoadRawAudioNoCopy
@@ -187,13 +187,13 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 </ol>
 <h2>型</h2>
 <ol>
-<li>MIX_Audio
+<li><a href="MIX_Audio.html">MIX_Audio</a> - オーディオデータを表す不透明オブジェクトの型
 <li>MIX_AudioDecoder
 <li>MIX_Group
 <li>MIX_GroupMixCallback
 <li><a href="MIX_Mixer.html">MIX_Mixer</a> - ミキサーを表す不透明オブジェクトの型
 <li>MIX_PostMixCallback
-<li>MIX_Track
+<li><a href="MIX_Track.html">MIX_Track</a> - ミックスされる音源を表す不透明オブジェクトの型
 <li>MIX_TrackMixCallback
 <li>MIX_TrackStoppedCallback
 </ol>

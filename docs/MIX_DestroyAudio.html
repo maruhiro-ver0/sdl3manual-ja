@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_DestroyAudio</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_DestroyAudio
+<hr>
+<h1>MIX_DestroyAudio</h1>
+指定したオーディオを破棄する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>void MIX_DestroyAudio(MIX_Audio *audio);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Audio.html">MIX_Audio</a> *</td><td>audio</td><td>the audio to destroy.</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+<a href="MIX_Audio.html">MIX_Audio</a>は内部で参照をカウントしており, この関数は参照を解除するだけである.
+その結果, 参照数が0になったとき, <a href="MIX_Audio.html">MIX_Audio</a>は解放される.
+そのため, 破棄しようとしたときまだオーディオが<a href="MIX_Track.html">MIX_Track</a>に割り当てられていても, システムは安全に処理できる.
+実際の破棄はそれを使用しているトラックを止めたときに行われる.
+</p>
+<p>
+しかし, 呼び出し側はこの関数を呼んだ後はオーディオポインタは無効になったとみなすべきである.
+</p>
+<p>
+NULLの<a href="MIX_Audio.html">MIX_Audio</a>を破棄しようとした場合, 安全になにもしない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_DestroyAudio">SDL3_mixer/MIX_DestroyAudio</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_LoadAudioWithProperties</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_LoadAudioWithProperties
+<hr>
+<h1>MIX_LoadAudioWithProperties</h1>
+プロパティグループを通して再生のためのオーディオを読み込む
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>MIX_Audio * MIX_LoadAudioWithProperties(MIX_Mixer *mixer, SDL_IOStream *io, bool predecode, bool closeio);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>オーディオ読み込みの方法のプロパティグループ</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="MIX_Audio.html">MIX_Audio</a> *) ミキサーで音声を発生させるために使用できるオーディオオブジェクトを戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+様々なLoadAudio関数の機能の説明は<a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO()</a>を参照すること.
+この関数はプロパティで動作を指示することができ, 他の関数には提供されていない機能が使用できる.
+</p>
+<p>
+<a href="SDL_PropertiesID.html">SDL_PropertiesID</a>については<a href="CategoryProperties.html">SDLのドキュメント</a>に記述がある. これらのプロパティに対応している:
+</p>
+<ul>
+<li><code>MIX_PROP_AUDIO_LOAD_IOSTREAM_POINTER</code>: オーディオデータの読み込みで使用する<a href="SDL_IOStream.html">SDL_IOStream</a>へのポインタ. このストリームはシーク可能の必要がある
+<li><code>MIX_PROP_AUDIO_LOAD_CLOSEIO_BOOLEAN</code>: 真のときSDL_mixerは戻る前に(成功でも失敗でも)<a href="SDL_IOStream.html">SDL_IOStream</a>を閉じる
+<li><code>MIX_PROP_AUDIO_LOAD_PREDECODE_BOOLEAN</code>: 真のとき, この関数から戻る前に圧縮されたデータを全て展開する. 偽のとき元のまま保存し必要なとき展開する
+<li><code>MIX_PROP_AUDIO_LOAD_PREFERRED_MIXER_POINTER</code>: <a href="MIX_Mixer.html">MIX_Mixer</a>へのポインタ. 必要なときこの形式に合うように展開する. 任意
+<li><code>MIX_PROP_AUDIO_LOAD_SKIP_METADATA_TAGS_BOOLEAN</code>: 真のときID3やAPEタグのようなメタデータの解析を省略する. これはデータのタグを使用しないとき読み込みの速度を向上させるために使用できる. 一部のデコーダはこのプロパティが真のときタグが存在するとき失敗する
+<li><code>MIX_PROP_AUDIO_LOAD_IGNORE_LOOPS_BOOLEAN</code>: 真のときループポイントを表すメタデータを無視する. これはファイルがループするように指示していてもファイルを最初から最後までループせずにデコードする. オーディオはこの設定とは無関係に<a href="MIX_Track.html">MIX_Track</a>ループ設定をしてループさせることもできる. デフォルトは偽
+<li><code>MIX_PROP_AUDIO_DECODER_STRING</code>: このデータが使用するデコーダの名前. 任意. 指定しない場合, SDL_mixerはデータをチェックし最適なデコーダを選択する. これらの名前は<a href="MIX_GetAudioDecoder.html">MIX_GetAudioDecoder()</a>が戻すものと同じである
+</ul>
+<p>
+特定のデコーダは, 例えばMIDI再生のサウンドフォントの場所のような追加のカスタムプロパティを受け付ける.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_DestroyAudio.html">MIX_DestroyAudio</a>
+<li><a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>
+<li><a href="MIX_LoadAudio.html">MIX_LoadAudio</a>
+<li><a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_LoadAudioWithProperties">SDL3_mixer/MIX_LoadAudioWithProperties</a>
+<hr>
+</body>
+</html>
