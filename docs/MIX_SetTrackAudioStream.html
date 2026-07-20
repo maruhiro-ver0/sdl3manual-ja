@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_SetTrackAudioStream</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetTrackAudioStream
+<hr>
+<h1>MIX_SetTrackAudioStream</h1>
+<a href="MIX_Track.html">MIX_Track</a>への入力として<a href="SDL_AudioStream.html">SDL_AudioStream</a>を設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_SetTrackAudioStream(MIX_Track *track, SDL_AudioStream *stream);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>新しいオーディオ入力を設定するトラック</td></tr>
+<tr><td><a href="SDL_AudioStream.html">SDL_AudioStream</a> *</td><td>stream</td><td>新しいオーディオストリーム. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+オーディオストリームを使用すると, アプリケーションはアルゴリズムによる生成やその場での生成などによる, あらゆる種類と形式の生成することができるようになる.
+</p>
+<p>
+トラックがオーディオストリームを使用する場合, ミックスするデータが必要になると<a href="SDL_GetAudioStreamData.html">SDL_GetAudioStreamData</a>が呼ばれる.
+アプリケーションはストリームのデータを先にバッファに入れておくことも, ストリームにコールバックを設定して必要な時点で渡すこともできる.
+詳細は<a href="CategoryAudio.hgtml">SDLのドキュメント</a>にある.
+</p>
+<p>
+与えられたオーディオストリームは一度に1つのトラックしか割り当てられない.
+複数を割り当ててもエラーは戻さないが, 1つのストリームを複数のトラックに割り当てるとそれぞれのトラックがストリームから不規則に読み取り, 混乱や誤ったミックスが発生する.
+</p>
+<p>
+トラックが有効なオーディオ入力を得られたら, <a href="MIX_PlayTrack.html">MIX_PlayTrack()</a>または可能ならば<a href="MIX_PlayTag.html">MIX_PlayTag()</a>を呼んでミックスを開始できる.
+</p>
+<p>
+この関数のオーディオストリームにNULLを渡すことができる. この場合はトラックからオーディオ入力を取り除く.
+トラックが再生中の場合, ミキサーの処理が行われる次のタイミングで認識され, トラックの停止がマークされ割り付けられた<a href="MIX_TrackStoppedCallback.html">MIX_TrackStoppedCallback</a>が呼ばれる.
+</p>
+<p>
+トラックの再生中にオーディオ入力を変更することはできる. しかし, 一部の設定, 例えばループ位置は, 新しいオーディオでは意味をなさなくなる場合がある.
+このような場合は, <a href="MIX_PlayTrack.html">MIX_PlayTrack</a>を再び呼んでパラメータを修正すること.
+</p>
+<p>
+渡されたオーディオストリームはトラックが必要がなくなるまで有効を保つ必要がある(トラックの入力を変えた, またはトラックを破棄した場合でも).
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetTrackAudioStream">SDL3_mixer/MIX_SetTrackAudioStream</a>
+<hr>
+</body>
+</html>

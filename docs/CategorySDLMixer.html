@@ -40,7 +40,7 @@ SDL_mixerは面倒なオーディオ処理を簡単に行えるライブラリ�
 その他の選択肢は<a href="SDL_IOStream.html">SDL_IOStream</a>からの供給で読み込みと即座のデコードを行うもので, これは一度だけ使用するBGMなどで効果的かもしれない.
 </p>
 <p>
-入力をMIX_SetTrackAudio(), MIX_SetTrackAudioStream(), またはMIX_SetTrackIOStream()で<a href="MIX_Track.html">MIX_Track</a>に割り当てる.
+入力を<a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio()</a>, <a href="MIX_SetTrackAudioStream.html">MIX_SetTrackAudioStream()</a>, または<a href="MIX_SetTrackIOStream.html">MIX_SetTrackIOStream()</a>で<a href="MIX_Track.html">MIX_Track</a>に割り当てる.
 </p>
 <p>
 トラックが入力を得た後は, MIX_PlayTrack()で再生を開始する.
@@ -159,13 +159,13 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_SetPostMixCallback
 <li>MIX_SetTagGain
 <li>MIX_SetTrack3DPosition
-<li>MIX_SetTrackAudio
-<li>MIX_SetTrackAudioStream
+<li><a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a> - MIX_Trackへの入力としてMIX_Audioを設定する
+<li><a href="MIX_SetTrackAudioStream.html">MIX_SetTrackAudioStream</a> - MIX_Trackへの入力としてSDL_AudioStreamを設定する
 <li>MIX_SetTrackCookedCallback
 <li>MIX_SetTrackFrequencyRatio
 <li>MIX_SetTrackGain
 <li>MIX_SetTrackGroup
-<li>MIX_SetTrackIOStream
+<li><a href="MIX_SetTrackIOStream.html">MIX_SetTrackIOStream</a> - MIX_Trackへの入力としてSDL_IOStreamを設定する
 <li>MIX_SetTrackLoops
 <li>MIX_SetTrackOutputChannelMap
 <li>MIX_SetTrackPlaybackPosition
