@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_PlayTrack</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_PlayTrack
+<hr>
+<h1>MIX_PlayTrack</h1>
+トラックの再生を開始(または再開)する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_PlayTrack(MIX_Track *track, SDL_PropertiesID options);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>ミキシングを開始(または再開)するトラック</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>options</td><td>再生のプロパティ. 0も可</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+トラックは再生のとき最後に割り付けられた入力を使用する. トラックは入力が割り付けられている必要がある. そうでなければこの関数は失敗する.
+入力は<a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio()</a>, <a href="MIX_SetTrackAudioStream.html">MIX_SetTrackAudioStream()</a>, または<a href="MIX_SetTrackIOStream.html">MIX_SetTrackIOStream()</a>で割り付ける.
+</p>
+<p>
+トラックが既に再生中または一時停止中の場合, この関数はトラックを新しいパラメータで再再生する.
+</p>
+<p>
+いくつかのパラメータがあり, 将来的には追加される</code>可能性がある. パラメータは<a href="SDL_PropertiesID.html">SDL_PropertiesID</a>で指定する.
+パラメータには妥当なデフォルトがあり, <code>options</code>に0を指定すると全てデフォルトを選択したことになる.
+</p>
+<p>
+<a href="SDL_PropertiesID.html">SDL_PropertiesID</a>については<a href="CategoryProperties.html">SDLのドキュメント</a>に詳細がある.
+</p>
+<p>
+これらのプロパティに対応している:
+</p>
+<ul>
+<li><code>MIX_PROP_PLAY_LOOPS_NUMBER</code>: 終わりに達したときのループ回数.
+この値が1ならば先頭から1回ループする.
+0のときループしない.
+-1のとき無限にループする.
+入力がシーク不能で値が0でない場合, この関数は成功を戻すがトラックはループすべき位置で停止する.
+デフォルトは0
+<li><code>MIX_PROP_PLAY_MAX_FRAME_NUMBER</code>: トラックをこのサンプルフレーム位置までミックスする.
+これはオーディオファイルのEOFに達したように扱われる.
+-1の場合, 全てのオーディオデータが制限なく使用される.
+デフォルトは-1
+<li><code>MIX_PROP_PLAY_MAX_MILLISECONDS_NUMBER</code>: <code>MIX_PROP_PLAY_MAX_FRAME_NUMBER</code>プロパティと目的は同じだが, サンプルフレームの代わりにミリ秒で指定する.
+両方のプロパティを設定すると, サンプルフレームが優先される.
+デフォルトは-1
+<li><code>MIX_PROP_PLAY_START_FRAME_NUMBER</code>: ミックスを開始するトラックの入力のサンプルフレーム位置.
+値が0以下のときトラックの先頭から開始する.
+入力がシーク不能で0より大きな値のとき, この関数は失敗する.
+デフォルトは0
+<li><code>MIX_PROP_PLAY_START_MILLISECOND_NUMBER</code>: <code>MIX_PROP_PLAY_START_FRAME_NUMBER</code>プロパティと目的は同じだが, サンプルフレーム数の代わりにミリ秒で指定する.
+両方のプロパティを設定すると, サンプルフレームが優先される.
+デフォルトは0
+<li><code>MIX_PROP_PLAY_LOOP_START_FRAME_NUMBER</code>: トラックがループする場合, ループで戻るサンプルフレーム位置.
+これで最初はトラックの先頭のイントロを再生するが, 途中の位置をループ地点とすることができる.
+値が0以下のときトラックの先頭からループする.
+デフォルトは0
+<li><code>MIX_PROP_PLAY_LOOP_START_MILLISECOND_NUMBER</code>: <code>MIX_PROP_PLAY_LOOP_START_FRAME_NUMBER</code>プロパティと目的は同じだが, サンプルフレーム数の代わりにミリ秒で指定する.
+両方のプロパティを設定すると, サンプルフレームが優先される.
+デフォルトは0
+<li><code>MIX_PROP_PLAY_FADE_IN_FRAMES_NUMBER</code>: 新しく開始したトラックでフェードインするサンプルフレーム数.
+トラックのミックスは無音から始まり多くのサンプルフレームを渡りながらスムーズに全ボリュームに達する.
+トラックのフェードインが完了する前にループした場合は, ループ地点から正しくフェードが続く.
+値は0以下の場合, フェードインは無効になり, トラックは全ボリュームからミックスされる.
+デフォルトは0
+<li><code>MIX_PROP_PLAY_FADE_IN_MILLISECONDS_NUMBER</code>: <code>MIX_PROP_PLAY_FADE_IN_FRAMES_NUMBER</code>プロパティと目的は同じだが, サンプルフレーム数の代わりにミリ秒で指定する.
+両方のプロパティを設定すると, サンプルフレームが優先される.
+デフォルトは0
+<li><code>MIX_PROP_PLAY_FADE_IN_START_GAIN_FLOAT</code>: フェードインの場合の開始時点のボリュームレベル.
+0.0fは無音で1.0fは全ボリュームで, その間は全て線形にゲインが変化する.
+値は0.0fから1.0fの間にクリッピングされる.
+デフォルトは0.0f
+<li><code>MIX_PROP_PLAY_APPEND_SILE。E_FRAMES_NUMBER</code>: このトラックのミックスの終わりに, 全てのループが完了した後で, このサンプリングフレーム数の無音をオーディオファイルに書き込まれているものであるかのように追加する.
+これは, リバーブのような音声の終点を超えてサンプルを生成する必要があるエフェクトをアプリケーションがコールバックで実装することや, 直接管理せずに新しい音声を開始する前に待ち時間を挿入することができるようにする.
+値が0以下の場合, トラックが停止する前に無音を生成しない.
+デフォルトは0
+<li><code>MIX_PROP_PLAY_APPEND_SILENCE_MILLISECONDS_NUMBER</code>: <code>MIX_PROP_PLAY_APPEND_SILENCE_FRAMES_NUMBER</code>プロパティと目的は同じだが, サンプルフレーム数の代わりにミリ秒で指定する.
+両方のプロパティを設定すると, サンプルフレームが優先される.
+デフォルトは0
+<li><code>MIX_PROP_PLAY_HALT_WHEN_EXHAUSTED_BOOLEAN</code>: 真のとき, トラックが入力を完全に使い果たしたとき, ミキサーはトラックを停止にする(そして適切に<a href="MIX_TrackStoppedCallback.html">MIX_TrackStoppedCallback</a>などを呼ぶ).
+さらに再生を続けるには, トラックを再開する必要がある.
+偽のとき, トラックは単にミックスを行わないだけで停止しない.
+これは様々な巧妙なロジックになりうるが, 特にトラックの入力が<a href="MIX_SetTrackAudioStream.html">MIX_SetTrackAudioStream()</a>で割り付けられた<a href="SDL_AudioStream.html">SDL_AudioStream</a>の場合に有用である.
+このプロパティを真に設定して, 明確な終わりのある完全なオーディオデータをストリームにプッシュすると, トラックは他のオーディオ入力が適用されたときと同じように動作する.
+偽を設定すると, ストリームに新しいデータが追加されたときミキサーは可能な限り早くそのデータを使用する. これは新たなVoIPソケットなどでストリームに少しずつ入れられるデータを再生したい場合に有用である.
+この場合, 必要なときにオーディオデータがなければミックスした出力が途切れてしまうため, これを避けるために十分なデータをバッファすること.
+トラックは, ループと追加された無音がミックスされるまで入力を使い果たしたとみなされない. (また, 入力が<a href="SDL_AudioStream.html">SDL_AudioStream</a>の場合, ループは無意味である.)
+デフォルトは真
+<li><code>MIX_PROP_PLAY_START_ORDER_NUMBER</code>: これは特別な場合のプロパティで, ほとんどのアプリケーションは無視できる.
+modファイル形式の場合, ファイルの先頭ではなく指定した"order"インデックスからミックスを開始する.
+値が0未満のとき, このプロパティは無視される.
+デコーダがこのプロパティに対応していない場合も無視される.
+このプロパティが無視されなかった場合, 代わりに<code>MIX_PROP_PLAY_START_FRAME_NUMBER</code>プロパティと<code>MIX_PROP_PLAY_START_MILLISECOND_NUMBER</code>プロパティが無視される.
+デフォルトは-1.
+SDL_mixer 3.2.2以降
+</ul>
+<p>
+この関数が失敗したとき, このトラックのミックスは開始(既に開始した場合は再開)されない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_PlayTag.html">MIX_PlayTag</a>
+<li><a href="MIX_PlayAudio.html">MIX_PlayAudio</a>
+<li><a href="MIX_StopTrack.html">MIX_StopTrack</a>
+<li><a href="MIX_PauseTrack.html">MIX_PauseTrack</a>
+<li><a href="MIX_TrackPlaying.html">MIX_TrackPlaying</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_PlayTrack">SDL3_mixer/MIX_PlayTrack</a>
+<hr>
+</body>
+</html>
