@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_Generate</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_Generate
+<hr>
+<h1>MIX_Generate</h1>
+オーディオデバイスで動作していない場合のミキサーの出力を生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>int MIX_Generate(MIX_Mixer *mixer, void *buffer, int buflen);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>問い合わせるミキサー</td></tr>
+<tr><td>void *</td><td>buffer</td><td>オーディオデータの書込先バッファへのポインタ</td></tr>
+<tr><td>int</td><td>buflen</td><td>書込先バッファのバイト長</td></tr>
+</table>
+<h2>戻り値</h2>
+(int) 成功のときミックスされたバイト数を戻す. 追加された無音は含まれない. 失敗のとき-1を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>ではなく<a href="MIX_CreateMixer.html">MIX_CreateMixer()</a>を呼ぶことでSDL_mixerはオーディオデバイスと接続しない<a href="MIX_Mixer.html">MIX_Mixer</a>オブジェクトを生成できる.
+このようなミキサーは, この関数で明確に要求しない限り出力を生成しない.
+</p>
+<p>
+呼び出し側はオーディオの形式を自由に要求できるが, <code>buflen</code>がミキサー生成時に指定したサンプルフレームサイズの倍数である必要がある. (例えば, Sint16ステレオオーディオを要求する場合, <code>buflen</code>はチャネル当たり2バイト×2チャネルのため4の倍数の必要がある.)
+</p>
+<p>
+ミキサーは時間ではなくサンプルフレーム単位で処理を行い可能な限り速くミックスを行うため, 膨大なオーディオデータを短い時間で生成できる可能性がある.
+</p>
+<p>
+成功すると, この関数は<code>buffer</code>に<code>buflen</code>バイトのオーディオデータを常に書き込む. 全ての再生トラックのミックスが完了した場合, 残りのバッファには無音が書き込まれれる.
+</p>
+<p>
+この関数の呼び出しのたびに残りの部分から始まるため, トラックのミックスは前回の呼び出しで完了した部分から再開される.
+ミキサーの状態はトラックの追加, 再生, 停止, 変更, 削除などの様々な目的の関数の呼び出しのたびに変更される.
+実質的に, この関数はオーディオデバイスが再生のために追加のオーディオデータを要求するときSDL_mixerが内部で行う処理と同様のことを行う.
+</p>
+<p>
+この関数は<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>で生成したミキサーに対しては使えない. 音声は必要に応じて内部に生成される.
+</p>
+<p>
+この関数は実際にミックスされたバイト数を戻す. これは<code>buflen</code>より少ない場合もある.
+バッファの<code>buflen</code>バイト全てが初期化されるが, ミックスされるトラックが足りない場合は, バッファの後ろは無音で初期化される.
+この無音部分は戻り値には含まれないため, 呼び出し側はバッファに実際のデータと無音がどれだけ書き込まれたかを判断することができる.
+そのため, 成功のとき0以上値を戻す.
+失敗のとき(メモリ不足, 無効なパラメータなど)は-1を戻す.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_CreateMixer.html">MIX_CreateMixer</a>
+</ul>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_Generate">SDL3_mixer/MIX_Generate</a>
+<hr>
+</body>
+</html>
