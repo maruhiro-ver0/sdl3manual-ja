@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_GetAudioProperties</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_GetAudioProperties
+<hr>
+<h1>MIX_GetAudioProperties</h1>
+<a href="MIX_Audio.html">MIX_Audio</a>に関連付けられたプロパティを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>SDL_PropertiesID MIX_GetAudioProperties(MIX_Audio *audio);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Audio.html">MIX_Audio</a> *</td><td>audio</td><td>問い合わせるオーディオデータ</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="SDL_PropertiesID.html">SDL_PropertiesID</a>) プロパティグループIDを戻す. 失敗のとき0を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+SDL_mixerは自身でいくつかのプロパティを提供しているが, アプリケーション固有のデータを持たせる便利な場所としても使用できる.
+</p>
+<p>
+<a href="SDL_PropertiesID.html">SDL_PropertiesID</a>はMIX_Audioに対してこの関数を最初に呼んだとき必要ならば生成される.
+</p>
+<p>
+SDL_mixerから次の読取専用プロパティが提供されている:
+</p>
+<ul>
+<li><code>MIX_PROP_METADATA_TITLE_STRING</code>: オーディオデータのタイトル ("Smells Like Teen Spirit")
+<li><code>MIX_PROP_METADATA_ARTIST_STRING</code>: オーディオデータのアーティストの名前 ("Nirvana")
+<li><code>MIX_PROP_METADATA_ALBUM_STRING</code>: オーディオデータのアルバムの名前 ("Nevermind")
+<li><code>MIX_PROP_METADATA_COPYRIGHT_STRING</code>: オーディオデータの著作権情報 ("Copyright (c) 1991")
+<li><code>MIX_PROP_METADATA_TRACK_NUMBER</code>: オーディオデータのアルバムのトラック番号 (1)
+<li><code>MIX_PROP_METADATA_TOTAL_TRACKS_NUMBER</code>: アルバムの総トラック数 (13)
+<li><code>MIX_PROP_METADATA_YEAR_NUMBER</code>: オーディオデータの発表年
+<li><code>MIX_PROP_METADATA_DURATION_FRAMES_NUMBER</code>: このオーディオデータのPCMデータのサンプルフレーム数. これはデコーダが期間を時間単位でしか知らない場合, 少ない方にずれる場合がある
+<li><code>MIX_PROP_METADATA_DURATION_INFINITE_BOOLEAN</code>: 真のときオーディオデータは音声の生成が終わることがない. しかし これはSDL_mixerが必ず知っている必要はない
+</ul>
+<p>
+他のプロパティは, 提供されているならば<a href="MIX_LoadAudioWithProperties.html">MIX_LoadAudioWithProperties()</a>に記述がある.
+</p>
+<p>
+メタデータはSDL_mixerが見つけたID3タグのような様々なものから得ていて, それは標準化された形式ではなく, 存在しない場合もあり, 元データが(例えばP2P共有サービスのMP3のような)信頼できない場合は完全に間違っていることもありうるので注意すること.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_GetAudioProperties">SDL3_mixer/MIX_GetAudioProperties</a>
+<hr>
+</body>
+</html>

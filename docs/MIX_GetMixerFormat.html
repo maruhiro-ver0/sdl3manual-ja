@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_GetMixerFormat</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_GetMixerFormat
+<hr>
+<h1>MIX_GetMixerFormat</h1>
+ミキサーが生成するオーディオの形式を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_GetMixerFormat(MIX_Mixer *mixer, SDL_AudioSpec *spec);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>問い合わせるミキサー</td></tr>
+<tr><td><a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td>ミキサーのオーディオ形式の代入先へのポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+一般的には, SDL_mixerは必要に応じてアプリケーションが提供した入力から出力の形式にデータを変換するため, この情報は必要がない.
+しかし, これは入力の形式を一致させて変換と再サンプリングのコストを軽減させる場合に有用である.
+</p>
+<p>
+<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>で生成したミキサーの場合, これはオーディオデバイスの形式である. (そして, 後でデバイスが変わると変化する場合があるが, SDL_mixerはこの変化を内部で途切れることなく処理する.)
+</p>
+<p>
+<a href="MIX_CreateMixer.html">MIX_CreateMixer()</a>で生成したミキサーの場合, これは<a href="MIX_Generate.html">MIX_Generate()</a>が生成する形式で, 要求した形式と同じであり変化しない.
+</p>
+<p>
+SDL_mixerは指定した形式で出力する前に<a href="SDL_AudioFormat.html">SDL_AUDIO_F32</a>形式で処理を行うため, 入力形式を最終的な出力形式ではなくこの形式に合わせるとより効率的になることに注意すること.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_GetMixerFormat">SDL3_mixer/MIX_GetMixerFormat</a>
+<hr>
+</body>
+</html>
