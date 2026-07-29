@@ -24,13 +24,13 @@
 <tr><td><a href="MIX_Audio.html">MIX_Audio</a> *</td><td>audio</td><td>再生するオーディオデータ</td></tr>
 </table>
 <h2>戻り値</h2>
-(bool) ミックスが開始されたとき真, エラーのとき偽を戻す.
+(bool) ミキシングが開始されたとき真, エラーのとき偽を戻す.
 <a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
 <h2>詳細</h2>
 <p>
 これは私たちが「撃ちっぱなし(fire-and-forget)」サウンドと呼んでいる方法である.
 内部では, SDL_mixerは指定の<a href="MIX_Audio.html">MIX_Audio</a>の一時的なトラックで処理し, 完了時に消去している.
-<a href="MIX_PlayTrack.html">MIX_PlayTrack()</a>のようにミックスの方法のオプションは指定できず, またトラックは呼び出し側が使用できないため, ミックスの時間の調整はできない.
+<a href="MIX_PlayTrack.html">MIX_PlayTrack()</a>のようにミキシングの方法のオプションは指定できず, またトラックは呼び出し側が使用できないため, ミキシングの時間の調整はできない.
 </p>
 <p>
 この関数はゲーム全体の複雑な処理で使用できるものではないが, 単純な途中で停止させない一回限りの再生には便利である.
