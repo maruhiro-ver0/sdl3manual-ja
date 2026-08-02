@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_GetAudioDecoder</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_GetAudioDecoder
+<hr>
+<h1>MIX_GetAudioDecoder</h1>
+オーディオデコーダの名前を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>const char * MIX_GetAudioDecoder(int index);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td>int</td><td>index</td><td>問い合わせるデコーダのインデックス番号</td></tr>
+</table>
+<h2>戻り値</h2>
+(const char *) デコーダの名前のUTF-8(実際にはASCII)の文字列を戻す. <code>index</code>が無効のときNULLを戻す.
+<h2>詳細</h2>
+<p>
+オーディオデコーダは特定のオーディオファイル形式を利用可能なPCMデータに変換するものである.
+例えば, MP3デコーダやWAVデコーダなどがある.
+SDL_mixerにはいくつかのデコーダが組み込まれている.
+</p>
+<p>
+名前は大文字と数字(low-ASCII)で構成されている.
+特定のファイル形式と必ず対応しているわけではない. "XMP"のような一部のデコーダは複数の種類のファイルを扱い, "DRMP3"と"MPG123"のように同じファイル形式を扱うデコーダが複数ある場合もある.
+最後の例では, どちらのデコーダも"MP3"という名前ではないことに注意すること.
+</p>
+<p>
+デコーダのインデックス番号は<a href="MIX_Init.html">MIX_Init()</a>で決まり, ライブラリを終了させるまで変わらない.
+有効なインデックス番号は0から<a href="MIX_GetNumAudioDecoders.html">MIX_GetNumAudioDecoders()</a>が戻した値の間である.
+</p>
+<p>
+戻されたポインタはSDL_mixerの管理下の定数メモリであり, 解放してはならない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_GetNumAudioDecoders.html">MIX_GetNumAudioDecoders</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_GetAudioDecoder">SDL3_mixer/MIX_GetAudioDecoder</a>
+<hr>
+</body>
+</html>

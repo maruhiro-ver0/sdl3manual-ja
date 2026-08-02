@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_SetTrackGroup</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetTrackGroup
+<hr>
+<h1>MIX_SetTrackGroup</h1>
+ミキシンググループにトラックを割り付ける
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_SetTrackGroup(MIX_Track *track, MIX_Group *group);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>ミキシンググループに割り付けるトラック</td></tr>
+<tr><td><a href="MIX_Group.html">MIX_Group</a> *</td><td>group</td><td>割り付けるミキシンググループ. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+グループ内の全てのトラックは一緒にミックスされ, その出力は最終的な出力としてミックスされる前にアプリケーションが使用できる.
+</p>
+<p>
+トラックは1つのグループのみ属することができ, トラックとグループは同じ<a href="MIX_Mixer.html">MIX_Mixer</a>から生成されている必要がある.
+</p>
+<p>
+トラックをNULLグループに割り付けると, アプリケーションが生成したグループから取り除かれ, ミキサー内部のデフォルトグループに再割り付けされる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_CreateGroup.html">MIX_CreateGroup</a>
+<li><a href="MIX_SetGroupPostMixCallback.html">MIX_SetGroupPostMixCallback</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetTrackGroup">SDL3_mixer/MIX_SetTrackGroup</a>
+<hr>
+</body>
+</html>

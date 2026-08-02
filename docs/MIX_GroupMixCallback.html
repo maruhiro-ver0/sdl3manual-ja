@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_GroupMixCallback</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_GroupMixCallback
+<hr>
+<h1>MIX_GroupMixCallback</h1>
+<a href="MIX_Group.html">MIX_Group</a>のミキシングが完了したとき呼ばれるコールバックの型
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>typedef void (SDLCALL *MIX_GroupMixCallback)(void *userdata, MIX_Group *group, const SDL_AudioSpec *spec, float *pcm, int samples);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td>void *</td><td>userdata</td><td>アプリケーションが私的利用のために渡した不透明ポインタ</td></tr>
+<tr><td><a href="MIX_Group.html">MIX_Group</a> *</td><td>group</td><td>ミックスされたグループ</td></tr>
+<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td><code>pcm</code>のデータの形式</td></tr>
+<tr><td>float *</td><td>pcm</td><td>32ビット浮動小数点形式の生PCMデータ</td></tr>
+<tr><td>int</td><td>samples</td><td><code>pcm</code>の浮動小数点の値の数</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+このコールバックはミキシンググループのミックスが完了したとき呼ばれる:
+グループ内と全てのトラックは1つのバッファにミックスされ, 最終的な出力のミックスのための他の全てのグループとのミックスが準備される.
+</p>
+<p>
+このプッシュされたオーディオデータは定数データではない.
+アプリケーションは自由に変更することができ, その変更はミキシングパイプラインに伝えられる.
+</p>
+<p>
+<code>audiospec</code>が提供される.
+グループが異なると形式も異なる場合があり, アプリケーションがこれに対処できるようにする必要があるが, SDL_mixerは入力や最終的な出力が浮動小数点でない場合でも常に32ビット浮動小数点でミキシング処理を行う.
+そのため, <code>spec-&gt;format</code>は常に<a href="SDL_AudioFormat.html">SDL_AUDIO_F32</a>で, <code>pcm</code>は浮動小数点でハードコードされている.
+</p>
+<p>
+<code>samples</code>は<code>pcm</code>の浮動小数点の値の数で, サンプルフレーム数ではない.
+一度のコールバックでのサンプルの数には保証がなく, その数は様々な要因により呼び出しのたびに大きく変化する可能性がある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_SetGroupPostMixCallback.html">MIX_SetGroupPostMixCallback</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_GroupMixCallback">SDL3_mixer/MIX_GroupMixCallback</a>
+<hr>
+</body>
+</html>

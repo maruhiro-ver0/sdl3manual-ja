@@ -61,7 +61,7 @@ SDL_mixerは面倒なオーディオ処理を簡単に行えるライブラリ�
 </p>
 <p>
 SDL_mixerはオーディオファイルのデコードを実際のミックス以外で使用することもできる.
-これはMIX_AudioDecoderで行う.
+これは<a href="MIX_AudioDecoder.html">MIX_AudioDecoder</a>で行える.
 アプリケーションのオーディオエンジンとして使用する場合, SDL_mixerはデコードを透過的に扱うため
 このインターフェースは通常の使用法では必要ないかもしれないが, 
 これは様々なファイル形式にアクセスするために別のオーディオライブラリを使用するとき有用になりうる.
@@ -92,24 +92,24 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <ol>
 <li><a href="MIX_AudioFramesToMS.html">MIX_AudioFramesToMS</a> - MIX_Audioの形式のサンプルフレーム数をミリ秒に変換する
 <li><a href="MIX_AudioMSToFrames.html">MIX_AudioMSToFrames</a> - MIX_Audioの形式のミリ秒をサンプルフレーム数に変換する
-<li>MIX_CreateAudioDecoder
-<li>MIX_CreateAudioDecoder_IO
+<li><a href="MIX_CreateAudioDecoder.html">MIX_CreateAudioDecoder</a> - ファイルからMIX_AudioDecoderを生成する
+<li><a href="MIX_CreateAudioDecoder_IO.html">MIX_CreateAudioDecoder_IO</a> - SDL_IOStreamからMIX_AudioDecoderを生成する
 <li><a href="MIX_CreateGroup.html">MIX_CreateGroup</a> - ミキシンググループを生成する
 <li><a href="MIX_CreateMixer.html">MIX_CreateMixer</a> - オーディオデータをメモリバッファに生成するミキサーを生成する
 <li><a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice</a> - オーディオデバイスから音声を再生するミキサーを生成する
-<li>MIX_CreateSineWaveAudio
+<li><a href="MIX_CreateSineWaveAudio.html">MIX_CreateSineWaveAudio</a> - サイン波を生成するMIX_Audioを生成する
 <li><a href="MIX_CreateTrack.html">MIX_CreateTrack</a> - ミキサーに新しいトラックを生成する
-<li>MIX_DecodeAudio
+<li><a href="MIX_DecodeAudio.html">MIX_DecodeAudio</a> - MIX_AudioDecoderからオーディオデータを追加でデコードする
 <li><a href="MIX_DestroyAudio.html">MIX_DestroyAudio</a> - 指定したオーディオを破棄する
-<li>MIX_DestroyAudioDecoder
-<li>MIX_DestroyGroup
+<li><a href="MIX_DestroyAudioDecoder.html">MIX_DestroyAudioDecoder</a> - 指定したオーディオデコーダを破棄する
+<li><a href="MIX_DestroyGroup.html">MIX_DestroyGroup</a> - ミキシンググループを破棄する
 <li><a href="MIX_DestroyMixer.html">MIX_DestroyMixer</a> - ミキサーを破棄する
 <li><a href="MIX_DestroyTrack.html">MIX_DestroyTrack</a> - 指定したトラックを破棄する
-<li>MIX_FramesToMS
+<li><a href="MIX_FramesToMS.html">MIX_FramesToMS</a> - サンプルフレーム数を指定のサンプルレートでミリ秒に変換する
 <li><a href="MIX_Generate.html">MIX_Generate</a> - オーディオデバイスで動作していない場合のミキサーの出力を生成する
-<li>MIX_GetAudioDecoder
-<li>MIX_GetAudioDecoderFormat
-<li>MIX_GetAudioDecoderProperties
+<li><a href="MIX_GetAudioDecoder.html">MIX_GetAudioDecoder</a> - オーディオデコーダの名前を得る
+<li><a href="MIX_GetAudioDecoderFormat.html">MIX_GetAudioDecoderFormat</a> - MIX_AudioDecoderのオーディオ形式の初期値を得る
+<li><a href="MIX_GetAudioDecoderProperties.html">MIX_GetAudioDecoderProperties</a> - MIX_AudioDecoderに関連付けられたプロパティを得る
 <li>MIX_GetAudioDuration
 <li>MIX_GetAudioFormat
 <li><a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties</a> - MIX_Audioに関連付けられたプロパティを得る
@@ -119,7 +119,7 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_GetMixerFrequencyRatio
 <li>MIX_GetMixerGain
 <li>MIX_GetMixerProperties
-<li>MIX_GetNumAudioDecoders
+<li><a href="MIX_GetNumAudioDecoders.html">MIX_GetNumAudioDecoders</a> - 利用可能なオーディオデコーダの数を得る
 <li>MIX_GetTaggedTracks
 <li>MIX_GetTrack3DPosition
 <li>MIX_GetTrackAudio
@@ -142,7 +142,7 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_LoadRawAudio_IO
 <li>MIX_LoadRawAudioNoCopy
 <li>MIX_LockMixer
-<li>MIX_MSToFrames
+<li><a href="MIX_MSToFrames.html">MIX_MSToFrames</a> - ミリ秒を指定のサンプルレートでサンプルフレーム数に変換する
 <li>MIX_PauseAllTracks
 <li>MIX_PauseTag
 <li>MIX_PauseTrack
@@ -153,7 +153,7 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_ResumeAllTracks
 <li>MIX_ResumeTag
 <li>MIX_ResumeTrack
-<li>MIX_SetGroupPostMixCallback
+<li><a href="MIX_SetGroupPostMixCallback.html">MIX_SetGroupPostMixCallback</a> - グループのミックスが完了したとき呼ばれるコールバックを設定する
 <li>MIX_SetMixerFrequencyRatio
 <li>MIX_SetMixerGain
 <li>MIX_SetPostMixCallback
@@ -164,7 +164,7 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_SetTrackCookedCallback
 <li>MIX_SetTrackFrequencyRatio
 <li>MIX_SetTrackGain
-<li>MIX_SetTrackGroup
+<li><a href="MIX_SetTrackGroup.html">MIX_SetTrackGroup</a> - ミキシンググループにトラックを割り付ける
 <li><a href="MIX_SetTrackIOStream.html">MIX_SetTrackIOStream</a> - MIX_Trackへの入力としてSDL_IOStreamを設定する
 <li>MIX_SetTrackLoops
 <li>MIX_SetTrackOutputChannelMap
@@ -188,9 +188,9 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <h2>型</h2>
 <ol>
 <li><a href="MIX_Audio.html">MIX_Audio</a> - オーディオデータを表す不透明オブジェクトの型
-<li>MIX_AudioDecoder
-<li>MIX_Group
-<li>MIX_GroupMixCallback
+<li><a href="MIX_AudioDecoder.html">MIX_AudioDecoder</a> - オーディオデコーダを表す不透明オブジェクトの型
+<li><a href="MIX_Group.html">MIX_Group</a> - トラックのグループを表す不透明オブジェクトの型
+<li><a href="MIX_GroupMixCallback.html">MIX_GroupMixCallback</a> - MIX_Groupのミキシングが完了したとき呼ばれるコールバックの型
 <li><a href="MIX_Mixer.html">MIX_Mixer</a> - ミキサーを表す不透明オブジェクトの型
 <li>MIX_PostMixCallback
 <li><a href="MIX_Track.html">MIX_Track</a> - ミックスされる音源を表す不透明オブジェクトの型

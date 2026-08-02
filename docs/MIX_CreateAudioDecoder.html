@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_CreateAudioDecoder</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_CreateAudioDecoder
+<hr>
+<h1>MIX_CreateAudioDecoder</h1>
+ファイルから<a href="MIX_AudioDecoder.html">MIX_AudioDecoder</a>を生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>MIX_AudioDecoder * MIX_CreateAudioDecoder(const char *path, SDL_PropertiesID props);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const char *</td><td>path</td><td>データを読み込むファイル名</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>デコーダのプロパティ. 0も可</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="MIX_AudioDecoder.html">MIX_AudioDecoder</a> *) デコードの準備ができたオーディオデコーダを戻す.
+<h2>詳細</h2>
+<p>
+SDL_mixerの通常のインターフェースは必要に応じてオーディオをデコードするため, この関数はほとんどのアプリケーションにとって必要ない.
+しかし, 再生せずにオーディオファイルからメモリバッファにデコードしたい場合は, このインターフェースで行える.
+</p>
+<p>
+この関数はプロパティを設定できる.
+これは例えばMIDIファイルのためにサウンドフォントの場所のようなファイル固有の設定を行うためにある. 
+ほとんどの場合, 追加のプロパティがない0を渡すことになる.
+</p>
+<p>
+<a href="SDL_PropertiesID.html">SDL_PropertiesID</a>については<a href="CategoryProperties.html">SDLのドキュメント</a>に記述がある.
+</p>
+<p>
+オーディオデコーダを使い終えたならば, <a href="MIX_DestroyAudioDecoder.html">MIX_DestroyAudioDecoder()</a>で破棄できる.
+</p>
+<p>
+この関数は<a href="MIX_Init.html">MIX_Init()</a>の呼び出しに成功してSDL_mixerが初期化されている必要があるが, <a href="MIX_Mixer.html">MIX_Mixer</a>が生成されている必要はない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_CreateAudioDecoder_IO.html">MIX_CreateAudioDecoder_IO</a>
+<li><a href="MIX_DecodeAudio.html">MIX_DecodeAudio</a>
+<li><a href="MIX_DestroyAudioDecoder.html">MIX_DestroyAudioDecoder</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_CreateAudioDecoder">SDL3_mixer/MIX_CreateAudioDecoder</a>
+<hr>
+</body>
+</html>

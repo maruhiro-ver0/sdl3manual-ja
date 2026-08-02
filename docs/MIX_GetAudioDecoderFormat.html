@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_GetAudioDecoderFormat</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_GetAudioDecoderFormat
+<hr>
+<h1>MIX_GetAudioDecoderFormat</h1>
+<a href="MIX_AudioDecoder.html">MIX_AudioDecoder</a>のオーディオ形式の初期値を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>const char * MIX_GetAudioDecoderFormat(int index);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_AudioDecoder.html">MIX_AudioDecoder</a> *</td><td>audiodecoder</td><td>問い合わせるオーディオデコーダ</td></tr>
+<tr><td><a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td>オーディオ形式の代入先へのポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+オーディオファイルには途中で形式が変わるものがあるので注意すること.
+これに明確に対応しているファイルもあるが, 一般的な例は2つのMP3ファイルが結合された場合である.
+多くの場合, SDL_mixerはこのようなファイルを正しく扱えるが, この関数はファイルの最初の形式のみを戻す.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_GetAudioDecoderFormat">SDL3_mixer/MIX_GetAudioDecoderFormat</a>
+<hr>
+</body>
+</html>

@@ -5,35 +5,33 @@
 <meta name="keywords" content="SDL3_mixer">
 <link rel="top" href="index.html" title="ホーム">
 <link rel="parent" href="CategorySDLMixer.html" title="1つ上">
-<title>SDL3_mixer/MIX_AudioFramesToMS</title>
+<title>SDL3_mixer/MIX_FramesToMS</title>
 </head>
 <body>
-<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_AudioFramesToMS
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_FramesToMS
 <hr>
-<h1>MIX_AudioFramesToMS</h1>
-<a href="MIX_Audio.html">MIX_Audio</a>の形式のサンプルフレーム数をミリ秒に変換する
+<h1>MIX_FramesToMS</h1>
+サンプルフレーム数を指定のサンプルレートでミリ秒に変換する
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
 <h2>構文</h2>
 <p>
-<code>Sint64 MIX_AudioFramesToMS(MIX_Audio *audio, Sint64 frames);</code>
+<code>Sint64 MIX_FramesToMS(int sample_rate, Sint64 frames);</code>
 </p>
 <h2>引数</h2>
 <table border="1">
-<tr><td><a href="MIX_Audio.html">MIX_Audio</a> *</td><td>audio</td><td>調査するオーディオデータ</td></tr>
-<tr><td>Sint64</td><td>frames</td><td>ミリ秒に変換するオーディオデータ固有のサンプルフレーム数</td></tr>
+<tr><td>int</td><td>sample_rate</td><td>変換で使用するサンプルレート</td></tr>
+<tr><td>Sint64</td><td>frames</td><td>指定のサンプルレートでミリ秒に変換するサンプルフレーム数</td></tr>
 </table>
 <h2>戻り値</h2>
-(Sint64) 変換されたミリ秒, エラーまたは入力がない場合は-1を戻す.
+(Sint64) 変換されたミリ秒, エラーのとき-1を戻す.
 <a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
 <h2>詳細</h2>
-<p>
-形式が中間のストリームで変換されていても, 元のオーディオデータの形式に基づいて時間を計算する.
-</p>
 <p>
 サンプルフレーム数はミリ秒よりも高精度のため, やむを得ずこの関数は最も近いミリ秒に切り捨てて近似する.
 </p>
 <p>
+<code>sample_rate</code>が0以下のとき, この関数は-1を戻す.
 <code>frames</code>が0未満のとき, この関数は-1を戻す.
 </p>
 <h2>スレッドセーフ</h2>
@@ -44,10 +42,10 @@
 SDL_image 3.0.0以降
 <h2>関連項目</h2>
 <ul>
-<li><a href="MIX_AudioMSToFrames.html">MIX_AudioMSToFrames</a>
+<li><a href="MIX_MSToFrames.html">MIX_MSToFrames</a>
 </ul>
 <h2>SDL Wikiへのリンク</h2>
-<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_AudioFramesToMS">SDL3_mixer/MIX_AudioFramesToMS</a>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_FramesToMS">SDL3_mixer/MIX_FramesToMS</a>
 <hr>
 </body>
 </html>
