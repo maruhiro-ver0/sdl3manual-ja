@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_GetAudioDuration</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_GetAudioDuration
+<hr>
+<h1>MIX_GetAudioDuration</h1>
+MIX_Audioの再生の長さをサンプルフレーム数で得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>Sint64 MIX_GetAudioDuration(MIX_Audio *audio);</code>
+</p>
+<p>
+<code>#define MIX_DURATION_UNKNOWN -1</code><br>
+<code>#define MIX_DURATION_INFINITE -2</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Audio.html">MIX_Audio</a> *</td><td>audio</td><td>調査するオーディオ</td></tr>
+</table>
+<h2>戻り値</h2>
+(Sint64) オーディオの長さのサンプルフレーム数. またはMIX_DURATION_UNKNOWNまたはMIX_DURATION_INFINITE
+<h2>詳細</h2>
+<p>
+この情報は<a href="MIX_GetAudioProperties.html">MIX_PROP_METADATA_DURATION_FRAMES_NUMBER</a>プロパティでも得られるが, よく使われるためシンプルなアクセサ関数が用意されている.
+</p>
+<p>
+これはデータの長さのサンプルフレーム数のため, サンプル単位での正確なミキシングが可能になる.
+サンプルフレーム数はサンプルレート(周波数)もわかっている場合のみ時間として意味がある.
+サンプルフレーム数をミリ秒に変換するには, <a href="MIX_AudioFramesToMS.html">MIX_AudioFramesToMS()</a>を使用すること.
+</p>
+<p>
+全てのオーディオファイルのデコード後の完全な長さを得られるわけではない:
+一部のファイルは無限の音声を生成するため計算することができない.
+</p>
+<p>
+また, 一部のファイル形式は長さを時間の単位でしか得られない. これはSDL_mixerはこの情報からサンプルフレーム数を推定するしかないことを表す.
+精度が低い場合, 得られる長さはどちらかに数フレームずれる場合がある.
+</p>
+<p>
+長さがわかった場合, この関数が0以上の値を戻す.
+この関数はMIX_DURATION_UNKNOWNまたはMIX_DURATION_INFINITEを戻す場合もある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_GetAudioDuration">SDL3_mixer/MIX_GetAudioDuration</a>
+<hr>
+</body>
+</html>

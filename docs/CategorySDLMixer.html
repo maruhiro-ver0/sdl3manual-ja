@@ -30,7 +30,7 @@ SDL_mixerは面倒なオーディオ処理を簡単に行えるライブラリ�
 一度読み込んだデータは何度でも再生できる.
 </p>
 <p>
-オーディオデータの読み込みでは, SDL_mixerはID3やAPEタグのようないくつかのメタデータタグ形式を解析でき, この情報はMIX_GetAudioProperties()関数を経由して表に出すことができる.
+オーディオデータの読み込みでは, SDL_mixerはID3やAPEタグのようないくつかのメタデータタグ形式を解析でき, この情報は<a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties()</a>関数を経由して表に出すことができる.
 </p>
 <p>
 オーディオデータの再生のためには, <a href="MIX_CreateTrack.html">MIX_CreateTrack()</a>でトラックを生成する.
@@ -56,7 +56,7 @@ SDL_mixerは面倒なオーディオ処理を簡単に行えるライブラリ�
 同じデータに全ての変換(フェード, ポジショニングなど)が行われた後の"cooked"コールバック, 
 トラックがミキシングを完了したときの"stopped"コールバック, 
 最終的なミックスされた音声が再生のためのオーディオハードウェアに送られるときの"postmix"コールバックがある.
-さらに, MIX_Groupオブジェクトで再生中のトラックの一部をミックスしたり, 別のトラックとミックスする前のデータにアクセスしたりできる.
+さらに, <a href="MIX_Group.html">MIX_Group</a>オブジェクトで再生中のトラックの一部をミックスしたり, 別のトラックとミックスする前のデータにアクセスしたりできる.
 これらは全てオプションだが, 強力なアクセスとミキシング処理の制御を可能にする.
 </p>
 <p>
@@ -110,7 +110,7 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li><a href="MIX_GetAudioDecoder.html">MIX_GetAudioDecoder</a> - オーディオデコーダの名前を得る
 <li><a href="MIX_GetAudioDecoderFormat.html">MIX_GetAudioDecoderFormat</a> - MIX_AudioDecoderのオーディオ形式の初期値を得る
 <li><a href="MIX_GetAudioDecoderProperties.html">MIX_GetAudioDecoderProperties</a> - MIX_AudioDecoderに関連付けられたプロパティを得る
-<li>MIX_GetAudioDuration
+<li><a href="MIX_GetAudioDuration.html">MIX_GetAudioDuration</a> - MIX_Audioの再生の長さをサンプルフレーム数で得る
 <li>MIX_GetAudioFormat
 <li><a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties</a> - MIX_Audioに関連付けられたプロパティを得る
 <li>MIX_GetGroupMixer
