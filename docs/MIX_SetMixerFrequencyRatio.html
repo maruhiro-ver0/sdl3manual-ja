@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_SetMixerFrequencyRatio</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetMixerFrequencyRatio
+<hr>
+<h1>MIX_SetMixerFrequencyRatio</h1>
+ミキサーのマスター周波数倍率を設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_SetMixerFrequencyRatio(MIX_Mixer *mixer, float ratio);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Mixer.html">MIX_Group</a> *</td><td>mixer</td><td>設定するミキサー</td></tr>
+<tr><td>float</td><td>ratio</td><td>周波数倍率. 0.01fから100.0fの間の必要がある</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+それぞれのミキサーには, ミキサー全体に影響を与えるマスター周波数倍率がある.
+これは最終的な出力の速さとピッチを変化させることができる.
+値が1.0fよりも大きいとき, 音は速く高くなる.
+1.0fより小さいとき, 音が遅く低くなる.
+1.0fは通常の速さである.
+</p>
+<p>
+それぞれのトラックにも周波数倍率がある. これはマスター設定とは別にトラックのオーディオがミックスされるとき適用される.
+マスター設定は全てのミキシングが完了した後で最終的な出力に適用される.
+</p>
+<p>
+ミキサーのマスター周波数倍率のデフォルトは1.0fである.
+</p>
+<p>
+この値は後のミックスのためにいつでも変更できる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_GetMixerFrequencyRatio.html">MIX_GetMixerFrequencyRatio</a>
+<li><a href="MIX_SetTrackFrequencyRatio.html">MIX_SetTrackFrequencyRatio</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetMixerFrequencyRatio">SDL3_mixer/MIX_SetMixerFrequencyRatio</a>
+<hr>
+</body>
+</html>

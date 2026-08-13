@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_GetTrackFrequencyRatio</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_GetTrackFrequencyRatio
+<hr>
+<h1>MIX_GetTrackFrequencyRatio</h1>
+トラックの周波数倍率を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>float MIX_GetTrackFrequencyRatio(MIX_Track *track);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>周波数倍率を問い合わせるトラック</td></tr>
+</table>
+<h2>戻り値</h2>
+(float) 現在の周波数倍率を戻す. 失敗のとき0.0fを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+周波数倍率はオーディオデータが消費されたとき調整のために使用される.
+この値を変更するとトラックのオーディオの速さとピッチが変化する.
+値が1.0fよりも大きいとき, 音は速く高くなる.
+1.0fより小さいとき, 音が遅く低くなる.
+1.0fは通常の速さである.
+</p>
+<p>
+ミキサーのマスター周波数倍率のデフォルトは1.0fである.
+</p>
+<p>
+様々な理由のエラー(<a href="MIX_Init.html">MIX_Init()</a>が呼ばれていない, トラックがNULLなど)の場合, この関数は0.0fを戻す.
+これは有効な値ではないため, エラーであることがわかる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_SetTrackFrequencyRatio.html">MIX_SetTrackFrequencyRatio</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_GetTrackFrequencyRatio">SDL3_mixer/MIX_GetTrackFrequencyRatio</a>
+<hr>
+</body>
+</html>
