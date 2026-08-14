@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_GetTrackAudio</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_GetTrackAudio
+<hr>
+<h1>MIX_GetTrackAudio</h1>
+トラックに割り付けられた<a href="MIX_Audio.html">MIX_Audio</a>を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>MIX_Audio * MIX_GetTrackAudio(MIX_Track *track);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>問い合わせるトラック</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="MIX_Audio.html">MIX_Audio</a> *) 有効ならば<a href="MIX_Audio.html">MIX_Audio</a>を戻す. 有効でない場合NULLを戻す.
+<h2>詳細</h2>
+<p>
+この関数は<a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio()</a>で<code>track</code>に現在割り付けられている<a href="MIX_Audio.html">MIX_Audio</a>オブジェクトを戻す.
+何も割り付けられていない, またはトラックの入力が<a href="MIX_Audio.html">MIX_Audio</a>ではない(<a href="SDL_AudioStream.html">SDL_AudioStream</a>や<a href="SDL_IOStream.html">SDL_IOStream</a>など)の場合はNULLを戻す.
+</p>
+<p>
+様々な理由のエラー(<a href="MIX_Init.html">MIX_Init()</a>が呼ばれていない, トラックがNULLなど)の場合, この関数はNULLを戻すが, エラーとトラックの入力が有効でないことを判別する手段はない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_GetTrackAudioStream.html">MIX_GetTrackAudioStream</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_GetTrackAudio">SDL3_mixer/MIX_GetTrackAudio</a>
+<hr>
+</body>
+</html>

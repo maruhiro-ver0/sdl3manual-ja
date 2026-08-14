@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_GetTrackLoops</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_GetTrackLoops
+<hr>
+<h1>MIX_GetTrackLoops</h1>
+トラックの残りループ回数を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>int MIX_GetTrackLoops(MIX_Track *track);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>問い合わせるトラック</td></tr>
+</table>
+<h2>戻り値</h2>
+(int) 残りループ回数, ループがないとき0, ループが無限のとき-1を戻す.
+<h2>詳細</h2>
+<p>
+この戻り値は残されたループの回数である. トラックの終了後にあと1回再生がある場合, この関数は1を戻す.
+ループするトラックだが, 最後のループの場合(これが完了したとき停止する), この関数は0を戻す.
+</p>
+<p>
+トラックが無限にループする場合, -1を戻す.
+この値はエラーではない.
+</p>
+<p>
+停止したトラック(再生中でなく, 一時停止中でない)は0回のループが残っているとみなされる.
+</p>
+<p>
+様々な理由のエラー(<a href="MIX_Init.html">MIX_Init()</a>が呼ばれていない, トラックがNULLなど)の場合, この関数は0を戻すが, エラーとループのないトラックを判別する手段はない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_GetTrackLoops">SDL3_mixer/MIX_GetTrackLoops</a>
+<hr>
+</body>
+</html>
