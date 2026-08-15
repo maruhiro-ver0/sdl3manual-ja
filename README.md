@@ -1,7 +1,7 @@
 Simple Directmedia Layer (SDL) 3.0 の日本語リファレンスマニュアルです。
 SDL_imageの日本語マニュアルもあります。
 
-SDL_mixerを翻訳中 進捗率53%
+SDL_mixerを翻訳中 進捗率58%
 
 公式ページ
 * https://www.libsdl.org/
