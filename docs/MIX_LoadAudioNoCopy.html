@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_LoadAudioNoCopy</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_LoadAudioNoCopy
+<hr>
+<h1>MIX_LoadAudioNoCopy</h1>
+メモリバッファから再生するオーディオデータをコピーせずに読み込む
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>MIX_Audio * MIX_LoadAudioNoCopy(MIX_Mixer *mixer, const void *data, size_t datalen, bool free_when_done);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>オーディオデータを使用するミキサー. NULLも可</td></tr>
+<tr><td>const void *</td><td>data</td><td>オーディオデータが書き込まれたバッファ</td></tr>
+<tr><td>size_t</td><td>datalen</td><td>バッファのバイト数</td></tr>
+<tr><td>bool</td><td>free_when_done</td><td>真の場合, <a href="MIX_Audio.html">MIX_Audio</a>が破棄されたとき<code>data</code>を<a href="SDL_free.html">>SDL_free()</a>に渡す</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="MIX_Audio.html">MIX_Audio</a> *) ミキサーで音声を発生させるために使用できるオーディオオブジェクトを戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+ほとんどのLoadAudio関数では, オーディオデータを読み込むとデータは元のデータ形式で全てRAMに格納され, 必要に応じでデコードされる.
+この関数は, これらの関数とほとんど同じ動作をするが, アプリケーションが提供したメモリバッファを使用し, コピーを生成しない.
+</p>
+<p>
+このバッファは<a href="MIX_Audio.html">MIX_Audio</a>を使用する間は有効である必要があり, ミキサーはミックスするデータが必要なときはいつでもこのバッファをアクセスする.
+</p>
+<p>
+この関数の意図は最大限の効率化である: データがメモリ上にありそれを維持することができるならばコピーする必要がない.
+データは対応する全てのオーディオファイル形式(WAV, MP3など)を使用でき, ミキシングのとき必要に応じてデコードされる.
+<a href="MIX_LoadAudio.html">MIX_LoadAudio()</a>とは異なり, <code>predecode</code>オプションは存在しない.
+既にメモリ上にあり長時間そこに存在し続けるデータに最適化させているためである.
+事前にデコードする場合は, ファイル形式のデータを必要とするのは一度だけで, 単にそれを前もって<a href="SDL_CreateIOFromConstMem.html">SDL_CreateIOFromConstMem()</a>でラップして<a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO()</a>に渡せばよい.
+</p>
+<p>
+<a href="MIX_Audio.html">MIX_Audio</a>オブジェクトは複数のミキサーで共有できる.
+<code>mixer</code>引数はこのオーディオを最も使うミキサーを示唆するもので, 最適化が適用される場合があるが, 必須ではなくミキサーとしてNULLを指定することもできる.
+</p>
+<p>
+<code>free_when_done</code>が真の場合, 戻された<a href="MIX_Audio.html">MIX_Audio</a>が最終的に破棄されたときSDL_mixerは<code>SDL_free(data)</code>を呼ぶ.
+これはデータが静的でなく, この特定の<a href="MIX_Audio.html">MIX_Audio</a>のために読み込まれていて, 単にコピーを生成したくないような場合に有用になりうる.
+</p>
+<p>
+オーディオ形式の情報はファイルのメタデータから得るため, この関数は生PCMデータでは使用できない. この場合は代わりに<a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy()</a>を使い<a href="SDL_AudioSpec.html">SDL_AudioSpec</a>を渡すこと.
+</p>
+<p>
+<a href="MIX_Audio.html">MIX_Audio</a>を生成した後は, <a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio()</a>で<a href="MIX_Track.html">MIX_Track</a>に割り付けるか, そのまま<a href="MIX_PlayAudio.html">MIX_PlayAudio()</a>で再生する.
+</p>
+<p>
+<a href="MIX_Audio.html">MIX_Audio</a>を使い終えたならば, <a href="MIX_DestroyAudio.html">MIX_DestroyAudio()</a>で解放できる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_DestroyAudio.html">MIX_DestroyAudio</a>
+<li><a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>
+<li><a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy</a>
+<li><a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_LoadAudioNoCopy">SDL3_mixer/MIX_LoadAudio</a>
+<hr>
+</body>
+</html>
