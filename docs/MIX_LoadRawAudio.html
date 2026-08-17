@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_LoadRawAudio</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_LoadRawAudio
+<hr>
+<h1>MIX_LoadRawAudio</h1>
+メモリバッファから再生するオーディオデータをコピーせずに読み込む
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>MIX_Audio * MIX_LoadRawAudio(MIX_Mixer *mixer, const void *data, size_t datalen, const SDL_AudioSpec *spec);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>オーディオデータを使用するミキサー. NULLも可</td></tr>
+<tr><td>const void *</td><td>data</td><td>オーディオデータが書き込まれたバッファ</td></tr>
+<tr><td>size_t</td><td>datalen</td><td>バッファのバイト数</td></tr>
+<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td><code>data</code>に書き込まれた生データの形式</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="MIX_Audio.html">MIX_Audio</a> *) ミキサーで音声を発生させるために使用できるオーディオオブジェクトを戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+これは生PCMのストリーミングの別の選択肢である: <a href="SDL_AudioStream.html">SDL_AudioStream</a>は<a href="SDL_IOStream.html">SDL_IOStream</a>と同様にトラックに結びつけることができ, ミックスのとき必要に応じてこれらのデータ源から読み込まれる.
+この関数は複数回再生する目的で静的なオーディオデータを読み込む場合に便利である.
+</p>
+<p>
+この関数は生データを全て読み込み, RAMにコピーして保持する.
+元のデータが<a href="MIX_Audio.html">MIX_Audio</a>よりも長期間有効な場合は, <a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy()</a>を使用して余分な領域の確保とコピーを避けることができおる.
+</p>
+<p>
+<a href="MIX_Audio.html">MIX_Audio</a>オブジェクトは複数のミキサーで共有できる.
+<code>mixer</code>引数はこのオーディオを最も使うミキサーを示唆するもので, 最適化が適用される場合があるが, 必須ではなくミキサーとしてNULLを指定することもできる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_DestroyAudio.html">MIX_DestroyAudio</a>
+<li><a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>
+<li><a href="MIX_LoadRawAudio_IO.html">MIX_LoadRawAudio_IO</a>
+<li><a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy</a>
+<li><a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_LoadRawAudio">SDL3_mixer/MIX_LoadAudio</a>
+<hr>
+</body>
+</html>
