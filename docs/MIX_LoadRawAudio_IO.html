@@ -5,25 +5,25 @@
 <meta name="keywords" content="SDL3_mixer">
 <link rel="top" href="index.html" title="ホーム">
 <link rel="parent" href="CategorySDLMixer.html" title="1つ上">
-<title>SDL3_mixer/MIX_LoadRawAudio</title>
+<title>SDL3_mixer/MIX_LoadRawAudio_IO</title>
 </head>
 <body>
-<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_LoadRawAudio
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_LoadRawAudio_IO
 <hr>
-<h1>MIX_LoadRawAudio</h1>
-メモリバッファから生PCMデータを読み込む
+<h1>MIX_LoadRawAudio_IO</h1>
+<a href="SDL_IOStream.html">SDL_IOStream</a>から生PCMデータを読み込む
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
 <h2>構文</h2>
 <p>
-<code>MIX_Audio * MIX_LoadRawAudio(MIX_Mixer *mixer, const void *data, size_t datalen, const SDL_AudioSpec *spec);</code>
+<code>MIX_Audio * MIX_LoadRawAudio_IO(MIX_Mixer *mixer, SDL_IOStream *io, const SDL_AudioSpec *spec, bool closeio);</code>
 </p>
 <h2>引数</h2>
 <table border="1">
 <tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>オーディオデータを使用するミキサー. NULLも可</td></tr>
-<tr><td>const void *</td><td>data</td><td>オーディオデータが書き込まれたバッファ</td></tr>
-<tr><td>size_t</td><td>datalen</td><td>バッファのバイト数</td></tr>
-<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td><code>data</code>に書き込まれた生データの形式</td></tr>
+<tr><td><a href="SDL_IOStream.html">SDL_IOStream</a> *</td><td>io</td><td>データの読込元のSDL_IOStream</td></tr>
+<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td>オーディオデータの形式</td></tr>
+<tr><td>bool</td><td>closeio</td><td>真のとき戻る前に<a href="SDL_IOStream.html">SDL_IOStream</a>を自動的に閉じる. 偽のとき開いたままにする</td></tr>
 </table>
 <h2>戻り値</h2>
 (<a href="MIX_Audio.html">MIX_Audio</a> *) ミキサーで音声を発生させるために使用できるオーディオオブジェクトを戻す. 失敗のときNULLを戻す.
@@ -35,7 +35,6 @@
 </p>
 <p>
 この関数は生データを全て読み込み, RAMにコピーして保持する.
-元のデータが<a href="MIX_Audio.html">MIX_Audio</a>よりも長期間有効な場合は, <a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy()</a>を使用して余分な領域の確保とコピーを避けることができおる.
 </p>
 <p>
 <a href="MIX_Audio.html">MIX_Audio</a>オブジェクトは複数のミキサーで共有できる.
@@ -51,12 +50,12 @@ SDL_image 3.0.0以降
 <ul>
 <li><a href="MIX_DestroyAudio.html">MIX_DestroyAudio</a>
 <li><a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>
-<li><a href="MIX_LoadRawAudio_IO.html">MIX_LoadRawAudio_IO</a>
+<li><a href="MIX_LoadRawAudio.html">MIX_LoadRawAudio</a>
 <li><a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy</a>
 <li><a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO</a>
 </ul>
 <h2>SDL Wikiへのリンク</h2>
-<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_LoadRawAudio">SDL3_mixer/MIX_LoadAudio</a>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_LoadRawAudio_IO">SDL3_mixer/MIX_LoadAudio</a>
 <hr>
 </body>
 </html>
