@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_LockMixer</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_LockMixer
+<hr>
+<h1>MIX_LockMixer</h1>
+ミキサーの内部のミューテックスをロックする
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>void MIX_LockMixer(MIX_Mixer *mixer);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>ロックするミキサー. NULLも可</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+ロック中のミキサーは, 別のスレッドからのオーディオデータのミックスや内部の状態の変更ができなくなる.
+別のスレッドはミキサーのロックが解除されるまでブロックされる.
+</p>
+<p>
+この関数は内部で<a href="SDL_LockMutex.html">SDL_LockMutex()</a>を呼んでいるため, ロックは再帰的で, ロック解除はロックと同じスレッドから同じ回数だけ行う必要があるなどの同じルールが適用される.
+</p>
+<p>
+ほぼ全てのSDL_mixerAPIは処理の間はミキサーをロックし, 実際のミキシングの処理中はSDLオーディオデバイススレッドをロックするため, このライブラリの基本的な使い方ではスレッドの安全のためにアプリケーションがデバイスを明示的にロックする必要はない.
+しかし, この関数が有用な2つの場合がある:
+</p>
+<ul>
+<li>アプリケーションが提供するコールバックがミキシングスレッドから呼ばれる可能性があり, アプリケーションの状態の変更とミキシング処理が同時に行われることによる競合状態から保護する必要がある場合.
+この場合はどのようなロックも使用できるが, これが簡単に使用できるロックである
+<li>アプリケーションがミックスに対して複数回のアトミックな変更をしたい場合.
+例えば, 複数のトラックを完全に同時に開始するためには, 1つがミキサーをロックし, <a href="MIX_PlayTrack.html">MIX_PlayTrack</a>を複数回呼び, 再びロックを解除する. これで全てのトラックは同じサンプルフレームでミキシングが開始する
+</ul>
+<p>
+この関数の呼び出しは, 同じスレッドからの対になった<a href="MIX_UnlockMixer.html">MIX_UnlockMixer</a>の呼び出しが必要である.
+1つのミキサーに対して複数回ロックしても安全である. 最後の一致したロック解除までロックは維持される.
+</p>
+<p>
+ミキサーを長時間ロックしてはならない. そうすると音声が途切れてしまう.
+単純なことのみを素早く行い, すぐに解除すべきである.
+</p>
+<p>
+NULLミキサーをロックしようとしても安全である.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_UnlockMixer.html">MIX_UnlockMixer</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_LockMixer">SDL3_mixer/MIX_LoadAudio</a>
+<hr>
+</body>
+</html>
