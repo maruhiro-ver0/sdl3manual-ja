@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_PlayTag</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_PlayTag
+<hr>
+<h1>MIX_PlayTag</h1>
+特定のタグの全てのトラックの再生を開始(または再開)する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_PlayTag(MIX_Mixer *mixer, const char *tag, SDL_PropertiesID options);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>タグ付けされたトラックのミキシングを開始(または再開)するミキサー
+<tr><td>const char *</td><td>tag</td><td>トラックの検索で使用するタグ</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>options</td><td>再生のプロパティ. 0も可</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数は<a href="MIX_PlayTrack.html">MIX_PlayTrack()</a>と同様の規則に従う. 詳しくはそのドキュメントを参照すること.
+違いはMIX_PlayTag()は<a href="MIX_TagTrack.html">MIX_TagTrack()</a>で特定のタグが付けられた複数のトラックを一度に扱える点である.
+</p>
+<p>
+タグ付けされたトラックが異なるサンプルリングレートの場合, <code>options</code>は<code>*_FRAMES_NUMBER</code>プロパティではなく<code>*_MILLISECONDS_NUMBER</code>プロパティを使用し, SDL_mixerはそれぞれのトラックに適用しようとする.
+</p>
+<p>
+この関数はタグ付けされた全てのトラックを再生(または再開)したとき真を戻す.
+失敗したトラックがある場合, この関数は偽を戻すが, その場合でも再生可能なトラックは全て再生を開始する.
+</p>
+<p>
+ミキシング処理の視点では, 成功した全てのトラックは完全に同時に再生(再開)を開始する.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_PlayTrack.html">MIX_PlayTrack</a>
+<li><a href="MIX_TagTrack.html">MIX_TagTrack</a>
+<li><a href="MIX_StopTrack.html">MIX_StopTrack</a>
+<li><a href="MIX_PauseTrack.html">MIX_PauseTrack</a>
+<li><a href="MIX_TrackPlaying.html">MIX_TrackPlaying</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_PlayTag">SDL3_mixer/MIX_PlayTag</a>
+<hr>
+</body>
+</html>

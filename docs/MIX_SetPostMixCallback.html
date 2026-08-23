@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_SetPostMixCallback</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetPostMixCallback
+<hr>
+<h1>MIX_SetPostMixCallback</h1>
+全てのミキシングが完了したとき呼ばれるコールバックを設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_SetPostMixCallback(MIX_Mixer *mixer, MIX_PostMixCallback cb, void *userdata);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Group.html">MIX_Group</a> *</td><td>group</td><td>コールバックを割り付けるミキシンググループ</td></tr>
+<tr><td><a href="MIX_PostMixCallback.html">MIX_PostMixCallback</a></td><td>cb</td><td>ミキサーがミックスしたとき呼ばれる関数. NULLも可</td></tr>
+<tr><td>void *</td><td>userdata</td><td>私的な利用のためにコールバックに渡される不透明ポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+ミキサーグループの処理の後, これらのバッファは1つのバッファにミックスされ最終的な出力となるが, この時点でコールバックが呼ばれる.
+これでアプリケーションはミキシングの完了の前の最後のデータを見ることができる.
+このコールバックでデータを編集することもでき, ミキサーはこのデータが最終的な出力であるかのように処理を続ける.
+</p>
+<p>
+ミキサーにはそれぞれ別のコールバックを設定することができる.
+</p>
+<p>
+コールバックにNULLを渡してもよい. これはグループのコールバックを無効にする.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_GroupMixCallback.html">MIX_GroupMixCallback</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetPostMixCallback">SDL3_mixer/MIX_SetPostMixCallback</a>
+<hr>
+</body>
+</html>

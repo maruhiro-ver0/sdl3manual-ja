@@ -5,22 +5,23 @@
 <meta name="keywords" content="SDL3_mixer">
 <link rel="top" href="index.html" title="ホーム">
 <link rel="parent" href="CategorySDLMixer.html" title="1つ上">
-<title>SDL3_mixer/MIX_PauseAllTracks</title>
+<title>SDL3_mixer/MIX_PauseTag</title>
 </head>
 <body>
-<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_PauseAllTracks
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_PauseTag
 <hr>
-<h1>MIX_PauseAllTracks</h1>
-再生中の全てのトラックを一時停止する
+<h1>MIX_PauseTag</h1>
+特定のタグの全てのトラックを一時停止する
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
 <h2>構文</h2>
 <p>
-<code>bool MIX_PauseAllTracks(MIX_Mixer *mixer);</code>
+<code>bool MIX_PauseTag(MIX_Mixer *mixer, const char *tag);</code>
 </p>
 <h2>引数</h2>
 <table border="1">
-<tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>全てのトラックを一時停止するミキサー</td></tr>
+<tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>トラックを一時停止するミキサー</td></tr>
+<tr><td>const char *</td><td>tag</td><td>トラックの検索で使用するタグ</td></tr>
 </table>
 <h2>戻り値</h2>
 (bool) 成功のとき真, エラーのとき偽を戻す.
@@ -30,8 +31,11 @@
 トラックの一時停止は「停止中」とはみなされないため, 一時停止しても<a href="MIX_TrackStoppedCallback.html">MIX_TrackStoppedCallback</a>は呼ばれないが, デフォルトでは一時停止が解除されるまではオーディオが生成されたり, 処理が進むことはない.
 </p>
 <p>
-この関数は指定したミキサーの全ての再生中のトラックを一時停止状態にする.
+この関数は指定したミキサーの特定のタグの再生中のトラックを一時停止状態にする.
 再生は後で再開できる.
+</p>
+<p>
+指定したタグと一致するが再生中でないトラックは無視される.
 </p>
 <h2>スレッドセーフ</h2>
 <p>
@@ -41,11 +45,13 @@
 SDL_image 3.0.0以降
 <h2>関連項目</h2>
 <ul>
+<li><a href="MIX_PauseTrack.html">MIX_PauseTrack</a>
 <li><a href="MIX_ResumeTrack.html">MIX_ResumeTrack</a>
-<li><a href="MIX_ResumeAllTracks.html">MIX_ResumeAllTracks</a>
+<li><a href="MIX_ResumeTag.html">MIX_ResumeTag</a>
+<li><a href="MIX_TagTrack.html">MIX_TagTrackv
 </ul>
 <h2>SDL Wikiへのリンク</h2>
-<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_PauseAllTracks">SDL3_mixer/MIX_LoadAudio</a>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_PauseTag">SDL3_mixer/MIX_LoadAudio</a>
 <hr>
 </body>
 </html>
