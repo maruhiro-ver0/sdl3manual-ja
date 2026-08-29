@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_SetTrack3DPosition</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetTrack3DPosition
+<hr>
+<h1>MIX_SetTrack3DPosition</h1>
+トラックの現在の3D空間内の位置を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_SetTrack3DPosition(MIX_Track *track, const MIX_Point3D *position);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>問い合わせるトラック</td></tr>
+<tr><td>const <a href="MIX_Point3D.html">MIX_Point3D</a> *</td><td>position</td><td>トラックの新しい3D空間位置. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+(SDL_mixerは非常に強力な3D APIであることを目指していないので注意すること.
+OpenALのような他のAPIが提供するドップラー効果, 距離モデル, 減衰などの3D機能はない.
+これは音の位置の使用やサラウンド設定の活用に十分な機能になることを目的としている.)
+</p>
+<p>
+<code>position</code>がNULLでない場合, このトラックは3D位置モードに切り替わる.
+<code>position</code>がNULLの場合, 位置ミキシング(この関数による3D空間と<a href="MIX_SetTrackStereo.html">MIX_SetTrackStereo()</a>の強制ステレオモードの両方)は無効になる.
+</p>
+<p>
+3D位置モードでは, SDL_mixerはこのトラックを距離による減衰(利き手が遠いほど小さくなる)や空間化(ステレオ出力とサラウンド出力の場合, 方向がわかるように適切な位置にスピーカーを配置する)で3D空間にあるかのようにミックスする.
+</p>
+<p>
+モノラルスピーカー出力の場合, 空間化は無効化されるが, 距離による減衰は機能する. 単一のスピーカーで行えるのはこれだけである.
+</p>
+<p>
+座標系はOpenGLやOpenALと同じ「右手系」である.
+詳しくは<a href="MIX_Point3D.html">MIX_Point3D</a>を参照すること.
+</p>
+<p>
+聞き手は常に(0,0,0)にあり, 変えることはできない.
+</p>
+<p>
+トラックの入力はモノラル(1チャネル)へと変換されるため, どのような入力でも正しいスピーカー出力が行える.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_GetTrack3DPosition.html">MIX_GetTrack3DPosition</a>
+<li><a href="MIX_SetTrackStereo.html">MIX_SetTrackStereo</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetTrack3DPosition">SDL3_mixer/MIX_SetTrack3DPosition</a>
+<hr>
+</body>
+</html>
