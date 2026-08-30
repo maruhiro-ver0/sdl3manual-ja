@@ -52,7 +52,7 @@
 これはデータが静的でなく, この特定の<a href="MIX_Audio.html">MIX_Audio</a>のために読み込まれていて, 単にコピーを生成したくないような場合に有用になりうる.
 </p>
 <p>
-オーディオ形式の情報はファイルのメタデータから得るため, この関数は生PCMデータでは使用できない. この場合は代わりに<a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy()</a>を使い<a href="SDL_AudioSpec.html">SDL_AudioSpec</a>を渡すこと.
+オーディオ形式の情報はファイルのメタデータから得るため, この関数は無圧縮PCMデータでは使用できない. この場合は代わりに<a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy()</a>を使い<a href="SDL_AudioSpec.html">SDL_AudioSpec</a>を渡すこと.
 </p>
 <p>
 <a href="MIX_Audio.html">MIX_Audio</a>を生成した後は, <a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio()</a>で<a href="MIX_Track.html">MIX_Track</a>に割り付けるか, そのまま<a href="MIX_PlayAudio.html">MIX_PlayAudio()</a>で再生する.

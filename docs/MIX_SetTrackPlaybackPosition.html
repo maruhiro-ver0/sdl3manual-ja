@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_SetTrackPlaybackPosition</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetTrackPlaybackPosition
+<hr>
+<h1>MIX_SetTrackPlaybackPosition</h1>
+再生中のトラックの現在の入力位置を設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_SetTrackPlaybackPosition(MIX_Track *track, Sint64 frames);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>設定するトラック</td></tr>
+<tr><td>Sint64</td><td>frames</td><td>シーク先のサンプルフレーム位置</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+(<a href="MIX_GetTrack3DPosition.html">MIX_GetTrack3DPosition()</a>と混同しないこと. これはトラックの3D空間内の位置で, オーディオデータの再生位置ではない.)
+</p>
+<p>
+再生中のトラックでは, 次回のミキサーの実行から新しい位置からミキシングが開始される.
+</p>
+<p>
+位置はデコードされたオーディオデータのサンプルフレーム単位で, 時間ではないため完全なミキシングの位置を得ることができる.
+時間単位が必要な場合は, <a href="MIX_TrackFramesToMS.html">MIX_TrackFramesToMS()</a>で変換してミリ秒を得ることができる.
+</p>
+<p>
+この関数は入力がシーク可能である必要があり(そのため入力が<a href="MIX_SetTrackAudioStream.html">MIX_SetTrackAudioStream()</a>で設定したものの場合は使用できない), かつオーディオファイルがシーク可能な形式である必要がある.
+SDL_mixerのデコーダは一部のファイル形式ではシーク不能, またはサンプル単位ではなく時間単位でのみシーク可能で, この場合は最終的な位置は指定したサンプルフレーム位置と多少ずれる可能性がある.
+オーディオデータとファイルをチェックし, 必要ならばバグレポートを提出すること.
+</p>
+<p>
+この関数を停止中のトラックに対して呼ぶことはできるが, 後の<a href="MIX_PlayTrack.html">MIX_PlayTrack()</a>の呼び出しで開始位置はリセットされる.
+一時停止中のトラックのトラックの場合は新しい入力位置から一時停止解除される.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_GetTrackPlaybackPosition.html">MIX_GetTrackPlaybackPosition</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetTrackPlaybackPosition">SDL3_mixer/MIX_SetTrackPlaybackPosition</a>
+<hr>
+</body>
+</html>

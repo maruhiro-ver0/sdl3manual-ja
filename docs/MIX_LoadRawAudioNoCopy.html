@@ -11,7 +11,7 @@
 <a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_LoadRawAudioNoCopy
 <hr>
 <h1>MIX_LoadRawAudioNoCopy</h1>
-メモリバッファから再生する生PCMデータをコピーせずに読み込む
+メモリバッファから再生する無圧縮PCMデータをコピーせずに読み込む
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
 <h2>構文</h2>
@@ -21,9 +21,9 @@
 <h2>引数</h2>
 <table border="1">
 <tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>オーディオデータを使用するミキサー. NULLも可</td></tr>
-<tr><td>const void *</td><td>data</td><td>生PCMデータが書き込まれたバッファ</td></tr>
+<tr><td>const void *</td><td>data</td><td>無圧縮PCMデータが書き込まれたバッファ</td></tr>
 <tr><td>size_t</td><td>datalen</td><td>バッファのバイト数</td></tr>
-<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td>書き込まれた生データの形式</td></tr>
+<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td>書き込まれた無圧縮データの形式</td></tr>
 <tr><td>bool</td><td>free_when_done</td><td>真の場合, <a href="MIX_Audio.html">MIX_Audio</a>が破棄されたとき<code>data</code>を<a href="SDL_free.html">SDL_free()</a>に渡す</td></tr>
 </table>
 <h2>戻り値</h2>

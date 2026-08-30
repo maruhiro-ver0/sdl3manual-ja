@@ -5,18 +5,18 @@
 <meta name="keywords" content="SDL3_mixer">
 <link rel="top" href="index.html" title="ホーム">
 <link rel="parent" href="CategorySDLMixer.html" title="1つ上">
-<title>SDL3_mixer/MIX_SetTrackCookedCallback</title>
+<title>SDL3_mixer/MIX_SetTrackRawCallback</title>
 </head>
 <body>
-<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetTrackCookedCallback
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetTrackRawCallback
 <hr>
-<h1>MIX_SetTrackCookedCallback</h1>
-ミキサーがトラックのオーディオを変換したとき呼ばれるコールバックを設定する
+<h1>MIX_SetTrackRawCallback</h1>
+トラックがオーディオのデコードを開始するとき呼ばれるコールバックを設定する
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
 <h2>構文</h2>
 <p>
-<code>bool MIX_SetTrackCookedCallback(MIX_Track *track, MIX_TrackMixCallback cb, void *userdata);</code>
+<code>bool MIX_SetTrackRawCallback(MIX_Track *track, MIX_TrackMixCallback cb, void *userdata);</code>
 </p>
 <h2>引数</h2>
 <table border="1">
@@ -33,11 +33,8 @@
 入力はMP3のような圧縮ファイルの形式の場合があり, そこから少し多めにデータが展開される.
 </p>
 <p>
-トラックが処理を開始するためのPCMデータを得て, 無圧縮PCMコールバックが完了すると, オーディオのゲイン, フェード, 周波数倍率, 3D位置などの変換が開始される.
-</p>
-<p>
-このコールバックが呼ばれるのは, これらの変換が全て行われた後だが, 変換されたデータが他のトラックとミックスされる前である.
-これでアプリケーションはまだトラックの一部にあるデータの最後の状態を見ることができる.
+トラックが処理すべきPCMデータを得ると, 入力された無編集のPCMデータの変更が行われる前にコールバックが呼ばれる.
+これでアプリケーションはゲイン, 3D位置設定, フェードなどの編集が行われる前のデータを見ることができる.
 このコールバックでデータを編集することもでき, ミキサーはこのデータが入力から来たかのように処理を続ける.
 </p>
 <p>
@@ -58,7 +55,7 @@ SDL_image 3.0.0以降
 <li><a href="MIX_SetTrackRawCallback.html">MIX_SetTrackRawCallback</a>
 </ul>
 <h2>SDL Wikiへのリンク</h2>
-<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetTrackCookedCallback">SDL3_mixer/MIX_SetTrackCookedCallback</a>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetTrackRawCallback">SDL3_mixer/MIX_SetTrackRawCallback</a>
 <hr>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_LoadRawAudio
 <hr>
 <h1>MIX_LoadRawAudio</h1>
-メモリバッファから生PCMデータを読み込む
+メモリバッファから無圧縮PCMデータを読み込む
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
 <h2>構文</h2>
@@ -23,18 +23,18 @@
 <tr><td><a href="MIX_Mixer.html">MIX_Mixer</a> *</td><td>mixer</td><td>オーディオデータを使用するミキサー. NULLも可</td></tr>
 <tr><td>const void *</td><td>data</td><td>オーディオデータが書き込まれたバッファ</td></tr>
 <tr><td>size_t</td><td>datalen</td><td>バッファのバイト数</td></tr>
-<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td><code>data</code>に書き込まれた生データの形式</td></tr>
+<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td><code>data</code>に書き込まれた無圧縮データの形式</td></tr>
 </table>
 <h2>戻り値</h2>
 (<a href="MIX_Audio.html">MIX_Audio</a> *) ミキサーで音声を発生させるために使用できるオーディオオブジェクトを戻す. 失敗のときNULLを戻す.
 <a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
 <h2>詳細</h2>
 <p>
-これは生PCMのストリーミングの別の選択肢である: <a href="SDL_AudioStream.html">SDL_AudioStream</a>は<a href="SDL_IOStream.html">SDL_IOStream</a>と同様にトラックに結びつけることができ, ミックスのとき必要に応じてこれらのデータ源から読み込まれる.
+これは無圧縮PCMのストリーミングの別の選択肢である: <a href="SDL_AudioStream.html">SDL_AudioStream</a>は<a href="SDL_IOStream.html">SDL_IOStream</a>と同様にトラックに結びつけることができ, ミックスのとき必要に応じてこれらのデータ源から読み込まれる.
 この関数は複数回再生する目的で静的なオーディオデータを読み込む場合に便利である.
 </p>
 <p>
-この関数は生データを全て読み込み, RAMにコピーして保持する.
+この関数は無圧縮データを全て読み込み, RAMにコピーして保持する.
 元のデータが<a href="MIX_Audio.html">MIX_Audio</a>よりも長期間有効な場合は, <a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy()</a>を使用して余分な領域の確保とコピーを避けることができおる.
 </p>
 <p>

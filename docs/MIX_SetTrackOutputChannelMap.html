@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_SetTrackOutputChannelMap</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetTrackOutputChannelMap
+<hr>
+<h1>MIX_SetTrackOutputChannelMap</h1>
+トラックの出力チャネルマップを設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_SetTrackOutputChannelMap(MIX_Track *track, const int *chmap, int count);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Mixer.html">MIX_Group</a> *</td><td>mixer</td><td>変更するミキサー</td></tr>
+<tr><td>const int *</td><td>chmap</td><td>新しいチャネルマップ. NULLのときデフォルトに戻す</td></tr>
+<tr><td>int</td><td>count</td><td>チャネルの数</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+チャネルマップは任意で, ほとんどの場合は必要なく, SDLが求める順序でデータを渡せばよい.
+</p>
+<p>
+出力チャネルマップはトラックのデータを, 変換の後, ミキサーグループのミックスの前に入れ替える.
+これはステレオチャネルを逆にしたい場合などに有用になりうる.
+</p>
+<p>
+配列の各項目は出力チャネルを表していて, チャネルはその値に再マップされる.
+ステレオの左右を入れ替えるには, 配列を <code>{ 1, 0 }</code> のようにする.
+複数のチャネルを同一のチャネルに再マップすることも可能で, その場合は <code>{ 1, 1 }</code> のようにすると, ステレオの両チャネルが右チャネルにマップされる.
+チャネルマップに有効なチャネルではなく-1を設定すると, そのチャネルはミュートされ無音になる.
+</p>
+<p>
+チャネルマップでチャネルの数を変更することはできない. 録音またはミュートを設定するのみである.
+</p>
+<p>
+オーディオストリームはデフォルトでは再マップが適用されていない.
+チャネルマップにNULLを渡すことができ, 再マップを無効にすることができる.
+</p>
+<p>
+SDL_mixerはチャネルマップをコピーする. 呼び出し側は, この関数の呼び出し後に配列を保存する必要はない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetTrackOutputChannelMap">SDL3_mixer/MIX_SetTrackOutputChannelMap</a>
+<hr>
+</body>
+</html>

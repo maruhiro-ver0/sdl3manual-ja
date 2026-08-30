@@ -138,9 +138,9 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li><a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO</a> - SDL_IOStreamから再生するオーディオデータを読み込む
 <li><a href="MIX_LoadAudioNoCopy.html">MIX_LoadAudioNoCopy</a> - メモリバッファから再生するオーディオデータをコピーせずに読み込む
 <li><a href="MIX_LoadAudioWithProperties.html">MIX_LoadAudioWithProperties</a> - プロパティグループを通して再生のためのオーディオを読み込む
-<li><a href="MIX_LoadRawAudio.html">MIX_LoadRawAudio</a> - メモリバッファから生PCMデータを読み込む
-<li><a href="MIX_LoadRawAudio_IO.html">MIX_LoadRawAudio_IO</a> - SDL_IOStreamから生PCMデータを読み込む
-<li><a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy</a> - メモリバッファから再生する生PCMデータをコピーせずに読み込む
+<li><a href="MIX_LoadRawAudio.html">MIX_LoadRawAudio</a> - メモリバッファから無圧縮PCMデータを読み込む
+<li><a href="MIX_LoadRawAudio_IO.html">MIX_LoadRawAudio_IO</a> - SDL_IOStreamから無圧縮PCMデータを読み込む
+<li><a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy</a> - メモリバッファから再生する無圧縮PCMデータをコピーせずに読み込む
 <li><a href="MIX_LockMixer.html">MIX_LockMixer</a> - ミキサーの内部のミューテックスをロックする
 <li><a href="MIX_MSToFrames.html">MIX_MSToFrames</a> - ミリ秒を指定のサンプルレートでサンプルフレーム数に変換する
 <li><a href="MIX_PauseAllTracks.html">MIX_PauseAllTracks</a> - 再生中の全てのトラックを一時停止する
@@ -166,10 +166,10 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li><a href="MIX_SetTrackGain.html">MIX_SetTrackGain</a> - トラックのゲインを設定する
 <li><a href="MIX_SetTrackGroup.html">MIX_SetTrackGroup</a> - ミキシンググループにトラックを割り付ける
 <li><a href="MIX_SetTrackIOStream.html">MIX_SetTrackIOStream</a> - MIX_Trackへの入力としてSDL_IOStreamを設定する
-<li>MIX_SetTrackLoops
-<li>MIX_SetTrackOutputChannelMap
-<li>MIX_SetTrackPlaybackPosition
-<li>MIX_SetTrackRawCallback
+<li><a href="MIX_SetTrackLoops.html">MIX_SetTrackLoops</a> - 再生中のトラックの残りループ回数を設定する
+<li><a href="MIX_SetTrackOutputChannelMap.html">MIX_SetTrackOutputChannelMap</a> - トラックの出力チャネルマップを設定する
+<li><a href="MIX_SetTrackPlaybackPosition.html">MIX_SetTrackPlaybackPosition</a> - 再生中のトラックの現在の入力位置を設定する
+<li><a href="MIX_SetTrackRawCallback.html">MIX_SetTrackRawCallback</a> - トラックがオーディオのデコードを開始するとき呼ばれるコールバックを設定する
 <li>MIX_SetTrackRawIOStream
 <li>MIX_SetTrackStereo
 <li>MIX_SetTrackStoppedCallback
@@ -199,7 +199,7 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>MIX_Point3D
+<li><a href="MIX_Point3D.html">MIX_Point3D</a> - MIX_SetTrack3DPositionの3D座標の構造体
 <li>MIX_StereoGains
 </ol>
 <h2>マクロ</h2>
