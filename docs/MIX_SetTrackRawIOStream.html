@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_SetTrackRawIOStream</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetTrackRawIOStream
+<hr>
+<h1>MIX_SetTrackRawIOStream</h1>
+<a href="MIX_Track.html">MIX_Track</a>への無圧縮PCMデータの入力として<a href="SDL_IOStream.html">SDL_IOStream</a>を設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_SetTrackRawIOStream(MIX_Track *track, SDL_IOStream *io, const SDL_AudioSpec *spec, bool closeio);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>新しいオーディオ入力を設定するトラック</td></tr>
+<tr><td><a href="SDL_IOStream.html">SDL_IOStream</a> *</td><td>io</td><td>トラックの入力として使用するI/Oストリーム</td></tr>
+<tr><td>const <a href="SDL_AudioSpec.html">SDL_AudioSpec</a> *</td><td>spec</td><td><a href="SDL_IOStream.html">SDL_IOStream</a>が提供するPCMデータの形式</td></tr>
+<tr><td>bool</td><td>closeio</td><td>真のとき使用し終えたとき<a href="SDL_IOStream.html">SDL_IOStream</a>を閉じる</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+これはトラックへの入力としては推奨しないが, 極めて限定的な状況では有用な手段になりうる: 一度だけ再生する大きなファイルをディスクから必要の応じて小さなチャンクで読み込む場合である.
+しかしほとんどの場合は先に<a href="MIX_Audio.html">MIX_Audio</a>を生成して<a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio()</a>を使用する方がよい.
+</p>
+<p>
+<a href="MIX_SetTrackAudioStream.html">MIX_SetTrackAudioStream()</a>もトラックに<a href="SDL_AudioStream.html">SDL_AudioStream</a>で無圧縮PCMデータを提供できる.
+データを既に直接<a href="SDL_IOStream.html">SDL_IOStream</a>から得ているのでなければ, こちらの方が望ましいかもしれない.
+</p>
+<p>
+ここではストリームは無圧縮PCM形式のオーディオデータの必要がある.
+</p>
+<p>
+与えられたI/Oストリームは一度に1つのトラックしか割り当てられない.
+複数を割り当ててもエラーは戻さないが, 1つのストリームを複数のトラックに割り当てるとそれぞれのトラックがストリームから不規則に読み取り, 混乱や誤ったミキシング, デコードの失敗が発生する.
+</p>
+<p>
+トラックが有効なオーディオ入力を得られたら, <a href="MIX_PlayTrack.html">MIX_PlayTrack()</a>または可能ならば<a href="MIX_PlayTag.html">MIX_PlayTag()</a>を呼んでミキシングを開始できる.
+</p>
+<p>
+この関数のI/OストリームにNULLを渡すことができる. この場合はトラックから入力を取り除く.
+トラックが再生中の場合, ミキサーの処理が行われる次のタイミングで認識され, トラックの停止がマークされ割り付けられた<a href="MIX_TrackStoppedCallback.html">MIX_TrackStoppedCallback</a>が呼ばれる.
+</p>
+<p>
+トラックの再生中にオーディオ入力を変更することはできる. しかし, 一部の設定, 例えばループ位置は, 新しいオーディオでは意味をなさなくなる場合がある.
+このような場合は, <a href="MIX_PlayTrack.html">MIX_PlayTrack</a>を再び呼んでパラメータを修正すること.
+</p>
+<p>
+渡されたI/Oストリームはトラックが必要がなくなるまで有効を保つ必要がある(トラックの入力を変えた, またはトラックを破棄した場合でも).
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_SetTrackAudioStream.html">MIX_SetTrackAudioStream</a>
+<li><a href="MIX_SetTrackIOStream.html">MIX_SetTrackIOStream</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetTrackRawIOStream">SDL3_mixer/MIX_SetTrackRawIOStream</a>
+<hr>
+</body>
+</html>
