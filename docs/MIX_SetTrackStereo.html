@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_SetTrackStereo</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_SetTrackStereo
+<hr>
+<h1>MIX_SetTrackStereo</h1>
+トラックを強制的に任意の左右パン設定でステレオ化する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_SetTrackStereo(MIX_Track *track, const MIX_StereoGains *gains);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>設定するトラック</td></tr>
+<tr><td>const <a href="MIX_StereoGains.html">MIX_StereoGains</a> *</td><td>gains</td><td>チャネルごとのゲイン. NULLのとき空間化を無効にする</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数はトラックをステレオに変換して出力し,スピーカーの設定とは無関係に前面右と前面左のスピーカーのみとミックスする.
+左右のチャネルは<code>gains</code>に従って調整される. これはパンニング効果を生成するために使用できる.
+この関数はゲインを変更するためにいつでも呼べる.
+</p>
+<p>
+<code>gains</code>がNULLでない場合, トラックは強制ステレオモードに切り替わる.
+<code>gains</code>がNULLの場合, 空間化(ステレオモードと<a href="MIX_SetTrack3DPosition.html">MIX_SetTrack3DPosition()</a>による完全3D空間化の両方)が無効になる.
+</p>
+<p>
+負のゲインは0に制限される. 最大値の制限はなく, 1.0fより大きな値を設定してチャネルの音声を大きくできる.
+</p>
+<p>
+<a href="MIX_GetTrack3DPosition.html">MIX_GetTrack3DPosition()</a>で報告されるトラックの3D位置は(0, 0, 0)にリセットされる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_SetTrack3DPosition.html">MIX_SetTrack3DPosition</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_SetTrackStereo">SDL3_mixer/MIX_SetTrackStereo</a>
+<hr>
+</body>
+</html>
