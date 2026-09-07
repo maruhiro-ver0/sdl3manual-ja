@@ -81,9 +81,9 @@ SDL_mixerのほぼ全てのタイミングはサンプルフレーム単位で�
 これらの関数は一度に複数のトラックをミリ秒単位を扱うため, 変換は内部で行う. 詳細な仕様はドキュメントを確認すること.
 </p>
 <p>
-SDL_mixerは, シンプルな3D位置APIのMIX_SetTrack3DPosition()とMIX_SetTrackStereo()で基本的な位置オーディオも提供する.
+SDL_mixerは, シンプルな3D位置APIの<a href="MIX_SetTrack3DPosition.html">MIX_SetTrack3DPosition()</a>と<a href="MIX_SetTrackStereo.html">MIX_SetTrackStereo()</a>で基本的な位置オーディオも提供する.
 前者はシンプルな距離による減衰と空間化処理を行い――ステレオ環境では音が左右に動くように聞こえる――, サラウンドの設定や個々のトラックの移動を行える.
-後者のMIX_SetTrackStereo()は音声を前面左から全面右のスピーカに強制し, 必要ならばアプリケーションで左右にパンさせる.
+後者の<a href="MIX_SetTrackStereo.html">MIX_SetTrackStereo()</a>は音声を前面左から全面右のスピーカに強制し, 必要ならばアプリケーションで左右にパンさせる.
 どちらのエフェクトも状況に応じて役立ちうる.
 SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多くの目的で十分な機能がある.
 より強力な3Dオーディオが必要ならば, OpenALのような正式な3Dライブラリの使用を検討すること.
@@ -183,7 +183,7 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li>MIX_TrackPlaying
 <li>MIX_UnlockMixer
 <li>MIX_UntagTrack
-<li>MIX_Version
+<li><a href="MIX_Version.html">MIX_Version</a> - 動的リンクされたSDL_mixerライブラリのバージョンを得る
 </ol>
 <h2>型</h2>
 <ol>
@@ -204,11 +204,11 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_MIXER_MAJOR_VERSION
-<li>SDL_MIXER_MICRO_VERSION
-<li>SDL_MIXER_MINOR_VERSION
-<li>SDL_MIXER_VERSION
-<li>SDL_MIXER_VERSION_ATLEAST
+<li><a href="SDL_MIXER_MAJOR_VERSION.html">SDL_MIXER_MAJOR_VERSION</a> - SDL_mixerヘッダのメジャーバージョンのマクロ
+<li><a href="SDL_MIXER_MICRO_VERSION.html">SDL_MIXER_MICRO_VERSION</a> - SDL_mixerヘッダのマイクロ(またはパッチレベル)バージョンのマクロ
+<li><a href="SDL_MIXER_MINOR_VERSION.html">SDL_MIXER_MINOR_VERSION</a> - SDL_mixerヘッダのマイナーバージョンのマクロ
+<li><a href="SDL_MIXER_VERSION.html">SDL_MIXER_VERSION</a> - SDL_mixerヘッダのバージョンマクロ
+<li><a href="SDL_MIXER_VERSION_ATLEAST.html">SDL_MIXER_VERSION_ATLEAST</a> - 少なくともX.Y.ZのバージョンのSDL_mixerでコンパイルされたとき真と評価するマクロ
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3_mixer/CategorySDLMixer">SDL3_mixer/CategorySDLMixer</a>

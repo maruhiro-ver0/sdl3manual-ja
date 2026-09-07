@@ -22,7 +22,7 @@
 <table border="1">
 <tr><td><a href="IMG_AnimationEncoder.html">IMG_AnimationEncoder</a> *</td><td>encoder</td><td>画像の追加先</td></tr>
 <tr><td><a href="SDL_Surface.html">SDL_Surface</a> *</td><td>surface</td><td>アニメーションの次のフレームとして追加するサーフェイス</td></tr>
-<tr><td>Uint64</td><td>duration</td><td>フレーム間隔. 単位はミリ秒だが, エンコーダの生成時にIMG_PROP_ANIMATION_ENCODER_CREATE_TIMEBASE_DENOMINATOR_NUMBERプロパティで単位を変えることもできる</td></tr>
+<tr><td>Uint64</td><td>duration</td><td>フレーム間隔. 単位はミリ秒だが, エンコーダの生成時に<a href="IMG_CreateAnimationEncoderWithProperties.html">IMG_PROP_ANIMATION_ENCODER_CREATE_TIMEBASE_DENOMINATOR_NUMBER</a>プロパティで単位を変えることもできる</td></tr>
 </table>
 <h2>戻り値</h2>
 (bool) 成功のとき真, エラーのとき偽を戻す.
