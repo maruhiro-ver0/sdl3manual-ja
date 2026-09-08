@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_TagTrack</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_TagTrack
+<hr>
+<h1>MIX_TagTrack</h1>
+トラックに任意のタグを関連付ける
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_TagTrack(MIX_Track *track, const char *tag);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>タグを追加するトラック</td></tr>
+<tr><td>const char *</td><td>tag</td><td>追加するタグ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, エラーのとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+タグにはUTF-8でコード化したあらゆる有効なC文字列を設定できる.
+これは様々な目的でトラックをグループ化する場合に有用である.
+例えばゲーム中で使用する全てのトラックに"game"をマークすると, ユーザが設定メニューを開いたとき, アプリケーションは即座にゲームプレーに関係する全てのトラックを一時停止させるがBGMと効果音は継続するようなことができる.
+</p>
+<p>
+トラックにはマシンのメモリが許す限りいくつでもタグをつけることができる.
+</p>
+<p>
+同じタグを1つのトラックに複数回追加しようとしても問題ない. 余分な追加は成功を戻すが何も変わらない.
+</p>
+<p>
+タグは後で<a href="MIX_UntagTrack.html">MIX_UntagTrack()</a>で取り除くことができる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_UntagTrack.html">MIX_UntagTrack</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_TagTrack">SDL3_mixer/MIX_TagTrack</a>
+<hr>
+</body>
+</html>
