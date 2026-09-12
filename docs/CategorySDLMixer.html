@@ -77,7 +77,7 @@ SDL_mixerのほぼ全てのタイミングはサンプルフレーム単位で�
 例えば, Sint16形式のステレオPCMオーディオデータは1サンプルフレーム当たり4バイト(1サンプル当たり2バイト×2チャネル)を消費する.
 これによりSDL_mixerでは全ての処理をサンプル単位で行うことができ, 実時間とは無関係に動作させることが, 必要ならば実時間よりも早くデータを与えることもできる.
 問題なのは, 異なるサンプリングレートのデータは同じ時間でもサンプルフレームの長さが異なることである.
-これを扱うために変換ルーチンのMIX_TrackMSToFrames(), MIX_TrackFramesToMS()などが提供されている.
+これを扱うために変換ルーチンの<a href="MIX_TrackMSToFrames.html">MIX_TrackMSToFrames()</a>, <a href="MIX_TrackFramesToMS.html">MIX_TrackFramesToMS()</a>などが提供されている.
 これらの関数は一度に複数のトラックをミリ秒単位を扱うため, 変換は内部で行う. 詳細な仕様はドキュメントを確認すること.
 </p>
 <p>
@@ -174,14 +174,14 @@ SDL_mixerには完全な3Dオーディオエンジンにはならないが, 多�
 <li><a href="MIX_SetTrackStereo.html">MIX_SetTrackStereo</a> - トラックを強制的に任意の左右パン設定でステレオ化する
 <li><a href="MIX_SetTrackStoppedCallback.html">MIX_SetTrackStoppedCallback</a> - トラックが停止したとき呼ばれるコールバックを設定する
 <li><a href="MIX_StopAllTracks.html">MIX_StopAllTracks</a> - 再生中の全てのトラックを停止する. 徐々にフェードアウトさせることもできる
-<li>MIX_StopTag
-<li>MIX_StopTrack
+<li><a href="MIX_StopTag.html">MIX_StopTag</a> - 指定したタグのトラックを停止する. 徐々にフェードアウトさせることもできる
+<li><a href="MIX_StopTrack.html">MIX_StopTrack</a> - 再生中のトラックを停止する. 徐々にフェードアウトさせることもできる
 <li><a href="MIX_TagTrack.html">MIX_TagTrack</a> - トラックに任意のタグを関連付ける
 <li><a href="MIX_TrackFramesToMS.html">MIX_TrackFramesToMS</a> - トラックの現在の形式のサンプルフレーム数をミリ秒に変換する
 <li><a href="MIX_TrackMSToFrames.html">MIX_TrackMSToFrames</a> - トラックの現在の形式のミリ秒をサンプルフレーム数に変換する
-<li>MIX_TrackPaused
-<li>MIX_TrackPlaying
-<li>MIX_UnlockMixer
+<li><a href="MIX_TrackPaused.html">MIX_TrackPaused</a> - トラックが位置停止中かチェックする
+<li><a href="MIX_TrackPlaying.html">MIX_TrackPlaying</a> - トラックが再生中かチェックする
+<li><a href="MIX_UnlockMixer.html">MIX_UnlockMixer</a> - ミキサーのMIX_LockMixer()によるロック状態を解除する
 <li><a href="MIX_UntagTrack.html">MIX_UntagTrack</a> - トラックの任意のタグを取り除く
 <li><a href="MIX_Version.html">MIX_Version</a> - 動的リンクされたSDL_mixerライブラリのバージョンを得る
 </ol>

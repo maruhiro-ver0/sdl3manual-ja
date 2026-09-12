@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_mixer">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLMixer.html" title="1つ上">
+<title>SDL3_mixer/MIX_TrackPaused</title>
+</head>
+<body>
+<a href="index.html#SDL3_mixer">目次</a> - <a href="CategorySDLMixer.html">SDL_mixer 3.0</a> - MIX_TrackPaused
+<hr>
+<h1>MIX_TrackPaused</h1>
+トラックが位置停止中かチェックする
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_mixer/blob/main/include/SDL3_mixer/SDL_mixer.h">SDL3_mixer/SDL_mixer.h</a>
+<h2>構文</h2>
+<p>
+<code>bool MIX_TrackPaused(MIX_Track *track);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="MIX_Track.html">MIX_Track</a> *</td><td>track</td><td>問い合わせるトラック</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 一時停止中のとき真, その他のとき偽を戻す.
+<h2>詳細</h2>
+<p>
+この関数が真を戻した場合, 現在トラックはミキサーの出力に関与しないが, この状態は解除できる. (これが「一時停止」の状態である.)
+これは再生中とも停止中とも異なる.
+</p>
+<p>
+様々な理由のエラー(<a href="MIX_Init.html">MIX_Init()</a>が呼ばれていない, トラックがNULLなど)の場合, この関数は偽を戻すが, エラーとループのないトラックを判別する手段はない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_image 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="MIX_PlayTrack.html">MIX_PlayTrack</a>
+<li><a href="MIX_PauseTrack.html">MIX_PauseTrack</a>
+<li><a href="MIX_ResumeTrack.html">MIX_ResumeTrack</a>
+<li><a href="MIX_StopTrack.html">MIX_StopTrack</a>
+<li><a href="MIX_TrackPlaying.html">MIX_TrackPlaying</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_mixer/MIX_TrackPaused">SDL3_mixer/MIX_TrackPaused</a>
+<hr>
+</body>
+</html>
