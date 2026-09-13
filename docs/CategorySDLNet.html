@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="index.html#SDL3_net" title="1つ上">
+<title>SDL_net 3.0</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - SDL_net 3.0
+<hr>
+<h1>SDL_net 3.0 API (アルファベット順)</h1>
+<h2>概要</h2>
+<p>
+SDL_netはネットワーキングを支援するためのシンプルなライブラリである.
+</p>
+<p>
+今日では, これはBSDソケットやWinSockのようなシステムレベルAPIの比較的薄いレイヤーである.
+このライブラリの利点は, インターフェースが簡略化されており, 予期しない特殊なケースを扱っているためアプリケーションがその処理を行う必要がないことにある.
+</p>
+<p>
+SDL_netの設計思想は次のようである:
+</p>
+<ul>
+<li>ブロックしない (しかし, 望むならば明示的に待つことができる)
+<li>アドレッシングが抽象化されており, 特定のネットワークやプロトコルの意識しなくてもよい
+<li>複雑なものよりもシンプルなものの方がよい. そして, そうだからといって非力でもない
+</ul>
+<p>
+このライブラリはいくつかの要素で構成されており, ほとんどのアプリケーションは全てを使うことはなく, 必要なものを選択して使用することになる.
+</p>
+<p>
+全てのアプリケーションは, 開始時に<a href="NET_Init.html">NET_Init()</a>を呼び, 終了時にNET_Quit()を呼ぶ必要がある.
+</p>
+<p>
+このライブラリの基本はNET_Addressオブジェクトである.
+これが, どのようにネットワークを介して他のコンピュータに到達するか, そのためにどのネットワークプロトコルを使用するかを管理する.
+NET_Addressはネットワーク越しの対話で必要となる.
+ホスト名("google.com"や"libsdl.org"のような)をNET_Addressに変換したい場合, NET_ResolveHostname()を呼ぶと背後のスレッドが適切なDNSに問い合わせる.
+準備が整うと, NET_Addressを使用してインターネット越しにそのホストに接続できる.
+</p>
+<p>
+リモートシステムに接続する準備を行った側を「クライアント」と呼び, 接続先を「サーバ」と呼ぶ.
+接続を確立するには, 解決したNET_AddressをNET_CreateClient()で使用する.
+接続が成立すると(非ブロッキング操作), NET_StreamSocketオブジェクトが得られる. これで接続先とデータの送信と受信をNET_WriteToStreamSocket()とNET_ReadFromStreamSocket()を使用して行える.
+</p>
+<p>
+クライアントが接続に来るサーバ側になるには, NET_CreateServer()を呼びNET_Serverオブジェクトを得る.
+NET_Serverが行うことはクライアントの接続を受け入れることだけで, それらをNET_StreamSocketに変換すると, 接続したクライアント側との読み込みと書き込みができるようになる.
+</p>
+<p>
+このAPIの内部はTCP接続であり, SDL_netを全く使用していないクライアントやサーバとも通信できる.
+</p>
+<p>
+クライアントとサーバは信頼性の高いバイトストリームである「ストリームソケット」を扱う.
+これを使用する場合は, 特に通信状態が悪い場合はトレードオフが発生する.
+別の選択肢として, UDPパケット転送にマッピングされた「データグラムソケット」が存在する.
+データグラムではデータの小さなパケットを送信し, 異なる順序で到着することや到着しない場合があるが, パケットが失われても転送は継続し, それぞれのパケットは明確に分離されて, またクライアント・サーバではなくピア・トゥー・ピアでの通信が可能である. データグラムはより複雑になりうるが, これはストリームソケットにはない有用な特性である.
+NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, NET_SendDatagram()とNET_ReceiveDatagram()でパケットを転送する.
+</p>
+<p>
+先に言及した通り, SDL_netのAPIは「非ブロッキング」(非同期)である.
+ネットワークの操作には時間がかかる場合があるが, SDL_netは完了まで待つことはない.
+操作からは即座に戻るが, 後でその操作が完了したかチェックできる.
+一般的には, これはビデオゲームに求められるが, 操作が完了するまで待つ方がよい場合もある. バックグラウンドスレッドで行えば劇的にコードを単純にできる可能性があり, この方が合理的な場合もある.
+</p>
+<p>
+これらの関数は操作が完了するまでブロックする.
+</p>
+<ul>
+<li>NET_WaitUntilConnected
+<li>NET_WaitUntilInputAvailable
+<li>NET_WaitUntilResolved
+<li>NET_WaitUntilStreamSocketDrained
+</ul>
+<p>
+これらの関数にはタイムアウトがあり, 最大待ち時間や, ブロックせずに問い合わせることや, 無限に待つことができる.
+</p>
+<p>
+最後に, SDL_netはネットワークの問題をシミュレートする方法も提供しており, 理想的ではない現実の通信状態のテストを行える.
+これで仮にギガビット光通信に有線で直接接続していたとしても, 不安定なwifi接続の場合のようなアプリケーションの挙動をプログラム上で作り出すことができる.
+これらの関数を使用する:
+</p>
+<ul>
+<li>NET_SimulateAddressResolutionLoss
+<li>NET_SimulateStreamPacketLoss
+<li>NET_SimulateDatagramPacketLoss
+</ul>
+<h2>関数</h2>
+<ol>
+<li>NET_AcceptClient
+<li>NET_CompareAddresses
+<li>NET_CreateClient
+<li>NET_CreateDatagramSocket
+<li>NET_CreateServer
+<li>NET_DestroyDatagram
+<li>NET_DestroyDatagramSocket
+<li>NET_DestroyServer
+<li>NET_DestroyStreamSocket
+<li>NET_FreeLocalAddresses
+<li>NET_GetAddressBytes
+<li>NET_GetAddressStatus
+<li>NET_GetAddressString
+<li>NET_GetConnectionStatus
+<li>NET_GetLocalAddresses
+<li>NET_GetStreamSocketAddress
+<li>NET_GetStreamSocketPendingWrites
+<li><a href="NET_Init.html">NET_Init</a> - SDL_netライブラリを初期化する
+<li>NET_Quit
+<li>NET_ReadFromStreamSocket
+<li>NET_ReceiveDatagram
+<li>NET_RefAddress
+<li>NET_ResolveHostname
+<li>NET_SendDatagram
+<li>NET_SimulateAddressResolutionLoss
+<li>NET_SimulateDatagramPacketLoss
+<li>NET_SimulateStreamPacketLoss
+<li>NET_UnrefAddress
+<li>NET_Version
+<li>NET_WaitUntilConnected
+<li>NET_WaitUntilInputAvailable
+<li>NET_WaitUntilResolved
+<li>NET_WaitUntilStreamSocketDrained
+<li>NET_WriteToStreamSocket
+</ol>
+<h2>型</h2>
+<ol>
+<li>NET_Address
+<li>NET_DatagramSocket
+<li>NET_Server
+<li>NET_StreamSocket
+</ol>
+<h2>構造体</h2>
+<ol>
+<li>NET_Datagram
+</ol>
+<h2>マクロ</h2>
+<ol>
+<li>SDL_NET_MAJOR_VERSION
+<li>SDL_NET_MICRO_VERSION
+<li>SDL_NET_MINOR_VERSION
+<li>SDL_NET_VERSION
+<li>SDL_NET_VERSION_ATLEAST
+</ol>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/CategorySDLNet">SDL3_net/CategorySDLNet</a>
+<hr>
+</body>
+</html>
