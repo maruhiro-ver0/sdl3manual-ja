@@ -31,7 +31,7 @@ SDL_netの設計思想は次のようである:
 このライブラリはいくつかの要素で構成されており, ほとんどのアプリケーションは全てを使うことはなく, 必要なものを選択して使用することになる.
 </p>
 <p>
-全てのアプリケーションは, 開始時に<a href="NET_Init.html">NET_Init()</a>を呼び, 終了時にNET_Quit()を呼ぶ必要がある.
+全てのアプリケーションは, 開始時に<a href="NET_Init.html">NET_Init()</a>を呼び, 終了時に<a href="NET_Quit.html">NET_Quit()</a>を呼ぶ必要がある.
 </p>
 <p>
 このライブラリの基本はNET_Addressオブジェクトである.
@@ -107,7 +107,7 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <li>NET_GetStreamSocketAddress
 <li>NET_GetStreamSocketPendingWrites
 <li><a href="NET_Init.html">NET_Init</a> - SDL_netライブラリを初期化する
-<li>NET_Quit
+<li><a href="NET_Quit.html">NET_Quit</a> - SDL_netライブラリを終了する 
 <li>NET_ReadFromStreamSocket
 <li>NET_ReceiveDatagram
 <li>NET_RefAddress
