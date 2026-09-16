@@ -34,15 +34,15 @@ SDL_netの設計思想は次のようである:
 全てのアプリケーションは, 開始時に<a href="NET_Init.html">NET_Init()</a>を呼び, 終了時に<a href="NET_Quit.html">NET_Quit()</a>を呼ぶ必要がある.
 </p>
 <p>
-このライブラリの基本はNET_Addressオブジェクトである.
+このライブラリの基本は<a href="NET_Address.html">NET_Address</a>オブジェクトである.
 これが, どのようにネットワークを介して他のコンピュータに到達するか, そのためにどのネットワークプロトコルを使用するかを管理する.
-NET_Addressはネットワーク越しの対話で必要となる.
-ホスト名("google.com"や"libsdl.org"のような)をNET_Addressに変換したい場合, NET_ResolveHostname()を呼ぶと背後のスレッドが適切なDNSに問い合わせる.
-準備が整うと, NET_Addressを使用してインターネット越しにそのホストに接続できる.
+<a href="NET_Address.html">NET_Address</a>はネットワーク越しの対話で必要となる.
+ホスト名("google.com"や"libsdl.org"のような)を<a href="NET_Address.html">NET_Address</a>に変換したい場合, <a href="NET_ResolveHostname.html">NET_ResolveHostname()</a>を呼ぶと背後のスレッドが適切なDNSに問い合わせる.
+準備が整うと, <a href="NET_Address.html">NET_Address</a>を使用してインターネット越しにそのホストに接続できる.
 </p>
 <p>
 リモートシステムに接続する準備を行った側を「クライアント」と呼び, 接続先を「サーバ」と呼ぶ.
-接続を確立するには, 解決したNET_AddressをNET_CreateClient()で使用する.
+接続を確立するには, 解決した<a href="NET_Address.html">NET_Address</a>をNET_CreateClient()で使用する.
 接続が成立すると(非ブロッキング操作), NET_StreamSocketオブジェクトが得られる. これで接続先とデータの送信と受信をNET_WriteToStreamSocket()とNET_ReadFromStreamSocket()を使用して行える.
 </p>
 <p>
@@ -111,7 +111,7 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <li>NET_ReadFromStreamSocket
 <li>NET_ReceiveDatagram
 <li>NET_RefAddress
-<li>NET_ResolveHostname
+<li><a href="NET_ResolveHostname.html">NET_ResolveHostname</a> - 人が読めるホスト名を解決する
 <li>NET_SendDatagram
 <li>NET_SimulateAddressResolutionLoss
 <li>NET_SimulateDatagramPacketLoss
@@ -126,7 +126,7 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 </ol>
 <h2>型</h2>
 <ol>
-<li>NET_Address
+<li><a href="NET_Address.html">NET_Address</a> - コンピュータが読むことができるネットワークアドレスを表す不透明型
 <li>NET_DatagramSocket
 <li>NET_Server
 <li>NET_StreamSocket

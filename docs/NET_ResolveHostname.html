@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_ResolveHostname</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_ResolveHostname
+<hr>
+<h1>NET_ResolveHostname</h1>
+人が読めるホスト名を解決する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>NET_Address * NET_ResolveHostname(const char *host);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const char *</td><td>host</td><td>解決するホスト名</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="NET_Address.html">NET_Address</a> *) 成功のとき新しいNET_Addressを戻す. エラーのときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+SDL_netは人が読めるホスト名(www.libsdl.orgのような)を扱わず, コンピュータが読めるアドレスを扱う.
+この関数はその変換を行う.
+この処理がアドレスの「解決」である.
+</p>
+<p>
+この関数でIPアドレス文字列("159.203.69.7"のような)を<a href="NET_Address.html">NET_Address</a>に変換することもできる.
+</p>
+<p>
+アドレスの解決は, ライブラリが必要な成功を得るためにインターネット上のサーバに問い合わせる必要があり時間がかかる(そしてその後に失敗する)可能性があるため, 非同期な操作なので注意すること.
+この関数はブロックしない.
+この関数はNULL(致命的な失敗)または未解消の<a href="NET_Address.html">NET_Address</a>のどちらかを戻す.
+アドレスが解決するまでは使用できない.
+</p>
+<p>
+解決の完了までブロックしたい場合は, <a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved()</a>を使うことができる.
+これを使わない場合は, <a href="NET_GetAddressStatus.html">NET_GetAddressStatus()</a>でブロックせずにチェックすることができる.
+</p>
+<p>
+戻された<a href="NET_Address.html">NET_Address</a>が不要になったならば, <a href="NET_UnrefAddress.html">NET_UnrefAddress()</a>で破棄すること.
+非同期の解決に失敗した場合でも, これを行う必要がある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved</a>
+<li><a href="NET_GetAddressStatus.html">NET_GetAddressStatus</a>
+<li><a href="NET_RefAddress.html">NET_RefAddress</a>
+<li><a href="NET_UnrefAddress.html">NET_UnrefAddress</a>
+</ul>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_ResolveHostname">SDL3_net/NET_ResolveHostname</a>
+<hr>
+</body>
+</html>
