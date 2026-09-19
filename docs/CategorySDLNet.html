@@ -42,7 +42,7 @@ SDL_netの設計思想は次のようである:
 </p>
 <p>
 リモートシステムに接続する準備を行った側を「クライアント」と呼び, 接続先を「サーバ」と呼ぶ.
-接続を確立するには, 解決した<a href="NET_Address.html">NET_Address</a>をNET_CreateClient()で使用する.
+接続を確立するには, 解決した<a href="NET_Address.html">NET_Address</a>を<a href="NET_CreateClient.html">NET_CreateClient()</a>で使用する.
 接続が成立すると(非ブロッキング操作), NET_StreamSocketオブジェクトが得られる. これで接続先とデータの送信と受信をNET_WriteToStreamSocket()とNET_ReadFromStreamSocket()を使用して行える.
 </p>
 <p>
@@ -91,7 +91,7 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <ol>
 <li>NET_AcceptClient
 <li>NET_CompareAddresses
-<li>NET_CreateClient
+<li><a href="NET_CreateClient.html">NET_CreateClient</a> - クライアントとしてリモートサーバにソケット接続を開始する
 <li>NET_CreateDatagramSocket
 <li>NET_CreateServer
 <li>NET_DestroyDatagram

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_CreateClient</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_CreateClient
+<hr>
+<h1>NET_CreateClient</h1>
+クライアントとしてリモートサーバにソケット接続を開始する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>NET_StreamSocket * NET_CreateClient(NET_Address *address, Uint16 port, SDL_PropertiesID props);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td>NET_Address *</td><td>address</td><td>接続先のリモートサーバのアドレス</td></tr>
+<tr><td>Uint16</td><td>port</td><td>接続先のリモートサーバのポート</td></tr>
+<tr><td>SDL_PropertiesID</td><td>props</td><td>新しいクライアントのプロパティ. デフォルトのとき0</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="NET_StreamSocket.html">NET_StreamSocket</a> *) 新しい未接続のNET_StreamSocketを戻す. エラーのときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+それぞれの<a href="NET_StreamSocket.html">NET_StreamSocket</a>はシステム間の1つの接続を表す.
+通常, クライアントアプリケーションは異なるコンピュータのサーバアプリケーションへの1つの接続を持ち, サーバアプリケーションは異なるクライアントからの複数の接続を持つ.
+それぞれの接続は別々のストリームソケットで通信を行う.
+</p>
+<p>
+接続は非同期な操作であるため, この関数はブロックせず, 接続が完了する前に戻る.
+後で<a href="NET_WaitUntilConnected.html">NET_WaitUntilConnected()</a>または<a href="NET_GetConnectionStatus.html">NET_GetConnectionStatus()</a>で操作が完了し接続が成功したかを知ることができる.
+</p>
+<p>
+接続すると戻されたソケットでデータの読み込みと書き込みを行える.
+ストリームソケットは信頼できる通信方式で, データは送信した順序のバイトストリームとして受信される.
+通信に問題が発生すると, システムは必要ならばアプリケーションに対して透過的にネゴシエーションと再送信を試みるが, データが送信した順序で利用可能になるまでリモート側はデータを得られない.
+これはデータグラムソケットとのトレードオフで, データグラムソケットではデータは不定な順序で届いた場合や全く届かなかった場合でも待たされることはないが, 送信側は結果を知ることができない.
+</p>
+<p>
+ストリームソケットは(TCPより上の)特定のプロトコルを使用していないため, SDL_netを使用していないサーバにも接続できるが, HTTPのような任意のバイトストリーム以上のプロトコルで対話したい場合はストリームソケットの上に自分自身で実装しなければならない.
+</p>
+<p>
+この関数はアドレスの解決が完了していない場合は失敗する.
+</p>
+<p>
+この接続を使用し終えたならば, (接続に失敗しても, していなくても)<a href="NET_DestroyStreamSocket.html">NET_DestroyStreamSocket()</a>で破棄する必要がある.
+</p>
+<p>
+BSDソケットやWinSockとは異なり, ポートは通常の整数で指定する. ライブラリがアプリケーションの代わりに処理するため, バイト交換で「ネットワーク順」にする必要はない.
+</p>
+<p>
+現在はクライアント生成の追加のプロパティは存在しないため, <code>props</code>は0とすること.
+将来的にはSDL_netには(任意の)プロパティが追加される可能性がある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_WaitUntilConnected.html">NET_WaitUntilConnected</a>
+<li><a href="NET_GetConnectionStatus.html">NET_GetConnectionStatus</a>
+<li><a href="NET_DestroyStreamSocket.html">NET_DestroyStreamSocket</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_CreateClient">SDL3_net/NET_CreateClient</a>
+<hr>
+</body>
+</html>
