@@ -43,7 +43,7 @@ SDL_netの設計思想は次のようである:
 <p>
 リモートシステムに接続する準備を行った側を「クライアント」と呼び, 接続先を「サーバ」と呼ぶ.
 接続を確立するには, 解決した<a href="NET_Address.html">NET_Address</a>を<a href="NET_CreateClient.html">NET_CreateClient()</a>で使用する.
-接続が成立すると(非ブロッキング操作), NET_StreamSocketオブジェクトが得られる. これで接続先とデータの送信と受信をNET_WriteToStreamSocket()とNET_ReadFromStreamSocket()を使用して行える.
+接続が成立すると(非ブロッキング操作), <a href="NET_StreamSocket.html">NET_StreamSocket</a>オブジェクトが得られる. これで接続先とデータの送信と受信をNET_WriteToStreamSocket()とNET_ReadFromStreamSocket()を使用して行える.
 </p>
 <p>
 クライアントが接続に来るサーバ側になるには, NET_CreateServer()を呼びNET_Serverオブジェクトを得る.
@@ -108,7 +108,7 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <li>NET_GetStreamSocketPendingWrites
 <li><a href="NET_Init.html">NET_Init</a> - SDL_netライブラリを初期化する
 <li><a href="NET_Quit.html">NET_Quit</a> - SDL_netライブラリを終了する 
-<li>NET_ReadFromStreamSocket
+<li><a href="NET_ReadFromStreamSocket.html">NET_ReadFromStreamSocket</a> - リモートシステムにストリームソケットでバイトを送信する
 <li>NET_ReceiveDatagram
 <li>NET_RefAddress
 <li><a href="NET_ResolveHostname.html">NET_ResolveHostname</a> - 人が読めるホスト名を解決する
@@ -122,14 +122,14 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <li>NET_WaitUntilInputAvailable
 <li>NET_WaitUntilResolved
 <li>NET_WaitUntilStreamSocketDrained
-<li>NET_WriteToStreamSocket
+<li><a href="NET_WriteToStreamSocket.html">NET_WriteToStreamSocket</a> - リモートシステムにストリームソケットでバイトを送信する
 </ol>
 <h2>型</h2>
 <ol>
 <li><a href="NET_Address.html">NET_Address</a> - コンピュータが読むことができるネットワークアドレスを表す不透明型
 <li>NET_DatagramSocket
 <li>NET_Server
-<li>NET_StreamSocket
+<li><a href="NET_StreamSocket.html">NET_StreamSocket</a> - 別システムへのストリーミング接続を表すオブジェクトの型
 </ol>
 <h2>構造体</h2>
 <ol>

@@ -20,9 +20,9 @@
 </p>
 <h2>引数</h2>
 <table border="1">
-<tr><td>NET_Address *</td><td>address</td><td>接続先のリモートサーバのアドレス</td></tr>
+<tr><td><a href="NET_Address.html">NET_Address</a> *</td><td>address</td><td>接続先のリモートサーバのアドレス</td></tr>
 <tr><td>Uint16</td><td>port</td><td>接続先のリモートサーバのポート</td></tr>
-<tr><td>SDL_PropertiesID</td><td>props</td><td>新しいクライアントのプロパティ. デフォルトのとき0</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>新しいクライアントのプロパティ. デフォルトのとき0</td></tr>
 </table>
 <h2>戻り値</h2>
 (<a href="NET_StreamSocket.html">NET_StreamSocket</a> *) 新しい未接続のNET_StreamSocketを戻す. エラーのときNULLを戻す.
@@ -39,7 +39,7 @@
 </p>
 <p>
 接続すると戻されたソケットでデータの読み込みと書き込みを行える.
-ストリームソケットは信頼できる通信方式で, データは送信した順序のバイトストリームとして受信される.
+ストリームソケットは信頼性の高い通信方式で, データは送信した順序のバイトストリームとして受信される.
 通信に問題が発生すると, システムは必要ならばアプリケーションに対して透過的にネゴシエーションと再送信を試みるが, データが送信した順序で利用可能になるまでリモート側はデータを得られない.
 これはデータグラムソケットとのトレードオフで, データグラムソケットではデータは不定な順序で届いた場合や全く届かなかった場合でも待たされることはないが, 送信側は結果を知ることができない.
 </p>
