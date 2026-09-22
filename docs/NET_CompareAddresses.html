@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_CompareAddresses</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_CompareAddresses
+<hr>
+<h1>NET_CompareAddresses</h1>
+2つの<a href="NET_Address.html">NET_Address</a>を比較する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>int NET_CompareAddresses(const NET_Address *a, const NET_Address *b);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const <a href="NET_Address.html">NET_Address</a> *</td><td>a</td><td>比較する1番目のアドレス</td></tr>
+<tr><td>const <a href="NET_Address.html">NET_Address</a> *</td><td>b</td><td>比較する2番目のアドレス</td></tr>
+</table>
+<h2>戻り値</h2>
+(int) <code>a</code>が<code>b</code>未満のとき0未満の数, <code>a</code>が<code>b</code>より大きいとき0より大きい数, 等しいとき0を戻す.
+<h2>詳細</h2>
+<p>
+この関数は2つのアドレスを比較し, <code>qsort</code>(または<a href="SDL_qsort.html">SDL_qsort</a>)で使用できる値を戻す.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_CompareAddresses">SDL3_net/NET_CompareAddresses</a>
+<hr>
+</body>
+</html>

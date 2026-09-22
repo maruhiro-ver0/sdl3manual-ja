@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_Status</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_Status
+<hr>
+<h1>NET_Status</h1>
+非同期操作の3状態の列挙体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>値</h2>
+<table border="1">
+<tr><td>NET_FAILURE</td><td>-1</td><td>非同期操作は失敗で完了した</td></tr>
+<tr><td>NET_WAITING</td><td>0</td><td>非同期操作は処理中である. 後で再チェックすること</td></tr>
+<tr><td>NET_SUCCESS</td><td>1</td><td>非同期操作は成功で完了した</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+ネットワーク越しの処理は必要な時間を予測できないため, SDL_netは多くの処理を非同期処理に行う.
+</p>
+<p>
+非同期処理にはストリームソケットによるデータ送信, ホスト名の解決, リモートシステムへの接続などがある.
+</p>
+<p>
+ライブラリは, 名前に"Wait"が付いた処理の完了まで待つための関数を除き, ブロックしない.
+待つ可能性のある処理を行う関数や処理の進捗状態を問い合わせる関数は, NET_Statusを戻すのでアプリケーションは処理の完了をチェックして最終的な結果を得ることができる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_Status">SDL3_net/NET_Status</a>
+<hr>
+</body>
+</html>
