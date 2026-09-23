@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_GetAddressString</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_GetAddressString
+<hr>
+<h1>NET_GetAddressString</h1>
+解決したアドレスから人が読める文字列を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>const char * NET_GetAddressString(NET_Address *address);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="NET_Address.html">NET_Address</a> *</td><td>address</td><td>問い合わせるNET_Addressオブジェクト</td></tr>
+</table>
+<h2>戻り値</h2>
+(const char *) 文字列を戻す. エラーののときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数は「人が読める」文字列を戻す. これは恐らく"159.203.69.7"や"2604:a880:800:a1::71f:3001"のように数字と記号で構成されている.
+これは元のホスト名("icculus.org"のような)にはならないが, ログファイルへの書き込みなどには適している.
+</p>
+<p>
+戻されたデータの解放や変更を行おうとしてはならない. これは<a href="NET_Address.html">NET_Address</a>に属していて, オブジェクトが有効な間はこのデータも有効である.
+必要な間はアドレスの参照を保持するか, バイト列をコピーすること.
+</p>
+<p>
+解決が完了していない場合や, 解決に失敗している場合は, この関数はNULLを戻す.
+この関数を使用する前に<a href="NET_GetAddressStatus.html">NET_GetAddressStatus()</a>や<a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved()</a>を使用すれば確実に解決を完了できる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_GetAddressStatus.html">NET_GetAddressStatus</a>
+<li><a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_GetAddressString">SDL3_net/NET_GetAddressString</a>
+<hr>
+</body>
+</html>

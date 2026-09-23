@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_GetStreamSocketAddress</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_GetStreamSocketAddress
+<hr>
+<h1>NET_GetStreamSocketAddress</h1>
+ストリームソケットのリモートアドレスを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>NET_Address * NET_GetStreamSocketAddress(NET_StreamSocket *sock);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="NET_StreamSocket.html">NET_StreamSocket</a> *</td><td>sock</td><td>問い合わせるストリームソケット</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="NET_Address.html">NET_Address</a> *) ソケットのリモートアドレスを戻す. エラーのときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数はまだ接続中でもストリームソケットのリモート側のアドレスを戻す.
+</p>
+<p>
+これはアドレスに参照を追加する. 不要になったとき, 呼び出し側は<em>必ず</em><a href="NET_UnrefAddress.html">NET_UnrefAddress()</a>を呼ばなけらばならない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_GetStreamSocketAddress">SDL3_net/NET_GetStreamSocketAddress</a>
+<hr>
+</body>
+</html>

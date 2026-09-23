@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_CreateServer</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_CreateServer
+<hr>
+<h1>NET_CreateServer</h1>
+接続をacceptするためにlistenするサーバを生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>NET_Server * NET_CreateServer(NET_Address *addr, Uint16 port, SDL_PropertiesID props);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="NET_Address.html">NET_Address</a> *</td><td>addr</td><td>接続をlistenするローカルアドレス. NULLも可</td></tr>
+<tr><td>Uint16</td><td>port</td><td>接続をlistenするローカルアドレスのポート</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>新しいサーバのプロパティ. デフォルトのとき0</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="NET_Server.html">NET_Server</a> *) 新しいNET_Serverを戻す. エラーのときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+リモートシステムに接続する準備を行った側を「クライアント」と呼び, 接続先を「サーバ」と呼ぶ.
+</p>
+<p>
+サーバはlistenし, クライアントからの接続をacceptする. それによりサーバ側に新しいストリームパケットが生成され, データの送受信が可能になる.
+</p>
+<p>
+この関数は別のシステムから接続をacceptするサーバを生成する.
+</p>
+<p>
+システムは即座にサーバを生成できるか否かを判別できるため, この関数はブロックせず, また非同期処理も行わない.
+この関数が成功を戻した場合, すぐに接続を待つことができる.
+</p>
+<p>
+接続をlistenするアドレスを指定することができる. このアドレスはシステムのローカルアドレスである必要があり, 恐らく<a href="NET_GetLocalAddresses.html">NET_GetLocalAddresses()</a>が戻したアドレスの1つだが, ほとんどの場合はアプリケーションが有効なアドレスでlistenするために単にNULLを指定すればよい.
+</p>
+<p>
+サーバを生成した後は, <a href="NET_AcceptClient.html">NET_AcceptClient()</a>で接続に来たクライアントと交信するためのストリームソケットを得ることができる.
+</p>
+<p>
+ストリームソケットは(TCPより上の)特定のプロトコルを使用していないため, SDL_netを使用していないサーバにも接続できるが, HTTPのような任意のバイトストリーム以上のプロトコルで対話したい場合はストリームソケットの上に自分自身で実装しなければならない.
+</p>
+<p>
+BSDソケットやWinSockとは異なり, ポートは通常の整数で指定する. ライブラリがアプリケーションの代わりに処理するため, バイト交換で「ネットワーク順」にする必要はない.
+</p>
+<p>
+呼び出し側はプロパティで動作をカスタマイズできる.
+これは任意で, <code>props</code>を0にすると全てのプロパティをデフォルトにできる.
+</p>
+<p>
+これらのプロパティに対応している:
+</p>
+<ul>
+<li><code>NET_PROP_SERVER_REUSEADDR_BOOLEAN</code>: 真のとき, 以前のサーバがこのアドレスを使用中でもサーバを生成する.
+様々な理由でネットワークはアプリケーションが同じアドレスを再び使用する間に待ち時間を設けようとするが, ソフトウェア開発や単にクラッシュしたサービスの再起動するためにlistenを高速に行いたい場合には問題となりうる.
+このプロパティのデフォルトは真である(しかし, OSレベルではデフォルトは偽であることに注意すること).
+このプロパティが偽でOSが十分な時間が経過していないと判断した場合, サーバの生成は失敗し, この関数はエラーを報告する.
+</ul>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_GetLocalAddresses.html">NET_GetLocalAddresses</a>
+<li><a href="NET_AcceptClient.html">NET_AcceptClient</a>
+<li><a href="NET_DestroyServer.html">NET_DestroyServer</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_CreateServer">SDL3_net/NET_CreateServer</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_GetAddressBytes</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_GetAddressBytes
+<hr>
+<h1>NET_GetAddressBytes</h1>
+解決したアドレスからネットワークアドレスのプロトコルレベルのバイト列を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>const void * NET_GetAddressBytes(NET_Address *address, int *num_bytes);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="NET_Address.html">NET_Address</a> *</td><td>address</td><td>問い合わせるNET_Addressオブジェクト</td></tr>
+<tr><td>int *</td><td>num_bytes</td><td>戻されたバイト列のバイト数の代入先へのポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+(const void *) バイト列へのポインタを戻す. エラーのときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+このデータは人が読むことができるものではなく, プロトコル依存で, さらに特定のバイト順でない場合もある.
+</p>
+<p>
+恐らくこれが役立つのは, ゲーム中のユーザとアドレスを対応付けるハッシュを作成する場合や, システムレベルのネットワークAPIを扱う(これは推奨しない. 自身の責任で行うこと)場合のみである.
+</p>
+<p>
+値の形式が変わらない保証はないため, この値を将来実行するプログラムのために保持してはならない. 
+</p>
+<p>
+戻された<code>*num_bytes</code>はアドレスのバイト数である.
+データはNUL終端ではないため, このサイズがデータのバイト数を知る唯一の手段である. そのため, この引数にNULLを渡すことはできない.
+</p>
+<p>
+戻されたデータの解放や変更を行おうとしてはならない. これは<a href="NET_Address.html">NET_Address</a>に属していて, オブジェクトが有効な間はこのデータも有効である.
+必要な間はアドレスの参照を保持するか, バイト列をコピーすること.
+</p>
+<p>
+解決が完了していない場合や, 解決に失敗している場合は, この関数はNULLを戻す.
+この関数を使用する前に<a href="NET_GetAddressStatus.html">NET_GetAddressStatus()</a>や<a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved()</a>を使用すれば確実に解決を完了できる.
+</p>
+<p>
+人が読むことができるアドレスは<a href="NET_GetAddressString.html">NET_GetAddressString()</a>で得られる. これは無編集のバイト列を得るよりも非効率なことはない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_GetAddressString.html">NET_GetAddressString</a>
+<li><a href="NET_GetAddressStatus.html">NET_GetAddressStatus</a>
+<li><a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_GetAddressBytes">SDL3_net/NET_GetAddressBytes</a>
+<hr>
+</body>
+</html>

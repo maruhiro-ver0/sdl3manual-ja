@@ -16,7 +16,7 @@
 <a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
 <h2>構文</h2>
 <p>
-<code>extern SDL_DECLSPEC NET_Address **SDLCALL NET_GetLocalAddresses(int *num_addresses);</code>
+<code>NET_Address **SDLCALL NET_GetLocalAddresses(int *num_addresses);</code>
 </p>
 <h2>引数</h2>
 <table border="1">
@@ -41,8 +41,8 @@
 さらに引数として配列の終端のNULLを含まないアドレス数が代入されるintポインタを渡すことができる.
 </p>
 <p>
-戻された配列が不要になれば<a href="NET_FreeLocalAddresses.html">NET_FreeLocalAddresses</a>に渡すこと.
-この関数を呼んだ後でも, この配列から得たアドレスは<a href="NET_RefAddress.html">NET_RefAddress()</a>を呼んで使用できる.
+戻された配列が不要になれば<a href="NET_FreeLocalAddresses.html">NET_FreeLocalAddresses</a>に渡し解放すること.
+解放した後でも, この配列から得たアドレスは<a href="NET_RefAddress.html">NET_RefAddress()</a>を呼んでいれば使用できる.
 </p>
 <h2>スレッドセーフ</h2>
 <p>

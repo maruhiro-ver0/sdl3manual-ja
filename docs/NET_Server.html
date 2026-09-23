@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_Server</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_Server
+<hr>
+<h1>NET_Server</h1>
+ストリーム接続の受信側の型
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>typedef struct NET_Server NET_Server;</code>
+</p>
+<h2>詳細</h2>
+<p>
+これはアプリケーションがハンドルとして扱う不透明なデータ型である.
+</p>
+<p>
+内部的には, これはBSDソケットでは「listenソケット」と呼ばれるものである.
+クライアントはサーバへのアクセスを試み, サーバが接続をacceptすると, その接続を通して送信と受信を行えるストリームソケットをアプリケーションに提供する.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_CreateServer.html">NET_CreateServer</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_Server">SDL3_net/NET_Server</a>
+<hr>
+</body>
+</html>

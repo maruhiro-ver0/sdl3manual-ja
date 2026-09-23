@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_FreeLocalAddresses</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_FreeLocalAddresses
+<hr>
+<h1>NET_FreeLocalAddresses</h1>
+<a href="NET_GetLocalAddresses.html">NET_GetLocalAddresses</a>の結果を解放する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>void NET_FreeLocalAddresses(NET_Address **addresses);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="NET_Address.html">NET_Address</a> **</td><td>addresses</td><td><a href="NET_GetLocalAddresses.html">NET_GetLocalAddresses()</a>が戻したポインタ</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+この関数は配列の全てのアドレスの参照を切り離し, 配列自信を解放する.
+</p>
+<p>
+アドレスは参照カウントされているので, この関数を呼んだ後でも, この配列から得たアドレスは<a href="NET_RefAddress.html">NET_RefAddress()</a>を呼んでいれば使用できる.
+</p>
+<p>
+この関数にNULLを渡しても安全に無視される.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_FreeLocalAddresses">SDL3_net/NET_FreeLocalAddresses</a>
+<hr>
+</body>
+</html>

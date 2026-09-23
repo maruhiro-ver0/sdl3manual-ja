@@ -89,23 +89,23 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 </ul>
 <h2>関数</h2>
 <ol>
-<li>NET_AcceptClient
+<li><a href="NET_AcceptClient.html">NET_AcceptClient</a> - 次の保留中のクライアント接続のストリームソケットを生成する
 <li><a href="NET_CompareAddresses.html">NET_CompareAddresses</a> - 2つのNET_Addressを比較する
 <li><a href="NET_CreateClient.html">NET_CreateClient</a> - クライアントとしてリモートサーバにソケット接続を開始する
 <li>NET_CreateDatagramSocket
-<li>NET_CreateServer
+<li><a href="NET_CreateServer.html">NET_CreateServer</a> - 接続をacceptするためにlistenするサーバを生成する
 <li>NET_DestroyDatagram
 <li>NET_DestroyDatagramSocket
-<li>NET_DestroyServer
+<li><a href="NET_DestroyServer.html">NET_DestroyServer</a> - 生成したサーバを破棄する
 <li><a href="NET_DestroyStreamSocket.html">NET_DestroyStreamSocket</a> - 以前生成したストリームソケットを破棄する
-<li>NET_FreeLocalAddresses
-<li>NET_GetAddressBytes
+<li><a href="NET_FreeLocalAddresses.html">NET_FreeLocalAddresses</a> - NET_GetLocalAddressesの結果を解放する
+<li><a href="NET_GetAddressBytes.html">NET_GetAddressBytes</a> - 解決したアドレスからネットワークアドレスのプロトコルレベルのバイト列を得る
 <li><a href="NET_GetAddressStatus.html">NET_GetAddressStatus</a> - ブロックせずにアドレスが解決したかチェックする
-<li>NET_GetAddressString
+<li><a href="NET_GetAddressString.html">NET_GetAddressString</a> - 解決したアドレスから人が読める文字列を得る
 <li><a href="NET_GetConnectionStatus.html">NET_GetConnectionStatus</a> - ブロックせずにソケットが接続したかチェックする
 <li><a href="NET_GetLocalAddresses.html">NET_GetLocalAddresses</a> - システムのローカルアドレスの一覧を得る
-<li>NET_GetStreamSocketAddress
-<li>NET_GetStreamSocketPendingWrites
+<li><a href="NET_GetStreamSocketAddress.html">NET_GetStreamSocketAddress</a> - ストリームソケットのリモートアドレスを得る
+<li><a href="NET_GetStreamSocketPendingWrites.html">NET_GetStreamSocketPendingWrites</a> - ストリームソケットの未送信のバイト数を得る
 <li><a href="NET_Init.html">NET_Init</a> - SDL_netライブラリを初期化する
 <li><a href="NET_Quit.html">NET_Quit</a> - SDL_netライブラリを終了する 
 <li><a href="NET_ReadFromStreamSocket.html">NET_ReadFromStreamSocket</a> - リモートシステムにストリームソケットでバイトを送信する
@@ -121,23 +121,23 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <li><a href="NET_WaitUntilConnected.html">NET_WaitUntilConnected</a> - ストリームソケットがサーバと接続するまで待つ
 <li>NET_WaitUntilInputAvailable
 <li><a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved</a> - アドレスが解決するまで待つ
-<li>NET_WaitUntilStreamSocketDrained
+<li><a href="NET_WaitUntilStreamSocketDrained.html">NET_WaitUntilStreamSocketDrained</a> - ストリームソケットの未送信データの送信が完了するまでブロックする
 <li><a href="NET_WriteToStreamSocket.html">NET_WriteToStreamSocket</a> - リモートシステムにストリームソケットでバイトを送信する
 </ol>
 <h2>型</h2>
 <ol>
 <li><a href="NET_Address.html">NET_Address</a> - コンピュータが読むことができるネットワークアドレスを表す不透明型
 <li>NET_DatagramSocket
-<li>NET_Server
+<li><a href="NET_Server.html">NET_Server</a> - ストリーム接続の受信側の型
 <li><a href="NET_StreamSocket.html">NET_StreamSocket</a> - 別システムへのストリーミング接続を表すオブジェクトの型
-</ol>
-<h2>列挙体</h2>
-<ol>
-<li><a href="NET_Status.html">NET_Status</a> - 非同期操作の3状態の列挙体
 </ol>
 <h2>構造体</h2>
 <ol>
 <li>NET_Datagram
+</ol>
+<h2>列挙体</h2>
+<ol>
+<li><a href="NET_Status.html">NET_Status</a> - 非同期操作の3状態の列挙体
 </ol>
 <h2>マクロ</h2>
 <ol>
