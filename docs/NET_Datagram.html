@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_Datagram</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_Datagram
+<hr>
+<h1>NET_Datagram</h1>
+<a href="NET_ReceiveDatagram.html">NET_ReceiveDatagram()</a>で受信した新しく到着したパケットのデータの構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>フィールド</h2>
+<table border="1">
+<tr><td><a href="NET_Address.html">NET_Address</a> *</td><td>addr</td><td>送信側のアドレス. これは<a href="NET_DestroyDatagram.html">NET_DestroyDatagram</a>で参照が外される. 保持したい場合は参照を追加する必要がある</td></tr>
+<tr><td>Uint16</td><td>port</td><td>送信側のポート. 受信側がバインドしたポートと同一とは限らない. これはホストのバイト順であり, バイト交換してはならない</td></tr>
+<tr><td>Uint8 *</td><td>buf</td><td>このデータグラムのペイロード</td></tr>
+<tr><td>int</td><td>buflen</td><td><code>buf</code>の有効なバイト数</td></tr>
+</table>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_ReceiveDatagram.html">NET_ReceiveDatagram</a>
+<li><a href="NET_DestroyDatagram.html">NET_DestroyDatagram</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_Datagram">SDL3_net/NET_Datagram</a>
+<hr>
+</body>
+</html>

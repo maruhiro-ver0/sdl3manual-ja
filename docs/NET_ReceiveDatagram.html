@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_ReceiveDatagram</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_ReceiveDatagram
+<hr>
+<h1>NET_ReceiveDatagram</h1>
+リモートシステムからデータグラムソケットに送られた新しいパケットを受信する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>bool NET_ReceiveDatagram(NET_DatagramSocket *sock, NET_Datagram **dgram);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="NET_DatagramSocket.html">NET_DatagramSocket</a> *</td><td>sock</td><td>データを受信するデータグラムソケット</td></tr>
+<tr><td><a href="NET_Datagram.html">NET_Datagram</a> **</td><td>dgram</td><td>データグラムパケットの代入先へのポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) データを送信または送信のためにキューに入れたとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+データグラムソケットでデータのパケットを送信する.
+パケットは完全に届く場合も全く届かない場合もある. それに対してストリームソケットはデータストリームを信頼できるものにするためにバイトが少しずつ届けられる.
+</p>
+<p>
+この呼び出しは決してブロックしない. 新しい有効なデータを得られない状態で呼ぶと, 即座に真を戻す.
+呼び出し側は後で再び試みることができる.
+</p>
+<p>
+この関数の呼び出しに成功すると, 新しい有効なパケットがない場合でも真を戻すため, 新しいパケットが得られたかをチェックするには戻り値の成功と<code>*dgram</code>がNULLでないことを確認する必要がある.
+</p>
+<p>
+受信したパケットが不要になったとき, <a href="NET_DestroyDatagram.html">NET_DestroyDatagram</a>に渡す必要がある.
+送信側のアドレスを長時間保存したい場合は, そのアドレスに<a href="NET_RefAddress.html">NET_RefAddress()</a>を呼びポインタを保持すると安全である. その場合はアドレスが不要になったときNET_UnrefAddress()を呼ぶ必要がある.
+</p>
+<p>
+データグラムはネットワーク上の任意のアドレスとポートから予告なし到着するため, その情報はこの関数から得られる<a href="NET_Datagram.html">NET_Datagram</a>オブジェクトに含まれている. そして, これが応答する相手を知るための唯一の手段である.
+「サーバ」としてふるまう場合でなくても, 誰かがあなたのアプリケーションに送信すればパケットはソケットに到着する.
+</p>
+<p>
+致命的なエラーが発生すると, この関数は偽を戻す.
+「接続」のような失敗する状態がないためデータグラムソケットは通常は失敗を報告しないが, システムレベルの状態で回復不能な場合に失敗を報告する. ダイアグラムソケットが失敗した場合, これ以降は使用できないとみなし, <a href="NET_DestroyDatagramSocket.html">NET_DestroyDatagramSocket()</a>で破棄する必要がある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+同じソケットを複数のスレッドから同期を行わずに使用してはならない.
+しかし, 異なるスレッドから別々のソケットに同時にアクセスすることは問題ない.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_SendDatagram.html">NET_SendDatagram</a>
+<li><a href="NET_DestroyDatagram.html">NET_DestroyDatagram</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_ReceiveDatagram">SDL3_net/NET_ReceiveDatagram</a>
+<hr>
+</body>
+</html>

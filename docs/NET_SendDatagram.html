@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_SendDatagram</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_SendDatagram
+<hr>
+<h1>NET_SendDatagram</h1>
+リモートシステムにデータグラムソケットを通して新しいパケットを送信する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>bool NET_SendDatagram(NET_DatagramSocket *sock, NET_Address *address, Uint16 port, const void *buf, int buflen);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="NET_DatagramSocket.html">NET_DatagramSocket</a> *</td><td>sock</td><td>データを送信するデータグラムソケット</td></tr>
+<tr><td><a href="NET_Address.html">NET_Address</a> *</td><td>address</td><td>アドレスのNET_Addressオブジェクト. NULLのときブロードキャスト</td></tr>
+<tr><td>Uint16</td><td>port</td><td>アドレスのポート</td></tr>
+<tr><td>const void *</td><td>buf</td><td>1つのパケットで送信するデータへのポインタ</td></tr>
+<tr><td>int</td><td>buflen</td><td>送信するデータのバイト数</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) データを送信または送信のためにキューに入れたとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+データグラムソケットでデータのパケットを送信する.
+パケットは完全に届く場合も全く届かない場合もある. それに対してストリームソケットはデータストリームを信頼できるものにするためにバイトが少しずつ届けられる.
+</p>
+<p>
+データグラムパケットは送信とは異なる順序で届く場合や, 伝送中にネットワークで失われることもある.
+このことをあらかじめ考慮しなければならない.
+さらに混乱することに, SDL_netは同じパケットを複数のインターフェースで送信する場合があり, 異なるネットワークアドレスから同じパケットを受信する場合がある.
+このことも考慮しなければならない.
+</p>
+<p>
+ネットワーク上の任意のアドレスとポートに送信できるが, パケットが失われないようにするには送信先にデータを待つデータグラムソケットが存在している必要がある.
+</p>
+<p>
+経験上, 1500バイトを超えるパケットをインターネットに送信するべきではない. これよりも大きなものは, ルータが分割したり失ったりする場合がある. しかし, SDL_netにはハードコードされた限界はなく, 条件が良ければさらに大きなデータも送ることができる場合もある.
+</p>
+<p>
+この呼び出しは決してブロックしない. すぐにデータを送れない場合でも, ライブラリは後で送信するためにキューに入れる.
+キュー内に未送信のデータがあるかを知る方法はない. データグラム転送は信頼性が低く, キューのデータについて何らかの想定をしてはならない.
+</p>
+<p>
+致命的なエラーが発生すると, この関数は偽を戻す.
+「接続」のような失敗する状態がないためデータグラムソケットは通常は失敗を報告しないが, システムレベルの状態で回復不能な場合に失敗を報告する. ダイアグラムソケットが失敗した場合, これ以降は使用できないとみなし, <a href="NET_DestroyDatagramSocket.html">NET_DestroyDatagramSocket()</a>で破棄する必要がある.
+</p>
+<p>
+NULLアドレスへの送信はパケットのブロードキャストとして扱われる.
+これはソケットがブロードキャストを許可して生成されていない場合, 即座に失敗を報告するので注意すること.
+ブロードキャストパケットはLAN上の全てのマシンに無条件に送信する(のみである).
+</p>
+<p>
+警告: これを使用して全員が同一LAN上でプレーし, 全員が単純にパケットをブロードキャストするゲームを作成できる.
+しかし, これは絶対にすべきではない.
+ブロードキャストパケットは, 相手が望んでも望まなくてもLAN上の全てのデバイスに向かう.
+全盛時代のDOOMは同じネットワーク上の多くのプレイヤーが絶えることなくブロードキャストしたため, <a href="https://doomwiki.org/wiki/Doom_in_workplaces">ネットワーク全体がダウンする</a>ほどだった.
+</p>
+<p>
+実際には, ブロードキャストは特定の場合の少量で行うのが有益である. 例えば, LANのみのクライアントが有効なサーバを探すために少量のパケットをブロードキャストし, 動作中のサーバがブロードキャストではなくクライアントに直接応答すれば合理的で安全である.
+クライアントとサーバがお互いを認識した後は, ブロードキャストを全く使用せずに直接通信を行うことができる.
+ピア・トゥ・ピアのゲームならば, 接続が成立した後は, 互いに認識したプレイヤーに個別のパケットを送るか, マルチキャストを使用する(これはブロードキャストと似ているが, 明示的にlistenしているデバイスのみ転送される)方が良い.
+</p>
+<p>
+IPv6はブロードキャストに対応していないが, 特定のインターフェースまたはOSが選択したデフォルトの全ノードへのリンクローカルマルチキャストグループであるff02::1へのマルチキャストで模倣している.
+将来的には他のプロトコルも同じような方法で疑似的にブロードキャストを行えるようになるかもしれない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_GetLocalAddresses.html">NET_GetLocalAddresses</a>
+<li><a href="NET_DestroyDatagramSocket.html">NET_DestroyDatagramSocket</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_SendDatagram">SDL3_net/NET_SendDatagram</a>
+<hr>
+</body>
+</html>

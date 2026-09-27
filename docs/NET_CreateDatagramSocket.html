@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_CreateDatagramSocket</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_CreateDatagramSocket
+<hr>
+<h1>NET_CreateDatagramSocket</h1>
+データクラムソケットを生成しバインドする
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>NET_DatagramSocket * NET_CreateDatagramSocket(NET_Address *addr, Uint16 port, SDL_PropertiesID props);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="NET_Address.html">NET_Address</a> *</td><td>addr</td><td>接続をlistenするローカルアドレス. NULLのとき全ての有効なローカルアドレスでlistenする</td></tr>
+<tr><td>Uint16</td><td>port</td><td>接続をlistenするローカルアドレスのポート. 0のときシステムが決める</td></tr>
+<tr><td><a href="SDL_PropertiesID.html">SDL_PropertiesID</a></td><td>props</td><td>新しいサーバのプロパティ. デフォルトのとき0</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="NET_DatagramSocket.html">NET_DatagramSocket</a> *) 新しいNET_DatagramSocketを戻す. エラーのときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+データグラムソケットはストリームソケットとは異なるルールに従う.
+これは信頼性の高いバイトストリームではなくパケットで, 1つのリモートシステムとの通信以外も行え, 切断の可能性のある単一の「接続」の維持が存在しない.
+そのため, 使い方は複雑になるがネットワークの障害に対応しやすい.
+アプリケーションにとってどちらが良いかは, 完全にアプリケーションの目的による.
+</p>
+<p>
+データグラムソケットの考え方は, 送信データを1つのチャンク(「パケット」)として相手のアドレスに1つずつ送り, 受信側は, 後で送ったパケットを先に到着することや全く到着しないこともありデフォルトではそれがいつ起こったかを知る方法もないが, 到着したのを受信するというものである.
+</p>
+<p>
+この関数は新しいデータグラムソケットを生成する.
+</p>
+<p>
+システムは即座にソケットを生成できるか否かを判別できるため, この関数はブロックせず, また非同期処理も行わない.
+この関数が成功を戻した場合, すぐにネットワークとの通信を開始することができる.
+</p>
+<p>
+接続をlistenするアドレスを指定することができる. このアドレスはシステムのローカルアドレスである必要があり, 恐らく<a href="NET_GetLocalAddresses.html">NET_GetLocalAddresses()</a>が戻したアドレスの1つだが, ほとんどの場合はアプリケーションが有効なアドレスでlistenするために単にNULLを指定すればよい.
+</p>
+<p>
+特定のポートにバインドする必要がある場合(サーバのように), <code>port</code>を指定する必要がある. データグラムサーバは必ずこれを行い, 既知のポートに到着できるようにしなければならない.
+単に通信を開始したい場合(クライアントのように), 0を指定してシステムに未使用のポートを選択させる必要がある.
+あるポートに一度にバインドできるのは1つのアプリケーションのみのため, サーバのような動作を行わないならば, 0を選択すべきである.
+データグラムソケットは個別のパケットをそれぞれのポートにも送ることができるため, これはソケットのデータがどのポートに届くかの選択をするだけである.
+</p>
+<p>
+データグラムソケットは(UDPより上の)特定のプロトコルを使用していないため, SDL_netを使用していないアプリケーションとも通信できるが, WebRTCのような任意のバイトパケット以上のプロトコルで対話したい場合はデータグラムソケットの上に自分自身で実装しなければならない.
+</p>
+<p>
+BSDソケットやWinSockとは異なり, ポートは通常の整数で指定する. ライブラリがアプリケーションの代わりに処理するため, バイト交換で「ネットワーク順」にする必要はない.
+</p>
+<p>
+呼び出し側はプロパティで動作をカスタマイズできる.
+これは任意で, <code>props</code>を0にすると全てのプロパティをデフォルトにできる.
+</p>
+<p>
+これらのプロパティに対応している:
+</p>
+<ul>
+<li><code>NET_PROP_DATAGRAM_SOCKET_REUSEADDR_BOOLEAN</code>: 真のとき, 以前のサーバがこのアドレスを使用中でもサーバを生成する.
+様々な理由でネットワークはアプリケーションが同じアドレスを再び使用する間に待ち時間を設けようとするが, ソフトウェア開発や単にクラッシュしたサービスの再起動するためにlistenを高速に行いたい場合には問題となりうる.
+このプロパティのデフォルトは真である(しかし, OSレベルではデフォルトは偽であることに注意すること).
+このプロパティが偽でOSが十分な時間が経過していないと判断した場合, サーバの生成は失敗し, この関数はエラーを報告する.
+<li><code>NET_PROP_DATAGRAM_SOCKET_ALLOW_BROADCAST_BOOLEAN</code>: 真のときソケットはブロードキャストを許可する.
+低レベルでは, これはIPv4ソケットの<code>SO_BROADCAST</code>の設定で, OSレベルでサブネットのブロードキャストの送信を許可する.
+IPv6では, 全ノードへのリンクローカルマルチキャストグループであるff02::1に参加し, そこへの送信とそこからの受信を許可することで通常のIPv4ブロードキャストを模倣する.
+他のプロトコルでは似た動作を行うようにする.
+このソケットでブロードキャストパケットの送受信を行わないならば, このプロパティを偽にするか, デフォルトは偽なので設定しないこと.
+注意: IPv4はこのプロパティを設定しなくてもブロードキャストパケットの受信を行えるが, IPv6は行えない.
+ブロードキャストアドレスへの送信は<a href="NET_SendDatagram.html">NET_SendDatagram()</a>を参照すること.
+</ul>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_GetLocalAddresses.html">NET_GetLocalAddresses</a>
+<li><a href="NET_DestroyDatagramSocket.html">NET_DestroyDatagramSocket</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_CreateDatagramSocket">SDL3_net/NET_CreateDatagramSocket</a>
+<hr>
+</body>
+</html>

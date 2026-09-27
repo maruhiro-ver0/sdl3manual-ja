@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_DatagramSocket</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_DatagramSocket
+<hr>
+<h1>NET_DatagramSocket</h1>
+他のシステムへのデータグラム接続を表すオブジェクトの型
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>typedef struct NET_DatagramSocket NET_DatagramSocket;</code>
+</p>
+<h2>詳細</h2>
+<p>
+これはUDPのような信頼性の低いパケット型の接続を想定している
+</p>
+<p>
+データグラムソケットはストリームソケットとは異なるルールに従う.
+これは信頼性の高いバイトストリームではなくパケットで, 1つのリモートシステムとの通信以外も行え, 切断の可能性のある単一の「接続」の維持が存在しない.
+そのため, 使い方は複雑になるがネットワークの障害に対応しやすい.
+アプリケーションにとってどちらが良いかは, 完全にアプリケーションの目的による.
+</p>
+<p>
+データグラムソケットの考え方は, 送信データを1つのチャンク(「パケット」)として相手のアドレスに1つずつ送り, 受信側は, 後で送ったパケットを先に到着することや全く到着しないこともありデフォルトではそれがいつ起こったかを知る方法もないが, 到着したのを受信するというものである.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_CreateDatagramSocket.html">NET_CreateDatagramSocket</a>
+<li><a href="NET_SendDatagram.html">NET_SendDatagram</a>
+<li><a href="NET_ReceiveDatagram.html">NET_ReceiveDatagram</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_DatagramSocket">SDL3_net/NET_DatagramSocket</a>
+<hr>
+</body>
+</html>

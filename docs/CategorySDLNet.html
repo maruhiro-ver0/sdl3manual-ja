@@ -46,8 +46,8 @@ SDL_netの設計思想は次のようである:
 接続が成立すると(非ブロッキング操作), <a href="NET_StreamSocket.html">NET_StreamSocket</a>オブジェクトが得られる. これで接続先とデータの送信と受信を<a href="NET_WriteToStreamSocket.html">NET_WriteToStreamSocket()</a>と<a href="NET_ReadFromStreamSocket.html">NET_ReadFromStreamSocket()</a>を使用して行える.
 </p>
 <p>
-クライアントが接続に来るサーバ側になるには, NET_CreateServer()を呼びNET_Serverオブジェクトを得る.
-NET_Serverが行うことはクライアントの接続を受け入れることだけで, それらをNET_StreamSocketに変換すると, 接続したクライアント側との読み込みと書き込みができるようになる.
+クライアントが接続に来るサーバ側になるには, <a href="NET_CreateServer.html">NET_CreateServer()</a>を呼び<a href="NET_Server.html">NET_Server</a>オブジェクトを得る.
+<a href="NET_Server.html">NET_Server</a>が行うことはクライアントの接続を受け入れることだけで, それらを<a href="NET_StreamSocket.html">NET_StreamSocket</a>に変換すると, 接続したクライアント側との読み込みと書き込みができるようになる.
 </p>
 <p>
 このAPIの内部はTCP接続であり, SDL_netを全く使用していないクライアントやサーバとも通信できる.
@@ -69,10 +69,10 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 これらの関数は操作が完了するまでブロックする.
 </p>
 <ul>
-<li>NET_WaitUntilConnected
+<li><a href="NET_WaitUntilConnected.html">NET_WaitUntilConnected</a>
 <li>NET_WaitUntilInputAvailable
-<li>NET_WaitUntilResolved
-<li>NET_WaitUntilStreamSocketDrained
+<li><a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved</a>
+<li><a href="NET_WaitUntilStreamSocketDrained.html">NET_WaitUntilStreamSocketDrained</a>
 </ul>
 <p>
 これらの関数にはタイムアウトがあり, 最大待ち時間や, ブロックせずに問い合わせることや, 無限に待つことができる.
@@ -92,10 +92,10 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <li><a href="NET_AcceptClient.html">NET_AcceptClient</a> - 次の保留中のクライアント接続のストリームソケットを生成する
 <li><a href="NET_CompareAddresses.html">NET_CompareAddresses</a> - 2つのNET_Addressを比較する
 <li><a href="NET_CreateClient.html">NET_CreateClient</a> - クライアントとしてリモートサーバにソケット接続を開始する
-<li>NET_CreateDatagramSocket
+<li><a href="NET_CreateDatagramSocket.html">NET_CreateDatagramSocket</a> - データクラムソケットを生成しバインドする
 <li><a href="NET_CreateServer.html">NET_CreateServer</a> - 接続をacceptするためにlistenするサーバを生成する
-<li>NET_DestroyDatagram
-<li>NET_DestroyDatagramSocket
+<li><a href="NET_DestroyDatagram.html">NET_DestroyDatagram</a> - 以前に受信したデータグラムパケットを破棄する
+<li><a href="NET_DestroyDatagramSocket.html">NET_DestroyDatagramSocket</a> - 以前生成したデータグラムソケットを破棄する
 <li><a href="NET_DestroyServer.html">NET_DestroyServer</a> - 生成したサーバを破棄する
 <li><a href="NET_DestroyStreamSocket.html">NET_DestroyStreamSocket</a> - 以前生成したストリームソケットを破棄する
 <li><a href="NET_FreeLocalAddresses.html">NET_FreeLocalAddresses</a> - NET_GetLocalAddressesの結果を解放する
@@ -108,11 +108,11 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <li><a href="NET_GetStreamSocketPendingWrites.html">NET_GetStreamSocketPendingWrites</a> - ストリームソケットの未送信のバイト数を得る
 <li><a href="NET_Init.html">NET_Init</a> - SDL_netライブラリを初期化する
 <li><a href="NET_Quit.html">NET_Quit</a> - SDL_netライブラリを終了する 
-<li><a href="NET_ReadFromStreamSocket.html">NET_ReadFromStreamSocket</a> - リモートシステムにストリームソケットでバイトを送信する
-<li>NET_ReceiveDatagram
+<li><a href="NET_ReadFromStreamSocket.html">NET_ReadFromStreamSocket</a> - リモートシステムからストリームソケットに送られたバイトを受信する
+<li><a href="NET_ReceiveDatagram.html">NET_ReceiveDatagram</a> - リモートシステムからデータグラムソケットに送られた新しいパケットを受信する
 <li><a href="NET_RefAddress.html">NET_RefAddress</a> - NET_Addressに参照を追加する
 <li><a href="NET_ResolveHostname.html">NET_ResolveHostname</a> - 人が読めるホスト名を解決する
-<li>NET_SendDatagram
+<li><a href="NET_SendDatagram.html">NET_SendDatagram</a> - リモートシステムにデータグラムソケットを通して新しいパケットを送信する
 <li>NET_SimulateAddressResolutionLoss
 <li>NET_SimulateDatagramPacketLoss
 <li>NET_SimulateStreamPacketLoss
@@ -127,13 +127,13 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <h2>型</h2>
 <ol>
 <li><a href="NET_Address.html">NET_Address</a> - コンピュータが読むことができるネットワークアドレスを表す不透明型
-<li>NET_DatagramSocket
+<li><a href="NET_DatagramSocket.html">NET_DatagramSocket</a> - 他のシステムへのデータグラム接続を表すオブジェクトの型
 <li><a href="NET_Server.html">NET_Server</a> - ストリーム接続の受信側の型
 <li><a href="NET_StreamSocket.html">NET_StreamSocket</a> - 別システムへのストリーミング接続を表すオブジェクトの型
 </ol>
 <h2>構造体</h2>
 <ol>
-<li>NET_Datagram
+<li><a href="NET_Datagram.html">NET_Datagram</a> - NET_ReceiveDatagram()で受信した新しく到着したパケットのデータの構造体
 </ol>
 <h2>列挙体</h2>
 <ol>
