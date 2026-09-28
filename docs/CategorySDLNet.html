@@ -57,7 +57,7 @@ SDL_netの設計思想は次のようである:
 これを使用する場合は, 特に通信状態が悪い場合はトレードオフが発生する.
 別の選択肢として, UDPパケット転送にマッピングされた「データグラムソケット」が存在する.
 データグラムではデータの小さなパケットを送信し, 異なる順序で到着することや到着しない場合があるが, パケットが失われても転送は継続し, それぞれのパケットは明確に分離されて, またクライアント・サーバではなくピア・トゥー・ピアでの通信が可能である. データグラムはより複雑になりうるが, これはストリームソケットにはない有用な特性である.
-NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, NET_SendDatagram()とNET_ReceiveDatagram()でパケットを転送する.
+<a href="NET_CreateDatagramSocket.html">NET_CreateDatagramSocket()</a>を使用してデータグラム通信の準備し, <a href="NET_SendDatagram.html">NET_SendDatagram()</a>と<a href="NET_ReceiveDatagram.html">NET_ReceiveDatagram()</a>でパケットを転送する.
 </p>
 <p>
 先に言及した通り, SDL_netのAPIは「非ブロッキング」(非同期)である.
@@ -70,7 +70,7 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 </p>
 <ul>
 <li><a href="NET_WaitUntilConnected.html">NET_WaitUntilConnected</a>
-<li>NET_WaitUntilInputAvailable
+<li><a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable</a>
 <li><a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved</a>
 <li><a href="NET_WaitUntilStreamSocketDrained.html">NET_WaitUntilStreamSocketDrained</a>
 </ul>
@@ -117,9 +117,9 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 <li>NET_SimulateDatagramPacketLoss
 <li>NET_SimulateStreamPacketLoss
 <li><a href="NET_UnrefAddress.html">NET_UnrefAddress</a> - NET_Addressの参照を切り離す
-<li>NET_Version
+<li><a href="NET_Version.html">NET_Version</a> - 動的リンクされたSDL_mixerライブラリのバージョンを得る
 <li><a href="NET_WaitUntilConnected.html">NET_WaitUntilConnected</a> - ストリームソケットがサーバと接続するまで待つ
-<li>NET_WaitUntilInputAvailable
+<li><a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable</a> - 複数のソケットの少なくとも1つのデータが利用可能になるまでブロックする
 <li><a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved</a> - アドレスが解決するまで待つ
 <li><a href="NET_WaitUntilStreamSocketDrained.html">NET_WaitUntilStreamSocketDrained</a> - ストリームソケットの未送信データの送信が完了するまでブロックする
 <li><a href="NET_WriteToStreamSocket.html">NET_WriteToStreamSocket</a> - リモートシステムにストリームソケットでバイトを送信する
@@ -141,11 +141,11 @@ NET_CreateDatagramSocket()を使用してデータグラム通信の準備し, N
 </ol>
 <h2>マクロ</h2>
 <ol>
-<li>SDL_NET_MAJOR_VERSION
-<li>SDL_NET_MICRO_VERSION
-<li>SDL_NET_MINOR_VERSION
-<li>SDL_NET_VERSION
-<li>SDL_NET_VERSION_ATLEAST
+<li><a href="SDL_NET_MAJOR_VERSION.html">SDL_NET_MAJOR_VERSION</a> - SDL_netヘッダのメジャーバージョンのマクロ
+<li><a href="SDL_NET_MICRO_VERSION.html">SDL_NET_MICRO_VERSION</a> - SDL_netヘッダのマイクロ(またはパッチレベル)バージョンのマクロ
+<li><a href="SDL_NET_MINOR_VERSION.html">SDL_NET_MINOR_VERSION</a> - SDL_netヘッダのマイナーバージョンのマクロ
+<li><a href="SDL_NET_VERSION.html">SDL_NET_VERSION</a> - SDL_netヘッダのバージョンマクロ
+<li><a href="SDL_NET_VERSION_ATLEAST.html">SDL_NET_VERSION_ATLEAST</a> - 少なくともX.Y.ZのバージョンのSDL_netでコンパイルされたとき真と評価するマクロ
 </ol>
 <h2>SDL Wikiへのリンク</h2>
 <a href="https://wiki.libsdl.org/SDL3_net/CategorySDLNet">SDL3_net/CategorySDLNet</a>

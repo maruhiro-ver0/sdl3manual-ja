@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL_net">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLNet.html" title="1つ上">
+<title>SDL3_net/NET_WaitUntilInputAvailable</title>
+</head>
+<body>
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_WaitUntilInputAvailable
+<hr>
+<h1>NET_WaitUntilInputAvailable</h1>
+複数のソケットの少なくとも1つのデータが利用可能になるまでブロックする
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
+<h2>構文</h2>
+<p>
+<code>int NET_WaitUntilInputAvailable(void **vsockets, int numsockets, Sint32 timeout);</code>
+</p>
+<h2>引数</h2>
+<table border="1">
+<tr><td>void **</td><td>vsockets</td><td>待つ可能性がある様々なオブジェクトの配列. それぞれvoidポインタでキャストされている</td></tr>
+<tr><td>int</td><td>numsockets</td><td><code>vsockets</code>配列のポインタの数</td></tr>
+<tr><td>Sint32</td><td>timeout</td><td>新しい入力のミリ秒単位の待ち時間. -1のとき無限に待ち, 0のとき待たずにチェックする</td></tr>
+</table>
+<h2>戻り値</h2>
+(int) 新しい入力を得た項目の数を戻す. エラーのとき-1を戻す.
+<h2>詳細</h2>
+<p>
+これはほとんどのアプリケーションには必要のない複雑な関数だが, 効率的なサーバや特定の場合のI/Oスレッドの作成のために役立ちうる.
+</p>
+<p>
+この関数は, オブジェクトの一覧を与え, いずれかが新しい入力を得て利用可能になるまで待つことができる.
+呼び出したスレッドは, そのときまでスリープ状態になる.
+</p>
+<p>
+次のオブジェクトをvoid *でキャストして<code>vsockets</code>配列の項目とすることができる:
+</p>
+<ul>
+<li><a href="NET_Server.html">NET_Server</a> (<a href="NET_AcceptClient.html">NET_AcceptClient</a>でacceptして接続の準備ができたとき新しい入力を報告する)
+<li><a href="NET_StreamSocket.html">NET_StreamSocket</a> (リモートエンドが<a href="NET_ReadFromStreamSocket.html">NET_ReadFromStreamSocket</a>で読み込むべき追加のデータを送信した, またはソケットの最初の接続が完了したとき新しい入力を報告する)
+<li><a href="NET_DatagramSocket.html">NET_DatagramSocket</a> (<a href="NET_ReceiveDatagram.html">NET_ReceiveDatagram</a>で読み込むべきパケットが到着したとき入力を報告する)
+</ul>
+<p>
+この関数は解決の完了までどれだけ待つかのミリ秒単位のタイムアウト時間を引数とする.
+タイムアウト時間に-1を指定すると無限に待ち, 0を指定すると現在の状態をチェックして即座に戻る.
+</p>
+<p>
+この関数は新しい入力を得た項目の個数を戻すが, どれであるかは知らせない. これらのソケットへのアクセスはブロックしないので, 単にソケットの読み込みを1つずつ試して, どのソケットが準備ができているかを確かめればよい.
+準備ができたものがなくタイムアウトした場合は0を戻す. エラーの場合は-1を戻す.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+同じソケットを複数のスレッドから同期を行わずに使用してはならない.
+しかし, 異なるスレッドから別々のソケットに同時にアクセスすることは問題ない.
+</p>
+<h2>バージョン</h2>
+SDL_net 3.0.0以降
+<h2>関連項目</h2>
+<ul>
+<li><a href="NET_CreateDatagramSocket.html">NET_CreateDatagramSocket</a>
+<li><a href="NET_SendDatagram.html">NET_SendDatagram</a>
+<li><a href="NET_ReceiveDatagram.html">NET_ReceiveDatagram</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_WaitUntilInputAvailable">SDL3_net/NET_WaitUntilInputAvailable</a>
+<hr>
+</body>
+</html>
