@@ -5,21 +5,22 @@
 <meta name="keywords" content="SDL_net">
 <link rel="top" href="index.html" title="ホーム">
 <link rel="parent" href="CategorySDLNet.html" title="1つ上">
-<title>SDL3_net/NET_SimulateAddressResolutionLoss</title>
+<title>SDL3_net/NET_SimulateStreamPacketLoss</title>
 </head>
 <body>
-<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_SimulateAddressResolutionLoss
+<a href="index.html#SDL3_net">目次</a> - <a href="CategorySDLNet.html">SDL_net 3.0</a> - NET_SimulateStreamPacketLoss
 <hr>
-<h1>NET_SimulateAddressResolutionLoss</h1>
-アドレス解決の失敗のシミュレートを有効にする
+<h1>NET_SimulateStreamPacketLoss</h1>
+ストリームソケットの失敗のシミュレートを有効にする
 <h2>ヘッダ</h2>
 <a href="https://github.com/libsdl-org/SDL_net/blob/main/include/SDL3_net/SDL_net.h">SDL3_net/SDL_net.h</a>
 <h2>構文</h2>
 <p>
-<code>void NET_SimulateAddressResolutionLoss(int percent_loss);</code>
+<code>void NET_SimulateStreamPacketLoss(NET_StreamSocket *sock, int percent_loss);</code>
 </p>
 <h2>引数</h2>
 <table border="1">
+<tr><td><a href="NET_StreamSocket.html">NET_StreamSocket</a> *</td><td>sock</td><td>失敗率を設定するソケット</td></tr>
 <tr><td>int</td><td>percent_loss</td><td>0から100の値. 高いほど失敗する. 0のとき無効にする</td></tr>
 </table>
 <h2>詳細</h2>
@@ -27,10 +28,13 @@
 開発マシンでネットワークアプリケーションのテストを行う場合があるが(そのマシンは高速で信頼性の高い有線接続であろう), 実際の環境下でwifiの不安定さやファイヤウォールの妨げにより絶え間ないネットワークの切断が発生する場合のバグは発見できないかもしれない.
 </p>
 <p>
-この関数はライブラリが疑似的にアドレス解決の失敗を発生させる確率を設定する.
+この関数はライブラリが疑似的にストリームデータ通信の失敗を発生させる確率を設定する.
 </p>
 <p>
-確率を上げると, 解決を失敗しやすくなり, 解決の完了に時間がかかるようになる.
+ストリームソケットは信頼性が高いため, この場合の失敗は, パケットがネットワークで失われた場合の再送信の動作である.
+これをシミュレートするため, ライブラリはソケットのデータの送信または受信の前にいくらかの待ち時間を挿入する.
+この関数に0(デフォルト)を設定するとシミュレートが無効になる. 100を設定すると常に失敗する. システムが使用不能になる限界がどこになるかは開発者の課題である. 
+これは実環境の様々な悪条件をシミュレートしてデバッグを行うことを目的としている. この関数を本番環境で呼ぶべきではない. 実環境では本物の失敗が発生するだろう. 
 </p>
 <p>
 この関数に0(デフォルト)を設定するとシミュレートが無効になる.
@@ -48,7 +52,7 @@
 <h2>バージョン</h2>
 SDL_net 3.0.0以降
 <h2>SDL Wikiへのリンク</h2>
-<a href="https://wiki.libsdl.org/SDL3_net/NET_SimulateAddressResolutionLoss">SDL3_net/NET_SimulateAddressResolutionLoss</a>
+<a href="https://wiki.libsdl.org/SDL3_net/NET_SimulateStreamPacketLoss">SDL3_net/NET_SimulateStreamPacketLoss</a>
 <hr>
 </body>
 </html>
