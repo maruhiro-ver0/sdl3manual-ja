@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="index.html#SDL3_ttf" title="1つ上">
+<title>SDL_ttf 3.0</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - SDL_ttf 3.0
+<hr>
+<h1>SDL_ttf 3.0 API (アルファベット順)</h1>
+<h2>概要</h2>
+<p>
+このライブラリは優れた<a href="https://www.freetype.org/">FreeType 2.0</a>ライブラリのラッパーである.
+</p>
+<h2>関数</h2>
+<ol>
+<li>TTF_AddFallbackFont
+<li>TTF_AppendTextString
+<li>TTF_ClearFallbackFonts
+<li><a href="TTF_CloseFont.html">TTF_CloseFont</a> - フォントを破棄する
+<li>TTF_CopyFont
+<li>TTF_CreateGLTextEngine
+<li>TTF_CreateGLTextEngineWithProperties
+<li>TTF_CreateGPUTextEngine
+<li>TTF_CreateGPUTextEngineWithProperties
+<li>TTF_CreateRendererTextEngine
+<li>TTF_CreateRendererTextEngineWithProperties
+<li>TTF_CreateSurfaceTextEngine
+<li>TTF_CreateText
+<li>TTF_DeleteTextString
+<li>TTF_DestroyGLTextEngine
+<li>TTF_DestroyGPUTextEngine
+<li>TTF_DestroyRendererTextEngine
+<li>TTF_DestroySurfaceTextEngine
+<li>TTF_DestroyText
+<li>TTF_DrawRendererText
+<li>TTF_DrawSurfaceText
+<li>TTF_FontHasGlyph
+<li>TTF_FontIsFixedWidth
+<li>TTF_FontIsScalable
+<li>TTF_GetFontAscent
+<li>TTF_GetFontCharSpacing
+<li>TTF_GetFontDescent
+<li>TTF_GetFontDirection
+<li>TTF_GetFontDPI
+<li>TTF_GetFontFamilyName
+<li>TTF_GetFontGeneration
+<li>TTF_GetFontHeight
+<li>TTF_GetFontHinting
+<li>TTF_GetFontKerning
+<li>TTF_GetFontLineSkip
+<li>TTF_GetFontOutline
+<li>TTF_GetFontProperties
+<li>TTF_GetFontScript
+<li>TTF_GetFontSDF
+<li>TTF_GetFontSize
+<li>TTF_GetFontStyle
+<li>TTF_GetFontStyleName
+<li>TTF_GetFontWeight
+<li>TTF_GetFontWrapAlignment
+<li>TTF_GetFreeTypeVersion
+<li>TTF_GetGLTextDrawData
+<li>TTF_GetGLTextEngineWinding
+<li>TTF_GetGlyphImage
+<li>TTF_GetGlyphImageForIndex
+<li>TTF_GetGlyphKerning
+<li>TTF_GetGlyphMetrics
+<li>TTF_GetGlyphScript
+<li>TTF_GetGPUTextDrawData
+<li>TTF_GetGPUTextEngineWinding
+<li>TTF_GetHarfBuzzVersion
+<li>TTF_GetNextTextSubString
+<li>TTF_GetNumFontFaces
+<li>TTF_GetPreviousTextSubString
+<li>TTF_GetStringSize
+<li>TTF_GetStringSizeWrapped
+<li>TTF_GetTextColor
+<li>TTF_GetTextColorFloat
+<li>TTF_GetTextDirection
+<li>TTF_GetTextEngine
+<li>TTF_GetTextFont
+<li>TTF_GetTextPosition
+<li>TTF_GetTextProperties
+<li>TTF_GetTextScript
+<li>TTF_GetTextSize
+<li>TTF_GetTextSubString
+<li>TTF_GetTextSubStringForLine
+<li>TTF_GetTextSubStringForPoint
+<li>TTF_GetTextSubStringsForRange
+<li>TTF_GetTextWrapWidth
+<li><a href="TTF_Init.html">TTF_Init</a> - SDL_ttfを初期化する
+<li>TTF_InsertTextString
+<li>TTF_MeasureString
+<li><a href="TTF_OpenFont.html">TTF_OpenFont</a> - ポイントサイズを指定してフォントをファイルから生成する
+<li>TTF_OpenFontIO
+<li>TTF_OpenFontWithProperties
+<li><a href="TTF_Quit.html">TTF_Quit</a> - SDL_ttfを解放する
+<li>TTF_RemoveFallbackFont
+<li>TTF_RenderGlyph_Blended
+<li>TTF_RenderGlyph_LCD
+<li>TTF_RenderGlyph_Shaded
+<li>TTF_RenderGlyph_Solid
+<li>TTF_RenderText_Blended
+<li>TTF_RenderText_Blended_Wrapped
+<li>TTF_RenderText_LCD
+<li>TTF_RenderText_LCD_Wrapped
+<li>TTF_RenderText_Shaded
+<li>TTF_RenderText_Shaded_Wrapped
+<li>TTF_RenderText_Solid
+<li>TTF_RenderText_Solid_Wrapped
+<li>TTF_SetFontCharSpacing
+<li>TTF_SetFontDirection
+<li>TTF_SetFontHinting
+<li>TTF_SetFontKerning
+<li>TTF_SetFontLanguage
+<li>TTF_SetFontLineSkip
+<li>TTF_SetFontOutline
+<li>TTF_SetFontScript
+<li>TTF_SetFontSDF
+<li>TTF_SetFontSize
+<li>TTF_SetFontSizeDPI
+<li>TTF_SetFontStyle
+<li>TTF_SetFontWrapAlignment
+<li>TTF_SetGLTextEngineWinding
+<li>TTF_SetGPUTextEngineWinding
+<li>TTF_SetTextColor
+<li>TTF_SetTextColorFloat
+<li>TTF_SetTextDirection
+<li>TTF_SetTextEngine
+<li>TTF_SetTextFont
+<li>TTF_SetTextPosition
+<li>TTF_SetTextScript
+<li>TTF_SetTextString
+<li>TTF_SetTextWrapWhitespaceVisible
+<li>TTF_SetTextWrapWidth
+<li>TTF_StringToTag
+<li>TTF_TagToString
+<li>TTF_TextWrapWhitespaceVisible
+<li>TTF_UpdateText
+<li>TTF_Version
+<li>TTF_WasInit
+</ol>
+<h2>型</h2>
+<ol>
+<li><a href="TTF_Font.html">TTF_Font</a> - フォント情報を持つ内部構造の型
+<li>TTF_FontStyleFlags
+<li>TTF_SubStringFlags
+<li>TTF_TextData
+<li>TTF_TextEngine
+</ol>
+<h2>構造体</h2>
+<ol>
+<li>TTF_GLAtlasDrawSequence
+<li>TTF_GLAtlasDrawVertex
+<li>TTF_GPUAtlasDrawSequence
+<li>TTF_SubString
+<li>TTF_Text
+</ol>
+<h2>列挙体</h2>
+<ol>
+<li>TTF_CopyOperationFlags
+<li><a href="TTF_Direction.html">TTF_Direction</a> - 方向フラグの列挙体
+<li>TTF_GLTextEngineWinding
+<li>TTF_GPUTextEngineWinding
+<li>TTF_HintingFlags
+<li>TTF_HorizontalAlignment
+<li>TTF_ImageType
+</ol>
+<h2>マクロ</h2>
+<ol>
+<li>SDL_TTF_MAJOR_VERSION
+<li>SDL_TTF_VERSION
+<li>SDL_TTF_VERSION_ATLEAST
+<li>TTF_HINTING_NORMAL
+<li>TTF_STYLE_NORMAL
+</ol>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/CategorySDLTTF">SDL3_ttf/CategorySDLTTF</a>
+<hr>
+</body>
+</html>

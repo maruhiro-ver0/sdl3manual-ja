@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_CloseFont</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_CloseFont
+<hr>
+<h1>TTF_CloseFont</h1>
+フォントを破棄する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>void TTF_CloseFont(TTF_Font *font);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>TTF_Font *</td><td>font</td><td>破棄するフォント</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+フォントを使い終えたとき, この関数を呼ぶこと.
+この関数はフォントに関連する資源を解放する.
+この関数はNULLを, 例えば<a href="TTF_OpenFont.html">TTF_OpenFont()</a>の失敗の結果に対して呼んでも安全である.
+</p>
+<p>
+この関数に渡した後, <code>font</code>は無効になる.
+この<code>font</code>の関数が戻した情報も, 例えば<a href="TTF_GetFontFamilyName.html">TTF_GetFontFamilyName()</a>や<a href="TTF_GetFontStyleName.html">TTF_GetFontStyleName()</a>が戻した文字列へのポインタも同様に無効になる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数は他のスレッドがこのフォントを使用している間は呼んではならない.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_OpenFont.html">TTF_OpenFont</a>
+<li><a href="TTF_OpenFontIO.html">TTF_OpenFontIO</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_CloseFont">SDL3_ttf/TTF_CloseFont</a>
+<hr>
+</body>
+</html>

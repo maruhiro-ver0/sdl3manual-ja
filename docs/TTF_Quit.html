@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_Quit</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_Quit
+<hr>
+<h1>TTF_Quit</h1>
+SDL_ttfを解放する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>void TTF_Quit(void);</code>
+<h2>詳細</h2>
+<p>
+ライブラリを使い終えたならば, 内部リソースの解放のためこの関数を呼ぶ必要がある.
+ライブラリを初期化せずにこの関数を呼んでも何もせずに安全に戻るだけである.
+</p>
+<p>
+<a href="TTF_Init.html">TTF_Init()</a>を呼んで成功した回数だけこの関数を呼ぶと, ライブラリが実際に解放される.
+</p>
+<p>
+この関数を呼んでも開かれたフォントは自動的には閉じず, その後にフォントを閉じようとしてもライブラリは解放されているため正常に閉じることができないので注意すること.
+開いた全てのフォントに対して<a href="TTF_CloseFont.html">TTF_CloseFont()</a>を呼び, その後でこの関数を呼ぶべきのがよいだろう.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_Quit">SDL3_ttf/TTF_Quit</a>
+<hr>
+</body>
+</html>
