@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="index.html#SDL3_image" title="1つ上">
+<title>SDL_image 3.0への移行</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_image 3.0
+<hr>
+<h1>SDL_image 3.0への移行</h1>
+<p>
+このガイドではアプリケーションを<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL2_image-FrontPage.html">SDL_image 2.0</a>からSDL_image 3.0に移行するための有益な情報を提供する.
+</p>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/IMG_Init.html">IMG_Init()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/IMG_Quit.html">IMG_Quit()</a>は必要なくなった.
+動的にライブラリを読み込む必要がある画像形式の場合, それは自動的に行われる.
+</p>
+<p>
+<a href="https://wiki.libsdl.org/SDL2_image/IMG_GetError">IMG_GetError()</a>は<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_GetError.html">SDL_GetError()</a>に置き換えられた.
+</p>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_RWops.html">SDL_RWops</a>の引数を取る*_RW()が付けられた関数の名前は, <a href="https://maruhiro-ver0.github.io/sdl3manual-ja/SDL_IOStream.html">SDL_IOStream</a>の引数を取るため*_IO()となった.
+</p>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/IMG_Linked_Version.html">IMG_Linked_Version()</a>は<a href="https://maruhiro-ver0.github.io/sdl3manual-ja/IMG_Version.html">IMG_Version()</a>に置き換えられた.
+</p>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_image/README-migration">SDL3_image/README-migration</a>
+<hr>
+</body>
+</html>

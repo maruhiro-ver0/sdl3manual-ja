@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_OpenFont</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_OpenFont
+<hr>
+<h1>TTF_OpenFont</h1>
+既存のフォントからフォントを生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>TTF_Font * TTF_CopyFont(TTF_Font *existing_font);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Font.html">TTF_Font</a> *</td><td>existing_font</td><td>コピーするフォント</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="TTF_Font.html">TTF_Font</a> *) 利用可能なTTF_Font, エラーのときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+コピーされたフォントはコピー元とは区別されるが, 元のフォントファイルのサイズとスタイルを共通している.
+</p>
+<p>
+<a href="TTF_Font.html">TTF_Font</a>が不要になった場合, <a href="TTF_CloseFont.html">TTF_CloseFont()</a>で破棄すること.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数は元のフォントを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_CloseFont.html">TTF_CloseFont</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_OpenFont">SDL3_ttf/TTF_OpenFont</a>
+<hr>
+</body>
+</html>

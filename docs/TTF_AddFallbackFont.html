@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_AddFallbackFont</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_AddFallbackFont
+<hr>
+<h1>TTF_AddFallbackFont</h1>
+フォールバックフォントを追加する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>bool TTF_AddFallbackFont(TTF_Font *font, TTF_Font *fallback);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Font.html">TTF_Font</a> *</td><td>font</td><td>変更するフォント</td></tr>
+<tr><td><a href="TTF_Font.html">TTF_Font</a> *</td><td>fallback</td><td>フォールバックとして追加するフォント</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+追加したフォントは現在のフォントにグリフがない場合に使用される
+フォールバックフォントは現在のフォントとサイズとスタイルが同じである必要がある.
+</p>
+<p>
+複数のフォールバックフォントがある場合, 追加した順番で使用される.
+</p>
+<p>
+この関数で, このフォントを使用している全ての<a href="TTF_Text.html">TTF_Text</a>が更新される.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数は両方のフォントを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_ClearFallbackFonts.html">TTF_ClearFallbackFonts</a>
+<li><a href="TTF_RemoveFallbackFont.html">TTF_RemoveFallbackFont</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_AddFallbackFont">SDL3_ttf/TTF_AddFallbackFont</a>
+<hr>
+</body>
+</html>
