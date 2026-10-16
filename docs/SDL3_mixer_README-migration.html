@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="index.html#SDL3_image" title="1つ上">
+<title>SDL_mixer 3.0への移行</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_mixer 3.0
+<hr>
+<h1>SDL_mixer 3.0への移行</h1>
+<h2>概要</h2>
+<p>
+SDL_mixer 3.0(別名"SDL3_mixer")は以前のバージョンから大きく変わった.
+APIは完全に再設計された.
+互換レイヤは存在しない.
+このライブラリを使用したいならば, 移行しなければならない.
+</p>
+<p>
+SDL3_mixerにはSDL3が必要となる.
+このライブラリは内部と公開されたAPIの両方でSDL3の新しい機能を使用しているため, あなたのプロジェクトがSDL 1.2やSDL2を使用している場合, 同時にそのプロジェクトもSDL3に移行しなければならない.
+</p>
+<p>
+しかし, 我々はSDL3_mixerとSDL3はどちらも素晴らしいソフトウェア――以前のバージョンから飛躍的に向上した――であり, 一度移行すればその良さをを実感できるはずだ.
+</p>
+<p>
+単純な置き換えでは移行できない多くの事柄がある.
+新しいAPIは多くが, より強力でシンプルになっている.
+例えば, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetNumTracks.html">Mix_GetNumTracks()</a>と同等の関数は存在しない. 公開されたAPIでMODファイルの内部に関わることを行うのは, 汎用性が低く複雑になるためである.
+</p>
+<p>
+この移行ガイドでは重要な項目を順に説明するが, 同じ方法で行えない場合もある.
+行き詰ったら気軽にバグレポートを開いて欲しい.
+</p>
+<p>
+ドキュメントの最後の「要約」のセクションには対応するSDL2_mixer関数の名前と短い説明がある.
+</p>
+<h2>完全に削除された機能</h2>
+<ul>
+<li>MIDI実機対応は削除された(midiファイルはMIDIハードウェアではなく他の形式のように再生できる).
+この機能はSDL2_mixerで切り離し, SDL3_mixerとは別に, またはSDL_mixerを全く使わずに使用できるようにパッケージ化した: <a href="https://github.com/libsdl-org/SDL_native_midi">https://github.com/libsdl-org/SDL_native_midi</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetNumTracks.html">Mix_GetNumTracks()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_StartTrack.html">Mix_StartTrack()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_ModMusicJumpToOrder.html">Mix_ModMusicJumpToOrder()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetSoundFonts.html">Mix_SetSoundFonts()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetSoundFonts.html">Mix_GetSoundFonts()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_EachSoundFont.html">Mix_EachSoundFont()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetTimidityCfg.html">Mix_SetTimidityCfg()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetTimidityCfg.html">Mix_GetTimidityCfg()</a>: これらは削除されたが, SDL3_mixerではデコーダ固有の設定はSDLプロパティを使用する方法で行える.
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_QuickLoad_WAV.html">Mix_QuickLoad_WAV()</a>: これは提供するには危険すぎた.
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetMusicCMD.html">Mix_SetMusicCMD()</a>: これは複雑でUnixシグナルに頼っていた.
+SDL_mixerを使用せずにサウンドを再生するためにプログラムを起動する必要がある場合は, SDL3の<a href="SDL_CreateProcess.html">SDL_CreateProcess()</a>を使用するのが移植性の高い方法だが, 一部のシステムでは一時停止させることは困難である.
+これは良い代替案ではなく, そもそも使わないことを考えるべきかもしれない.
+</ul>
+<h2>SDL3_mixerのインクルード</h2>
+<p>
+正式なSDL3_mixerヘッダのインクルードの方法は:
+</p>
+<p>
+<code>#include &lt;SDL3_mixer/SDL_mixer.h&gt;</code>
+</p>
+<p>
+SDL3と同様に, 新しい方法では&lt;&gt;とサブディレクトリを使用すること.
+</p>
+<h2>シンボル名</h2>
+<p>
+SDL2_mixerでは, 全ての関数は<code>Mix</code>, マクロは<code>MIX_</code>で始まっていた.
+SDL3_mixerでは, 全て<code>MIX_</code>になった.
+</p>
+<h2>バージョン</h2>
+<p>
+バージョンは構造体ではなく1つのintにビットが詰められていて, 詰められたビットを戻すにはSDL3の通常の方法を使用する.
+</p>
+<h2>初期化</h2>
+<p>
+以前のバージョンでは<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Init.html">Mix_Init()</a>を使用するときSDL_mixerにどの形式のファイルを使用するつもりかを伝える必要があった.
+現在はその必要はない:
+</p>
+<code>
+<pre>
+if (!MIX_Init()) {
+    SDL_Log("MIX_Init 失敗: %s", SDL_GetError());
+} else {
+    SDL_Log("SDL_mixerの準備が完了した!");
+}
+</pre>
+</code>
+<p>
+<a href="MIX_Init.html">MIX_Init()</a>は参照カウントされているため, 複数回呼んでも安全であり, 実際に初期化されるのは最初の呼び出しのみである.
+同様に, <a href="MIX_Quit.html">MIX_Quit()</a>による実際の終了処理は<a href="MIX_Init.html">MIX_Init()</a>と同じ回数が呼ばれた場合のみである.
+そのため, SDL3_mixerを使用するために初期化するとき, 他の箇所でも初期化しているかを気にする必要はない.
+</p>
+<p>
+以前のバージョンでは(単一インスタンスの)ミキサーを<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_OpenAudio.html">Mix_OpenAudio()</a>でオープンしていたが, このバージョンでは<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>でオープンする.
+プログラムの異なる箇所でそれぞれオープンする場合や, 異なるオーディオデバイスを同時に使用する必要がある場合(または<a href="Mix_CreateMixer.html">Mix_CreateMixer()</a>でデバイスではなくバッファにオーディオを書き込む場合)のため, ミキサーは複数オープンできるようになった.
+</p>
+<p>
+<a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice()</a>は<a href="SDL_AudioSpec.html">SDL_AudioSpec</a>をヒントとして受け付けるようになったが, 与えられたあらゆる形式にオーディオデバイスを設定できる保証はない.
+このヒントは多くの入力が特定の形式であることを示しているだけで, デバイスがその形式を扱うことができれば, 変換の負荷を下げられる可能性がある.
+しかし, SDL3_mixerは最終的にどのようになる場合でもあらゆる入力と出力の形式を扱えるように備えている.
+</p>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_QuerySpec.html">Mix_QuerySpec()</a>は<a href="MIX_GetMixerFormat.html">MIX_GetMixerFormat()</a>に置き換えられた.
+</p>
+<h2>ロック</h2>
+<p>
+SDL2_mixerは明示的な同期が必要な場合はユーザがSDLオーディオデバイスを直接ロックすることを求めていた.
+SDL3にはSDL2の<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_LockAudioDevice.html">SDL_LockAudioDevice()</a>に直接対応する関数はなく, SDL3_mixerではオーディオデバイスを全く操作しない場合があるため, <a href="MIX_LockMixer.html">MIX_LockMixer()</a>と<a href="MIX_UnlockMixer.html">MIX_UnlockMixer()</a>API呼び出しが利用できるようになった.
+</p>
+<h2>音楽とチャンク</h2>
+<p>
+SDL2_mixerは「チャンク」(「チャネル」で再生するためのメモリ上の無圧縮オーディオ)と「音楽」(恐らく圧縮されたストリームオーディオ)を区別され,
+1つの音楽の入力と複数のチャンクのミックスが可能だった.
+</p>
+<p>
+SDL3では, オーディオの種類に区別はなくなり, 全ての入力はあらゆる形式で圧縮または無圧縮, メモリ上またはストリームが可能になった.
+必要ならばいくらでもあらゆる種類を一度にミックスできるようになった.
+</p>
+<p>
+あらかじめ読み込まれた(あらかじめデコードされているとは限らない)オーディオは<a href="MIX_Audio.html">MIX_Audio</a>オブジェクトとして管理する.
+これらのオーディオファイルはRAMに事前にキャッシュされ, 事前に, あるいはミキシングの最中に展開される.
+</p>
+<p>
+SDL2_mixerでは, データをチャンクとして読み込む場合は<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_LoadWAV.html">Mix_LoadWAV()</a>, 音楽として読み込む場合は<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_LoadMUS.html">Mix_LoadMUS()</a>, またはこれらの派生関数を使用した.
+SDL3_mixerでは, <a href="MIX_LoadAudio.html">MIX_LoadAudio()</a>や<a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO()</a>, あるいは一般的でない要求がある場合は<a href="MIX_LoadAudioWithProperties.html">MIX_LoadAudioWithProperties()</a>を使用する.
+</p>
+<p>
+SDL2_mixerの特別な場合の関数<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_QuickLoad_RAW.html">Mix_QuickLoad_RAW()</a>は, <a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy()</a>に置き換えられた.
+これはわずかに汎用的(データがハードウェアと同じ形式である必要がなくなった)になったが, この関数でも追加のメモリ確保やコピーが行われずに全てのデータがミキシングパイプラインを通過する.
+</p>
+<p>
+SDL2_mixerの多くの関数は, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FreeChunk.html">Mix_FreeChunk()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FreeMusic.html">Mix_FreeMusic()</a>のように, チャンク用と音楽用の2種類が用意されていた.
+SDL3_mixerではその区別がなくなった.
+</p>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetNumChunkDecoders.html">Mix_GetNumChunkDecoders()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetChunkDecoder.html">Mix_GetChunkDecoder()</a>(さらに音楽の同機能の関数)は, <a href="MIX_GetNumAudioDecoders.html">MIX_GetNumAudioDecoders()</a>と<a href="MIX_GetAudioDecoder.html">MIX_GetAudioDecoder()</a>に置き換えられた.
+戻される文字列は同じデコードバックエンドでもSDL2_mixerとは異なる場合がある.
+</p>
+<h2>チャネル</h2>
+<p>
+SDL2_mixerの「チャネル」には, それぞれに1つのチャンクがあり, これが再生でミックスされた.
+チャネルはインデックス番号で参照され, 使用する予定のチャネルの数は(デフォルトの8でない場合は)<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_AllocateChannels.html">Mix_AllocateChannels()</a>であらかじめ確保する必要があった.
+</p>
+<p>
+SDL3_mixerでは「トラック」になり, それぞれに1つの入力(読み込まれたオーディオファイル, 動的に生成される音声の<a href="SDL_AudioStream.html">SDL_AudioStream</a>, ファイルを必要なとき読み込むストリームの<a href="SDL_IOStream.html">SDL_IOStream</a>など)がある.
+これらは1つずつ割り当てられ, <a href="MIX_CreateTrack.html">MIX_CreateTrack()</a>が戻したポインタから参照される.
+SDL2_mixerのチャネルと合わせるためにトラックをインデックス化したい場合は, 単にループ内で<a href="MIX_CreateTrack.html">MIX_CreateTrack()</a>を呼び, ポインタを配列に格納し, その配列のインデックス番号を使用すればよい.
+デフォルトで生成されるトラックはないため, SDL2_mixerのデフォルトと合わせるためには, 開始時に8つ生成すること.
+</p>
+<h2>メタデータ</h2>
+<p>
+オーディオファイルのメタデータを戻す<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicTitle.html">Mix_GetMusicTitle()</a>のような関数は削除された.
+その代わりに, 全てのオーディオファイルに<a href="CategoryProperties.html">SDLプロパティ</a>を持たせている.
+</p>
+<p>
+これらのプロパティには, 低レベルタグ情報と, よく知られたメタデータタイプのための標準プロパティの両方がある.
+例えば, ID3v2タグのあるMP3の場合, "SDL_mixer.metadata.id3v2.TIT2"プロパティと, 標準の"SDL_mixer.metadata.title"プロパティ(これには標準のシンボル<a href="MIX_GetAudioProperties.html">MIX_PROP_METADATA_TITLE_STRING</a>がある)は結果的には同じものになる.
+これによりSDL3_mixerは非標準の情報にアクセスでき, 同時に一般的かつ最も重要なメタデータを簡単に得ることができる.
+</p>
+<p>
+オーディオファイルを読み込んだ後に<a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties()</a>でメタデータを得ることができる(そして, アプリケーション固有のデータを保存する便利な場所にもなる).
+</p>
+<h2>フック</h2>
+<p>
+SDL3_mixerはミキシングパイプラインのそれぞれの段階でのコールバックを提供している.
+これでSDL2_mixerの<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetPostMix.html">Mix_SetPostMix()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HookMusic.html">Mix_HookMusic()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HookMusicFinished.html">Mix_HookMusicFinished()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_ChannelFinished.html">Mix_ChannelFinished()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_RegisterEffect.html">Mix_RegisterEffect()</a>を再現できる.
+</p>
+<p>
+SDL3_mixerでは, コールバックには全てのfloat32形式のオーディオデータが提供されるため, 異なる形式のために異なるルーチンを用意する必要がないことに注意すること.
+</p>
+<h2>エフェクト</h2>
+<p>
+SDL2_mixerにはいくつかの「エフェクト」が内部のコードに組み込まれており, チャンクをミックスの前に編集するために<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_RegisterEffect.html">Mix_RegisterEffect()</a>インターフェースを使用した.
+</p>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetPanning.html">Mix_SetPanning()</a>は<a href="MIX_SetTrackStereo.html">MIX_SetTrackStereo()</a>に置き換えられるが, サラウンドの場合は強制的に前左と前右スピーカーで再生するトラックに変換される.
+もし実際にトラックを左右に動かしたいならば, サラウンドのレイアウトを考慮し, <a href="MIX_SetTrack3DPosition.html">MIX_SetTrack3DPosition()</a>を使用してX座標を動かすこと.
+</p>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetPosition.html">Mix_SetPosition()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetDistance.html">Mix_SetDistance()</a>も<a href="MIX_SetTrack3DPosition.html">MIX_SetTrack3DPosition()</a>を使用するとよりよいが, 角度と距離を3次元座標に変換する必要がある.
+これは次の数式で行える(未テスト):
+</p>
+<p>
+<code>
+<pre>
+const float radians = angle * (SDL_PI_F / 180.0f);  // 弧度法をラジアンに変換する
+const float fdistance = ((float) distance);
+const float x = SDL_cosf(radians) * fdistance;  // 左から右
+const float y = 0.0f;   // 聞き手に対して垂直方向の中央のまま
+const float z = SDL_sinf(radians) * fdistance;  // 前から後ろ
+</pre>
+</code>
+</p>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetReverseStereo.html">Mix_SetReverseStereo()</a>は<a href="MIX_SetTrackOutputChannelMap.html">MIX_SetTrackOutputChannelMap()</a>に置き換えられる:
+</p>
+<p>
+<code>
+<pre>
+const int chmap = { 1, 0 };  // 左は右になり, 右は左になる
+MIX_SetTrackOutputChannelMap(track, chmap, 2);
+</pre>
+</code>
+</p>
+<h2>チャネルグループ</h2>
+<p>
+SDL2_mixerでは, intの値でチャネルを「タグ」付けして, その後でタグと一致する全てのチャネルを参照することができた.
+</p>
+<p>
+SDL3_mixerでは, 同様にトラックにタグ付けできるが, タグは"ui"や"ambient"のような任意の文字列となった.
+トラックには複数のタグをつけることができる.
+</p>
+<p>
+トラックへのタグ付けは<a href="MIX_TagTrack.html">MIX_TagTrack()</a>で行い, タグ付けの解除は<a href="MIX_UntagTrack.html">MIX_UntagTrack()</a>で行う.
+</p>
+<h2>再生</h2>
+<p>
+SDL2_mixerにはチャネルの再生を開始する複数の関数があった(<code>Mix_Play*</code>, <code>Mix_FadeIn*</code>など).
+これらは全て<a href="MIX_PlayTrack.html">MIX_PlayTrack()</a>にまとめられた.
+<a href="MIX_PlayTrack.html">MIX_PlayTrack()</a>はオプションとして<a href="SDL_PropertiesID.html">SDL_PropertiesID</a>を取る(デフォルトでは対応できない場合).
+再生前に, トラックには事前に読み込まれたオーディオを再生する<a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio()</a>, またはファイルを読み込みながら再生する<a href="MIX_SetTrackIOStream.html">MIX_SetTrackIOStream()</a>, または事前にバッファに書き込んだ, あるいは生成しながら生成したオーディオを再生する<a href="MIX_SetTrackAudioStream.html">MIX_SetTrackAudioStream()</a>で入力が割り当てられている必要がある.
+</p>
+<h2>ボリューム</h2>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_VolumeChunk.html">Mix_VolumeChunk()</a>と<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_VolumeMusic.html">Mix_VolumeMusic()</a>は<a href="MIX_SetTrackGain.html">MIX_SetTrackGain()</a>に置き換えられた.
+intの0から128に代わりfloatを取るようになり, 既存のデータの音を小さくするだけでなく, より大きくするために使えるようになった.
+</p>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_MasterVolume.html">Mix_MasterVolume()</a>は<a href="MIX_SetMixerGain.html">MIX_SetMixerGain()</a>に置き換えられた.
+考え方は同じである.
+</p>
+<h2>停止</h2>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HaltChannel.html">Mix_HaltChannel()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/old/Mix_HaltMusic.html">MIX_HaltMusic()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadeOutChannel.html">Mix_FadeOutChannel()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/old/Mix_FadeOutMusic.html">Mix_FadeOutMusic()</a>は<a href="MIX_StopTrack.html">MIX_StopTrack()</a>に置き換えられた.
+注意: SDL3_mixerでは, フェードアウトはミリ秒ではなくトラックの入力のサンプルフレーム数で動作する.
+<a href="MIX_TrackMSToFrames.html">MIX_TrackMSToFrames()</a>でミリ秒をサンプルフレーム数に変換できる.
+しかし, 複数のトラックを一度に停止させる<a href="MIX_StopAllTracks.html">MIX_StopAllTracks()</a>や<a href="MIX_StopTag.html">MIX_StopTag()</a>はフェードアウトをミリ秒で指定する. 全てのトラックが同じサンプルレートとは限らないためである.
+</p>
+<h2>一時停止</h2>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Pause.html">Mix_Pause()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_PauseMusic.html">Mix_PauseMusic()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Resume.html">Mix_Resume()</a>, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_ResumeMusic.html">Mix_ResumeMusic()</a>は<a href="MIX_ResumeTrack.html">MIX_ResumeTrack()</a>に置き換えられた.
+</p>
+<h2>音楽の状態</h2>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_MusicDuration.html">Mix_MusicDuration()</a>は<a href="MIX_GetAudioDuration.html">MIX_GetAudioDuration()</a>に, <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicPosition.html">Mix_GetMusicPosition()</a>は<a href="MIX_GetTrackPlaybackPosition.html">MIX_GetTrackPlaybackPosition()</a>に置き換えられた. 
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetMusicPosition.html">Mix_SetMusicPosition()</a>は<a href="MIX_SetTrackPlaybackPosition.html">MIX_SetTrackPlaybackPosition()</a>になった.
+</p>
+<h2>終了</h2>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_CloseAudio.html">Mix_CloseAudio()</a>は<a href="MIX_DestroyMixer.html">MIX_DestroyMixer()</a>になった.
+ミキサーを破棄すると, それに属する(トラックなど)全てが破棄されるが, <a href="MIX_Audio.html">MIX_Audio</a>はミキサー間で共有できるため破棄されない.
+<a href="MIX_Quit.html">MIX_Quit()</a>は便利のためミキサーと<a href="MIX_Audio.html">MIX_Audio</a>オブジェクトを含むSDL3_mixerが生成したものを全て破棄する.
+</p>
+<h2>要約</h2>
+<p>
+SDL2_mixerとの対応と短いコメント
+</p>
+<p>
+「SDL3_mixerには対応するものはない」ものがあるが, 要望があれば追加される可能性がある.
+もし行き詰ったならば, イシューに投稿してもらえれば議論できる.
+</p>
+<ul>
+<li>MIX_MAJOR_VERSION → <a href="SDL_MIXER_MAJOR_VERSION.html">SDL_MIXER_MAJOR_VERSION</a>
+<li>MIX_MINOR_VERSION → <a href="SDL_MIXER_MAJOR_VERSION.html">SDL_MIXER_MAJOR_VERSION</a>
+<li>MIX_PATCHLEVEL → <a href="SDL_MIXER_MICRO_VERSION.html">SDL_MIXER_MICRO_VERSION</a>
+<li>MIX_VERSION → <a href="SDL_MIXER_VERSION.html">SDL_MIXER_VERSION</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Linked_Version.html">Mix_Linked_Version</a> → MIX_Version
+<li>Mix_Version → <a href="MIX_Version.html">MIX_Version</a>
+<li>SDL_MIXER_COMPILEDVERSION → <a href="SDL_MIXER_VERSION.html">SDL_MIXER_VERSION</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/MIX_InitFlags.html">MIX_InitFlags</a> → SDL3_mixerでは必要ない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Init.html">Mix_Init</a> → <a href="MIX_Init.html">MIX_Init</a> (<code>initflags</code>は不要)
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Quit.html">Mix_Quit</a> → <a href="MIX_Quit.html">MIX_Quit</a>
+<li>MIX_CHANNELS → SDL3_mixerでは必要ない
+<li>MIX_DEFAULT_FREQUENCY → 44100
+<li>MIX_DEFAULT_FORMAT → <a href="SDL_AudioFormat.html">SDL_AUDIO_S16</a>
+<li>MIX_DEFAULT_CHANNELS → 2
+<li>MIX_MAX_VOLUME → 1.0f
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Chunk.html">Mix_Chunk</a> → <a href="MIX_Audio.html">MIX_Audio</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Fading.html">Mix_Fading</a> → SDL3_mixerでは必要ない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_MusicType.html">Mix_MusicType</a> → <a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties()</a>のMIX_PROP_AUDIO_DECODER_STRINGプロパティ
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Music.html">Mix_Music</a> → <a href="MIX_Audio.html">MIX_Audio</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_OpenAudio.html">Mix_OpenAudio</a> → <a href="MIX_CreateMixerDevice.html">MIX_CreateMixerDevice</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_PauseAudio.html">Mix_PauseAudio</a> → <a href="MIX_PauseAllTracks.html">MIX_PauseAllTracks</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_QuerySpec.html">Mix_QuerySpec</a> → <a href="MIX_GetMixerFormat.html">MIX_GetMixerFormat</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_AllocateChannels.html">Mix_AllocateChannels</a> → <a href="MIX_CreateTrack.html">MIX_CreateTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_LoadWAV_RW.html">Mix_LoadWAV_RW</a> → <a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_LoadWAV.html">Mix_LoadWAV</a> → <a href="MIX_LoadAudio.html">MIX_LoadAudio</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_LoadMUS_IO.html">Mix_LoadMUS_IO</a> → <a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_LoadMUS.html">Mix_LoadMUS</a> → <a href="MIX_LoadAudio.html">MIX_LoadAudio</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_LoadMUSType_IO.html">Mix_LoadMUSType_IO</a> → <a href="MIX_LoadAudioWithProperties.html">MIX_LoadAudioWithProperties</a>でMIX_PROP_AUDIO_DECODER_STRINGを設定する
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_QuickLoad_WAV.html">Mix_QuickLoad_WAV</a> → <a href="MIX_LoadAudio_IO.html">MIX_LoadAudio_IO</a>に<a href="SDL_IOFromConstMem.html">SDL_IOFromConstMem()</a>の結果を渡し<code>closeio</code>を真にする
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_QuickLoad_RAW.html">Mix_QuickLoad_RAW</a> → <a href="MIX_LoadRawAudioNoCopy.html">MIX_LoadRawAudioNoCopy</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FreeChunk.html">Mix_FreeChunk</a> → <a href="MIX_DestroyAudio.html">MIX_DestroyAudio</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FreeMusic.html">Mix_FreeMusic</a> → <a href="MIX_DestroyAudio.html">MIX_DestroyAudio</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetNumChunkDecoders.html">Mix_GetNumChunkDecoders</a> → <a href="MIX_GetNumAudioDecoders.html">MIX_GetNumAudioDecoders</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetChunkDecoder.html">Mix_GetChunkDecoder</a> → <a href="MIX_GetAudioDecoder.html">MIX_GetAudioDecoder</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HasChunkDecoder.html">Mix_HasChunkDecoder</a> → 最大回数<a href="MIX_GetNumAudioDecoders.html">MIX_GetNumAudioDecoders</a>で<a href="MIX_GetAudioDecoder.html">MIX_GetAudioDecoder</a>を呼ぶ
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetNumMusicDecoders.html">Mix_GetNumMusicDecoders</a> → <a href="MIX_GetNumAudioDecoders.html">MIX_GetNumAudioDecoders</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicDecoder.html">Mix_GetMusicDecoder</a> → <a href="MIX_GetAudioDecoder.html">MIX_GetAudioDecoder</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HasMusicDecoder.html">Mix_HasMusicDecoder</a> → 最大回数<a href="MIX_GetNumAudioDecoders.html">MIX_GetNumAudioDecoders</a>で<a href="MIX_GetAudioDecoder.html">MIX_GetAudioDecoder</a>を呼ぶ
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_MusicType.html">Mix_MusicType</a> → <a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties()</a>でMIX_PROP_AUDIO_DECODER_STRINGプロパティを得る
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicTitle.html">Mix_GetMusicTitle</a> → <a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties()</a>でMIX_PROP_METADATA_TITLE_STRINGプロパティを得る
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicTitleTag.html">Mix_GetMusicTitleTag</a> → <a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties()</a>でMIX_PROP_METADATA_TITLE_STRINGプロパティを得る
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicArtistTag.html">Mix_GetMusicArtistTag</a> → <a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties()</a>でMIX_PROP_METADATA_ARTIST_STRINGプロパティを得る
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicAlbumTag.html">Mix_GetMusicAlbumTag</a> → <a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties()</a>でMIX_PROP_METADATA_ALBUM_STRINGプロパティを得る
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicCopyrightTag.html">Mix_GetMusicCopyrightTag</a> → <a href="MIX_GetAudioProperties.html">MIX_GetAudioProperties()</a>でMIX_PROP_METADATA_COPYRIGHT_STRINGプロパティを得る
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetPostMix.html">Mix_SetPostMix</a> → <a href="MIX_SetPostMixCallback.html">MIX_SetPostMixCallback</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HookMusic.html">Mix_HookMusic</a> → <a href="MIX_SetTrackAudioStream.html">MIX_SetTrackAudioStream</a>を使用し, ストリームにget-callbackを設定し, トラックの再生を開始する
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HookMusicFinished.html">Mix_HookMusicFinished</a> → <a href="MIX_SetTrackStoppedCallback.html">MIX_SetTrackStoppedCallback</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicHookData.html">Mix_GetMusicHookData</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_ChannelFinished.html">Mix_ChannelFinished</a> → <a href="MIX_SetTrackStoppedCallback.html">MIX_SetTrackStoppedCallback</a>
+<li>MIX_CHANNEL_POST → <a href="MIX_SetPostMixCallback.html">MIX_SetPostMixCallback</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_RegisterEffect.html">Mix_RegisterEffect</a> → <a href="MIX_SetTrackCookedCallback.html">MIX_SetTrackCookedCallback</a>と必要ならば追加で<a href="MIX_SetTrackStoppedCallback.html">MIX_SetTrackStoppedCallback</a>を使用する
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_UnregisterEffect.html">Mix_UnregisterEffect</a> → <a href="MIX_SetTrackCookedCallback.html">MIX_SetTrackCookedCallback</a>と必要ならば追加で<a href="MIX_SetTrackStoppedCallback.html">MIX_SetTrackStoppedCallback</a>を使用する
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_UnregisterAllEffects.html">Mix_UnregisterAllEffects</a> → <a href="MIX_SetTrackCookedCallback.html">MIX_SetTrackCookedCallback</a>と必要ならば追加で<a href="MIX_SetTrackStoppedCallback.html">MIX_SetTrackStoppedCallback</a>を使用する
+<li>MIX_EFFECTSMAXSPEED → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetPanning.html">Mix_SetPanning</a> → <a href="MIX_SetTrackStereo.html">MIX_SetTrackStereo</a>または<a href="MIX_SetTrack3DPosition.html">MIX_SetTrack3DPosition</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetPosition.html">Mix_SetPosition</a> → <a href="MIX_SetTrack3DPosition.html">MIX_SetTrack3DPosition</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetDistance.html">Mix_SetDistance</a> → <a href="MIX_SetTrack3DPosition.html">MIX_SetTrack3DPosition</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetReverseStereo.html">Mix_SetReverseStereo</a> → <a href="MIX_SetTrackOutputChannelMap.html">MIX_SetTrackOutputChannelMap</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_ReserveChannels.html">Mix_ReserveChannels</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GroupChannel.html">Mix_GroupChannel</a> → <a href="MIX_TagTrack.html">MIX_TagTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GroupChannels.html">Mix_GroupChannels</a> → <a href="MIX_TagTrack.html">MIX_TagTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GroupAvailable.html">Mix_GroupAvailable</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GroupCount.html">Mix_GroupCount</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GroupOldest.html">Mix_GroupOldest</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GroupNewer.html">Mix_GroupNewer</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_PlayChannel.html">Mix_PlayChannel</a> → <a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>の後で<a href="MIX_PlayTrack.html">MIX_PlayTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_PlayChannelTimed.html">Mix_PlayChannelTimed</a> → <a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>の後で<a href="MIX_PlayTrack.html">MIX_PlayTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_PlayMusic.html">Mix_PlayMusic</a> → <a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>の後で<a href="MIX_PlayTrack.html">MIX_PlayTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadeInMusic.html">Mix_FadeInMusic</a> → <a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>の後で<a href="MIX_PlayTrack.html">MIX_PlayTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadeInMusicPos.html">Mix_FadeInMusicPos</a> → <a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>の後で<a href="MIX_PlayTrack.html">MIX_PlayTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadeInChannel.html">Mix_FadeInChannel</a> → <a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>の後で<a href="MIX_PlayTrack.html">MIX_PlayTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadeInChannelTimed.html">Mix_FadeInChannelTimed</a> → <a href="MIX_SetTrackAudio.html">MIX_SetTrackAudio</a>の後で<a href="MIX_PlayTrack.html">MIX_PlayTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Volume.html">Mix_Volume</a> → <a href="MIX_SetTrackGain.html">MIX_SetTrackGain</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_VolumeChunk.html">Mix_VolumeChunk</a> → <a href="MIX_SetTrackGain.html">MIX_SetTrackGain</a>. ゲインは<a href="MIX_Track.html">MIX_Track</a>だけではなく<a href="MIX_Audio.html">MIX_Audio</a>に設定される
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_VolumeMusic.html">Mix_VolumeMusic</a> → <a href="MIX_SetTrackGain.html">MIX_SetTrackGain</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicVolume.html">Mix_GetMusicVolume</a> → <a href="MIX_GetTrackGain.html">MIX_GetTrackGain</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_MasterVolume.html">Mix_MasterVolume</a> → <a href="MIX_SetMixerGain.html">MIX_SetMixerGain</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HaltChannel.html">Mix_HaltChannel</a> → <a href="MIX_StopTrack.html">MIX_StopTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HaltGroup.html">Mix_HaltGroup</a> → <a href="MIX_StopTag.html">MIX_StopTag</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_HaltMusic.html">Mix_HaltMusic</a> → <a href="MIX_StopTrack.html">MIX_StopTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_ExpireChannel.html">Mix_ExpireChannel</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadeOutChannel.html">Mix_FadeOutChannel</a> → <a href="MIX_StopTrack.html">MIX_StopTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadeOutGroup.html">Mix_FadeOutGroup</a> → <a href="MIX_StopTag.html">MIX_StopTag</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadeOutMusic.html">Mix_FadeOutMusic</a> → <a href="MIX_StopTrack.html">MIX_StopTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadingMusic.html">Mix_FadingMusic</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_FadingChannel.html">Mix_FadingChannel</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Pause.html">Mix_Pause</a> → <a href="MIX_PauseTrack.html">MIX_PauseTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Resume.html">Mix_Resume</a> → <a href="MIX_ResumeTrack.html">MIX_ResumeTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Paused.html">Mix_Paused</a> → <a href="MIX_TrackPaused.html">MIX_TrackPaused</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_PauseMusic.html">Mix_PauseMusic</a> → <a href="MIX_PauseTrack.html">MIX_PauseTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_ResumeMusic.html">Mix_ResumeMusic</a> → <a href="MIX_ResumeTrack.html">MIX_ResumeTrack</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_RewindMusic.html">Mix_RewindMusic</a> → <a href="MIX_SetTrackPlaybackPosition.html">MIX_SetTrackPlaybackPosition(track, 0)</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_PausedMusic.html">Mix_PausedMusic</a> → <a href="MIX_TrackPaused.html">MIX_TrackPaused</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_ModMusicJumpToOrder.html">Mix_ModMusicJumpToOrder</a> → <a href="MIX_PlayTrack.html">MIX_PlayTrack</a>でMIX_PROP_PLAY_START_ORDER_NUMBERプロパティを設定する
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_StartTrack.html">Mix_StartTrack</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetNumTracks.html">Mix_GetNumTracks</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetMusicPosition.html">Mix_SetMusicPosition</a> → <a href="MIX_SetTrackPlaybackPosition.html">MIX_SetTrackPlaybackPosition</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicPosition.html">Mix_GetMusicPosition</a> → <a href="MIX_GetTrackPlaybackPosition.html">MIX_GetTrackPlaybackPosition</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_MusicDuration.html">Mix_MusicDuration</a> → <a href="MIX_GetAudioDuration.html">MIX_GetAudioDuration</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicLoopStartTime.html">Mix_GetMusicLoopStartTime</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicLoopEndTime.html">Mix_GetMusicLoopEndTime</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetMusicLoopLengthTime.html">Mix_GetMusicLoopLengthTime</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_Playing.html">Mix_Playing</a> → <a href="MIX_TrackPlaying.html">MIX_TrackPlaying</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_PlayingMusic.html">Mix_PlayingMusic</a> → <a href="MIX_TrackPlaying.html">MIX_TrackPlaying</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetSoundFonts.html">Mix_SetSoundFonts</a> → <a href="MIX_LoadAudioWithProperties.html">MIX_LoadAudioWithProperties</a>で"SDL_mixer.decoder.fluidsynth.soundfont_iostream"または"SDL_mixer.decoder.fluidsynth.soundfont_path"を設定する
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetSoundFonts.html">Mix_GetSoundFonts</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_EachSoundFont.html">Mix_EachSoundFont</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetTimidityCfg.html">Mix_SetTimidityCfg</a> → 現在はSDL_setenv("TIMIDITY_CFG") 要修正
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetTimidityCfg.html">Mix_GetTimidityCfg</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetChunk.html">Mix_GetChunk</a> → <a href="MIX_GetTrackAudio.html">MIX_GetTrackAudio</a>または<a href="MIX_GetTrackAudioStream.html">MIX_GetTrackAudioStream</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_CloseAudio.html">Mix_CloseAudio</a> → <a href="MIX_DestroyMixer.html">MIX_DestroyMixer</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetError.html">Mix_GetError</a> → <a href="SDL_GetError.html">SDL_GetError</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetError.html">Mix_SetError</a> → <a href="SDL_SetError.html">SDL_SetError</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetMusicCMD.html">Mix_SetMusicCMD</a> → SDL3_mixerには対応するものはないが, <a href="SDL_CreateProcess.html">SDL_CreateProcess</a>で外部のプログラムを起動できる
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_GetSynchroValue.html">Mix_GetSynchroValue</a> → SDL3_mixerには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/Mix_SetSynchroValue.html">Mix_SetSynchroValue</a> → SDL3_mixerには対応するものはない
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+</p>
+<a href="https://wiki.libsdl.org/SDL3_mixer/README-migration">SDL3_mixer/README-migration</a>
+<hr>
+</body>
+</html>
