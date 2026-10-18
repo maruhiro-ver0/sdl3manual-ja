@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_TextEngine</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_TextEngine
+<hr>
+<h1>TTF_TextEngine</h1>
+テキストオブジェクトの生成で使用するテキストエンジン
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>typedef struct TTF_TextEngine TTF_TextEngine;</code>
+<h2>詳細</h2>
+<p>
+これはアプリケーションとライブラリがテキストオブジェクトのレンダリングでカスタマイズを適用するために使用するパブリックなインターフェースである.
+詳細は&lt;<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_textengine.h">SDL3_ttf/SDL_textengine.h</a>&gt;を参照すること.
+</p>
+<p>
+ライブラリは4種類のテキストエンジンを提供する:
+</p>
+<ul>
+<li><a href="SDL_Surface.html">SDL_Surface</a>への描画. <a href="TTF_CreateSurfaceTextEngine.html">TTF_CreateSurfaceTextEngine()</a>で生成する
+<li><a href="CategoryRender.html">SDL 2Dレンダラ</a>で描画する. <a href="TTF_CreateRendererTextEngine.html">TTF_CreateRendererTextEngine()</a>で生成する
+<li><a href="CategoryGPU.html">SDL GPU API</a>で描画する. <a href="TTF_CreateGPUTextEngine.html">TTF_CreateGPUTextEngine()</a>で生成する
+<li>OpenGLで描画する. <a href="TTF_CreateGLTextEngine.html">TTF_CreateGLTextEngine()</a>で生成する
+</ul>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_TextEngine">SDL3_ttf/TTF_TextEngine</a>
+<hr>
+</body>
+</html>

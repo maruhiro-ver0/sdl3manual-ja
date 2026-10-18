@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_Text</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_Text
+<hr>
+<h1>TTF_Text</h1>
+<a href="TTF_CreateText.html">TTF_CreateText()</a>で生成されたテキストの構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<table border="1">
+<tr><td>char *</td><td>text</td><td>このテキストオブジェクトが表すUTF-8文字列のコピー. レイアウト, デバッグ, テキストの取り出しに役立つ. テキストオブジェクトが更新されると更新され, オブジェクトが破棄されると自動的に解放される</td></tr>
+<tr><td>int</td><td>num_lines</td><td>テキストの行数. 空のとき0</td></tr>
+<tr><td>int</td><td>refcount</td><td>アプリケーションの参照カウンタ. サーフェイスを解放するとき使用される</td></tr>
+<tr><td><a href="TTF_TextData.html">TTF_TextData</a> *</td><td>internal</td><td>内部で使用</td></tr>
+</table>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_CreateText.html">TTF_CreateText</a>
+<li><a href="TTF_GetTextProperties.html">TTF_GetTextProperties</a>
+<li><a href="TTF_DestroyText.html">TTF_DestroyText</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_Text">SDL3_ttf/TTF_Text</a>
+<hr>
+</body>
+</html>
