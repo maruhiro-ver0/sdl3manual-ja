@@ -106,14 +106,14 @@ SDL3_netではIPaddress構造体が不透明な<a href="NET_Address.html">NET_Ad
 </p>
 <p>
 さらにSDL3_netは「デュアルスタック」プロトコルに対応している.
-NULLアドレスにバインドされたサーバまたはデータダイアグラムソケットを生成すると, 背後ではIPv4とIPv6のOSレベルのソケットを生成して両方でlistenするように試みる.
+NULLアドレスにバインドされたサーバまたはデータデータグラムソケットを生成すると, 背後ではIPv4とIPv6のOSレベルのソケットを生成して両方でlistenするように試みる.
 これは単なるIPv4とIPv6のブリッジではない.
 両方のプロトコルのトラフィックを同時に受信することが可能で, 例えば157.90.7.176と2a01:4f8:251:5583::2のようなクライアントのアドレスから同時に来る場合でも, あなたのサーバは簡単にこれらをブリッジできる.
 </p>
 <h2>ブロッキングと非ブロッキング</h2>
 <p>
 SDL2_netは(ほとんどが)ブロッキングAPIで, ネットワークの処理に時間がかかる場合, 待つ必要があった.
-カーネルの転送バッファにダイアグラムを渡すような短い待ち時間の場合もあるが, ネットワークの状態によっては長い時間がかかった.
+カーネルの転送バッファにデータグラムを渡すような短い待ち時間の場合もあるが, ネットワークの状態によっては長い時間がかかった.
 ブロックしないためには, データを受信したかを問い合わせる「ソケットセット」に対する<a href="https://linuxjm.sourceforge.io/html/LDP_man-pages/man2/select.2.html">select()</a>呼び出しのラッパーが提供されていた.
 DNSルックアップには獲得と同じ時間が必要だった.
 </p>
@@ -186,7 +186,7 @@ SDL3_netでは, 2つのオブジェクト<a href="NET_Server.html">NET_Server</a
 <p>
 <a href="NET_Server.html">NET_Server</a>のアドレスにNULLを指定して生成すると, 内部ではIPv4とIPv6ネットワークの別々のlistenが行われる場合がある.
 </p>
-<h2>ダイアグラムソケット</h2>
+<h2>データグラムソケット</h2>
 <p>
 <a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_Open.html">SDLNet_UDP_Open()</a>はポートは指定するがINADDR_ANYに対してのみバインドした.
 SDL3_netでは, <a href="NET_CreateDatagramSocket.html">NET_CreateDatagramSocket()</a>は指定のインターフェースに, またはアドレスにNULLを指定してINADDR_ANYと同等(しかしIPv4とIPv6インターフェースの両方でlistenできる)のバインドを行える.
@@ -196,7 +196,7 @@ SDL3_netでは, <a href="NET_CreateDatagramSocket.html">NET_CreateDatagramSocket
 SDL2_netでは, UDPパケットをサブネットのブロードキャストアドレス(指定できれば), または255.255.255.255(これはWindowsでは使用できない)に送信できた.
 </p>
 <p>
-SDL3_netでは, ダイアグラムソケットをNET_PROP_DATAGRAM_SOCKET_ALLOW_BROADCAST_BOOLEANプロパティを指定して生成し, アドレスをNULLとして<a href="NET_SendDatagram.html">NET_SendDatagram()</a>を呼ぶと行える.
+SDL3_netでは, データグラムソケットをNET_PROP_DATAGRAM_SOCKET_ALLOW_BROADCAST_BOOLEANプロパティを指定して生成し, アドレスをNULLとして<a href="NET_SendDatagram.html">NET_SendDatagram()</a>を呼ぶと行える.
 </p>
 <p>
 これは異なるプロトコルでのブロードキャストを抽象化する(IPv6を含む. SDL3_netは背後で疑似的なブロードキャストを行う).
