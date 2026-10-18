@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_image">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="index.html#SDL3_image" title="1つ上">
+<title>SDL_net 3.0への移行</title>
+</head>
+<body>
+<a href="index.html#SDL3_image">目次</a> - SDL_net 3.0
+<hr>
+<h1>SDL_net 3.0への移行</h1>
+<h2>概要</h2>
+<p>
+SDL_net 3.0(別名"SDL3_net")は以前のバージョンから大きく変わった.
+APIは完全に再設計された.
+互換レイヤは存在しない.
+このライブラリを使用したいならば, 移行しなければならない.
+</p>
+<p>
+SDL3_netにはSDL3が必要となる.
+このライブラリは内部と公開されたAPIの両方でSDL3の新しい機能を使用しているため, あなたのプロジェクトがSDL 1.2やSDL2を使用している場合, 同時にそのプロジェクトもSDL3に移行しなければならない.
+</p>
+<p>
+しかし, 我々はSDL3_netとSDL3はどちらも素晴らしいソフトウェア――以前のバージョンから飛躍的に向上した――であり, 一度移行すればその良さをを実感できるはずだ.
+</p>
+<p>
+単純な置き換えでは移行できない多くの事柄がある.
+新しいAPIは多くが, より強力でシンプルになっている.
+</p>
+<p>
+この移行ガイドでは重要な項目を順に説明するが, 同じ方法で行えない場合もある.
+行き詰ったら気軽にバグレポートを開いて欲しい.
+</p>
+<p>
+ドキュメントの最後の「要約」のセクションには対応するSDL2_net関数の名前と短い説明がある.
+</p>
+<h2>完全に削除された機能</h2>
+<ul>
+<li>SDLなしでSDL_netのビルドする(SDL2_netでは<code>WITHOUT_SDL</code>を定義する)選択肢はなくなった.
+SDL3はSDL_netパブリックヘッダのインクルードとライブラリの実装コードの両方で必要である.
+<li>ネットワークアドレスはパブリックな構造体(<code>IPaddress</code>)だったが,
+新しいオブジェクト(<a href="NET_Address.html">NET_Address</a>)は不透明型である.
+あなたのアプリケーションがIPv4アドレスを構造体に設定や読み込みを直接行っているならば, 修正しなければならない.
+SDL3_netは<a href="NET_Address.html">NET_Address</a>オブジェクトの生成や問い合わせを行う関数を提供している.
+<li>UDP通信では「チャネル」を扱わない.
+これは混乱を招くインターフェースだった.
+チャネルのシステムはSDL3_netでは<a href="NET_Address.html">NET_Address</a>オブジェクトの配列を作ることで簡単に再現できるが, <a href="NET_DatagramSocket.html">NET_DatagramSocket</a>は現在はアドレスからの送受信のみを扱う.
+<li>UDPパケットにはメモリ管理のための複数のAPI関数が存在した.
+SDL3_netでは, 送信したいデータ, または受信先としたいバッファのポインタを渡せば十分である.
+内部では<a href="SDL_malloc.html">SDL_malloc()</a>でメモリ管理を行っている.
+<li>ソケットセットは存在しない.
+これらのAPIは, 単にチェックするソケットの配列を取るだけの<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に集約された.
+</ul>
+<h2>SDL3_netのインクルード</h2>
+<p>
+正式なSDL3_netヘッダのインクルードの方法は:
+</p>
+<p>
+<code>#include &lt;SDL3_net/SDL_net.h&gt;</code>
+</p>
+<p>
+SDL3と同様に, 新しい方法では&lt;&gt;とサブディレクトリを使用すること.
+</p>
+<h2>シンボル名</h2>
+<p>
+SDL2_netでは, 全ての関数は<code>SDLNet_</code>, マクロは<code>SDLNET_</code>で始まっていた.
+SDL3_netでは, 全て<code>NET_</code>になった.
+</p>
+<h2>バージョン</h2>
+<p>
+バージョンは構造体ではなく1つのintにビットが詰められていて, 詰められたビットを戻すにはSDL3の通常の方法を使用する.
+</p>
+<h2>戻り値</h2>
+<p>
+SDL2_netでは多くの場合は成功のとき0, 失敗のとき-1を戻していた.
+SDL3_netでは, これらの戻り値はブール値になり, 成功のとき真, 失敗のとき偽を戻す.
+移行するとき, このような場合はコンパイラは警告を発するが...
+</p>
+<p>
+<code>
+if (NET_Init() &lt; 0) { /* 失敗! */ }
+</code>
+</p>
+<p>
+...これは警告を発しない...
+</p>
+<p>
+<code>
+if (!NET_Init()) { /* SDL2_netの場合は成功時だが, SDL3_netの場合は失敗時となる! */ }
+</code>
+</p>
+<h2>複数プロトコル対応</h2>
+<p>
+SDL2_netのパブリックAPIではIPv4ネットワークの提供がハードコードされていた.
+SDL3_netではIPaddress構造体が不透明な<a href="NET_Address.html">NET_Address</a>に置き換えられた.
+これで将来の未知のプロトコルを含む異なるネットワークプロトコルのアドレスを扱えるようになった.
+しかし最も重要なのは, アプリケーションがIPv4とIPv6を抽象化して扱えるようになったことである.
+</p>
+<p>
+(理論上は, 現在でも例えばIPXやAppleTalkにも対応できるが, SDL3_netのコードの若干の修正が必要となる. パッチを送ってください.)
+</p>
+<p>
+<a href="NET_ResolveHostname.html">NET_ResolveHostname()</a>を使用すると, 複数の利用可能なプロトコルが得られ, OSがシステムにとって最もよい選択を行う場合がある.
+</p>
+<p>
+さらにSDL3_netは「デュアルスタック」プロトコルに対応している.
+NULLアドレスにバインドされたサーバまたはデータダイアグラムソケットを生成すると, 背後ではIPv4とIPv6のOSレベルのソケットを生成して両方でlistenするように試みる.
+これは単なるIPv4とIPv6のブリッジではない.
+両方のプロトコルのトラフィックを同時に受信することが可能で, 例えば157.90.7.176と2a01:4f8:251:5583::2のようなクライアントのアドレスから同時に来る場合でも, あなたのサーバは簡単にこれらをブリッジできる.
+</p>
+<h2>ブロッキングと非ブロッキング</h2>
+<p>
+SDL2_netは(ほとんどが)ブロッキングAPIで, ネットワークの処理に時間がかかる場合, 待つ必要があった.
+カーネルの転送バッファにダイアグラムを渡すような短い待ち時間の場合もあるが, ネットワークの状態によっては長い時間がかかった.
+ブロックしないためには, データを受信したかを問い合わせる「ソケットセット」に対する<a href="https://linuxjm.sourceforge.io/html/LDP_man-pages/man2/select.2.html">select()</a>呼び出しのラッパーが提供されていた.
+DNSルックアップには獲得と同じ時間が必要だった.
+</p>
+<p>
+SDL3_netは逆の方法を取っており, 全て非ブロッキングになった.
+データを受信していないならば, 呼び出しから即座に戻り, それを報告する.
+データを今すぐ送信できない場合は, 後でライブラリが送信できるまで内部のキューに格納される.
+DNSへの問い合わせはバックグラウンドスレッドで行われ, アプリケーションは定期的にその結果をチェックする.
+</p>
+<p>
+「ソケットセット」の考え方は1つの関数<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に集約された. これは様々なSDL_netオブジェクトの配列とタイムアウト時間を引数にとる.
+タイムアウト時間を0にするとブロックせず, -1にすると無限に待つ.
+</p>
+<p>
+ブロックさせたい場合のため, 特定の項目を(タイムアウト時間を指定して)待つ関数も提供されている.
+これらを効率よく待つために呼び出したスレッドに置くことができる.
+</p>
+<ul>
+<li><a href="NET_WaitUntilResolved.html">NET_WaitUntilResolved</a>: DNS問い合わせの完了を待つ
+<li><a href="NET_WaitUntilConnected.html">NET_WaitUntilConnected</a>: ストリームソケットの接続を待つ
+<li><a href="NET_WaitUntilStreamSocketDrained.html">NET_WaitUntilStreamSocketDrained</a>: ストリームソケットのキューのデータを全て送信するまで待つ
+<li><a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable</a>: 他の<code>NET_WaitUntil*</code>関数と似ているが, 複数の項目を同時に待つ
+</ul>
+<p>
+単純な非ブロッキング問い合わせ関数<a href="NET_GetAddressStatus.html">NET_GetAddressStatus</a>, <a href="NET_GetConnectionStatus.html">NET_GetConnectionStatus</a>, <a href="NET_GetStreamSocketPendingWrites.html">NET_GetStreamSocketPendingWrites</a>も存在する.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+SDL3_netの全ての関数は, 同一ソケットを複数のスレッドから同時に操作してはならないこと以外はスレッドセーフである.
+2つのスレッドが別々の2つのソケットを同時に使用するのは問題ない.
+</p>
+<h2>ネットワークバイトオーダー</h2>
+<p>
+SDL2_netでは, ネットワークアドレスやポート番号は「ネットワークバイトオーダー」(ビッグエンディアン)に変換する必要がある場合があった.
+SDL3_netでは, これらの値は常に「ホストバイトオーダー」(システムのネイティブバイトオーダー)であり, バイト交換は必要に応じてSDL3_netが行う.
+</p>
+<p>
+無論, インターネット越しのペイロードのバイト列は様々なコンピュータの様々なバイト順であるため, アプリケーションはSDL2_netのときと同じように処理する必要がある.
+</p>
+<h2>初期化</h2>
+<p>
+以前のバージョンではSDL2_netは<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_Init.html">SDLNet_Init()</a>の前にSDL_Init()が呼ばれていることを想定していた.
+現在はその必要はない:
+</p>
+<code>
+<pre>
+if (!NET_Init()) {
+    SDL_Log("NET_Init 失敗: %s", SDL_GetError());
+} else {
+    SDL_Log("SDL_netの準備が完了した!");
+}
+</pre>
+</code>
+<p>
+<a href="NET_Init.html">NET_Init()</a>は参照カウントされているため, 複数回呼んでも安全であり, 実際に初期化されるのは最初の呼び出しのみである.
+同様に, <a href="NET_Quit.html">NET_Quit()</a>による実際の終了処理は<a href="NET_Init.html">NET_Init()</a>と同じ回数が呼ばれた場合のみである.
+そのため, SDL3_netを使用するために初期化するとき, 他の箇所でも初期化しているかを気にする必要はない.
+</p>
+<h2>ストリームソケット</h2>
+<p>
+SDL2_netでは, 接続ソケットとサーバ(「リスナー」)ソケットは同じ型のTCPsocketオブジェクトだった.
+SDL3_netでは, 2つのオブジェクト<a href="NET_Server.html">NET_Server</a>と<a href="NET_StreamSocket.html">NET_StreamSocket</a>に分けられた.
+</p>
+<p>
+<a href="NET_StreamSocket.html">NET_StreamSocket</a>はクライアントとサーバの間で実際にデータを送るためのもので, 接続の両端に1つずつ存在し, 両方が読込または書込を行える.
+</p>
+<p>
+<a href="NET_Server.html">NET_Server</a>はクライアントからの新しい接続をlistenするためのもので, 接続のたびにサーバ側の<a href="NET_StreamSocket.html">NET_StreamSocket</a>を生成する.
+</p>
+<p>
+<a href="NET_Server.html">NET_Server</a>のアドレスにNULLを指定して生成すると, 内部ではIPv4とIPv6ネットワークの別々のlistenが行われる場合がある.
+</p>
+<h2>ダイアグラムソケット</h2>
+<p>
+<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_Open.html">SDLNet_UDP_Open()</a>はポートは指定するがINADDR_ANYに対してのみバインドした.
+SDL3_netでは, <a href="NET_CreateDatagramSocket.html">NET_CreateDatagramSocket()</a>は指定のインターフェースに, またはアドレスにNULLを指定してINADDR_ANYと同等(しかしIPv4とIPv6インターフェースの両方でlistenできる)のバインドを行える.
+</p>
+<h2>ブロードキャスト</h2>
+<p>
+SDL2_netでは, UDPパケットをサブネットのブロードキャストアドレス(指定できれば), または255.255.255.255(これはWindowsでは使用できない)に送信できた.
+</p>
+<p>
+SDL3_netでは, ダイアグラムソケットをNET_PROP_DATAGRAM_SOCKET_ALLOW_BROADCAST_BOOLEANプロパティを指定して生成し, アドレスをNULLとして<a href="NET_SendDatagram.html">NET_SendDatagram()</a>を呼ぶと行える.
+</p>
+<p>
+これは異なるプロトコルでのブロードキャストを抽象化する(IPv6を含む. SDL3_netは背後で疑似的なブロードキャストを行う).
+SDL3_netは全てのネットワークインターフェースに対して, そして異なるネットワークプロトコル対してブロードキャストを行おうとする.
+そのため, 1つのブロードキャストパケットが1つのアプリケーションに複数のインターフェースで届けられる場合や, IPv4とIPv6のアドレスの別のコンピュータから届けられたように見える場合もある.
+このことを考慮して重複したパケットを無視する必要がある.
+</p>
+<p>
+さらに, クライアントからブロードキャストするサーバを検索する場合, サーバがIPv4とIPv6の両方でlistenしていると, 別のサーバから2つの応答があるように見える場合がある.
+ペイロードに同一マシンであるかを識別できる要素を加えるか, サーバブラウザ上でIPv4/IPv6サーバを分ける必要がある.
+</p>
+<p>
+(当然ながら, アプリケーションのブロードキャストのデータ量には注意し, サブネットの良き住民であること!)
+</p>
+<h2>失敗のシミュレーション</h2>
+<p>
+SDL2_netには<a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_SetPacketLoss.html">SDLNet_UDP_SetPacketLoss()</a>があった.
+SDL3_netでは, これが拡張されネットワーク層で別々になった.
+個別にストリームソケット(信頼性のため遅延が生じたり, 切断されたりする)や, DNSルックアップ(パケットがDNSサーバに到達しないため時間がかかる, パケットが届かないまたは不明な理由でドメインが存在せず失敗する)の失敗率を個別に設定できる.
+</p>
+<p>
+これは<a href="NET_SimulateAddressResolutionLoss.html">NET_SimulateAddressResolutionLoss()</a>, <a href="NET_SimulateStreamPacketLoss.html">NET_SimulateStreamPacketLoss()</a>, <a href="NET_SimulateDatagramPacketLoss.html">NET_SimulateDatagramPacketLoss()</a>関数で行える.
+</p>
+<h2>要約</h2>
+<p>
+SDL2_netとの対応と短いコメント
+</p>
+<p>
+「SDL3_netには対応するものはない」ものがあるが, 要望があれば追加される可能性がある.
+もし行き詰ったならば, イシューに投稿してもらえれば議論できる.
+</p>
+<ul>
+<li>SDL_NET_MAJOR_VERSION → SDL_NET_MAJOR_VERSION
+<li>SDL_NET_MINOR_VERSION → SDL_NET_MAJOR_VERSION
+<li>SDL_NET_PATCHLEVEL → SDL_NET_MICRO_VERSION
+<li>SDL_NET_VERSION → SDL_NET_VERSION
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_NET_VERSION_ATLEAST.html">SDL_NET_VERSION_ATLEAST</a> → <a href="SDL_NET_VERSION_ATLEAST.html">SDL_NET_VERSION_ATLEAST</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_Linked_Version.html">SDLNet_Linked_Version</a> → <a href="NET_Version.html">NET_Version</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDL_NET_COMPILEDVERSION.html">SDL_NET_COMPILEDVERSION</a> → <a href="SDL_NET_VERSION.html">SDL_NET_VERSION</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_Init.html">SDLNet_Init</a> → <a href="NET_Init.html">NET_Init</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_Quit.html">SDLNet_Quit</a> → <a href="NET_Quit.html">NET_Quit</a>
+<li>IPaddress → <a href="NET_Address.html">NET_Address</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_ResolveHost.html">SDLNet_ResolveHost</a> → <a href="NET_ResolveHostname.html">NET_ResolveHostname</a> (SDL2_netにあったポート番号の指定は別の関数で行う)
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_ResolveIP.html">SDLNet_ResolveIP</a> → <a href="NET_GetAddressString.html">NET_GetAddressString</a> (この関数でDNS経由でホスト名を得ることはできない. この機能が必要ならばイシューに投稿すること!)
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_GetLocalAddresses.html">SDLNet_GetLocalAddresses</a> → <a href="NET_GetLocalAddresses.html">NET_GetLocalAddresses</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/TCPsocket.html">TCPsocket</a> → <a href="NET_StreamSocket.html">NET_StreamSocket</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_OpenServer.html">SDLNet_TCP_OpenServer</a> → <a href="NET_CreateServer.html">NET_CreateServer</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_OpenClient.html">SDLNet_TCP_OpenClient</a> → <a href="NET_CreateClient.html">NET_CreateClient</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_Open.html">SDLNet_TCP_Open</a> → 直接対応するものはない. <a href="NET_CreateServer.html">NET_CreateServer</a>または<a href="NET_CreateClient.html">NET_CreateClient</a>を使用すること
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_Accept.html">SDLNet_TCP_Accept</a> → <a href="NET_AcceptClient.html">NET_AcceptClient</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_GetPeerAddress.html">SDLNet_TCP_GetPeerAddress</a> → <a href="NET_GetStreamSocketAddress.html">NET_GetStreamSocketAddress</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_Send.html">SDLNet_TCP_Send</a> → <a href="NET_WriteToStreamSocket.html">NET_WriteToStreamSocket</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_Recv.html">SDLNet_TCP_Recv</a> → <a href="NET_ReadFromStreamSocket.html">NET_ReadFromStreamSocket</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_Close.html">SDLNet_TCP_Close</a> → <a href="NET_DestroyStreamSocket.html">NET_DestroyStreamSocket</a>
+<li>SDLNET_MAX_UDPCHANNELS → SDL3_netには対応するものはない
+<li>SDLNET_MAX_UDPADDRESSES → SDL3_netには対応するものはない
+<li>UDPpacket → <a href="NET_Datagram.html">NET_Datagram</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_AllocPacket.html">SDLNet_AllocPacket</a> → SDL3_netには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_ResizePacket.html">SDLNet_ResizePacket</a> → SDL3_netには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_FreePacket.html">SDLNet_FreePacket</a> → NET_DestroyDatagram
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_AllocPacketV.html">SDLNet_AllocPacketV</a> → SDL3_netには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_FreePacketV.html">SDLNet_FreePacketV</a> → <a href="NET_DestroyDatagram.html">NET_DestroyDatagram</a> in a loop.
+<li>UDPsocket → <a href="NET_DatagramSocket.html">NET_DatagramSocket</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_Open.html">SDLNet_UDP_Open</a> → <a href="NET_CreateDatagramSocket.html">NET_CreateDatagramSocket</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_SetPacketLoss.html">SDLNet_UDP_SetPacketLoss</a> → <a href="NET_SimulateDatagramPacketLoss.html">NET_SimulateDatagramPacketLoss</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_Bind.html">SDLNet_UDP_Bind</a> → SDL3_netには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_Unbind.html">SDLNet_UDP_Unbind</a> → SDL3_netには対応するものはない
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_GetPeerAddress.html">SDLNet_UDP_GetPeerAddress</a> → SDL3_netには対応するものはない. <a href="NET_Datagram.html">NET_Datagram::addr</a>に受信したパケットのアドレスがある
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_SendV.html">SDLNet_UDP_SendV</a> → <a href="NET_SendDatagram.html">NET_SendDatagram</a>をループさせる
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_Send.html">SDLNet_UDP_Send</a> → <a href="NET_SendDatagram.html">NET_SendDatagram</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_RecvV.html">SDLNet_UDP_RecvV</a> → <a href="NET_ReceiveDatagram.html">NET_ReceiveDatagram</a>をループさせる
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_Recv.html">SDLNet_UDP_Recv</a> → <a href="NET_ReceiveDatagram.html">NET_ReceiveDatagram</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_Close.html">SDLNet_UDP_Close</a> → <a href="NET_DestroyDatagramSocket.html">NET_DestroyDatagramSocket</a>
+<li>SDLNet_GenericSocket → void *
+<li>SDLNet_SocketSet → SDL3_netには対応するものはない. 配列を<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に渡すこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_AllocSocketSet.html">SDLNet_AllocSocketSet</a> → SDL3_netには対応するものはない. 配列を<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に渡すこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_AddSocket.html">SDLNet_AddSocket</a> → SDL3_netには対応するものはない. 配列を<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に渡すこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_AddSocket.html">SDLNet_TCP_AddSocket</a> → SDL3_netには対応するものはない. 配列を<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に渡すこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_AddSocket.html">SDLNet_UDP_AddSocket</a> → SDL3_netには対応するものはない. 配列を<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に渡すこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_DelSocket.html">SDLNet_DelSocket</a> → SDL3_netには対応するものはない. 配列を<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に渡すこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_TCP_DelSocket.html">SDLNet_TCP_DelSocket</a> → SDL3_netには対応するものはない. 配列を<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に渡すこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_UDP_DelSocket.html">SDLNet_UDP_DelSocket</a> → SDL3_netには対応するものはない. 配列を<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable()</a>に渡すこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_CheckSockets.html">SDLNet_CheckSockets</a> → <a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_SocketReady.html">SDLNet_SocketReady</a> → SDL3_netには対応するものはない. 全て非ブロッキングである
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_FreeSocketSet.html">SDLNet_FreeSocketSet</a> → SDL3_netには対応するものはない. 配列を<a href="NET_WaitUntilInputAvailable.html">NET_WaitUntilInputAvailable</a>に渡すこと
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_SetError.html">SDLNet_SetError</a> → <a href="SDL_SetError.html">SDL_SetError</a>
+<li><a href="https://maruhiro-ver0.github.io/sdl2manual-ja/SDLNet_GetError.html">SDLNet_GetError</a> → <a href="SDL_GetError.html">SDL_GetError</a>
+<li>SDLNet_Write16 → <a href="SDL_Swap16BE.html">SDL_Swap16BE</a>
+<li>SDLNet_Write32 → <a href="SDL_Swap32BE.html">SDL_Swap32BE</a>
+<li>SDLNet_Read16 → <a href="SDL_Swap16BE.html">SDL_Swap16BE</a>
+<li>SDLNet_Read32 → <a href="SDL_Swap32BE.html">SDL_Swap32BE</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+</p>
+<a href="https://wiki.libsdl.org/SDL3_net/README-migration">SDL3_net/README-migration</a>
+<hr>
+</body>
+</html>
