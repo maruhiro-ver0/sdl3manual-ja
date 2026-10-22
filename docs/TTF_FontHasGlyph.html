@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_FontHasGlyph</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_FontHasGlyph
+<hr>
+<h1>TTF_FontHasGlyph</h1>
+指定したUNICODEコードポイントのグリフがフォントに存在するかチェックする
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>bool TTF_FontHasGlyph(TTF_Font *font, Uint32 ch);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Font.html">TTF_Font</a> *</td><td>font</td><td>チェックするフォント</td></tr>
+<tr><td>Uint32</td><td>ch</td><td>チェックするコードポイント</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 指定した文字のグリフがフォントにあれば真, なければ偽を戻す.
+<h2>スレッドセーフ</h2>
+<p>
+この関数はフォントを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_FontHasGlyph">SDL3_ttf/TTF_FontHasGlyph</a>
+<hr>
+</body>
+</html>
