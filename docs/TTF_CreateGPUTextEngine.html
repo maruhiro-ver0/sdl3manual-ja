@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_CreateGPUTextEngine</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_CreateGPUTextEngine
+<hr>
+<h1>TTF_CreateGPUTextEngine</h1>
+SDL GPU APIによるテキスト描画のためのテキストエンジンを生成する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>TTF_TextEngine * TTF_CreateGPUTextEngine(SDL_GPUDevice *device);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="SDL_GPUDevice.html">SDL_GPUDevice</a> *</td><td>device</td><td>テクスチャの生成とテキストの描画で使用するSDL_GPUDevice</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="TTF_TextEngine.html">TTF_TextEngine</a> *) TTF_TextEngineオブジェクトを戻す. 失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>スレッドセーフ</h2>
+<p>
+この関数はGPUデバイスを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_CreateGPUTextEngineWithProperties.html">TTF_CreateGPUTextEngineWithProperties</a>
+<li><a href="TTF_DestroyGPUTextEngine.html">TTF_DestroyGPUTextEngine</a>
+<li><a href="TTF_GetGPUTextDrawData.html">TTF_GetGPUTextDrawData</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_CreateGPUTextEngine">SDL3_ttf/TTF_CreateGPUTextEngine</a>
+<hr>
+</body>
+</html>
