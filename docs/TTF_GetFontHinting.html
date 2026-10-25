@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GetFontHinting</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GetFontHinting
+<hr>
+<h1>TTF_GetFontHinting</h1>
+フォントのFreeTypeヒンターの設定を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>TTF_HintingFlags TTF_GetFontHinting(const TTF_Font *font);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const <a href="TTF_Font.html">TTF_Font</a> *</td><td>font</td><td>問い合わせるフォント</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="TTF_HintingFlags.html">TTF_HintingFlags</a>) フォントのヒンターの値を戻す. フォントが無効のときTTF_HINTING_INVALIDを戻す.
+<h2>詳細</h2>
+<p>
+ヒンターの設定は次の値の1つである:
+</p>
+<ul>
+<li>TTF_HINTING_NORMAL
+<li>TTF_HINTING_LIGHT
+<li>TTF_HINTING_MONO
+<li>TTF_HINTING_NONE
+<li>TTF_HINTING_LIGHT_SUBPIXEL (SDL_ttf 3.0.0以降)
+</ul>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_SetFontHinting.html">TTF_SetFontHinting</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GetFontHinting">SDL3_ttf/TTF_GetFontHintings</a>
+<hr>
+</body>
+</html>

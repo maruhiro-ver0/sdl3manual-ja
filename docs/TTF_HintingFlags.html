@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_HintingFlags</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_HintingFlags
+<hr>
+<h1>TTF_HintingFlags</h1>
+TTF(TrueTypeフォント)のヒンティングフラグの列挙体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>値</h2>
+<table border="1">
+<tr><td>TTF_HINTING_INVALID</td><td>-1</td><td>無効</td></tr>
+<tr><td>TTF_HINTING_NORMAL</td><td></td><td>グリッドフィッティングを適用する一般的なヒンティング</td></tr>
+<tr><td>TTF_HINTING_LIGHT</td><td></td><td>ライトヒンティング. レンダリング向上のために微調整を行う</td></tr>
+<tr><td>TTF_HINTING_MONO</td><td></td><td>モノクロヒンティング. 低解像度のレンダリングの改善のために調整する</td></tr>
+<tr><td>TTF_HINTING_NONE</td><td></td><td>ヒンティングを適用しない. フォントはグリッドフィッティングを行わすにレンダリングされる</td></tr>
+<tr><td>TTF_HINTING_LIGHT_SUBPIXEL</td><td></td><td>サブピクセルレンダリングを行うライトヒンティング. フォントの縁取りの精度を向上させる</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+この列挙体はフォントのレンダリングに適用されるヒンティングのレベルを表す.
+ヒンティングのレベルはフォントの縁をピクセルに合わせる方法を決める.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_SetFontHinting.html">TTF_SetFontHinting</a>
+<li><a href="TTF_GetFontHinting.html">TTF_GetFontHinting</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_HintingFlags">SDL3_ttf/TTF_HintingFlags</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GetGPUTextDrawData</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GetGPUTextDrawData
+<hr>
+<h1>TTF_GetGPUTextDrawData</h1>
+テキストの描画に必要な領域を求める
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>TTF_GPUAtlasDrawSequence * TTF_GetGPUTextDrawData(TTF_Text *text);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Text.html">TTF_Text</a> *</td><td>text</td><td>描画するテキスト</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="TTF_GPUAtlasDrawSequence.html">TTF_GPUAtlasDrawSequence</a> *) <a href="TTF_GPUAtlasDrawSequence.html">TTF_GPUAtlasDrawSequence</a>オブジェクトのNULL終端の連結リストを戻す. 渡されたテキストが空または失敗のときNULLを戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+<code>text</code>は<a href="TTF_CreateGPUTextEngine.html">TTF_CreateGPUTextEngine()</a>が生成した<a href="TTF_TextEngine.html">TTF_TextEngine</a>で生成されたものである必要がある.
+</p>
+<p>
+頂点とテクスチャの座標系は, SDL_GPU APIの座標系に従い, X軸の正の方向が右で, Y軸の正の方向が上となっている.
+別の座標系に変換したい場合は自分自身で行う必要がある.
+</p>
+<p>
+テキストがブロック状になる場合は線形フィルタを使用すること.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はテキストを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_CreateGPUTextEngine.html">TTF_CreateGPUTextEngine</a>
+<li><a href="TTF_CreateText.html">TTF_CreateText</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GetGPUTextDrawData">SDL3_ttf/TTF_GetGPUTextDrawData</a>
+<hr>
+</body>
+</html>

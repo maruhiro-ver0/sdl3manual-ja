@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GPUAtlasDrawSequence</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GPUAtlasDrawSequence
+<hr>
+<h1>TTF_GPUAtlasDrawSequence</h1>
+<a href="TTF_GetGPUTextDrawData.html">TTF_GetGPUTextDrawData</a>が戻した描画シーケンスの連結リストの構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<table border="1">
+<tr><td><a href="SDL_GPUTexture.html">SDL_GPUTexture</a> *</td><td>atlas_texture</td><td>グリフが書き込まれたテクスチャアトラス. 塗りつぶしのときNULL
+</td></tr>
+<tr><td><a href="SDL_FPoint.html">SDL_FPoint</a> *</td><td>xy</td><td>頂点データの配列</td></tr>
+<tr><td><a href="SDL_FPoint.html">SDL_FPoint</a> *</td><td>uv</td><td>それぞれの頂点の正規化されたテクスチャ座標の配列</td></tr>
+<tr><td>int</td><td>num_vertices</td><td>頂点の数</td></tr>
+<tr><td>int *</td><td>indices</td><td>頂点のインデックスの配列</td></tr>
+<tr><td>int</td><td>num_indices</td><td>インデックスの数</td></tr>
+<tr><td><a href="TTF_ImageType.html">TTF_ImageType</a></td><td>image_type</td><td>この描画シーケンス画像形式</td></tr>
+<tr><td>struct TTF_GPUAtlasDrawSequence *</td><td>next</td><td>次のシーケンス(NULLのときシーケンスの終端)</td></tr>
+</table>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GPUAtlasDrawSequence">SDL3_ttf/TTF_GPUAtlasDrawSequence</a>
+<hr>
+</body>
+</html>

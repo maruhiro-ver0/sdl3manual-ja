@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GLAtlasDrawSequence</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GLAtlasDrawSequence
+<hr>
+<h1>TTF_GLAtlasDrawSequence</h1>
+<a href="TTF_GetGLTextDrawData.html">TTF_GetGLTextDrawData</a>が戻した描画シーケンスの連結リストの構造体
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<table border="1">
+<tr><td>unsigned int</td><td>atlas_texture</td><td>OpenGLテクスチャ名(GLuintと同じ). 0のとき塗りつぶし</td></tr>
+<tr><td><a href="TTF_GLAtlasDrawVertex.html">TTF_GLAtlasDrawVertex</a> *</td><td>vertices</td><td>交互に配置された頂点データの配列</td></tr>
+<tr><td>int</td><td>num_vertices</td><td>頂点の数</td></tr>
+<tr><td>Uint16 *</td><td>indices</td><td><code>vertices</code>頂点のインデックスの配列</td></tr>
+<tr><td>int</td><td>num_indices</td><td>インデックスの数</td></tr>
+<tr><td><a href="TTF_ImageType.html">TTF_ImageType</a></td><td>image_type</td><td>この描画シーケンス画像形式</td></tr>
+<tr><td>struct TTF_GLAtlasDrawSequence *</td><td>next</td><td>次のシーケンス(NULLのときシーケンスの終端)</td></tr>
+</table>
+<h2>バージョン</h2>
+SDL_ttf 3.3.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_CreateText.html">TTF_CreateText</a>
+<li><a href="TTF_GetTextProperties.html">TTF_GetTextProperties</a>
+<li><a href="TTF_DestroyText.html">TTF_DestroyText</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GLAtlasDrawSequence">SDL3_ttf/TTF_GLAtlasDrawSequence</a>
+<hr>
+</body>
+</html>
