@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GetFreeTypeVersion</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GetFreeTypeVersion
+<hr>
+<h1>TTF_GetFreeTypeVersion</h1>
+使用しているFreeTypeライブラリのバージョンを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>void TTF_GetFreeTypeVersion(int *major, int *minor, int *patch);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>int *</td><td>major</td><td>メジャーバージョンの代入先へのポインタ. NULLも可</td></tr>
+<tr><td>int *</td><td>minor</td><td>マイナーバージョンの代入先へのポインタ. NULLも可</td></tr>
+<tr><td>int *</td><td>patch</td><td>パッチバージョンの代入先へのポインタ. NULLも可</td></tr>
+</table>
+<h2>スレッドセーフ</h2>
+<p>
+この関数を呼ぶ前に<a href="TTF_Init.html">TTF_Init()</a>を呼んでいる必要がある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_Init.html">TTF_Init</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GetFreeTypeVersion">SDL3_ttf/TTF_GetFreeTypeVersions</a>
+<hr>
+</body>
+</html>

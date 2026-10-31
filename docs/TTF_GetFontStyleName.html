@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GetFontStyleName</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GetFontStyleName
+<hr>
+<h1>TTF_GetFontStyleName</h1>
+フォントのスタイル名を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>const char * TTF_GetFontStyleName(const TTF_Font *font);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const <a href="TTF_Font.html">TTF_Font</a> *</td><td>font</td><td>問い合わせるフォント</td></tr>
+</table>
+<h2>戻り値</h2>
+(<a href="TTF_FontStyleFlags.html">TTF_FontStyleFlags</a>) 現在のフォントのスタイル名を戻す
+<h2>詳細</h2>
+<p>
+この文字列はフォントファイル内の記述による.
+</p>
+<p>
+戻された文字列は内部に格納されており, 呼び出し側は修正や解放を行おうとしてはならない.
+フォントを<a href="TTF_CloseFont.html">TTF_CloseFont()</a>で破棄すると, この文字列はフォントの他の部分と同様に無効となる. 
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GetFontStyleName">SDL3_ttf/TTF_GetFontStyleNames</a>
+<hr>
+</body>
+</html>
