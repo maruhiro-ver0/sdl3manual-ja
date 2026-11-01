@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GetGlyphMetrics</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GetGlyphMetrics
+<hr>
+<h1>TTF_GetGlyphMetrics</h1>
+フォントの指定のUNICODEコードポイントのグリフのメトリクスを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>bool TTF_GetGlyphMetrics(TTF_Font *font, Uint32 ch, int *minx, int *maxx, int *miny, int *maxy, int *advance);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Font.html">TTF_Font</a> *</td><td>font</td><td>問い合わせるフォント</td></tr>
+<tr><td>Uint32</td><td>ch</td><td>チェックするコードポイント</td></tr>
+<tr><td>int *</td><td>minx</td><td>境界ボックスの左端を原点としたグリフの最小X座標. この値は負もありうる</td></tr>
+<tr><td>int *</td><td>maxx</td><td>境界ボックスの左端を原点としたグリフの最大X座標</td></tr>
+<tr><td>int *</td><td>miny</td><td>境界ボックスの下端を原点としたグリフの最小Y座標. この値は負もありうる</td></tr>
+<tr><td>int *</td><td>maxy</td><td>境界ボックスの下端を原点としたグリフの最大Y座標</td></tr>
+<tr><td>int *</td><td>advance</td><td>境界ボックスの下端を原点とした次のグリフまでの距離</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+メトリクスの意味を理解するには次のリンクが役立つ:
+</p>
+<p>
+<a href="https://freetype.sourceforge.net/freetype2/docs/tutorial/step2.html">https://freetype.sourceforge.net/freetype2/docs/tutorial/step2.html</a>
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はフォントを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GetGlyphMetrics">SDL3_ttf/TTF_GetGlyphMetricss</a>
+<hr>
+</body>
+</html>
