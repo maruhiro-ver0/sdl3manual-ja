@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GetTextSubString</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GetTextSubString
+<hr>
+<h1>TTF_GetTextSubString</h1>
+テキストオブジェクト内のオフセット位置を囲む部分文字列を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>bool TTF_GetTextSubString(TTF_Text *text, int offset, TTF_SubString *substring);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Text.html">TTF_Text</a> *</td><td>text</td><td>部分文字列を得るTTF_Text</td></tr>
+<tr><td>int</td><td>offset</td><td>テキスト文字列のオフセットバイト</td></tr>
+<tr><td><a href="TTF_SubString.html">TTF_SubString</a> *</td><td>substring</td><td><code>offset</code>の位置が含まれる部分文字列の代入先へのポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+<code>offset</code>が0未満の場合, この関数は<a href="TTF_SubStringFlags.html">TTF_SUBSTRING_TEXT_START</a>フラグを付けてテキストの先頭から始まる長さ0の部分文字列を戻す.
+<code>offset</code>がテキスト文字列の長さ以上の場合, この関数は<a href="TTF_SubStringFlags.html">TTF_SUBSTRING_TEXT_END</a>フラグを付けてテキストの末尾から始まる長さ0の部分文字列を戻す.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はテキストを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GetTextSubString">SDL3_ttf/TTF_GetTextSubString</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GetHarfBuzzVersion</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GetHarfBuzzVersion
+<hr>
+<h1>TTF_GetHarfBuzzVersion</h1>
+使用しているHarfBuzzライブラリのバージョンを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>void TTF_GetHarfBuzzVersion(int *major, int *minor, int *patch);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>int *</td><td>major</td><td>メジャーバージョンの代入先へのポインタ. NULLも可</td></tr>
+<tr><td>int *</td><td>minor</td><td>マイナーバージョンの代入先へのポインタ. NULLも可</td></tr>
+<tr><td>int *</td><td>patch</td><td>パッチバージョンの代入先へのポインタ. NULLも可</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+HarfBuzzを使用できない場合, バージョンは0.0.0となる.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GetHarfBuzzVersion">SDL3_ttf/TTF_GetHarfBuzzVersions</a>
+<hr>
+</body>
+</html>
