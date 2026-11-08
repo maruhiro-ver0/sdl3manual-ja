@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GetStringSize</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GetStringSize
+<hr>
+<h1>TTF_GetStringSize</h1>
+UTF-8テキストのレンダリングされた文字列のサイズを得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>bool TTF_GetStringSize(TTF_Font *font, const char *text, size_t length, int *w, int *h);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Font.html">TTF_Font</a> *</td><td>font</td><td>問い合わせるフォント</td></tr>
+<tr><td>const char *</td><td>text</td><td>サイズを求めるUTF-8でエンコードされたテキスト</td></tr>
+<tr><td>size_t</td><td>length</td><td>テキストのバイト数. 0のときNUL終端テキスト</td></tr>
+<tr><td>int *</td><td>w</td><td>幅のピクセル数の代入先へのポインタ</td></tr>
+<tr><td>int *</td><td>h</td><td>高さのピクセル数の代入先へのポインタ</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数は指定の文字列を全てレンダリングするために必要な領域の幅と高さを戻す.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はフォントを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GetStringSize">SDL3_ttf/TTF_GetStringSizes</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_GetTextColor</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_GetTextColor
+<hr>
+<h1>TTF_GetTextColor</h1>
+テキストオブジェクトの色を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>bool TTF_GetTextColor(TTF_Text *text, Uint8 *r, Uint8 *g, Uint8 *b, Uint8 *a);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Text.html">TTF_Text</a> *</td><td>text</td><td>問い合わせるTTF_Text</td></tr>
+<tr><td>Uint8 *</td><td>r</td><td>0～255の赤要素の代入先へのポインタ. NULLも可</td></tr>
+<tr><td>Uint8 *</td><td>g</td><td>0～255の緑要素の代入先へのポインタ. NULLも可</td></tr>
+<tr><td>Uint8 *</td><td>b</td><td>0～255の青要素の代入先へのポインタ. NULLも可</td></tr>
+<tr><td>Uint8 *</td><td>a</td><td>0～255のα要素の代入先へのポインタ. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>スレッドセーフ</h2>
+<p>
+この関数はテキストを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_GetTextColorFloat.html">TTF_GetTextColorFloat</a>
+<li><a href="TTF_SetTextColor.html">TTF_SetTextColor</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_GetTextColor">SDL3_ttf/TTF_GetTextColor</a>
+<hr>
+</body>
+</html>
