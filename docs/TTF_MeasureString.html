@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_MeasureString</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_MeasureString
+<hr>
+<h1>TTF_MeasureString</h1>
+指定した幅にUTF-8文字列がどれだけ収まるかを求める
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>bool TTF_MeasureString(TTF_Font *font, const char *text, size_t length, int max_width, int *measured_width, size_t *measured_length);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Font.html">TTF_Font</a> *</td><td>font</td><td>問い合わせるフォント</td></tr>
+<tr><td>const char *</td><td>text</td><td>UTF-8でエンコードされたテキスト</td></tr>
+<tr><td>size_t</td><td>length</td><td>テキストのバイト数. 0のときNUL終端のテキスト</td></tr>
+<tr><td>int</td><td>max_width</td><td>文字列の最大幅ピクセル数. 0のとき制限しない</td></tr>
+<tr><td>int *</td><td>measured_width</td><td>最大幅に収まる文字列の幅ピクセル数. NULLも可</td></tr>
+<tr><td>size_t *</td><td>measured_length</td><td>最大幅に収まる文字列のバイト数. NULLも可</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+この関数は<code>max_width</code>に達するまでにレンダリングできる文字数を報告する.
+</p>
+<p>
+この計算のために文字列をレンダリングする必要はない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はフォントを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_MeasureString">SDL3_ttf/TTF_MeasureStrings</a>
+<hr>
+</body>
+</html>
