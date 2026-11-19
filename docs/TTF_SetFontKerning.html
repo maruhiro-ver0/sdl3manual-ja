@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_SetFontKerning</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_SetFontKerning
+<hr>
+<h1>TTF_SetFontKerning</h1>
+フォントのカーニングの状態を得る
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>void TTF_SetFontKerning(TTF_Font *font, bool enabled);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const <a href="TTF_Font.html">TTF_Font</a> *</td><td>font</td><td>設定するフォント</td></tr>
+<tr><td>bool</td><td>enabled</td><td>真のときカーニングを有効にする. 偽のとき無効にする</td></tr>
+</table>
+<h2>詳細</h2>
+<p>
+新たに開いたとき, フォントのカーニングは有効になっている.
+レンダリングの結果は良くなる場合が多いため, 特別な理由がない限り無効にしないのはよい方針である. (例えば一部のフォントはカーニングを無効にするとkerningがkemingのようになってしまう.)
+</p>
+<p>
+このフォントを使用する<a href="TTF_Text.html">TTF_Text</a>オブジェクトは更新される.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_GetFontKerning.html">TTF_GetFontKerning</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_SetFontKerning">SDL3_ttf/TTF_SetFontKernings</a>
+<hr>
+</body>
+</html>
