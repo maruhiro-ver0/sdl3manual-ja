@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_SetGPUTextEngineWinding</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_SetGPUTextEngineWinding
+<hr>
+<h1>TTF_SetGPUTextEngineWinding</h1>
+GPUテキストエンジンの<a href="TTF_GetGPUTextDrawData.html">TTF_GetGPUTextDrawData</a>が戻す頂点の巻き順を設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>void TTF_SetGPUTextEngineWinding(TTF_TextEngine *engine, TTF_GPUTextEngineWinding winding);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>const <a href="TTF_TextEngine.html">TTF_TextEngine</a> *</td><td>engine</td><td><a href="TTF_CreateGPUTextEngine.html">TTF_CreateGPUTextEngine</a>()で生成した<a href="TTF_TextEngine.html">TTF_TextEngine</a>オブジェクト</td></tr>
+<tr><td>TTF_GPUTextEngineWinding</td><td>winding</td><td>巻き順</td></tr>
+</table>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はテキストエンジンを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_GetGPUTextEngineWinding.html">TTF_GetGPUTextEngineWinding</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_SetGPUTextEngineWinding">SDL3_ttf/TTF_SetGPUTextEngineWinding</a>
+<hr>
+</body>
+</html>

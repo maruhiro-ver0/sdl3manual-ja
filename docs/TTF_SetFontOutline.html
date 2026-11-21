@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_SetFontOutline</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_SetFontOutline
+<hr>
+<h1>TTF_SetFontOutline</h1>
+フォントのアウトラインを設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>bool TTF_SetFontOutline(TTF_Font *font, int outline);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Font.html">TTF_Font</a> *</td><td>font</td><td>設定するフォント</td></tr>
+<tr><td>int</td><td>outline</td><td>フォントのアウトラインの正の値. 0のときデフォルト</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+フォントアウトラインを設定したとき, <a href="TTF_GetFontProperties.html">TTF_PROP_FONT_OUTLINE_LINE_CAP_NUMBER</a>, <a href="TTF_GetFontProperties.html">TTF_PROP_FONT_OUTLINE_LINE_JOIN_NUMBER</a>, <a href="TTF_GetFontProperties.html">TTF_PROP_FONT_OUTLINE_MITER_LIMIT_NUMBER</a>プロパティが使用される.
+</p>
+<p>
+このフォントを使用する<a href="TTF_Text.html">TTF_Text</a>オブジェクトは更新され, キャッシュに既に生成されたグリフが存在すれば消去される.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_GetFontOutline.html">TTF_GetFontOutline</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_SetFontOutline">SDL3_ttf/TTF_SetFontOutlines</a>
+<hr>
+</body>
+</html>
