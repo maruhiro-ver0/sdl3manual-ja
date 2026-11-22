@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_TagToString</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_TagToString
+<hr>
+<h1>TTF_TagToString</h1>
+32ビットタグを4文字の文字列に変換する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>void TTF_TagToString(Uint32 tag, char *string, size_t size);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td>Uint32</td><td>tag</td><td>変換する32ビットタグ</td></tr>
+<tr><td>char *</td><td>string</td><td>タグが表す4文字の書き込み先へのポインタ</td></tr>
+<tr><td>size_t</td><td>size</td><td><code>string</code>バッファのサイズ. 少なくとも4が必要</td></tr>
+</table>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_TagToString.html">TTF_TagToString</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_TagToString">SDL3_ttf/TTF_TagToString</a>
+<hr>
+</body>
+</html>

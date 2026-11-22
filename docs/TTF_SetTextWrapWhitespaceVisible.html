@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_SetTextWrapWhitespaceVisible</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_SetTextWrapWhitespaceVisible
+<hr>
+<h1>TTF_SetTextWrapWhitespaceVisible</h1>
+テキストオブジェクトを改行したとき空白を表示するか否かを設定する
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>bool TTF_SetTextWrapWhitespaceVisible(TTF_Text *text, bool visible);</code>
+<h2>引数</h2>
+<table border="1">
+<tr><td><a href="TTF_Text.html">TTF_Text</a> *</td><td>text</td><td>設定するTTF_Text</td></tr>
+<tr><td>bool</td><td>visible</td><td>信時テキストを改行するとき空白を表示する. 偽のとき表示しない</td></tr>
+</table>
+<h2>戻り値</h2>
+(bool) 成功のとき真, 失敗のとき偽を戻す.
+<a href="SDL_GetError.html">SDL_GetError()</a>を呼んで詳細を知ることができる.
+<h2>詳細</h2>
+<p>
+空白を表示すると, 位置合わせと改行のための空間が確保される.
+これは編集する場合にはよいが, 中央寄せや端を合わせる場合は改行の空白を表示しない方が見た目が良くなる.
+デフォルトは偽.
+</p>
+<p>
+この関数は内部のテキスト表現を再構成する場合がある.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はテキストを生成したスレッドから呼ぶ必要がある.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_TextWrapWhitespaceVisible.html">TTF_TextWrapWhitespaceVisible</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_SetTextWrapWhitespaceVisible">SDL3_ttf/TTF_SetTextWrapWhitespaceVisible</a>
+<hr>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="CategorySDLTTF.html" title="1つ上">
+<title>SDL3_ttf/TTF_WasInit</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - <a href="CategorySDLTTF.html">SDL_ttf 3.0</a> - TTF_WasInit
+<hr>
+<h1>TTF_WasInit</h1>
+SDL_ttfが初期化されているかチェックする
+<h2>ヘッダ</h2>
+<a href="https://github.com/libsdl-org/SDL_ttf/blob/main/include/SDL3_ttf/SDL_ttf.h">SDL3_ttf/SDL_ttf.h</a>
+<h2>構文</h2>
+<code>int TTF_WasInit(void);</code>
+<h2>戻り値</h2>
+(int) 現在の初期化回数を戻す. 最終的にはこの回数だけTTF_Quit()を呼ぶ必要がある.
+<h2>詳細</h2>
+<p>
+この関数は, <a href="TTF_Quit.html">TTF_Quit()</a>で終了処理を要求された回数を除く<a href="TTF_Init.html">TTF_Init()</a>でライブラリが初期化された回数を戻す.
+</p>
+<p>
+この値が0より大きいならばライブラリは初期化され使用することができる. 0ならば初期化されていない.
+</p>
+<p>
+戻り値の型は符号あり整数だが, この関数が負の数を戻すことはない.
+</p>
+<h2>スレッドセーフ</h2>
+<p>
+この関数はどのスレッドからも安全に呼べる.
+</p>
+<h2>バージョン</h2>
+SDL_ttf 3.0.0
+<h2>関連項目</h2>
+<ul>
+<li><a href="TTF_Init.html">TTF_Init</a>
+<li><a href="TTF_Quit.html">TTF_Quit</a>
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+<a href="https://wiki.libsdl.org/SDL3_ttf/TTF_WasInit">SDL3_ttf/TTF_WasInit</a>
+<hr>
+</body>
+</html>
