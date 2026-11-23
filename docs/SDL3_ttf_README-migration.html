@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SDL3_ttf">
+<link rel="top" href="index.html" title="ホーム">
+<link rel="parent" href="index.html#SDL3_ttf" title="1つ上">
+<title>SDL_ttf 3.0への移行</title>
+</head>
+<body>
+<a href="index.html#SDL3_ttf">目次</a> - SDL_ttf 3.0
+<hr>
+<h1>SDL_ttf 3.0への移行</h1>
+<h2>概要</h2>
+<p>
+ここではアプリケーションをSDL_ttf 2.0からSDL_ttf 3.0に移行するために役立つ情報を提供する.
+</p>
+<p>
+関数は以前は負の数のエラーコードを戻していたが, ブール値を戻すようになった.
+</p>
+<p>
+このようなコードは...
+</p>
+<code>
+<pre>
+    if (TTF_Function() < 0 || TTF_Function() == -1) {
+        /* 失敗... */
+    }
+</pre>
+</code>
+<p>
+または
+</p>
+<code>
+<pre>
+    if (TTF_Function() == 0) {
+        /* 成功... */
+    }
+</pre>
+</code>
+<p>
+または
+</p>
+<code>
+<pre>
+    if (!TTF_Function()) {
+        /* 成功... */
+    }
+</pre>
+</code>
+<p>
+このように変更しなければならない
+</p>
+<code>
+<pre>
+    if (TTF_Function()) {
+        /* 成功... */
+    } else {
+        /* 失敗... */
+    }
+</pre>
+</code>
+<p>
+いくつかの関数は名称が変更された.
+SDL3への移行をより簡単にするセマンティックパッチが用意されている: <a href="https://github.com/libsdl-org/SDL_ttf/blob/main/build-scripts/SDL_migration.cocci.htm">SDL_migration.cocci</a>
+</p>
+<p>
+APIではUTF-8を使用するようになった.
+以前はLatin-1, UTF-8, UCS2の3つの関数があったが, 現在はUTF-8のみを受け入れるようになった.
+さらに, これらの関数には長さの引数が追加され, 文字列の一部をレンダリングできるようになった.
+</p>
+<p>
+背景色のαが0ならば透明になるようになった.
+</p>
+<p>
+以下の関数の名前は次の様に変更された:
+</p>
+<ul>
+<li>TTF_FontAscent() → TTF_GetFontAscent()
+<li>TTF_FontDescent() → TTF_GetFontDescent()
+<li>TTF_FontFaceFamilyName() → TTF_GetFontFamilyName()
+<li>TTF_FontFaceIsFixedWidth() → TTF_FontIsFixedWidth()
+<li>TTF_FontFaceStyleName() → TTF_GetFontStyleName()
+<li>TTF_FontFaces() → TTF_GetNumFontFaces()
+<li>TTF_FontHeight() → TTF_GetFontHeight()
+<li>TTF_FontLineSkip() → TTF_GetFontLineSkip()
+<li>TTF_GetFontWrappedAlign() → TTF_GetFontWrapAlignment()
+<li>TTF_GlyphIsProvided() → TTF_FontHasGlyph()
+<li>TTF_GlyphIsProvided32() → TTF_FontHasGlyph()
+<li>TTF_GlyphMetrics() → TTF_GetGlyphMetrics()
+<li>TTF_GlyphMetrics32() → TTF_GetGlyphMetrics()
+<li>TTF_IsFontScalable() → TTF_FontIsScalable()
+<li>TTF_RenderGlyph32_Blended() → TTF_RenderGlyph_Blended()
+<li>TTF_RenderGlyph32_LCD() → TTF_RenderGlyph_LCD()
+<li>TTF_RenderGlyph32_Shaded() → TTF_RenderGlyph_Shaded()
+<li>TTF_RenderGlyph32_Solid() → TTF_RenderGlyph_Solid()
+<li>TTF_RenderUTF8_Blended() → TTF_RenderText_Blended()
+<li>TTF_RenderUTF8_Blended_Wrapped() → TTF_RenderText_Blended_Wrapped()
+<li>TTF_RenderUTF8_LCD() → TTF_RenderText_LCD()
+<li>TTF_RenderUTF8_LCD_Wrapped() → TTF_RenderText_LCD_Wrapped()
+<li>TTF_RenderUTF8_Shaded() → TTF_RenderText_Shaded()
+<li>TTF_RenderUTF8_Shaded_Wrapped() → TTF_RenderText_Shaded_Wrapped()
+<li>TTF_RenderUTF8_Solid() → TTF_RenderText_Solid()
+<li>TTF_RenderUTF8_Solid_Wrapped() → TTF_RenderText_Solid_Wrapped()
+<li>TTF_SetFontScriptName() → TTF_SetFontScript()
+<li>TTF_SetFontWrappedAlign() → TTF_SetFontWrapAlignment()
+<li>TTF_SizeText() → TTF_GetStringSize()
+<li>TTF_SizeUTF8() → TTF_GetStringSize()
+</ul>
+<p>
+以下の関数は削除された:
+</p>
+<ul>
+<li>TTF_ByteSwappedUNICODE()
+<li>TTF_GetFontKerningSizeGlyphs() - TTF_GetGlyphKerning()に置き換えられた
+<li>TTF_GetFontKerningSizeGlyphs32() - TTF_GetGlyphKerning()に置き換えられた
+<li>TTF_Linked_Version() - TTF_Version()に置き換えられた
+<li>TTF_MeasureText() - TTF_MeasureString()に置き換えられた
+<li>TTF_MeasureUNICODE() - TTF_MeasureString()に置き換えられた
+<li>TTF_MeasureUTF8() - TTF_MeasureString()に置き換えられた
+<li>TTF_OpenFontDPI() - TTF_OpenFontWithProperties()に置き換えられた
+<li>TTF_OpenFontDPIIO() - TTF_OpenFontWithProperties()に置き換えられた
+<li>TTF_OpenFontIndex() - TTF_OpenFontWithProperties()に置き換えられた
+<li>TTF_OpenFontIndexDPI() - TTF_OpenFontWithProperties()に置き換えられた
+<li>TTF_OpenFontIndexDPIIO() - TTF_OpenFontWithProperties()に置き換えられた
+<li>TTF_OpenFontIndexIO() - TTF_OpenFontWithProperties()に置き換えられた
+<li>TTF_RenderGlyph_Solid()
+<li>TTF_RenderText_Solid()
+<li>TTF_RenderText_Solid_Wrapped()
+<li>TTF_RenderUNICODE_Blended()
+<li>TTF_RenderUNICODE_Blended_Wrapped()
+<li>TTF_RenderUNICODE_LCD()
+<li>TTF_RenderUNICODE_LCD_Wrapped()
+<li>TTF_RenderUNICODE_Shaded()
+<li>TTF_RenderUNICODE_Shaded_Wrapped()
+<li>TTF_RenderUNICODE_Solid()
+<li>TTF_RenderUNICODE_Solid_Wrapped()
+<li>TTF_SizeUNICODE()
+</ul>
+<p>
+以下のマクロは削除された:
+</p>
+<ul>
+<li>TTF_GetError() → SDL_GetError()
+<li>TTF_SetError() → SDL_SetError()
+</ul>
+<p>
+以下のシンボルは削除された:
+</p>
+<ul>
+<li>TTF_WRAPPED_ALIGN_CENTER → TTF_HORIZONTAL_ALIGN_CENTER
+<li>TTF_WRAPPED_ALIGN_LEFT → TTF_HORIZONTAL_ALIGN_LEFT
+<li>TTF_WRAPPED_ALIGN_RIGHT → TTF_HORIZONTAL_ALIGN_RIGHT
+</ul>
+<h2>SDL Wikiへのリンク</h2>
+</p>
+<a href="https://wiki.libsdl.org/SDL3_net/README-migration">SDL3_net/README-migration</a>
+<hr>
+</body>
+</html>
